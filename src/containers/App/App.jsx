@@ -32,7 +32,6 @@ const styles = theme => ({
         flex: 1,
     },
     appFrame: {
-        position: 'relative',
         display: 'flex',
         width: '100%',
         height: '100%',
@@ -63,7 +62,7 @@ const styles = theme => ({
     },
     content: {
         position: 'absolute',
-        width: `calc(100% - ${drawerWidth+50}px)`,
+        width: `calc(100% - ${drawerWidth+65}px)`,
         padding: theme.spacing.unit * 3,
         height: '100%',
         // height: 'calc(100% - 112px)',
