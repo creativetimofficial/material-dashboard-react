@@ -1,4 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {
+    withStyles, Drawer, AppBar, Toolbar, Typography, TextField, Divider, IconButton, Input, Button, Hidden, BottomNavigation, BottomNavigationButton
+} from 'material-ui';
+import {
+    ChevronLeft, ChevronRight, Menu, Search, Dashboard, Notifications, Person, Restore, Favorite, LocationOn, Folder
+} from 'material-ui-icons';
 import {
     Switch,
     Route,
@@ -11,14 +18,149 @@ import Sidebar from 'components/Sidebar/Sidebar.jsx';
 
 import appRoutes from 'routes/app.jsx';
 
+const drawerWidth = 240;
+
+const styles = theme => ({
+    root: {
+        width: '100%',
+        height: 430,
+        marginTop: theme.spacing.unit * 3,
+        zIndex: 1,
+        overflow: 'hidden',
+    },
+    flex: {
+        flex: 1,
+    },
+    appFrame: {
+        position: 'relative',
+        display: 'flex',
+        width: '100%',
+        height: '100%',
+    },
+    appBar: {
+        position: 'fixed',
+        marginLeft: drawerWidth,
+        [theme.breakpoints.up('md')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+        },
+    },
+    navIconHide: {
+        [theme.breakpoints.up('md')]: {
+            display: 'none',
+        },
+    },
+    footer: {
+        bottom: 0
+    },
+    drawerHeader: theme.mixins.toolbar,
+    drawerPaper: {
+        width: 250,
+        [theme.breakpoints.up('md')]: {
+            width: drawerWidth,
+            position: 'fixed',
+            height: '100%',
+        },
+    },
+    content: {
+        position: 'absolute',
+        width: `calc(100% - ${drawerWidth+50}px)`,
+        padding: theme.spacing.unit * 3,
+        height: '100%',
+        // height: 'calc(100% - 112px)',
+        marginTop: 36,
+        [theme.breakpoints.up('md')]:{
+            marginLeft: drawerWidth
+        },
+        [theme.breakpoints.up('sm')]: {
+            height: 'calc(100% - 64px)',
+            marginTop: 46
+        },
+    },
+});
+
 class App extends React.Component{
+    state = {
+        mobileOpen: false,
+        value: 'recents'
+    };
+    handleDrawerToggle = () => {
+        this.setState({ mobileOpen: !this.state.mobileOpen });
+    };
+    handleChange = (event, value) => {
+        this.setState({ value });
+    };
     render(){
+        const { classes, theme } = this.props;
         return (
-            <div className="wrapper">
-                <Sidebar {...this.props} />
-                <div className="main-panel">
-                    <Header {...this.props} />
-                    <div className="content">
+            <div className={classes.root}>
+                <div className={classes.appFrame}>
+                    <AppBar className={classes.appBar} color="default">
+                        <Toolbar>
+                            <Typography type="title" color="inherit" className={classes.flex}>
+                                Title
+                            </Typography>
+                            <Input
+                                placeholder="Search"
+                                inputProps={{
+                                    'aria-label': 'Search',
+                                }}
+                            />
+                            <Button mini fab color="inherit" aria-label="edit">
+                                <Search />
+                            </Button>
+                            <IconButton color="inherit" aria-label="Dashboard">
+                                <Dashboard />
+                            </IconButton>
+                            <IconButton color="inherit" aria-label="Notifications">
+                                <Notifications />
+                            </IconButton>
+                            <IconButton color="inherit" aria-label="Person">
+                                <Person />
+                            </IconButton>
+                            <IconButton
+                                color="contrast"
+                                aria-label="open drawer"
+                                onClick={this.handleDrawerToggle}
+                                className={classes.navIconHide}>
+                                <Menu />
+                            </IconButton>
+                        </Toolbar>
+                    </AppBar>
+                    <Hidden mdUp>
+                        <Drawer
+                            type="temporary"
+                            anchor='right'
+                            open={this.state.mobileOpen}
+                            classes={{
+                                paper: classes.drawerPaper,
+                            }}
+                            onRequestClose={this.handleDrawerToggle}
+                            ModalProps={{
+                                keepMounted: true, // Better open performance on mobile.
+                            }}>
+                            <div>
+                                <div className={classes.drawerHeader}/>
+                                <Divider />
+                                <Sidebar />
+                            </div>
+                        </Drawer>
+                    </Hidden>
+                    <Hidden mdDown implementation="css">
+                        <Drawer
+                            anchor='left'
+                            type="permanent"
+                            open
+                            classes={{
+                                paper: classes.drawerPaper,
+                            }}>
+                            <div>
+                                <div className={classes.drawerHeader}/>
+                                <Divider />
+                                <Sidebar />
+                            </div>
+                        </Drawer>
+                    </Hidden>
+                    <main className={classes.content}>
                         <Switch>
                             {
                                 appRoutes.map((prop,key) => {
@@ -32,12 +174,21 @@ class App extends React.Component{
                                 })
                             }
                         </Switch>
-                    </div>
-                    <Footer {...this.props} />
+                        <footer className={classes.footer}>
+                            <div>
+                                <Footer />
+                            </div>
+                        </footer>
+                    </main>
                 </div>
             </div>
         );
     }
 }
 
-export default App;
+App.propTypes = {
+    classes: PropTypes.object.isRequired,
+    theme: PropTypes.object.isRequired
+};
+
+export default withStyles(styles, { withTheme: true })(App);
