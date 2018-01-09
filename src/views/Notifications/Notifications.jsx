@@ -1,11 +1,306 @@
 import React from 'react';
+import {
+    Card, CardHeader, CardContent, Grid, Snackbar, SnackbarContent, IconButton, Typography, Button
+} from 'material-ui';
+import {
+    Close, AddAlert
+} from 'material-ui-icons';
 
 class Notifications extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            tl: false,
+            tc: false,
+            tr: false,
+            bl: false,
+            bc: false,
+            br: false
+        };
+    }
+    showNotification(place){
+        var x = [];
+        x[place] = true;
+        this.setState(x);
+        setTimeout(function(){
+            x[place] = false;
+            this.setState(x);
+        }.bind(this),6000);
+    }
     render(){
         return (
-            <div>
-                salut din Notifications
-            </div>
+            <Card>
+                <CardHeader
+                    title={"Notifications"}
+                    subheader={
+                        <p className="category">Handcrafted by <a target="_blank" href="https://www.creative-tim.com/">Creative Tim</a>. Please checkout the <a href="#pablo" target="_blank">full documentation.</a>
+                        </p>
+                    } />
+                <CardContent>
+                    <Grid container>
+                        <Grid item md={6}>
+                            <Typography type="subheading">Notifications Style</Typography>
+                            <br />
+                            <SnackbarContent message={'This is a plain notification'} />
+                            <br />
+                            <SnackbarContent message={'This is a notification with close button.'} action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit">
+                                    <Close />
+                                </IconButton>
+                            ]}/>
+                            <br />
+                            <SnackbarContent message={
+                                    <div>
+                                        <AddAlert /> This is a notification with close button and icon.
+                                    </div>
+                                }
+                                action={[
+                                    <IconButton
+                                        key="close"
+                                        aria-label="Close"
+                                        color="inherit">
+                                        <Close />
+                                    </IconButton>
+                                ]}/>
+                            <br />
+                            <SnackbarContent message={
+                                    <div>
+                                        <AddAlert /> This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.
+                                    </div>
+                                }
+                                action={[
+                                    <IconButton
+                                        key="close"
+                                        aria-label="Close"
+                                        color="inherit">
+                                        <Close />
+                                    </IconButton>
+                                ]}/>
+                            <br />
+                        </Grid>
+                        <Grid item md={6}>
+                            <Typography type="subheading">Notifications States</Typography>
+                            <br />
+                            <SnackbarContent message={'INFO - This is a regular notification made with ".alert-info"'} action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit">
+                                    <Close />
+                                </IconButton>
+                            ]}/>
+                            <br />
+                            <SnackbarContent message={'SUCCESS - This is a regular notification made with ".alert-success"'} action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit">
+                                    <Close />
+                                </IconButton>
+                            ]}/>
+                            <br />
+                            <SnackbarContent message={'WARNING - This is a regular notification made with ".alert-warning"'} action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit">
+                                    <Close />
+                                </IconButton>
+                            ]}/>
+                            <br />
+                            <SnackbarContent message={'DANGER - This is a regular notification made with ".alert-danger"'} action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit">
+                                    <Close />
+                                </IconButton>
+                            ]}/>
+                            <br />
+                            <SnackbarContent message={'PRIMARY - This is a regular notification made with ".alert-primary"'} action={[
+                                <IconButton
+                                    key="close"
+                                    aria-label="Close"
+                                    color="inherit">
+                                    <Close />
+                                </IconButton>
+                            ]}/>
+                            <br />
+                        </Grid>
+                    </Grid>
+                    <br />
+                    <br />
+                    <Grid container justify="center">
+                        <Grid item md={6}>
+                            <Typography type="subheading" align={'center'}>
+                                Notifications Places
+                                <Typography type="body1">
+                                    Click to view notifications
+                                </Typography>
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid container justify='center'>
+                        <Grid item lg={8} md={10}>
+                            <Grid container>
+                                <Grid item md={4}>
+                                    <Button raised color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
+                                    <Snackbar
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'left',
+                                        }}
+                                        open={this.state.tl}
+                                        SnackbarContentProps={{
+                                            'aria-describedby': 'message-id',
+                                        }}
+                                        message={<span id="message-id">Note archived</span>}
+                                        action={[
+                                            <IconButton
+                                            key="close"
+                                            aria-label="Close"
+                                            color="inherit"
+                                            onClick={() => { this.setState({tl: false})}}
+                                            >
+                                                <Close />
+                                            </IconButton>
+                                        ]}
+                                    />
+                                </Grid>
+                                <Grid item md={4}>
+                                    <Button raised color="primary" onClick={() => this.showNotification('tc')}>Top Center</Button>
+                                    <Snackbar
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'center',
+                                        }}
+                                        open={this.state.tc}
+                                        SnackbarContentProps={{
+                                            'aria-describedby': 'message-id',
+                                        }}
+                                        message={<span id="message-id">Note archived</span>}
+                                        action={[
+                                            <IconButton
+                                            key="close"
+                                            aria-label="Close"
+                                            color="inherit"
+                                            onClick={() => { this.setState({tc: false})}}
+                                            >
+                                                <Close />
+                                            </IconButton>
+                                        ]}
+                                    />
+                                </Grid>
+                                <Grid item md={4}>
+                                    <Button raised color="primary" onClick={() => this.showNotification('tr')}>Top Right</Button>
+                                    <Snackbar
+                                        anchorOrigin={{
+                                            vertical: 'top',
+                                            horizontal: 'right',
+                                        }}
+                                        open={this.state.tr}
+                                        SnackbarContentProps={{
+                                            'aria-describedby': 'message-id',
+                                        }}
+                                        message={<span id="message-id">Note archived</span>}
+                                        action={[
+                                            <IconButton
+                                            key="close"
+                                            aria-label="Close"
+                                            color="inherit"
+                                            onClick={() => { this.setState({tr: false})}}
+                                            >
+                                                <Close />
+                                            </IconButton>
+                                        ]}
+                                    />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid container justify={'center'}>
+                        <Grid item lg={8} md={10}>
+                            <Grid container>
+                                <Grid item md={4}>
+                                    <Button raised color="primary" onClick={() => this.showNotification('bl')}>Bottom Left</Button>
+                                    <Snackbar
+                                        anchorOrigin={{
+                                            vertical: 'bottom',
+                                            horizontal: 'left',
+                                        }}
+                                        open={this.state.bl}
+                                        SnackbarContentProps={{
+                                            'aria-describedby': 'message-id',
+                                        }}
+                                        message={<span id="message-id">Note archived</span>}
+                                        action={[
+                                            <IconButton
+                                            key="close"
+                                            aria-label="Close"
+                                            color="inherit"
+                                            onClick={() => { this.setState({bl: false})}}
+                                            >
+                                                <Close />
+                                            </IconButton>
+                                        ]}
+                                    />
+                                </Grid>
+                                <Grid item md={4}>
+                                    <Button raised color="primary" onClick={() => this.showNotification('bc')}>Bottom Center</Button>
+                                    <Snackbar
+                                        anchorOrigin={{
+                                            vertical: 'bottom',
+                                            horizontal: 'center',
+                                        }}
+                                        open={this.state.bc}
+                                        SnackbarContentProps={{
+                                            'aria-describedby': 'message-id',
+                                        }}
+                                        message={<span id="message-id">Note archived</span>}
+                                        action={[
+                                            <IconButton
+                                            key="close"
+                                            aria-label="Close"
+                                            color="inherit"
+                                            onClick={() => { this.setState({bc: false})}}
+                                            >
+                                                <Close />
+                                            </IconButton>
+                                        ]}
+                                    />
+                                </Grid>
+                                <Grid item md={4}>
+                                    <Button raised color="primary" onClick={() => this.showNotification('br')}>Bottom Right</Button>
+                                    <Snackbar
+                                        anchorOrigin={{
+                                            vertical: 'bottom',
+                                            horizontal: 'right',
+                                        }}
+                                        open={this.state.br}
+                                        SnackbarContentProps={{
+                                            'aria-describedby': 'message-id',
+                                        }}
+                                        message={<span id="message-id">Note archived</span>}
+                                        action={[
+                                            <IconButton
+                                            key="close"
+                                            aria-label="Close"
+                                            color="inherit"
+                                            onClick={() => { this.setState({br: false})}}
+                                            >
+                                                <Close />
+                                            </IconButton>
+                                        ]}
+                                    />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Card>
         );
     }
 }

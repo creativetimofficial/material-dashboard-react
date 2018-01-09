@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    withStyles, Drawer, AppBar, Toolbar, Typography, TextField, Divider, IconButton, Input, Button, Hidden, BottomNavigation, BottomNavigationButton
+    withStyles, Drawer, AppBar, Toolbar, Typography, Divider, IconButton, Input, Button, Hidden
 } from 'material-ui';
 import {
-    ChevronLeft, ChevronRight, Menu, Search, Dashboard, Notifications, Person, Restore, Favorite, LocationOn, Folder
+    Menu, Search, Dashboard, Notifications, Person
 } from 'material-ui-icons';
 import {
     Switch,
@@ -12,7 +12,7 @@ import {
     Redirect
 } from 'react-router-dom';
 
-import Header from 'components/Header/Header.jsx';
+// import Header from 'components/Header/Header.jsx';
 import Footer from 'components/Footer/Footer.jsx';
 import Sidebar from 'components/Sidebar/Sidebar.jsx';
 
@@ -89,7 +89,7 @@ class App extends React.Component{
         this.setState({ value });
     };
     render(){
-        const { classes, theme } = this.props;
+        const { classes } = this.props;
         return (
             <div className={classes.root}>
                 <div className={classes.appFrame}>

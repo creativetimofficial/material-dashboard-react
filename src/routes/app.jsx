@@ -6,6 +6,11 @@ import Icons from "views/Icons/Icons.jsx";
 import Maps from "views/Maps/Maps.jsx";
 import NotificationsPage from "views/Notifications/Notifications.jsx";
 
+
+
+import Notify from 'views/Notify/Notify.jsx';
+
+
 import {
     Dashboard, Person, ContentPaste, LibraryBooks, BubbleChart, LocationOn, Notifications
 } from 'material-ui-icons';
@@ -18,6 +23,7 @@ const appRoutes = [
     { path: "/icons", sidebarName: "Icons", navbarName: "Icons", icon: BubbleChart, component: Icons },
     { path: "/maps", sidebarName: "Maps", navbarName: "Map", icon: LocationOn, component: Maps },
     { path: "/notifications", sidebarName: "Notifications", navbarName: "Notifications", icon: Notifications, component: NotificationsPage },
+    { path: "/notify", sidebarName: "Notify", navbarName: "Notify", icon: Notifications, component: Notify },
     { redirect: true, path: "/", to: "/dashboard" }
 ];
 

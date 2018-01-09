@@ -1,12 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
-    Grid, Card, CardHeader, CardContent, Input
+    withStyles, Grid, Card, CardHeader, CardContent, Input, FormControl, InputLabel, CardMedia, Button, Typography
 } from 'material-ui';
 
 import avatar from 'assets/img/faces/marc.jpg';
 
+const styles = {
+  media: {
+    height: 200,
+  },
+};
+
 class UserProfile extends React.Component{
     render(){
+        const { classes } = this.props;
         return (
             <div>
                 <Grid container>
@@ -19,93 +27,73 @@ class UserProfile extends React.Component{
                             <CardContent>
                                 <Grid container>
                                     <Grid item md={5}>
-                                        <Input
-                                            value="Company (disabled)"
-                                            disabled
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="company-disabled">Company (disabled)</InputLabel>
+                                            <Input id="company-disabled" disabled/>
+                                        </FormControl>
                                     </Grid>
                                     <Grid item md={3}>
-                                        <Input
-                                            placeholder="Username"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="username">Username</InputLabel>
+                                            <Input id="username"/>
+                                        </FormControl>
                                     </Grid>
                                     <Grid item md={4}>
-                                        <Input
-                                            placeholder="Email address"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="email-address">Email address</InputLabel>
+                                            <Input id="email-address"/>
+                                        </FormControl>
                                     </Grid>
                                 </Grid>
                                 <Grid container>
                                     <Grid item md={6}>
-                                        <Input
-                                            placeholder="First Name"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="first-name">First Name</InputLabel>
+                                            <Input id="first-name"/>
+                                        </FormControl>
                                     </Grid>
                                     <Grid item md={6}>
-                                        <Input
-                                            placeholder="Last Name"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="last-name">Last Name</InputLabel>
+                                            <Input id="last-name"/>
+                                        </FormControl>
                                     </Grid>
                                 </Grid>
                                 <Grid container>
                                     <Grid item md={12}>
-                                        <Input
-                                            placeholder="Address"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="address">Address</InputLabel>
+                                            <Input id="address"/>
+                                        </FormControl>
                                     </Grid>
                                 </Grid>
                                 <Grid container>
                                     <Grid item md={4}>
-                                        <Input
-                                            placeholder="City"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="city">City</InputLabel>
+                                            <Input id="city"/>
+                                        </FormControl>
                                     </Grid>
                                     <Grid item md={4}>
-                                        <Input
-                                            placeholder="Country"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="country">Country</InputLabel>
+                                            <Input id="country"/>
+                                        </FormControl>
                                     </Grid>
                                     <Grid item md={4}>
-                                        <Input
-                                            placeholder="Postal Code"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="postal-code">Postal Code</InputLabel>
+                                            <Input id="postal-code"/>
+                                        </FormControl>
                                     </Grid>
                                 </Grid>
                                 <Grid container>
                                     <Grid item md={12}>
-                                        <Input
-                                            placeholder="About me"
-                                            inputProps={{
-                                                'aria-label': 'Description',
-                                            }}
-                                        />
+                                        <InputLabel>About me</InputLabel>
+                                        <FormControl fullWidth>
+                                            <InputLabel htmlFor="about-me">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</InputLabel>
+                                            <Input id="about-me" multiline rows={5}/>
+                                        </FormControl>
                                     </Grid>
                                 </Grid>
                             </CardContent>
@@ -113,13 +101,23 @@ class UserProfile extends React.Component{
                     </Grid>
                     <Grid item md={4}>
                         <Card>
+                            <CardMedia
+                                image={avatar}
+                                title="..."
+                                className={classes.media}
+                            />
                             <CardHeader
-                                avatar={
-                                    <img src={avatar} alt="..."/>
-                                }
                                 subheader={"CEO / CO-FOUNDER"}
                                 title={"Alec Thompson"}
                             />
+                            <CardContent>
+                                <Typography component="p">
+                                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                </Typography>
+                                <Button raised color="primary">Follow</Button>
+                            </CardContent>
+                            {/* <a href="#pablo" class="btn btn-primary btn-round">Follow</a> */}
+
                         </Card>
                     </Grid>
                 </Grid>
@@ -128,4 +126,8 @@ class UserProfile extends React.Component{
     }
 }
 
-export default UserProfile;
+UserProfile.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(UserProfile);
