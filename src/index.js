@@ -7,8 +7,8 @@ import {
     Switch
 } from 'react-router-dom';
 
-// import 'assets/css/demo.css';
-// import 'assets/sass/material-dashboard.scss';
+import 'assets/css/demo.css';
+// import 'assets/sass/material-dashboard.css';
 
 import indexRoutes from 'routes/index.jsx';
 

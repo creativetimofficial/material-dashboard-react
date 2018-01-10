@@ -1,103 +1,102 @@
 import React from 'react';
-import {
-    Card, CardHeader, CardContent, Grid, Snackbar, SnackbarContent, IconButton, Typography, Button
-} from 'material-ui';
+// import {
+//     Card, CardHeader, CardContent, Grid, Snackbar, SnackbarContent, IconButton, Typography, Button
+// } from 'material-ui';
+import ChartistGraph from 'react-chartist';
 import {
     Close, AddAlert
 } from 'material-ui-icons';
+var Chartist = require('chartist');
+var delays = 80, durations = 500;
+const usersBehaviorChart = {
+    data: {
+        labels: ['9:00AM', '12:00AM', '3:00PM', '6:00PM', '9:00PM', '12:00PM', '3:00AM', '6:00AM'],
+        series: [
+            [287, 385, 490, 492, 554, 586, 698, 695, 752]
+        ]
+    },
+    options: {
+        low: 0,
+        high: 800,
+        chartPadding: 0,
+        showArea: true,
+        height: "245px",
+        axisX: {
+            showGrid: true,
+        },
+        axisY: {
+            showGrid: true,
+        },
+        lineSmooth: Chartist.Interpolation.simple({
+            divisor: 6
+        }),
+        showLine: false,
+        showPoint: true,
+        fullWidth: true
+    },
+    responsiveOptions: [
+        ['screen and (max-width: 640px)', {
+            axisX: {
+                labelInterpolationFnc: function (value) {
+                    return value[0];
+                }
+            }
+        }]
+    ],
+    // for animation
+    animation : {
+        "draw" : function(data) {
+            if(data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                    d: {
+                        begin: 600,
+                        dur: 700,
+                        from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                        to: data.path.clone().stringify(),
+                        easing: Chartist.Svg.Easing.easeOutQuint
+                    }
+                });
+            } else if(data.type === 'point') {
+                data.element.animate({
+                    opacity: {
+                        begin: (data.index + 1) * delays,
+                        dur: durations,
+                        from: 0,
+                        to: 1,
+                        easing: 'ease'
+                    }
+                });
+            }
+        }
+    }
+}
+
+
+
+var simpleLineChartData = {
+  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+  series: [
+    [12, 9, 7, 8, 5],
+    [2, 1, 3.5, 7, 3],
+    [1, 3, 4, 5, 6]
+  ]
+}
+
 
 class Notifications extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            notifications: []
-        };
-    }
-    showNotification(place){
-        var nots = [];
-        this.state.notifications !== null ? (nots = this.state.notifications):null;
-        nots.push(
-            <SnackbarContent key={nots.length+1} message="I love candy. I love cookies. I love cupcakes." />
-        );
-        this.setState({notifications: nots});
-        console.log(this.state);
-    }
     render(){
         return (
-            <Card>
-                <CardHeader
-                    title={"Notifications"}
-                    subheader={
-                        <p className="category">Handcrafted by <a target="_blank" href="https://www.creative-tim.com/">Creative Tim</a>. Please checkout the <a href="#pablo" target="_blank">full documentation.</a>
-                        </p>
-                    } />
-                <CardContent>
-                    <Grid container justify="center">
-                        <Grid item md={6}>
-                            <Typography type="subheading" align={'center'}>
-                                Notifications Places
-                                <Typography type="body1">
-                                    Click to view notifications
-                                </Typography>
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                    <Grid container justify='center'>
-                        <Grid item lg={8} md={10}>
-                            <Grid container>
-                                <Grid item md={4}>
-                                    <Button raised color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
-                                    {/* {
-                                        this.state.notifications !== null ? (
-                                            <Snackbar
-                                                anchorOrigin={{
-                                                    vertical: 'top',
-                                                    horizontal: 'left',
-                                                }}
-                                                open={true}
-                                            >
-                                                {
-                                                    this.state.notifications.map((prop,key) => {
-                                                        return prop;
-                                                    })
-                                                }
-                                            </Snackbar>
-                                        ):null
-                                    } */}
-                                    {
-                                        this.state.notifications.map((prop,key) => {
-                                            return prop;
-                                        })
-                                    }
-                                    {/*
-                                    <Snackbar
-                                        anchorOrigin={{
-                                            vertical: 'top',
-                                            horizontal: 'left',
-                                        }}
-                                        open={this.state.tl}
-                                        SnackbarContentProps={{
-                                            'aria-describedby': 'message-id',
-                                        }}
-                                        message={<span id="message-id">Note archived</span>}
-                                        action={[
-                                            <IconButton
-                                            key="close"
-                                            aria-label="Close"
-                                            color="inherit"
-                                            onClick={() => { this.setState({tl: false})}}
-                                            >
-                                                <Close />
-                                            </IconButton>
-                                        ]}
-                                    />
-                                     */}
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </CardContent>
-            </Card>
+            // <ChartistGraph
+            //     className="ct-chart"
+            //     data={usersBehaviorChart.data}
+            //     type="Line"
+            //     options={usersBehaviorChart.options}
+            //     responsiveOptions={usersBehaviorChart.responsiveOptions}
+            //     listener={
+            //         usersBehaviorChart.animation
+            //     }
+            // />
+            <ChartistGraph data={simpleLineChartData} type={'Line'} />
         );
     }
 }

@@ -1,11 +1,14 @@
 import React from 'react';
 import {
-    Card, CardContent, CardHeader, CardActions, Grid, Typography, Divider, AppBar, Tabs, Tab, Checkbox, IconButton, Table, TableBody, TableCell, TableRow, TableHead, Toolbar
+    Card, CardContent, CardHeader, CardActions, Grid, Typography, AppBar, Tabs, Tab, Checkbox, IconButton, Table, TableBody, TableCell, TableRow, TableHead, Toolbar
 } from 'material-ui';
 import {
-    ContentCopy, Store, InfoOutline, Tv, Warning, DateRange, LocalOffer, Update, ArrowUpward, AccessTime, Edit, Close, BugReport, Cloud, Code
+    ContentCopy, Store, InfoOutline, Warning, DateRange, LocalOffer, Update, ArrowUpward, AccessTime, Edit, Close, BugReport, Cloud, Code, Accessibility
 } from 'material-ui-icons';
 import SwipeableViews from 'react-swipeable-views';
+
+import StatsCard from 'components/Cards/StatsCard';
+import ChartCard from 'components/Cards/ChartCard';
 
 var bugs = ['Sign contract for "What are conference organizers afraid of?"','Lines From Great Russian Literature? Or E-mails From My Boss?','Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Create 4 Invisible User Experiences you Never Knew About'];
 var website = ['Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Sign contract for "What are conference organizers afraid of?"'];
@@ -74,94 +77,43 @@ class Dashboard extends React.Component{
         return (
             <div>
                 <Grid container>
-                    <Grid item sm={6} lg={3}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <ContentCopy />
-                                }
-                            />
-                            <CardContent>
-                                <Typography type="subtitle">
-                                    Used Space
-                                </Typography>
-                                <Typography type="headline" component="h2">
-                                    49/50 GB
-                                </Typography>
-                            </CardContent>
-                            <Divider />
-                            <CardActions>
-                                <Warning />
-                                <a href="#pablo">Get More Space...</a>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item sm={6} lg={3}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <Store />
-                                }
-                            />
-                            <CardContent>
-                                <Typography type="subtitle">
-                                    Revenue
-                                </Typography>
-                                <Typography type="headline" component="h2">
-                                    $34,245
-                                </Typography>
-                            </CardContent>
-                            <Divider />
-                            <CardActions>
-                                <DateRange />
-                                <p>Last 24 Hours</p>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item sm={6} lg={3}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <InfoOutline />
-                                }
-                            />
-                            <CardContent>
-                                <Typography type="subtitle">
-                                    Fixed Issues
-                                </Typography>
-                                <Typography type="headline" component="h2">
-                                    75
-                                </Typography>
-                            </CardContent>
-                            <Divider />
-                            <CardActions>
-                                <LocalOffer /> <p>Tracked from Github</p>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item sm={6} lg={3}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <Tv />
-                                }
-                            />
-                            <CardContent>
-                                <Typography type="subtitle">
-                                    Followers
-                                </Typography>
-                                <Typography type="headline" component="h2">
-                                    +245
-                                </Typography>
-                            </CardContent>
-                            <Divider />
-                            <CardActions>
-                                <Update /> <p>Just Updated</p>
-                            </CardActions>
-                        </Card>
-                    </Grid>
+                    <StatsCard
+                        icon={ContentCopy}
+                        iconColor="orange"
+                        title="Used Space"
+                        description="49/50"
+                        small="GB"
+                        statIcon={Warning}
+                        statIconColor="danger"
+                        statLink={{text: "Get More Space...", href:"#pablo"}}
+                    />
+                    <StatsCard
+                        icon={Store}
+                        iconColor="green"
+                        title="Revenue"
+                        description="$34,245"
+                        statIcon={DateRange}
+                        statText="Last 24 Hours"
+                    />
+                    <StatsCard
+                        icon={InfoOutline}
+                        iconColor="red"
+                        title="Fixed Issues"
+                        description="75"
+                        statIcon={LocalOffer}
+                        statText="Tracked from Github"
+                    />
+                    <StatsCard
+                        icon={Accessibility}
+                        iconColor="blue"
+                        title="Followers"
+                        description="+245"
+                        statIcon={Update}
+                        statText="Just Updated"
+                    />
                 </Grid>
                 <Grid container>
+                    <ChartCard />
                     <Grid item md={4}>
                         <Card>
                             <CardHeader
