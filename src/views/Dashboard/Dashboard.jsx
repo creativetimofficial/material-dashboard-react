@@ -1,18 +1,37 @@
 import React from 'react';
 import {
-    Card, CardContent, CardHeader, CardActions, Grid, Typography, AppBar, Tabs, Tab, Checkbox, IconButton, Table, TableBody, TableCell, TableRow, TableHead, Toolbar
+    withStyles, Card, CardContent, CardHeader, CardActions, Grid, Typography, AppBar, Tabs, Tab, Checkbox, IconButton, Table, TableBody, TableCell, TableRow, TableHead, Toolbar
 } from 'material-ui';
 import {
     ContentCopy, Store, InfoOutline, Warning, DateRange, LocalOffer, Update, ArrowUpward, AccessTime, Edit, Close, BugReport, Cloud, Code, Accessibility
 } from 'material-ui-icons';
+import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
+import ChartistGraph from 'react-chartist';
 
 import StatsCard from 'components/Cards/StatsCard';
 import ChartCard from 'components/Cards/ChartCard';
+import TasksCard from './TasksCard'
+
+import {
+    dailySalesChart ,
+    emailsSubscriptionChart,
+    completedTasksChart
+} from 'variables/charts';
 
 var bugs = ['Sign contract for "What are conference organizers afraid of?"','Lines From Great Russian Literature? Or E-mails From My Boss?','Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Create 4 Invisible User Experiences you Never Knew About'];
 var website = ['Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Sign contract for "What are conference organizers afraid of?"'];
 var server = ['Lines From Great Russian Literature? Or E-mails From My Boss?','Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Sign contract for "What are conference organizers afraid of?"'];
+
+var styles = {
+    successText: {
+        color: '#4caf50',
+    },
+    upArrowCardCategory: {
+        width: 14,
+        height: 14,
+    },
+}
 
 class Dashboard extends React.Component{
     state = {
@@ -113,107 +132,98 @@ class Dashboard extends React.Component{
                     />
                 </Grid>
                 <Grid container>
-                    <ChartCard />
-                    <Grid item md={4}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <div>
-                                        Chart here
-                                    </div>
+                    <ChartCard
+                        chart={
+                            <ChartistGraph
+                                className="ct-chart"
+                                data={dailySalesChart.data}
+                                type="Line"
+                                options={dailySalesChart.options}
+                                listener={
+                                    dailySalesChart.animation
                                 }
                             />
-                            <CardContent>
-                                <Typography type="title" component="h4">
-                                    Daily Sales
-                                </Typography>
-                                <Typography type="category" component="p">
-                                    <ArrowUpward /> 55% increase in today sales.
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <AccessTime /> <p>updated 4 minutes ago</p>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item md={4}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <div>
-                                        Chart here
-                                    </div>
+                        }
+                        chartColor="green"
+                        title="Daily Sales"
+                        text={
+                            <span>
+                                <span className={this.props.classes.successText}><ArrowUpward className={this.props.classes.upArrowCardCategory}/> 55%</span> increase in today sales.
+                            </span>
+                        }
+                        statIcon={AccessTime}
+                        statText="updated 4 minutes ago"
+                    />
+                    <ChartCard
+                        chart={
+                            <ChartistGraph
+                                className="ct-chart"
+                                data={emailsSubscriptionChart.data}
+                                type="Bar"
+                                options={emailsSubscriptionChart.options}
+                                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
+                                listener={
+                                    emailsSubscriptionChart.animation
                                 }
                             />
-                            <CardContent>
-                                <Typography type="title" component="h4">
-                                    Email Subscriptions
-                                </Typography>
-                                <Typography type="category" component="p">
-                                    Last Campaign Performance
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <AccessTime /> <p></p>
-                            </CardActions>
-                        </Card>
-                    </Grid>
-                    <Grid item md={4}>
-                        <Card>
-                            <CardHeader
-                                avatar={
-                                    <div>
-                                        Chart here
-                                    </div>
+                        }
+                        chartColor="orange"
+                        title="Email Subscriptions"
+                        text="Last Campaign Performance"
+                        statIcon={AccessTime}
+                        statText="campaign sent 2 days ago"
+                    />
+                    <ChartCard
+                        chart={
+                            <ChartistGraph
+                                className="ct-chart"
+                                data={completedTasksChart.data}
+                                type="Line"
+                                options={completedTasksChart.options}
+                                listener={
+                                    completedTasksChart.animation
                                 }
                             />
-                            <CardContent>
-                                <Typography type="title" component="h4">
-                                    Completed Tasks
-                                </Typography>
-                                <Typography type="category" component="p">
-                                    Last Campaign Performance
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <AccessTime /> <p></p>
-                            </CardActions>
-                        </Card>
-                    </Grid>
+                        }
+                        chartColor="red"
+                        title="Completed Tasks"
+                        text="Last Campaign Performance"
+                        statIcon={AccessTime}
+                        statText="campaign sent 2 days ago"
+                    />
                 </Grid>
                 <Grid container>
+                    <TasksCard />
                     <Grid item lg={6}>
                         <Card>
+                            <CardHeader
+                                title="Tasks:"
+                                action={
+                                    <Tabs
+                                        value={this.state.value}
+                                        onChange={this.handleChange}
+                                        indicatorColor="primary"
+                                        textColor="primary"
+                                        fullWidth>
+                                        <Tab label={
+                                            <div>
+                                                <BugReport /> Bugs
+                                            </div>
+                                        }/>
+                                        <Tab label={
+                                            <div>
+                                                <Code /> Website
+                                            </div>
+                                        }/>
+                                        <Tab label={
+                                            <div>
+                                                <Cloud /> Server
+                                            </div>
+                                        }/>
+                                    </Tabs>
+                                }
+                            />
                             <CardContent>
-                                <AppBar position="static" color="default">
-                                    <Toolbar>
-                                        <Typography type="title" color="inherit">
-                                            Title
-                                        </Typography>
-                                        <Tabs
-                                            value={this.state.value}
-                                            onChange={this.handleChange}
-                                            indicatorColor="primary"
-                                            textColor="primary"
-                                            fullWidth>
-                                            <Tab label={
-                                                <div>
-                                                    <BugReport /> Bugs
-                                                </div>
-                                            }/>
-                                            <Tab label={
-                                                <div>
-                                                    <Code /> Website
-                                                </div>
-                                            }/>
-                                            <Tab label={
-                                                <div>
-                                                    <Cloud /> Server
-                                                </div>
-                                            }/>
-                                        </Tabs>
-                                    </Toolbar>
-                                </AppBar>
                                 <SwipeableViews
                                     axis={'x'}
                                     index={this.state.value}
@@ -367,4 +377,8 @@ class Dashboard extends React.Component{
     }
 }
 
-export default Dashboard;
+Dashboard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Dashboard);

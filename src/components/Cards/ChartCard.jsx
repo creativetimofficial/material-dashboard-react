@@ -2,13 +2,7 @@ import React from 'react';
 import {
     withStyles, Card, CardContent, CardHeader, CardActions, Grid, Typography
 } from 'material-ui';
-import {
-    ArrowUpward, AccessTime
-} from 'material-ui-icons';
 import PropTypes from 'prop-types';
-import ChartistGraph from 'react-chartist';
-
-import { dailySalesChart } from 'variables/charts';
 
 const styles = {
     card: {
@@ -69,13 +63,6 @@ const styles = {
         lineHeight: '1.5em',
         fontSize: '0.9em',
     },
-    successText: {
-        color: '#4caf50',
-    },
-    upArrowCardCategory: {
-        width: 14,
-        height: 14,
-    },
     cardActions: {
         margin: '0 20px 10px',
         paddingTop: '10px',
@@ -92,8 +79,7 @@ const styles = {
         display: 'inline-block',
     },
     cardStatsIcon: {
-        color: '#999999',
-        position: 'initial',
+        position: 'relative',
         top: '4px',
         width: '16px',
         height: '16px',
@@ -119,35 +105,41 @@ const styles = {
     cardStatsIconGray: {
         color: '#999999',
     },
+    cardStatsLink: {
+        color: '#9c27b0',
+        textDecoration: 'none',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+    }
 };
 
-class StatsCard extends React.Component{
+class ChartCard extends React.Component{
     constructor(props){
         super(props);
-        switch (this.props.iconColor) {
+        switch (this.props.chartColor) {
             case 'orange':
                 this.state = {
-                    iconColor: " " + this.props.classes.cardHeaderOrange
+                    chartColor: " " + this.props.classes.cardHeaderOrange
                 }
                 break;
             case 'green':
                 this.state = {
-                    iconColor: " " + this.props.classes.cardHeaderGreen
+                    chartColor: " " + this.props.classes.cardHeaderGreen
                 }
                 break;
             case 'red':
                 this.state = {
-                    iconColor: " " + this.props.classes.cardHeaderRed
+                    chartColor: " " + this.props.classes.cardHeaderRed
                 }
                 break;
             case 'blue':
                 this.state = {
-                    iconColor: " " + this.props.classes.cardHeaderBlue
+                    chartColor: " " + this.props.classes.cardHeaderBlue
                 }
                 break;
             default:
                 this.state = {
-                    iconColor: " " + this.props.classes.cardHeaderPurple
+                    chartColor: " " + this.props.classes.cardHeaderPurple
                 }
             break;
         };
@@ -181,31 +173,25 @@ class StatsCard extends React.Component{
                 <Card className={this.props.classes.card}>
                     <CardHeader
                         classes={{
-                            root: (this.props.classes.cardHeader + this.state.iconColor),
-                            // avatar: this.props.classes.cardAvatar
+                            root: (this.props.classes.cardHeader + this.state.chartColor),
                         }}
                         subheader={
-                            <ChartistGraph
-                                className="ct-chart"
-                                data={dailySalesChart.data}
-                                type="Line"
-                                options={dailySalesChart.options}
-                                listener={
-                                    dailySalesChart.animation
-                                }
-                            />
+                            this.props.chart
                         }
                     />
                     <CardContent className={this.props.classes.cardContent}>
                         <Typography type="title" component="h4" className={this.props.classes.cardTitle}>
-                            Daily Sales
+                            {this.props.title}
                         </Typography>
                         <Typography type="category" component="p" className={this.props.classes.cardCategory}>
-                            <span className={this.props.classes.successText}><ArrowUpward className={this.props.classes.upArrowCardCategory}/> 55%</span> increase in today sales.
+                            {this.props.text}
                         </Typography>
                     </CardContent>
                     <CardActions className={this.props.classes.cardActions}>
-                        <AccessTime className={this.props.classes.cardStatsIcon}/> <p className={this.props.classes.cardStats}>updated 4 minutes ago</p>
+                        <div className={this.props.classes.cardStats}>
+                            <this.props.statIcon className={this.props.classes.cardStatsIcon + this.state.statIconColor} />{' '}
+                            {this.props.statLink !== undefined ? (<a href={this.props.statLink.href} className={this.props.classes.cardStatsLink}>{this.props.statLink.text}</a>):(this.props.statText !== undefined ? (this.props.statText):null)}
+                        </div>
                     </CardActions>
                 </Card>
             </Grid>
@@ -213,8 +199,15 @@ class StatsCard extends React.Component{
     }
 }
 
-StatsCard.propTypes = {
+ChartCard.propTypes = {
   classes: PropTypes.object.isRequired,
+  chart: PropTypes.object.isRequired,
+  title: PropTypes.node,
+  text: PropTypes.node,
+  statIcon: PropTypes.func.isRequired,
+  statIconColor: PropTypes.oneOf(['warning','primary','danger','success','info','rose','gray']),
+  statLink: PropTypes.object,
+  statText: PropTypes.node
 };
 
-export default withStyles(styles)(StatsCard);
+export default withStyles(styles)(ChartCard);
