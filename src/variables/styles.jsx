@@ -348,6 +348,10 @@ const tableCardstyle = {
         color: 'rgba(0, 0, 0, 0.87)',
         background: '#fff',
     },
+    cardPlain: {
+        background: 'transparent',
+        boxShadow: 'none',
+    },
     cardHeader: {
         margin: '-20px 15px 0',
         borderRadius: '3px',
