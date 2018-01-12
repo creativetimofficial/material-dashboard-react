@@ -7,10 +7,6 @@ import {
 } from 'material-ui-icons';
 import PropTypes from 'prop-types';
 
-var bugs = ['Sign contract for "What are conference organizers afraid of?"','Lines From Great Russian Literature? Or E-mails From My Boss?','Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Create 4 Invisible User Experiences you Never Knew About'];
-var website = ['Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Sign contract for "What are conference organizers afraid of?"'];
-var server = ['Lines From Great Russian Literature? Or E-mails From My Boss?','Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit','Sign contract for "What are conference organizers afraid of?"'];
-
 const styles = {
     table: {
         marginBottom: '0',
@@ -44,20 +40,27 @@ const styles = {
     },
     checked: {
         color: '#00bcd4'
+    },
+    edit: {
+        backgroundColor: 'transparent',
+        color: '#9c27b0',
+        boxShadow: 'none',
+    },
+    close: {
+        backgroundColor: 'transparent',
+        color: '#f44336',
+        boxShadow: 'none',
     }
 };
 
 class Tasks extends React.Component{
     state = {
-        value: 0,
-        checkedBugs: [0,3],
-        checkedWebsite: [0],
-        checkedServer: [1]
+        checked: this.props.checkedIndexes,
     };
-    handleServerToggle = value => () => {
-        const { checkedServer } = this.state;
-        const currentIndex = checkedServer.indexOf(value);
-        const newChecked = [...checkedServer];
+    handleToggle = value => () => {
+        const { checked } = this.state;
+        const currentIndex = checked.indexOf(value);
+        const newChecked = [...checked];
 
         if (currentIndex === -1) {
             newChecked.push(value);
@@ -66,72 +69,35 @@ class Tasks extends React.Component{
         }
 
         this.setState({
-            checkedServer: newChecked,
+            checked: newChecked,
         });
-    };
-    handleWebsiteToggle = value => () => {
-        const { checkedWebsite } = this.state;
-        const currentIndex = checkedWebsite.indexOf(value);
-        const newChecked = [...checkedWebsite];
-
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        this.setState({
-            checkedWebsite: newChecked,
-        });
-    };
-    handleBugsToggle = value => () => {
-        const { checkedBugs } = this.state;
-        const currentIndex = checkedBugs.indexOf(value);
-        const newChecked = [...checkedBugs];
-
-        if (currentIndex === -1) {
-            newChecked.push(value);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
-
-        this.setState({
-            checkedBugs: newChecked,
-        });
-    };
-    handleChange = (event, value) => {
-        this.setState({ value });
-    };
-
-    handleChangeIndex = index => {
-        this.setState({ value: index });
     };
     render(){
         return (
             <Table className={this.props.classes.table}>
                 <TableBody>
                     {
-                        [0,1,2,3].map(value => (
+                        this.props.tasksIndexes.map(value => (
                             <TableRow key={value} className={this.props.classes.tableRow}>
                                 <TableCell className={this.props.classes.tableCell}>
                                     <Checkbox
-                                        checked={this.state.checkedBugs.indexOf(value) !== -1}
+                                        checked={this.state.checked.indexOf(value) !== -1}
                                         tabIndex={-1}
-                                        onClick={this.handleBugsToggle(value)}
+                                        onClick={this.handleToggle(value)}
                                         classes={{
                                             checked: this.props.classes.checked,
                                         }}
                                     />
                                 </TableCell>
                                 <TableCell className={this.props.classes.tableCell}>
-                                    {bugs[value]}
+                                    {this.props.tasks[value]}
                                 </TableCell>
                                 <TableCell className={this.props.classes.tableActions}>
                                     <IconButton aria-label="Edit" className={this.props.classes.tableActionButton}>
-                                        <Edit className={this.props.classes.tableActionButtonIcon}/>
+                                        <Edit className={this.props.classes.tableActionButtonIcon + " " + this.props.classes.edit}/>
                                     </IconButton>
                                     <IconButton aria-label="Close" className={this.props.classes.tableActionButton}>
-                                        <Close className={this.props.classes.tableActionButtonIcon}/>
+                                        <Close className={this.props.classes.tableActionButtonIcon + " " + this.props.classes.close}/>
                                     </IconButton>
                                 </TableCell>
                             </TableRow>
