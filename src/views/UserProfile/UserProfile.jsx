@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Grid, Card, CardHeader, CardContent, InputLabel,
+    Grid, InputLabel,
 } from 'material-ui';
 
 import ProfileCard from 'components/Cards/ProfileCard';

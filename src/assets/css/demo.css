@@ -38,3 +38,6 @@ body {
     background-color: #EEEEEE;
     color: #3C4858;
 }
+blockquote .small:before, blockquote footer:before, blockquote small:before {
+    content: '\2014 \00A0';
+}
