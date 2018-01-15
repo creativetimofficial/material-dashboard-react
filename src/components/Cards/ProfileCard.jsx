@@ -8,70 +8,7 @@ import Button from 'components/CustomButtons/Button';
 
 import avatar from 'assets/img/faces/marc.jpg';
 
-const styles = {
-    card: {
-        // this is for user card
-        marginTop: '30px',
-        textAlign: 'center',
-        // this is like all other Cards
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        margin: '25px 0',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
-        borderRadius: '3px',
-        color: 'rgba(0, 0, 0, 0.87)',
-        background: '#fff',
-    },
-    cardHeader: {
-        display: 'inline-block',
-        width: '100%',
-        padding: '0px',
-    },
-    cardAvatar: {
-        maxWidth: '130px',
-        maxHeight: '130px',
-        margin: '-50px auto 0',
-        borderRadius: '50%',
-        overflow: 'hidden',
-        boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
-    },
-    img: {
-        width: '100%',
-        height: 'auto',
-        verticalAlign: 'middle',
-        border: '0',
-    },
-    textAlign: {
-        textAlign: 'center'
-    },
-    cardSubtitle: {
-        color: '#999999',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-        fontSize: '1em',
-        textTransform: 'uppercase',
-        marginTop: '10px',
-        marginBottom: '10px',
-    },
-    cardTitle: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-        fontSize: '1.3em',
-        marginTop: '10px',
-        marginBottom: '10px',
-    },
-    cardDescription: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-        padding: '15px 20px',
-        margin: '0 0 10px',
-    }
-};
-
+import { profileCardStyle } from 'variables/styles';
 
 class ProfileCard extends React.Component{
     render(){
@@ -108,4 +45,4 @@ ProfileCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProfileCard);
+export default withStyles(profileCardStyle)(ProfileCard);

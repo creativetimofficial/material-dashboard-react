@@ -440,16 +440,263 @@ const tableCardstyle = {
 };
 
 // ##############################
-// // //  styles
+// // // ProfileCard styles
 // #############################
 
-// ##############################
-// // //  styles
-// #############################
+const profileCardStyle = {
+    card: {
+        marginTop: '30px',
+        textAlign: 'center',
+        display: 'inline-block',
+        position: 'relative',
+        width: '100%',
+        margin: '25px 0',
+        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
+        borderRadius: '3px',
+        color: 'rgba(0, 0, 0, 0.87)',
+        background: '#fff',
+    },
+    cardHeader: {
+        display: 'inline-block',
+        width: '100%',
+        padding: '0px',
+    },
+    cardAvatar: {
+        maxWidth: '130px',
+        maxHeight: '130px',
+        margin: '-50px auto 0',
+        borderRadius: '50%',
+        overflow: 'hidden',
+        boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+    },
+    img: {
+        width: '100%',
+        height: 'auto',
+        verticalAlign: 'middle',
+        border: '0',
+    },
+    textAlign: {
+        textAlign: 'center'
+    },
+    cardSubtitle: {
+        color: '#999999',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+        lineHeight: '1.5em',
+        fontSize: '1em',
+        textTransform: 'uppercase',
+        marginTop: '10px',
+        marginBottom: '10px',
+    },
+    cardTitle: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+        lineHeight: '1.5em',
+        fontSize: '1.3em',
+        marginTop: '10px',
+        marginBottom: '10px',
+    },
+    cardDescription: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+        lineHeight: '1.5em',
+        padding: '15px 20px',
+        margin: '0 0 10px',
+    }
+};
 
 // ##############################
-// // //  styles
+// // // Button styles
 // #############################
+
+const buttonStyle = {
+    button: {
+        backgroundColor: '#999999',
+        color: '#FFFFFF',
+        boxShadow: '0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12)',
+        border: 'none',
+        borderRadius: '3px',
+        position: 'relative',
+        padding: '12px 30px',
+        margin: '10px 1px',
+        fontSize: '12px',
+        fontWeight: '400',
+        textTransform: 'uppercase',
+        letterSpacing: '0',
+        willChange: 'box-shadow, transform',
+        transition: 'box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+        lineHeight: '1.42857143',
+        textAlign: 'center',
+        whiteSpace: 'nowrap',
+        verticalAlign: 'middle',
+        MsTouchAction: 'manipulation',
+        touchAction: 'manipulation',
+        cursor: 'pointer',
+        '&:hover': {
+            backgroundColor: '#999999',
+            boxShadow: '0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2)'
+        }
+    },
+    primary: {
+        backgroundColor: '#9c27b0',
+        boxShadow: '0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)',
+        '&:hover': {
+            backgroundColor: '#9c27b0',
+            boxShadow: '0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)',
+        }
+    },
+    info: {
+        backgroundColor: '#00bcd4',
+        boxShadow: '0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12)',
+        '&:hover': {
+            backgroundColor: '#00bcd4',
+            boxShadow: '0 14px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2)',
+        }
+    },
+    success: {
+        backgroundColor: '#4caf50',
+        boxShadow: '0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12)',
+        '&:hover': {
+            backgroundColor: '#4caf50',
+            boxShadow: '0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2)',
+        }
+    },
+    warning: {
+        backgroundColor: '#ff9800',
+        boxShadow: '0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12)',
+        '&:hover': {
+            backgroundColor: '#ff9800',
+            boxShadow: '0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2)',
+        }
+    },
+    danger: {
+        backgroundColor: '#f44336',
+        boxShadow: '0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)',
+        '&:hover': {
+            backgroundColor: '#f44336',
+            boxShadow: '0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2)',
+        }
+    },
+    rose: {
+        backgroundColor: '#e91e63',
+        boxShadow: '0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)',
+        '&:hover': {
+            backgroundColor: '#e91e63',
+            boxShadow: '0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)',
+        }
+    },
+    white: {
+        '&,&:focus,&:hover': {
+            backgroundColor: '#FFFFFF',
+            color: '#999999'
+        }
+    },
+    simple: {
+        color: '#FFFFFF',
+        background: 'transparent',
+        boxShadow: 'none',
+    },
+    round: {
+        borderRadius: '30px',
+    }
+};
+
+// ##############################
+// // // IconButton styles
+// #############################
+
+const iconButtonStyle = {
+    button: {
+        height: '40px',
+        minWidth: '40px',
+        width: '40px',
+        borderRadius: '50%',
+        fontSize: '24px',
+        margin: 'auto',
+        padding: '0',
+        overflow: 'hidden',
+        position: 'relative',
+        lineHeight: 'normal',
+        border: 'none',
+        fontWeight: '400',
+        textTransform: 'uppercase',
+        letterSpacing: '0',
+        willChange: 'box-shadow, transform',
+        transition: 'box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+        display: 'inline-block',
+        textAlign: 'center',
+        whiteSpace: 'nowrap',
+        verticalAlign: 'middle',
+        touchAction: 'manipulation',
+        cursor: 'pointer',
+        userSelect: 'none',
+        backgroundImage: 'none',
+        backgroundColor: '#999999',
+        '&:hover': {
+            backgroundColor: '#999999',
+            boxShadow: '0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2)'
+        }
+    },
+    primary: {
+        backgroundColor: '#9c27b0',
+        boxShadow: '0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)',
+        '&:hover': {
+            backgroundColor: '#9c27b0',
+            boxShadow: '0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)',
+        }
+    },
+    info: {
+        backgroundColor: '#00bcd4',
+        boxShadow: '0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12)',
+        '&:hover': {
+            backgroundColor: '#00bcd4',
+            boxShadow: '0 14px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2)',
+        }
+    },
+    success: {
+        backgroundColor: '#4caf50',
+        boxShadow: '0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12)',
+        '&:hover': {
+            backgroundColor: '#4caf50',
+            boxShadow: '0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2)',
+        }
+    },
+    warning: {
+        backgroundColor: '#ff9800',
+        boxShadow: '0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12)',
+        '&:hover': {
+            backgroundColor: '#ff9800',
+            boxShadow: '0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2)',
+        }
+    },
+    danger: {
+        backgroundColor: '#f44336',
+        boxShadow: '0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)',
+        '&:hover': {
+            backgroundColor: '#f44336',
+            boxShadow: '0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2)',
+        }
+    },
+    rose: {
+        backgroundColor: '#e91e63',
+        boxShadow: '0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)',
+        '&:hover': {
+            backgroundColor: '#e91e63',
+            boxShadow: '0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)',
+        }
+    },
+    white: {
+        '&,&:focus,&:hover': {
+            backgroundColor: '#FFFFFF',
+            color: '#999999'
+        }
+    },
+    simple: {
+        color: '#FFFFFF',
+        background: 'transparent',
+        boxShadow: 'none',
+    }
+};
 
 // ##############################
 // // //  styles
@@ -476,5 +723,8 @@ module.exports = {
     statsCardStyle,
     chartCardStyle,
     tasksCardStyle,
-    tableCardstyle
+    tableCardstyle,
+    profileCardStyle,
+    buttonStyle,
+    iconButtonStyle
 }
