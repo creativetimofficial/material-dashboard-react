@@ -397,6 +397,10 @@ const regularCardStyle = {
         color: 'rgba(255, 255, 255, 0.62)',
         margin: '0 0 10px',
     },
+    cardActions: {
+        padding: '14px',
+        display: 'block'
+    }
 };
 
 // ##############################
@@ -462,6 +466,9 @@ const profileCardStyle = {
         lineHeight: '1.5em',
         padding: '15px 20px',
         margin: '0 0 10px',
+    },
+    cardActions: {
+        display: 'inline'
     }
 };
 
@@ -703,8 +710,34 @@ const tableStyle = {
 }
 
 // ##############################
-// // //  styles
+// // // CustomInput styles
 // #############################
+
+const customInputStyle = {
+    disabled: {
+        '&:before': {
+            backgroundColor: 'transparent !important',
+        }
+    },
+    underline: {
+        '&:before': {
+            backgroundColor: '#D2D2D2',
+            height: '1px !important',
+        }
+    },
+    inkbar: {
+        '&:after': {
+            backgroundColor: '#9c27b0'
+        }
+    },
+    labelRoot: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        color: '#AAAAAA',
+        fontWeight: '400',
+        fontSize: '14px',
+        lineHeight: '1.42857',
+    }
+};
 
 // ##############################
 // // //  styles
@@ -727,5 +760,6 @@ module.exports = {
     profileCardStyle,
     buttonStyle,
     iconButtonStyle,
-    tableStyle
+    tableStyle,
+    customInputStyle,
 }

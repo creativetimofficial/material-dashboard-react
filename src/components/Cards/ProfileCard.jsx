@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-    withStyles, Card, CardHeader, CardContent, Typography
+    withStyles, Card, CardHeader, CardContent, CardActions, Typography
 } from 'material-ui';
 import PropTypes from 'prop-types';
-
-import Button from 'components/CustomButtons/Button';
 
 import avatar from 'assets/img/faces/marc.jpg';
 
@@ -24,18 +22,19 @@ class ProfileCard extends React.Component{
                     }
                 />
                 <CardContent className={this.props.classes.textAlign}>
-                    <Typography component="h6" className={this.props.classes.cardSubtitle}>
-                        CEO / CO-FOUNDER
-                    </Typography>
-                    <Typography component="h4" className={this.props.classes.cardTitle}>
-                        Alec Thompson
-                    </Typography>
-                    <Typography component="p" className={this.props.classes.cardDescription}>
-                        Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                    </Typography>
-                    <Button color="primary" round>Follow</Button>
+                    {this.props.subtitle !== undefined ? (<Typography component="h6" className={this.props.classes.cardSubtitle}>
+                        {this.props.subtitle}
+                    </Typography>):null}
+                    {this.props.title !== undefined ? (<Typography component="h4" className={this.props.classes.cardTitle}>
+                        {this.props.title}
+                    </Typography>):null}
+                    {this.props.description !== undefined ? (<Typography component="p" className={this.props.classes.cardDescription}>
+                        {this.props.description}
+                    </Typography>):null}
                 </CardContent>
-
+                <CardActions className={this.props.classes.textAlign + " " + this.props.classes.cardActions}>
+                    {this.props.footer}
+                </CardActions>
             </Card>
         );
     }

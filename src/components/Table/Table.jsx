@@ -2,6 +2,7 @@ import React from 'react';
 import {
     withStyles, Table, TableHead, TableRow, TableBody, TableCell
 } from 'material-ui';
+import PropTypes from 'prop-types';
 
 import { tableStyle } from 'variables/styles';
 
@@ -80,5 +81,12 @@ class CustomTable extends React.Component {
         );
     }
 }
+
+CustomTable.propTypes = {
+    classes: PropTypes.object.isRequired,
+    tableHeaderColor: PropTypes.oneOf(['warning','primary','danger','success','info','rose','gray']),
+    tableHead: PropTypes.arrayOf(PropTypes.string),
+    tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
+};
 
 export default withStyles(tableStyle)(CustomTable);
