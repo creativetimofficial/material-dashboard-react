@@ -334,10 +334,10 @@ const tasksCardStyle = {
 };
 
 // ##############################
-// // // TableCard styles
+// // // RegularCard styles
 // #############################
 
-const tableCardstyle = {
+const regularCardStyle = {
     card: {
         display: 'inline-block',
         position: 'relative',
@@ -397,46 +397,6 @@ const tableCardstyle = {
         color: 'rgba(255, 255, 255, 0.62)',
         margin: '0 0 10px',
     },
-    tableHeaderWarning: {
-        color: '#ff9800',
-    },
-    tableHeaderPrimary: {
-        color: '#9c27b0',
-    },
-    tableHeaderDanger: {
-        color: '#f44336',
-    },
-    tableHeaderSuccess: {
-        color: '#4caf50',
-    },
-    tableHeaderInfo: {
-        color: '#00bcd4',
-    },
-    tableHeaderRose: {
-        color: '#e91e63',
-    },
-    tableHeaderGray: {
-        color: '#999999',
-    },
-    table: {
-        marginBottom: '0',
-        width: '100%',
-        maxWidth: '100%',
-        backgroundColor: 'transparent',
-        borderSpacing: '0',
-        borderCollapse: 'collapse',
-    },
-    tableCell: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.42857143',
-        fontSize: '14px',
-        padding: '12px 8px',
-        verticalAlign: 'middle',
-    },
-    tableHeadCell: {
-
-    }
 };
 
 // ##############################
@@ -699,8 +659,48 @@ const iconButtonStyle = {
 };
 
 // ##############################
-// // //  styles
+// // // Table styles
 // #############################
+
+const tableStyle = {
+    tableHeaderWarning: {
+        color: '#ff9800',
+    },
+    tableHeaderPrimary: {
+        color: '#9c27b0',
+    },
+    tableHeaderDanger: {
+        color: '#f44336',
+    },
+    tableHeaderSuccess: {
+        color: '#4caf50',
+    },
+    tableHeaderInfo: {
+        color: '#00bcd4',
+    },
+    tableHeaderRose: {
+        color: '#e91e63',
+    },
+    tableHeaderGray: {
+        color: '#999999',
+    },
+    table: {
+        marginBottom: '0',
+        width: '100%',
+        maxWidth: '100%',
+        backgroundColor: 'transparent',
+        borderSpacing: '0',
+        borderCollapse: 'collapse',
+    },
+    tableCell: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+        lineHeight: '1.42857143',
+        fontSize: '14px',
+        padding: '12px 8px',
+        verticalAlign: 'middle',
+    }
+}
 
 // ##############################
 // // //  styles
@@ -723,8 +723,9 @@ module.exports = {
     statsCardStyle,
     chartCardStyle,
     tasksCardStyle,
-    tableCardstyle,
+    regularCardStyle,
     profileCardStyle,
     buttonStyle,
-    iconButtonStyle
+    iconButtonStyle,
+    tableStyle
 }

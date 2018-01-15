@@ -11,7 +11,8 @@ import ChartistGraph from 'react-chartist';
 import StatsCard from 'components/Cards/StatsCard';
 import ChartCard from 'components/Cards/ChartCard';
 import TasksCard from 'components/Cards/TasksCard';
-import TableCard from 'components/Cards/TableCard';
+import RegularCard from 'components/Cards/RegularCard';
+import Table from 'components/Table/Table';
 
 import {
     dailySalesChart ,
@@ -137,18 +138,22 @@ class Dashboard extends React.Component{
                         <TasksCard />
                     </Grid>
                     <Grid item lg={6}>
-                        <TableCard
+                        <RegularCard
                             headerColor="orange"
                             cardTitle="Employees Stats"
                             cardSubtitle="New employees on 15th September, 2016"
-                            tableHeaderColor="warning"
-                            tableHead={['ID','Name','Salary','Country']}
-                            tableData={[
-                                [ '1' , "Dakota Rice" , "$36,738" , "Niger"] ,
-                                [ '2' , "Minerva Hooper" , "$23,789" , "Curaçao" ] ,
-                                [ '3' , "Sage Rodriguez" , "$56,142" , "Netherlands" ] ,
-                                [ '4' , "Philip Chaney" , "$38,735" , "Korea, South" ] ,
-                            ]}
+                            content={
+                                <Table
+                                    tableHeaderColor="warning"
+                                    tableHead={['ID','Name','Salary','Country']}
+                                    tableData={[
+                                        [ '1' , "Dakota Rice" , "$36,738" , "Niger"] ,
+                                        [ '2' , "Minerva Hooper" , "$23,789" , "Curaçao" ] ,
+                                        [ '3' , "Sage Rodriguez" , "$56,142" , "Netherlands" ] ,
+                                        [ '4' , "Philip Chaney" , "$38,735" , "Korea, South" ] ,
+                                    ]}
+                                />
+                            }
                         />
                     </Grid>
                 </Grid>
