@@ -9,7 +9,7 @@ import { snackbarContentStyle } from 'variables/styles';
 
 class SnackbarContent extends React.Component{
     render(){
-        const { classes, message, color, close, icon, ...rest} = this.props;
+        const { classes, message, color, close, icon } = this.props;
         var action = [];
         if(close !== undefined){
             action = [
