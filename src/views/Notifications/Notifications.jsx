@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    Grid, Snackbar, SnackbarContent, IconButton, Typography, Button
+    Grid, Snackbar, SnackbarContent, IconButton
 } from 'material-ui';
 import {
     Close, AddAlert
 } from 'material-ui-icons';
 
 import {
-    RegularCard, A, P
+    RegularCard, A, P, H5, Small, Button
 } from 'components';
 
 class Notifications extends React.Component{
@@ -37,14 +37,14 @@ class Notifications extends React.Component{
                 cardTitle="Notifications"
                 cardSubtitle={
                     <P>
-                        Handcrafted by our friends from <A target="_blank" rel="noopener noreferrer" href="https://material-ui-next.com/">Material UI</A> and styled by <A target="_blank"  href="https://www.creative-tim.com/">Creative Tim</A>. Please checkout the <A href="#pablo" target="_blank">full documentation</A>.
+                        Handcrafted by our friends from <A target="_blank" href="https://material-ui-next.com/">Material UI</A> and styled by <A target="_blank"  href="https://www.creative-tim.com/">Creative Tim</A>. Please checkout the <A href="#pablo" target="_blank">full documentation</A>.
                     </P>
                 }
                 content={
                     <div>
                         <Grid container>
                             <Grid item xs={12} sm={12} md={6}>
-                                <Typography type="subheading">Notifications Style</Typography>
+                                <H5>Notifications Style</H5>
                                 <br />
                                 <SnackbarContent message={'This is a plain notification'} />
                                 <br />
@@ -87,7 +87,7 @@ class Notifications extends React.Component{
                                 <br />
                             </Grid>
                             <Grid item xs={12} sm={12} md={6}>
-                                <Typography type="subheading">Notifications States</Typography>
+                                <H5>Notifications States</H5>
                                 <br />
                                 <SnackbarContent message={'INFO - This is a regular notification made with ".alert-info"'} action={[
                                     <IconButton
@@ -139,13 +139,13 @@ class Notifications extends React.Component{
                         <br />
                         <br />
                         <Grid container justify="center">
-                            <Grid item xs={12} sm={12} md={6}>
-                                <Typography type="subheading" align={'center'}>
+                            <Grid item xs={12} sm={12} md={6} style={{textAlign:"center"}}>
+                                <H5>
                                     Notifications Places
-                                    <Typography type="body1">
+                                    <Small>
                                         Click to view notifications
-                                    </Typography>
-                                </Typography>
+                                    </Small>
+                                </H5>
                             </Grid>
                         </Grid>
                         <Grid container justify='center'>

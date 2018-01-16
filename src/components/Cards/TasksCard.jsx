@@ -6,7 +6,6 @@ import {
     BugReport, Code, Cloud
 } from 'material-ui-icons';
 import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
 
 import Tasks from 'components/Tasks/Tasks';
 

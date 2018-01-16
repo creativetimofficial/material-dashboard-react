@@ -39,6 +39,13 @@ import Header from './Header/Header.jsx';
 import Sidebar from './Sidebar/Sidebar.jsx';
 
 // ##############################
+// // // Snackbar
+// #############################
+
+import Snackbar from './Snackbar/Snackbar.jsx';
+import SnackbarContent from './Snackbar/SnackbarContent.jsx';
+
+// ##############################
 // // // Table
 // #############################
 
@@ -84,6 +91,8 @@ export {
     Header,
     // Sidebar
     Sidebar,
+    //Snackbar
+    Snackbar, SnackbarContent,
     // Table
     Table,
     // Tasks
