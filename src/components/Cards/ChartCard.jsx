@@ -62,7 +62,7 @@ class ChartCard extends React.Component{
     }
     render(){
         return (
-            <Grid item md={4}>
+            <Grid item xs={12} sm={12} md={4}>
                 <Card className={this.props.classes.card}>
                     <CardHeader
                         classes={{

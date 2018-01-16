@@ -134,10 +134,10 @@ class Dashboard extends React.Component{
                     />
                 </Grid>
                 <Grid container>
-                    <Grid item lg={6}>
+                    <Grid item xs={12} sm={12} md={6}>
                         <TasksCard />
                     </Grid>
-                    <Grid item lg={6}>
+                    <Grid item xs={12} sm={12} md={6}>
                         <RegularCard
                             headerColor="orange"
                             cardTitle="Employees Stats"

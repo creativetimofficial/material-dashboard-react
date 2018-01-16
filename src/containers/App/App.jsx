@@ -62,7 +62,7 @@ const styles = theme => ({
     },
     content: {
         position: 'absolute',
-        width: `calc(100% - ${drawerWidth+65}px)`,
+        // width: `calc(100% - ${drawerWidth+65}px)`,
         padding: theme.spacing.unit * 3,
         height: '100%',
         // height: 'calc(100% - 112px)',
@@ -98,24 +98,26 @@ class App extends React.Component{
                             <Typography type="title" color="inherit" className={classes.flex}>
                                 Title
                             </Typography>
-                            <Input
-                                placeholder="Search"
-                                inputProps={{
-                                    'aria-label': 'Search',
-                                }}
-                            />
-                            <Button mini fab color="inherit" aria-label="edit">
-                                <Search />
-                            </Button>
-                            <IconButton color="inherit" aria-label="Dashboard">
-                                <Dashboard />
-                            </IconButton>
-                            <IconButton color="inherit" aria-label="Notifications">
-                                <Notifications />
-                            </IconButton>
-                            <IconButton color="inherit" aria-label="Person">
-                                <Person />
-                            </IconButton>
+                            {/* <Hidden xsDown>
+                                <Input
+                                    placeholder="Search"
+                                    inputProps={{
+                                        'aria-label': 'Search',
+                                    }}
+                                />
+                                <Button mini fab color="inherit" aria-label="edit">
+                                    <Search />
+                                </Button>
+                                <IconButton color="inherit" aria-label="Dashboard">
+                                    <Dashboard />
+                                </IconButton>
+                                <IconButton color="inherit" aria-label="Notifications">
+                                    <Notifications />
+                                </IconButton>
+                                <IconButton color="inherit" aria-label="Person">
+                                    <Person />
+                                </IconButton>
+                            </Hidden> */}
                             <IconButton
                                 color="contrast"
                                 aria-label="open drawer"

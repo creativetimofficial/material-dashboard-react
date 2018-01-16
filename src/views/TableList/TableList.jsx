@@ -10,7 +10,7 @@ class TableList extends React.Component{
     render(){
         return (
             <Grid container>
-                <Grid item md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                     <RegularCard
                         headerColor="purple"
                         cardTitle="Simple Table"
@@ -31,7 +31,7 @@ class TableList extends React.Component{
                         }
                     />
                 </Grid>
-                <Grid item md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                     <RegularCard
                         plainCard
                         headerColor="purple"

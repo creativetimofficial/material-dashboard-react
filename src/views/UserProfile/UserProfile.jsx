@@ -13,14 +13,14 @@ class UserProfile extends React.Component{
         return (
             <div>
                 <Grid container>
-                    <Grid item md={8}>
+                    <Grid item xs={12} sm={12} md={8}>
                         <RegularCard
                             cardTitle="Edit Profile"
                             cardSubtitle="Complete your profile"
                             content={
                                 <div>
                                     <Grid container>
-                                        <Grid item md={5}>
+                                        <Grid item xs={12} sm={12} md={5}>
                                             <CustomInput
                                                 labelText="Company (disabled)"
                                                 id="company-disabled"
@@ -32,7 +32,7 @@ class UserProfile extends React.Component{
                                                 }}
                                             />
                                         </Grid>
-                                        <Grid item md={3}>
+                                        <Grid item xs={12} sm={12} md={3}>
                                             <CustomInput
                                                 labelText="Username"
                                                 id="username"
@@ -41,7 +41,7 @@ class UserProfile extends React.Component{
                                                 }}
                                             />
                                         </Grid>
-                                        <Grid item md={4}>
+                                        <Grid item xs={12} sm={12} md={4}>
                                             <CustomInput
                                                 labelText="Email address"
                                                 id="email-address"
@@ -52,7 +52,7 @@ class UserProfile extends React.Component{
                                         </Grid>
                                     </Grid>
                                     <Grid container>
-                                        <Grid item md={6}>
+                                        <Grid item xs={12} sm={12} md={6}>
                                             <CustomInput
                                                 labelText="First Name"
                                                 id="first-name"
@@ -61,7 +61,7 @@ class UserProfile extends React.Component{
                                                 }}
                                             />
                                         </Grid>
-                                        <Grid item md={6}>
+                                        <Grid item xs={12} sm={12} md={6}>
                                             <CustomInput
                                                 labelText="Last Name"
                                                 id="last-name"
@@ -72,7 +72,7 @@ class UserProfile extends React.Component{
                                         </Grid>
                                     </Grid>
                                     <Grid container>
-                                        <Grid item md={4}>
+                                        <Grid item xs={12} sm={12} md={4}>
                                             <CustomInput
                                                 labelText="City"
                                                 id="city"
@@ -81,7 +81,7 @@ class UserProfile extends React.Component{
                                                 }}
                                             />
                                         </Grid>
-                                        <Grid item md={4}>
+                                        <Grid item xs={12} sm={12} md={4}>
                                             <CustomInput
                                                 labelText="Country"
                                                 id="country"
@@ -90,7 +90,7 @@ class UserProfile extends React.Component{
                                                 }}
                                             />
                                         </Grid>
-                                        <Grid item md={4}>
+                                        <Grid item xs={12} sm={12} md={4}>
                                             <CustomInput
                                                 labelText="Postal Code"
                                                 id="postal-code"
@@ -101,7 +101,7 @@ class UserProfile extends React.Component{
                                         </Grid>
                                     </Grid>
                                     <Grid container>
-                                        <Grid item md={12}>
+                                        <Grid item xs={12} sm={12} md={12}>
                                             <InputLabel style={{color: '#AAAAAA'}}>About me</InputLabel>
                                             <CustomInput
                                                 labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
@@ -123,7 +123,7 @@ class UserProfile extends React.Component{
                             }
                         />
                     </Grid>
-                    <Grid item md={4}>
+                    <Grid item xs={12} sm={12} md={4}>
                         <ProfileCard
                             subtitle="CEO / CO-FOUNDER"
                             title="Alec Thompson"

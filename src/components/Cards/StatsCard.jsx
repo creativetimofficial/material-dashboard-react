@@ -62,7 +62,7 @@ class StatsCard extends React.Component{
     }
     render(){
         return (
-            <Grid item sm={6} lg={3}>
+            <Grid item xs={12} sm={6} md={3}>
                 <Card className={this.props.classes.card}>
                     <CardHeader
                         classes={{

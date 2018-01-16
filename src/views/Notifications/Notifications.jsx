@@ -43,7 +43,7 @@ class Notifications extends React.Component{
                 content={
                     <div>
                         <Grid container>
-                            <Grid item md={6}>
+                            <Grid item xs={12} sm={12} md={6}>
                                 <Typography type="subheading">Notifications Style</Typography>
                                 <br />
                                 <SnackbarContent message={'This is a plain notification'} />
@@ -86,7 +86,7 @@ class Notifications extends React.Component{
                                     ]}/>
                                 <br />
                             </Grid>
-                            <Grid item md={6}>
+                            <Grid item xs={12} sm={12} md={6}>
                                 <Typography type="subheading">Notifications States</Typography>
                                 <br />
                                 <SnackbarContent message={'INFO - This is a regular notification made with ".alert-info"'} action={[
@@ -139,7 +139,7 @@ class Notifications extends React.Component{
                         <br />
                         <br />
                         <Grid container justify="center">
-                            <Grid item md={6}>
+                            <Grid item xs={12} sm={12} md={6}>
                                 <Typography type="subheading" align={'center'}>
                                     Notifications Places
                                     <Typography type="body1">
@@ -149,9 +149,9 @@ class Notifications extends React.Component{
                             </Grid>
                         </Grid>
                         <Grid container justify='center'>
-                            <Grid item lg={8} md={10}>
+                            <Grid item xs={12} sm={12} md={10} lg={8}>
                                 <Grid container>
-                                    <Grid item md={4}>
+                                    <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
                                         <Snackbar
                                             anchorOrigin={{
@@ -175,7 +175,7 @@ class Notifications extends React.Component{
                                             ]}
                                         />
                                     </Grid>
-                                    <Grid item md={4}>
+                                    <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('tc')}>Top Center</Button>
                                         <Snackbar
                                             anchorOrigin={{
@@ -199,7 +199,7 @@ class Notifications extends React.Component{
                                             ]}
                                         />
                                     </Grid>
-                                    <Grid item md={4}>
+                                    <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('tr')}>Top Right</Button>
                                         <Snackbar
                                             anchorOrigin={{
@@ -227,9 +227,9 @@ class Notifications extends React.Component{
                             </Grid>
                         </Grid>
                         <Grid container justify={'center'}>
-                            <Grid item lg={8} md={10}>
+                            <Grid item xs={12} sm={12} md={10} lg={8}>
                                 <Grid container>
-                                    <Grid item md={4}>
+                                    <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('bl')}>Bottom Left</Button>
                                         <Snackbar
                                             anchorOrigin={{
@@ -253,7 +253,7 @@ class Notifications extends React.Component{
                                             ]}
                                         />
                                     </Grid>
-                                    <Grid item md={4}>
+                                    <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('bc')}>Bottom Center</Button>
                                         <Snackbar
                                             anchorOrigin={{
@@ -277,7 +277,7 @@ class Notifications extends React.Component{
                                             ]}
                                         />
                                     </Grid>
-                                    <Grid item md={4}>
+                                    <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('br')}>Bottom Right</Button>
                                         <Snackbar
                                             anchorOrigin={{

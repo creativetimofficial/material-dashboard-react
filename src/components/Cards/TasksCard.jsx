@@ -79,32 +79,39 @@ class TasksCard extends React.Component{
                     }
                 />
                 <CardContent>
-                    <SwipeableViews
-                        axis={'x'}
-                        index={this.state.value}
-                        onChangeIndex={this.handleChangeIndex}>
-                        <Typography component="div">
-                            <Tasks
-                                checkedIndexes={[0,3]}
-                                tasksIndexes={[0,1,2,3]}
-                                tasks={bugs}
-                            />
-                        </Typography>
-                        <Typography component="div">
-                            <Tasks
-                                checkedIndexes={[0]}
-                                tasksIndexes={[0,1]}
-                                tasks={website}
-                            />
-                        </Typography>
-                        <Typography component="div">
-                            <Tasks
-                                checkedIndexes={[1]}
-                                tasksIndexes={[0,1,2]}
-                                tasks={server}
-                            />
-                        </Typography>
-                    </SwipeableViews>
+                    {
+                        this.state.value === 0 && (
+                            <Typography component="div">
+                                <Tasks
+                                    checkedIndexes={[0,3]}
+                                    tasksIndexes={[0,1,2,3]}
+                                    tasks={bugs}
+                                />
+                            </Typography>
+                        )
+                    }
+                    {
+                        this.state.value === 1 && (
+                            <Typography component="div">
+                                <Tasks
+                                    checkedIndexes={[0]}
+                                    tasksIndexes={[0,1]}
+                                    tasks={website}
+                                />
+                            </Typography>
+                        )
+                    }
+                    {
+                        this.state.value === 2 && (
+                            <Typography component="div">
+                                <Tasks
+                                    checkedIndexes={[1]}
+                                    tasksIndexes={[0,1,2]}
+                                    tasks={server}
+                                />
+                            </Typography>
+                        )
+                    }
                 </CardContent>
             </Card>
         );
