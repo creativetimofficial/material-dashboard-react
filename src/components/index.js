@@ -69,6 +69,7 @@ import Success from "./Typography/Success.jsx";
 import Warning from "./Typography/Warning.jsx";
 import Danger from "./Typography/Danger.jsx";
 import Small from "./Typography/Small.jsx";
+import A from './Typography/A.jsx';
 
 export {
     // Cards
@@ -88,5 +89,5 @@ export {
     // Tasks
     Tasks,
     // Typography
-    H1, H2, H3, H4, H5, H6, P, Quote, Muted, Primary, Info, Success, Warning, Danger, Small,
+    H1, H2, H3, H4, H5, H6, P, Quote, Muted, Primary, Info, Success, Warning, Danger, Small, A,
 };
