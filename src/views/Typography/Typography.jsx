@@ -1,14 +1,34 @@
 import React from 'react';
 import {
-    Typography
+    withStyles
 } from 'material-ui';
 
 import RegularCard from 'components/Cards/RegularCard';
 
-// import H1 from 'components/Typography/H1';
 import {
-    H1, H2, H3, H4, H5, H6, P, Quote,
+    H1, H2, H3, H4, H5, H6, P, Quote, Muted, Primary, Info, Success, Warning, Danger, Small
 } from 'components';
+
+const style = {
+    typo: {
+        paddingLeft: '25%',
+        marginBottom: '40px',
+        position: 'relative',
+    },
+    note: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        bottom: '10px',
+        color: '#c0c1c2',
+        display: 'block',
+        fontWeight: '400',
+        fontSize: '13px',
+        lineHeight: '13px',
+        left: '0',
+        marginLeft: '20px',
+        position: 'absolute',
+        width: '260px',
+    },
+}
 
 class TypographyPage extends React.Component{
     render(){
@@ -18,56 +38,99 @@ class TypographyPage extends React.Component{
                 cardSubtitle={"Created using Roboto Font Family"}
                 content={
                     <div>
-                        <H1>(H1) The Life of Material Dashboard</H1>
-                        <H2>(H2) The Life of Material Dashboard</H2>
-                        <H3>(H3) The Life of Material Dashboard</H3>
-                        <H4>(H4) The Life of Material Dashboard</H4>
-                        <H5>(H5) The Life of Material Dashboard</H5>
-                        <H6>(H6) The Life of Material Dashboard</H6>
-                        <P>(P) I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</P>
-                        <Quote
-                            text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
-                            author=" Kanye West, Musician"
-                        />
-                        <Typography type="display4" gutterBottom>
-                            Display 4
-                        </Typography>
-                        <Typography type="display3" gutterBottom>
-                            Display 3
-                        </Typography>
-                        <Typography type="display2" gutterBottom>
-                            Display 2
-                        </Typography>
-                        <Typography type="display1" gutterBottom>
-                            Display 1
-                        </Typography>
-                        <Typography type="headline" gutterBottom>
-                            Headline
-                        </Typography>
-                        <Typography type="title" gutterBottom>
-                            Title
-                        </Typography>
-                        <Typography type="subheading" gutterBottom>
-                            Subheading
-                        </Typography>
-                        <Typography type="body2" gutterBottom>
-                            Body 2
-                        </Typography>
-                        <Typography type="body1" gutterBottom align="right">
-                            Body 1
-                        </Typography>
-                        <Typography type="caption" gutterBottom align="center">
-                            Caption
-                        </Typography>
-                        <Typography gutterBottom noWrap>
-                            {`
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                `}
-                            </Typography>
-                            <Typography type="button" gutterBottom>
-                                Button
-                            </Typography>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Header 1
+                            </div>
+                            <H1>The Life of Material Dashboard</H1>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Header 2
+                            </div>
+                            <H2>The Life of Material Dashboard</H2>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Header 3
+                            </div>
+                            <H3>The Life of Material Dashboard</H3>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Header 4
+                            </div>
+                            <H4>The Life of Material Dashboard</H4>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Header 5
+                            </div>
+                            <H5>The Life of Material Dashboard</H5>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Header 6
+                            </div>
+                            <H6>The Life of Material Dashboard</H6>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Paragraph
+                            </div>
+                            <P>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</P>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Quote
+                            </div>
+                            <Quote
+                                text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
+                                author=" Kanye West, Musician"
+                            />
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Muted Text
+                            </div>
+                            <Muted>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</Muted>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Primary Text
+                            </div>
+                            <Primary>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</Primary>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Info Text
+                            </div>
+                            <Info>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</Info>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Success Text
+                            </div>
+                            <Success>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</Success>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Warning Text
+                            </div>
+                            <Warning>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</Warning>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Danger Text
+                            </div>
+                            <Danger>I will be the leader of a company that ends up being worth billions of dollars, because I got the answers...</Danger>
+                        </div>
+                        <div className={this.props.classes.typo}>
+                            <div className={this.props.classes.note}>
+                                Small Tag
+                            </div>
+                            <H2>Header with small subtitle<br/><Small>Use "Small" tag for the headers</Small></H2>
+                        </div>
                     </div>
                 }
             />
@@ -75,4 +138,4 @@ class TypographyPage extends React.Component{
     }
 }
 
-export default TypographyPage;
+export default withStyles(style)(TypographyPage);

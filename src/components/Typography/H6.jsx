@@ -4,21 +4,12 @@ import {
 } from 'material-ui';
 import PropTypes from 'prop-types';
 
-import { defaultHeadersStyles } from 'variables/styles';
-
-var h6 = defaultHeadersStyles.defaultHeadersStyles;
-
-const styles = {
-    h6,
-    style: {
-        fontSize: '1em'
-    }
-}
+import { typographyStyle } from 'variables/styles';
 
 class H6 extends React.Component{
     render(){
         return (
-            <h6 className={this.props.classes.h6 + " " + this.props.classes.style}>
+            <h6 className={this.props.classes.defaultFontStyle + " " + this.props.classes.h6Style + " " + this.props.classes.defaultHeaderMargins}>
                 {this.props.children}
             </h6>
         );
@@ -29,4 +20,4 @@ H6.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(H6);
+export default withStyles(typographyStyle)(H6);
