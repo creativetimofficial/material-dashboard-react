@@ -8,11 +8,9 @@ import {
 import PropTypes from 'prop-types';
 import ChartistGraph from 'react-chartist';
 
-import StatsCard from 'components/Cards/StatsCard';
-import ChartCard from 'components/Cards/ChartCard';
-import TasksCard from 'components/Cards/TasksCard';
-import RegularCard from 'components/Cards/RegularCard';
-import Table from 'components/Table/Table';
+import {
+    StatsCard, ChartCard, TasksCard, RegularCard, Table 
+} from 'components';
 
 import {
     dailySalesChart ,

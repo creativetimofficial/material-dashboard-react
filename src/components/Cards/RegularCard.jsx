@@ -7,58 +7,33 @@ import PropTypes from 'prop-types';
 import { regularCardStyle } from 'variables/styles';
 
 class RegularCard extends React.Component{
-    constructor(props){
-        super(props);
-        switch (this.props.headerColor) {
-            case 'orange':
-                this.state = {
-                    headerColor: " " + this.props.classes.cardHeaderOrange
-                }
-                break;
-            case 'green':
-                this.state = {
-                    headerColor: " " + this.props.classes.cardHeaderGreen
-                }
-                break;
-            case 'red':
-                this.state = {
-                    headerColor: " " + this.props.classes.cardHeaderRed
-                }
-                break;
-            case 'blue':
-                this.state = {
-                    headerColor: " " + this.props.classes.cardHeaderBlue
-                }
-                break;
-            default:
-                this.state = {
-                    headerColor: " " + this.props.classes.cardHeaderPurple
-                }
-            break;
-        };
-    }
     render(){
+        const { classes, headerColor, plainCard, cardTitle, cardSubtitle, content, footer } = this.props;
         return (
-            <Card className={this.props.classes.card + (this.props.plainCard ? " " + this.props.classes.cardPlain:"")}>
+            <Card className={classes.card + (plainCard ? " " + classes.cardPlain:"")}>
                 <CardHeader
                     classes={{
-                        root: this.props.classes.cardHeader + this.state.headerColor,
-                        title: this.props.classes.cardTitle,
-                        subheader: this.props.classes.cardSubtitle,
+                        root: classes.cardHeader + " " + classes[headerColor+"CardHeader"],
+                        title: classes.cardTitle,
+                        subheader: classes.cardSubtitle,
                     }}
-                    title={this.props.cardTitle}
-                    subheader={this.props.cardSubtitle}
+                    title={cardTitle}
+                    subheader={cardSubtitle}
                 />
                 <CardContent>
-                    {this.props.content}
+                    {content}
                 </CardContent>
-                <CardActions className={this.props.classes.cardActions}>
-                    {this.props.footer}
+                <CardActions className={classes.cardActions}>
+                    {footer}
                 </CardActions>
             </Card>
         );
     }
 }
+
+RegularCard.defaultProps = {
+    headerColor: 'purple',
+};
 
 RegularCard.propTypes = {
     plainCard: PropTypes.bool,

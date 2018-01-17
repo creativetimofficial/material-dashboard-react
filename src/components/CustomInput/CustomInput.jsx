@@ -8,25 +8,26 @@ import { customInputStyle } from 'variables/styles';
 
 class CustomInput extends React.Component {
   render() {
+      const { classes, formControlProps, labelText, id, labelProps, inputProps } = this.props;
     return (
-        <FormControl {...this.props.formControlProps}>
-            {this.props.labelText !== undefined ? (<InputLabel
+        <FormControl {...formControlProps}>
+            {labelText !== undefined ? (<InputLabel
                 classes={{
-                    root: this.props.classes.labelRoot,
+                    root: classes.labelRoot,
                 }}
-                htmlFor={this.props.id}
-                {...this.props.labelProps}
+                htmlFor={id}
+                {...labelProps}
             >
-                {this.props.labelText}
+                {labelText}
             </InputLabel>):null}
             <Input
                 classes={{
-                    disabled: this.props.classes.disabled,
-                    underline: this.props.classes.underline,
-                    inkbar: this.props.classes.inkbar,
+                    disabled: classes.disabled,
+                    underline: classes.underline,
+                    inkbar: classes.inkbar,
                 }}
-                id={this.props.id}
-                {...this.props.inputProps}
+                id={id}
+                {...inputProps}
             />
         </FormControl>
     );
@@ -34,7 +35,12 @@ class CustomInput extends React.Component {
 }
 
 CustomInput.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    labelText: PropTypes.node,
+    labelProps: PropTypes.object,
+    id: PropTypes.string,
+    inputProps: PropTypes.object,
+    formControlProps: PropTypes.object
 }
 
 export default withStyles(customInputStyle)(CustomInput);

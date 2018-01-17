@@ -13,8 +13,8 @@ class A extends React.Component{
              ...rest
          } = this.props;
         return (
-            <a {...rest} className={this.props.classes.defaultFontStyle + " " + this.props.classes.aStyle}>
-                {this.props.children}
+            <a {...rest} className={classes.defaultFontStyle + " " + classes.aStyle}>
+                {children}
             </a>
         );
     }

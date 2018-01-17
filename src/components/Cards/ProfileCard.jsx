@@ -4,36 +4,35 @@ import {
 } from 'material-ui';
 import PropTypes from 'prop-types';
 
-import avatar from 'assets/img/faces/marc.jpg';
-
 import { profileCardStyle } from 'variables/styles';
 
 class ProfileCard extends React.Component{
     render(){
+        const { classes, subtitle, title, description, footer, avatar } = this.props;
         return (
-            <Card className={this.props.classes.card}>
+            <Card className={classes.card}>
                 <CardHeader
                     classes={{
-                        root: this.props.classes.cardHeader,
-                        avatar: this.props.classes.cardAvatar,
+                        root: classes.cardHeader,
+                        avatar: classes.cardAvatar,
                     }}
                     avatar={
-                        <img src={avatar} alt="..." className={this.props.classes.img}/>
+                        <img src={avatar} alt="..." className={classes.img}/>
                     }
                 />
-                <CardContent className={this.props.classes.textAlign}>
-                    {this.props.subtitle !== undefined ? (<Typography component="h6" className={this.props.classes.cardSubtitle}>
-                        {this.props.subtitle}
+                <CardContent className={classes.textAlign}>
+                    {subtitle !== undefined ? (<Typography component="h6" className={classes.cardSubtitle}>
+                        {subtitle}
                     </Typography>):null}
-                    {this.props.title !== undefined ? (<Typography component="h4" className={this.props.classes.cardTitle}>
-                        {this.props.title}
+                    {title !== undefined ? (<Typography component="h4" className={classes.cardTitle}>
+                        {title}
                     </Typography>):null}
-                    {this.props.description !== undefined ? (<Typography component="p" className={this.props.classes.cardDescription}>
-                        {this.props.description}
+                    {description !== undefined ? (<Typography component="p" className={classes.cardDescription}>
+                        {description}
                     </Typography>):null}
                 </CardContent>
-                <CardActions className={this.props.classes.textAlign + " " + this.props.classes.cardActions}>
-                    {this.props.footer}
+                <CardActions className={classes.textAlign + " " + classes.cardActions}>
+                    {footer}
                 </CardActions>
             </Card>
         );
@@ -41,7 +40,12 @@ class ProfileCard extends React.Component{
 }
 
 ProfileCard.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
+    title: PropTypes.node,
+    subtitle: PropTypes.node,
+    description: PropTypes.node,
+    footer: PropTypes.node,
+    avatar: PropTypes.string
 };
 
 export default withStyles(profileCardStyle)(ProfileCard);

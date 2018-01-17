@@ -3,10 +3,11 @@ import {
     Grid, InputLabel,
 } from 'material-ui';
 
-import ProfileCard from 'components/Cards/ProfileCard';
-import RegularCard from 'components/Cards/RegularCard';
-import Button from 'components/CustomButtons/Button';
-import CustomInput from 'components/CustomInput/CustomInput';
+import {
+    ProfileCard, RegularCard, Button, CustomInput 
+} from 'components';
+
+import avatar from 'assets/img/faces/marc.jpg';
 
 class UserProfile extends React.Component{
     render(){
@@ -125,6 +126,7 @@ class UserProfile extends React.Component{
                     </Grid>
                     <Grid item xs={12} sm={12} md={4}>
                         <ProfileCard
+                            avatar={avatar}
                             subtitle="CEO / CO-FOUNDER"
                             title="Alec Thompson"
                             description="Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is..."

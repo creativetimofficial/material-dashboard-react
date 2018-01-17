@@ -29,44 +29,45 @@ class Tasks extends React.Component{
         });
     };
     render(){
+        const { classes, tasksIndexes, tasks } = this.props;
         return (
-            <Table className={this.props.classes.table}>
+            <Table className={classes.table}>
                 <TableBody>
                     {
-                        this.props.tasksIndexes.map(value => (
-                            <TableRow key={value} className={this.props.classes.tableRow}>
-                                <TableCell className={this.props.classes.tableCell}>
+                        tasksIndexes.map(value => (
+                            <TableRow key={value} className={classes.tableRow}>
+                                <TableCell className={classes.tableCell}>
                                     <Checkbox
                                         checked={this.state.checked.indexOf(value) !== -1}
                                         tabIndex={-1}
                                         onClick={this.handleToggle(value)}
-                                        checkedIcon={<Check className={this.props.classes.checkedIcon}/>}
-                                        icon={<Check className={this.props.classes.uncheckedIcon}/>}
+                                        checkedIcon={<Check className={classes.checkedIcon}/>}
+                                        icon={<Check className={classes.uncheckedIcon}/>}
                                         classes={{
-                                            checked: this.props.classes.checked,
+                                            checked: classes.checked,
                                         }}
                                     />
                                 </TableCell>
-                                <TableCell className={this.props.classes.tableCell}>
-                                    {this.props.tasks[value]}
+                                <TableCell className={classes.tableCell}>
+                                    {tasks[value]}
                                 </TableCell>
-                                <TableCell className={this.props.classes.tableActions}>
+                                <TableCell className={classes.tableActions}>
                                     <Tooltip
                                         id="tooltip-top"
                                         title="Edit Task"
                                         placement="top"
-                                        classes={{tooltip:this.props.classes.tooltip}}>
-                                        <IconButton aria-label="Edit" className={this.props.classes.tableActionButton}>
-                                            <Edit className={this.props.classes.tableActionButtonIcon + " " + this.props.classes.edit}/>
+                                        classes={{tooltip:classes.tooltip}}>
+                                        <IconButton aria-label="Edit" className={classes.tableActionButton}>
+                                            <Edit className={classes.tableActionButtonIcon + " " + classes.edit}/>
                                         </IconButton>
                                     </Tooltip>
                                     <Tooltip
                                         id="tooltip-top-start"
                                         title="Remove"
                                         placement="top"
-                                        classes={{tooltip:this.props.classes.tooltip}}>
-                                        <IconButton aria-label="Close" className={this.props.classes.tableActionButton}>
-                                            <Close className={this.props.classes.tableActionButtonIcon + " " + this.props.classes.close}/>
+                                        classes={{tooltip:classes.tooltip}}>
+                                        <IconButton aria-label="Close" className={classes.tableActionButton}>
+                                            <Close className={classes.tableActionButtonIcon + " " + classes.close}/>
                                         </IconButton>
                                     </Tooltip>
                                 </TableCell>
@@ -81,6 +82,8 @@ class Tasks extends React.Component{
 
 Tasks.propTypes = {
   classes: PropTypes.object.isRequired,
+  tasksIndexes: PropTypes.arrayOf(PropTypes.number),
+  tasks: PropTypes.arrayOf(PropTypes.node)
 };
 
 export default withStyles(tasksStyle)(Tasks);

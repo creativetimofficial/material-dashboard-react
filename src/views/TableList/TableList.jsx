@@ -3,8 +3,9 @@ import {
     Grid
 } from 'material-ui';
 
-import RegularCard from 'components/Cards/RegularCard';
-import Table from 'components/Table/Table';
+import {
+    RegularCard, Table
+} from 'components';
 
 class TableList extends React.Component{
     render(){
@@ -12,7 +13,6 @@ class TableList extends React.Component{
             <Grid container>
                 <Grid item xs={12} sm={12} md={12}>
                     <RegularCard
-                        headerColor="purple"
                         cardTitle="Simple Table"
                         cardSubtitle="Here is a subtitle for this table"
                         content={
@@ -34,7 +34,6 @@ class TableList extends React.Component{
                 <Grid item xs={12} sm={12} md={12}>
                     <RegularCard
                         plainCard
-                        headerColor="purple"
                         cardTitle="Table on Plain Background"
                         cardSubtitle="Here is a subtitle for this table"
                         content={

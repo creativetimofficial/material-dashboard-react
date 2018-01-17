@@ -94,7 +94,7 @@ class Notifications extends React.Component{
                             <Grid item xs={12} sm={12} md={10} lg={8}>
                                 <Grid container>
                                     <Grid item xs={12} sm={12} md={4}>
-                                        <Button raised color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
+                                        <Button fullWidth color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
                                         <Snackbar
                                             place="tl"
                                             color="info"
@@ -106,7 +106,7 @@ class Notifications extends React.Component{
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
-                                        <Button raised color="primary" onClick={() => this.showNotification('tc')}>Top Center</Button>
+                                        <Button fullWidth color="primary" onClick={() => this.showNotification('tc')}>Top Center</Button>
                                         <Snackbar
                                             place="tc"
                                             color="info"
@@ -118,7 +118,7 @@ class Notifications extends React.Component{
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
-                                        <Button raised color="primary" onClick={() => this.showNotification('tr')}>Top Right</Button>
+                                        <Button fullWidth color="primary" onClick={() => this.showNotification('tr')}>Top Right</Button>
                                         <Snackbar
                                             place="tr"
                                             color="info"
@@ -136,7 +136,7 @@ class Notifications extends React.Component{
                             <Grid item xs={12} sm={12} md={10} lg={8}>
                                 <Grid container>
                                     <Grid item xs={12} sm={12} md={4}>
-                                        <Button raised color="primary" onClick={() => this.showNotification('bl')}>Bottom Left</Button>
+                                        <Button fullWidth color="primary" onClick={() => this.showNotification('bl')}>Bottom Left</Button>
                                         <Snackbar
                                             place="bl"
                                             color="info"
@@ -148,7 +148,7 @@ class Notifications extends React.Component{
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
-                                        <Button raised color="primary" onClick={() => this.showNotification('bc')}>Bottom Center</Button>
+                                        <Button fullWidth color="primary" onClick={() => this.showNotification('bc')}>Bottom Center</Button>
                                         <Snackbar
                                             place="bc"
                                             color="info"
@@ -160,7 +160,7 @@ class Notifications extends React.Component{
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
-                                        <Button raised color="primary" onClick={() => this.showNotification('br')}>Bottom Right</Button>
+                                        <Button fullWidth color="primary" onClick={() => this.showNotification('br')}>Bottom Right</Button>
                                         <Snackbar
                                             place="br"
                                             color="info"

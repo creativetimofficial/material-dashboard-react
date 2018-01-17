@@ -7,7 +7,7 @@ import {
 } from 'material-ui-icons';
 import PropTypes from 'prop-types';
 
-import Tasks from 'components/Tasks/Tasks';
+import { Tasks } from 'components';
 
 import {
     bugs,
@@ -24,55 +24,52 @@ class TasksCard extends React.Component{
     handleChange = (event, value) => {
         this.setState({ value });
     };
-
-    handleChangeIndex = index => {
-        this.setState({ value: index });
-    };
     render(){
+        const { classes } = this.props;
         return (
-            <Card className={this.props.classes.card}>
+            <Card className={classes.card}>
                 <CardHeader
                     classes={{
-                        root: (this.props.classes.cardHeader),
-                        title: (this.props.classes.cardTitle),
-                        content: (this.props.classes.cardHeaderContent)
+                        root: (classes.cardHeader),
+                        title: (classes.cardTitle),
+                        content: (classes.cardHeaderContent)
                     }}
                     title="Tasks:"
                     action={
                         <Tabs
                             classes={{
-                                flexContainer: this.props.classes.tabsContainer
+                                flexContainer: classes.tabsContainer
                             }}
                             value={this.state.value}
                             onChange={this.handleChange}
-                            indicatorClassName={this.props.classes.displayNone}
+                            indicatorClassName={classes.displayNone}
                             textColor="inherit">
                             <Tab
                                 classes={{
-                                    wrapper: this.props.classes.tabWrapper,
-                                    rootLabelIcon: this.props.classes.labelIcon,
-                                    label: this.props.classes.label,
-                                    rootInheritSelected: this.props.classes.rootInheritSelected
+                                    wrapper: classes.tabWrapper,
+                                    rootLabelIcon: classes.labelIcon,
+                                    label: classes.label,
+                                    rootInheritSelected: classes.rootInheritSelected
                                 }}
-                                icon={<BugReport className={this.props.classes.tabIcon}/>}
+                                icon={<BugReport className={classes.tabIcon}/>}
                                 label={"Bugs"}/>
                             <Tab
                                 classes={{
-                                    wrapper: this.props.classes.tabWrapper,
-                                    rootLabelIcon: this.props.classes.labelIcon,
-                                    label: this.props.classes.label,
-                                    rootInheritSelected: this.props.classes.rootInheritSelected
+                                    wrapper: classes.tabWrapper,
+                                    rootLabelIcon: classes.labelIcon,
+                                    label: classes.label,
+                                    rootInheritSelected: classes.rootInheritSelected
                                 }}
-                                icon={<Code className={this.props.classes.tabIcon}/>}
+                                icon={<Code className={classes.tabIcon}/>}
                                 label={"Website"}/>
                             <Tab
                                 classes={{
-                                    wrapper: this.props.classes.tabWrapper,
-                                    rootLabelIcon: this.props.classes.labelIcon,
-                                    label: this.props.classes.label,
-                                    rootInheritSelected: this.props.classes.rootInheritSelected
+                                    wrapper: classes.tabWrapper,
+                                    rootLabelIcon: classes.labelIcon,
+                                    label: classes.label,
+                                    rootInheritSelected: classes.rootInheritSelected
                                 }}
-                                icon={<Cloud className={this.props.classes.tabIcon}/>}
+                                icon={<Cloud className={classes.tabIcon}/>}
                                 label={"Server"}/>
                         </Tabs>
                     }
@@ -118,7 +115,7 @@ class TasksCard extends React.Component{
 }
 
 TasksCard.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(tasksCardStyle)(TasksCard);

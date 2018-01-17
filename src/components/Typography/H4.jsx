@@ -8,9 +8,10 @@ import { typographyStyle } from 'variables/styles';
 
 class H4 extends React.Component{
     render(){
+        const { classes, children } = this.props;
         return (
-            <h4 className={this.props.classes.defaultFontStyle + " " + this.props.classes.h4Style + " " + this.props.classes.defaultHeaderMargins}>
-                {this.props.children}
+            <h4 className={classes.defaultFontStyle + " " + classes.h4Style + " " + classes.defaultHeaderMargins}>
+                {children}
             </h4>
         );
     }

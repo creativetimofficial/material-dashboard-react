@@ -8,17 +8,20 @@ import { typographyStyle } from 'variables/styles';
 
 class Quote extends React.Component{
     render(){
+        const { classes, text, author } = this.props;
         return (
-            <blockquote className={this.props.classes.defaultFontStyle + " " + this.props.classes.quote}>
-                <p className={this.props.classes.quoteText}>{this.props.text}</p>
-                <small className={this.props.classes.quoteAuthor}>{this.props.author}</small>
+            <blockquote className={classes.defaultFontStyle + " " + classes.quote}>
+                <p className={classes.quoteText}>{text}</p>
+                <small className={classes.quoteAuthor}>{author}</small>
             </blockquote>
         );
     }
 }
 
 Quote.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    text: PropTypes.node,
+    author: PropTypes.node
 }
 
 export default withStyles(typographyStyle)(Quote);

@@ -7,83 +7,29 @@ import PropTypes from 'prop-types';
 import { chartCardStyle } from 'variables/styles';
 
 class ChartCard extends React.Component{
-    constructor(props){
-        super(props);
-        switch (this.props.chartColor) {
-            case 'orange':
-                this.state = {
-                    chartColor: " " + this.props.classes.cardHeaderOrange
-                }
-                break;
-            case 'green':
-                this.state = {
-                    chartColor: " " + this.props.classes.cardHeaderGreen
-                }
-                break;
-            case 'red':
-                this.state = {
-                    chartColor: " " + this.props.classes.cardHeaderRed
-                }
-                break;
-            case 'blue':
-                this.state = {
-                    chartColor: " " + this.props.classes.cardHeaderBlue
-                }
-                break;
-            default:
-                this.state = {
-                    chartColor: " " + this.props.classes.cardHeaderPurple
-                }
-            break;
-        };
-        switch (this.props.statIconColor) {
-            case 'warning':
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconWarning
-                break;
-            case 'primary':
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconPrimary
-                break;
-            case 'danger':
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconDanger
-                break;
-            case 'success':
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconSuccess
-                break;
-            case 'info':
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconInfo
-                break;
-            case 'rose':
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconRose
-                break;
-            default:
-                this.state.statIconColor = " " + this.props.classes.cardStatsIconGray
-            break;
-        }
-    }
     render(){
+        const { classes, chartColor, statIconColor, chart, title, text, statLink, statText } = this.props;
         return (
             <Grid item xs={12} sm={12} md={4}>
-                <Card className={this.props.classes.card}>
+                <Card className={classes.card}>
                     <CardHeader
                         classes={{
-                            root: (this.props.classes.cardHeader + this.state.chartColor),
+                            root: (classes.cardHeader + " " + classes[chartColor+"Chart"]),
                         }}
-                        subheader={
-                            this.props.chart
-                        }
+                        subheader={chart}
                     />
-                    <CardContent className={this.props.classes.cardContent}>
-                        <Typography type="title" component="h4" className={this.props.classes.cardTitle}>
-                            {this.props.title}
+                    <CardContent className={classes.cardContent}>
+                        <Typography type="title" component="h4" className={classes.cardTitle}>
+                            {title}
                         </Typography>
-                        <Typography type="category" component="p" className={this.props.classes.cardCategory}>
-                            {this.props.text}
+                        <Typography type="category" component="p" className={classes.cardCategory}>
+                            {text}
                         </Typography>
                     </CardContent>
-                    <CardActions className={this.props.classes.cardActions}>
-                        <div className={this.props.classes.cardStats}>
-                            <this.props.statIcon className={this.props.classes.cardStatsIcon + this.state.statIconColor} />{' '}
-                            {this.props.statLink !== undefined ? (<a href={this.props.statLink.href} className={this.props.classes.cardStatsLink}>{this.props.statLink.text}</a>):(this.props.statText !== undefined ? (this.props.statText):null)}
+                    <CardActions className={classes.cardActions}>
+                        <div className={classes.cardStats}>
+                            <this.props.statIcon className={classes.cardStatsIcon + " " + classes[statIconColor+"CardStatsIcon"]} />{' '}
+                            {statLink !== undefined ? (<a href={statLink.href} className={classes.cardStatsLink}>{statLink.text}</a>):(statText !== undefined ? (statText):null)}
                         </div>
                     </CardActions>
                 </Card>
@@ -92,15 +38,21 @@ class ChartCard extends React.Component{
     }
 }
 
+ChartCard.defaultProps = {
+  statIconColor: 'gray',
+  chartColor: 'purple'
+};
+
 ChartCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-  chart: PropTypes.object.isRequired,
-  title: PropTypes.node,
-  text: PropTypes.node,
-  statIcon: PropTypes.func.isRequired,
-  statIconColor: PropTypes.oneOf(['warning','primary','danger','success','info','rose','gray']),
-  statLink: PropTypes.object,
-  statText: PropTypes.node
+    classes: PropTypes.object.isRequired,
+    chart: PropTypes.object.isRequired,
+    title: PropTypes.node,
+    text: PropTypes.node,
+    statIcon: PropTypes.func.isRequired,
+    statIconColor: PropTypes.oneOf(['warning','primary','danger','success','info','rose','gray']),
+    chartColor: PropTypes.oneOf(['orange','green','red','blue','purple']),
+    statLink: PropTypes.object,
+    statText: PropTypes.node
 };
 
 export default withStyles(chartCardStyle)(ChartCard);

@@ -8,9 +8,10 @@ import { typographyStyle } from 'variables/styles';
 
 class Small extends React.Component{
     render(){
+        const { classes, children } = this.props;
         return (
-            <div className={this.props.classes.defaultFontStyle + " " + this.props.classes.smallText}>
-                {this.props.children}
+            <div className={classes.defaultFontStyle + " " + classes.smallText}>
+                {children}
             </div>
         );
     }

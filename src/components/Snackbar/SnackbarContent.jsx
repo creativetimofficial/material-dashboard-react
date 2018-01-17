@@ -41,7 +41,11 @@ class SnackbarContent extends React.Component{
 }
 
 SnackbarContent.propTypes = {
-    classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired,
+    message: PropTypes.node.isRequired,
+    color: PropTypes.oneOf(['info','success','warning','danger','primary']),
+    close: PropTypes.bool,
+    icon: PropTypes.func,
 };
 
 export default withStyles(snackbarContentStyle)(SnackbarContent);

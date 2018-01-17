@@ -12,7 +12,7 @@ class IconCustomButton extends React.Component{
         return (
             <IconButton
                 {...rest}
-                className={classes.button + ( color !== undefined ? " " + classes[color]:"")}
+                className={classes.button + ( color ? " " + classes[color]:"")}
                 >
                 {children}
             </IconButton>
@@ -21,7 +21,8 @@ class IconCustomButton extends React.Component{
 }
 
 IconCustomButton.propTypes = {
-  classes: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
+    color: PropTypes.oneOf(['primary','info','success','warning','danger','rose','white','simple']),
 };
 
 export default withStyles(iconButtonStyle)(IconCustomButton);
