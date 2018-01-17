@@ -62,13 +62,13 @@ const styles = theme => ({
     },
     content: {
         position: 'absolute',
-        // width: `calc(100% - ${drawerWidth+65}px)`,
         padding: theme.spacing.unit * 3,
         height: '100%',
         // height: 'calc(100% - 112px)',
         marginTop: 36,
         [theme.breakpoints.up('md')]:{
-            marginLeft: drawerWidth
+            marginLeft: drawerWidth,
+            width: `calc(100% - ${drawerWidth+65}px)`,
         },
         [theme.breakpoints.up('sm')]: {
             height: 'calc(100% - 64px)',
@@ -85,9 +85,6 @@ class App extends React.Component{
     handleDrawerToggle = () => {
         this.setState({ mobileOpen: !this.state.mobileOpen });
     };
-    handleChange = (event, value) => {
-        this.setState({ value });
-    };
     render(){
         const { classes } = this.props;
         return (
@@ -98,7 +95,7 @@ class App extends React.Component{
                             <Typography type="title" color="inherit" className={classes.flex}>
                                 Title
                             </Typography>
-                            {/* <Hidden xsDown>
+                            <Hidden xsDown>
                                 <Input
                                     placeholder="Search"
                                     inputProps={{
@@ -117,7 +114,7 @@ class App extends React.Component{
                                 <IconButton color="inherit" aria-label="Person">
                                     <Person />
                                 </IconButton>
-                            </Hidden> */}
+                            </Hidden>
                             <IconButton
                                 color="contrast"
                                 aria-label="open drawer"

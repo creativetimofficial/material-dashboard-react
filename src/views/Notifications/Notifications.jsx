@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    Grid, Snackbar, SnackbarContent, IconButton
+    Grid
 } from 'material-ui';
 import {
-    Close, AddAlert
+    AddAlert
 } from 'material-ui-icons';
 
 import {
-    RegularCard, A, P, H5, Small, Button
+    RegularCard, A, P, H5, Small, Button, SnackbarContent, Snackbar
 } from 'components';
 
 class Notifications extends React.Component{
@@ -48,91 +48,33 @@ class Notifications extends React.Component{
                                 <br />
                                 <SnackbarContent message={'This is a plain notification'} />
                                 <br />
-                                <SnackbarContent message={'This is a notification with close button.'} action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit">
-                                        <Close />
-                                    </IconButton>
-                                ]}/>
+                                <SnackbarContent message={'This is a notification with close button.'} close/>
                                 <br />
-                                <SnackbarContent message={
-                                        <div>
-                                            <AddAlert /> This is a notification with close button and icon.
-                                        </div>
-                                    }
-                                    action={[
-                                        <IconButton
-                                            key="close"
-                                            aria-label="Close"
-                                            color="inherit">
-                                            <Close />
-                                        </IconButton>
-                                    ]}/>
+                                <SnackbarContent
+                                    message={"This is a notification with close button and icon."}
+                                    close
+                                    icon={AddAlert}
+                                />
                                 <br />
-                                <SnackbarContent message={
-                                        <div>
-                                            <AddAlert /> This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.
-                                        </div>
-                                    }
-                                    action={[
-                                        <IconButton
-                                            key="close"
-                                            aria-label="Close"
-                                            color="inherit">
-                                            <Close />
-                                        </IconButton>
-                                    ]}/>
+                                <SnackbarContent
+                                    message={"This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style."}
+                                    close
+                                    icon={AddAlert}
+                                />
                                 <br />
                             </Grid>
                             <Grid item xs={12} sm={12} md={6}>
                                 <H5>Notifications States</H5>
                                 <br />
-                                <SnackbarContent message={'INFO - This is a regular notification made with ".alert-info"'} action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit">
-                                        <Close />
-                                    </IconButton>
-                                ]}/>
+                                <SnackbarContent message={'INFO - This is a regular notification made with color="info"'} close color="info"/>
                                 <br />
-                                <SnackbarContent message={'SUCCESS - This is a regular notification made with ".alert-success"'} action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit">
-                                        <Close />
-                                    </IconButton>
-                                ]}/>
+                                <SnackbarContent message={'SUCCESS - This is a regular notification made with color="success"'} close color="success"/>
                                 <br />
-                                <SnackbarContent message={'WARNING - This is a regular notification made with ".alert-warning"'} action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit">
-                                        <Close />
-                                    </IconButton>
-                                ]}/>
+                                <SnackbarContent message={'WARNING - This is a regular notification made with color="warning"'} close color="warning"/>
                                 <br />
-                                <SnackbarContent message={'DANGER - This is a regular notification made with ".alert-danger"'} action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit">
-                                        <Close />
-                                    </IconButton>
-                                ]}/>
+                                <SnackbarContent message={'DANGER - This is a regular notification made with color="danger"'} close color="danger"/>
                                 <br />
-                                <SnackbarContent message={'PRIMARY - This is a regular notification made with ".alert-primary"'} action={[
-                                    <IconButton
-                                        key="close"
-                                        aria-label="Close"
-                                        color="inherit">
-                                        <Close />
-                                    </IconButton>
-                                ]}/>
+                                <SnackbarContent message={'PRIMARY - This is a regular notification made with color="primary"'} close color="primary"/>
                                 <br />
                             </Grid>
                         </Grid>
@@ -154,73 +96,37 @@ class Notifications extends React.Component{
                                     <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
                                         <Snackbar
-                                            anchorOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'left',
-                                            }}
+                                            place="tl"
+                                            color="info"
+                                            icon={AddAlert}
+                                            message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                                             open={this.state.tl}
-                                            SnackbarContentProps={{
-                                                'aria-describedby': 'message-id',
-                                            }}
-                                            message={<span id="message-id">Note archived</span>}
-                                            action={[
-                                                <IconButton
-                                                key="close"
-                                                aria-label="Close"
-                                                color="inherit"
-                                                onClick={() => { this.setState({tl: false})}}
-                                                >
-                                                    <Close />
-                                                </IconButton>
-                                            ]}
+                                            closeNotification={() => this.setState({'tl':false})}
+                                            close
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('tc')}>Top Center</Button>
                                         <Snackbar
-                                            anchorOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'center',
-                                            }}
+                                            place="tc"
+                                            color="info"
+                                            icon={AddAlert}
+                                            message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                                             open={this.state.tc}
-                                            SnackbarContentProps={{
-                                                'aria-describedby': 'message-id',
-                                            }}
-                                            message={<span id="message-id">Note archived</span>}
-                                            action={[
-                                                <IconButton
-                                                key="close"
-                                                aria-label="Close"
-                                                color="inherit"
-                                                onClick={() => { this.setState({tc: false})}}
-                                                >
-                                                    <Close />
-                                                </IconButton>
-                                            ]}
+                                            closeNotification={() => this.setState({'tc':false})}
+                                            close
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('tr')}>Top Right</Button>
                                         <Snackbar
-                                            anchorOrigin={{
-                                                vertical: 'top',
-                                                horizontal: 'right',
-                                            }}
+                                            place="tr"
+                                            color="info"
+                                            icon={AddAlert}
+                                            message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                                             open={this.state.tr}
-                                            SnackbarContentProps={{
-                                                'aria-describedby': 'message-id',
-                                            }}
-                                            message={<span id="message-id">Note archived</span>}
-                                            action={[
-                                                <IconButton
-                                                key="close"
-                                                aria-label="Close"
-                                                color="inherit"
-                                                onClick={() => { this.setState({tr: false})}}
-                                                >
-                                                    <Close />
-                                                </IconButton>
-                                            ]}
+                                            closeNotification={() => this.setState({'tr':false})}
+                                            close
                                         />
                                     </Grid>
                                 </Grid>
@@ -232,73 +138,37 @@ class Notifications extends React.Component{
                                     <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('bl')}>Bottom Left</Button>
                                         <Snackbar
-                                            anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'left',
-                                            }}
+                                            place="bl"
+                                            color="info"
+                                            icon={AddAlert}
+                                            message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                                             open={this.state.bl}
-                                            SnackbarContentProps={{
-                                                'aria-describedby': 'message-id',
-                                            }}
-                                            message={<span id="message-id">Note archived</span>}
-                                            action={[
-                                                <IconButton
-                                                key="close"
-                                                aria-label="Close"
-                                                color="inherit"
-                                                onClick={() => { this.setState({bl: false})}}
-                                                >
-                                                    <Close />
-                                                </IconButton>
-                                            ]}
+                                            closeNotification={() => this.setState({'bl':false})}
+                                            close
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('bc')}>Bottom Center</Button>
                                         <Snackbar
-                                            anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'center',
-                                            }}
+                                            place="bc"
+                                            color="info"
+                                            icon={AddAlert}
+                                            message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                                             open={this.state.bc}
-                                            SnackbarContentProps={{
-                                                'aria-describedby': 'message-id',
-                                            }}
-                                            message={<span id="message-id">Note archived</span>}
-                                            action={[
-                                                <IconButton
-                                                key="close"
-                                                aria-label="Close"
-                                                color="inherit"
-                                                onClick={() => { this.setState({bc: false})}}
-                                                >
-                                                    <Close />
-                                                </IconButton>
-                                            ]}
+                                            closeNotification={() => this.setState({'bc':false})}
+                                            close
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={12} md={4}>
                                         <Button raised color="primary" onClick={() => this.showNotification('br')}>Bottom Right</Button>
                                         <Snackbar
-                                            anchorOrigin={{
-                                                vertical: 'bottom',
-                                                horizontal: 'right',
-                                            }}
+                                            place="br"
+                                            color="info"
+                                            icon={AddAlert}
+                                            message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                                             open={this.state.br}
-                                            SnackbarContentProps={{
-                                                'aria-describedby': 'message-id',
-                                            }}
-                                            message={<span id="message-id">Note archived</span>}
-                                            action={[
-                                                <IconButton
-                                                key="close"
-                                                aria-label="Close"
-                                                color="inherit"
-                                                onClick={() => { this.setState({br: false})}}
-                                                >
-                                                    <Close />
-                                                </IconButton>
-                                            ]}
+                                            closeNotification={() => this.setState({'br':false})}
+                                            close
                                         />
                                     </Grid>
                                 </Grid>
