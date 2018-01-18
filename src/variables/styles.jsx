@@ -90,6 +90,9 @@ const sidebarStyle = theme => ({
 // #############################
 
 const headerStyle = theme => ({
+    popperClose: {
+      pointerEvents: 'none',
+    },
     appBar: {
         top: '-20px',
         backgroundColor: 'transparent',
@@ -138,7 +141,46 @@ const headerStyle = theme => ({
     },
     top: {
         top: '-6px',
-    }
+    },
+    dropdown: {
+        borderRadius: '3px',
+        border: '0',
+        boxShadow: '0 2px 5px 0 rgba(0, 0, 0, 0.26)',
+        top: '100%',
+        zIndex: '1000',
+        minWidth: '160px',
+        padding: '5px 0',
+        margin: '2px 0 0',
+        fontSize: '14px',
+        textAlign: 'left',
+        listStyle: 'none',
+        backgroundColor: '#fff',
+        WebkitBackgroundClip: 'padding-box',
+        backgroundClip: 'padding-box',
+    },
+    dropdownItem: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontSize: '13px',
+        padding: '10px 20px',
+        margin: '0 5px',
+        borderRadius: '2px',
+        WebkitTransition: 'all 150ms linear',
+        MozTransition: 'all 150ms linear',
+        OTransition: 'all 150ms linear',
+        MsTransition: 'all 150ms linear',
+        transition: 'all 150ms linear',
+        display: 'block',
+        clear: 'both',
+        fontWeight: '400',
+        lineHeight: '1.42857143',
+        color: '#333',
+        whiteSpace: 'nowrap',
+        '&:hover': {
+            backgroundColor: '#9c27b0',
+            color: '#FFFFFF',
+            boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+        }
+    },
 });
 
 // ##############################
