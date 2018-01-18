@@ -8,11 +8,11 @@ import { iconButtonStyle } from 'variables/styles';
 
 class IconCustomButton extends React.Component{
     render(){
-        const { classes, color, children, ...rest } = this.props ;
+        const { classes, color, children, customClass, ...rest } = this.props ;
         return (
             <IconButton
                 {...rest}
-                className={classes.button + ( color ? " " + classes[color]:"")}
+                className={classes.button + ( color ? " " + classes[color]:"") + ( customClass ? " " + customClass:"")}
                 >
                 {children}
             </IconButton>
@@ -23,6 +23,7 @@ class IconCustomButton extends React.Component{
 IconCustomButton.propTypes = {
     classes: PropTypes.object.isRequired,
     color: PropTypes.oneOf(['primary','info','success','warning','danger','rose','white','simple']),
+    customClass: PropTypes.string
 };
 
 export default withStyles(iconButtonStyle)(IconCustomButton);

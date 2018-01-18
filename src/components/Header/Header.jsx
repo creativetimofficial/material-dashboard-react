@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    Menu, Person, Notifications, Dashboard, Search
+    Menu, Person, Notifications, Dashboard, Search,
 } from 'material-ui-icons';
 import {
-    withStyles, AppBar, Toolbar, IconButton, Typography, Button, Input, Hidden
+    withStyles, AppBar, Toolbar, IconButton, Hidden, Button
 } from 'material-ui';
+
+import { CustomInput, IconButton as SearchButton } from 'components';
 
 import { headerStyle } from 'variables/styles';
 
@@ -15,36 +17,43 @@ class Header extends React.Component{
         return (
             <AppBar className={classes.appBar} color="default">
                 <Toolbar className={classes.toolbar}>
-                    <Typography type="title" color="inherit" className={classes.flex}>
-                        Title
-                    </Typography>
+                    <div className={classes.flex}>
+                        <Button href="#" className={classes.title}>Title</Button>
+                    </div>
                     <Hidden mdDown implementation="css">
-                        <Input
-                            placeholder="Search"
-                            inputProps={{
-                                'aria-label': 'Search',
+                        <CustomInput
+                            formControlProps={{
+                                className: classes.top
                             }}
-                        />
-                        <Button mini fab color="inherit" aria-label="edit">
-                            <Search />
-                        </Button>
+                            inputProps={{
+                                placeholder:"Search",
+                                inputProps:{
+                                    'aria-label': 'Search',
+                                }
+                            }}/>
+                        <span>
+                            <SearchButton color="white" aria-label="edit" customClass={classes.top}>
+                                <Search className={classes.links}/>
+                            </SearchButton>
+                        </span>
                         <IconButton color="inherit" aria-label="Dashboard">
-                            <Dashboard />
+                            <Dashboard className={classes.links}/>
                         </IconButton>
                         <IconButton color="inherit" aria-label="Notifications">
-                            <Notifications />
+                            <Notifications className={classes.links}/>
                         </IconButton>
                         <IconButton color="inherit" aria-label="Person">
-                            <Person />
+                            <Person className={classes.links}/>
                         </IconButton>
                     </Hidden>
-                    <IconButton
-                        color="contrast"
-                        aria-label="open drawer"
-                        onClick={this.props.handleDrawerToggle}
-                        className={classes.navIconHide}>
-                        <Menu />
-                    </IconButton>
+                    <Hidden mdUp>
+                        <IconButton
+                            color="contrast"
+                            aria-label="open drawer"
+                            onClick={this.props.handleDrawerToggle}>
+                            <Menu />
+                        </IconButton>
+                    </Hidden>
                 </Toolbar>
             </AppBar>
         );
