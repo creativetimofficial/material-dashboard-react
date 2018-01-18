@@ -48,9 +48,6 @@ const styles = theme => ({
             display: 'none',
         },
     },
-    footer: {
-        bottom: 0
-    },
     drawerHeader: theme.mixins.toolbar,
     drawerPaper: {
         width: 250,
@@ -172,11 +169,7 @@ class App extends React.Component{
                                 })
                             }
                         </Switch>
-                        <footer className={classes.footer}>
-                            <div>
-                                <Footer />
-                            </div>
-                        </footer>
+                        <Footer />
                     </main>
                 </div>
             </div>

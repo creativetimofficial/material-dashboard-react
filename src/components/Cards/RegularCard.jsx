@@ -23,9 +23,9 @@ class RegularCard extends React.Component{
                 <CardContent>
                     {content}
                 </CardContent>
-                <CardActions className={classes.cardActions}>
+                { footer !== undefined ? (<CardActions className={classes.cardActions}>
                     {footer}
-                </CardActions>
+                </CardActions>):null}
             </Card>
         );
     }

@@ -1,4 +1,64 @@
 // ##############################
+// // // Footer styles
+// #############################
+
+const footerStyle = {
+    block: {
+        color: 'inherit',
+        padding: '15px',
+        textTransform: 'uppercase',
+        borderRadius: '3px',
+        textDecoration: 'none',
+        position: 'relative',
+        display: 'block',
+    },
+    text: {
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        lineHeight: '1.5em',
+        fontWeight: '500',
+        fontSize: '12px',
+    },
+    left: {
+        float: 'left!important',
+        display: 'block'
+    },
+    right: {
+        padding: '15px 0',
+        margin: '0',
+        float: 'right!important',
+    },
+    footer: {
+        bottom: '0',
+        borderTop: '1px solid #e7e7e7',
+        padding: '15px 0',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+        lineHeight: '1.5em',
+        fontSize: '14px',
+    },
+    fluid: {
+        paddingRight: '15px',
+        paddingLeft: '15px',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+    },
+    a: {
+        color: '#9c27b0',
+        textDecoration: 'none',
+        backgroundColor: 'transparent',
+    },
+    list: {
+        marginBottom: '0',
+        padding: '0',
+        marginTop: '0',
+    },
+    inlineBlock: {
+        display: 'inline-block',
+        paddingTop: '0px',
+    }
+};
+
+// ##############################
 // // // Dashboard styles
 // #############################
 
@@ -1023,4 +1083,5 @@ module.exports = {
     tasksStyle,
     typographyStyle,
     snackbarContentStyle,
+    footerStyle,
 }
