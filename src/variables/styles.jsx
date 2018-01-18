@@ -181,6 +181,22 @@ const headerStyle = theme => ({
             boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
         }
     },
+    notifications: {
+        position: 'absolute',
+        top: '5px',
+        border: '1px solid #FFF',
+        right: '10px',
+        fontSize: '9px',
+        background: '#f44336',
+        color: '#FFFFFF',
+        minWidth: '16px',
+        height: '16px',
+        borderRadius: '10px',
+        textAlign: 'center',
+        lineHeight: '16px',
+        verticalAlign: 'middle',
+        display: 'block',
+    }
 });
 
 // ##############################
