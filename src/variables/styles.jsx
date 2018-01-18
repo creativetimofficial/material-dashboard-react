@@ -1,4 +1,133 @@
 // ##############################
+// // // Variables
+// #############################
+
+const drawerWidth = 260;
+
+// ##############################
+// // // App styles
+// #############################
+
+const appStyle = theme => ({
+    wrapper: {
+        position: 'relative',
+        top: '0',
+        height: '100vh',
+    },
+    mainPanel: {
+        [theme.breakpoints.up('md')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+        },
+        overflow: 'auto',
+        position: 'relative',
+        float: 'right',
+        WebkitTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        MozTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        OTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        MsTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        maxHeight: '100%',
+    },
+    content: {
+        marginTop: '70px',
+        padding: '30px 15px',
+        minHeight: 'calc(100% - 123px)',
+    }
+});
+
+// ##############################
+// // // Sidebar styles
+// #############################
+
+const sidebarStyle = theme => ({
+    drawerPaper: {
+        border: 'none',
+        position: 'fixed',
+        top: '0',
+        bottom: '0',
+        left: '0',
+        zIndex: '1',
+        boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+        width: drawerWidth,
+        [theme.breakpoints.up('md')]: {
+            width: drawerWidth,
+            position: 'fixed',
+            height: '100%',
+        },
+        [theme.breakpoints.down('md')]: {
+            width: drawerWidth,
+            boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+            position: 'fixed',
+            display: 'block',
+            top: '0',
+            height: '100vh',
+            right: '0',
+            left: 'auto',
+            zIndex: '1032',
+            visibility: 'visible',
+            // backgroundColor: '#9A9A9A',
+            overflowY: 'visible',
+            borderTop: 'none',
+            textAlign: 'left',
+            paddingRight: '0px',
+            paddingLeft: '0',
+            WebkitTransform: 'translate3d(260px, 0, 0)',
+            MozTransform: 'translate3d(260px, 0, 0)',
+            OTransform: 'translate3d(260px, 0, 0)',
+            MsTransform: 'translate3d(260px, 0, 0)',
+            transform: 'translate3d(260px, 0, 0)',
+            WebkitTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+            MozTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+            OTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+            MsTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+            transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        },
+    },
+});
+
+// ##############################
+// // // Header styles
+// #############################
+
+const headerStyle = theme => ({
+    appBar: {
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        borderBottom: '0',
+        marginBottom: '0',
+        position: 'absolute',
+        width: '100%',
+        paddingTop: '10px',
+        zIndex: '1029',
+        color: '#555555',
+        border: '0',
+        borderRadius: '3px',
+        padding: '10px 0',
+        WebkitTransition: 'all 150ms ease 0s',
+        MozTransition: 'all 150ms ease 0s',
+        OTransition: 'all 150ms ease 0s',
+        MsTransition: 'all 150ms ease 0s',
+        transition: 'all 150ms ease 0s',
+        minHeight: '50px',
+        display: 'block',
+    },
+    toolbar:{
+        paddingRight: '15px',
+        paddingLeft: '15px',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+    },
+    flex: {
+        flex: 1,
+    },
+    navIconHide: {
+        [theme.breakpoints.up('md')]: {
+            display: 'none',
+        },
+    },
+});
+
+// ##############################
 // // // Footer styles
 // #############################
 
@@ -1084,4 +1213,7 @@ module.exports = {
     typographyStyle,
     snackbarContentStyle,
     footerStyle,
+    headerStyle,
+    sidebarStyle,
+    appStyle,
 }

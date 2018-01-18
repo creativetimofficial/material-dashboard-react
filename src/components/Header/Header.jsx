@@ -1,60 +1,59 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
     Menu, Person, Notifications, Dashboard, Search
 } from 'material-ui-icons';
 import {
-    AppBar, Toolbar, IconButton, Typography, Button, Input, withStyles
+    withStyles, AppBar, Toolbar, IconButton, Typography, Button, Input, Hidden
 } from 'material-ui';
 
-const styles = {
-  root: {
-    width: '100%',
-  },
-  flex: {
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
+import { headerStyle } from 'variables/styles';
 
 class Header extends React.Component{
     render(){
         const { classes } = this.props;
         return (
-            <div className={classes.root}>
-                <AppBar position="static" color="default">
-                    <Toolbar>
-                        <IconButton className={classes.menuButton} color="default" aria-label="Menu">
-                            <Menu />
-                        </IconButton>
-                        <Typography type="title" color="default" className={classes.flex}>
-                            Title
-                        </Typography>
+            <AppBar className={classes.appBar} color="default">
+                <Toolbar className={classes.toolbar}>
+                    <Typography type="title" color="inherit" className={classes.flex}>
+                        Title
+                    </Typography>
+                    <Hidden mdDown implementation="css">
                         <Input
                             placeholder="Search"
                             inputProps={{
                                 'aria-label': 'Search',
                             }}
                         />
-                        <Button mini fab color="default" aria-label="edit">
+                        <Button mini fab color="inherit" aria-label="edit">
                             <Search />
                         </Button>
-                        <IconButton color="default" aria-label="Dashboard">
+                        <IconButton color="inherit" aria-label="Dashboard">
                             <Dashboard />
                         </IconButton>
-                        <IconButton color="default" aria-label="Notifications">
+                        <IconButton color="inherit" aria-label="Notifications">
                             <Notifications />
                         </IconButton>
-                        <IconButton color="default" aria-label="Person">
+                        <IconButton color="inherit" aria-label="Person">
                             <Person />
                         </IconButton>
-                    </Toolbar>
-                </AppBar>
-            </div>
+                    </Hidden>
+                    <IconButton
+                        color="contrast"
+                        aria-label="open drawer"
+                        onClick={this.props.handleDrawerToggle}
+                        className={classes.navIconHide}>
+                        <Menu />
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
         );
     }
 }
 
-export default withStyles(styles)(Header);
+Header.propTypes = {
+    classes: PropTypes.object.isRequired,
+    theme: PropTypes.object.isRequired
+};
+
+export default withStyles(headerStyle, { withTheme: true })(Header);
