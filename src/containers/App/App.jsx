@@ -92,7 +92,7 @@ class App extends React.Component{
                             <Typography type="title" color="inherit" className={classes.flex}>
                                 Title
                             </Typography>
-                            <Hidden xsDown>
+                            <Hidden mdDown implementation="css">
                                 <Input
                                     placeholder="Search"
                                     inputProps={{
