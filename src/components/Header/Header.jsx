@@ -12,13 +12,39 @@ import { headerStyle } from 'variables/styles';
 import HeaderLinks from './HeaderLinks';
 
 class Header extends React.Component{
+    makeBrand(){
+        var name;
+        this.props.routes.map((prop,key) => {
+            if(prop.collapse){
+                 prop.views.map((prop,key) => {
+                    if(prop.path === this.props.location.pathname){
+                        name = prop.sidebarName;
+                    }
+                    return null;
+                })
+            } else {
+                if(prop.redirect){
+                    if(prop.path === this.props.location.pathname){
+                        name = prop.sidebarName;
+                    }
+                }else{
+                    if(prop.path === this.props.location.pathname){
+                        name = prop.sidebarName;
+                    }
+                }
+            }
+            return null;
+        })
+        return name;
+    }
     render(){
         const { classes } = this.props;
         return (
             <AppBar className={classes.appBar} color="default">
                 <Toolbar className={classes.container}>
                     <div className={classes.flex}>
-                        <Button href="#" className={classes.title}>Title</Button>
+                        {/* Here we create navbar brand, based on route name */}
+                        <Button href="#" className={classes.title}>{this.makeBrand()}</Button>
                     </div>
                     <Hidden mdDown implementation="css">
                         <HeaderLinks />

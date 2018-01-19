@@ -43,7 +43,9 @@ class App extends React.Component{
                 />
                 <div className={classes.mainPanel}>
                     <Header
+                        routes={appRoutes}
                         handleDrawerToggle={this.handleDrawerToggle}
+                        {...rest}
                     />
 
                     <div className={classes.content}>
