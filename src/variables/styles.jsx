@@ -32,6 +32,12 @@ const appStyle = theme => ({
         marginTop: '70px',
         padding: '30px 15px',
         minHeight: 'calc(100% - 123px)',
+    },
+    container: {
+        paddingRight: '15px',
+        paddingLeft: '15px',
+        marginRight: 'auto',
+        marginLeft: 'auto',
     }
 });
 
@@ -83,6 +89,166 @@ const sidebarStyle = theme => ({
             transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
         },
     },
+    logo: {
+        position: 'relative',
+        padding: '15px 15px',
+        zIndex: '4',
+        '&:after':{
+            content: '""',
+            position: 'absolute',
+            bottom: '0',
+            right: '10%',
+            height: '1px',
+            width: '80%',
+            backgroundColor: 'rgba(180, 180, 180, 0.3)',
+        }
+    },
+    logoLink: {
+        textTransform: 'uppercase',
+        padding: '5px 0',
+        display: 'block',
+        fontSize: '18px',
+        color: '#3c4858',
+        textAlign: 'left',
+        fontWeight: '400',
+        lineHeight: '30px',
+        textDecoration: 'none',
+        backgroundColor: 'transparent',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    },
+    logoImage: {
+        width: '30px',
+        display: 'inline-block',
+        maxHeight: '30px',
+        marginLeft: '10px',
+        marginRight: '15px',
+    },
+    img: {
+        width: '35px',
+        top: '22px',
+        position: 'absolute',
+        verticalAlign: 'middle',
+        border: '0',
+    },
+    background: {
+        position: 'absolute',
+        zIndex: '1',
+        height: '100%',
+        width: '100%',
+        display: 'block',
+        top: '0',
+        left: '0',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        '&:after': {
+            position: 'absolute',
+            zIndex: '3',
+            width: '100%',
+            height: '100%',
+            content: '""',
+            display: 'block',
+            background: '#FFFFFF',
+            opacity: '.93',
+        }
+    },
+    listWrapper: {
+        position: 'relative',
+        height: 'calc(100vh - 75px)',
+        overflow: 'auto',
+        width: '260px',
+        zIndex: '4',
+    },
+    list: {
+        marginTop: '20px',
+        paddingLeft: '0',
+        paddingTop: '0',
+        paddingBottom: '0',
+        marginBottom: '0',
+        listStyle: 'none',
+
+    },
+    item: {
+        position: 'relative',
+        display: 'block',
+        textDecoration: 'none',
+    },
+    itemLink: {
+        WebkitTransition: 'all 300ms linear',
+        MozTransition: 'all 300ms linear',
+        OTransition: 'all 300ms linear',
+        MsTransition: 'all 300ms linear',
+        transition: 'all 300ms linear',
+        margin: '10px 15px 0',
+        borderRadius: '3px',
+        color: '#3C4858',
+        position: 'relative',
+        display: 'block',
+        padding: '10px 15px',
+        backgroundColor: 'transparent',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+        lineHeight: '1.5em',
+    },
+    itemIcon: {
+        width: '30px',
+        height: '30px',
+        float: 'left',
+        marginRight: '15px',
+        textAlign: 'center',
+        color: '#a9afbb',
+        verticalAlign: 'middle'
+    },
+    itemText: {
+        margin: '0',
+        lineHeight: '30px',
+        fontSize: '14px',
+        color: '#3C4858',
+        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        fontWeight: '300',
+    },
+    whiteFont: {
+        color: "#FFFFFF"
+    },
+    purple: {
+        backgroundColor: '#9c27b0',
+        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+        '&:hover': {
+            backgroundColor: '#9c27b0',
+            boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+        }
+    },
+    blue: {
+        backgroundColor: '#00bcd4',
+        boxShadow: '0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)',
+        '&:hover': {
+            backgroundColor: '#00bcd4',
+            boxShadow: '0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)',
+        }
+    },
+    green: {
+        backgroundColor: '#4caf50',
+        boxShadow: '0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)',
+        '&:hover': {
+            backgroundColor: '#4caf50',
+            boxShadow: '0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)',
+        }
+    },
+    orange: {
+        backgroundColor: '#ff9800',
+        boxShadow: '0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)',
+        '&:hover': {
+            backgroundColor: '#ff9800',
+            boxShadow: '0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)',
+        }
+    },
+    red: {
+        backgroundColor: '#f44336',
+        boxShadow: '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)',
+        '&:hover': {
+            backgroundColor: '#f44336',
+            boxShadow: '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)',
+        }
+    }
 });
 
 // ##############################
@@ -94,7 +260,7 @@ const headerStyle = theme => ({
       pointerEvents: 'none',
     },
     appBar: {
-        top: '-20px',
+        top: '-7px',
         backgroundColor: 'transparent',
         boxShadow: 'none',
         borderBottom: '0',
@@ -131,6 +297,7 @@ const headerStyle = theme => ({
         fontSize: '18px',
         borderRadius: '3px',
         textTransform: 'none',
+        color: 'inherit',
         '&:hover,&:focus': {
             background: 'transparent'
         }

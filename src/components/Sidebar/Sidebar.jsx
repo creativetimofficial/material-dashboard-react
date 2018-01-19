@@ -5,38 +5,47 @@ import {
 } from 'material-ui';
 import { NavLink } from 'react-router-dom';
 
-import appRoutes from 'routes/app.jsx';
-
 import { sidebarStyle } from 'variables/styles';
 
-class SidebarLinks extends React.Component{
-    render(){
-        return (
-            <List>
-                {
-                    appRoutes.map((prop,key) => {
-                        if(prop.redirect)
-                            return null;
-                        return (
-                            <NavLink to={prop.path} className="nav-link" activeClassName="active" key={key}>
-                                <ListItem button >
-                                    <ListItemIcon>
-                                        <prop.icon />
-                                    </ListItemIcon>
-                                    <ListItemText primary={prop.sidebarName} />
-                                </ListItem>
-                            </NavLink>
-                        );
-                    })
-                }
-            </List>
-        );
-    }
-}
-
 class Sidebar extends React.Component {
+    // verifies if routeName is the one active (in browser input)
+    activeRoute(routeName) {
+        return this.props.location.pathname.indexOf(routeName) > -1 ? true : false;
+    }
     render() {
-        const { classes } = this.props;
+        const { classes, color, logo, image, logoText, routes } = this.props;
+        var links = (
+            <div className={classes.listWrapper}>
+                <List className={classes.list}>
+                    {
+                        routes.map((prop,key) => {
+                            if(prop.redirect)
+                                return null;
+                            return (
+                                <NavLink to={prop.path} className={classes.item} activeClassName="active" key={key}>
+                                    <ListItem button className={classes.itemLink + (this.activeRoute(prop.path) ? " " + classes[color]:"")}>
+                                        <ListItemIcon className={classes.itemIcon + (this.activeRoute(prop.path) ? " " + classes.whiteFont:"")}>
+                                            <prop.icon />
+                                        </ListItemIcon>
+                                        <ListItemText primary={prop.sidebarName} className={classes.itemText + (this.activeRoute(prop.path) ? " " + classes.whiteFont:"")}  disableTypography={true}/>
+                                    </ListItem>
+                                </NavLink>
+                            );
+                        })
+                    }
+                </List>
+            </div>
+        );
+        var brand = (
+            <div className={classes.logo}>
+                <a href="https://www.creative-tim.com" className={classes.logoLink}>
+                    <div className={classes.logoImage}>
+                        <img src={logo} alt="logo" className={classes.img}/>
+                    </div>
+                    {logoText}
+                </a>
+            </div>
+        )
         return (
             <div>
                 <Hidden mdUp>
@@ -51,9 +60,9 @@ class Sidebar extends React.Component {
                         ModalProps={{
                             keepMounted: true, // Better open performance on mobile.
                         }}>
-                        <div>
-                            <SidebarLinks />
-                        </div>
+                        {brand}
+                        {links}
+                        <div className={classes.background} style={{backgroundImage: "url("+image+")"}} />
                     </Drawer>
                 </Hidden>
                 <Hidden mdDown implementation="css">
@@ -64,9 +73,11 @@ class Sidebar extends React.Component {
                         classes={{
                             paper: classes.drawerPaper,
                         }}>
-                        <div>
-                            <SidebarLinks />
-                        </div>
+                        {brand}
+                        {links}
+                        {
+                            image !== undefined ? (<div className={classes.background} style={{backgroundImage: "url("+image+")"}} />):null
+                        }
                     </Drawer>
                 </Hidden>
             </div>
