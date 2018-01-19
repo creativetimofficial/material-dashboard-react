@@ -434,6 +434,7 @@ const headerLinksStyle = theme => ({
         },
     },
     notifications: {
+        zIndex: '4',
         [theme.breakpoints.up('md')]:{
             position: 'absolute',
             top: '5px',
@@ -451,7 +452,6 @@ const headerLinksStyle = theme => ({
             display: 'block',
         },
         [theme.breakpoints.down('md')]:{
-            zIndex: '4',
             ...defaultFont,
             fontSize: '14px',
             marginRight: '8px'
