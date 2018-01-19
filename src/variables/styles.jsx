@@ -1,8 +1,103 @@
 // ##############################
-// // // Variables
+// // // Variables - Styles that are used on more than one component
 // #############################
 
 const drawerWidth = 260;
+
+const transition = {
+    WebkitTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+    MozTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+    OTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+    MsTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+    transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+};
+
+const container = {
+    paddingRight: '15px',
+    paddingLeft: '15px',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+};
+
+const boxShadow = {
+    boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)'
+};
+
+const card = {
+    display: 'inline-block',
+    position: 'relative',
+    width: '100%',
+    margin: '25px 0',
+    boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
+    borderRadius: '3px',
+    color: 'rgba(0, 0, 0, 0.87)',
+    background: '#fff',
+};
+
+const defaultFont = {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    fontWeight: '300',
+    lineHeight: '1.5em',
+};
+
+const primaryColor = '#9c27b0';
+const warningColor = '#ff9800';
+const dangerColor = '#f44336';
+const successColor = '#4caf50';
+const infoColor = '#00bcd4';
+const roseColor = '#e91e63';
+const grayColor = '#999999';
+
+const primaryBoxShadow = {
+    boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)'
+};
+const infoBoxShadow = {
+    boxShadow: '0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)',
+};
+const successBoxShadow = {
+    boxShadow: '0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2)',
+};
+const warningBoxShadow = {
+    boxShadow: '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
+};
+const dangerBoxShadow =  {
+    boxShadow: '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)',
+};
+
+const orangeCardHeader = {
+    background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
+    ...warningBoxShadow,
+};
+const greenCardHeader = {
+    background: 'linear-gradient(60deg, #66bb6a, #43a047)',
+    ...successBoxShadow,
+};
+const redCardHeader = {
+    background: 'linear-gradient(60deg, #ef5350, #e53935)',
+    ...dangerBoxShadow,
+};
+const blueCardHeader = {
+    background: 'linear-gradient(60deg, #26c6da, #00acc1)',
+    ...infoBoxShadow,
+};
+const purpleCardHeader = {
+    background: 'linear-gradient(60deg, #ab47bc, #8e24aa)',
+    ...primaryBoxShadow,
+};
+
+const cardActions = {
+    margin: '0 20px 10px',
+    paddingTop: '10px',
+    borderTop: '1px solid #eeeeee',
+    height: 'auto',
+    ...defaultFont,
+};
+
+const cardHeader = {
+    margin: '-20px 15px 0',
+    borderRadius: '3px',
+    padding: '15px',
+}
 
 // ##############################
 // // // App styles
@@ -21,11 +116,7 @@ const appStyle = theme => ({
         overflow: 'auto',
         position: 'relative',
         float: 'right',
-        WebkitTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-        MozTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-        OTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-        MsTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-        transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+        ...transition,
         maxHeight: '100%',
     },
     content: {
@@ -33,12 +124,7 @@ const appStyle = theme => ({
         padding: '30px 15px',
         minHeight: 'calc(100% - 123px)',
     },
-    container: {
-        paddingRight: '15px',
-        paddingLeft: '15px',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-    }
+    container,
 });
 
 // ##############################
@@ -53,7 +139,7 @@ const sidebarStyle = theme => ({
         bottom: '0',
         left: '0',
         zIndex: '1',
-        boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+        ...boxShadow,
         width: drawerWidth,
         [theme.breakpoints.up('md')]: {
             width: drawerWidth,
@@ -62,7 +148,7 @@ const sidebarStyle = theme => ({
         },
         [theme.breakpoints.down('md')]: {
             width: drawerWidth,
-            boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+            ...boxShadow,
             position: 'fixed',
             display: 'block',
             top: '0',
@@ -77,16 +163,12 @@ const sidebarStyle = theme => ({
             textAlign: 'left',
             paddingRight: '0px',
             paddingLeft: '0',
-            WebkitTransform: 'translate3d(260px, 0, 0)',
-            MozTransform: 'translate3d(260px, 0, 0)',
-            OTransform: 'translate3d(260px, 0, 0)',
-            MsTransform: 'translate3d(260px, 0, 0)',
-            transform: 'translate3d(260px, 0, 0)',
-            WebkitTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-            MozTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-            OTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-            MsTransition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
-            transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
+            WebkitTransform: `translate3d(${drawerWidth}px, 0, 0)`,
+            MozTransform: `translate3d(${drawerWidth}px, 0, 0)`,
+            OTransform: `translate3d(${drawerWidth}px, 0, 0)`,
+            MsTransform: `translate3d(${drawerWidth}px, 0, 0)`,
+            transform: `translate3d(${drawerWidth}px, 0, 0)`,
+            ...transition,
         },
     },
     logo: {
@@ -104,6 +186,7 @@ const sidebarStyle = theme => ({
         }
     },
     logoLink: {
+        ...defaultFont,
         textTransform: 'uppercase',
         padding: '5px 0',
         display: 'block',
@@ -114,7 +197,6 @@ const sidebarStyle = theme => ({
         lineHeight: '30px',
         textDecoration: 'none',
         backgroundColor: 'transparent',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     },
     logoImage: {
         width: '30px',
@@ -185,9 +267,7 @@ const sidebarStyle = theme => ({
         display: 'block',
         padding: '10px 15px',
         backgroundColor: 'transparent',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
     },
     itemIcon: {
         width: '30px',
@@ -199,53 +279,52 @@ const sidebarStyle = theme => ({
         verticalAlign: 'middle'
     },
     itemText: {
+        ...defaultFont,
         margin: '0',
         lineHeight: '30px',
         fontSize: '14px',
         color: '#3C4858',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
     },
     whiteFont: {
         color: "#FFFFFF"
     },
     purple: {
-        backgroundColor: '#9c27b0',
-        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+        backgroundColor: primaryColor,
+        ...primaryBoxShadow,
         '&:hover': {
-            backgroundColor: '#9c27b0',
-            boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+            backgroundColor: primaryColor,
+            ...primaryBoxShadow,
         }
     },
     blue: {
-        backgroundColor: '#00bcd4',
+        backgroundColor: infoColor,
         boxShadow: '0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)',
         '&:hover': {
-            backgroundColor: '#00bcd4',
+            backgroundColor: infoColor,
             boxShadow: '0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)',
         }
     },
     green: {
-        backgroundColor: '#4caf50',
+        backgroundColor: successColor,
         boxShadow: '0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)',
         '&:hover': {
-            backgroundColor: '#4caf50',
+            backgroundColor: successColor,
             boxShadow: '0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)',
         }
     },
     orange: {
-        backgroundColor: '#ff9800',
+        backgroundColor: warningColor,
         boxShadow: '0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)',
         '&:hover': {
-            backgroundColor: '#ff9800',
+            backgroundColor: warningColor,
             boxShadow: '0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)',
         }
     },
     red: {
-        backgroundColor: '#f44336',
+        backgroundColor: dangerColor,
         boxShadow: '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)',
         '&:hover': {
-            backgroundColor: '#f44336',
+            backgroundColor: dangerColor,
             boxShadow: '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)',
         }
     }
@@ -281,18 +360,12 @@ const headerStyle = theme => ({
         minHeight: '50px',
         display: 'block',
     },
-    toolbar:{
-        paddingRight: '15px',
-        paddingLeft: '15px',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-    },
+    container,
     flex:{
         flex: 1,
     },
     title: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
+        ...defaultFont,
         lineHeight: '30px',
         fontSize: '18px',
         borderRadius: '3px',
@@ -326,7 +399,7 @@ const headerStyle = theme => ({
         backgroundClip: 'padding-box',
     },
     dropdownItem: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        ...defaultFont,
         fontSize: '13px',
         padding: '10px 20px',
         margin: '0 5px',
@@ -343,9 +416,9 @@ const headerStyle = theme => ({
         color: '#333',
         whiteSpace: 'nowrap',
         '&:hover': {
-            backgroundColor: '#9c27b0',
+            backgroundColor: primaryColor,
             color: '#FFFFFF',
-            boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+            ...primaryBoxShadow,
         }
     },
     notifications: {
@@ -354,7 +427,7 @@ const headerStyle = theme => ({
         border: '1px solid #FFF',
         right: '10px',
         fontSize: '9px',
-        background: '#f44336',
+        background: dangerColor,
         color: '#FFFFFF',
         minWidth: '16px',
         height: '16px',
@@ -381,8 +454,7 @@ const footerStyle = {
         display: 'block',
     },
     text: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        lineHeight: '1.5em',
+        ...defaultFont,
         fontWeight: '500',
         fontSize: '12px',
     },
@@ -399,19 +471,11 @@ const footerStyle = {
         bottom: '0',
         borderTop: '1px solid #e7e7e7',
         padding: '15px 0',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-        fontSize: '14px',
+        ...defaultFont,
     },
-    fluid: {
-        paddingRight: '15px',
-        paddingLeft: '15px',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-    },
+    container,
     a: {
-        color: '#9c27b0',
+        color: primaryColor,
         textDecoration: 'none',
         backgroundColor: 'transparent',
     },
@@ -432,7 +496,7 @@ const footerStyle = {
 
 const dashboardStyle = {
     successText: {
-        color: '#4caf50',
+        color: successColor,
     },
     upArrowCardCategory: {
         width: 14,
@@ -449,7 +513,7 @@ const iconsStyle = {
         width: '100%',
         height: '500px',
         border: '0',
-        boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+        ...boxShadow,
     },
     iframeContainer: {
         margin: '0 -20px 0',
@@ -461,43 +525,17 @@ const iconsStyle = {
 // #############################
 
 const statsCardStyle = {
-    card: {
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        margin: '25px 0',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
-        borderRadius: '3px',
-        color: 'rgba(0, 0, 0, 0.87)',
-        background: '#fff',
-    },
+    card,
     cardHeader: {
+        ...cardHeader,
         float: 'left',
         textAlign: 'center',
-        margin: '-20px 15px 0',
-        borderRadius: '3px',
-        padding: '15px',
     },
-    orangeCardHeader: {
-        background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
-        boxShadow: '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
-    },
-    greenCardHeader: {
-        background: 'linear-gradient(60deg, #66bb6a, #43a047)',
-        boxShadow: '0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2)',
-    },
-    redCardHeader: {
-        background: 'linear-gradient(60deg, #ef5350, #e53935)',
-        boxShadow: '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)',
-    },
-    blueCardHeader: {
-        background: 'linear-gradient(60deg, #26c6da, #00acc1)',
-        boxShadow: '0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)',
-    },
-    purpleCardHeader: {
-        background: 'linear-gradient(60deg, #ab47bc, #8e24aa)',
-        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
-    },
+    orangeCardHeader,
+    greenCardHeader,
+    redCardHeader,
+    blueCardHeader,
+    purpleCardHeader,
     cardContent: {
         textAlign: 'right',
         paddingTop: '10px',
@@ -513,18 +551,13 @@ const statsCardStyle = {
     },
     cardCategory: {
         marginBottom: '0',
-        color: '#999999',
+        color: grayColor,
         margin: '0 0 10px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-        fontSize: '14px',
+        ...defaultFont
     },
     cardTitle: {
         margin: '0',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         fontSize: '1.625em',
     },
     cardTitleSmall: {
@@ -533,18 +566,10 @@ const statsCardStyle = {
         lineHeight: '1',
         color: '#777',
     },
-    cardActions: {
-        margin: '0 20px 10px',
-        paddingTop: '10px',
-        borderTop: '1px solid #eeeeee',
-        height: 'auto',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-    },
+    cardActions,
     cardStats: {
         lineHeight: '22px',
-        color: '#999999',
+        color: grayColor,
         fontSize: '12px',
         display: 'inline-block',
     },
@@ -555,31 +580,30 @@ const statsCardStyle = {
         height: '16px',
     },
     warningCardStatsIcon: {
-        color: '#ff9800',
+        color: warningColor,
     },
     primaryCardStatsIcon: {
-        color: '#9c27b0',
+        color: primaryColor,
     },
     dangerCardStatsIcon: {
-        color: '#f44336',
+        color: dangerColor,
     },
     successCardStatsIcon: {
-        color: '#4caf50',
+        color: successColor,
     },
     infoCardStatsIcon: {
-        color: '#00bcd4',
+        color: infoColor,
     },
     roseCardStatsIcon: {
-        color: '#e91e63',
+        color: roseColor,
     },
     grayCardStatsIcon: {
-        color: '#999999',
+        color: grayColor,
     },
     cardStatsLink: {
-        color: '#9c27b0',
+        color: primaryColor,
         textDecoration: 'none',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
+        ...defaultFont,
     }
 };
 
@@ -588,76 +612,37 @@ const statsCardStyle = {
 // #############################
 
 const chartCardStyle = {
-    card: {
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        margin: '25px 0',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
-        borderRadius: '3px',
-        color: 'rgba(0, 0, 0, 0.87)',
-        background: '#fff',
-    },
+    card,
     cardHeader: {
+        ...cardHeader,
         padding: '0',
         minHeight: '160px',
-        margin: '-20px 15px 0',
-        borderRadius: '3px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
     },
-    orangeChart: {
-        background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
-        boxShadow: '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
-    },
-    greenChart: {
-        background: 'linear-gradient(60deg, #66bb6a, #43a047)',
-        boxShadow: '0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2)',
-    },
-    redChart: {
-        background: 'linear-gradient(60deg, #ef5350, #e53935)',
-        boxShadow: '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)',
-    },
-    blueChart: {
-        background: 'linear-gradient(60deg, #26c6da, #00acc1)',
-        boxShadow: '0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)',
-    },
-    purpleChart: {
-        background: 'linear-gradient(60deg, #ab47bc, #8e24aa)',
-        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
-    },
+    orangeCardHeader,
+    greenCardHeader,
+    redCardHeader,
+    blueCardHeader,
+    purpleCardHeader,
     cardContent: {
         padding: '15px 20px',
     },
     cardTitle: {
         marginTop: '0',
         marginBottom: '5px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         fontSize: '1.175em',
     },
     cardCategory: {
         marginBottom: '0',
-        color: '#999999',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        color: grayColor,
+        ...defaultFont,
         fontSize: '0.9em',
     },
-    cardActions: {
-        margin: '0 20px 10px',
-        paddingTop: '10px',
-        borderTop: '1px solid #eeeeee',
-        height: 'auto',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
-    },
+    cardActions,
     cardStats: {
         lineHeight: '22px',
-        color: '#999999',
+        color: grayColor,
         fontSize: '12px',
         display: 'inline-block',
     },
@@ -668,31 +653,30 @@ const chartCardStyle = {
         height: '16px',
     },
     warningCardStatsIcon: {
-        color: '#ff9800',
+        color: warningColor,
     },
     primaryCardStatsIcon: {
-        color: '#9c27b0',
+        color: primaryColor,
     },
     dangerCardStatsIcon: {
-        color: '#f44336',
+        color: dangerColor,
     },
     successCardStatsIcon: {
-        color: '#4caf50',
+        color: successColor,
     },
     infoCardStatsIcon: {
-        color: '#00bcd4',
+        color: infoColor,
     },
     roseCardStatsIcon: {
-        color: '#e91e63',
+        color: roseColor,
     },
     grayCardStatsIcon: {
-        color: '#999999',
+        color: grayColor,
     },
     cardStatsLink: {
-        color: '#9c27b0',
+        color: primaryColor,
         textDecoration: 'none',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
+        ...defaultFont,
     }
 };
 
@@ -701,30 +685,16 @@ const chartCardStyle = {
 // #############################
 
 const tasksCardStyle = theme => ({
-    card: {
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        margin: '25px 0',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
-        borderRadius: '3px',
-        color: 'rgba(0, 0, 0, 0.87)',
-        background: '#fff',
-    },
+    card,
     cardHeader: {
         flex: 'none',
-        padding: '15px',
-        margin: '-20px 15px 0',
-        borderRadius: '3px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...cardHeader,
+        ...defaultFont,
         background: 'linear-gradient(60deg, #ab47bc, #8e24aa)',
-        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+        ...primaryBoxShadow,
     },
     cardTitle: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
+        ...defaultFont,
         float: 'left',
         padding: '10px 10px 10px 0',
         lineHeight: '24px',
@@ -791,61 +761,29 @@ const tasksCardStyle = theme => ({
 // #############################
 
 const regularCardStyle = {
-    card: {
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        margin: '25px 0',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
-        borderRadius: '3px',
-        color: 'rgba(0, 0, 0, 0.87)',
-        background: '#fff',
-    },
+    card,
     cardPlain: {
         background: 'transparent',
         boxShadow: 'none',
     },
     cardHeader: {
-        margin: '-20px 15px 0',
-        borderRadius: '3px',
-        padding: '15px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...cardHeader,
+        ...defaultFont,
     },
-    orangeCardHeader: {
-        background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
-        boxShadow: '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
-    },
-    greenCardHeader: {
-        background: 'linear-gradient(60deg, #66bb6a, #43a047)',
-        boxShadow: '0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2)',
-    },
-    redCardHeader: {
-        background: 'linear-gradient(60deg, #ef5350, #e53935)',
-        boxShadow: '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)',
-    },
-    blueCardHeader: {
-        background: 'linear-gradient(60deg, #26c6da, #00acc1)',
-        boxShadow: '0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)',
-    },
-    purpleCardHeader: {
-        background: 'linear-gradient(60deg, #ab47bc, #8e24aa)',
-        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
-    },
+    orangeCardHeader,
+    greenCardHeader,
+    redCardHeader,
+    blueCardHeader,
+    purpleCardHeader,
     cardTitle: {
         color: '#FFFFFF',
         marginTop: '0',
         marginBottom: '5px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         fontSize: '1.3em',
     },
     cardSubtitle: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         marginBottom: '0',
         color: 'rgba(255, 255, 255, 0.62)',
         margin: '0 0 10px',
@@ -864,14 +802,7 @@ const profileCardStyle = {
     card: {
         marginTop: '30px',
         textAlign: 'center',
-        display: 'inline-block',
-        position: 'relative',
-        width: '100%',
-        margin: '25px 0',
-        boxShadow: '0 1px 4px 0 rgba(0, 0, 0, 0.14)',
-        borderRadius: '3px',
-        color: 'rgba(0, 0, 0, 0.87)',
-        background: '#fff',
+        ...card,
     },
     cardHeader: {
         display: 'inline-block',
@@ -884,7 +815,7 @@ const profileCardStyle = {
         margin: '-50px auto 0',
         borderRadius: '50%',
         overflow: 'hidden',
-        boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)',
+        ...boxShadow,
     },
     img: {
         width: '100%',
@@ -896,27 +827,21 @@ const profileCardStyle = {
         textAlign: 'center'
     },
     cardSubtitle: {
-        color: '#999999',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        color: grayColor,
+        ...defaultFont,
         fontSize: '1em',
         textTransform: 'uppercase',
         marginTop: '10px',
         marginBottom: '10px',
     },
     cardTitle: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         fontSize: '1.3em',
         marginTop: '10px',
         marginBottom: '10px',
     },
     cardDescription: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         padding: '15px 20px',
         margin: '0 0 10px',
     },
@@ -931,7 +856,7 @@ const profileCardStyle = {
 
 const buttonStyle = {
     button: {
-        backgroundColor: '#999999',
+        backgroundColor: grayColor,
         color: '#FFFFFF',
         boxShadow: '0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12)',
         border: 'none',
@@ -953,7 +878,7 @@ const buttonStyle = {
         touchAction: 'manipulation',
         cursor: 'pointer',
         '&:hover': {
-            backgroundColor: '#999999',
+            backgroundColor: grayColor,
             boxShadow: '0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2)'
         }
     },
@@ -961,57 +886,57 @@ const buttonStyle = {
         width: '100%'
     },
     primary: {
-        backgroundColor: '#9c27b0',
+        backgroundColor: primaryColor,
         boxShadow: '0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)',
         '&:hover': {
-            backgroundColor: '#9c27b0',
+            backgroundColor: primaryColor,
             boxShadow: '0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)',
         }
     },
     info: {
-        backgroundColor: '#00bcd4',
+        backgroundColor: infoColor,
         boxShadow: '0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12)',
         '&:hover': {
-            backgroundColor: '#00bcd4',
+            backgroundColor: infoColor,
             boxShadow: '0 14px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2)',
         }
     },
     success: {
-        backgroundColor: '#4caf50',
+        backgroundColor: successColor,
         boxShadow: '0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12)',
         '&:hover': {
-            backgroundColor: '#4caf50',
+            backgroundColor: successColor,
             boxShadow: '0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2)',
         }
     },
     warning: {
-        backgroundColor: '#ff9800',
+        backgroundColor: warningColor,
         boxShadow: '0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12)',
         '&:hover': {
-            backgroundColor: '#ff9800',
+            backgroundColor: warningColor,
             boxShadow: '0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2)',
         }
     },
     danger: {
-        backgroundColor: '#f44336',
+        backgroundColor: dangerColor,
         boxShadow: '0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)',
         '&:hover': {
-            backgroundColor: '#f44336',
+            backgroundColor: dangerColor,
             boxShadow: '0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2)',
         }
     },
     rose: {
-        backgroundColor: '#e91e63',
+        backgroundColor: roseColor,
         boxShadow: '0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)',
         '&:hover': {
-            backgroundColor: '#e91e63',
+            backgroundColor: roseColor,
             boxShadow: '0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)',
         }
     },
     white: {
         '&,&:focus,&:hover': {
             backgroundColor: '#FFFFFF',
-            color: '#999999'
+            color: grayColor
         }
     },
     simple: {
@@ -1061,64 +986,64 @@ const iconButtonStyle = {
         cursor: 'pointer',
         userSelect: 'none',
         backgroundImage: 'none',
-        backgroundColor: '#999999',
+        backgroundColor: grayColor,
         '&:hover': {
-            backgroundColor: '#999999',
+            backgroundColor: grayColor,
             boxShadow: '0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2)'
         }
     },
     primary: {
-        backgroundColor: '#9c27b0',
+        backgroundColor: primaryColor,
         boxShadow: '0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)',
         '&:hover': {
-            backgroundColor: '#9c27b0',
+            backgroundColor: primaryColor,
             boxShadow: '0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)',
         }
     },
     info: {
-        backgroundColor: '#00bcd4',
+        backgroundColor: infoColor,
         boxShadow: '0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12)',
         '&:hover': {
-            backgroundColor: '#00bcd4',
+            backgroundColor: infoColor,
             boxShadow: '0 14px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2)',
         }
     },
     success: {
-        backgroundColor: '#4caf50',
+        backgroundColor: successColor,
         boxShadow: '0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12)',
         '&:hover': {
-            backgroundColor: '#4caf50',
+            backgroundColor: successColor,
             boxShadow: '0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2)',
         }
     },
     warning: {
-        backgroundColor: '#ff9800',
+        backgroundColor: warningColor,
         boxShadow: '0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12)',
         '&:hover': {
-            backgroundColor: '#ff9800',
+            backgroundColor: warningColor,
             boxShadow: '0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2)',
         }
     },
     danger: {
-        backgroundColor: '#f44336',
+        backgroundColor: dangerColor,
         boxShadow: '0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)',
         '&:hover': {
-            backgroundColor: '#f44336',
+            backgroundColor: dangerColor,
             boxShadow: '0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2)',
         }
     },
     rose: {
-        backgroundColor: '#e91e63',
+        backgroundColor: roseColor,
         boxShadow: '0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)',
         '&:hover': {
-            backgroundColor: '#e91e63',
+            backgroundColor: roseColor,
             boxShadow: '0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)',
         }
     },
     white: {
         '&,&:focus,&:hover': {
             backgroundColor: '#FFFFFF',
-            color: '#999999'
+            color: grayColor
         }
     },
     simple: {
@@ -1134,25 +1059,25 @@ const iconButtonStyle = {
 
 const tableStyle = {
     warningTableHeader: {
-        color: '#ff9800',
+        color: warningColor,
     },
     primaryTableHeader: {
-        color: '#9c27b0',
+        color: primaryColor,
     },
     dangerTableHeader: {
-        color: '#f44336',
+        color: dangerColor,
     },
     successTableHeader: {
-        color: '#4caf50',
+        color: successColor,
     },
     infoTableHeader: {
-        color: '#00bcd4',
+        color: infoColor,
     },
     roseTableHeader: {
-        color: '#e91e63',
+        color: roseColor,
     },
     grayTableHeader: {
-        color: '#999999',
+        color: grayColor,
     },
     table: {
         marginBottom: '0',
@@ -1163,8 +1088,7 @@ const tableStyle = {
         borderCollapse: 'collapse',
     },
     tableCell: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
+        ...defaultFont,
         lineHeight: '1.42857143',
         fontSize: '14px',
         padding: '12px 8px',
@@ -1190,11 +1114,11 @@ const customInputStyle = {
     },
     inkbar: {
         '&:after': {
-            backgroundColor: '#9c27b0'
+            backgroundColor: primaryColor
         }
     },
     labelRoot: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        ...defaultFont,
         color: '#AAAAAA',
         fontWeight: '400',
         fontSize: '14px',
@@ -1221,12 +1145,11 @@ const tasksStyle = {
         verticalAlign: 'middle',
     },
     tableCell: {
+        ...defaultFont,
         padding: '12px 8px',
         verticalAlign: 'middle',
         border: 'none',
         lineHeight: '1.42857143',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
         fontSize: '14px',
     },
     tableActionButton: {
@@ -1239,16 +1162,16 @@ const tasksStyle = {
     },
     edit: {
         backgroundColor: 'transparent',
-        color: '#9c27b0',
+        color: primaryColor,
         boxShadow: 'none',
     },
     close: {
         backgroundColor: 'transparent',
-        color: '#f44336',
+        color: dangerColor,
         boxShadow: 'none',
     },
     checked: {
-        color: '#9c27b0'
+        color: primaryColor
     },
     checkedIcon: {
         width: '20px',
@@ -1295,9 +1218,7 @@ const tasksStyle = {
 
 const typographyStyle = {
     defaultFontStyle: {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
-        lineHeight: '1.5em',
+        ...defaultFont,
         fontSize : '14px',
     },
     defaultHeaderMargins: {
@@ -1345,19 +1266,19 @@ const typographyStyle = {
         color: '#777',
     },
     primaryText: {
-        color: '#9c27b0',
+        color: primaryColor,
     },
     infoText: {
-        color: '#00bcd4',
+        color: infoColor,
     },
     successText: {
-        color: '#4caf50',
+        color: successColor,
     },
     warningText: {
-        color: '#ff9800',
+        color: warningColor,
     },
     dangerText: {
-        color: '#f44336',
+        color: dangerColor,
     },
     smallText: {
         fontSize: '65%',
@@ -1378,12 +1299,11 @@ const typographyStyle = {
 
 const snackbarContentStyle = {
     root: {
+        ...defaultFont,
         position: 'relative',
         padding: '20px 15px',
         lineHeight: '20px',
         marginBottom: '20px',
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-        fontWeight: '300',
         fontSize: '14px',
         backgroundColor: 'white',
         color: '#555555',
@@ -1393,27 +1313,27 @@ const snackbarContentStyle = {
     info: {
         backgroundColor: '#00d3ee',
         color: '#ffffff',
-        boxShadow: '0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)',
+        ...infoBoxShadow,
     },
     success: {
         backgroundColor: '#5cb860',
         color: '#ffffff',
-        boxShadow: '0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2)',
+        ...successBoxShadow,
     },
     warning: {
         backgroundColor: '#ffa21a',
         color: '#ffffff',
-        boxShadow: '0 12px 20px -10px rgba(255, 152, 0, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255, 152, 0, 0.2)',
+        ...warningBoxShadow,
     },
     danger: {
         backgroundColor: '#f55a4e',
         color: '#ffffff',
-        boxShadow: '0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)',
+        ...dangerBoxShadow,
     },
     primary: {
         backgroundColor: '#af2cc5',
         color: '#ffffff',
-        boxShadow: '0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2)',
+        ...primaryBoxShadow,
     },
     message: {
         padding: '0',

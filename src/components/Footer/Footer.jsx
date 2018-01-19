@@ -11,7 +11,7 @@ class Footer extends React.Component{
         const { classes } = this.props;
         return (
             <footer className={classes.footer}>
-                <div className={classes.fluid}>
+                <div className={classes.container}>
                     <div className={classes.left}>
                         <List className={classes.list}>
                             <ListItem className={classes.inlineBlock}>

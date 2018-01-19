@@ -14,7 +14,7 @@ class ChartCard extends React.Component{
                 <Card className={classes.card}>
                     <CardHeader
                         classes={{
-                            root: (classes.cardHeader + " " + classes[chartColor+"Chart"]),
+                            root: (classes.cardHeader + " " + classes[chartColor+"CardHeader"]),
                         }}
                         subheader={chart}
                     />

@@ -30,7 +30,7 @@ class Header extends React.Component{
         const { open } = this.state;
         return (
             <AppBar className={classes.appBar} color="default">
-                <Toolbar className={classes.toolbar}>
+                <Toolbar className={classes.container}>
                     <div className={classes.flex}>
                         <Button href="#" className={classes.title}>Title</Button>
                     </div>
