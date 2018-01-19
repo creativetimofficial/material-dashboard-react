@@ -335,9 +335,6 @@ const sidebarStyle = theme => ({
 // #############################
 
 const headerStyle = theme => ({
-    popperClose: {
-      pointerEvents: 'none',
-    },
     appBar: {
         top: '-7px',
         backgroundColor: 'transparent',
@@ -375,12 +372,90 @@ const headerStyle = theme => ({
             background: 'transparent'
         }
     },
-    links:{
-        width: '20px',
-        height: '20px',
+});
+
+// ##############################
+// // // HeaderLinks styles
+// #############################
+
+const headerLinksStyle = theme => ({
+    popperClose: {
+      pointerEvents: 'none',
+    },
+    search: {
+        [theme.breakpoints.down('md')]:{
+            margin: '10px 15px',
+            float: 'none !important',
+            paddingTop: '1px',
+            paddingBottom: '1px',
+            padding: '10px 15px',
+            width: 'auto',
+            marginTop: '40px'
+        },
+    },
+    linkText: {
+        zIndex: '4',
+        ...defaultFont,
+        fontSize: '14px',
+    },
+    buttonLink: {
+        [theme.breakpoints.down('md')]:{
+            display: 'flex',
+            marginLeft: '30px',
+            width: 'auto',
+        },
+    },
+    searchButton: {
+        [theme.breakpoints.down('md')]: {
+            top: '-50px !important',
+            marginRight: '22px',
+            float: 'right'
+        }
     },
     top: {
         top: '-6px',
+        zIndex: '4',
+    },
+    searchIcon:{
+        width: '20px',
+        height: '20px',
+        zIndex: '4',
+    },
+    links:{
+        width: '20px',
+        height: '20px',
+        zIndex: '4',
+        [theme.breakpoints.down('md')]:{
+            display: 'block',
+            width: '30px',
+            height: '30px',
+            color: '#a9afbb',
+            marginRight: '15px',
+        },
+    },
+    notifications: {
+        [theme.breakpoints.up('md')]:{
+            position: 'absolute',
+            top: '5px',
+            border: '1px solid #FFF',
+            right: '10px',
+            fontSize: '9px',
+            background: dangerColor,
+            color: '#FFFFFF',
+            minWidth: '16px',
+            height: '16px',
+            borderRadius: '10px',
+            textAlign: 'center',
+            lineHeight: '16px',
+            verticalAlign: 'middle',
+            display: 'block',
+        },
+        [theme.breakpoints.down('md')]:{
+            zIndex: '4',
+            ...defaultFont,
+            fontSize: '14px',
+            marginRight: '8px'
+        },
     },
     dropdown: {
         borderRadius: '3px',
@@ -397,6 +472,20 @@ const headerStyle = theme => ({
         backgroundColor: '#fff',
         WebkitBackgroundClip: 'padding-box',
         backgroundClip: 'padding-box',
+    },
+    pooperResponsive: {
+        [theme.breakpoints.down('md')]: {
+            zIndex: '1640',
+            position: 'static',
+            float: 'none',
+            width: 'auto',
+            marginTop: '0',
+            backgroundColor: 'transparent',
+            border: '0',
+            WebkitBoxShadow: 'none',
+            boxShadow: 'none',
+            color: 'black'
+        }
     },
     dropdownItem: {
         ...defaultFont,
@@ -421,22 +510,6 @@ const headerStyle = theme => ({
             ...primaryBoxShadow,
         }
     },
-    notifications: {
-        position: 'absolute',
-        top: '5px',
-        border: '1px solid #FFF',
-        right: '10px',
-        fontSize: '9px',
-        background: dangerColor,
-        color: '#FFFFFF',
-        minWidth: '16px',
-        height: '16px',
-        borderRadius: '10px',
-        textAlign: 'center',
-        lineHeight: '16px',
-        verticalAlign: 'middle',
-        display: 'block',
-    }
 });
 
 // ##############################
@@ -1382,4 +1455,5 @@ module.exports = {
     headerStyle,
     sidebarStyle,
     appStyle,
+    headerLinksStyle,
 }

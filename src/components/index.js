@@ -31,6 +31,7 @@ import Footer from './Footer/Footer.jsx';
 // #############################
 
 import Header from './Header/Header.jsx';
+import HeaderLinks from './Header/HeaderLinks.jsx';
 
 // ##############################
 // // // Sidebar
@@ -88,7 +89,7 @@ export {
     // Footer
     Footer,
     // Header
-    Header,
+    Header, HeaderLinks,
     // Sidebar
     Sidebar,
     //Snackbar

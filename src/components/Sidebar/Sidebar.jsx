@@ -7,6 +7,9 @@ import { NavLink } from 'react-router-dom';
 
 import { sidebarStyle } from 'variables/styles';
 
+import { HeaderLinks } from 'components';
+
+
 class Sidebar extends React.Component {
     // verifies if routeName is the one active (in browser input)
     activeRoute(routeName) {
@@ -61,6 +64,7 @@ class Sidebar extends React.Component {
                             keepMounted: true, // Better open performance on mobile.
                         }}>
                         {brand}
+                        <HeaderLinks />
                         {links}
                         <div className={classes.background} style={{backgroundImage: "url("+image+")"}} />
                     </Drawer>

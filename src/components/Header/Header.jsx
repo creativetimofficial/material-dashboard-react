@@ -1,33 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    Menu, Person, Notifications, Dashboard, Search,
+    Menu
 } from 'material-ui-icons';
-import classNames from 'classnames';
 import {
-    withStyles, AppBar, Toolbar, IconButton, Hidden, Button, MenuItem, MenuList, Grow, Paper, ClickAwayListener
+    withStyles, AppBar, Toolbar, IconButton, Hidden, Button,
 } from 'material-ui';
-import { Manager, Target, Popper } from 'react-popper';
-
-import { CustomInput, IconButton as SearchButton } from 'components';
 
 import { headerStyle } from 'variables/styles';
 
+import HeaderLinks from './HeaderLinks';
+
 class Header extends React.Component{
-    state = {
-      open: false,
-    };
-
-    handleClick = () => {
-      this.setState({ open: !this.state.open });
-    };
-
-    handleClose = () => {
-      this.setState({ open: false });
-    };
     render(){
         const { classes } = this.props;
-        const { open } = this.state;
         return (
             <AppBar className={classes.appBar} color="default">
                 <Toolbar className={classes.container}>
@@ -35,58 +21,7 @@ class Header extends React.Component{
                         <Button href="#" className={classes.title}>Title</Button>
                     </div>
                     <Hidden mdDown implementation="css">
-                        <CustomInput
-                            formControlProps={{
-                                className: classes.top
-                            }}
-                            inputProps={{
-                                placeholder:"Search",
-                                inputProps:{
-                                    'aria-label': 'Search',
-                                }
-                            }}/>
-                        <span>
-                            <SearchButton color="white" aria-label="edit" customClass={classes.top}>
-                                <Search className={classes.links}/>
-                            </SearchButton>
-                        </span>
-                        <IconButton color="inherit" aria-label="Dashboard">
-                            <Dashboard className={classes.links}/>
-                        </IconButton>
-                        <Manager style={{display:"inline-block"}}>
-                            <Target>
-                                <IconButton
-                                    color="inherit"
-                                    aria-label="Notifications"
-                                    aria-owns={open ? 'menu-list' : null}
-                                    aria-haspopup="true"
-                                    onClick={this.handleClick}>
-                                    <Notifications className={classes.links}/>
-                                    <span className={classes.notifications}>5</span>
-                                </IconButton>
-                            </Target>
-                            <Popper
-                                placement="bottom-start"
-                                eventsEnabled={open}
-                                className={classNames({ [classes.popperClose]: !open })}>
-                                <ClickAwayListener onClickAway={this.handleClose}>
-                                    <Grow in={open} id="menu-list" style={{ transformOrigin: '0 0 0' }}>
-                                        <Paper className={classes.dropdown}>
-                                            <MenuList role="menu">
-                                                <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>Mike John responded to your email</MenuItem>
-                                                <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>You have 5 new tasks</MenuItem>
-                                                <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>You're now friend with Andrew</MenuItem>
-                                                <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>Another Notification</MenuItem>
-                                                <MenuItem onClick={this.handleClose} className={classes.dropdownItem}>Another One</MenuItem>
-                                            </MenuList>
-                                        </Paper>
-                                    </Grow>
-                                </ClickAwayListener>
-                            </Popper>
-                        </Manager>
-                        <IconButton color="inherit" aria-label="Person">
-                            <Person className={classes.links}/>
-                        </IconButton>
+                        <HeaderLinks />
                     </Hidden>
                     <Hidden mdUp>
                         <IconButton
