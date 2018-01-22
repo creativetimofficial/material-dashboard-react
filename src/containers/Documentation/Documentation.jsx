@@ -23,7 +23,7 @@ class Documentation extends React.Component{
                     <Grid item xs={12} sm={12} md={3} lg={2} xl={2} style={{marginTop: "75px"}}>
                         <DocSidebar routes={docRoutes} {...this.props}/>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={9} lg={10} xl={10} style={{marginTop: "75px"}}>
+                    <Grid item xs={12} sm={12} md={7} lg={7} xl={5} style={{marginTop: "75px"}}>
                         <Switch>
                             {
                                 docRoutes.map((prop,key) => {
@@ -37,6 +37,9 @@ class Documentation extends React.Component{
                                 })
                             }
                         </Switch>
+                    </Grid>
+                    <Grid item xs={12} sm={12} md={2} lg={3} xl={2} style={{marginTop: "75px"}}>
+
                     </Grid>
                 </Grid>
             </div>

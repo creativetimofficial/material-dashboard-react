@@ -436,13 +436,15 @@
 }
 .ct-label {
     fill: rgba(0, 0, 0, 0.4);
-    /* font-size: 1.3rem; */
     line-height: 1;
 }
 body {
     background-color: #EEEEEE;
     color: #3C4858;
     margin: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
 }
 blockquote .small:before, blockquote footer:before, blockquote small:before {
     content: '\2014 \00A0';
