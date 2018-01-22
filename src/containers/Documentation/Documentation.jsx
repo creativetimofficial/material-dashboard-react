@@ -17,13 +17,13 @@ import docRoutes from 'routes/documentation.jsx';
 class Documentation extends React.Component{
     render(){
         return (
-            <div>
+            <div style={{backgroundColor: '#FFFFFF'}}>
                 <DocHeader />
-                <Grid container style={{marginTop: "75px"}}>
-                    <Grid item xs={12} sm={12} md={3} lg={2} xl={2}>
+                <Grid container>
+                    <Grid item xs={12} sm={12} md={3} lg={2} xl={2} style={{marginTop: "75px"}}>
                         <DocSidebar routes={docRoutes} {...this.props}/>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={9} lg={10} xl={10}>
+                    <Grid item xs={12} sm={12} md={9} lg={10} xl={10} style={{marginTop: "75px"}}>
                         <Switch>
                             {
                                 docRoutes.map((prop,key) => {

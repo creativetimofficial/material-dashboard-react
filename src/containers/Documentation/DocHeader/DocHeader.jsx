@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    withStyles, AppBar, Toolbar
+    withStyles, AppBar, Toolbar, Hidden
 } from 'material-ui';
 import {
-    List, BugReport
+    List, BugReport,
 } from 'material-ui-icons';
 import { NavLink } from 'react-router-dom';
 
-const style = {
+const style = theme => ({
     appBar: {
         color: '#fff',
         backgroundColor: '#9c27b0 !important',
@@ -48,9 +48,11 @@ const style = {
         top: '-8px',
     },
     flex: {
-        flex: '1'
+        [theme.breakpoints.up('md')]: {
+            flex: '1'
+        },
     }
-}
+});
 
 class DocHeader extends React.Component{
     render(){
@@ -62,12 +64,14 @@ class DocHeader extends React.Component{
                         <NavLink to="/" activeClassName="active" className={classes.title}>
                             Material Dashboard React
                         </NavLink>
-                        <a href="https://github.com/creativetimofficial/material-dashboard-react" className={classes.iconLink} target="_blank" rel="noopener noreferrer">
-                            <i className="fa fa-github"></i>
-                        </a>
-                        <a href="https://twitter.com/CreativeTim" className={classes.iconLink}  target="_blank" rel="noopener noreferrer">
-                            <i className="fa fa-twitter"></i>
-                        </a>
+                        <Hidden mdDown>
+                            <a href="https://github.com/creativetimofficial/material-dashboard-react" className={classes.iconLink} target="_blank" rel="noopener noreferrer">
+                                <i className="fa fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/CreativeTim" className={classes.iconLink}  target="_blank" rel="noopener noreferrer">
+                                <i className="fa fa-twitter"></i>
+                            </a>
+                        </Hidden>
                     </div>
                     <div>
                         <NavLink to="/" activeClassName="active" className={classes.rightLinks}>
