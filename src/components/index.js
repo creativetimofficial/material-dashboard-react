@@ -1,4 +1,10 @@
 // ##############################
+// // // FixedPlugin
+// #############################
+
+import FixedPlugin from './FixedPlugin/FixedPlugin.jsx';
+
+// ##############################
 // // // Cards
 // #############################
 import ChartCard from './Cards/ChartCard.jsx';
@@ -80,6 +86,8 @@ import Small from "./Typography/Small.jsx";
 import A from './Typography/A.jsx';
 
 export {
+    // FixedPlugin
+    FixedPlugin,
     // Cards
     ChartCard, ProfileCard, RegularCard, StatsCard, TasksCard,
     // CustomButtons

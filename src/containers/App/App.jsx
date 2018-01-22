@@ -10,7 +10,7 @@ import {
 } from 'react-router-dom';
 
 import {
-    Header, Footer, Sidebar
+    Header, Footer, Sidebar, FixedPlugin
 } from 'components';
 
 import appRoutes from 'routes/app.jsx';
@@ -21,9 +21,33 @@ import image from 'assets/img/sidebar-1.jpg';
 import logo from 'assets/img/reactlogo.png';
 
 class App extends React.Component{
-    state = {
-        mobileOpen: false,
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            image: image,
+            color: "blue",
+            hasImage: true,
+            fixedClasses: "dropdown show",
+            mobileOpen: false,
+        };
+
+        this.handleImageClick = this.handleImageClick.bind(this);
+        this.handleColorClick = this.handleColorClick.bind(this);
+        this.handleFixedClick = this.handleFixedClick.bind(this);
+    }
+    handleImageClick(image){
+        this.setState({image: image});
+    }
+    handleColorClick(color){
+        this.setState({color: color});
+    }
+    handleFixedClick(){
+        if(this.state.fixedClasses === "dropdown"){
+            this.setState({fixedClasses: "dropdown show"})
+        } else {
+            this.setState({fixedClasses: "dropdown"});
+        }
+    }
     handleDrawerToggle = () => {
         this.setState({ mobileOpen: !this.state.mobileOpen });
     };
@@ -35,10 +59,10 @@ class App extends React.Component{
                     routes={appRoutes}
                     logoText={"Creative Tim"}
                     logo={logo}
-                    image={image}
+                    image={this.state.image}
                     handleDrawerToggle={this.handleDrawerToggle}
                     open={this.state.mobileOpen}
-                    color="blue"
+                    color={this.state.color}
                     {...rest}
                 />
                 <div className={classes.mainPanel}>
@@ -63,6 +87,15 @@ class App extends React.Component{
                                     })
                                 }
                             </Switch>
+                            <FixedPlugin
+                                handleImageClick={this.handleImageClick}
+                                handleColorClick={this.handleColorClick}
+                                handleHasImage={this.handleHasImage}
+                                bgColor={this.state["color"]}
+                                bgImage={this.state["image"]}
+                                handleFixedClick={this.handleFixedClick}
+                                fixedClasses={this.state.fixedClasses}
+                            />
                         </div>
                     </div>
                     <Footer />
