@@ -1013,9 +1013,11 @@ const buttonStyle = {
         }
     },
     simple: {
-        color: '#FFFFFF',
-        background: 'transparent',
-        boxShadow: 'none',
+        '&,&:focus,&:hover':{
+            color: '#FFFFFF',
+            background: 'transparent',
+            boxShadow: 'none',
+        }
     },
     transparent: {
         '&,&:focus,&:hover': {
@@ -1026,6 +1028,10 @@ const buttonStyle = {
     },
     round: {
         borderRadius: '30px',
+    },
+    disabled: {
+        opacity: '0.65',
+        pointerEvents: 'none'
     }
 };
 
