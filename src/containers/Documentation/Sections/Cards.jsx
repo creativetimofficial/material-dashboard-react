@@ -242,7 +242,7 @@ class Cards extends React.Component{
                 <SyntaxHighlighter language="jsx" style={prism}>{tasksCardDep}</SyntaxHighlighter>
                 <SyntaxHighlighter language="jsx" style={prism}>{tasksCard}</SyntaxHighlighter>
                 <h2>Material UI</h2>
-                <P>For more props and cards please refer to <a href="https://material-ui-next.com/demos/cards/" target="_blank" rel="noopener noreferre">material ui cards</a>.</P>
+                <P>For more props and cards please refer to <a href="https://material-ui-next.com/demos/cards/" target="_blank" rel="noopener noreferrer">material ui cards</a>.</P>
             </div>
         );
     }

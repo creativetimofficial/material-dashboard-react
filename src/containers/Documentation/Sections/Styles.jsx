@@ -57,9 +57,9 @@ class Styles extends React.Component{
         return (
             <div>
                 <h1>Styles</h1>
-                <P>Like our friends from <a href="https://material-ui-next.com/" target="_blank" rel="noopener noreferre">Material UI</a>, we've used JSS syntax to style (restyle) the material ui components.</P>
-                <P>A useful link about JSS is <a href="http://cssinjs.org/" target="_blank" rel="noopener noreferre">this one here</a>.</P>
-                <P>Material UI offers you 7 ways to override their styles, and as said above, we've decided to go with the third option (<a href="https://material-ui-next.com/guides/interoperability/#react-jss" target="_blank" rel="noopener noreferre">this one here</a>).</P>
+                <P>Like our friends from <a href="https://material-ui-next.com/" target="_blank" rel="noopener noreferrer">Material UI</a>, we've used JSS syntax to style (restyle) the material ui components.</P>
+                <P>A useful link about JSS is <a href="http://cssinjs.org/" target="_blank" rel="noopener noreferrer">this one here</a>.</P>
+                <P>Material UI offers you 7 ways to override their styles, and as said above, we've decided to go with the third option (<a href="https://material-ui-next.com/guides/interoperability/#react-jss" target="_blank" rel="noopener noreferrer">this one here</a>).</P>
                 <P>All of the restyled components can be found in <code>src/components</code>.</P>
                 <SyntaxHighlighter language="jsx" style={prism}>{restyledComponents}</SyntaxHighlighter>
                 <P>For a better way to call our components we've added a index file in the components folder (<code>src/components/index.js</code>) which imports all of our restyled components and exports them, so you can import any of them easier. Instead of doing something like this</P> <SyntaxHighlighter language="jsx" style={prism}>{importExample}</SyntaxHighlighter>

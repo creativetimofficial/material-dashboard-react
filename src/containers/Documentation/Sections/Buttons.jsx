@@ -2,7 +2,6 @@ import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter/prism';
 import { prism } from 'react-syntax-highlighter/styles/prism';
 import { Favorite } from 'material-ui-icons';
-import { Table, TableCell, TableRow, TableHead, TableBody } from 'material-ui';
 
 import {
     Button, IconButton, P
@@ -85,7 +84,7 @@ class Buttons extends React.Component{
                 <h3><code>IconButton</code></h3>
                 <SyntaxHighlighter language="jsx" style={prism}>{iconButtonPorps}</SyntaxHighlighter>
                 <h2>Material UI Buttons</h2>
-                <P>For more props and buttons please check out the <a href="https://material-ui-next.com/demos/buttons/" target="_blank" rel="noopener noreferre">material-ui buttons section</a>.</P>
+                <P>For more props and buttons please check out the <a href="https://material-ui-next.com/demos/buttons/" target="_blank" rel="noopener noreferrer">material-ui buttons section</a>.</P>
             </div>
         );
     }
