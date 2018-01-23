@@ -19,12 +19,7 @@ class Icons extends React.Component{
                         cardSubtitle={
                             <P>
                                 Handcrafted by our friends from{' '}
-                                <A
-                                    text="Google"
-                                    link="https://design.google.com/icons/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                />
+                                <A href="https://design.google.com/icons/" target="_blank" rel="noopener noreferrer">Google</A>
                             </P>
                         }
                         content={
