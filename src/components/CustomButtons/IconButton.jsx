@@ -23,7 +23,8 @@ class IconCustomButton extends React.Component{
 IconCustomButton.propTypes = {
     classes: PropTypes.object.isRequired,
     color: PropTypes.oneOf(['primary','info','success','warning','danger','rose','white','simple']),
-    customClass: PropTypes.string
+    customClass: PropTypes.string,
+    disabled: PropTypes.bool,
 };
 
 export default withStyles(iconButtonStyle)(IconCustomButton);

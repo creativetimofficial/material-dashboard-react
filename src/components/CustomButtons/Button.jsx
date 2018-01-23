@@ -22,9 +22,10 @@ class RegularButton extends React.Component{
 
 RegularButton.propTypes = {
     classes: PropTypes.object.isRequired,
-    color: PropTypes.oneOf(['primary','info','success','warning','danger','rose','white','simple']),
+    color: PropTypes.oneOf(['primary','info','success','warning','danger','rose','white','simple','transparent']),
     round: PropTypes.bool,
     fullWidth: PropTypes.bool,
+    disabled: PropTypes.bool,
 };
 
 export default withStyles(buttonStyle)(RegularButton);

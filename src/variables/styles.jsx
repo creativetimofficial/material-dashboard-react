@@ -1013,9 +1013,11 @@ const buttonStyle = {
         }
     },
     simple: {
-        color: '#FFFFFF',
-        background: 'transparent',
-        boxShadow: 'none',
+        '&,&:focus,&:hover':{
+            color: '#FFFFFF',
+            background: 'transparent',
+            boxShadow: 'none',
+        }
     },
     transparent: {
         '&,&:focus,&:hover': {
