@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    withStyles, Card, CardContent, CardHeader, CardActions, Grid, Typography
+    withStyles, Card, CardContent, CardHeader, CardActions, Typography
 } from 'material-ui';
 import PropTypes from 'prop-types';
 
@@ -10,33 +10,31 @@ class StatsCard extends React.Component{
     render(){
         const { classes, title, description, statLink, small, statText, statIconColor, iconColor } = this.props;
         return (
-            <Grid item xs={12} sm={6} md={3}>
-                <Card className={classes.card}>
-                    <CardHeader
-                        classes={{
-                            root: (classes.cardHeader + " " + classes[iconColor+"CardHeader"]),
-                            avatar: classes.cardAvatar
-                        }}
-                        avatar={
-                            <this.props.icon className={classes.cardIcon}/>
-                        }
-                    />
-                    <CardContent className={classes.cardContent}>
-                        <Typography type="subheading" className={classes.cardCategory}>
-                            {title}
-                        </Typography>
-                        <Typography type="headline" component="h2" className={classes.cardTitle}>
-                            {description} {small !== undefined ? (<small className={classes.cardTitleSmall}>{small}</small>):null}
-                        </Typography>
-                    </CardContent>
-                    <CardActions className={classes.cardActions}>
-                        <div className={classes.cardStats}>
-                            <this.props.statIcon className={classes.cardStatsIcon + " " + classes[statIconColor+"CardStatsIcon"]} />{' '}
-                            {statLink !== undefined ? (<a href={statLink.href} className={classes.cardStatsLink}>{statLink.text}</a>):(statText !== undefined ? (statText):null)}
-                        </div>
-                    </CardActions>
-                </Card>
-            </Grid>
+            <Card className={classes.card}>
+                <CardHeader
+                    classes={{
+                        root: (classes.cardHeader + " " + classes[iconColor+"CardHeader"]),
+                        avatar: classes.cardAvatar
+                    }}
+                    avatar={
+                        <this.props.icon className={classes.cardIcon}/>
+                    }
+                />
+                <CardContent className={classes.cardContent}>
+                    <Typography type="subheading" className={classes.cardCategory}>
+                        {title}
+                    </Typography>
+                    <Typography type="headline" component="h2" className={classes.cardTitle}>
+                        {description} {small !== undefined ? (<small className={classes.cardTitleSmall}>{small}</small>):null}
+                    </Typography>
+                </CardContent>
+                <CardActions className={classes.cardActions}>
+                    <div className={classes.cardStats}>
+                        <this.props.statIcon className={classes.cardStatsIcon + " " + classes[statIconColor+"CardStatsIcon"]} />{' '}
+                        {statLink !== undefined ? (<a href={statLink.href} className={classes.cardStatsLink}>{statLink.text}</a>):(statText !== undefined ? (statText):null)}
+                    </div>
+                </CardActions>
+            </Card>
         );
     }
 }
