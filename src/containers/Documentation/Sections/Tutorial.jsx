@@ -3,22 +3,22 @@ import SyntaxHighlighter from 'react-syntax-highlighter/prism';
 import { prism } from 'react-syntax-highlighter/styles/prism';
 
 import {
-    H1, H2, P, A
+    P
 } from 'components';
 
 class Tutorial extends React.Component{
     render(){
         return (
             <div>
-                <H1>Tutorial</H1>
-                <H2>License</H2>
+                <h1>Tutorial</h1>
+                <h2>License</h2>
                 <P><b>MIT LICENSE</b></P>
-                <P>Copyright (c) 2017 <A href="http://creative-tim.com/" target="_blank" style={{color: "#9c27b0"}}>Creative Tim</A></P>
+                <P>Copyright (c) 2017 <a href="http://creative-tim.com/" target="_blank">Creative Tim</a>.</P>
                 <P>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</P>
                 <P>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</P>
                 <P>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</P>
-                <H2>Getting started</H2>
-                <P><b>Material Dashboard React</b> is built on top of <A href="https://material-ui-next.com/" target="_blank" style={{color: "#9c27b0"}}>Material UI</A>.</P>
+                <h2>Getting started</h2>
+                <P><b>Material Dashboard React</b> is built on top of <a href="https://material-ui-next.com/" target="_blank">Material UI</a>.</P>
                 <ul>
                     <li>Install NodeJs from <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">NodeJs Official Page</a></li>
                     <li>Go to <a href="https://www.creative-tim.com/" target="_blank">creative tim website</a> and login into your account</li>
@@ -43,6 +43,20 @@ class Tutorial extends React.Component{
                     <li>Navigate to <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">http://localhost:3000</a></li>
                     <li>More information → <a href="https://reactjs.org/docs/installation.html" target="_blank" rel="noopener noreferrer">react</a></li>
                 </ul>
+                <h2>Google Maps API key</h2>
+                <P>Follow these steps to get an API key:</P>
+                <ul>
+                    <li>Go to the <a href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&pli=1" target="_blank" rel="noopener noreferrer">Google API Console</a>.</li>
+                    <li>Create or select a project.</li>
+                    <li>Click Continue to enable the API and any related services.</li>
+                    <li>On the Credentials page, get an API key.</li>
+                    <li>Note: If you have an existing unrestricted API key, or a key with browser restrictions, you may use that key.</li>
+                    <li>From the dialog displaying the API key, select Restrict key to set a browser restriction on the API key.</li>
+                    <li>In the Key restriction section, select HTTP referrers (web sites), then follow the on-screen instructions to set referrers.</li>
+                    <li>(Optional) Enable billing. See <a href="https://developers.google.com/maps/documentation/javascript/usage" target="_blank" rel="noopener noreferrer">Usage Limits</a> for more information.</li>
+                </ul>
+                <P>After these steps navigate in your project to <code>views/Maps/Maps.jsx</code> and replace the <code>YOUR_KEY_HERE</code>, from line 29, with the given <code>API KEY</code>.</P>
+                <P>For more information regarding google maps API KEY navigate to this <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank" rel="noopener noreferrer">link</a>.</P>
             </div>
         );
     }
