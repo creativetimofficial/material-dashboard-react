@@ -124,7 +124,7 @@ RegularCard.defaultProps = {
 const statsCardDep = `import { Grid } from 'material-ui';
 import { ContentCopy, Warning } from 'material-ui-icons';
 import { StatsCard } from 'components';`;
-const statsCard = `<Grid item xs={12} sm={6} md={3}>
+const statsCard = `<Grid item xs={12} sm={6} md={5}>
     <StatsCard
         icon={ContentCopy}
         iconColor="orange"
@@ -220,7 +220,7 @@ class Cards extends React.Component{
                 <SyntaxHighlighter language="jsx" style={prism}>{regularCard}</SyntaxHighlighter>
                 <SyntaxHighlighter language="jsx" style={prism}>{regularCardProp}</SyntaxHighlighter>
                 <h3>StatsCard</h3>
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={5}>
                     <StatsCard
                         icon={ContentCopy}
                         iconColor="orange"
