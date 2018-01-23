@@ -1028,6 +1028,10 @@ const buttonStyle = {
     },
     round: {
         borderRadius: '30px',
+    },
+    disabled: {
+        opacity: '0.65',
+        pointerEvents: 'none'
     }
 };
 

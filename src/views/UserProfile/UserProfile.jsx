@@ -4,7 +4,7 @@ import {
 } from 'material-ui';
 
 import {
-    ProfileCard, RegularCard, Button, CustomInput 
+    ProfileCard, RegularCard, Button, CustomInput
 } from 'components';
 
 import avatar from 'assets/img/faces/marc.jpg';
