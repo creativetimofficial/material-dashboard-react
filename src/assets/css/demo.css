@@ -38,32 +38,32 @@ body {
     color: #3C4858;
     margin: 0;
 }
-blockquote .small:before, blockquote footer:before, blockquote small:before {
+blockquote footer:before, blockquote small:before {
     content: '\2014 \00A0';
 }
 
-h1, .h1 {
+h1 {
   font-size: 3.8em;
   line-height: 1.15em; }
 
-h2, .h2 {
+h2 {
   font-size: 2.6em; }
 
-h3, .h3 {
+h3 {
   font-size: 1.825em;
   line-height: 1.4em;
   margin: 20px 0 10px; }
 
-h4, .h4 {
+h4 {
   font-size: 1.3em;
   line-height: 1.4em; }
 
-h5, .h5 {
+h5 {
   font-size: 1.25em;
   line-height: 1.4em;
   margin-bottom: 15px; }
 
-h6, .h6 {
+h6 {
   font-size: 1em;
   text-transform: uppercase;
   font-weight: 500; }
@@ -75,7 +75,7 @@ h6, .h6 {
     font-style: italic; }
 
 
-  body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+  body, h1, h2, h3, h4, h5, h6{
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.5em; }
