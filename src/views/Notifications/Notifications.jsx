@@ -7,7 +7,7 @@ import {
 } from 'material-ui-icons';
 
 import {
-    RegularCard, A, P, H5, Small, Button, SnackbarContent, Snackbar
+    RegularCard, A, P, Small, Button, SnackbarContent, Snackbar
 } from 'components';
 
 class Notifications extends React.Component{
@@ -44,7 +44,7 @@ class Notifications extends React.Component{
                     <div>
                         <Grid container>
                             <Grid item xs={12} sm={12} md={6}>
-                                <H5>Notifications Style</H5>
+                                <h5>Notifications Style</h5>
                                 <br />
                                 <SnackbarContent message={'This is a plain notification'} />
                                 <br />
@@ -64,7 +64,7 @@ class Notifications extends React.Component{
                                 <br />
                             </Grid>
                             <Grid item xs={12} sm={12} md={6}>
-                                <H5>Notifications States</H5>
+                                <h5>Notifications States</h5>
                                 <br />
                                 <SnackbarContent message={'INFO - This is a regular notification made with color="info"'} close color="info"/>
                                 <br />
@@ -82,12 +82,12 @@ class Notifications extends React.Component{
                         <br />
                         <Grid container justify="center">
                             <Grid item xs={12} sm={12} md={6} style={{textAlign:"center"}}>
-                                <H5>
+                                <h5>
                                     Notifications Places
                                     <Small>
                                         Click to view notifications
                                     </Small>
-                                </H5>
+                                </h5>
                             </Grid>
                         </Grid>
                         <Grid container justify='center'>

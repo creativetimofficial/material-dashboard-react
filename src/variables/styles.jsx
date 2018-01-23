@@ -1298,24 +1298,6 @@ const typographyStyle = {
         marginTop: '20px',
         marginBottom: '10px',
     },
-    h1Style: {
-        fontSize : '3.8em',
-    },
-    h2Style: {
-        fontSize : '2.6em',
-    },
-    h3Style: {
-        fontSize : '1.825em',
-    },
-    h4Style: {
-        fontSize: '1.3em'
-    },
-    h5Style: {
-        fontSize: '1.25em'
-    },
-    h6Style: {
-        fontSize: '1em'
-    },
     pStyle: {
         margin: '0 0 10px'
     },

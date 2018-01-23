@@ -6,7 +6,7 @@ import {
 import RegularCard from 'components/Cards/RegularCard';
 
 import {
-    H1, H2, H3, H4, H5, H6, P, Quote, Muted, Primary, Info, Success, Warning, Danger, Small
+    P, Quote, Muted, Primary, Info, Success, Warning, Danger, Small
 } from 'components';
 
 const style = {
@@ -42,37 +42,37 @@ class TypographyPage extends React.Component{
                             <div className={this.props.classes.note}>
                                 Header 1
                             </div>
-                            <H1>The Life of Material Dashboard</H1>
+                            <h1>The Life of Material Dashboard</h1>
                         </div>
                         <div className={this.props.classes.typo}>
                             <div className={this.props.classes.note}>
                                 Header 2
                             </div>
-                            <H2>The Life of Material Dashboard</H2>
+                            <h2>The Life of Material Dashboard</h2>
                         </div>
                         <div className={this.props.classes.typo}>
                             <div className={this.props.classes.note}>
                                 Header 3
                             </div>
-                            <H3>The Life of Material Dashboard</H3>
+                            <h3>The Life of Material Dashboard</h3>
                         </div>
                         <div className={this.props.classes.typo}>
                             <div className={this.props.classes.note}>
                                 Header 4
                             </div>
-                            <H4>The Life of Material Dashboard</H4>
+                            <h4>The Life of Material Dashboard</h4>
                         </div>
                         <div className={this.props.classes.typo}>
                             <div className={this.props.classes.note}>
                                 Header 5
                             </div>
-                            <H5>The Life of Material Dashboard</H5>
+                            <h5>The Life of Material Dashboard</h5>
                         </div>
                         <div className={this.props.classes.typo}>
                             <div className={this.props.classes.note}>
                                 Header 6
                             </div>
-                            <H6>The Life of Material Dashboard</H6>
+                            <h6>The Life of Material Dashboard</h6>
                         </div>
                         <div className={this.props.classes.typo}>
                             <div className={this.props.classes.note}>
@@ -129,7 +129,7 @@ class TypographyPage extends React.Component{
                             <div className={this.props.classes.note}>
                                 Small Tag
                             </div>
-                            <H2>Header with small subtitle<br/><Small>Use "Small" tag for the headers</Small></H2>
+                            <h2>Header with small subtitle<br/><Small>Use "Small" tag for the headers</Small></h2>
                         </div>
                     </div>
                 }
