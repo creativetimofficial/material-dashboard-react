@@ -4,7 +4,7 @@ import { prism } from 'react-syntax-highlighter/styles/prism';
 import { Grid } from 'material-ui';
 import { People } from 'material-ui-icons';
 
-import { CustomInput } from 'components';
+import { P, CustomInput } from 'components';
 
 const inputsDep = `import { Grid } from 'material-ui';
 import { People } from 'material-ui-icons';
@@ -155,6 +155,8 @@ class Inputs extends React.Component{
                 <SyntaxHighlighter language="jsx" style={prism}>{inputsDep}</SyntaxHighlighter>
                 <SyntaxHighlighter language="jsx" style={prism}>{inputs}</SyntaxHighlighter>
                 <SyntaxHighlighter language="jsx" style={prism}>{inputsProp}</SyntaxHighlighter>
+                <h2>Props</h2>
+                <P>To see what props you can pass inside the <code>inputProps</code>, <code>labelProps</code>, <code>formControlProps</code> please check out the <a href="https://material-ui-next.com/api/input/" target="_blank" rel="noopener noreferrer">material-ui input documentation</a>, <a href="https://material-ui-next.com/api/input-label/" target="_blank" rel="noopener noreferrer">material-ui label documentation</a> and <a href="https://material-ui-next.com/api/form-control/" target="_blank" rel="noopener noreferrer">material-ui form controll documentation</a>.</P>
             </div>
         );
     }

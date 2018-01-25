@@ -18,6 +18,8 @@ class Navigation extends React.Component{
                 <P>You can choose between 5 colors by using the <code>color</code> property.</P>
                 <P>If this property is not set, then the Appbar will be transparent.</P>
                 <SyntaxHighlighter language="jsx" style={prism}>{headerProp}</SyntaxHighlighter>
+                <h2>Props</h2>
+                <P>Please check out the <a href="https://material-ui-next.com/demos/app-bar/" target="_blank" rel="noopener noreferrer">official material-ui documentation</a>.</P>
             </div>
         );
     }
