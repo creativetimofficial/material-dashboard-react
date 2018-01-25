@@ -137,6 +137,9 @@ const appStyle = theme => ({
         minHeight: 'calc(100% - 123px)',
     },
     container,
+    map:{
+        marginTop: '70px',
+    }
 });
 
 // ##############################
