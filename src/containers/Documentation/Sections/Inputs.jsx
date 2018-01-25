@@ -73,7 +73,15 @@ const inputs = `<Grid container>
         />
     </Grid>
 </Grid>`;
-const inputsProp = ``;
+const inputsProp = `CustomInput.propTypes = {
+    labelText: PropTypes.node,
+    labelProps: PropTypes.object,
+    id: PropTypes.string,
+    inputProps: PropTypes.object,
+    formControlProps: PropTypes.object,
+    error: PropTypes.bool,
+    success: PropTypes.bool
+}`;
 
 class Inputs extends React.Component{
     render(){
