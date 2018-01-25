@@ -13,7 +13,7 @@ class RegularCard extends React.Component{
             <Card className={classes.card + (plainCard ? " " + classes.cardPlain:"")}>
                 <CardHeader
                     classes={{
-                        root: classes.cardHeader + " " + classes[headerColor+"CardHeader"],
+                        root: classes.cardHeader + " " + classes[headerColor+"CardHeader"] + (plainCard ? " " + classes.cardPlainHeader:""),
                         title: classes.cardTitle,
                         subheader: classes.cardSubtitle,
                     }}

@@ -751,12 +751,16 @@ const chartCardStyle = {
         ...defaultFont,
         fontSize: '0.9em',
     },
-    cardActions,
+    cardActions:{
+        ...cardActions,
+        padding: '0!important'
+    },
     cardStats: {
         lineHeight: '22px',
         color: grayColor,
         fontSize: '12px',
         display: 'inline-block',
+        margin: '0!important'
     },
     cardStatsIcon: {
         position: 'relative',
@@ -881,6 +885,10 @@ const regularCardStyle = {
     cardHeader: {
         ...cardHeader,
         ...defaultFont,
+    },
+    cardPlainHeader:{
+        marginLeft: 0,
+        marginRight: 0,
     },
     orangeCardHeader,
     greenCardHeader,
@@ -1293,7 +1301,7 @@ const tasksStyle = {
     },
     tableCell: {
         ...defaultFont,
-        padding: '12px 8px',
+        padding: '8px',
         verticalAlign: 'middle',
         border: 'none',
         lineHeight: '1.42857143',
@@ -1317,10 +1325,6 @@ const tasksStyle = {
         color: dangerColor,
         boxShadow: 'none',
     },
-    button: {
-        width: 'auto',
-        height: 'auto',
-    },
     checked: {
         color: primaryColor
     },
@@ -1329,6 +1333,7 @@ const tasksStyle = {
         height: '20px',
         border: '1px solid rgba(0, 0, 0, .54)',
         borderRadius: '3px',
+        position: 'absolute'
     },
     uncheckedIcon: {
         width: '0px',
@@ -1420,9 +1425,11 @@ const typographyStyle = {
         color: '#777',
     },
     aStyle: {
-        color: '#FFFFFF',
         textDecoration: 'none',
         backgroundColor: 'transparent',
+        '&,&:hover':{
+            color: '#FFFFFF',
+        }
     }
 };
 
