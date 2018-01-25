@@ -1229,6 +1229,9 @@ const customInputStyle = {
         height: '24px',
         textAlign: 'center',
         pointerEvents: 'none',
+    },
+    marginTop:{
+        marginTop: '16px',
     }
 };
 

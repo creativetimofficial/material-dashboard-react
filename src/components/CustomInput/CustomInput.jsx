@@ -25,6 +25,7 @@ class CustomInput extends React.Component {
             </InputLabel>):null}
             <Input
                 classes={{
+                    root: (labelText !== undefined ? "":classes.marginTop),
                     disabled: classes.disabled,
                     underline: classes.underline,
                     inkbar: (error ? classes.inkbarError:success ? classes.inkbarSuccess:classes.inkbar),
