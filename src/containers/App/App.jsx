@@ -8,6 +8,8 @@ import {
     Route,
     Redirect
 } from 'react-router-dom';
+import PerfectScrollbar from 'perfect-scrollbar';
+import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import {
     Header, Footer, Sidebar
@@ -44,6 +46,12 @@ class App extends React.Component{
     getRoute(){
         return this.props.location.pathname !== "/maps";
     }
+    componentDidMount(){
+        const ps = new PerfectScrollbar(this.refs.mainPanel);
+    }
+    componentDidUpdate(){
+        this.refs.mainPanel.scrollTop = 0;
+    }
     render(){
         const { classes, ...rest } = this.props;
         return (
@@ -58,7 +66,7 @@ class App extends React.Component{
                     color="blue"
                     {...rest}
                 />
-                <div className={classes.mainPanel}>
+                <div className={classes.mainPanel} ref="mainPanel">
                     <Header
                         routes={appRoutes}
                         handleDrawerToggle={this.handleDrawerToggle}
