@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    List, ListItem, ListItemText, withStyles
+    List, ListItem, withStyles
 } from 'material-ui';
 
 import { footerStyle } from 'variables/styles';
@@ -15,16 +15,16 @@ class Footer extends React.Component{
                     <div className={classes.left}>
                         <List className={classes.list}>
                             <ListItem className={classes.inlineBlock}>
-                                <ListItemText primary="Home" className={classes.block} disableTypography={true}/>
+                                <a href="#home" className={classes.block}>Home</a>
                             </ListItem>
                             <ListItem className={classes.inlineBlock}>
-                                <ListItemText primary="Company" className={classes.block} disableTypography={true}/>
+                                <a href="#company" className={classes.block}>Company</a>
                             </ListItem>
                             <ListItem className={classes.inlineBlock}>
-                                <ListItemText primary="Portfolio" className={classes.block} disableTypography={true}/>
+                                <a href="#portfolio" className={classes.block}>Portfolio</a>
                             </ListItem>
                             <ListItem className={classes.inlineBlock}>
-                                <ListItemText primary="Blog" className={classes.block} disableTypography={true}/>
+                                <a href="#blog" className={classes.block}>Blog</a>
                             </ListItem>
                         </List>
                     </div>
