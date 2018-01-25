@@ -6,7 +6,6 @@ import Buttons from "containers/Documentation/Sections/Buttons.jsx";
 import Cards from "containers/Documentation/Sections/Cards.jsx";
 import CheckboxRadio from "containers/Documentation/Sections/CheckboxRadio.jsx";
 import Dropdown from "containers/Documentation/Sections/Dropdown.jsx";
-import Footers from "containers/Documentation/Sections/Footers.jsx";
 import GoogleMaps from "containers/Documentation/Sections/GoogleMaps.jsx";
 import Icons from "containers/Documentation/Sections/Icons.jsx";
 import Inputs from "containers/Documentation/Sections/Inputs.jsx";
@@ -26,7 +25,6 @@ const docRoutes = [
     { path: "/documentation/cards", name: "Cards", component: Cards },
     { path: "/documentation/checkbox-radio", name: "CheckboxRadio", component: CheckboxRadio },
     { path: "/documentation/dropdown", name: "Dropdown", component: Dropdown },
-    { path: "/documentation/footers", name: "Footers", component: Footers },
     { path: "/documentation/google-maps", name: "GoogleMaps", component: GoogleMaps },
     { path: "/documentation/icons", name: "Icons", component: Icons },
     { path: "/documentation/inputs", name: "Inputs", component: Inputs },
