@@ -6,11 +6,14 @@ import {
 
 const style = {
     list: {
+        overflowY: 'auto',
+        maxHeight: 'calc(100vh - 4rem)',
         paddingTop: '15px',
-        paddingRight: '15px',
-        paddingLeft: '15px',
+        paddingRight: '30px',
+        paddingLeft: '30px',
         paddingBottom: '.25rem',
         borderRight: '1px solid rgba(0,0,0,.1)',
+        position: 'fixed',
     },
     listItemText: {
         display: 'block',

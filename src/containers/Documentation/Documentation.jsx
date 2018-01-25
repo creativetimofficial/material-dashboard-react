@@ -20,10 +20,10 @@ class Documentation extends React.Component{
             <div style={{backgroundColor: '#FFFFFF'}}>
                 <DocHeader />
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={3} lg={2} xl={2} style={{marginTop: "75px"}}>
+                    <Grid item xs={12} sm={12} md={3} lg={2} xl={2} style={{marginTop: "75px", marginBottom: "75px"}}>
                         <DocSidebar routes={docRoutes} {...this.props}/>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={7} lg={7} xl={5} style={{marginTop: "75px"}}>
+                    <Grid item xs={12} sm={12} md={7} lg={7} xl={5} style={{marginTop: "75px", marginBottom: "75px"}}>
                         <Switch>
                             {
                                 docRoutes.map((prop,key) => {

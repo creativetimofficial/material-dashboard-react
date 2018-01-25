@@ -5,7 +5,7 @@ import {
     withStyles, IconButton, Tooltip,
 } from 'material-ui';
 import {
-    Edit, Close, Check
+    Edit, Close,
 } from 'material-ui-icons';
 import PropTypes from 'prop-types';
 

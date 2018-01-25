@@ -77,7 +77,7 @@ class DocHeader extends React.Component{
                         <NavLink to="/" activeClassName="active" className={classes.rightLinks}>
                             <List /> <span className={classes.rightLinksText}>Live Preview</span>
                         </NavLink>
-                        <a href="https://twitter.com/CreativeTim" className={classes.rightLinks}  target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/creativetimofficial/material-dashboard-react/issues" className={classes.rightLinks}  target="_blank" rel="noopener noreferrer">
                             <BugReport /> <span className={classes.rightLinksText}>Report an issue</span>
                         </a>
                     </div>

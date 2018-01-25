@@ -250,6 +250,7 @@
     top: 27px;
     opacity: 0;
     transform-origin: 0 0;
+    display: none;
 }
 
 .fixed-plugin .dropdown .dropdown-menu:before {
@@ -279,6 +280,7 @@
 }
 
 .fixed-plugin .dropdown.show .dropdown-menu {
+    display: block;
     visibility: visible;
     opacity: 1;
     -webkit-transform: translateY(-13%);
