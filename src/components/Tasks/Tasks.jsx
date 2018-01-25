@@ -45,6 +45,7 @@ class Tasks extends React.Component{
                                         icon={<Check className={classes.uncheckedIcon}/>}
                                         classes={{
                                             checked: classes.checked,
+                                            default: classes.button
                                         }}
                                     />
                                 </TableCell>

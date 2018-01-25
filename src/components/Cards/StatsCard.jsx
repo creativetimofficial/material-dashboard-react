@@ -21,7 +21,7 @@ class StatsCard extends React.Component{
                     }
                 />
                 <CardContent className={classes.cardContent}>
-                    <Typography type="subheading" className={classes.cardCategory}>
+                    <Typography component="p" className={classes.cardCategory}>
                         {title}
                     </Typography>
                     <Typography type="headline" component="h2" className={classes.cardTitle}>

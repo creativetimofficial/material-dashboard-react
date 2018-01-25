@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import ChartistGraph from 'react-chartist';
 
 import {
-    StatsCard, ChartCard, TasksCard, RegularCard, Table
+    StatsCard, ChartCard, TasksCard, RegularCard, Table, ItemGrid
 } from 'components';
 
 import {
@@ -35,7 +35,7 @@ class Dashboard extends React.Component{
         return (
             <div>
                 <Grid container>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <ItemGrid xs={12} sm={6} md={3}>
                         <StatsCard
                             icon={ContentCopy}
                             iconColor="orange"
@@ -46,8 +46,8 @@ class Dashboard extends React.Component{
                             statIconColor="danger"
                             statLink={{text: "Get More Space...", href:"#pablo"}}
                         />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    </ItemGrid>
+                    <ItemGrid xs={12} sm={6} md={3}>
                         <StatsCard
                             icon={Store}
                             iconColor="green"
@@ -56,8 +56,8 @@ class Dashboard extends React.Component{
                             statIcon={DateRange}
                             statText="Last 24 Hours"
                         />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    </ItemGrid>
+                    <ItemGrid xs={12} sm={6} md={3}>
                         <StatsCard
                             icon={InfoOutline}
                             iconColor="red"
@@ -66,8 +66,8 @@ class Dashboard extends React.Component{
                             statIcon={LocalOffer}
                             statText="Tracked from Github"
                         />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    </ItemGrid>
+                    <ItemGrid xs={12} sm={6} md={3}>
                         <StatsCard
                             icon={Accessibility}
                             iconColor="blue"
@@ -76,10 +76,10 @@ class Dashboard extends React.Component{
                             statIcon={Update}
                             statText="Just Updated"
                         />
-                    </Grid>
+                    </ItemGrid>
                 </Grid>
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={4}>
+                    <ItemGrid xs={12} sm={12} md={4}>
                         <ChartCard
                             chart={
                                 <ChartistGraph
@@ -102,8 +102,8 @@ class Dashboard extends React.Component{
                             statIcon={AccessTime}
                             statText="updated 4 minutes ago"
                         />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={4}>
+                    </ItemGrid>
+                    <ItemGrid xs={12} sm={12} md={4}>
                         <ChartCard
                             chart={
                                 <ChartistGraph
@@ -123,8 +123,8 @@ class Dashboard extends React.Component{
                             statIcon={AccessTime}
                             statText="campaign sent 2 days ago"
                         />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={4}>
+                    </ItemGrid>
+                    <ItemGrid xs={12} sm={12} md={4}>
                         <ChartCard
                             chart={
                                 <ChartistGraph
@@ -143,13 +143,13 @@ class Dashboard extends React.Component{
                             statIcon={AccessTime}
                             statText="campaign sent 2 days ago"
                         />
-                    </Grid>
+                    </ItemGrid>
                 </Grid>
                 <Grid container>
-                    <Grid item xs={12} sm={12} md={6}>
+                    <ItemGrid xs={12} sm={12} md={6}>
                         <TasksCard />
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={6}>
+                    </ItemGrid>
+                    <ItemGrid xs={12} sm={12} md={6}>
                         <RegularCard
                             headerColor="orange"
                             cardTitle="Employees Stats"
@@ -167,7 +167,7 @@ class Dashboard extends React.Component{
                                 />
                             }
                         />
-                    </Grid>
+                    </ItemGrid>
                 </Grid>
             </div>
         );

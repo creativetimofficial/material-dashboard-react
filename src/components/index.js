@@ -1,6 +1,7 @@
 // ##############################
 // // // Cards
 // #############################
+
 import ChartCard from './Cards/ChartCard.jsx';
 import ProfileCard from './Cards/ProfileCard.jsx';
 import RegularCard from './Cards/RegularCard.jsx';
@@ -25,6 +26,12 @@ import CustomInput from './CustomInput/CustomInput.jsx';
 // #############################
 
 import Footer from './Footer/Footer.jsx';
+
+// ##############################
+// // // Grid
+// #############################
+
+import ItemGrid from './Grid/ItemGrid.jsx';
 
 // ##############################
 // // // Header
@@ -82,6 +89,8 @@ export {
     CustomInput,
     // Footer
     Footer,
+    // Grid
+    ItemGrid,
     // Header
     Header, HeaderLinks,
     // Sidebar

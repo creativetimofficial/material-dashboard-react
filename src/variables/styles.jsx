@@ -282,7 +282,7 @@ const sidebarStyle = theme => ({
         ...defaultFont,
     },
     itemIcon: {
-        width: '30px',
+        width: '24px',
         height: '30px',
         float: 'left',
         marginRight: '15px',
@@ -454,8 +454,7 @@ const headerLinksStyle = theme => ({
         zIndex: '4',
     },
     searchIcon:{
-        width: '20px',
-        height: '20px',
+        width: '17px',
         zIndex: '4',
     },
     links:{
@@ -562,8 +561,6 @@ const footerStyle = {
         textDecoration: 'none',
         position: 'relative',
         display: 'block',
-    },
-    text: {
         ...defaultFont,
         fontWeight: '500',
         fontSize: '12px',
@@ -575,6 +572,7 @@ const footerStyle = {
     right: {
         padding: '15px 0',
         margin: '0',
+        fontSize: '14px',
         float: 'right!important',
     },
     footer: {
@@ -676,12 +674,16 @@ const statsCardStyle = {
         lineHeight: '1',
         color: '#777',
     },
-    cardActions,
+    cardActions:{
+        ...cardActions,
+        padding: '0!important'
+    },
     cardStats: {
         lineHeight: '22px',
         color: grayColor,
         fontSize: '12px',
         display: 'inline-block',
+        margin: '0!important'
     },
     cardStatsIcon: {
         position: 'relative',
@@ -890,7 +892,7 @@ const regularCardStyle = {
         marginTop: '0',
         marginBottom: '5px',
         ...defaultFont,
-        fontSize: '1.3em',
+        fontSize: '1.125em',
     },
     cardSubtitle: {
         ...defaultFont,
@@ -1085,6 +1087,7 @@ const iconButtonStyle = {
         fontSize: '24px',
         margin: 'auto',
         padding: '0',
+        boxShadow: '0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12)',
         overflow: 'hidden',
         position: 'relative',
         lineHeight: 'normal',
@@ -1204,9 +1207,7 @@ const tableStyle = {
         borderCollapse: 'collapse',
     },
     tableCell: {
-        ...defaultFont,
         lineHeight: '1.42857143',
-        fontSize: '14px',
         padding: '12px 8px',
         verticalAlign: 'middle',
     }
@@ -1316,6 +1317,10 @@ const tasksStyle = {
         color: dangerColor,
         boxShadow: 'none',
     },
+    button: {
+        width: 'auto',
+        height: 'auto',
+    },
     checked: {
         color: primaryColor
     },
@@ -1355,7 +1360,7 @@ const tasksStyle = {
         wordWrap: 'normal',
         whiteSpace: 'normal',
         lineBreak: 'auto',
-    }
+    },
 };
 
 // ##############################
