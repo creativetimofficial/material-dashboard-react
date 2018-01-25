@@ -14,6 +14,7 @@ import Notifications from "containers/Documentation/Sections/Notifications.jsx";
 import Sidebar from "containers/Documentation/Sections/Sidebar.jsx";
 import Tables from "containers/Documentation/Sections/Tables.jsx";
 import Tasks from "containers/Documentation/Sections/Tasks.jsx";
+import Typography from "containers/Documentation/Sections/Typography.jsx";
 import Tooltips from "containers/Documentation/Sections/Tooltips.jsx";
 
 const docRoutes = [
@@ -34,6 +35,7 @@ const docRoutes = [
     { path: "/documentation/tables", name: "Tables", component: Tables },
     { path: "/documentation/tasks", name: "Tasks", component: Tasks },
     { path: "/documentation/tooltips", name: "Tooltips", component: Tooltips },
+    { path: "/documentation/typography", name: "Typography", component: Typography },
     { redirect: true, path: "/documentation", to: "/documentation/tutorial"}
 ];
 
