@@ -1196,12 +1196,39 @@ const customInputStyle = {
             backgroundColor: primaryColor
         }
     },
+    inkbarError: {
+        '&:after': {
+            backgroundColor: dangerColor
+        }
+    },
+    inkbarSuccess: {
+        '&:after': {
+            backgroundColor: successColor
+        }
+    },
     labelRoot: {
         ...defaultFont,
         color: '#AAAAAA',
         fontWeight: '400',
         fontSize: '14px',
         lineHeight: '1.42857',
+    },
+    labelRootError: {
+        color: dangerColor
+    },
+    labelRootSuccess: {
+        color: successColor
+    },
+    feedback: {
+        position: 'absolute',
+        top: '18px',
+        right: '0',
+        zIndex: '2',
+        display: 'block',
+        width: '24px',
+        height: '24px',
+        textAlign: 'center',
+        pointerEvents: 'none',
     }
 };
 
