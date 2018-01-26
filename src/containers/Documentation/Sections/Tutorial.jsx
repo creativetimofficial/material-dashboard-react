@@ -116,8 +116,7 @@ class Tutorial extends React.Component{
                 <ul>
                     <li>Install NodeJs from <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">NodeJs Official Page</a></li>
                     <li>Go to <a href="https://www.creative-tim.com/" target="_blank">creative tim website</a> and login into your account</li>
-                    <li>Go to <a href="https://www.creative-tim.com/downloads" target="_blank">downloads</a> section on creative tim website (be sure to be logged into your account)</li>
-                    <li>Press the download button near <b>Now UI Dashboard Pro React</b> product (this will download onto your computer a zip file)</li>
+                    <li>Go to <a href="https://www.creative-tim.com/product/material-dashboard-react" target="_blank">material dashboard react</a> and press the download button (this will download onto your computer a zip file)</li>
                     <li>Unzip the downloaded file to a folder in your computer</li>
                     <li>Open Terminal</li>
                     <li>Go to your file project (where you've unzipped the product)</li>
