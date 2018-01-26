@@ -1,3 +1,17 @@
+/*
+ =========================================================
+ * Material Dashboard React - v1.0.0 based on Material Dashboard - v1.2.0
+ =========================================================
+
+ * Product Page: http://www.creative-tim.com/product/material-dashboard-react
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
+ * Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
 .fixed-plugin {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 300;
@@ -389,88 +403,6 @@
     border-right-color: #fafafa;
 }
 
-.fixed-plugin .gh-count:after {
-    top: 50%;
-    left: -4px;
-    z-index: -1;
-    margin-top: -5px;
-    border-width: 5px 5px 5px 0;
-    border-right-color: #d4d4d4;
-}
-
-.fixed-plugin .github-btn-large {
-    height: 30px;
-}
-
-.fixed-plugin .github-btn-large .gh-btn,
-.fixed-plugin .github-btn-large .gh-count {
-    padding: 3px 10px 3px 8px;
-    font-size: 16px;
-    line-height: 22px;
-    border-radius: 4px;
-}
-
-.fixed-plugin .github-btn-large .gh-ico {
-    width: 20px;
-    height: 20px;
-}
-
-.fixed-plugin .github-btn-large .gh-count {
-    margin-left: 6px;
-}
-
-.fixed-plugin .github-btn-large .gh-count:before {
-    left: -5px;
-    margin-top: -6px;
-    border-width: 6px 6px 6px 0;
-}
-
-.fixed-plugin .github-btn-large .gh-count:after {
-    left: -6px;
-    margin-top: -7px;
-    border-width: 7px 7px 7px 0;
-}
-
-.fixed-plugin .button-container > .SocialMediaShareButton,
-.fixed-plugin .button-container > .github-btn {
-    display: inline-block;
-}
-
-.fixed-plugin .button-container > .SocialMediaShareButton:focus {
-    outline: none;
-}
-
-@media (max-width: 767px) {
-    .fixed-plugin {
-        top: 115px;
-    }
-
-    .fixed-plugin #sharrreTitle {
-        display: none !important;
-    }
-
-    .fixed-plugin .dropdown-menu li.adjustments-line {
-        padding: 0px !important;
-        height: 30px !important;
-    }
-
-    .fixed-plugin .dropdown-menu li.adjustments-line .switch-trigger .pull-right {
-        float: none !important;
-    }
-
-    .fixed-plugin .dropdown-menu li.button-container {
-        padding: 0px !important;
-        height: 40px !important;
-    }
-
-    .fixed-plugin .dropdown-menu li.button-container div {
-        margin: 0px !important;
-    }
-
-    .fixed-plugin .dropdown-menu li .img-holder.switch-trigger {
-        height: 58px !important;
-    }
-}
 .ct-grid {
     stroke: rgba(255, 255, 255, 0.2);
     stroke-width: 1px;
