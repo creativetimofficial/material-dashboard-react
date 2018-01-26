@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker,
+    withScriptjs,
+    withGoogleMap,
+    GoogleMap,
+    Marker,
 } from "react-google-maps";
 
 const CustomSkinMap = withScriptjs(withGoogleMap(props =>
@@ -26,7 +26,7 @@ class Maps extends React.Component{
     render(){
         return (
             <CustomSkinMap
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY"
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFPQibxeDaLIUHsC6_KqDdFaUdhrbhZ3M"
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `100vh` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
