@@ -7,9 +7,15 @@ import {
 } from 'components';
 
 const files = `material-dashboard-react
+├── CHANGELOG.md
 ├── LICENSE.md
 ├── README.md
-├── package-lock.json
+├── documentation
+│   ├── assets
+│   │   ├── css
+│   │   ├── img
+│   │   └── js
+│   └── tutorial-components.html
 ├── package.json
 ├── public
 │   ├── apple-icon.png
@@ -48,6 +54,8 @@ const files = `material-dashboard-react
     │   │   └── CustomInput.jsx
     │   ├── Footer
     │   │   └── Footer.jsx
+    │   ├── Grid
+    │   │   └── ItemGrid.jsx
     │   ├── Header
     │   │   ├── Header.jsx
     │   │   └── HeaderLinks.jsx
