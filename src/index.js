@@ -23,7 +23,7 @@ hist.listen( location =>  {
     ReactGA.pageview(window.location.pathname + window.location.search);
 });
 ReactDOM.render(
-    <HashRouter history={hist}>
+    <HashRouter>
         <Switch>
             {
                 indexRoutes.map((prop,key) => {
