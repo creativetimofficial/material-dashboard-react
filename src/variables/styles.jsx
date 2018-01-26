@@ -839,7 +839,7 @@ const tasksCardStyle = theme => ({
     },
     tabWrapper: {
         width: 'auto',
-        display: 'inline-block',
+        display: 'inline-flex',
         alignItems: 'inherit',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -849,7 +849,6 @@ const tasksCardStyle = theme => ({
     },
     tabIcon:{
         float: 'left',
-        marginTop: '2px',
         [theme.breakpoints.down('sm')]:{
             marginTop: '-2px',
         },
@@ -884,7 +883,7 @@ const tasksCardStyle = theme => ({
         textTransform: 'uppercase',
         fontSize: '12px',
         fontWeight: '400',
-        marginLeft: '5px'
+        marginLeft: '-10px'
     },
     rootInheritSelected: {
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
