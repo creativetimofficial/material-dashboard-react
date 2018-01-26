@@ -28,6 +28,11 @@
     .badge-primary-background-color: #9c27b0;
 }
 
+.fixed-plugin .SocialMediaShareButton,
+.fixed-plugin .github-btn {
+    display: inline-block;;
+}
+
 .fixed-plugin li > a,
 .fixed-plugin .badge {
     transition: all .34s;
