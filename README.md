@@ -1,4 +1,4 @@
-# [Material Dashboard React - Free Material-UI Material Design Admin](http://md-react.creative-tim.com/)
+# [Material Dashboard React - Free Material-UI Design Admin](http://md-react.creative-tim.com/)
 [![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 
 ![alt text](http://s3.amazonaws.com/creativetim_bucket/products/50/original/opt_mdr_thumbnail.jpg "Material Dashboard Free React")
@@ -12,7 +12,8 @@ Material Dashboard React comes with 5 color filter choices for both the sidebar 
 Material Dashboard React uses a framework built by our friend [Olivier - Material-UI](https://github.com/mui-org/material-ui), who did an amazing job creating the backbone for the material effects, animations, ripples and transitions. Big thanks to his team for the effort and forward thinking they put into it.
 
 Special thanks go to:
-[React-chartist](https://github.com/fraserxu/react-chartist) for the wonderful charts.
++ [React-chartist](https://github.com/fraserxu/react-chartist) for the wonderful charts.
+
 We are very excited to share this dashboard with you and we look forward to hearing your feedback!
 
 You can find the Github Repo here.
