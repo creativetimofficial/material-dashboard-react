@@ -12,6 +12,7 @@
         "react-bootstrap-switch": "^15.5.3",
         "react-chartist": "^0.13.1",
         "react-dom": "^16.2.0",
+        "react-ga": "^2.4.1",
         "react-github-button": "^0.1.11",
         "react-google-maps": "^9.4.5",
         "react-router-dom": "^4.2.2",
