@@ -2,8 +2,10 @@
     "name": "material-dashboard-react",
     "version": "1.0.0",
     "private": true,
+    "homepage": "https://creativetimofficial.github.io/material-dashboard-react",
     "dependencies": {
         "chartist": "^0.10.1",
+        "gh-pages": "^1.1.0",
         "material-ui": "1.0.0-beta.23",
         "material-ui-icons": "1.0.0-beta.17",
         "npm-run-all": "^4.1.1",
@@ -25,6 +27,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "deploy": "gh-pages -d build"
     }
 }
