@@ -37,8 +37,8 @@ class ChartCard extends React.Component{
 }
 
 ChartCard.defaultProps = {
-  statIconColor: 'gray',
-  chartColor: 'purple'
+    statIconColor: 'gray',
+    chartColor: 'purple'
 };
 
 ChartCard.propTypes = {
