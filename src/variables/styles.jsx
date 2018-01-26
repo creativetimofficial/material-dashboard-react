@@ -351,7 +351,7 @@ const sidebarStyle = theme => ({
 
 const headerStyle = theme => ({
     appBar: {
-        top: '-7px',
+        top: '-30px',
         backgroundColor: 'transparent',
         boxShadow: 'none',
         borderBottom: '0',
@@ -383,6 +383,7 @@ const headerStyle = theme => ({
         borderRadius: '3px',
         textTransform: 'none',
         color: 'inherit',
+        top: '10px',
         '&:hover,&:focus': {
             background: 'transparent'
         }
@@ -1279,8 +1280,13 @@ const customInputStyle = {
         textAlign: 'center',
         pointerEvents: 'none',
     },
-    marginTop:{
+    marginTop: {
         marginTop: '16px',
+    },
+    formControl: {
+        paddingBottom: '10px',
+        margin: '27px 0 0 0',
+        position: 'relative',
     }
 };
 

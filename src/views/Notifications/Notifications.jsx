@@ -7,7 +7,7 @@ import {
 } from 'material-ui-icons';
 
 import {
-    RegularCard, A, P, Small, Button, SnackbarContent, Snackbar
+    RegularCard, A, P, Small, Button, SnackbarContent, Snackbar, ItemGrid
 } from 'components';
 
 class Notifications extends React.Component{
@@ -43,7 +43,7 @@ class Notifications extends React.Component{
                 content={
                     <div>
                         <Grid container>
-                            <Grid item xs={12} sm={12} md={6}>
+                            <ItemGrid xs={12} sm={12} md={6}>
                                 <h5>Notifications Style</h5>
                                 <br />
                                 <SnackbarContent message={'This is a plain notification'} />
@@ -62,8 +62,8 @@ class Notifications extends React.Component{
                                     icon={AddAlert}
                                 />
                                 <br />
-                            </Grid>
-                            <Grid item xs={12} sm={12} md={6}>
+                            </ItemGrid>
+                            <ItemGrid xs={12} sm={12} md={6}>
                                 <h5>Notifications States</h5>
                                 <br />
                                 <SnackbarContent message={'INFO - This is a regular notification made with color="info"'} close color="info"/>
@@ -76,24 +76,24 @@ class Notifications extends React.Component{
                                 <br />
                                 <SnackbarContent message={'PRIMARY - This is a regular notification made with color="primary"'} close color="primary"/>
                                 <br />
-                            </Grid>
+                            </ItemGrid>
                         </Grid>
                         <br />
                         <br />
                         <Grid container justify="center">
-                            <Grid item xs={12} sm={12} md={6} style={{textAlign:"center"}}>
+                            <ItemGrid xs={12} sm={12} md={6} style={{textAlign:"center"}}>
                                 <h5>
                                     Notifications Places
                                     <Small>
                                         Click to view notifications
                                     </Small>
                                 </h5>
-                            </Grid>
+                            </ItemGrid>
                         </Grid>
                         <Grid container justify='center'>
-                            <Grid item xs={12} sm={12} md={10} lg={8}>
+                            <ItemGrid xs={12} sm={12} md={10} lg={8}>
                                 <Grid container>
-                                    <Grid item xs={12} sm={12} md={4}>
+                                    <ItemGrid xs={12} sm={12} md={4}>
                                         <Button fullWidth color="primary" onClick={() => this.showNotification('tl')}>Top Left</Button>
                                         <Snackbar
                                             place="tl"
@@ -104,8 +104,8 @@ class Notifications extends React.Component{
                                             closeNotification={() => this.setState({'tl':false})}
                                             close
                                         />
-                                    </Grid>
-                                    <Grid item xs={12} sm={12} md={4}>
+                                    </ItemGrid>
+                                    <ItemGrid xs={12} sm={12} md={4}>
                                         <Button fullWidth color="primary" onClick={() => this.showNotification('tc')}>Top Center</Button>
                                         <Snackbar
                                             place="tc"
@@ -116,8 +116,8 @@ class Notifications extends React.Component{
                                             closeNotification={() => this.setState({'tc':false})}
                                             close
                                         />
-                                    </Grid>
-                                    <Grid item xs={12} sm={12} md={4}>
+                                    </ItemGrid>
+                                    <ItemGrid xs={12} sm={12} md={4}>
                                         <Button fullWidth color="primary" onClick={() => this.showNotification('tr')}>Top Right</Button>
                                         <Snackbar
                                             place="tr"
@@ -128,14 +128,14 @@ class Notifications extends React.Component{
                                             closeNotification={() => this.setState({'tr':false})}
                                             close
                                         />
-                                    </Grid>
+                                    </ItemGrid>
                                 </Grid>
-                            </Grid>
+                            </ItemGrid>
                         </Grid>
                         <Grid container justify={'center'}>
-                            <Grid item xs={12} sm={12} md={10} lg={8}>
+                            <ItemGrid xs={12} sm={12} md={10} lg={8}>
                                 <Grid container>
-                                    <Grid item xs={12} sm={12} md={4}>
+                                    <ItemGrid xs={12} sm={12} md={4}>
                                         <Button fullWidth color="primary" onClick={() => this.showNotification('bl')}>Bottom Left</Button>
                                         <Snackbar
                                             place="bl"
@@ -146,8 +146,8 @@ class Notifications extends React.Component{
                                             closeNotification={() => this.setState({'bl':false})}
                                             close
                                         />
-                                    </Grid>
-                                    <Grid item xs={12} sm={12} md={4}>
+                                    </ItemGrid>
+                                    <ItemGrid xs={12} sm={12} md={4}>
                                         <Button fullWidth color="primary" onClick={() => this.showNotification('bc')}>Bottom Center</Button>
                                         <Snackbar
                                             place="bc"
@@ -158,8 +158,8 @@ class Notifications extends React.Component{
                                             closeNotification={() => this.setState({'bc':false})}
                                             close
                                         />
-                                    </Grid>
-                                    <Grid item xs={12} sm={12} md={4}>
+                                    </ItemGrid>
+                                    <ItemGrid xs={12} sm={12} md={4}>
                                         <Button fullWidth color="primary" onClick={() => this.showNotification('br')}>Bottom Right</Button>
                                         <Snackbar
                                             place="br"
@@ -170,9 +170,9 @@ class Notifications extends React.Component{
                                             closeNotification={() => this.setState({'br':false})}
                                             close
                                         />
-                                    </Grid>
+                                    </ItemGrid>
                                 </Grid>
-                            </Grid>
+                            </ItemGrid>
                         </Grid>
                     </div>
                 }

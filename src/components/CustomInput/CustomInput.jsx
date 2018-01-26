@@ -13,7 +13,7 @@ class CustomInput extends React.Component {
   render() {
       const { classes, formControlProps, labelText, id, labelProps, inputProps, error, success } = this.props;
     return (
-        <FormControl {...formControlProps}>
+        <FormControl {...formControlProps} className={formControlProps.className + " " + classes.formControl}>
             {labelText !== undefined ? (<InputLabel
                 classes={{
                     root: classes.labelRoot + (error ? " " + classes.labelRootError:success ? " " + classes.labelRootSuccess:""),
