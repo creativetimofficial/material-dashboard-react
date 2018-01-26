@@ -170,6 +170,7 @@ const sidebarStyle = theme => ({
         bottom: '0',
         left: '0',
         zIndex: '1',
+        // overflow: 'auto',
         ...boxShadow,
         width: drawerWidth,
         [theme.breakpoints.up('md')]: {
@@ -368,6 +369,9 @@ const sidebarStyle = theme => ({
 const headerStyle = theme => ({
     appBar: {
         top: '-30px',
+        [theme.breakpoints.down('md')]:{
+            top: '-15px'
+        },
         backgroundColor: 'transparent',
         boxShadow: 'none',
         borderBottom: '0',
@@ -403,6 +407,9 @@ const headerStyle = theme => ({
         '&:hover,&:focus': {
             background: 'transparent'
         }
+    },
+    appResponsive: {
+        top: '8px'
     },
     primary: {
         backgroundColor: primaryColor,
