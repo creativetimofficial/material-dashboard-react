@@ -4,16 +4,19 @@ import {
     withStyles, List, ListItem, ListItemText
 } from 'material-ui';
 
-const style = {
+const style = theme => ({
     list: {
         overflowY: 'auto',
         maxHeight: 'calc(100vh - 4rem)',
-        paddingTop: '15px',
+        paddingTop: '40px',
         paddingRight: '30px',
         paddingLeft: '30px',
         paddingBottom: '.25rem',
         borderRight: '1px solid rgba(0,0,0,.1)',
-        position: 'fixed',
+        [theme.breakpoints.up('md')]: {
+            position: 'fixed',
+            paddingTop: '15px',
+        },
     },
     listItemText: {
         display: 'block',
@@ -34,7 +37,7 @@ const style = {
     listItem: {
         paddingTop: '.25rem',
     }
-};
+});
 
 class DocSidebar extends React.Component{
     activeRoute(routeName) {

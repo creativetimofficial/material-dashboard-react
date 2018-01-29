@@ -1,7 +1,7 @@
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter/prism';
 import { prism } from 'react-syntax-highlighter/styles/prism';
-import { Grid } from 'material-ui';
+import { Grid, InputAdornment } from 'material-ui';
 import { People } from 'material-ui-icons';
 
 import { P, CustomInput } from 'components';
@@ -64,11 +64,13 @@ const inputs = `<Grid container>
     </Grid>
     <Grid item xs={12} sm={12} md={4}>
         <CustomInput
-            icon={People}
             labelText="With material Icons"
             id="material"
             formControlProps={{
                 fullWidth: true
+            }}
+            inputProps={{
+                endAdornment: (<InputAdornment position="end"><People/></InputAdornment>)
             }}
         />
     </Grid>
@@ -143,11 +145,13 @@ class Inputs extends React.Component{
                     </Grid>
                     <Grid item xs={12} sm={12} md={4}>
                         <CustomInput
-                            icon={People}
                             labelText="With material Icons"
                             id="material"
                             formControlProps={{
                                 fullWidth: true
+                            }}
+                            inputProps={{
+                                endAdornment: (<InputAdornment position="end"><People/></InputAdornment>)
                             }}
                         />
                     </Grid>

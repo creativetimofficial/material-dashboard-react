@@ -51,6 +51,11 @@ const style = theme => ({
         [theme.breakpoints.up('md')]: {
             flex: '1'
         },
+    },
+    block: {
+        [theme.breakpoints.down('md')]: {
+            display: 'block'
+        },
     }
 });
 
@@ -59,7 +64,7 @@ class DocHeader extends React.Component{
         const { classes } = this.props;
         return (
             <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar>
+                <Toolbar className={classes.block}>
                     <div className={classes.flex}>
                         <NavLink to="/" activeClassName="active" className={classes.title}>
                             Material Dashboard React
