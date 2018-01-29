@@ -18,26 +18,24 @@ class Sidebar extends React.Component {
     render() {
         const { classes, color, logo, image, logoText, routes } = this.props;
         var links = (
-            <div className={classes.listWrapper}>
-                <List className={classes.list}>
-                    {
-                        routes.map((prop,key) => {
-                            if(prop.redirect)
-                                return null;
-                            return (
-                                <NavLink to={prop.path} className={classes.item} activeClassName="active" key={key}>
-                                    <ListItem button className={classes.itemLink + (this.activeRoute(prop.path) ? " " + classes[color]:"")}>
-                                        <ListItemIcon className={classes.itemIcon + (this.activeRoute(prop.path) ? " " + classes.whiteFont:"")}>
-                                            <prop.icon />
-                                        </ListItemIcon>
-                                        <ListItemText primary={prop.sidebarName} className={classes.itemText + (this.activeRoute(prop.path) ? " " + classes.whiteFont:"")}  disableTypography={true}/>
-                                    </ListItem>
-                                </NavLink>
-                            );
-                        })
-                    }
-                </List>
-            </div>
+            <List className={classes.list}>
+                {
+                    routes.map((prop,key) => {
+                        if(prop.redirect)
+                            return null;
+                        return (
+                            <NavLink to={prop.path} className={classes.item} activeClassName="active" key={key}>
+                                <ListItem button className={classes.itemLink + (this.activeRoute(prop.path) ? " " + classes[color]:"")}>
+                                    <ListItemIcon className={classes.itemIcon + (this.activeRoute(prop.path) ? " " + classes.whiteFont:"")}>
+                                        <prop.icon />
+                                    </ListItemIcon>
+                                    <ListItemText primary={prop.sidebarName} className={classes.itemText + (this.activeRoute(prop.path) ? " " + classes.whiteFont:"")}  disableTypography={true}/>
+                                </ListItem>
+                            </NavLink>
+                        );
+                    })
+                }
+            </List>
         );
         var brand = (
             <div className={classes.logo}>
@@ -64,12 +62,17 @@ class Sidebar extends React.Component {
                             keepMounted: true, // Better open performance on mobile.
                         }}>
                         {brand}
-                        <HeaderLinks />
-                        {links}
-                        <div className={classes.background} style={{backgroundImage: "url("+image+")"}} />
+                        <div className={classes.sidebarWrapper}>
+                            <HeaderLinks />
+                            {links}
+
+                        </div>
+                        {
+                            image !== undefined ? (<div className={classes.background} style={{backgroundImage: "url("+image+")"}} />):null
+                        }
                     </Drawer>
                 </Hidden>
-                <Hidden mdDown implementation="css">
+                <Hidden smDown>
                     <Drawer
                         anchor='left'
                         type="permanent"
@@ -78,7 +81,9 @@ class Sidebar extends React.Component {
                             paper: classes.drawerPaper,
                         }}>
                         {brand}
-                        {links}
+                        <div className={classes.sidebarWrapper}>
+                            {links}
+                        </div>
                         {
                             image !== undefined ? (<div className={classes.background} style={{backgroundImage: "url("+image+")"}} />):null
                         }

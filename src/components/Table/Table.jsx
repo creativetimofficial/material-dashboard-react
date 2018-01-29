@@ -10,36 +10,17 @@ class CustomTable extends React.Component {
     render(){
         const { classes, tableHead, tableData, tableHeaderColor } = this.props;
         return (
-            <Table className={classes.table}>
-                {
-                    tableHead !== undefined ? (
-                        <TableHead className={classes[tableHeaderColor+"TableHeader"]}>
-                            <TableRow>
-                                {
-                                    tableHead.map((prop,key) => {
-                                        return (
-                                            <TableCell
-                                                className={classes.tableCell + " " + classes.tableHeadCell}
-                                                key={key}>
-                                                {prop}
-                                            </TableCell>
-                                        );
-                                    })
-                                }
-                            </TableRow>
-                        </TableHead>
-                    ):null
-                }
-                <TableBody>
+            <div className={classes.tableResponsive}>
+                <Table className={classes.table}>
                     {
-                        tableData.map((prop,key) => {
-                            return (
-                                <TableRow key={key}>
+                        tableHead !== undefined ? (
+                            <TableHead className={classes[tableHeaderColor+"TableHeader"]}>
+                                <TableRow>
                                     {
-                                        prop.map((prop,key) => {
+                                        tableHead.map((prop,key) => {
                                             return (
                                                 <TableCell
-                                                    className={classes.tableCell}
+                                                    className={classes.tableCell + " " + classes.tableHeadCell}
                                                     key={key}>
                                                     {prop}
                                                 </TableCell>
@@ -47,11 +28,32 @@ class CustomTable extends React.Component {
                                         })
                                     }
                                 </TableRow>
-                            );
-                        })
+                            </TableHead>
+                        ):null
                     }
-                </TableBody>
-            </Table>
+                    <TableBody>
+                        {
+                            tableData.map((prop,key) => {
+                                return (
+                                    <TableRow key={key}>
+                                        {
+                                            prop.map((prop,key) => {
+                                                return (
+                                                    <TableCell
+                                                        className={classes.tableCell}
+                                                        key={key}>
+                                                        {prop}
+                                                    </TableCell>
+                                                );
+                                            })
+                                        }
+                                    </TableRow>
+                                );
+                            })
+                        }
+                    </TableBody>
+                </Table>
+            </div>
         );
     }
 }
