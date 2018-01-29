@@ -18,7 +18,7 @@ const appRoutes = [
     { path: "/icons", sidebarName: "Icons", navbarName: "Icons", icon: BubbleChart, component: Icons },
     { path: "/maps", sidebarName: "Maps", navbarName: "Map", icon: LocationOn, component: Maps },
     { path: "/notifications", sidebarName: "Notifications", navbarName: "Notifications", icon: Notifications, component: NotificationsPage },
-    { redirect: true, path: "/", to: "/dashboard" }
+    { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
 export default appRoutes;

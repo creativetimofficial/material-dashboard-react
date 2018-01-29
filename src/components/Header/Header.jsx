@@ -15,23 +15,8 @@ class Header extends React.Component{
     makeBrand(){
         var name;
         this.props.routes.map((prop,key) => {
-            if(prop.collapse){
-                 prop.views.map((prop,key) => {
-                    if(prop.path === this.props.location.pathname){
-                        name = prop.sidebarName;
-                    }
-                    return null;
-                })
-            } else {
-                if(prop.redirect){
-                    if(prop.path === this.props.location.pathname){
-                        name = prop.sidebarName;
-                    }
-                }else{
-                    if(prop.path === this.props.location.pathname){
-                        name = prop.sidebarName;
-                    }
-                }
+            if(prop.path === this.props.location.pathname){
+                name = prop.navbarName;
             }
             return null;
         })
