@@ -31,7 +31,7 @@ class Header extends React.Component{
                         {/* Here we create navbar brand, based on route name */}
                         <Button href="#" className={classes.title}>{this.makeBrand()}</Button>
                     </div>
-                    <Hidden mdDown implementation="css">
+                    <Hidden smDown implementation="css">
                         <HeaderLinks />
                     </Hidden>
                     <Hidden mdUp>

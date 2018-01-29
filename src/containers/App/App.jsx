@@ -20,7 +20,7 @@ import appRoutes from 'routes/app.jsx';
 
 import { appStyle } from 'variables/styles';
 
-import image from 'assets/img/sidebar-1.jpg';
+import image from 'assets/img/sidebar-2.jpg';
 import logo from 'assets/img/reactlogo.png';
 
 const switchRoutes = (<Switch>
@@ -48,8 +48,11 @@ class App extends React.Component{
         return this.props.location.pathname !== "/maps";
     }
     componentDidMount(){
-        // eslint-disable-next-line
-        const ps = new PerfectScrollbar(this.refs.mainPanel);
+        if(window.innerWidth > 991)
+        {
+            // eslint-disable-next-line
+            const ps = new PerfectScrollbar(this.refs.mainPanel);
+        }
     }
     componentDidUpdate(){
         this.refs.mainPanel.scrollTop = 0;

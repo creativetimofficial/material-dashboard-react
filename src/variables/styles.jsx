@@ -60,7 +60,7 @@ const primaryColor = '#9c27b0';
 const warningColor = '#ff9800';
 const dangerColor = '#f44336';
 const successColor = '#4caf50';
-const infoColor = '#00bcd4';
+const infoColor = '#00acc1';
 const roseColor = '#e91e63';
 const grayColor = '#999999';
 
@@ -146,6 +146,7 @@ const appStyle = theme => ({
         float: 'right',
         ...transition,
         maxHeight: '100%',
+        width: '100%',
     },
     content: {
         marginTop: '70px',
@@ -178,7 +179,7 @@ const sidebarStyle = theme => ({
             position: 'fixed',
             height: '100%',
         },
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             width: drawerWidth,
             ...boxShadow,
             position: 'fixed',
@@ -189,7 +190,6 @@ const sidebarStyle = theme => ({
             left: 'auto',
             zIndex: '1032',
             visibility: 'visible',
-            // backgroundColor: '#9A9A9A',
             overflowY: 'visible',
             borderTop: 'none',
             textAlign: 'left',
@@ -211,9 +211,10 @@ const sidebarStyle = theme => ({
             content: '""',
             position: 'absolute',
             bottom: '0',
-            right: '10%',
+
             height: '1px',
-            width: '80%',
+            right: '15px',
+            width: 'calc(100% - 30px)',
             backgroundColor: 'rgba(180, 180, 180, 0.3)',
         }
     },
@@ -223,12 +224,14 @@ const sidebarStyle = theme => ({
         padding: '5px 0',
         display: 'block',
         fontSize: '18px',
-        color: '#3c4858',
         textAlign: 'left',
         fontWeight: '400',
         lineHeight: '30px',
         textDecoration: 'none',
         backgroundColor: 'transparent',
+        '&,&:hover': {
+            color: '#FFFFFF',
+        }
     },
     logoImage: {
         width: '30px',
@@ -261,16 +264,9 @@ const sidebarStyle = theme => ({
             height: '100%',
             content: '""',
             display: 'block',
-            background: '#FFFFFF',
-            opacity: '.93',
+            background: '#000',
+            opacity: '.8',
         }
-    },
-    listWrapper: {
-        position: 'relative',
-        height: 'calc(100vh - 75px)',
-        overflow: 'auto',
-        width: '260px',
-        zIndex: '4',
     },
     list: {
         marginTop: '20px',
@@ -294,7 +290,6 @@ const sidebarStyle = theme => ({
         transition: 'all 300ms linear',
         margin: '10px 15px 0',
         borderRadius: '3px',
-        color: '#3C4858',
         position: 'relative',
         display: 'block',
         padding: '10px 15px',
@@ -307,15 +302,15 @@ const sidebarStyle = theme => ({
         float: 'left',
         marginRight: '15px',
         textAlign: 'center',
-        color: '#a9afbb',
-        verticalAlign: 'middle'
+        verticalAlign: 'middle',
+        color: 'rgba(255, 255, 255, 0.8)',
     },
     itemText: {
         ...defaultFont,
         margin: '0',
         lineHeight: '30px',
         fontSize: '14px',
-        color: '#3C4858',
+        color: '#FFFFFF',
     },
     whiteFont: {
         color: "#FFFFFF"
@@ -359,6 +354,13 @@ const sidebarStyle = theme => ({
             backgroundColor: dangerColor,
             boxShadow: '0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)',
         }
+    },
+    sidebarWrapper: {
+        position: 'relative',
+        height: 'calc(100vh - 75px)',
+        overflow: 'auto',
+        width: '260px',
+        zIndex: '4',
     }
 });
 
@@ -447,7 +449,7 @@ const headerLinksStyle = theme => ({
       pointerEvents: 'none',
     },
     search: {
-        [theme.breakpoints.down('md')]:{
+        [theme.breakpoints.down('sm')]:{
             margin: '10px 15px',
             float: 'none !important',
             paddingTop: '1px',
@@ -464,14 +466,14 @@ const headerLinksStyle = theme => ({
     },
     buttonLink: {
         top: '-6px',
-        [theme.breakpoints.down('md')]:{
+        [theme.breakpoints.down('sm')]:{
             display: 'flex',
             marginLeft: '30px',
             width: 'auto',
         },
     },
     searchButton: {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             top: '-50px !important',
             marginRight: '22px',
             float: 'right'
@@ -489,7 +491,7 @@ const headerLinksStyle = theme => ({
         width: '20px',
         height: '20px',
         zIndex: '4',
-        [theme.breakpoints.down('md')]:{
+        [theme.breakpoints.down('sm')]:{
             display: 'block',
             width: '30px',
             height: '30px',
@@ -515,7 +517,7 @@ const headerLinksStyle = theme => ({
             verticalAlign: 'middle',
             display: 'block',
         },
-        [theme.breakpoints.down('md')]:{
+        [theme.breakpoints.down('sm')]:{
             ...defaultFont,
             fontSize: '14px',
             marginRight: '8px'
@@ -538,7 +540,7 @@ const headerLinksStyle = theme => ({
         backgroundClip: 'padding-box',
     },
     pooperResponsive: {
-        [theme.breakpoints.down('md')]: {
+        [theme.breakpoints.down('sm')]: {
             zIndex: '1640',
             position: 'static',
             float: 'none',
@@ -937,7 +939,8 @@ const regularCardStyle = {
     },
     cardActions: {
         padding: '14px',
-        display: 'block'
+        display: 'block',
+        height: 'auto'
     }
 };
 
@@ -993,6 +996,7 @@ const profileCardStyle = {
         margin: '0 0 10px',
     },
     cardActions: {
+        height: 'auto',
         display: 'inline'
     }
 };
@@ -1211,7 +1215,7 @@ const iconButtonStyle = {
 // // // Table styles
 // #############################
 
-const tableStyle = {
+const tableStyle = theme => ({
     warningTableHeader: {
         color: warningColor,
     },
@@ -1241,12 +1245,23 @@ const tableStyle = {
         borderSpacing: '0',
         borderCollapse: 'collapse',
     },
+    tableHeadCell: {
+        color: 'inherit',
+        ...defaultFont,
+        fontSize: '1em',
+    },
     tableCell: {
+        ...defaultFont,
         lineHeight: '1.42857143',
         padding: '12px 8px',
         verticalAlign: 'middle',
+    },
+    tableResponsive: {
+        width: '100%',
+        marginTop: theme.spacing.unit * 3,
+        overflowX: 'auto',
     }
-}
+})
 
 // ##############################
 // // // CustomInput styles
@@ -1365,7 +1380,6 @@ const tasksStyle = {
         height: '20px',
         border: '1px solid rgba(0, 0, 0, .54)',
         borderRadius: '3px',
-        position: 'absolute'
     },
     uncheckedIcon: {
         width: '0px',

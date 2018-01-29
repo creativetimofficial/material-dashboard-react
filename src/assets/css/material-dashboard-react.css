@@ -53,7 +53,10 @@
     fill: rgba(0, 0, 0, 0.4);
     line-height: 1;
 }
-
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 body {
     background-color: #EEEEEE;
     color: #3C4858;
