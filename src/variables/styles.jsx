@@ -463,6 +463,7 @@ const headerLinksStyle = theme => ({
         fontSize: '14px',
     },
     buttonLink: {
+        top: '-6px',
         [theme.breakpoints.down('md')]:{
             display: 'flex',
             marginLeft: '30px',

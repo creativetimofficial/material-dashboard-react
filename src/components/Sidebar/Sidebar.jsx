@@ -59,7 +59,7 @@ class Sidebar extends React.Component {
                         classes={{
                             paper: classes.drawerPaper,
                         }}
-                        onRequestClose={this.props.handleDrawerToggle}
+                        onClose={this.props.handleDrawerToggle}
                         ModalProps={{
                             keepMounted: true, // Better open performance on mobile.
                         }}>
