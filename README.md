@@ -1,7 +1,7 @@
 # [Material Dashboard React - Free Material-UI Design Admin](http://md-react.creative-tim.com/)
 [![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 
-![alt text](http://s3.amazonaws.com/creativetim_bucket/products/71/original/opt_mdr_thumbnail.jpg "Material Dashboard Free React")
+![alt text](https://s3.amazonaws.com/creativetim_bucket/products/71/original/opt_mdr_thumbnail.jpg "Material Dashboard Free React")
 
 Material Dashboard React is a free Material-UI Admin with a fresh, new design inspired by Google's Material Design. We are very excited to introduce our take on the material concepts through an easy to use and beautiful set of components. Material Dashboard React was built over the popular Material-UI framework.
 
