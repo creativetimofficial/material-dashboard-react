@@ -95,8 +95,8 @@ class FixedPlugin extends Component{
             			<li className="header-title" id="sharrreTitle">Thank you for sharing!</li>
 
                         <li className="button-container">
-                            <FacebookShareButton url="http://material-dashboard-react.creative-tim.com"><FacebookIcon size={32} round={true}/></FacebookShareButton>
-                            <TwitterShareButton url="http://material-dashboard-react.creative-tim.com" title="Material Dashboard React - Free Bootstrap Admin Template" hashtags={["react","material-ui"]} via="creativetim"><TwitterIcon size={32} round={true}/></TwitterShareButton>
+                            <FacebookShareButton url="https://creativetimofficial.github.io/material-dashboard-react"><FacebookIcon size={32} round={true}/></FacebookShareButton>
+                            <TwitterShareButton url="https://creativetimofficial.github.io/material-dashboard-react" title="Material Dashboard React - Free Bootstrap Admin Template" hashtags={["react","material-ui"]} via="creativetim"><TwitterIcon size={32} round={true}/></TwitterShareButton>
                         </li>
                         <li className="button-container">
                                 <GitHubButton type="stargazers"
