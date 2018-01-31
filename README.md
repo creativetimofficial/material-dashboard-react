@@ -20,7 +20,7 @@ You can find the Github Repo here.
 
 ## Links:
 
-+ [Live Preview](http://md-react.creative-tim.com/)
++ [Live Preview](https://creativetimofficial.github.io/material-dashboard-react/)
 + [Material Dashboard HTML](http://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
 
 ## Quick start
