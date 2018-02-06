@@ -20,7 +20,7 @@ import appRoutes from 'routes/app.jsx';
 
 import { appStyle } from 'variables/styles';
 
-import image from 'assets/img/sidebar-2.jpg';
+import image from 'assets/img/sidebar-4.jpg';
 import logo from 'assets/img/reactlogo.png';
 
 const switchRoutes = (<Switch>
