@@ -14,7 +14,7 @@ import indexRoutes from 'routes/index.jsx';
 
 const hist = createBrowserHistory();
 
-ReactGA.initialize('UA-46172202-11');
+ReactGA.initialize('UA-46172202-1');
 ReactGA.set({ page: window.location.pathname + window.location.search });
 ReactGA.pageview(window.location.pathname + window.location.search);
 
