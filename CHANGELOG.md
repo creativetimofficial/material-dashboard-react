@@ -1,4 +1,4 @@
-## [1.1.0] 2018-02-15
+## [1.0.1] 2018-02-15
 ### Bug Fixing
 - Used [pretier](https://github.com/prettier/prettier) to make the code more readable
 - Optimized images sizes
