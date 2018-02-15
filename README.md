@@ -1,4 +1,4 @@
-# [Material Dashboard React - Free Material-UI Design Admin](http://md-react.creative-tim.com/)
+# [Material Dashboard React - Free Material-UI Design Admin](https://creativetimofficial.github.io/material-dashboard-react/)
 [![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 
 ![alt text](https://s3.amazonaws.com/creativetim_bucket/products/71/original/opt_mdr_thumbnail.jpg "Material Dashboard Free React")
