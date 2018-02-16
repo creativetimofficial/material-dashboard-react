@@ -36,7 +36,7 @@ class App extends React.Component {
     return this.props.location.pathname !== "/maps";
   }
   componentDidMount() {
-    if (window.innerWidth > 991) {
+    if(navigator.platform.indexOf('Win') > -1){
       // eslint-disable-next-line
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }

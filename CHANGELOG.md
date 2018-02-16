@@ -1,5 +1,6 @@
-## [1.0.1] 2018-02-15
+## [1.0.1] 2018-02-16
 ### Bug Fixing
+- PerfectScrollbar renders only on windows
 - Used [pretier](https://github.com/prettier/prettier) to make the code more readable
 - Optimized images sizes
 - Changed `classes={root:...}` to `classNames={...}` only where it had `classes={root:...}` and not like `classes={root:..., something:... ,...}`
