@@ -1,4 +1,4 @@
-## [1.0.1] 2018-02-16
+## [1.0.1] 2018-02-19
 ### Bug Fixing
 - PerfectScrollbar renders only on windows
 - Used [pretier](https://github.com/prettier/prettier) to make the code more readable
@@ -7,6 +7,7 @@
 - Added `classnames()` to avoid doing brittle class name manipulation
 - Classes that do not need states were converted to functions
 - Moved the styles variables in `src/variables/styles.jsx` and all the rest styles in `src/variables/styles/{$nameOfStyle}.jsx` files
+- Added `-webkit-overflow-scrolling: touch` css for nice scrolling on mobile devices
 
 ## [1.0.0] 2018-01-29
 ### Original Release

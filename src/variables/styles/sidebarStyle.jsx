@@ -211,7 +211,8 @@ const sidebarStyle = theme => ({
     height: "calc(100vh - 75px)",
     overflow: "auto",
     width: "260px",
-    zIndex: "4"
+    zIndex: "4",
+    overflowScrolling: 'touch'
   }
 });
 
