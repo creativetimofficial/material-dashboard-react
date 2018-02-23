@@ -127,9 +127,10 @@ const sidebarStyle = theme => ({
   item: {
     position: "relative",
     display: "block",
-    textDecoration: "none"
+    textDecoration: "none",
   },
   itemLink: {
+    width: 'auto',
     transition: "all 300ms linear",
     margin: "10px 15px 0",
     borderRadius: "3px",

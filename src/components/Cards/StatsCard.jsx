@@ -36,7 +36,7 @@ function StatsCard({ ...props }) {
           {title}
         </Typography>
         <Typography
-          type="headline"
+          variant="headline"
           component="h2"
           className={classes.cardTitle}
         >
