@@ -9,7 +9,7 @@ import {
 } from 'material-ui-icons';
 import PropTypes from 'prop-types';
 
-import { tasksStyle } from 'variables/styles';
+import tasksStyle from 'variables/styles/tasksStyle.jsx';
 
 import { P } from 'components';
 
@@ -22,7 +22,7 @@ import {
 } from 'material-ui-icons';
 import PropTypes from 'prop-types';
 
-import { tasksStyle } from 'variables/styles';
+import tasksStyle from 'variables/styles/tasksStyle.jsx';
 
 class Tooltips extends React.Component{
     render(){

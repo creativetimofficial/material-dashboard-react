@@ -8,68 +8,68 @@ import FixedPlugin from './FixedPlugin/FixedPlugin.jsx';
 // // // Cards
 // #############################
 
-import ChartCard from './Cards/ChartCard.jsx';
-import ProfileCard from './Cards/ProfileCard.jsx';
-import RegularCard from './Cards/RegularCard.jsx';
-import StatsCard from './Cards/StatsCard.jsx';
-import TasksCard from './Cards/TasksCard.jsx';
+import ChartCard from "./Cards/ChartCard.jsx";
+import ProfileCard from "./Cards/ProfileCard.jsx";
+import RegularCard from "./Cards/RegularCard.jsx";
+import StatsCard from "./Cards/StatsCard.jsx";
+import TasksCard from "./Cards/TasksCard.jsx";
 
 // ##############################
 // // // CustomButtons
 // #############################
 
-import Button from './CustomButtons/Button.jsx';
-import IconButton from './CustomButtons/IconButton.jsx';
+import Button from "./CustomButtons/Button.jsx";
+import IconButton from "./CustomButtons/IconButton.jsx";
 
 // ##############################
 // // // CustomInput
 // #############################
 
-import CustomInput from './CustomInput/CustomInput.jsx';
+import CustomInput from "./CustomInput/CustomInput.jsx";
 
 // ##############################
 // // // Footer
 // #############################
 
-import Footer from './Footer/Footer.jsx';
+import Footer from "./Footer/Footer.jsx";
 
 // ##############################
 // // // Grid
 // #############################
 
-import ItemGrid from './Grid/ItemGrid.jsx';
+import ItemGrid from "./Grid/ItemGrid.jsx";
 
 // ##############################
 // // // Header
 // #############################
 
-import Header from './Header/Header.jsx';
-import HeaderLinks from './Header/HeaderLinks.jsx';
+import Header from "./Header/Header.jsx";
+import HeaderLinks from "./Header/HeaderLinks.jsx";
 
 // ##############################
 // // // Sidebar
 // #############################
 
-import Sidebar from './Sidebar/Sidebar.jsx';
+import Sidebar from "./Sidebar/Sidebar.jsx";
 
 // ##############################
 // // // Snackbar
 // #############################
 
-import Snackbar from './Snackbar/Snackbar.jsx';
-import SnackbarContent from './Snackbar/SnackbarContent.jsx';
+import Snackbar from "./Snackbar/Snackbar.jsx";
+import SnackbarContent from "./Snackbar/SnackbarContent.jsx";
 
 // ##############################
 // // // Table
 // #############################
 
-import Table from './Table/Table.jsx';
+import Table from "./Table/Table.jsx";
 
 // ##############################
 // // // Tasks
 // #############################
 
-import Tasks from './Tasks/Tasks.jsx';
+import Tasks from "./Tasks/Tasks.jsx";
 
 // ##############################
 // // // Typography
@@ -84,7 +84,7 @@ import Success from "./Typography/Success.jsx";
 import Warning from "./Typography/Warning.jsx";
 import Danger from "./Typography/Danger.jsx";
 import Small from "./Typography/Small.jsx";
-import A from './Typography/A.jsx';
+import A from "./Typography/A.jsx";
 
 export {
     // FixedPlugin

@@ -8,9 +8,9 @@ import {
 } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
-import 'assets/css/material-dashboard-react.css';
+import "assets/css/material-dashboard-react.css";
 
-import indexRoutes from 'routes/index.jsx';
+import indexRoutes from "routes/index.jsx";
 
 const hist = createBrowserHistory();
 
