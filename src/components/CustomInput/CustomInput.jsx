@@ -34,6 +34,7 @@ function CustomInput({ ...props }) {
     <FormControl
       {...formControlProps}
       className={formControlProps.className + " " + classes.formControl}
+      error={error}
     >
       {labelText !== undefined ? (
         <InputLabel
@@ -54,6 +55,7 @@ function CustomInput({ ...props }) {
         id={id}
         {...inputProps}
       />
+      {helperText ? (<FormHelperText>{helperText}</FormHelperText>):null}
       {error ? (
         <Clear className={classes.feedback + " " + classes.labelRootError} />
       ) : success ? (
@@ -65,6 +67,7 @@ function CustomInput({ ...props }) {
 
 CustomInput.propTypes = {
   classes: PropTypes.object.isRequired,
+  helperText: PropTypes.node,
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
   id: PropTypes.string,
