@@ -74,7 +74,7 @@ const tasksCardStyle = theme => ({
     fontWeight: "400",
     marginLeft: "-10px"
   },
-  rootInheritSelected: {
+  textColorInheritSelected: {
     backgroundColor: "rgba(255, 255, 255, 0.2)",
     transition: "background-color .1s .2s"
   }
