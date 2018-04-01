@@ -14,14 +14,14 @@ import avatar from "assets/img/faces/marc.jpg";
 function UserProfile({ ...props }) {
   return (
     <div>
-      <Grid container>
+      <Grid container spacing={16}>
         <ItemGrid xs={12} sm={12} md={8}>
           <RegularCard
             cardTitle="Edit Profile"
             cardSubtitle="Complete your profile"
             content={
               <div>
-                <Grid container>
+                <Grid container spacing={16}>
                   <ItemGrid xs={12} sm={12} md={5}>
                     <CustomInput
                       labelText="Company (disabled)"
@@ -53,7 +53,7 @@ function UserProfile({ ...props }) {
                     />
                   </ItemGrid>
                 </Grid>
-                <Grid container>
+                <Grid container spacing={16}>
                   <ItemGrid xs={12} sm={12} md={6}>
                     <CustomInput
                       labelText="First Name"
@@ -73,7 +73,7 @@ function UserProfile({ ...props }) {
                     />
                   </ItemGrid>
                 </Grid>
-                <Grid container>
+                <Grid container spacing={16}>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <CustomInput
                       labelText="City"
@@ -102,7 +102,7 @@ function UserProfile({ ...props }) {
                     />
                   </ItemGrid>
                 </Grid>
-                <Grid container>
+                <Grid container spacing={16}>
                   <ItemGrid xs={12} sm={12} md={12}>
                     <InputLabel style={{ color: "#AAAAAA" }}>
                       About me

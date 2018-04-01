@@ -5,7 +5,7 @@ import { RegularCard, Table, ItemGrid } from "components";
 
 function TableList({ ...props }) {
   return (
-    <Grid container>
+    <Grid container spacing={16}>
       <ItemGrid xs={12} sm={12} md={12}>
         <RegularCard
           cardTitle="Simple Table"
