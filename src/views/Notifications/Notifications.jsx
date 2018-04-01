@@ -58,7 +58,7 @@ class Notifications extends React.Component {
         }
         content={
           <div>
-            <Grid container>
+            <Grid container spacing={16}>
               <ItemGrid xs={12} sm={12} md={6}>
                 <h5>Notifications Style</h5>
                 <br />
@@ -131,7 +131,7 @@ class Notifications extends React.Component {
             </Grid>
             <br />
             <br />
-            <Grid container justify="center">
+            <Grid container justify="center" spacing={16}>
               <ItemGrid xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
                 <h5>
                   Notifications Places
@@ -139,9 +139,9 @@ class Notifications extends React.Component {
                 </h5>
               </ItemGrid>
             </Grid>
-            <Grid container justify="center">
+            <Grid container justify="center" spacing={16}>
               <ItemGrid xs={12} sm={12} md={10} lg={8}>
-                <Grid container>
+                <Grid container spacing={16}>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
@@ -199,9 +199,9 @@ class Notifications extends React.Component {
                 </Grid>
               </ItemGrid>
             </Grid>
-            <Grid container justify={"center"}>
+            <Grid container justify={"center"} spacing={16}>
               <ItemGrid xs={12} sm={12} md={10} lg={8}>
-                <Grid container>
+                <Grid container spacing={16}>
                   <ItemGrid xs={12} sm={12} md={4}>
                     <Button
                       fullWidth

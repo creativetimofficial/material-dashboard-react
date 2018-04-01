@@ -8,7 +8,7 @@ import iconsStyle from "variables/styles/iconsStyle";
 
 function Icons({ ...props }) {
   return (
-    <Grid container>
+    <Grid container spacing={16}>
       <ItemGrid xs={12} sm={12} md={12}>
         <RegularCard
           plainCard

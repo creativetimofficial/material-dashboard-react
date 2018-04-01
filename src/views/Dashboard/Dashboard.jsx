@@ -47,7 +47,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-        <Grid container>
+        <Grid container spacing={16}>
           <ItemGrid xs={12} sm={6} md={3}>
             <StatsCard
               icon={ContentCopy}
@@ -91,7 +91,7 @@ class Dashboard extends React.Component {
             />
           </ItemGrid>
         </Grid>
-        <Grid container>
+        <Grid container spacing={16}>
           <ItemGrid xs={12} sm={12} md={4}>
             <ChartCard
               chart={
@@ -158,7 +158,7 @@ class Dashboard extends React.Component {
             />
           </ItemGrid>
         </Grid>
-        <Grid container>
+        <Grid container spacing={16}>
           <ItemGrid xs={12} sm={12} md={6}>
             <TasksCard />
           </ItemGrid>

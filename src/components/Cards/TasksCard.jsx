@@ -38,11 +38,11 @@ class TasksCard extends React.Component {
           action={
             <Tabs
               classes={{
-                flexContainer: classes.tabsContainer
+                flexContainer: classes.tabsContainer,
+                indicator: classes.displayNone,
               }}
               value={this.state.value}
               onChange={this.handleChange}
-              indicatorClassName={classes.displayNone}
               textColor="inherit"
             >
               <Tab
