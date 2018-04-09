@@ -21,7 +21,7 @@ const tasksCardStyle = theme => ({
   cardTitle: {
     ...defaultFont,
     float: "left",
-    padding: "10px 10px 10px 0",
+    padding: "10px 10px 10px 20px",
     lineHeight: "24px",
     fontSize: "14px",
     color: "#FFFFFF"

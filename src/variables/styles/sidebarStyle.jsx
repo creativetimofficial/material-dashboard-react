@@ -21,7 +21,7 @@ const sidebarStyle = theme => ({
     position: "fixed",
     top: "0",
     bottom: "0",
-    left: "0",
+    right: "0",
     zIndex: "1",
     // overflow: 'auto',
     ...boxShadow,
@@ -72,7 +72,7 @@ const sidebarStyle = theme => ({
     padding: "5px 0",
     display: "block",
     fontSize: "18px",
-    textAlign: "left",
+    textAlign: "right",
     fontWeight: "400",
     lineHeight: "30px",
     textDecoration: "none",
@@ -130,6 +130,7 @@ const sidebarStyle = theme => ({
     textDecoration: "none",
   },
   itemLink: {
+    textAlign: "right",
     width: 'auto',
     transition: "all 300ms linear",
     margin: "10px 15px 0",
@@ -143,8 +144,8 @@ const sidebarStyle = theme => ({
   itemIcon: {
     width: "24px",
     height: "30px",
-    float: "left",
-    marginRight: "15px",
+    float: "right",
+    marginLeft: "15px",
     textAlign: "center",
     verticalAlign: "middle",
     color: "rgba(255, 255, 255, 0.8)"
