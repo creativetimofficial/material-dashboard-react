@@ -115,16 +115,24 @@ class Tutorial extends React.Component{
                 <h1>Tutorial</h1>
                 <h2>License</h2>
                 <P><b>MIT LICENSE</b></P>
-                <P>Copyright (c) 2017 <a href="http://creative-tim.com/" target="_blank">Creative Tim</a>.</P>
+                {
+                    // eslint-disable-next-line
+                }<P>Copyright (c) 2017 <a href="http://creative-tim.com/" target="_blank">Creative Tim</a>.</P>
                 <P>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</P>
                 <P>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</P>
                 <P>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</P>
                 <h2>Getting started</h2>
-                <P><b>Material Dashboard React</b> is built on top of <a href="https://material-ui-next.com/" target="_blank">Material UI</a>.</P>
+                {
+                    // eslint-disable-next-line
+                }<P><b>Material Dashboard React</b> is built on top of <a href="https://material-ui-next.com/" target="_blank">Material UI</a>.</P>
                 <ul>
                     <li>Install NodeJs from <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">NodeJs Official Page</a></li>
-                    <li>Go to <a href="https://www.creative-tim.com/" target="_blank">creative tim website</a> and login into your account</li>
-                    <li>Go to <a href="https://www.creative-tim.com/product/material-dashboard-react" target="_blank">material dashboard react</a> and press the download button (this will download onto your computer a zip file)</li>
+                    {
+                        // eslint-disable-next-line
+                    }<li>Go to <a href="https://www.creative-tim.com/" target="_blank">creative tim website</a> and login into your account</li>
+                    {
+                        // eslint-disable-next-line
+                    }<li>Go to <a href="https://www.creative-tim.com/product/material-dashboard-react" target="_blank">material dashboard react</a> and press the download button (this will download onto your computer a zip file)</li>
                     <li>Unzip the downloaded file to a folder in your computer</li>
                     <li>Open Terminal</li>
                     <li>Go to your file project (where you've unzipped the product)</li>
