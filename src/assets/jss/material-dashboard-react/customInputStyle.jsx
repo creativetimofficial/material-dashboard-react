@@ -7,7 +7,7 @@ import {
   dangerColor,
   successColor,
   defaultFont
-} from "variables/styles";
+} from "assets/jss/material-dashboard-react.jsx";
 
 const customInputStyle = {
   disabled: {
@@ -16,22 +16,20 @@ const customInputStyle = {
     }
   },
   underline: {
-    "&:before": {
+    "&:hover:not($disabled):before,&:before": {
       backgroundColor: "#D2D2D2",
       height: "1px !important"
-    }
-  },
-  inkbar: {
+    },
     "&:after": {
       backgroundColor: primaryColor
     }
   },
-  inkbarError: {
+  underlineError: {
     "&:after": {
       backgroundColor: dangerColor
     }
   },
-  inkbarSuccess: {
+  underlineSuccess: {
     "&:after": {
       backgroundColor: successColor
     }

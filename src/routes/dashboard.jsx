@@ -16,7 +16,7 @@ import {
   Notifications
 } from "material-ui-icons";
 
-const appRoutes = [
+const dashboardRoutes = [
   {
     path: "/dashboard",
     sidebarName: "Dashboard",
@@ -69,4 +69,4 @@ const appRoutes = [
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
-export default appRoutes;
+export default dashboardRoutes;

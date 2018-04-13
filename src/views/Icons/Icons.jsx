@@ -4,7 +4,7 @@ import { withStyles, Grid, Hidden } from "material-ui";
 
 import { RegularCard, P, A, ItemGrid } from "components";
 
-import iconsStyle from "variables/styles/iconsStyle";
+import iconsStyle from "assets/jss/material-dashboard-react/iconsStyle";
 
 function Icons({ ...props }) {
   return (

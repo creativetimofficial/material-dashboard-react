@@ -15,7 +15,7 @@ import { Tasks } from "components";
 
 import { bugs, website, server } from "variables/general";
 
-import tasksCardStyle from "variables/styles/tasksCardStyle";
+import tasksCardStyle from "assets/jss/material-dashboard-react/tasksCardStyle";
 
 class TasksCard extends React.Component {
   state = {

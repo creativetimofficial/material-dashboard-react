@@ -11,14 +11,10 @@ import {
   successColor,
   warningColor,
   dangerColor
-} from "variables/styles";
+} from "assets/jss/material-dashboard-react.jsx";
 
 const headerStyle = theme => ({
   appBar: {
-    top: "-30px",
-    [theme.breakpoints.down("md")]: {
-      top: "-15px"
-    },
     backgroundColor: "transparent",
     boxShadow: "none",
     borderBottom: "0",
@@ -35,7 +31,10 @@ const headerStyle = theme => ({
     minHeight: "50px",
     display: "block"
   },
-  container,
+  container: {
+    ...container,
+    minHeight: "50px",
+  },
   flex: {
     flex: 1
   },
@@ -46,7 +45,6 @@ const headerStyle = theme => ({
     borderRadius: "3px",
     textTransform: "none",
     color: "inherit",
-    top: "10px",
     "&:hover,&:focus": {
       background: "transparent"
     }

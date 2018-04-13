@@ -13,7 +13,7 @@ import { Edit, Close, Check } from "material-ui-icons";
 
 import PropTypes from "prop-types";
 
-import tasksStyle from "variables/styles/tasksStyle.jsx";
+import tasksStyle from "assets/jss/material-dashboard-react/tasksStyle.jsx";
 
 class Tasks extends React.Component {
   state = {

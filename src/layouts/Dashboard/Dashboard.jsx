@@ -8,16 +8,16 @@ import { withStyles } from "material-ui";
 
 import { Header, Footer, Sidebar } from "components";
 
-import appRoutes from "routes/app.jsx";
+import dashboardRoutes from "routes/dashboard.jsx";
 
-import appStyle from "variables/styles/appStyle.jsx";
+import appStyle from "assets/jss/material-dashboard-react/appStyle.jsx";
 
 import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
 const switchRoutes = (
   <Switch>
-    {appRoutes.map((prop, key) => {
+    {dashboardRoutes.map((prop, key) => {
       if (prop.redirect)
         return <Redirect from={prop.path} to={prop.to} key={key} />;
       return <Route path={prop.path} component={prop.component} key={key} />;
@@ -49,7 +49,7 @@ class App extends React.Component {
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          routes={appRoutes}
+          routes={dashboardRoutes}
           logoText={"Creative Tim"}
           logo={logo}
           image={image}
@@ -60,7 +60,7 @@ class App extends React.Component {
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
-            routes={appRoutes}
+            routes={dashboardRoutes}
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
           />

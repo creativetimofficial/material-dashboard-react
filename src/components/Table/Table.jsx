@@ -10,7 +10,7 @@ import {
 
 import PropTypes from "prop-types";
 
-import tableStyle from "variables/styles/tableStyle";
+import tableStyle from "assets/jss/material-dashboard-react/tableStyle";
 
 function CustomTable({ ...props }) {
   const { classes, tableHead, tableData, tableHeaderColor } = props;

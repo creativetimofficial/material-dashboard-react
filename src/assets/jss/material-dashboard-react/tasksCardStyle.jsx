@@ -7,7 +7,7 @@ import {
   cardHeader,
   defaultFont,
   primaryBoxShadow
-} from "variables/styles";
+} from "assets/jss/material-dashboard-react.jsx";
 
 const tasksCardStyle = theme => ({
   card,
