@@ -9,6 +9,8 @@
 - `material-ui-icons@1.0.0-beta.17`
 ### Update dependencies
 - `material-ui@1.0.0-beta.34` to `material-ui@1.0.0-beta.41`
+### Added dependencies
+- `@material-ui/icons@1.0.0-beta.42`
 
 ## [1.1.0] 2018-02-23
 ### Bug Fixing

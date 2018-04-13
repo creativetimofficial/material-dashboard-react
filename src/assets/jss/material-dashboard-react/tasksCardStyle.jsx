@@ -21,6 +21,7 @@ const tasksCardStyle = theme => ({
   cardTitle: {
     ...defaultFont,
     float: "left",
+    fontWeight: "500",
     padding: "10px 10px 10px 0",
     lineHeight: "24px",
     fontSize: "14px",
@@ -71,12 +72,12 @@ const tasksCardStyle = theme => ({
     lineHeight: "19px",
     textTransform: "uppercase",
     fontSize: "12px",
-    fontWeight: "400",
+    fontWeight: "500",
     marginLeft: "-10px"
   },
-  rootInheritSelected: {
+  textColorInheritSelected: {
     backgroundColor: "rgba(255, 255, 255, 0.2)",
-    transition: "background-color .1s .2s"
+    transition: "background-color .4s"
   }
 });
 

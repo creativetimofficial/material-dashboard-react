@@ -9,7 +9,7 @@ import {
   TableRow,
   Tooltip
 } from "material-ui";
-import { Edit, Close, Check } from "material-ui-icons";
+import { Edit, Close, Check } from "@material-ui/icons";
 
 import PropTypes from "prop-types";
 

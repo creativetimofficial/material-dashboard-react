@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Menu } from "material-ui-icons";
+import { Menu } from "@material-ui/icons";
 import {
   withStyles,
   AppBar,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "material-ui";
-import { AddAlert } from "material-ui-icons";
+import { AddAlert } from "@material-ui/icons";
 
 import {
   RegularCard,
@@ -63,18 +63,15 @@ class Notifications extends React.Component {
                 <h5>Notifications Style</h5>
                 <br />
                 <SnackbarContent message={"This is a plain notification"} />
-                <br />
                 <SnackbarContent
                   message={"This is a notification with close button."}
                   close
                 />
-                <br />
                 <SnackbarContent
                   message={"This is a notification with close button and icon."}
                   close
                   icon={AddAlert}
                 />
-                <br />
                 <SnackbarContent
                   message={
                     "This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style."
@@ -82,7 +79,6 @@ class Notifications extends React.Component {
                   close
                   icon={AddAlert}
                 />
-                <br />
               </ItemGrid>
               <ItemGrid xs={12} sm={12} md={6}>
                 <h5>Notifications States</h5>
@@ -94,7 +90,6 @@ class Notifications extends React.Component {
                   close
                   color="info"
                 />
-                <br />
                 <SnackbarContent
                   message={
                     'SUCCESS - This is a regular notification made with color="success"'
@@ -102,7 +97,6 @@ class Notifications extends React.Component {
                   close
                   color="success"
                 />
-                <br />
                 <SnackbarContent
                   message={
                     'WARNING - This is a regular notification made with color="warning"'
@@ -110,7 +104,6 @@ class Notifications extends React.Component {
                   close
                   color="warning"
                 />
-                <br />
                 <SnackbarContent
                   message={
                     'DANGER - This is a regular notification made with color="danger"'
@@ -118,7 +111,6 @@ class Notifications extends React.Component {
                   close
                   color="danger"
                 />
-                <br />
                 <SnackbarContent
                   message={
                     'PRIMARY - This is a regular notification made with color="primary"'
@@ -126,7 +118,6 @@ class Notifications extends React.Component {
                   close
                   color="primary"
                 />
-                <br />
               </ItemGrid>
             </Grid>
             <br />
