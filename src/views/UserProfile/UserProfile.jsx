@@ -36,7 +36,7 @@ function UserProfile({ ...props }) {
                   </ItemGrid>
                   <ItemGrid xs={12} sm={12} md={3}>
                     <CustomInput
-                      // labelText="Username"
+                      labelText="Username"
                       id="username"
                       formControlProps={{
                         fullWidth: true

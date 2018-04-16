@@ -11,11 +11,11 @@ import {
   ClickAwayListener,
   Hidden
 } from "material-ui";
-import { Person, Notifications, Dashboard, Search } from "material-ui-icons";
+import { Person, Notifications, Dashboard, Search } from "@material-ui/icons";
 
 import { CustomInput, IconButton as SearchButton } from "components";
 
-import headerLinksStyle from "variables/styles/headerLinksStyle";
+import headerLinksStyle from "assets/jss/material-dashboard-react/headerLinksStyle";
 
 class HeaderLinks extends React.Component {
   state = {
@@ -35,7 +35,7 @@ class HeaderLinks extends React.Component {
       <div>
         <CustomInput
           formControlProps={{
-            className: classes.top + " " + classes.search
+            className: classes.margin + " " + classes.search
           }}
           inputProps={{
             placeholder: "Search",
@@ -47,7 +47,7 @@ class HeaderLinks extends React.Component {
         <SearchButton
           color="white"
           aria-label="edit"
-          customClass={classes.top + " " + classes.searchButton}
+          customClass={classes.margin + " " + classes.searchButton}
         >
           <Search className={classes.searchIcon} />
         </SearchButton>

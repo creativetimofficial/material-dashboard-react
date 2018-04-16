@@ -9,7 +9,7 @@ import {
 import PropTypes from "prop-types";
 import cx from "classnames";
 
-import regularCardStyle from "variables/styles/regularCardStyle";
+import regularCardStyle from "assets/jss/material-dashboard-react/regularCardStyle";
 
 function RegularCard({ ...props }) {
   const {

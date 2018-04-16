@@ -14,7 +14,7 @@ import {
 
 import { HeaderLinks } from "components";
 
-import sidebarStyle from "variables/styles/sidebarStyle.jsx";
+import sidebarStyle from "assets/jss/material-dashboard-react/sidebarStyle.jsx";
 
 const Sidebar = ({ ...props }) => {
   // verifies if routeName is the one active (in browser input)

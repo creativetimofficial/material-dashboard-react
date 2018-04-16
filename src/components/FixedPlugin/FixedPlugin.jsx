@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  ShareButtons,
-  generateShareIcon
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
 } from 'react-share';
 import GitHubButton from 'react-github-button';
 
@@ -14,13 +16,6 @@ import imagine4 from 'assets/img/sidebar-4.jpg';
 import {
     Button
 } from 'components';
-
-const {
-  FacebookShareButton,
-  TwitterShareButton
-} = ShareButtons;
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
 
 class FixedPlugin extends Component{
     constructor(props){

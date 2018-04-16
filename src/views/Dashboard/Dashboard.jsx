@@ -13,7 +13,7 @@ import {
   ArrowUpward,
   AccessTime,
   Accessibility
-} from "material-ui-icons";
+} from "@material-ui/icons";
 import { withStyles, Grid } from "material-ui";
 
 import {
@@ -31,7 +31,7 @@ import {
   completedTasksChart
 } from "variables/charts";
 
-import dashboardStyle from "variables/styles/dashboardStyle";
+import dashboardStyle from "assets/jss/material-dashboard-react/dashboardStyle";
 
 class Dashboard extends React.Component {
   state = {

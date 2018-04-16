@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Menu } from "material-ui-icons";
+import { Menu } from "@material-ui/icons";
 import {
   withStyles,
   AppBar,
@@ -11,7 +11,7 @@ import {
 } from "material-ui";
 import cx from "classnames";
 
-import headerStyle from "variables/styles/headerStyle.jsx";
+import headerStyle from "assets/jss/material-dashboard-react/headerStyle.jsx";
 
 import HeaderLinks from "./HeaderLinks";
 

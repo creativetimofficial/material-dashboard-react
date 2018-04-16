@@ -9,13 +9,13 @@ import {
   Tabs,
   Tab
 } from "material-ui";
-import { BugReport, Code, Cloud } from "material-ui-icons";
+import { BugReport, Code, Cloud } from "@material-ui/icons";
 
 import { Tasks } from "components";
 
 import { bugs, website, server } from "variables/general";
 
-import tasksCardStyle from "variables/styles/tasksCardStyle";
+import tasksCardStyle from "assets/jss/material-dashboard-react/tasksCardStyle";
 
 class TasksCard extends React.Component {
   state = {
@@ -38,19 +38,19 @@ class TasksCard extends React.Component {
           action={
             <Tabs
               classes={{
-                flexContainer: classes.tabsContainer
+                flexContainer: classes.tabsContainer,
+                indicator: classes.displayNone
               }}
               value={this.state.value}
               onChange={this.handleChange}
-              indicatorClassName={classes.displayNone}
               textColor="inherit"
             >
               <Tab
                 classes={{
                   wrapper: classes.tabWrapper,
-                  rootLabelIcon: classes.labelIcon,
+                  labelIcon: classes.labelIcon,
                   label: classes.label,
-                  rootInheritSelected: classes.rootInheritSelected
+                  textColorInheritSelected: classes.textColorInheritSelected
                 }}
                 icon={<BugReport className={classes.tabIcon} />}
                 label={"Bugs"}
@@ -58,9 +58,9 @@ class TasksCard extends React.Component {
               <Tab
                 classes={{
                   wrapper: classes.tabWrapper,
-                  rootLabelIcon: classes.labelIcon,
+                  labelIcon: classes.labelIcon,
                   label: classes.label,
-                  rootInheritSelected: classes.rootInheritSelected
+                  textColorInheritSelected: classes.textColorInheritSelected
                 }}
                 icon={<Code className={classes.tabIcon} />}
                 label={"Website"}
@@ -68,9 +68,9 @@ class TasksCard extends React.Component {
               <Tab
                 classes={{
                   wrapper: classes.tabWrapper,
-                  rootLabelIcon: classes.labelIcon,
+                  labelIcon: classes.labelIcon,
                   label: classes.label,
-                  rootInheritSelected: classes.rootInheritSelected
+                  textColorInheritSelected: classes.textColorInheritSelected
                 }}
                 icon={<Cloud className={classes.tabIcon} />}
                 label={"Server"}
