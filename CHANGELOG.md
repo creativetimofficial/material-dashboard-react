@@ -1,9 +1,9 @@
-## [1.2.0] 2018-04-13
+## [1.2.0] 2018-04-16
 ### Bug Fixing
 - Renamed `src/containers/App/App.jsx` to `src/layouts/Dashboard/Dashboard.jsx`
 - Renamed `src/variables/styles.jsx` to `src/assets/jss/material-dashboard-react.jsx`
 - Moved all the files from `src/variables/styles/` to `src/assets/jss/material-dashboard-react/`
-- Changes caused by the updgrade of `material-ui`
+- Changes caused by the upgrade of `material-ui`
 - Small bug fixing
 ### Deleted dependencies
 - `material-ui-icons@1.0.0-beta.17`
