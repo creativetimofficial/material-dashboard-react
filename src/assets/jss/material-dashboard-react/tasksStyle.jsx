@@ -6,7 +6,8 @@ import { defaultFont, primaryColor, dangerColor } from "assets/jss/material-dash
 
 const tasksStyle = {
   table: {
-    marginBottom: "0"
+    marginBottom: "0",
+    overflow: "visible",
   },
   tableRow: {
     position: "relative",
