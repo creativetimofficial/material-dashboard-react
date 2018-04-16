@@ -2,7 +2,11 @@
 // // // App styles
 // #############################
 
-import { drawerWidth, transition, container } from "assets/jss/material-dashboard-react.jsx";
+import {
+  drawerWidth,
+  transition,
+  container
+} from "assets/jss/material-dashboard-react.jsx";
 
 const appStyle = theme => ({
   wrapper: {
@@ -20,7 +24,7 @@ const appStyle = theme => ({
     ...transition,
     maxHeight: "100%",
     width: "100%",
-    overflowScrolling: 'touch'
+    overflowScrolling: "touch"
   },
   content: {
     marginTop: "70px",

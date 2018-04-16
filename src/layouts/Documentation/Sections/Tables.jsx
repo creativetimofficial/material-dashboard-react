@@ -1,8 +1,8 @@
-import React from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter/prism';
-import { prism } from 'react-syntax-highlighter/styles/prism';
+import React from "react";
+import SyntaxHighlighter from "react-syntax-highlighter/prism";
+import { prism } from "react-syntax-highlighter/styles/prism";
 
-import { P, Table } from 'components';
+import { P, Table } from "components";
 
 const tableDep = `import { Table } from 'components';`;
 const table = `<Table
@@ -26,32 +26,47 @@ CustomTable.propTypes = {
     tableHead: PropTypes.arrayOf(PropTypes.string),
     tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
 };`;
-class Tables extends React.Component{
-    render(){
-        return (
-            <div>
-                <h1>Tables</h1>
-                <P>We've created a component so you can better render tables.</P>
-                <Table
-                    tableHeaderColor="primary"
-                    tableHead={['Name','Country','City','Salary']}
-                    tableData={[
-                        [ "Dakota Rice" , "Niger" , "Oud-Turnhout" , "$36,738" ] ,
-                        [ "Minerva Hooper" , "Curaçao" , "Sinaai-Waas" , "$23,789" ] ,
-                        [ "Sage Rodriguez" , "Netherlands" , "Baileux" , "$56,142" ] ,
-                        [ "Philip Chaney" , "Korea, South" , "Overland Park" , "$38,735" ] ,
-                        [ "Doris Greene" , "Malawi" , "Feldkirchen in Kärnten" , "$63,542" ] ,
-                        [ "Mason Porter" , "Chile" , "Gloucester" , "$78,615" ]
-                    ]}
-                />
-                <SyntaxHighlighter language="jsx" style={prism}>{tableDep}</SyntaxHighlighter>
-                <SyntaxHighlighter language="jsx" style={prism}>{table}</SyntaxHighlighter>
-                <SyntaxHighlighter language="jsx" style={prism}>{tableProp}</SyntaxHighlighter>
-                <h2>Props</h2>
-                <P>Please check out the <a href="https://material-ui-next.com/demos/tables/" target="_blank" rel="noopener noreferrer">official material-ui documentation</a>.</P>
-            </div>
-        );
-    }
+class Tables extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Tables</h1>
+        <P>We've created a component so you can better render tables.</P>
+        <Table
+          tableHeaderColor="primary"
+          tableHead={["Name", "Country", "City", "Salary"]}
+          tableData={[
+            ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
+            ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
+            ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
+            ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
+            ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
+            ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+          ]}
+        />
+        <SyntaxHighlighter language="jsx" style={prism}>
+          {tableDep}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="jsx" style={prism}>
+          {table}
+        </SyntaxHighlighter>
+        <SyntaxHighlighter language="jsx" style={prism}>
+          {tableProp}
+        </SyntaxHighlighter>
+        <h2>Props</h2>
+        <P>
+          Please check out the{" "}
+          <a
+            href="https://material-ui-next.com/demos/tables/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            official material-ui documentation
+          </a>.
+        </P>
+      </div>
+    );
+  }
 }
 
 export default Tables;

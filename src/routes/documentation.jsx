@@ -18,25 +18,49 @@ import Typography from "layouts/Documentation/Sections/Typography.jsx";
 import Tooltips from "layouts/Documentation/Sections/Tooltips.jsx";
 
 const docRoutes = [
-    { path: "/documentation/tutorial", name: "Tutorial", component: Tutorial },
-    { path: "/documentation/routing-system", name: "RoutingSystem", component: RoutingSystem },
-    { path: "/documentation/variables", name: "Variables", component: Variables },
-    { path: "/documentation/styles", name: "Styles", component: Styles },
-    { path: "/documentation/buttons", name: "Buttons", component: Buttons },
-    { path: "/documentation/cards", name: "Cards", component: Cards },
-    { path: "/documentation/checkbox-radio", name: "CheckboxRadio", component: CheckboxRadio },
-    { path: "/documentation/dropdown", name: "Dropdown", component: Dropdown },
-    { path: "/documentation/google-maps", name: "GoogleMaps", component: GoogleMaps },
-    { path: "/documentation/icons", name: "Icons", component: Icons },
-    { path: "/documentation/inputs", name: "Inputs", component: Inputs },
-    { path: "/documentation/navigation", name: "Navigation", component: Navigation },
-    { path: "/documentation/notifications", name: "Notifications", component: Notifications },
-    { path: "/documentation/sidebar", name: "Sidebar", component: Sidebar },
-    { path: "/documentation/tables", name: "Tables", component: Tables },
-    { path: "/documentation/tasks", name: "Tasks", component: Tasks },
-    { path: "/documentation/tooltips", name: "Tooltips", component: Tooltips },
-    { path: "/documentation/typography", name: "Typography", component: Typography },
-    { redirect: true, path: "/documentation", to: "/documentation/tutorial"}
+  { path: "/documentation/tutorial", name: "Tutorial", component: Tutorial },
+  {
+    path: "/documentation/routing-system",
+    name: "RoutingSystem",
+    component: RoutingSystem
+  },
+  { path: "/documentation/variables", name: "Variables", component: Variables },
+  { path: "/documentation/styles", name: "Styles", component: Styles },
+  { path: "/documentation/buttons", name: "Buttons", component: Buttons },
+  { path: "/documentation/cards", name: "Cards", component: Cards },
+  {
+    path: "/documentation/checkbox-radio",
+    name: "CheckboxRadio",
+    component: CheckboxRadio
+  },
+  { path: "/documentation/dropdown", name: "Dropdown", component: Dropdown },
+  {
+    path: "/documentation/google-maps",
+    name: "GoogleMaps",
+    component: GoogleMaps
+  },
+  { path: "/documentation/icons", name: "Icons", component: Icons },
+  { path: "/documentation/inputs", name: "Inputs", component: Inputs },
+  {
+    path: "/documentation/navigation",
+    name: "Navigation",
+    component: Navigation
+  },
+  {
+    path: "/documentation/notifications",
+    name: "Notifications",
+    component: Notifications
+  },
+  { path: "/documentation/sidebar", name: "Sidebar", component: Sidebar },
+  { path: "/documentation/tables", name: "Tables", component: Tables },
+  { path: "/documentation/tasks", name: "Tasks", component: Tasks },
+  { path: "/documentation/tooltips", name: "Tooltips", component: Tooltips },
+  {
+    path: "/documentation/typography",
+    name: "Typography",
+    component: Typography
+  },
+  { redirect: true, path: "/documentation", to: "/documentation/tutorial" }
 ];
 
 export default docRoutes;

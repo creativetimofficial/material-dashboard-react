@@ -127,10 +127,10 @@ const sidebarStyle = theme => ({
   item: {
     position: "relative",
     display: "block",
-    textDecoration: "none",
+    textDecoration: "none"
   },
   itemLink: {
-    width: 'auto',
+    width: "auto",
     transition: "all 300ms linear",
     margin: "10px 15px 0",
     borderRadius: "3px",
@@ -213,7 +213,7 @@ const sidebarStyle = theme => ({
     overflow: "auto",
     width: "260px",
     zIndex: "4",
-    overflowScrolling: 'touch'
+    overflowScrolling: "touch"
   }
 });
 

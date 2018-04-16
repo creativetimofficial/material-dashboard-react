@@ -31,7 +31,11 @@ function ChartCard({ ...props }) {
         subheader={chart}
       />
       <CardContent className={classes.cardContent}>
-        <Typography variant="title" component="h4" className={classes.cardTitle}>
+        <Typography
+          variant="title"
+          component="h4"
+          className={classes.cardTitle}
+        >
           {title}
         </Typography>
         <Typography component="p" className={classes.cardCategory}>

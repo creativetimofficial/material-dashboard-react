@@ -81,17 +81,17 @@ const CustomSkinMap = withScriptjs(
   ))
 );
 
-class Maps extends React.Component{
-    render(){
-        return (
-            <CustomSkinMap
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY"
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `100vh` }} />}
-                mapElement={<div style={{ height: `100%` }} />}
-            />
-        );
-    }
+class Maps extends React.Component {
+  render() {
+    return (
+      <CustomSkinMap
+        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY"
+        loadingElement={<div style={{ height: `100%` }} />}
+        containerElement={<div style={{ height: `100vh` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
+    );
+  }
 }
 
 export default Maps;
