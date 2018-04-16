@@ -8,7 +8,6 @@
     "@material-ui/icons": "1.0.0-beta.42",
     "chartist": "0.10.1",
     "classnames": "2.2.5",
-    "gh-pages": "^1.1.0",
     "material-ui": "1.0.0-beta.41",
     "npm-run-all": "4.1.2",
     "perfect-scrollbar": "1.3.0",
@@ -28,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "repository": {
     "type": "git",
