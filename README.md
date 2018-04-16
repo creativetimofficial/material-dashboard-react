@@ -54,32 +54,24 @@ material-dashboard-react
 │   ├── assets
 │   │   ├── css
 │   │   ├── img
+│   │   │   └── faces
 │   │   └── js
 │   └── tutorial-components.html
 ├── package.json
 ├── public
-│   ├── apple-icon.png
 │   ├── favicon.ico
 │   ├── index.html
 │   └── manifest.json
 └── src
+    ├── index.js
+    ├── logo.svg
     ├── assets
     │   ├── css
-    │   │   └── material-dashboard-react.css
-    │   └── img
-    │       ├── apple-icon.png
-    │       ├── cover.jpeg
-    │       ├── faces
-    │       │   └── marc.jpg
-    │       ├── favicon.png
-    │       ├── mask.png
-    │       ├── new_logo.png
-    │       ├── reactlogo.png
-    │       ├── sidebar-1.jpg
-    │       ├── sidebar-2.jpg
-    │       ├── sidebar-3.jpg
-    │       ├── sidebar-4.jpg
-    │       └── tim_80x80.png
+    │   ├── img
+    │   │   └── faces
+    │   └── jss
+    │       ├── material-dashboard-react
+    │       └── material-dashboard-react.jsx
     ├── components
     │   ├── Cards
     │   │   ├── ChartCard.jsx
@@ -120,18 +112,15 @@ material-dashboard-react
     │   │   ├── Success.jsx
     │   │   └── Warning.jsx
     │   └── index.js
-    ├── containers
-    │   └── App
-    │       └── App.jsx
-    ├── index.js
-    ├── logo.svg
+    ├── layouts
+    │   └── Dashboard
+    │       └── Dashboard.jsx
     ├── routes
-    │   ├── app.jsx
+    │   ├── dashboard.jsx
     │   └── index.jsx
     ├── variables
     │   ├── charts.jsx
-    │   ├── general.jsx
-    │   └── styles.jsx
+    │   └── general.jsx
     └── views
         ├── Dashboard
         │   └── Dashboard.jsx
@@ -174,5 +163,5 @@ Instagram: <https://instagram.com/creativetimofficial>
 [CHANGELOG]: ./CHANGELOG.md
 
 [LICENSE]: ./LICENSE.md
-[version-badge]: https://img.shields.io/badge/version-1.0.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-1.2.0-blue.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
