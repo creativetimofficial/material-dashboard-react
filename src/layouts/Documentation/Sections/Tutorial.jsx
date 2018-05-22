@@ -106,7 +106,7 @@ class Tutorial extends React.Component {
         </P>
         {
           // eslint-disable-next-line
-        }<P>Copyright (c) 2017{" "}<a href="http://creative-tim.com/" target="_blank">Creative Tim</a>.</P>
+        }<P>Copyright (c) 2017{" "}<a href="https://creative-tim.com/" target="_blank">Creative Tim</a>.</P>
         <P>
           Permission is hereby granted, free of charge, to any person obtaining
           a copy of this software and associated documentation files (the
@@ -209,13 +209,7 @@ class Tutorial extends React.Component {
           </li>
           <li>
             Navigate to{" "}
-            <a
-              href="http://localhost:3000"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              http://localhost:3000
-            </a>
+            <code>http://localhost:3000</code>
           </li>
           <li>
             More information →{" "}

@@ -22,7 +22,7 @@ class Icons extends React.Component {
             Material icons font
           </a>. Here are some{" "}
           <a
-            href="http://google.github.io/material-design-icons/#icon-font-for-the-web"
+            href="https://google.github.io/material-design-icons/#icon-font-for-the-web"
             target="_blank"
             rel="noopener noreferrer"
           >
