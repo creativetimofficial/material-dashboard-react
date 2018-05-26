@@ -58,7 +58,7 @@ const statsCardStyle = {
     fontSize: "1.625em"
   },
   cardTitleSmall: {
-    fontSize: "65%",
+    fontSize: "60%",
     fontWeight: "400",
     lineHeight: "1",
     color: "#777"
