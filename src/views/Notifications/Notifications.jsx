@@ -1,17 +1,14 @@
 import React from "react";
-import { Grid } from "material-ui";
-import { AddAlert } from "@material-ui/icons";
-
-import {
-  RegularCard,
-  A,
-  P,
-  Small,
-  Button,
-  SnackbarContent,
-  Snackbar,
-  ItemGrid
-} from "components";
+// @material-ui/core components
+import Grid from "@material-ui/core/Grid";
+// @material-ui/icons
+import AddAlert from "@material-ui/icons/AddAlert";
+// core components
+import RegularCard from "components/Cards/RegularCard.jsx";
+import Button from "components/CustomButtons/Button.jsx";
+import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
+import Snackbar from "components/Snackbar/Snackbar.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 
 class Notifications extends React.Component {
   constructor(props) {
@@ -42,24 +39,24 @@ class Notifications extends React.Component {
       <RegularCard
         cardTitle="Notifications"
         cardSubtitle={
-          <P>
+          <p>
             Handcrafted by our friends from{" "}
-            <A target="_blank" href="https://material-ui-next.com/">
+            <a target="_blank" href="https://material-ui-next.com/">
               Material UI
-            </A>{" "}
+            </a>{" "}
             and styled by{" "}
-            <A target="_blank" href="https://www.creative-tim.com/">
+            <a target="_blank" href="https://www.creative-tim.com/">
               Creative Tim
-            </A>. Please checkout the{" "}
-            <A href="#pablo" target="_blank">
+            </a>. Please checkout the{" "}
+            <a href="#pablo" target="_blank">
               full documentation
-            </A>.
-          </P>
+            </a>.
+          </p>
         }
         content={
           <div>
             <Grid container>
-              <ItemGrid xs={12} sm={12} md={6}>
+              <GridItem xs={12} sm={12} md={6}>
                 <h5>Notifications Style</h5>
                 <br />
                 <SnackbarContent message={"This is a plain notification"} />
@@ -79,8 +76,8 @@ class Notifications extends React.Component {
                   close
                   icon={AddAlert}
                 />
-              </ItemGrid>
-              <ItemGrid xs={12} sm={12} md={6}>
+              </GridItem>
+              <GridItem xs={12} sm={12} md={6}>
                 <h5>Notifications States</h5>
                 <br />
                 <SnackbarContent
@@ -118,22 +115,22 @@ class Notifications extends React.Component {
                   close
                   color="primary"
                 />
-              </ItemGrid>
+              </GridItem>
             </Grid>
             <br />
             <br />
             <Grid container justify="center">
-              <ItemGrid xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
+              <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
                 <h5>
                   Notifications Places
-                  <Small>Click to view notifications</Small>
+                  <small>Click to view notifications</small>
                 </h5>
-              </ItemGrid>
+              </GridItem>
             </Grid>
             <Grid container justify="center">
-              <ItemGrid xs={12} sm={12} md={10} lg={8}>
+              <GridItem xs={12} sm={12} md={10} lg={8}>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  <GridItem xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
                       color="primary"
@@ -150,8 +147,8 @@ class Notifications extends React.Component {
                       closeNotification={() => this.setState({ tl: false })}
                       close
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
                       color="primary"
@@ -168,8 +165,8 @@ class Notifications extends React.Component {
                       closeNotification={() => this.setState({ tc: false })}
                       close
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
                       color="primary"
@@ -186,14 +183,14 @@ class Notifications extends React.Component {
                       closeNotification={() => this.setState({ tr: false })}
                       close
                     />
-                  </ItemGrid>
+                  </GridItem>
                 </Grid>
-              </ItemGrid>
+              </GridItem>
             </Grid>
             <Grid container justify={"center"}>
-              <ItemGrid xs={12} sm={12} md={10} lg={8}>
+              <GridItem xs={12} sm={12} md={10} lg={8}>
                 <Grid container>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  <GridItem xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
                       color="primary"
@@ -210,8 +207,8 @@ class Notifications extends React.Component {
                       closeNotification={() => this.setState({ bl: false })}
                       close
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
                       color="primary"
@@ -228,8 +225,8 @@ class Notifications extends React.Component {
                       closeNotification={() => this.setState({ bc: false })}
                       close
                     />
-                  </ItemGrid>
-                  <ItemGrid xs={12} sm={12} md={4}>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
                     <Button
                       fullWidth
                       color="primary"
@@ -246,9 +243,9 @@ class Notifications extends React.Component {
                       closeNotification={() => this.setState({ br: false })}
                       close
                     />
-                  </ItemGrid>
+                  </GridItem>
                 </Grid>
-              </ItemGrid>
+              </GridItem>
             </Grid>
           </div>
         }

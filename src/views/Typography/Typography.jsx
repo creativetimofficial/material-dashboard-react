@@ -1,18 +1,15 @@
 import React from "react";
-import { withStyles } from "material-ui";
-
-import {
-  P,
-  Quote,
-  Muted,
-  Primary,
-  Info,
-  Success,
-  Warning,
-  Danger,
-  Small,
-  RegularCard
-} from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+// core components
+import Quote from "components/Typography/Quote.jsx";
+import Muted from "components/Typography/Muted.jsx";
+import Primary from "components/Typography/Primary.jsx";
+import Info from "components/Typography/Info.jsx";
+import Success from "components/Typography/Success.jsx";
+import Warning from "components/Typography/Warning.jsx";
+import Danger from "components/Typography/Danger.jsx";
+import RegularCard from "components/Cards/RegularCard.jsx";
 
 const style = {
   typo: {
@@ -67,13 +64,13 @@ function TypographyPage({ ...props }) {
           </div>
           <div className={props.classes.typo}>
             <div className={props.classes.note}>Paragraph</div>
-            <P>
+            <p>
               I will be the leader of a company that ends up being worth
               billions of dollars, because I got the answers. I understand
               culture. I am the nucleus. I think that’s a responsibility that I
               have, to push possibilities, to show people, this is the level
               that things could be at.
-            </P>
+            </p>
           </div>
           <div className={props.classes.typo}>
             <div className={props.classes.note}>Quote</div>
@@ -128,7 +125,7 @@ function TypographyPage({ ...props }) {
             <div className={props.classes.note}>Small Tag</div>
             <h2>
               Header with small subtitle<br />
-              <Small>Use "Small" tag for the headers</Small>
+              <small>Use "Small" tag for the headers</small>
             </h2>
           </div>
         </div>

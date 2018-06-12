@@ -1,19 +1,19 @@
 import React from "react";
+import classNames from "classnames";
 import PropTypes from "prop-types";
-import { Menu } from "@material-ui/icons";
-import {
-  withStyles,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Hidden,
-  Button
-} from "material-ui";
-import cx from "classnames";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Hidden from "@material-ui/core/Hidden";
+import Button from "@material-ui/core/Button";
+// @material-ui/icons
+import Menu from "@material-ui/icons/Menu";
+// core components
+import HeaderLinks from "./HeaderLinks";
 
 import headerStyle from "assets/jss/material-dashboard-react/headerStyle.jsx";
-
-import HeaderLinks from "./HeaderLinks";
 
 function Header({ ...props }) {
   function makeBrand() {
@@ -27,7 +27,7 @@ function Header({ ...props }) {
     return name;
   }
   const { classes, color } = props;
-  const appBarClasses = cx({
+  const appBarClasses = classNames({
     [" " + classes[color]]: color
   });
   return (

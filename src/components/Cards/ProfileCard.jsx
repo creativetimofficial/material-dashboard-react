@@ -1,14 +1,13 @@
 import React from "react";
-import {
-  withStyles,
-  Card,
-  CardHeader,
-  CardContent,
-  CardActions,
-  Typography
-} from "material-ui";
 import PropTypes from "prop-types";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardActions from "@material-ui/core/CardActions";
+import Typography from "@material-ui/core/Typography";
+// core components
 import profileCardStyle from "assets/jss/material-dashboard-react/profileCardStyle";
 
 function ProfileCard({ ...props }) {

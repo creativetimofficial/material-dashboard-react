@@ -20,9 +20,6 @@ const typographyStyle = {
     marginTop: "20px",
     marginBottom: "10px"
   },
-  pStyle: {
-    margin: "0 0 10px"
-  },
   quote: {
     padding: "10px 20px",
     margin: "0 0 20px",
@@ -57,19 +54,6 @@ const typographyStyle = {
   dangerText: {
     color: dangerColor
   },
-  smallText: {
-    fontSize: "65%",
-    fontWeight: "400",
-    lineHeight: "1",
-    color: "#777"
-  },
-  aStyle: {
-    textDecoration: "none",
-    backgroundColor: "transparent",
-    "&,&:hover": {
-      color: "#FFFFFF"
-    }
-  }
 };
 
 export default typographyStyle;

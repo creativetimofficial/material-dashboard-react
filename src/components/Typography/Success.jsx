@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "material-ui";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+// core components
 import typographyStyle from "assets/jss/material-dashboard-react/typographyStyle.jsx";
 
 function Success({ ...props }) {

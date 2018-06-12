@@ -1,9 +1,15 @@
 import React from "react";
-import { withStyles, FormControl, InputLabel, Input } from "material-ui";
-import { Clear, Check } from "@material-ui/icons";
+import classNames from "classnames";
 import PropTypes from "prop-types";
-import cx from "classnames";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+// @material-ui/icons
+import Clear from "@material-ui/icons/Clear";
+import Check from "@material-ui/icons/Check";
+// core components
 import customInputStyle from "assets/jss/material-dashboard-react/customInputStyle";
 
 function CustomInput({ ...props }) {
@@ -18,16 +24,16 @@ function CustomInput({ ...props }) {
     success
   } = props;
 
-  const labelClasses = cx({
+  const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
     [" " + classes.labelRootSuccess]: success && !error
   });
-  const underlineClasses = cx({
+  const underlineClasses = classNames({
     [classes.underlineError]: error,
     [classes.underlineSuccess]: success && !error,
     [classes.underline]: true
   });
-  const marginTop = cx({
+  const marginTop = classNames({
     [classes.marginTop]: labelText === undefined
   });
   return (

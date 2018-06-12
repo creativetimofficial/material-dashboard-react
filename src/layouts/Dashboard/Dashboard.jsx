@@ -4,9 +4,12 @@ import { Switch, Route, Redirect } from "react-router-dom";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-import { withStyles } from "material-ui";
-
-import { Header, Footer, Sidebar } from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+// core components
+import Header from "components/Header/Header.jsx";
+import Footer from "components/Footer/Footer.jsx";
+import Sidebar from "components/Sidebar/Sidebar.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
@@ -37,7 +40,6 @@ class App extends React.Component {
   }
   componentDidMount() {
     if(navigator.platform.indexOf('Win') > -1){
-      // eslint-disable-next-line
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }
   }

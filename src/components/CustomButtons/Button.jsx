@@ -1,8 +1,10 @@
 import React from "react";
-import { withStyles, Button } from "material-ui";
+import classNames from "classnames";
 import PropTypes from "prop-types";
-import cx from "classnames";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Button from "@material-ui/core/Button";
+// core components
 import buttonStyle from "assets/jss/material-dashboard-react/buttonStyle";
 
 function RegularButton({ ...props }) {
@@ -15,7 +17,7 @@ function RegularButton({ ...props }) {
     disabled,
     ...rest
   } = props;
-  const btnClasses = cx({
+  const btnClasses = classNames({
     [classes[color]]: color,
     [classes.round]: round,
     [classes.fullWidth]: fullWidth,

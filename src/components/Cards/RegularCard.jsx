@@ -1,14 +1,13 @@
 import React from "react";
-import {
-  withStyles,
-  Card,
-  CardContent,
-  CardHeader,
-  CardActions
-} from "material-ui";
+import classNames from "classnames";
 import PropTypes from "prop-types";
-import cx from "classnames";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardActions from "@material-ui/core/CardActions";
+// core components
 import regularCardStyle from "assets/jss/material-dashboard-react/regularCardStyle";
 
 function RegularCard({ ...props }) {
@@ -21,10 +20,10 @@ function RegularCard({ ...props }) {
     content,
     footer
   } = props;
-  const plainCardClasses = cx({
+  const plainCardClasses = classNames({
     [" " + classes.cardPlain]: plainCard
   });
-  const cardPlainHeaderClasses = cx({
+  const cardPlainHeaderClasses = classNames({
     [" " + classes.cardPlainHeader]: plainCard
   });
   return (

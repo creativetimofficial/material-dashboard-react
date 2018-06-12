@@ -2,28 +2,27 @@ import React from "react";
 import PropTypes from "prop-types";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
-import {
-  ContentCopy,
-  Store,
-  InfoOutline,
-  Warning,
-  DateRange,
-  LocalOffer,
-  Update,
-  ArrowUpward,
-  AccessTime,
-  Accessibility
-} from "@material-ui/icons";
-import { withStyles, Grid } from "material-ui";
-
-import {
-  StatsCard,
-  ChartCard,
-  TasksCard,
-  RegularCard,
-  Table,
-  ItemGrid
-} from "components";
+// @material-ui/core
+import withStyles from "@material-ui/core/styles/withStyles";
+import Grid from "@material-ui/core/Grid";
+// @material-ui/icons
+import ContentCopy from "@material-ui/icons/ContentCopy";
+import Store from "@material-ui/icons/Store";
+import InfoOutline from "@material-ui/icons/InfoOutline";
+import Warning from "@material-ui/icons/Warning";
+import DateRange from "@material-ui/icons/DateRange";
+import LocalOffer from "@material-ui/icons/LocalOffer";
+import Update from "@material-ui/icons/Update";
+import ArrowUpward from "@material-ui/icons/ArrowUpward";
+import AccessTime from "@material-ui/icons/AccessTime";
+import Accessibility from "@material-ui/icons/Accessibility";
+// core components
+import GridItem from "components/Grid/GridItem.jsx";
+import Table from "components/Table/Table.jsx";
+import StatsCard from "components/Cards/StatsCard.jsx";
+import ChartCard from "components/Cards/ChartCard.jsx";
+import TasksCard from "components/Cards/TasksCard.jsx";
+import RegularCard from "components/Cards/RegularCard.jsx";
 
 import {
   dailySalesChart,
@@ -48,7 +47,7 @@ class Dashboard extends React.Component {
     return (
       <div>
         <Grid container>
-          <ItemGrid xs={12} sm={6} md={3}>
+          <GridItem xs={12} sm={6} md={3}>
             <StatsCard
               icon={ContentCopy}
               iconColor="orange"
@@ -59,8 +58,8 @@ class Dashboard extends React.Component {
               statIconColor="danger"
               statLink={{ text: "Get More Space...", href: "#pablo" }}
             />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={6} md={3}>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={3}>
             <StatsCard
               icon={Store}
               iconColor="green"
@@ -69,8 +68,8 @@ class Dashboard extends React.Component {
               statIcon={DateRange}
               statText="Last 24 Hours"
             />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={6} md={3}>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={3}>
             <StatsCard
               icon={InfoOutline}
               iconColor="red"
@@ -79,8 +78,8 @@ class Dashboard extends React.Component {
               statIcon={LocalOffer}
               statText="Tracked from Github"
             />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={6} md={3}>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={3}>
             <StatsCard
               icon={Accessibility}
               iconColor="blue"
@@ -89,10 +88,10 @@ class Dashboard extends React.Component {
               statIcon={Update}
               statText="Just Updated"
             />
-          </ItemGrid>
+          </GridItem>
         </Grid>
         <Grid container>
-          <ItemGrid xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4}>
             <ChartCard
               chart={
                 <ChartistGraph
@@ -119,8 +118,8 @@ class Dashboard extends React.Component {
               statIcon={AccessTime}
               statText="updated 4 minutes ago"
             />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <ChartCard
               chart={
                 <ChartistGraph
@@ -138,8 +137,8 @@ class Dashboard extends React.Component {
               statIcon={AccessTime}
               statText="campaign sent 2 days ago"
             />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <ChartCard
               chart={
                 <ChartistGraph
@@ -156,13 +155,13 @@ class Dashboard extends React.Component {
               statIcon={AccessTime}
               statText="campaign sent 2 days ago"
             />
-          </ItemGrid>
+          </GridItem>
         </Grid>
         <Grid container>
-          <ItemGrid xs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={6}>
             <TasksCard />
-          </ItemGrid>
-          <ItemGrid xs={12} sm={12} md={6}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
             <RegularCard
               headerColor="orange"
               cardTitle="Employees Stats"
@@ -180,7 +179,7 @@ class Dashboard extends React.Component {
                 />
               }
             />
-          </ItemGrid>
+          </GridItem>
         </Grid>
       </div>
     );

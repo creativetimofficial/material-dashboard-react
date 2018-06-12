@@ -1,19 +1,23 @@
 import React from "react";
 import classNames from "classnames";
 import { Manager, Target, Popper } from "react-popper";
-import {
-  withStyles,
-  IconButton,
-  MenuItem,
-  MenuList,
-  Grow,
-  Paper,
-  ClickAwayListener,
-  Hidden
-} from "material-ui";
-import { Person, Notifications, Dashboard, Search } from "@material-ui/icons";
-
-import { CustomInput, IconButton as SearchButton } from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import IconButton from "@material-ui/core/IconButton";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Hidden from "@material-ui/core/Hidden";
+// @material-ui/icons
+import Person from "@material-ui/icons/Person";
+import Notifications from "@material-ui/icons/Notifications";
+import Dashboard from "@material-ui/icons/Dashboard";
+import Search from "@material-ui/icons/Search";
+// core components
+import CustomInput from "components/CustomInput/CustomInput.jsx";
+import SearchButton from "components/CustomButtons/IconButton.jsx";
 
 import headerLinksStyle from "assets/jss/material-dashboard-react/headerLinksStyle";
 

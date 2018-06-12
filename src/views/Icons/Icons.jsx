@@ -1,29 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles, Grid, Hidden } from "material-ui";
-
-import { RegularCard, P, A, ItemGrid } from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
+// core components
+import GridItem from "components/Grid/GridItem.jsx";
+import RegularCard from "components/Cards/RegularCard.jsx";
 
 import iconsStyle from "assets/jss/material-dashboard-react/iconsStyle";
 
 function Icons({ ...props }) {
   return (
     <Grid container>
-      <ItemGrid xs={12} sm={12} md={12}>
+      <GridItem xs={12} sm={12} md={12}>
         <RegularCard
           plainCard
           cardTitle="Material Design Icons"
           cardSubtitle={
-            <P>
+            <p>
               Handcrafted by our friends from{" "}
-              <A
+              <a
                 href="https://design.google.com/icons/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Google
-              </A>
-            </P>
+              </a>
+            </p>
           }
           content={
             <div>
@@ -37,7 +41,7 @@ function Icons({ ...props }) {
                 </iframe>
               </Hidden>
               <Hidden only={["lg", "md"]}>
-                <ItemGrid xs={12} sm={12} md={6}>
+                <GridItem xs={12} sm={12} md={6}>
                   <h5>
                     The icons are visible on Desktop mode inside an iframe.
                     Since the iframe is not working on Mobile and Tablets please
@@ -50,12 +54,12 @@ function Icons({ ...props }) {
                       Material Icons
                     </a>
                   </h5>
-                </ItemGrid>
+                </GridItem>
               </Hidden>
             </div>
           }
         />
-      </ItemGrid>
+      </GridItem>
     </Grid>
   );
 }
