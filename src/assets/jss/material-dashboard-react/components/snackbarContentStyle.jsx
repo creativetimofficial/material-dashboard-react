@@ -1,7 +1,3 @@
-// ##############################
-// // // SnackbarContent styles
-// #############################
-
 import {
   defaultFont,
   primaryBoxShadow,

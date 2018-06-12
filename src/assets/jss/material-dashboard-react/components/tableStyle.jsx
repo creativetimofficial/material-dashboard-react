@@ -1,7 +1,3 @@
-// ##############################
-// // // Table styles
-// #############################
-
 import {
   warningColor,
   primaryColor,

@@ -8,7 +8,7 @@ import Hidden from "@material-ui/core/Hidden";
 import GridItem from "components/Grid/GridItem.jsx";
 import RegularCard from "components/Cards/RegularCard.jsx";
 
-import iconsStyle from "assets/jss/material-dashboard-react/iconsStyle";
+import iconsStyle from "assets/jss/material-dashboard-react/views/iconsStyle.jsx";
 
 function Icons({ ...props }) {
   return (

@@ -1,7 +1,3 @@
-// ##############################
-// // // Typography styles
-// #############################
-
 import {
   defaultFont,
   primaryColor,

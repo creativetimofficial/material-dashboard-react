@@ -1,7 +1,3 @@
-// ##############################
-// // // HeaderLinks styles
-// #############################
-
 import {
   defaultFont,
   dangerColor,

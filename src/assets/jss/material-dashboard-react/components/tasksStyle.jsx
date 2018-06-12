@@ -1,7 +1,3 @@
-// ##############################
-// // // Tasks styles
-// #############################
-
 import { defaultFont, primaryColor, dangerColor } from "assets/jss/material-dashboard-react.jsx";
 
 const tasksStyle = {

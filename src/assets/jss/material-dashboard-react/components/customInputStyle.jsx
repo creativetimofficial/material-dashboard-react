@@ -1,7 +1,3 @@
-// ##############################
-// // // CustomInput styles
-// #############################
-
 import {
   primaryColor,
   dangerColor,

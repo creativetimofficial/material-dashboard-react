@@ -19,7 +19,7 @@ import Search from "@material-ui/icons/Search";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import SearchButton from "components/CustomButtons/IconButton.jsx";
 
-import headerLinksStyle from "assets/jss/material-dashboard-react/headerLinksStyle";
+import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle";
 
 class HeaderLinks extends React.Component {
   state = {

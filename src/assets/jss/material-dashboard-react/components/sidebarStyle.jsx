@@ -1,7 +1,3 @@
-// ##############################
-// // // Sidebar styles
-// #############################
-
 import {
   drawerWidth,
   transition,

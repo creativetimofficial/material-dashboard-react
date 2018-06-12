@@ -4,6 +4,9 @@
 - Droped `src/components/index.js`, and changed all the imports to separate ones
 - Renamed `ItemGrid` to `GridItem`
 ### Major style changes
+- Moved the styles of `src/components/` inside `src/assets/jss/material-dashboard-react/components/`
+- Moved the styles of `src/layouts/` inside `src/assets/jss/material-dashboard-react/layouts/`
+- Moved the styles of `src/views/` inside `src/assets/jss/material-dashboard-react/views/`
 ### Dropped components
 - `src/components/CustomButtons/IconButton.jsx` (instead use `src/components/CustomButtons/Button.jsx` with `justIcon` prop)
 - Some components from `src/components/Typography` (instead of these we've added some css to style the normal HTML tags)
