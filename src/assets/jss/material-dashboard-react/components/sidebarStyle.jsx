@@ -124,6 +124,9 @@ const sidebarStyle = theme => ({
     position: "relative",
     display: "block",
     textDecoration: "none",
+    "&:hover,&:focus,&:visited,&": {
+      color: "#FFFFFF"
+    }
   },
   itemLink: {
     width: 'auto',

@@ -26,13 +26,20 @@ const headerLinksStyle = theme => ({
   linkText: {
     zIndex: "4",
     ...defaultFont,
-    fontSize: "14px"
+    fontSize: "14px",
+    margin: "0px"
   },
   buttonLink: {
     [theme.breakpoints.down("sm")]: {
       display: "flex",
-      marginLeft: "30px",
-      width: "auto"
+      margin: "10px 15px 0",
+      width: "auto",
+      "& svg": {
+        width: "24px",
+        height: "30px",
+        marginRight: "15px",
+        marginLeft: "-15px",
+      }
     }
   },
   searchButton: {
@@ -50,25 +57,13 @@ const headerLinksStyle = theme => ({
     width: "17px",
     zIndex: "4"
   },
-  links: {
-    width: "20px",
-    height: "20px",
-    zIndex: "4",
-    [theme.breakpoints.down("sm")]: {
-      display: "block",
-      width: "30px",
-      height: "30px",
-      color: "#a9afbb",
-      marginRight: "15px"
-    }
-  },
   notifications: {
     zIndex: "4",
     [theme.breakpoints.up("md")]: {
       position: "absolute",
-      top: "5px",
+      top: "2px",
       border: "1px solid #FFF",
-      right: "10px",
+      right: "4px",
       fontSize: "9px",
       background: dangerColor,
       color: "#FFFFFF",

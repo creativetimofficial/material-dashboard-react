@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { Manager, Target, Popper } from "react-popper";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import Grow from "@material-ui/core/Grow";
@@ -17,7 +16,7 @@ import Dashboard from "@material-ui/icons/Dashboard";
 import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.jsx";
-import SearchButton from "components/CustomButtons/IconButton.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle";
 
@@ -48,41 +47,46 @@ class HeaderLinks extends React.Component {
             }
           }}
         />
-        <SearchButton
+        <Button
           color="white"
           aria-label="edit"
-          customClass={classes.margin + " " + classes.searchButton}
+          justIcon
+          round
         >
-          <Search className={classes.searchIcon} />
-        </SearchButton>
-        <IconButton
-          color="inherit"
+          <Search />
+        </Button>
+        <Button
+          color={window.innerWidth > 959 ? "transparent":"white"}
+          justIcon={window.innerWidth > 959}
+          simple={! (window.innerWidth > 959)}
           aria-label="Dashboard"
           className={classes.buttonLink}
         >
-          <Dashboard className={classes.links} />
+          <Dashboard className={classes.icons}/>
           <Hidden mdUp>
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
-        </IconButton>
+        </Button>
         <Manager style={{ display: "inline-block" }}>
           <Target>
-            <IconButton
-              color="inherit"
+            <Button
+              color={window.innerWidth > 959 ? "transparent":"white"}
+              justIcon={window.innerWidth > 959}
+              simple={! (window.innerWidth > 959)}
               aria-label="Notifications"
               aria-owns={open ? "menu-list" : null}
               aria-haspopup="true"
               onClick={this.handleClick}
               className={classes.buttonLink}
             >
-              <Notifications className={classes.links} />
+              <Notifications className={classes.icons}/>
               <span className={classes.notifications}>5</span>
               <Hidden mdUp>
                 <p onClick={this.handleClick} className={classes.linkText}>
                   Notification
                 </p>
               </Hidden>
-            </IconButton>
+            </Button>
           </Target>
           <Popper
             placement="bottom-start"
@@ -137,16 +141,18 @@ class HeaderLinks extends React.Component {
             </ClickAwayListener>
           </Popper>
         </Manager>
-        <IconButton
-          color="inherit"
+        <Button
+          color={window.innerWidth > 959 ? "transparent":"white"}
+          justIcon={window.innerWidth > 959}
+          simple={! (window.innerWidth > 959)}
           aria-label="Person"
           className={classes.buttonLink}
         >
-          <Person className={classes.links} />
+          <Person className={classes.icons}/>
           <Hidden mdUp>
             <p className={classes.linkText}>Profile</p>
           </Hidden>
-        </IconButton>
+        </Button>
       </div>
     );
   }
