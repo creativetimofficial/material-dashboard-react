@@ -49,7 +49,7 @@ const typographyStyle = {
   },
   dangerText: {
     color: dangerColor
-  },
+  }
 };
 
 export default typographyStyle;

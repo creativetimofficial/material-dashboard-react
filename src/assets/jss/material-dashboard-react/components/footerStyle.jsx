@@ -1,4 +1,8 @@
-import { defaultFont, container, primaryColor } from "assets/jss/material-dashboard-react.jsx";
+import {
+  defaultFont,
+  container,
+  primaryColor
+} from "assets/jss/material-dashboard-react.jsx";
 
 const footerStyle = {
   block: {
@@ -43,7 +47,7 @@ const footerStyle = {
   inlineBlock: {
     display: "inline-block",
     paddingTop: "0px",
-    width: 'auto'
+    width: "auto"
   }
 };
 export default footerStyle;

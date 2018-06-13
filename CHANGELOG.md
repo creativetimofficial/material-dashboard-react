@@ -7,6 +7,7 @@
 - Moved the styles of `src/components/` inside `src/assets/jss/material-dashboard-react/components/`
 - Moved the styles of `src/layouts/` inside `src/assets/jss/material-dashboard-react/layouts/`
 - Moved the styles of `src/views/` inside `src/assets/jss/material-dashboard-react/views/`
+- Almost all styles have been changed more or less
 ### Dropped components
 - `src/components/CustomButtons/IconButton.jsx` (instead use `src/components/CustomButtons/Button.jsx` with `justIcon` prop)
 - Some components from `src/components/Typography` (instead of these we've added some css to style the normal HTML tags)
@@ -21,11 +22,13 @@
   - `src/components/Cards/TasksCard.jsx`
 ### Added components
 - New card components (`src/components/Card/*`) instead of `src/components/Cards/*`
-  -
-  -
-  -
-  -
-  -
+  - `src/components/Card/Card.jsx`
+  - `src/components/Card/CardAvatar.jsx`
+  - `src/components/Card/CardBody.jsx`
+  - `src/components/Card/CardFooter.jsx`
+  - `src/components/Card/CardHeader.jsx`
+  - `src/components/Card/CardIcon.jsx`
+- `src/components/CustomTabs/CustomTabs.jsx` (instead of `src/components/Cards/TasksCard.jsx`)
 ### Deleted dependencies
 - `material-ui@1.0.0-beta.41`
 ### Added dependencies

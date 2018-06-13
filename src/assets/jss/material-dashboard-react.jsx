@@ -82,23 +82,23 @@ const dangerBoxShadow = {
     "0 12px 20px -10px rgba(244, 67, 54, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(244, 67, 54, 0.2)"
 };
 
-const orangeCardHeader = {
+const warningCardHeader = {
   background: "linear-gradient(60deg, #ffa726, #fb8c00)",
   ...warningBoxShadow
 };
-const greenCardHeader = {
+const successCardHeader = {
   background: "linear-gradient(60deg, #66bb6a, #43a047)",
   ...successBoxShadow
 };
-const redCardHeader = {
+const dangerCardHeader = {
   background: "linear-gradient(60deg, #ef5350, #e53935)",
   ...dangerBoxShadow
 };
-const blueCardHeader = {
+const infoCardHeader = {
   background: "linear-gradient(60deg, #26c6da, #00acc1)",
   ...infoBoxShadow
 };
-const purpleCardHeader = {
+const primaryCardHeader = {
   background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
   ...primaryBoxShadow
 };
@@ -146,11 +146,11 @@ export {
   successBoxShadow,
   warningBoxShadow,
   dangerBoxShadow,
-  orangeCardHeader,
-  greenCardHeader,
-  redCardHeader,
-  blueCardHeader,
-  purpleCardHeader,
+  warningCardHeader,
+  successCardHeader,
+  dangerCardHeader,
+  infoCardHeader,
+  primaryCardHeader,
   cardActions,
   cardHeader,
   defaultBoxShadow

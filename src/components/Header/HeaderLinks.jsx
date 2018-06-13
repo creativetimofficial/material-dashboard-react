@@ -47,22 +47,17 @@ class HeaderLinks extends React.Component {
             }
           }}
         />
-        <Button
-          color="white"
-          aria-label="edit"
-          justIcon
-          round
-        >
+        <Button color="white" aria-label="edit" justIcon round>
           <Search />
         </Button>
         <Button
-          color={window.innerWidth > 959 ? "transparent":"white"}
+          color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
-          simple={! (window.innerWidth > 959)}
+          simple={!(window.innerWidth > 959)}
           aria-label="Dashboard"
           className={classes.buttonLink}
         >
-          <Dashboard className={classes.icons}/>
+          <Dashboard className={classes.icons} />
           <Hidden mdUp>
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
@@ -70,16 +65,16 @@ class HeaderLinks extends React.Component {
         <Manager style={{ display: "inline-block" }}>
           <Target>
             <Button
-              color={window.innerWidth > 959 ? "transparent":"white"}
+              color={window.innerWidth > 959 ? "transparent" : "white"}
               justIcon={window.innerWidth > 959}
-              simple={! (window.innerWidth > 959)}
+              simple={!(window.innerWidth > 959)}
               aria-label="Notifications"
               aria-owns={open ? "menu-list" : null}
               aria-haspopup="true"
               onClick={this.handleClick}
               className={classes.buttonLink}
             >
-              <Notifications className={classes.icons}/>
+              <Notifications className={classes.icons} />
               <span className={classes.notifications}>5</span>
               <Hidden mdUp>
                 <p onClick={this.handleClick} className={classes.linkText}>
@@ -142,13 +137,13 @@ class HeaderLinks extends React.Component {
           </Popper>
         </Manager>
         <Button
-          color={window.innerWidth > 959 ? "transparent":"white"}
+          color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
-          simple={! (window.innerWidth > 959)}
+          simple={!(window.innerWidth > 959)}
           aria-label="Person"
           className={classes.buttonLink}
         >
-          <Person className={classes.icons}/>
+          <Person className={classes.icons} />
           <Hidden mdUp>
             <p className={classes.linkText}>Profile</p>
           </Hidden>

@@ -16,13 +16,22 @@ import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
 import Accessibility from "@material-ui/icons/Accessibility";
+import BugReport from "@material-ui/icons/BugReport";
+import Code from "@material-ui/icons/Code";
+import Cloud from "@material-ui/icons/Cloud";
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
 import Table from "components/Table/Table.jsx";
-import StatsCard from "components/Cards/StatsCard.jsx";
-import ChartCard from "components/Cards/ChartCard.jsx";
-import TasksCard from "components/Cards/TasksCard.jsx";
-import RegularCard from "components/Cards/RegularCard.jsx";
+import Tasks from "components/Tasks/Tasks.jsx";
+import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
+import Danger from "components/Typography/Danger.jsx";
+import Card from "components/Card/Card.jsx";
+import CardHeader from "components/Card/CardHeader.jsx";
+import CardIcon from "components/Card/CardIcon.jsx";
+import CardBody from "components/Card/CardBody.jsx";
+import CardFooter from "components/Card/CardFooter.jsx";
+
+import { bugs, website, server } from "variables/general";
 
 import {
   dailySalesChart,
@@ -44,56 +53,89 @@ class Dashboard extends React.Component {
     this.setState({ value: index });
   };
   render() {
+    const { classes } = this.props;
     return (
       <div>
         <Grid container>
           <GridItem xs={12} sm={6} md={3}>
-            <StatsCard
-              icon={ContentCopy}
-              iconColor="orange"
-              title="Used Space"
-              description="49/50"
-              small="GB"
-              statIcon={Warning}
-              statIconColor="danger"
-              statLink={{ text: "Get More Space...", href: "#pablo" }}
-            />
+            <Card>
+              <CardHeader color="warning" stats icon>
+                <CardIcon color="warning">
+                  <ContentCopy />
+                </CardIcon>
+                <p className={classes.cardCategory}>Used Space</p>
+                <h3 className={classes.cardTitle}>
+                  49/50 <small>GB</small>
+                </h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.stats}>
+                  <Danger>
+                    <Warning />
+                  </Danger>
+                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                    Get more space
+                  </a>
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
           <GridItem xs={12} sm={6} md={3}>
-            <StatsCard
-              icon={Store}
-              iconColor="green"
-              title="Revenue"
-              description="$34,245"
-              statIcon={DateRange}
-              statText="Last 24 Hours"
-            />
+            <Card>
+              <CardHeader color="success" stats icon>
+                <CardIcon color="success">
+                  <Store />
+                </CardIcon>
+                <p className={classes.cardCategory}>Revenue</p>
+                <h3 className={classes.cardTitle}>$34,245</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.stats}>
+                  <DateRange />
+                  Last 24 Hours
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
           <GridItem xs={12} sm={6} md={3}>
-            <StatsCard
-              icon={InfoOutline}
-              iconColor="red"
-              title="Fixed Issues"
-              description="75"
-              statIcon={LocalOffer}
-              statText="Tracked from Github"
-            />
+            <Card>
+              <CardHeader color="danger" stats icon>
+                <CardIcon color="danger">
+                  <InfoOutline />
+                </CardIcon>
+                <p className={classes.cardCategory}>Fixed Issues</p>
+                <h3 className={classes.cardTitle}>75</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.stats}>
+                  <LocalOffer />
+                  Tracked from Github
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
           <GridItem xs={12} sm={6} md={3}>
-            <StatsCard
-              icon={Accessibility}
-              iconColor="blue"
-              title="Followers"
-              description="+245"
-              statIcon={Update}
-              statText="Just Updated"
-            />
+            <Card>
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <Accessibility />
+                </CardIcon>
+                <p className={classes.cardCategory}>Followers</p>
+                <h3 className={classes.cardTitle}>+245</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.stats}>
+                  <Update />
+                  Just Updated
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
         </Grid>
         <Grid container>
           <GridItem xs={12} sm={12} md={4}>
-            <ChartCard
-              chart={
+            <Card chart>
+              <CardHeader color="success">
                 <ChartistGraph
                   className="ct-chart"
                   data={dailySalesChart.data}
@@ -101,27 +143,26 @@ class Dashboard extends React.Component {
                   options={dailySalesChart.options}
                   listener={dailySalesChart.animation}
                 />
-              }
-              chartColor="green"
-              title="Daily Sales"
-              text={
-                <span>
-                  <span className={this.props.classes.successText}>
-                    <ArrowUpward
-                      className={this.props.classes.upArrowCardCategory}
-                    />{" "}
-                    55%
+              </CardHeader>
+              <CardBody>
+                <h4 className={classes.cardTitle}>Daily Sales</h4>
+                <p className={classes.cardCategory}>
+                  <span className={classes.successText}>
+                    <ArrowUpward className={classes.upArrowCardCategory} /> 55%
                   </span>{" "}
                   increase in today sales.
-                </span>
-              }
-              statIcon={AccessTime}
-              statText="updated 4 minutes ago"
-            />
+                </p>
+              </CardBody>
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> updated 4 minutes ago
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-            <ChartCard
-              chart={
+            <Card chart>
+              <CardHeader color="warning">
                 <ChartistGraph
                   className="ct-chart"
                   data={emailsSubscriptionChart.data}
@@ -130,17 +171,23 @@ class Dashboard extends React.Component {
                   responsiveOptions={emailsSubscriptionChart.responsiveOptions}
                   listener={emailsSubscriptionChart.animation}
                 />
-              }
-              chartColor="orange"
-              title="Email Subscriptions"
-              text="Last Campaign Performance"
-              statIcon={AccessTime}
-              statText="campaign sent 2 days ago"
-            />
+              </CardHeader>
+              <CardBody>
+                <h4 className={classes.cardTitle}>Email Subscriptions</h4>
+                <p className={classes.cardCategory}>
+                  Last Campaign Performance
+                </p>
+              </CardBody>
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> campaign sent 2 days ago
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
-            <ChartCard
-              chart={
+            <Card chart>
+              <CardHeader color="danger">
                 <ChartistGraph
                   className="ct-chart"
                   data={completedTasksChart.data}
@@ -148,25 +195,72 @@ class Dashboard extends React.Component {
                   options={completedTasksChart.options}
                   listener={completedTasksChart.animation}
                 />
-              }
-              chartColor="red"
-              title="Completed Tasks"
-              text="Last Campaign Performance"
-              statIcon={AccessTime}
-              statText="campaign sent 2 days ago"
-            />
+              </CardHeader>
+              <CardBody>
+                <h4 className={classes.cardTitle}>Completed Tasks</h4>
+                <p className={classes.cardCategory}>
+                  Last Campaign Performance
+                </p>
+              </CardBody>
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> campaign sent 2 days ago
+                </div>
+              </CardFooter>
+            </Card>
           </GridItem>
         </Grid>
         <Grid container>
           <GridItem xs={12} sm={12} md={6}>
-            <TasksCard />
+            <CustomTabs
+              title="Tasks:"
+              headerColor="primary"
+              tabs={[
+                {
+                  tabName: "Bugs",
+                  tabIcon: BugReport,
+                  tabContent: (
+                    <Tasks
+                      checkedIndexes={[0, 3]}
+                      tasksIndexes={[0, 1, 2, 3]}
+                      tasks={bugs}
+                    />
+                  )
+                },
+                {
+                  tabName: "Website",
+                  tabIcon: Code,
+                  tabContent: (
+                    <Tasks
+                      checkedIndexes={[0]}
+                      tasksIndexes={[0, 1]}
+                      tasks={website}
+                    />
+                  )
+                },
+                {
+                  tabName: "Server",
+                  tabIcon: Cloud,
+                  tabContent: (
+                    <Tasks
+                      checkedIndexes={[1]}
+                      tasksIndexes={[0, 1, 2]}
+                      tasks={server}
+                    />
+                  )
+                }
+              ]}
+            />
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <RegularCard
-              headerColor="orange"
-              cardTitle="Employees Stats"
-              cardSubtitle="New employees on 15th September, 2016"
-              content={
+            <Card>
+              <CardHeader color="warning">
+                <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
+                <p className={classes.cardCategoryWhite}>
+                  New employees on 15th September, 2016
+                </p>
+              </CardHeader>
+              <CardBody>
                 <Table
                   tableHeaderColor="warning"
                   tableHead={["ID", "Name", "Salary", "Country"]}
@@ -177,8 +271,8 @@ class Dashboard extends React.Component {
                     ["4", "Philip Chaney", "$38,735", "Korea, South"]
                   ]}
                 />
-              }
-            />
+              </CardBody>
+            </Card>
           </GridItem>
         </Grid>
       </div>

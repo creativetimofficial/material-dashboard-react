@@ -38,7 +38,7 @@ const headerLinksStyle = theme => ({
         width: "24px",
         height: "30px",
         marginRight: "15px",
-        marginLeft: "-15px",
+        marginLeft: "-15px"
       }
     }
   },
@@ -51,7 +51,7 @@ const headerLinksStyle = theme => ({
   },
   margin: {
     zIndex: "4",
-    margin: "0",
+    margin: "0"
   },
   searchIcon: {
     width: "17px",

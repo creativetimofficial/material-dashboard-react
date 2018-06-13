@@ -13,21 +13,21 @@ const customInputStyle = {
   },
   underline: {
     "&:hover:not($disabled):before,&:before": {
-      backgroundColor: "#D2D2D2",
-      height: "1px !important"
+      borderColor: "#D2D2D2 !important",
+      borderWidth: "1px !important"
     },
     "&:after": {
-      backgroundColor: primaryColor
+      borderColor: primaryColor
     }
   },
   underlineError: {
     "&:after": {
-      backgroundColor: dangerColor
+      borderColor: dangerColor
     }
   },
   underlineSuccess: {
     "&:after": {
-      backgroundColor: successColor
+      borderColor: successColor
     }
   },
   labelRoot: {
