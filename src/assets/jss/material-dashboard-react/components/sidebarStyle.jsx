@@ -19,7 +19,6 @@ const sidebarStyle = theme => ({
     bottom: "0",
     left: "0",
     zIndex: "1",
-    // overflow: 'auto',
     ...boxShadow,
     width: drawerWidth,
     [theme.breakpoints.up("md")]: {
@@ -118,7 +117,8 @@ const sidebarStyle = theme => ({
     paddingTop: "0",
     paddingBottom: "0",
     marginBottom: "0",
-    listStyle: "none"
+    listStyle: "none",
+    position: "unset"
   },
   item: {
     position: "relative",
@@ -213,6 +213,11 @@ const sidebarStyle = theme => ({
     width: "260px",
     zIndex: "4",
     overflowScrolling: "touch"
+  },
+  activePro: {
+    position: "absolute",
+    width: "100%",
+    bottom: "13px",
   }
 });
 

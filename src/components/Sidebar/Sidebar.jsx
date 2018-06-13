@@ -25,16 +25,25 @@ const Sidebar = ({ ...props }) => {
     <List className={classes.list}>
       {routes.map((prop, key) => {
         if (prop.redirect) return null;
-        const listItemClasses = classNames({
-          [" " + classes[color]]: activeRoute(prop.path)
-        });
+        var activePro = " ";
+        var listItemClasses;
+        if(prop.path === "/upgrade-to-pro"){
+          activePro = classes.activePro + " ";
+          listItemClasses = classNames({
+            [" " + classes[color]]: true
+          });
+        } else {
+          listItemClasses = classNames({
+            [" " + classes[color]]: activeRoute(prop.path)
+          });
+        }
         const whiteFontClasses = classNames({
           [" " + classes.whiteFont]: activeRoute(prop.path)
         });
         return (
           <NavLink
             to={prop.path}
-            className={classes.item}
+            className={activePro + classes.item}
             activeClassName="active"
             key={key}
           >
