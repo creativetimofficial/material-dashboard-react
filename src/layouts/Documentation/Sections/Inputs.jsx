@@ -8,85 +8,95 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import People from "@material-ui/icons/People";
 //core components
 import CustomInput from "components/CustomInput/CustomInput.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
 
-const inputsDep = `import { Grid } from 'material-ui';
-import { People } from '@material-ui/icons';
-import { CustomInput } from 'components';`;
+const inputsDep = `// @material-ui/core components
+import Grid from "@material-ui/core/Grid";
+import InputAdornment from "@material-ui/core/InputAdornment";
+// @material-ui/icons
+import People from "@material-ui/icons/People";
+//core components
+import CustomInput from "components/CustomInput/CustomInput.jsx";
+import GridItem from "components/Grid/GridItem.jsx";`;
 const inputs = `<Grid container>
-    <Grid item xs={12} sm={12} md={4}>
-        <CustomInput
-            labelText="Disabled"
-            id="disabled"
-            formControlProps={{
-                fullWidth: true
-            }}
-            inputProps={{
-                disabled: true
-            }}
-        />
-    </Grid>
-    <Grid item xs={12} sm={12} md={4}>
-        <CustomInput
-            id="regular"
-            inputProps={{
-                placeholder: "Regular"
-            }}
-            formControlProps={{
-                fullWidth: true
-            }}
-        />
-    </Grid>
-    <Grid item xs={12} sm={12} md={4}>
-        <CustomInput
-            labelText="With floating label"
-            id="float"
-            formControlProps={{
-                fullWidth: true
-            }}
-        />
-    </Grid>
-    <Grid item xs={12} sm={12} md={4}>
-        <CustomInput
-            labelText="Success input"
-            id="success"
-            success
-            formControlProps={{
-                fullWidth: true
-            }}
-        />
-    </Grid>
-    <Grid item xs={12} sm={12} md={4}>
-        <CustomInput
-            labelText="Error input"
-            id="error"
-            error
-            formControlProps={{
-                fullWidth: true
-            }}
-        />
-    </Grid>
-    <Grid item xs={12} sm={12} md={4}>
-        <CustomInput
-            labelText="With material Icons"
-            id="material"
-            formControlProps={{
-                fullWidth: true
-            }}
-            inputProps={{
-                endAdornment: (<InputAdornment position="end"><People/></InputAdornment>)
-            }}
-        />
-    </Grid>
+  <GridItem xs={12} sm={12} md={4}>
+    <CustomInput
+      labelText="Disabled"
+      id="disabled"
+      formControlProps={{
+        fullWidth: true
+      }}
+      inputProps={{
+        disabled: true
+      }}
+    />
+  </GridItem>
+  <GridItem xs={12} sm={12} md={4}>
+    <CustomInput
+      id="regular"
+      inputProps={{
+        placeholder: "Regular"
+      }}
+      formControlProps={{
+        fullWidth: true
+      }}
+    />
+  </GridItem>
+  <GridItem xs={12} sm={12} md={4}>
+    <CustomInput
+      labelText="With floating label"
+      id="float"
+      formControlProps={{
+        fullWidth: true
+      }}
+    />
+  </GridItem>
+  <GridItem xs={12} sm={12} md={4}>
+    <CustomInput
+      labelText="Success input"
+      id="success"
+      success
+      formControlProps={{
+        fullWidth: true
+      }}
+    />
+  </GridItem>
+  <GridItem xs={12} sm={12} md={4}>
+    <CustomInput
+      labelText="Error input"
+      id="error"
+      error
+      formControlProps={{
+        fullWidth: true
+      }}
+    />
+  </GridItem>
+  <GridItem xs={12} sm={12} md={4}>
+    <CustomInput
+      labelText="With material Icons"
+      id="material"
+      formControlProps={{
+        fullWidth: true
+      }}
+      inputProps={{
+        endAdornment: (
+          <InputAdornment position="end">
+            <People />
+          </InputAdornment>
+        )
+      }}
+    />
+  </GridItem>
 </Grid>`;
 const inputsProp = `CustomInput.propTypes = {
-    labelText: PropTypes.node,
-    labelProps: PropTypes.object,
-    id: PropTypes.string,
-    inputProps: PropTypes.object,
-    formControlProps: PropTypes.object,
-    error: PropTypes.bool,
-    success: PropTypes.bool
-}`;
+  labelText: PropTypes.node,
+  labelProps: PropTypes.object,
+  id: PropTypes.string,
+  inputProps: PropTypes.object,
+  formControlProps: PropTypes.object,
+  error: PropTypes.bool,
+  success: PropTypes.bool
+};`;
 
 class Inputs extends React.Component {
   render() {
@@ -94,7 +104,7 @@ class Inputs extends React.Component {
       <div>
         <h1>Inputs</h1>
         <Grid container>
-          <Grid item xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={4}>
             <CustomInput
               labelText="Disabled"
               id="disabled"
@@ -105,8 +115,8 @@ class Inputs extends React.Component {
                 disabled: true
               }}
             />
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <CustomInput
               id="regular"
               inputProps={{
@@ -116,8 +126,8 @@ class Inputs extends React.Component {
                 fullWidth: true
               }}
             />
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <CustomInput
               labelText="With floating label"
               id="float"
@@ -125,8 +135,8 @@ class Inputs extends React.Component {
                 fullWidth: true
               }}
             />
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <CustomInput
               labelText="Success input"
               id="success"
@@ -135,8 +145,8 @@ class Inputs extends React.Component {
                 fullWidth: true
               }}
             />
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <CustomInput
               labelText="Error input"
               id="error"
@@ -145,8 +155,8 @@ class Inputs extends React.Component {
                 fullWidth: true
               }}
             />
-          </Grid>
-          <Grid item xs={12} sm={12} md={4}>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
             <CustomInput
               labelText="With material Icons"
               id="material"
@@ -161,7 +171,7 @@ class Inputs extends React.Component {
                 )
               }}
             />
-          </Grid>
+          </GridItem>
         </Grid>
         <SyntaxHighlighter language="jsx" style={prism}>
           {inputsDep}

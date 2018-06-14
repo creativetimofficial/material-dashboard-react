@@ -13,13 +13,14 @@ import Success from "components/Typography/Success.jsx";
 import Warning from "components/Typography/Warning.jsx";
 import Danger from "components/Typography/Danger.jsx";
 
-const typoDep = `import {
-    A,P, Quote, Muted, Primary, Info, Success, Warning, Danger, small
-} from 'components';`;
-const typo = `<a href="https://creative-tim.com" target="_blank">anchor(<code>A</code> component)</a>
-<p>Paragraph (<code>P</code> component)</p>
-<small>small text (<code>small</code> component)</small>
-<Muted>muted text (<code>Muted</code> component)</Muted>
+const typoDep = `import Quote from "components/Typography/Quote.jsx";
+import Muted from "components/Typography/Muted.jsx";
+import Primary from "components/Typography/Primary.jsx";
+import Info from "components/Typography/Info.jsx";
+import Success from "components/Typography/Success.jsx";
+import Warning from "components/Typography/Warning.jsx";
+import Danger from "components/Typography/Danger.jsx";`;
+const typo = `<Muted>muted text (<code>Muted</code> component)</Muted>
 <Quote
     text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at."
     author=" Kanye West, Musician"
@@ -41,15 +42,6 @@ class Typography extends React.Component {
           create some special components so that they have our fonts.
         </p>
         <p>These components are as follows:</p>
-        <a href="https://creative-tim.com" target="_blank">
-          anchor(<code>A</code> component)
-        </a>
-        <p>
-          Paragraph (<code>P</code> component)
-        </p>
-        <small>
-          small text (<code>small</code> component)
-        </small>
         <Muted>
           muted text (<code>Muted</code> component)
         </Muted>

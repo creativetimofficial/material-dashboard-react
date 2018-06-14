@@ -14,14 +14,15 @@ import Close from "@material-ui/icons/Close";
 import tasksStyle from "assets/jss/material-dashboard-react/components/tasksStyle.jsx";
 
 const tooltip = `import React from 'react';
-import {
-    withStyles, IconButton, Tooltip,
-} from 'material-ui';
-import {
-    Edit, Close, Check
-} from '@material-ui/icons';
 import PropTypes from 'prop-types';
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+// @material-ui/icons
+import Edit from "@material-ui/icons/Edit";
+import Close from "@material-ui/icons/Close";
+//core components
 import tasksStyle from 'assets/jss/material-dashboard-react/components/tasksStyle.jsx';
 
 class Tooltips extends React.Component{

@@ -10,8 +10,10 @@ import Snackbar from "components/Snackbar/Snackbar.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 const style = `import React from 'react';
-import { AddAlert } from '@material-ui/icons';
-import { SnackbarContent } from 'components';
+// @material-ui/icons
+import AddAlert from "@material-ui/icons/AddAlert";
+//core components
+import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
 
 class StyleExample extends React.Component{
     render(){
@@ -41,8 +43,10 @@ class StyleExample extends React.Component{
 `;
 
 const state = `import React from 'react';
-import { AddAlert } from '@material-ui/icons';
-import { SnackbarContent } from 'components';
+// @material-ui/icons
+import AddAlert from "@material-ui/icons/AddAlert";
+//core components
+import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
 
 class StateExample extends React.Component{
     render(){
@@ -65,8 +69,11 @@ class StateExample extends React.Component{
 `;
 
 const place = `import React from 'react';
-import { AddAlert } from '@material-ui/icons';
-import { Snackbar, Button } from 'components';
+// @material-ui/icons
+import AddAlert from "@material-ui/icons/AddAlert";
+//core components
+import Snackbar from "components/Snackbar/Snackbar.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 class PlaceExample extends React.Component{
     state = {
@@ -127,7 +134,7 @@ class PlaceExample extends React.Component{
     render(){
         return(
             <div>
-                <Button fullWidth color="primary" onClick={() => this.showNotification()}>Show random generated position and color notification</Button>
+                <Button color="primary" onClick={() => this.showNotification()}>Show random generated position and color notification</Button>
                 <Snackbar
                     place={this.state.place}
                     color={this.state.color}
@@ -296,7 +303,6 @@ class Notifications extends React.Component {
         </SyntaxHighlighter>
         <h2>Places</h2>
         <Button
-          fullWidth
           color="primary"
           onClick={() => this.showNotification()}
         >
