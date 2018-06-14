@@ -1,21 +1,24 @@
 import React from "react";
 import classNames from "classnames";
 import { Manager, Target, Popper } from "react-popper";
-import {
-  withStyles,
-  IconButton,
-  MenuItem,
-  MenuList,
-  Grow,
-  Paper,
-  ClickAwayListener,
-  Hidden
-} from "material-ui";
-import { Person, Notifications, Dashboard, Search } from "@material-ui/icons";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Hidden from "@material-ui/core/Hidden";
+// @material-ui/icons
+import Person from "@material-ui/icons/Person";
+import Notifications from "@material-ui/icons/Notifications";
+import Dashboard from "@material-ui/icons/Dashboard";
+import Search from "@material-ui/icons/Search";
+// core components
+import CustomInput from "components/CustomInput/CustomInput.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
-import { CustomInput, IconButton as SearchButton } from "components";
-
-import headerLinksStyle from "assets/jss/material-dashboard-react/headerLinksStyle";
+import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle";
 
 class HeaderLinks extends React.Component {
   state = {
@@ -44,41 +47,41 @@ class HeaderLinks extends React.Component {
             }
           }}
         />
-        <SearchButton
-          color="white"
-          aria-label="edit"
-          customClass={classes.margin + " " + classes.searchButton}
-        >
-          <Search className={classes.searchIcon} />
-        </SearchButton>
-        <IconButton
-          color="inherit"
+        <Button color="white" aria-label="edit" justIcon round>
+          <Search />
+        </Button>
+        <Button
+          color={window.innerWidth > 959 ? "transparent" : "white"}
+          justIcon={window.innerWidth > 959}
+          simple={!(window.innerWidth > 959)}
           aria-label="Dashboard"
           className={classes.buttonLink}
         >
-          <Dashboard className={classes.links} />
+          <Dashboard className={classes.icons} />
           <Hidden mdUp>
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
-        </IconButton>
+        </Button>
         <Manager style={{ display: "inline-block" }}>
           <Target>
-            <IconButton
-              color="inherit"
+            <Button
+              color={window.innerWidth > 959 ? "transparent" : "white"}
+              justIcon={window.innerWidth > 959}
+              simple={!(window.innerWidth > 959)}
               aria-label="Notifications"
               aria-owns={open ? "menu-list" : null}
               aria-haspopup="true"
               onClick={this.handleClick}
               className={classes.buttonLink}
             >
-              <Notifications className={classes.links} />
+              <Notifications className={classes.icons} />
               <span className={classes.notifications}>5</span>
               <Hidden mdUp>
                 <p onClick={this.handleClick} className={classes.linkText}>
                   Notification
                 </p>
               </Hidden>
-            </IconButton>
+            </Button>
           </Target>
           <Popper
             placement="bottom-start"
@@ -133,16 +136,18 @@ class HeaderLinks extends React.Component {
             </ClickAwayListener>
           </Popper>
         </Manager>
-        <IconButton
-          color="inherit"
+        <Button
+          color={window.innerWidth > 959 ? "transparent" : "white"}
+          justIcon={window.innerWidth > 959}
+          simple={!(window.innerWidth > 959)}
           aria-label="Person"
           className={classes.buttonLink}
         >
-          <Person className={classes.links} />
+          <Person className={classes.icons} />
           <Hidden mdUp>
             <p className={classes.linkText}>Profile</p>
           </Hidden>
-        </IconButton>
+        </Button>
       </div>
     );
   }

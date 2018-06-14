@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
+// @material-ui/core components
+// @material-ui/icons
+//core components
 
-import { P } from "components";
-
-const sidebarDep = `import { Sidebar } from 'components';
+const sidebarDep = `import Sidebar from 'components/Sidebar/Sidebar.jsx';
 import appRoutes from 'routes/app.jsx';
 import image from 'assets/img/sidebar-1.jpg';
 import logo from 'assets/img/reactlogo.png';`;
@@ -31,8 +32,8 @@ class Sidebar extends React.Component {
     return (
       <div>
         <h1>Sidebar / Drawer</h1>
-        <P>We've restyled the classic Material UI Drawer.</P>
-        <P>
+        <p>We've restyled the classic Material UI Drawer.</p>
+        <p>
           It comes in 5 different colors (just pass the <code>color</code> prop
           to it with one of the <code>purple</code>, <code>blue</code>,{" "}
           <code>green</code>, <code>orange</code>, <code>red</code>), option to
@@ -41,17 +42,17 @@ class Sidebar extends React.Component {
             logo
           </code>) and a option to set the routes / links to be displayed in it
           (<code>routes</code>).
-        </P>
-        <P>
+        </p>
+        <p>
           For more info about the links, please read the{" "}
           <Link to={"/documentation/routing-system"}>
             routing system section
           </Link>.
-        </P>
+        </p>
         <h2>Example of code</h2>
-        <P>
+        <p>
           This is the actual code for the <code>Sidebar</code> in our demo app.
-        </P>
+        </p>
         <SyntaxHighlighter language="jsx" style={prism}>
           {sidebarDep}
         </SyntaxHighlighter>
@@ -62,7 +63,7 @@ class Sidebar extends React.Component {
           {sidebar}
         </SyntaxHighlighter>
         <h2>Props</h2>
-        <P>
+        <p>
           Please check out the{" "}
           <a
             href="https://material-ui-next.com/demos/drawers/"
@@ -71,7 +72,7 @@ class Sidebar extends React.Component {
           >
             official material-ui documentation
           </a>.
-        </P>
+        </p>
       </div>
     );
   }

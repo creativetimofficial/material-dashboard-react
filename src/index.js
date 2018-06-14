@@ -4,7 +4,7 @@ import { createBrowserHistory } from "history";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import ReactGA from "react-ga";
 
-import "assets/css/material-dashboard-react.css";
+import "assets/css/material-dashboard-react.css?v=1.2.0";
 
 import indexRoutes from "routes/index.jsx";
 

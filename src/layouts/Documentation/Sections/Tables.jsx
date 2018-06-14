@@ -2,9 +2,12 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
 
-import { P, Table } from "components";
+// @material-ui/core components
+// @material-ui/icons
+//core components
+import Table from "components/Table/Table.jsx";
 
-const tableDep = `import { Table } from 'components';`;
+const tableDep = `import Table from "components/Table/Table.jsx";`;
 const table = `<Table
     tableHeaderColor="primary"
     tableHead={['Name','Country','City','Salary']}
@@ -31,7 +34,7 @@ class Tables extends React.Component {
     return (
       <div>
         <h1>Tables</h1>
-        <P>We've created a component so you can better render tables.</P>
+        <p>We've created a component so you can better render tables.</p>
         <Table
           tableHeaderColor="primary"
           tableHead={["Name", "Country", "City", "Salary"]}
@@ -54,7 +57,7 @@ class Tables extends React.Component {
           {tableProp}
         </SyntaxHighlighter>
         <h2>Props</h2>
-        <P>
+        <p>
           Please check out the{" "}
           <a
             href="https://material-ui-next.com/demos/tables/"
@@ -63,7 +66,7 @@ class Tables extends React.Component {
           >
             official material-ui documentation
           </a>.
-        </P>
+        </p>
       </div>
     );
   }

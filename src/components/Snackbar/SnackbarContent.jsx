@@ -1,15 +1,19 @@
 import React from "react";
-import { withStyles, SnackbarContent as Snack, IconButton } from "material-ui";
-import { Close } from "@material-ui/icons";
 import PropTypes from "prop-types";
-import cx from "classnames";
-
-import snackbarContentStyle from "assets/jss/material-dashboard-react/snackbarContentStyle.jsx";
+import classNames from "classnames";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Snack from "@material-ui/core/SnackbarContent";
+import IconButton from "@material-ui/core/IconButton";
+// @material-ui/icons
+import Close from "@material-ui/icons/Close";
+// core components
+import snackbarContentStyle from "assets/jss/material-dashboard-react/components/snackbarContentStyle.jsx";
 
 function SnackbarContent({ ...props }) {
   const { classes, message, color, close, icon } = props;
   var action = [];
-  const messageClasses = cx({
+  const messageClasses = classNames({
     [classes.iconMessage]: icon !== undefined
   });
   if (close !== undefined) {

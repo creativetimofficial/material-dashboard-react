@@ -1,15 +1,19 @@
 import React from "react";
-import { withStyles, Snackbar as Snack, IconButton } from "material-ui";
-import { Close } from "@material-ui/icons";
+import classNames from "classnames";
 import PropTypes from "prop-types";
-import cx from "classnames";
-
-import snackbarContentStyle from "assets/jss/material-dashboard-react/snackbarContentStyle.jsx";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Snack from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+// @material-ui/icons
+import Close from "@material-ui/icons/Close";
+// core components
+import snackbarContentStyle from "assets/jss/material-dashboard-react/components/snackbarContentStyle.jsx";
 
 function Snackbar({ ...props }) {
   const { classes, message, color, close, icon, place, open } = props;
   var action = [];
-  const messageClasses = cx({
+  const messageClasses = classNames({
     [classes.iconMessage]: icon !== undefined
   });
   if (close !== undefined) {
@@ -42,7 +46,7 @@ function Snackbar({ ...props }) {
         </div>
       }
       action={action}
-      SnackbarContentProps={{
+      ContentProps={{
         classes: {
           root: classes.root + " " + classes[color],
           message: classes.message

@@ -1,16 +1,21 @@
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-import { withStyles } from "material-ui";
-
-import { Header, Footer, Sidebar, FixedPlugin } from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+// core components
+import Header from "components/Header/Header.jsx";
+import Footer from "components/Footer/Footer.jsx";
+import Sidebar from "components/Sidebar/Sidebar.jsx";
+import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
-import appStyle from "assets/jss/material-dashboard-react/appStyle.jsx";
+import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 
 import image from "assets/img/sidebar-4.jpg";
 import logo from "assets/img/reactlogo.png";
@@ -60,8 +65,7 @@ class Dashboard extends React.Component {
     return this.props.location.pathname !== "/maps";
   }
   componentDidMount() {
-    if (window.innerWidth > 991) {
-      // eslint-disable-next-line
+    if (navigator.platform.indexOf("Win") > -1) {
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }
   }
@@ -116,4 +120,4 @@ Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(appStyle)(Dashboard);
+export default withStyles(dashboardStyle)(Dashboard);

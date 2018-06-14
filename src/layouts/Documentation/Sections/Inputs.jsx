@@ -1,10 +1,13 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-import { Grid, InputAdornment } from "material-ui";
-import { People } from "@material-ui/icons";
-
-import { P, CustomInput } from "components";
+// @material-ui/core components
+import Grid from "@material-ui/core/Grid";
+import InputAdornment from "@material-ui/core/InputAdornment";
+// @material-ui/icons
+import People from "@material-ui/icons/People";
+//core components
+import CustomInput from "components/CustomInput/CustomInput.jsx";
 
 const inputsDep = `import { Grid } from 'material-ui';
 import { People } from '@material-ui/icons';
@@ -170,7 +173,7 @@ class Inputs extends React.Component {
           {inputsProp}
         </SyntaxHighlighter>
         <h2>Props</h2>
-        <P>
+        <p>
           To see what props you can pass inside the <code>inputProps</code>,{" "}
           <code>labelProps</code>, <code>formControlProps</code> please check
           out the{" "}
@@ -196,7 +199,7 @@ class Inputs extends React.Component {
           >
             material-ui form controll documentation
           </a>.
-        </P>
+        </p>
       </div>
     );
   }

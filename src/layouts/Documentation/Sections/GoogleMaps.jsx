@@ -8,7 +8,10 @@ import {
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
 
-import { P } from "components";
+// @material-ui/core components
+// @material-ui/icons
+//core components
+
 
 const googlemapexample = `import React from 'react';
 import {
@@ -129,7 +132,7 @@ class GoogleMaps extends React.Component {
     return (
       <div>
         <h1>Google Maps</h1>
-        <P>
+        <p>
           We've used{" "}
           <a
             href="https://tomchentw.github.io/react-google-maps/"
@@ -138,7 +141,7 @@ class GoogleMaps extends React.Component {
           >
             react-google-maps
           </a>. For props, please check the given link.
-        </P>
+        </p>
         <CustomSkinMap
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY"
           loadingElement={<div style={{ height: `100%` }} />}

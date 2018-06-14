@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "material-ui";
-
-import typographyStyle from "assets/jss/material-dashboard-react/typographyStyle.jsx";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+// core components
+import typographyStyle from "assets/jss/material-dashboard-react/components/typographyStyle.jsx";
 
 function Info({ ...props }) {
   const { classes, children } = props;

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { withStyles, List, ListItem, ListItemText } from "material-ui";
+import { withStyles, List, ListItem, ListItemText } from "@material-ui/core";
 
 const style = theme => ({
   list: {

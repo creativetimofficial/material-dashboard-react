@@ -1,35 +1,24 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-import { Check, FiberManualRecord } from "@material-ui/icons";
-import { withStyles, Checkbox, Radio } from "material-ui";
-
-import { P } from "components";
-
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Checkbox from "@material-ui/core/Checkbox";
+import Radio from "@material-ui/core/Radio";
+// @material-ui/icons
+import Check from "@material-ui/icons/Check";
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+//core components
+import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle.jsx";
 const checkbox = `import React from 'react';
-import { Check } from '@material-ui/icons';
-import { withStyles, Checkbox } from 'material-ui';
 import PropTypes from 'prop-types';
-
-const primaryColor = '#9c27b0';
-const styles = {
-    checked: {
-        color: primaryColor
-    },
-    checkedIcon: {
-        width: '20px',
-        height: '20px',
-        border: '1px solid rgba(0, 0, 0, .54)',
-        borderRadius: '3px',
-    },
-    uncheckedIcon: {
-        width: '0px',
-        height: '0px',
-        padding: '10px',
-        border: '1px solid rgba(0, 0, 0, .54)',
-        borderRadius: '3px',
-    },
-};
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Checkbox from "@material-ui/core/Checkbox";
+// @material-ui/icons
+import Check from "@material-ui/icons/Check";
+//core components
+import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle.jsx";
 
 class ExampleCheckboxUsage extends React.Component{
     state = {
@@ -70,34 +59,17 @@ ExampleCheckboxUsage.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ExampleCheckboxUsage);`;
+export default withStyles(checkboxAdnRadioStyle)(ExampleCheckboxUsage);`;
 
 const radio = `import React from 'react';
-import { FiberManualRecord } from '@material-ui/icons';
-import { withStyles, Radio } from 'material-ui';
 import PropTypes from 'prop-types';
-
-const primaryColor = '#9c27b0';
-const styles = {
-    radio: {
-        color: primaryColor,
-        top: '10px',
-        marginTop: '-10px',
-    },
-    radioChecked: {
-        width: '20px',
-        height: '20px',
-        border: '1px solid ' + primaryColor,
-        borderRadius: '50%',
-    },
-    radioUnchecked: {
-        width: '0px',
-        height: '0px',
-        padding: '10px',
-        border: '1px solid rgba(0, 0, 0, .54)',
-        borderRadius: '50%',
-    },
-};
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import Radio from "@material-ui/core/Radio";
+// @material-ui/icons
+import FiberManualRecord from "@material-ui/icons/FiberManualRecord";
+//core components
+import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle.jsx";
 
 class ExampleRadioUsage extends React.component{
     state = {
@@ -143,45 +115,7 @@ ExampleRadioUsage.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ExampleRadioUsage);`;
-
-const primaryColor = "#9c27b0";
-const styles = {
-  checked: {
-    color: primaryColor
-  },
-  checkedIcon: {
-    width: "20px",
-    height: "20px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "3px"
-  },
-  uncheckedIcon: {
-    width: "0px",
-    height: "0px",
-    padding: "10px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "3px"
-  },
-  radio: {
-    color: primaryColor,
-    top: "10px",
-    marginTop: "-10px"
-  },
-  radioChecked: {
-    width: "20px",
-    height: "20px",
-    border: "1px solid " + primaryColor,
-    borderRadius: "50%"
-  },
-  radioUnchecked: {
-    width: "0px",
-    height: "0px",
-    padding: "10px",
-    border: "1px solid rgba(0, 0, 0, .54)",
-    borderRadius: "50%"
-  }
-};
+export default withStyles(checkboxAdnRadioStyle)(ExampleRadioUsage);`;
 
 class CheckboxRadio extends React.Component {
   state = {
@@ -211,10 +145,10 @@ class CheckboxRadio extends React.Component {
     return (
       <div>
         <h1>Checkbox and Radio</h1>
-        <P>
+        <p>
           We've restyled the default checkboxes and radios from the material-ui
           theme.
-        </P>
+        </p>
         <h2>Checkbox</h2>
         <Checkbox
           tabIndex={-1}
@@ -278,4 +212,4 @@ class CheckboxRadio extends React.Component {
   }
 }
 
-export default withStyles(styles)(CheckboxRadio);
+export default withStyles(checkboxAdnRadioStyle)(CheckboxRadio);

@@ -1,8 +1,9 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-
-import { P } from "components";
+// @material-ui/core components
+// @material-ui/icons
+//core components
 
 const files = `material-dashboard-react
 ├── CHANGELOG.md
@@ -101,13 +102,13 @@ class Tutorial extends React.Component {
       <div>
         <h1>Tutorial</h1>
         <h2>License</h2>
-        <P>
+        <p>
           <b>MIT LICENSE</b>
-        </P>
+        </p>
         {
           // eslint-disable-next-line
-        }<P>Copyright (c) 2017{" "}<a href="https://creative-tim.com/" target="_blank">Creative Tim</a>.</P>
-        <P>
+        }<p>Copyright (c) 2017{" "}<a href="https://creative-tim.com/" target="_blank">Creative Tim</a>.</p>
+        <p>
           Permission is hereby granted, free of charge, to any person obtaining
           a copy of this software and associated documentation files (the
           "Software"), to deal in the Software without restriction, including
@@ -115,12 +116,12 @@ class Tutorial extends React.Component {
           distribute, sublicense, and/or sell copies of the Software, and to
           permit persons to whom the Software is furnished to do so, subject to
           the following conditions:
-        </P>
-        <P>
+        </p>
+        <p>
           The above copyright notice and this permission notice shall be
           included in all copies or substantial portions of the Software.
-        </P>
-        <P>
+        </p>
+        <p>
           THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
           EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
           MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -128,11 +129,11 @@ class Tutorial extends React.Component {
           CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
           TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
           SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-        </P>
+        </p>
         <h2>Getting started</h2>
         {
           // eslint-disable-next-line
-        }<P><b>Material Dashboard React</b> is built on top of{" "}<a href="https://material-ui-next.com/" target="_blank">Material UI</a>.</P>
+        }<p><b>Material Dashboard React</b> is built on top of{" "}<a href="https://material-ui-next.com/" target="_blank">Material UI</a>.</p>
         <ul>
           <li>
             Install NodeJs from{" "}
@@ -166,6 +167,27 @@ class Tutorial extends React.Component {
               language="jsx"
               style={prism}
             >{`npm start`}</SyntaxHighlighter>
+            If you have an error something containing
+            <SyntaxHighlighter
+              language="jsx"
+              style={prism}
+            >{`Module not found`}</SyntaxHighlighter>
+            Try
+            <SyntaxHighlighter
+              language="jsx"
+              style={prism}
+            >{`npm install --g cross-env`}</SyntaxHighlighter>
+            and then try again starting the app.
+            If this doesn't do the trick, than also change the <code>start script</code> inside <code>package.json</code> from
+            <SyntaxHighlighter
+              language="jsx"
+              style={prism}
+            >{`"start": "react-scripts start",`}</SyntaxHighlighter>
+            to
+            <SyntaxHighlighter
+              language="jsx"
+              style={prism}
+            >{`"start": "NODE_PATH=./src react-scripts start",`}</SyntaxHighlighter>
           </li>
           <li>
             (Optional) You can create a new react application like this
@@ -223,7 +245,7 @@ class Tutorial extends React.Component {
           </li>
         </ul>
         <h2>Google Maps API key</h2>
-        <P>Follow these steps to get an API key:</P>
+        <p>Follow these steps to get an API key:</p>
         <ul>
           <li>
             Go to the{" "}
@@ -262,13 +284,13 @@ class Tutorial extends React.Component {
             for more information.
           </li>
         </ul>
-        <P>
+        <p>
           After these steps navigate in your project to{" "}
           <code>views/Maps/Maps.jsx</code> and replace the{" "}
           <code>YOUR_KEY_HERE</code>, from line 29, with the given{" "}
           <code>API KEY</code>.
-        </P>
-        <P>
+        </p>
+        <p>
           For more information regarding google maps API KEY navigate to this{" "}
           <a
             href="https://developers.google.com/maps/documentation/javascript/get-api-key"
@@ -277,7 +299,7 @@ class Tutorial extends React.Component {
           >
             link
           </a>.
-        </P>
+        </p>
         <h2>Files and Folders structure</h2>
         <SyntaxHighlighter language="jsx" style={prism}>
           {files}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "material-ui";
+import { Grid } from "@material-ui/core";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import DocHeader from "./DocHeader/DocHeader";

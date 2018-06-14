@@ -1,13 +1,17 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-import { withStyles, IconButton, Tooltip } from "material-ui";
-import { Edit, Close } from "@material-ui/icons";
 import PropTypes from "prop-types";
 
-import tasksStyle from "assets/jss/material-dashboard-react/tasksStyle.jsx";
-
-import { P } from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
+// @material-ui/icons
+import Edit from "@material-ui/icons/Edit";
+import Close from "@material-ui/icons/Close";
+//core components
+import tasksStyle from "assets/jss/material-dashboard-react/components/tasksStyle.jsx";
 
 const tooltip = `import React from 'react';
 import {
@@ -18,7 +22,7 @@ import {
 } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
-import tasksStyle from 'assets/jss/material-dashboard-react/tasksStyle.jsx';
+import tasksStyle from 'assets/jss/material-dashboard-react/components/tasksStyle.jsx';
 
 class Tooltips extends React.Component{
     render(){
@@ -86,7 +90,7 @@ class Tooltips extends React.Component {
           {tooltip}
         </SyntaxHighlighter>
         <h2>Props</h2>
-        <P>
+        <p>
           Please check out the{" "}
           <a
             href="https://material-ui-next.com/demos/tooltips/"
@@ -95,7 +99,7 @@ class Tooltips extends React.Component {
           >
             official material-ui documentation
           </a>.
-        </P>
+        </p>
       </div>
     );
   }

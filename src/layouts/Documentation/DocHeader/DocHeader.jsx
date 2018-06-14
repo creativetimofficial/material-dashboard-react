@@ -1,14 +1,14 @@
 import React from "react";
-import { withStyles, AppBar, Toolbar, Hidden } from "material-ui";
+import { withStyles, AppBar, Toolbar, Hidden } from "@material-ui/core";
 import { List, BugReport } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
 
 const style = theme => ({
   appBar: {
     color: "#fff",
-    backgroundColor: "#9c27b0 !important",
+    backgroundColor: "#00acc1 !important",
     boxShadow:
-      "0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 12px -5px rgba(156, 39, 176, .46)"
+      "0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)"
   },
   title: {
     "&:hover,&:active": {

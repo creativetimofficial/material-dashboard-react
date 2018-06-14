@@ -1,21 +1,20 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-import { Notifications } from "@material-ui/icons";
 import classNames from "classnames";
-import {
-  withStyles,
-  IconButton,
-  MenuItem,
-  MenuList,
-  Grow,
-  Paper,
-  ClickAwayListener,
-  Hidden
-} from "material-ui";
 import { Manager, Target, Popper } from "react-popper";
-
-import { P } from "components";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
+import IconButton from "@material-ui/core/IconButton";
+import MenuList from "@material-ui/core/MenuList";
+import MenuItem from "@material-ui/core/MenuItem";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Hidden from "@material-ui/core/Hidden";
+// @material-ui/icons
+import Notifications from "@material-ui/icons/Notifications";
+//core components
 
 const dropdown = `import React from 'react';
 import {
@@ -287,7 +286,7 @@ class Dropdown extends React.Component {
     return (
       <div>
         <h1>Dropdown</h1>
-        <P>As most of our components we've restyled the dropdowns as well.</P>
+        <p>As most of our components we've restyled the dropdowns as well.</p>
         <Manager style={{ display: "inline-block" }}>
           <Target>
             <IconButton

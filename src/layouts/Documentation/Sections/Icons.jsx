@@ -2,7 +2,9 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
 
-import { P } from "components";
+// @material-ui/core components
+// @material-ui/icons
+//core components
 
 class Icons extends React.Component {
   render() {
@@ -10,7 +12,7 @@ class Icons extends React.Component {
       <div>
         <h1>Icons</h1>
         <h2>Icons font</h2>
-        <P>
+        <p>
           In order to use the font <code>Icon</code> component, or to use icon
           names (ligatures) directly in components that support them, you must
           first add the{" "}
@@ -29,13 +31,13 @@ class Icons extends React.Component {
             instructions
           </a>{" "}
           on how to do so.
-        </P>
-        <P>You would use them like:</P>
+        </p>
+        <p>You would use them like:</p>
         <SyntaxHighlighter
           language="jsx"
           style={prism}
         >{`<i className="material-icons">name_of_the_icon</i>`}</SyntaxHighlighter>
-        <P>or you could use them with material-ui like so:</P>
+        <p>or you could use them with material-ui like so:</p>
         <SyntaxHighlighter
           language="jsx"
           style={prism}
@@ -45,7 +47,7 @@ class Icons extends React.Component {
           style={prism}
         >{`<Icon>name_of_the_icon</Icon>`}</SyntaxHighlighter>
         <h2>SVG Icons</h2>
-        <P>
+        <p>
           In order to use prebuilt SVG Material icons, such as those found in
           the component demos you must first install the{" "}
           <a
@@ -56,12 +58,12 @@ class Icons extends React.Component {
             @material-ui/icons
           </a>{" "}
           package:
-        </P>
+        </p>
         <SyntaxHighlighter
           language="jsx"
           style={prism}
         >{`npm install --save @material-ui/icons`}</SyntaxHighlighter>
-        <P>Then you would use them like so:</P>
+        <p>Then you would use them like so:</p>
         <SyntaxHighlighter
           language="jsx"
           style={prism}

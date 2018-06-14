@@ -1,18 +1,19 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-
-import { P } from "components";
+// @material-ui/core components
+// @material-ui/icons
+//core components
 
 class RoutingSystem extends React.Component {
   render() {
     return (
       <div>
         <h1>Routing System</h1>
-        <P>
+        <p>
           For a better and easier way we've decided to create dynamic routes.
           You will find all our demo routes in:
-        </P>
+        </p>
         <ul>
           <li>
             <code>src/routes/index.jsx</code>{" "}
@@ -29,51 +30,51 @@ class RoutingSystem extends React.Component {
             </i>
           </li>
         </ul>
-        <P>Let's a look at each one of them.</P>
+        <p>Let's a look at each one of them.</p>
         <h3>
           <code>src/routes/index.jsx</code>
         </h3>
-        <P>
+        <p>
           As said above, this is the route for all our app, it contains only one
           route. We've used this thinking you may need to have two apps running
           on the same server.
-        </P>
-        <P>
+        </p>
+        <p>
           This route is rendered in <code>src/index.js</code> (see line 13,
           lines 18 to 23).
-        </P>
-        <P>
+        </p>
+        <p>
           You will see that we've used <code>react-router-dom</code>'s
           components to create this route, using <code>Router</code>,{" "}
           <code>Route</code> and <code>Switch</code> as expected, just that
           we've used a dynamic approach.
-        </P>
-        <P>
+        </p>
+        <p>
           You can add as many routes you would like in{" "}
           <code>src/routes/index.jsx</code> to create as many app's as you wish
           and they will all be rendered as <code>react-router-dom</code>'s
           components.
-        </P>
+        </p>
         <h3>
           <code>src/routes/dashboard.jsx</code>
         </h3>
-        <P>
+        <p>
           These are the routes for the all pages that appear in the Dashboard
           (these pages can be found in <code>src/views/*</code>).
-        </P>
-        <P>
+        </p>
+        <p>
           You will see these routes beeing used/rendered in{" "}
           <code>src/layouts/Dashboard/Dashboard.jsx</code> (see line 16, lines
           77 to 89, line 82 - used to create a <code>Redirect</code> component,
           line 85 - used to create a <code>Route</code> component).
-        </P>
-        <P>
+        </p>
+        <p>
           You will see that we've used <code>react-router-dom</code>'s
           components to create these routes, using <code>Route</code>,{" "}
           <code>Switch</code> and <code>Redirect</code> as expected, just that
           we've used a dynamic approach.
-        </P>
-        <P>
+        </p>
+        <p>
           Beside beeing used to create the <code>Dashboard</code> routes, these
           have been also used to create the links that appear in all the
           Dashboard pages navbars brand (<code>Header</code> component) and in
@@ -81,7 +82,7 @@ class RoutingSystem extends React.Component {
           70, you will see that the routes are passed in this two components{" "}
           <code>Sidebar</code> (lines 28 to 36 and lines 15 to 17),{" "}
           <code>Header</code> (lines 47 and 15 to 39).
-        </P>
+        </p>
         <h2>Legend</h2>
         <ul>
           <li />

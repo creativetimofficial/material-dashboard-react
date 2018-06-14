@@ -1,9 +1,13 @@
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
-import { AddAlert } from "@material-ui/icons";
-
-import { P, SnackbarContent, Button, Snackbar } from "components";
+// @material-ui/core components
+// @material-ui/icons
+import AddAlert from "@material-ui/icons/AddAlert";
+//core components
+import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
+import Snackbar from "components/Snackbar/Snackbar.jsx";
+import Button from "components/CustomButtons/Button.jsx";
 
 const style = `import React from 'react';
 import { AddAlert } from '@material-ui/icons';
@@ -216,10 +220,10 @@ class Notifications extends React.Component {
     return (
       <div>
         <h1>Notifications / Snackbars</h1>
-        <P>
+        <p>
           We restyled the classic Material UI Snackbar and gave it a more
           attractive look.
-        </P>
+        </p>
         <h2>Style</h2>
         <br />
         <SnackbarContent message={"This is a plain notification"} />
@@ -317,7 +321,7 @@ class Notifications extends React.Component {
         <SyntaxHighlighter language="jsx" style={prism}>
           {snackbar}
         </SyntaxHighlighter>
-        <P>
+        <p>
           Beside these props, you can check out the{" "}
           <a
             href="https://material-ui-next.com/demos/snackbars/"
@@ -326,7 +330,7 @@ class Notifications extends React.Component {
           >
             official material-ui documentation
           </a>.
-        </P>
+        </p>
       </div>
     );
   }
