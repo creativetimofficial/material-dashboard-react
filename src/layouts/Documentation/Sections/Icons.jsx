@@ -41,7 +41,7 @@ class Icons extends React.Component {
         <SyntaxHighlighter
           language="jsx"
           style={prism}
-        >{`import { Icon } from 'material-ui';`}</SyntaxHighlighter>
+        >{`import Icon from "@material-ui/core/Icon";`}</SyntaxHighlighter>
         <SyntaxHighlighter
           language="jsx"
           style={prism}
@@ -67,7 +67,7 @@ class Icons extends React.Component {
         <SyntaxHighlighter
           language="jsx"
           style={prism}
-        >{`import { NameOfTheIcon } from '@material-ui/icons';`}</SyntaxHighlighter>
+        >{`import NameOfTheIcon from "@material-ui/icons/NameOfTheIcon";`}</SyntaxHighlighter>
         <SyntaxHighlighter
           language="jsx"
           style={prism}
