@@ -19,8 +19,6 @@ const checkboxAdnRadioStyle = {
   },
   radio: {
     color: primaryColor + "!important",
-    top: "10px",
-    marginTop: "-10px"
   },
   radioChecked: {
     width: "20px",
