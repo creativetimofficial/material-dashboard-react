@@ -8,6 +8,12 @@ import DocSidebar from "./DocSidebar/DocSidebar";
 import docRoutes from "routes/documentation.jsx";
 
 class Documentation extends React.Component {
+  componentDidUpdate(e) {
+    if (e.history.action === "PUSH") {
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+    }
+  }
   render() {
     return (
       <div style={{ backgroundColor: "#FFFFFF" }}>

@@ -33,12 +33,6 @@ const restyledComponents = `components
     ├── Success.jsx
     └── Warning.jsx`;
 
-const importExample = `import ComponentX from 'components/ComponentX/ComponentX.jsx';
-import ComponentY from 'components/ComponentY/ComponentY.jsx';
-...`;
-
-const betterImport = `import { ComponentX, ComponentY, ... } from 'components';`;
-
 class Styles extends React.Component {
   render() {
     return (
