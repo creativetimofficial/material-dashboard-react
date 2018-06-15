@@ -203,6 +203,7 @@ export {
   cardActions,
   cardHeader,
   defaultBoxShadow,
+  title,
   cardTitle,
   cardSubtitle,
   cardLink
