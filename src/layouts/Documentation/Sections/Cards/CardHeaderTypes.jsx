@@ -29,7 +29,7 @@ function CardHeaderTypes({ ...props }) {
   const { classes } = props;
   return (
     <div>
-      <Grid>
+      <Grid container>
         <GridItem xs={12} sm={12} md={6}>
           <Card>
             <CardHeader>

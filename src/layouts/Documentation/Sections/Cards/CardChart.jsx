@@ -28,8 +28,8 @@ class CardChart extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <Grid>
-        <GridItem xs={12} sm={12} md={4}>
+      <Grid container>
+        <GridItem xs={12} sm={12} md={6}>
           <Card chart>
             <CardHeader color="warning">
               <ChartistGraph
@@ -54,7 +54,7 @@ class CardChart extends React.Component {
             </CardFooter>
           </Card>
         </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
+        <GridItem xs={12} sm={12} md={6}>
           <Card chart>
             <CardHeader color="danger">
               <ChartistGraph

@@ -475,58 +475,32 @@ const codeProps = `Card.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,
-  blog: PropTypes.bool,
-  raised: PropTypes.bool,
-  background: PropTypes.bool,
-  pricing: PropTypes.bool,
-  testimonial: PropTypes.bool,
-  color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose"
-  ]),
-  product: PropTypes.bool,
-  chart: PropTypes.bool,
-  login: PropTypes.bool
+  chart: PropTypes.bool
 };
 
 CardAvatar.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   profile: PropTypes.bool,
-  plain: PropTypes.bool,
-  testimonial: PropTypes.bool,
-  testimonialFooter: PropTypes.bool
+  plain: PropTypes.bool
 };
 
 CardBody.propTypes = {
+  classes: PropTypes.object.isRequired,
   className: PropTypes.string,
-  background: PropTypes.bool,
   plain: PropTypes.bool,
-  formHorizontal: PropTypes.bool,
-  pricing: PropTypes.bool,
-  signup: PropTypes.bool,
-  color: PropTypes.bool,
-  profile: PropTypes.bool,
-  calendar: PropTypes.bool
+  profile: PropTypes.bool
 };
 
 CardFooter.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,
-  pricing: PropTypes.bool,
-  testimonial: PropTypes.bool,
   stats: PropTypes.bool,
-  chart: PropTypes.bool,
-  product: PropTypes.bool
+  chart: PropTypes.bool
 };
 
 CardHeader.propTypes = {
-  classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   color: PropTypes.oneOf([
     "warning",
@@ -537,29 +511,11 @@ CardHeader.propTypes = {
     "rose"
   ]),
   plain: PropTypes.bool,
-  image: PropTypes.bool,
-  contact: PropTypes.bool,
-  signup: PropTypes.bool,
   stats: PropTypes.bool,
-  icon: PropTypes.bool,
-  text: PropTypes.bool
+  icon: PropTypes.bool
 };
 
 CardIcon.propTypes = {
-  classes: PropTypes.object.isRequired,
-  className: PropTypes.string,
-  color: PropTypes.oneOf([
-    "warning",
-    "success",
-    "danger",
-    "info",
-    "primary",
-    "rose"
-  ])
-};
-
-CardText.propTypes = {
-  classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   color: PropTypes.oneOf([
     "warning",
@@ -697,14 +653,6 @@ function Cards({ ...props }) {
       <SyntaxHighlighter language="jsx" style={prism}>
         {codeCardChart}
       </SyntaxHighlighter>
-      <h3>Cards with Animation</h3>
-      <p>
-        We’ve created some special cards that can have actions under the header,
-        you can activate those cards by adding some special classes on the{" "}
-        <code>Card</code> and <code>CardHeader</code> components, special
-        classes that you need to import from{" "}
-        <b>src/assets/jss/material-dashboard-react/hoverCardStyle.jsx</b>
-      </p>
       <h2>Text alignment</h2>
       <p>
         You can quickly change the text alignment of any card—in its entirety or
