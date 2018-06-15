@@ -272,7 +272,7 @@ class Notifications extends React.Component {
                     place="br"
                     color="info"
                     icon={AddAlert}
-                    message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
+                    message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.br}
                     closeNotification={() => this.setState({ br: false })}
                     close
