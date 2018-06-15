@@ -47,6 +47,7 @@ Within the download you'll find the following directories and files:
 
 ```
 material-dashboard-react
+.
 ├── CHANGELOG.md
 ├── LICENSE.md
 ├── README.md
@@ -63,31 +64,59 @@ material-dashboard-react
 │   ├── index.html
 │   └── manifest.json
 └── src
-    ├── index.js
-    ├── logo.svg
     ├── assets
     │   ├── css
+    │   │   └── material-dashboard-react.css
     │   ├── img
     │   │   └── faces
     │   └── jss
     │       ├── material-dashboard-react
+    │       │   ├── cardImagesStyles.jsx
+    │       │   ├── checkboxAdnRadioStyle.jsx
+    │       │   ├── components
+    │       │   │   ├── buttonStyle.jsx
+    │       │   │   ├── cardAvatarStyle.jsx
+    │       │   │   ├── cardBodyStyle.jsx
+    │       │   │   ├── cardFooterStyle.jsx
+    │       │   │   ├── cardHeaderStyle.jsx
+    │       │   │   ├── cardIconStyle.jsx
+    │       │   │   ├── cardStyle.jsx
+    │       │   │   ├── customInputStyle.jsx
+    │       │   │   ├── customTabsStyle.jsx
+    │       │   │   ├── footerStyle.jsx
+    │       │   │   ├── headerLinksStyle.jsx
+    │       │   │   ├── headerStyle.jsx
+    │       │   │   ├── sidebarStyle.jsx
+    │       │   │   ├── snackbarContentStyle.jsx
+    │       │   │   ├── tableStyle.jsx
+    │       │   │   ├── tasksStyle.jsx
+    │       │   │   └── typographyStyle.jsx
+    │       │   ├── dropdownStyle.jsx
+    │       │   ├── layouts
+    │       │   │   └── dashboardStyle.jsx
+    │       │   ├── tooltipStyle.jsx
+    │       │   └── views
+    │       │       ├── dashboardStyle.jsx
+    │       │       └── iconsStyle.jsx
     │       └── material-dashboard-react.jsx
     ├── components
-    │   ├── Cards
-    │   │   ├── ChartCard.jsx
-    │   │   ├── ProfileCard.jsx
-    │   │   ├── RegularCard.jsx
-    │   │   ├── StatsCard.jsx
-    │   │   └── TasksCard.jsx
+    │   ├── Card
+    │   │   ├── Card.jsx
+    │   │   ├── CardAvatar.jsx
+    │   │   ├── CardBody.jsx
+    │   │   ├── CardFooter.jsx
+    │   │   ├── CardHeader.jsx
+    │   │   └── CardIcon.jsx
     │   ├── CustomButtons
-    │   │   ├── Button.jsx
-    │   │   └── IconButton.jsx
+    │   │   └── Button.jsx
     │   ├── CustomInput
     │   │   └── CustomInput.jsx
+    │   ├── CustomTabs
+    │   │   └── CustomTabs.jsx
     │   ├── Footer
     │   │   └── Footer.jsx
     │   ├── Grid
-    │   │   └── ItemGrid.jsx
+    │   │   └── GridItem.jsx
     │   ├── Header
     │   │   ├── Header.jsx
     │   │   └── HeaderLinks.jsx
@@ -100,21 +129,19 @@ material-dashboard-react
     │   │   └── Table.jsx
     │   ├── Tasks
     │   │   └── Tasks.jsx
-    │   ├── Typography
-    │   │   ├── A.jsx
-    │   │   ├── Danger.jsx
-    │   │   ├── Info.jsx
-    │   │   ├── Muted.jsx
-    │   │   ├── P.jsx
-    │   │   ├── Primary.jsx
-    │   │   ├── Quote.jsx
-    │   │   ├── Small.jsx
-    │   │   ├── Success.jsx
-    │   │   └── Warning.jsx
-    │   └── index.js
+    │   └── Typography
+    │       ├── Danger.jsx
+    │       ├── Info.jsx
+    │       ├── Muted.jsx
+    │       ├── Primary.jsx
+    │       ├── Quote.jsx
+    │       ├── Success.jsx
+    │       └── Warning.jsx
+    ├── index.js
     ├── layouts
     │   └── Dashboard
     │       └── Dashboard.jsx
+    ├── logo.svg
     ├── routes
     │   ├── dashboard.jsx
     │   └── index.jsx
@@ -134,6 +161,8 @@ material-dashboard-react
         │   └── TableList.jsx
         ├── Typography
         │   └── Typography.jsx
+        ├── UpgradeToPro
+        │   └── UpgradeToPro.jsx
         └── UserProfile
             └── UserProfile.jsx
 ```
