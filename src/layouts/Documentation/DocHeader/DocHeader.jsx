@@ -2,6 +2,7 @@ import React from "react";
 import { withStyles, AppBar, Toolbar, Hidden } from "@material-ui/core";
 import { List, BugReport } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
+import Button from "components/CustomButtons/Button.jsx";
 
 const style = theme => ({
   appBar: {
@@ -9,6 +10,11 @@ const style = theme => ({
     backgroundColor: "#00acc1 !important",
     boxShadow:
       "0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)"
+  },
+  vButton: {
+    padding: "12px",
+    marginLeft: "4px",
+    marginRight: "4px",
   },
   title: {
     "&:hover,&:active": {
@@ -82,6 +88,7 @@ class DocHeader extends React.Component {
               Material Dashboard React
             </NavLink>
             <Hidden mdDown>
+              <Button color="transparent" className={classes.vButton}>v1.3.0</Button>
               <a
                 href="https://github.com/creativetimofficial/material-dashboard-react"
                 className={classes.iconLink}

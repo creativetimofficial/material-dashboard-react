@@ -140,10 +140,10 @@ class RoutingSystem extends React.Component {
           displayed in sidebar), you could add a prop like{" "}
           <code>invisible: true</code> and then in sidebar add an if statement
           inside the <code>map</code> function of ours and do like this:
-          <SyntaxHighlighter language="jsx" style={prism}>
-            {`if(prop.invisible) return null;`}
-          </SyntaxHighlighter>
         </p>
+        <SyntaxHighlighter language="jsx" style={prism}>
+          {`if(prop.invisible) return null;`}
+        </SyntaxHighlighter>
       </div>
     );
   }

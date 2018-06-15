@@ -46,14 +46,18 @@ class Documentation extends React.Component {
             <Switch>
               {docRoutes.map((prop, key) => {
                 if (prop.redirect)
-                  return <Redirect from={prop.path} to={prop.to} key={key} />;
-                return (
-                  <Route
-                    path={prop.path}
-                    component={prop.component}
-                    key={key}
-                  />
-                );
+                  return (
+                    <Redirect from={prop.path} to={prop.pathTo} key={key} />
+                  );
+                return prop.routes.map((prop, key) => {
+                  return (
+                    <Route
+                      path={prop.path}
+                      component={prop.component}
+                      key={key}
+                    />
+                  );
+                });
               })}
             </Switch>
           </Grid>
