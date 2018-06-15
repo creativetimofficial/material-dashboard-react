@@ -44,8 +44,13 @@ class App extends React.Component {
       const ps = new PerfectScrollbar(this.refs.mainPanel);
     }
   }
-  componentDidUpdate() {
-    this.refs.mainPanel.scrollTop = 0;
+  componentDidUpdate(e) {
+    if (e.history.location.pathname !== e.location.pathname) {
+      this.refs.mainPanel.scrollTop = 0;
+      if(this.state.mobileOpen){
+        this.setState({mobileOpen: false});
+      }
+    }
   }
   render() {
     const { classes, ...rest } = this.props;

@@ -12,13 +12,16 @@ const headerLinksStyle = theme => ({
       marginTop: "0"
     },
     [theme.breakpoints.down("sm")]: {
-      margin: "10px 15px",
+      margin: "10px 15px !important",
       float: "none !important",
       paddingTop: "1px",
       paddingBottom: "1px",
-      padding: "10px 15px",
-      width: "auto",
-      marginTop: "40px"
+      padding: "0!important",
+      width: "60%",
+      marginTop: "40px",
+      "& input": {
+        color: "#FFFFFF"
+      }
     }
   },
   linkText: {
@@ -31,12 +34,15 @@ const headerLinksStyle = theme => ({
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       margin: "10px 15px 0",
-      width: "auto",
+      width: "-webkit-fill-available",
       "& svg": {
         width: "24px",
         height: "30px",
         marginRight: "15px",
         marginLeft: "-15px"
+      },
+      "& > span": {
+        justifyContent: "flex-start"
       }
     }
   },
@@ -79,6 +85,19 @@ const headerLinksStyle = theme => ({
       marginRight: "8px"
     }
   },
+  manager: {
+    [theme.breakpoints.down("sm")]: {
+      width: "100%"
+    },
+    display: "inline-block"
+  },
+  searchWrapper: {
+    [theme.breakpoints.down("sm")]: {
+      width: "-webkit-fill-available",
+      margin: "10px 15px 0",
+    },
+    display: "inline-block"
+  }
 });
 
 export default headerLinksStyle;

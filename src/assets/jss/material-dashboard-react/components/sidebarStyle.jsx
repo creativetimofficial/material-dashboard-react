@@ -215,9 +215,11 @@ const sidebarStyle = theme => ({
     overflowScrolling: "touch"
   },
   activePro: {
-    position: "absolute",
-    width: "100%",
-    bottom: "13px",
+    [theme.breakpoints.up("md")]: {
+      position: "absolute",
+      width: "100%",
+      bottom: "13px",
+    },
   }
 });
 
