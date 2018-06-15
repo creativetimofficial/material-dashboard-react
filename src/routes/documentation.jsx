@@ -15,6 +15,7 @@ import Navigation from "layouts/Documentation/Sections/Navigation.jsx";
 import Notifications from "layouts/Documentation/Sections/Notifications.jsx";
 import Sidebar from "layouts/Documentation/Sections/Sidebar.jsx";
 import Tables from "layouts/Documentation/Sections/Tables.jsx";
+import Tabs from "layouts/Documentation/Sections/Tabs.jsx";
 import Tasks from "layouts/Documentation/Sections/Tasks.jsx";
 import Typography from "layouts/Documentation/Sections/Typography.jsx";
 import Tooltips from "layouts/Documentation/Sections/Tooltips.jsx";
@@ -71,6 +72,7 @@ const docsRoutes = [
       },
       { path: "/documentation/sidebar", name: "Sidebar", component: Sidebar },
       { path: "/documentation/tables", name: "Tables", component: Tables },
+      { path: "/documentation/tabs", name: "Tabs", component: Tabs },
       { path: "/documentation/tasks", name: "Tasks", component: Tasks },
       { path: "/documentation/tooltips", name: "Tooltips", component: Tooltips },
       {
