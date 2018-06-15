@@ -1,4 +1,4 @@
-## [1.3.0] 2018-04-16
+## [1.3.0] 2018-06-15
 ### Bug Fixing
 - Changed import from `material-ui` to `@material-ui/core`
 - Droped `src/components/index.js`, and changed all the imports to separate ones
