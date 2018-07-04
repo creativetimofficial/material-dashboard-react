@@ -219,3 +219,13 @@ footer ul li a:hover {
         overflow-x: hidden;
     }
 }
+
+.badge {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
