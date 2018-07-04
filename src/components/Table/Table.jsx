@@ -33,15 +33,18 @@ function CustomTable({ ...props }) {
         ) : null}
         <TableBody>
           {tableData.map((prop, key) => {
+            console.log(prop)
             return (
               <TableRow key={key}>
-                {prop.map((prop, key) => {
+                {Array.isArray(prop) ? prop.map((prop, key) => {
                   return (
                     <TableCell className={classes.tableCell} key={key}>
                       {prop}
                     </TableCell>
                   );
-                })}
+                }) : <TableCell className={classes.tableCell} key={key}>
+                  {prop}
+                </TableCell>}
               </TableRow>
             );
           })}

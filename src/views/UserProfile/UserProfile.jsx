@@ -12,8 +12,11 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardAvatar from "components/Card/CardAvatar.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-
+import Table from "components/Table/Table.jsx";
 import avatar from "assets/img/faces/marc.jpg";
+
+import { gql } from "apollo-boost";
+import { Query } from "react-apollo";
 
 const styles = {
   cardCategoryWhite: {
@@ -34,143 +37,59 @@ const styles = {
   }
 };
 
+const badgeURLS = [
+  "https://images.vexels.com/media/users/3/137458/isolated/preview/e8670e0313b4445e0365b106ad570c6b-cinta-de-etiqueta-de-placa-plana-by-vexels.png",
+  "https://cdn1.iconfinder.com/data/icons/sports-badges/32/badge-star-2-512.png",
+  "https://www.iconfinder.com/icons/246707/award_cup_heart_trophey_trophy_winner_winning_icon"
+]
+
+const GET_MEMBERS = (email) => gql`
+   {
+    allMembers(filter: {
+      email: "${email}"
+    }) {
+      id, userName, email, badges, level
+    }
+  }
+`;
+
 function UserProfile(props) {
   const { classes } = props;
+  const email = localStorage.getItem("loginUser") ? JSON.parse(localStorage.getItem("loginUser")).email : "";
+
   return (
     <div>
-      <Grid container>
-        <GridItem xs={12} sm={12} md={8}>
-          <Card>
-            <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
-            </CardHeader>
-            <CardBody>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={5}>
-                  <CustomInput
-                    labelText="Company (disabled)"
-                    id="company-disabled"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      disabled: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
-                  <CustomInput
-                    labelText="Username"
-                    id="username"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Email address"
-                    id="email-address"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="First Name"
-                    id="first-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <CustomInput
-                    labelText="Last Name"
-                    id="last-name"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="City"
-                    id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Postal Code"
-                    id="postal-code"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-              <Grid container>
-                <GridItem xs={12} sm={12} md={12}>
-                  <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
-                  <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                    id="about-me"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      multiline: true,
-                      rows: 5
-                    }}
-                  />
-                </GridItem>
-              </Grid>
-            </CardBody>
-            <CardFooter>
-              <Button color="primary">Update Profile</Button>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4}>
-          <Card profile>
+      <Query query={GET_MEMBERS(email)} pollInterval={500}>
+        {({ loading, error, data }) => {
+          if (loading) return <Card profile><CardBody>Loading</CardBody></Card>
+          if (error) return false;
+          const User = data.allMembers ? data.allMembers[0] : {};
+          return <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={e => e.preventDefault()}>
                 <img src={avatar} alt="..." />
               </a>
-            </CardAvatar>
-            <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
-              <h4 className={classes.cardTitle}>Alec Thompson</h4>
-              <p className={classes.description}>
-                Don't be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
-              </p>
+            </CardAvatar><CardBody profile>
+              <h6 className={classes.cardCategory}>User Profile</h6>
+              <h4 className={classes.cardTitle}>
+                {User.email}
+              </h4>
+              <h5 className={classes.cardTitle}>
+                Level : {User.level}
+              </h5>
+              {User.badges.map((badge, idx) => {
+                return <div className="badge">
+                  <img width={"75px"} height={"75px"} src={badgeURLS[idx]} alt="..." />
+                  <span style={{ textAlign: "center" }}>{badge}</span>
+                </div>
+              })}
               <Button color="primary" round>
-                Follow
+                View Details
               </Button>
             </CardBody>
           </Card>
-        </GridItem>
-      </Grid>
+        }}
+      </Query>
     </div>
   );
 }
