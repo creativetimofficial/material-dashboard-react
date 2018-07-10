@@ -27,7 +27,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
-		"lint": "eslint . --fix;  exit 0"
+		"lint": "eslint . --ext=js,jsx;  exit 0"
 	},
 	"repository": {
 		"type": "git",
@@ -41,6 +41,7 @@
 	},
 	"homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
 	"optionalDependencies": {
+		"babel-eslint": "^8.2.5",
 		"eslint": "^5.1.0",
 		"eslint-config-prettier": "^2.9.0",
 		"eslint-plugin-react": "^7.10.0",
