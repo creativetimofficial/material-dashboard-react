@@ -27,7 +27,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
-		"lint": "eslint . --ext=js,jsx;  exit 0"
+		"lint": "eslint . --ext=js,jsx --fix;  exit 0"
 	},
 	"repository": {
 		"type": "git",
