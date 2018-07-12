@@ -27,7 +27,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
-		"lint": "eslint . --ext=js,jsx --fix;  exit 0"
+		"lint:check": "eslint . --ext=js,jsx;  exit 0",
+		"lint:fix": "eslint . --ext=js,jsx --fix;  exit 0"
 	},
 	"repository": {
 		"type": "git",
@@ -44,6 +45,7 @@
 		"babel-eslint": "^8.2.5",
 		"eslint": "^5.1.0",
 		"eslint-config-prettier": "^2.9.0",
+		"eslint-plugin-prettier": "^2.6.2",
 		"eslint-plugin-react": "^7.10.0",
 		"prettier": "^1.13.7"
 	}
