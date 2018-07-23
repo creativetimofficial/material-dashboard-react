@@ -1,3 +1,32 @@
+## [1.3.0] 2018-07-27
+### Bug Fixing
+- Added resize event listener for window ([see this issue here](https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/40#issuecomment-406983150))
+- Added issues template file
+### Major style changes
+- Added styles for `svg`'s, **font-awesome** classes and `.material-icons` class inside
+  - `src/assets/jss/material-dashboard-react/views/dashboardStyle.jsx`
+  - `src/assets/jss/material-dashboard-react/components/buttonStyle.jsx`
+  - `src/assets/jss/material-dashboard-react/components/cardFooterStyle.jsx`
+  - `src/assets/jss/material-dashboard-react/components/cardHeaderStyle.jsx`
+  - `src/assets/jss/material-dashboard-react/components/headerLinksStyle.jsx`
+  - `src/assets/jss/material-dashboard-react/components/customTabsStyle.jsx`
+- Others
+  - `src/assets/jss/material-dashboard-react/tooltipStyle.jsx`
+### Dropped components
+### Added components
+- `src/components/Grid/GridContainer.jsx` (instead of MUI's `<Grid container...` component)
+### Deleted dependencies
+### Added dependencies
+### Update dependencies
+- `@material-ui/core v1.2.1` to `@material-ui/core v1.4.1`
+- `@material-ui/icons v1.1.0` to `@material-ui/icons v2.0.0`
+- `@types/googlemaps v3.30.9` to `@types/googlemaps v3.30.11`
+- `ajv v6.5.1` to `ajv v6.5.2`
+- `react v16.4.0` to `react v16.4.1`
+- `react-dom v16.4.0` to `react-dom v16.4.1`
+- `react-swipeable-views v0.12.13` to `react-swipeable-views v0.12.15`
+
+
 ## [1.3.0] 2018-06-15
 ### Bug Fixing
 - Changed import from `material-ui` to `@material-ui/core`

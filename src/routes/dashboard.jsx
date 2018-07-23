@@ -1,7 +1,7 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
-import ContentPaste from "@material-ui/icons/ContentPaste";
+// import ContentPaste from "@material-ui/icons/ContentPaste";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
@@ -36,7 +36,7 @@ const dashboardRoutes = [
     path: "/table",
     sidebarName: "Table List",
     navbarName: "Table List",
-    icon: ContentPaste,
+    icon: "content_paste",
     component: TableList
   },
   {

@@ -2,11 +2,11 @@
 import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
 import Snackbar from "components/Snackbar/Snackbar.jsx";
@@ -89,7 +89,7 @@ class Notifications extends React.Component {
           </p>
         </CardHeader>
         <CardBody>
-          <Grid container>
+          <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h5>Notifications Style</h5>
               <br />
@@ -150,20 +150,20 @@ class Notifications extends React.Component {
                 color="primary"
               />
             </GridItem>
-          </Grid>
+          </GridContainer>
           <br />
           <br />
-          <Grid container justify="center">
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
               <h5>
                 Notifications Places
                 <small>Click to view notifications</small>
               </h5>
             </GridItem>
-          </Grid>
-          <Grid container justify="center">
+          </GridContainer>
+          <GridContainer justify="center">
             <GridItem xs={12} sm={12} md={10} lg={8}>
-              <Grid container>
+              <GridContainer>
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
@@ -218,12 +218,12 @@ class Notifications extends React.Component {
                     close
                   />
                 </GridItem>
-              </Grid>
+              </GridContainer>
             </GridItem>
-          </Grid>
-          <Grid container justify={"center"}>
+          </GridContainer>
+          <GridContainer justify={"center"}>
             <GridItem xs={12} sm={12} md={10} lg={8}>
-              <Grid container>
+              <GridContainer>
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
@@ -278,9 +278,9 @@ class Notifications extends React.Component {
                     close
                   />
                 </GridItem>
-              </Grid>
+              </GridContainer>
             </GridItem>
-          </Grid>
+          </GridContainer>
         </CardBody>
       </Card>
     );

@@ -10,6 +10,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Icon from "@material-ui/core/Icon";
 // core components
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
@@ -49,7 +50,9 @@ const Sidebar = ({ ...props }) => {
           >
             <ListItem button className={classes.itemLink + listItemClasses}>
               <ListItemIcon className={classes.itemIcon + whiteFontClasses}>
-                <prop.icon />
+                {
+                  typeof prop.icon === "string" ? <Icon>{prop.icon}</Icon>:<prop.icon />
+                }
               </ListItemIcon>
               <ListItemText
                 primary={prop.sidebarName}

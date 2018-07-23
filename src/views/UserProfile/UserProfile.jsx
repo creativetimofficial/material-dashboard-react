@@ -1,10 +1,10 @@
 import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Card from "components/Card/Card.jsx";
@@ -38,7 +38,7 @@ function UserProfile(props) {
   const { classes } = props;
   return (
     <div>
-      <Grid container>
+      <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
@@ -46,7 +46,7 @@ function UserProfile(props) {
               <p className={classes.cardCategoryWhite}>Complete your profile</p>
             </CardHeader>
             <CardBody>
-              <Grid container>
+              <GridContainer>
                 <GridItem xs={12} sm={12} md={5}>
                   <CustomInput
                     labelText="Company (disabled)"
@@ -77,8 +77,8 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-              </Grid>
-              <Grid container>
+              </GridContainer>
+              <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                     labelText="First Name"
@@ -97,8 +97,8 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-              </Grid>
-              <Grid container>
+              </GridContainer>
+              <GridContainer>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="City"
@@ -126,8 +126,8 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-              </Grid>
-              <Grid container>
+              </GridContainer>
+              <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                   <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                   <CustomInput
@@ -142,7 +142,7 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-              </Grid>
+              </GridContainer>
             </CardBody>
             <CardFooter>
               <Button color="primary">Update Profile</Button>
@@ -170,7 +170,7 @@ function UserProfile(props) {
             </CardBody>
           </Card>
         </GridItem>
-      </Grid>
+      </GridContainer>
     </div>
   );
 }

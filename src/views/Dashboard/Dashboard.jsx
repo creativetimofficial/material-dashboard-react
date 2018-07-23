@@ -4,11 +4,9 @@ import PropTypes from "prop-types";
 import ChartistGraph from "react-chartist";
 // @material-ui/core
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
+import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
-import ContentCopy from "@material-ui/icons/ContentCopy";
 import Store from "@material-ui/icons/Store";
-import InfoOutline from "@material-ui/icons/InfoOutline";
 import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
@@ -21,6 +19,7 @@ import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
 import Table from "components/Table/Table.jsx";
 import Tasks from "components/Tasks/Tasks.jsx";
 import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
@@ -56,12 +55,12 @@ class Dashboard extends React.Component {
     const { classes } = this.props;
     return (
       <div>
-        <Grid container>
+        <GridContainer>
           <GridItem xs={12} sm={6} md={3}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
-                  <ContentCopy />
+                  <Icon>content_copy</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Used Space</p>
                 <h3 className={classes.cardTitle}>
@@ -101,7 +100,7 @@ class Dashboard extends React.Component {
             <Card>
               <CardHeader color="danger" stats icon>
                 <CardIcon color="danger">
-                  <InfoOutline />
+                  <Icon>info_outline</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Fixed Issues</p>
                 <h3 className={classes.cardTitle}>75</h3>
@@ -131,8 +130,8 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-        </Grid>
-        <Grid container>
+        </GridContainer>
+        <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="success">
@@ -209,8 +208,8 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-        </Grid>
-        <Grid container>
+        </GridContainer>
+        <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <CustomTabs
               title="Tasks:"
@@ -274,7 +273,7 @@ class Dashboard extends React.Component {
               </CardBody>
             </Card>
           </GridItem>
-        </Grid>
+        </GridContainer>
       </div>
     );
   }

@@ -142,6 +142,8 @@ const sidebarStyle = theme => ({
   itemIcon: {
     width: "24px",
     height: "30px",
+    fontSize: "24px",
+    lineHeight: "30px",
     float: "left",
     marginRight: "15px",
     textAlign: "center",

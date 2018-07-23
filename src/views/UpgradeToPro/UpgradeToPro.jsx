@@ -1,12 +1,12 @@
 import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from "@material-ui/core/Grid";
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
 import Check from "@material-ui/icons/Check";
 // core components
 import GridItem from "components/Grid/GridItem.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
 import Danger from "components/Typography/Danger.jsx";
 import Success from "components/Typography/Success.jsx";
 import Button from "components/CustomButtons/Button.jsx";
@@ -84,7 +84,7 @@ const styles = {
 function UpgradeToPro(props) {
   const { classes } = props;
   return (
-    <Grid container justify="center">
+    <GridContainer justify="center">
       <GridItem xs={12} sm={12} md={8}>
         <Card>
           <CardHeader color="info">
@@ -205,7 +205,7 @@ function UpgradeToPro(props) {
           </CardBody>
         </Card>
       </GridItem>
-    </Grid>
+    </GridContainer>
   );
 }
 

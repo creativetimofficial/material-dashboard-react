@@ -18,7 +18,15 @@ const dashboardStyle = {
       width: "16px",
       height: "16px",
       position: "relative",
-      marginRight: "3px"
+      marginRight: "3px",
+      marginLeft: "3px"
+    },
+    "& .fab,& .fas,& .far,& .fal,& .material-icons": {
+      top: "4px",
+      fontSize: "16px",
+      position: "relative",
+      marginRight: "3px",
+      marginLeft: "3px"
     }
   },
   cardCategory: {
