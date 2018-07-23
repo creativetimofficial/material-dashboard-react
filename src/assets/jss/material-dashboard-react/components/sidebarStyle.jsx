@@ -220,8 +220,8 @@ const sidebarStyle = theme => ({
     [theme.breakpoints.up("md")]: {
       position: "absolute",
       width: "100%",
-      bottom: "13px",
-    },
+      bottom: "13px"
+    }
   }
 });
 

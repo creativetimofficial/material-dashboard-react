@@ -13,6 +13,7 @@
 - Others
   - `src/assets/jss/material-dashboard-react/tooltipStyle.jsx`
 ### Dropped components
+- Dropped popper usage in favour of `@material-ui/core/Popper` (Changes in `src/components/Header/HeaderLinks.jsx`)
 ### Added components
 - `src/components/Grid/GridContainer.jsx` (instead of MUI's `<Grid container...` component)
 ### Deleted dependencies

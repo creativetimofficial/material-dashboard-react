@@ -30,7 +30,7 @@ const switchRoutes = (
 );
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       mobileOpen: false
@@ -43,9 +43,9 @@ class App extends React.Component {
   getRoute() {
     return this.props.location.pathname !== "/maps";
   }
-  resizeFunction(){
-    if(window.innerWidth >= 960){
-      this.setState({mobileOpen: false});
+  resizeFunction() {
+    if (window.innerWidth >= 960) {
+      this.setState({ mobileOpen: false });
     }
   }
   componentDidMount() {
@@ -57,12 +57,12 @@ class App extends React.Component {
   componentDidUpdate(e) {
     if (e.history.location.pathname !== e.location.pathname) {
       this.refs.mainPanel.scrollTop = 0;
-      if(this.state.mobileOpen){
-        this.setState({mobileOpen: false});
+      if (this.state.mobileOpen) {
+        this.setState({ mobileOpen: false });
       }
     }
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     window.removeEventListener("resize", this.resizeFunction);
   }
   render() {

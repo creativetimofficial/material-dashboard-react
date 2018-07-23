@@ -28,7 +28,7 @@ const Sidebar = ({ ...props }) => {
         if (prop.redirect) return null;
         var activePro = " ";
         var listItemClasses;
-        if(prop.path === "/upgrade-to-pro"){
+        if (prop.path === "/upgrade-to-pro") {
           activePro = classes.activePro + " ";
           listItemClasses = classNames({
             [" " + classes[color]]: true
@@ -50,9 +50,11 @@ const Sidebar = ({ ...props }) => {
           >
             <ListItem button className={classes.itemLink + listItemClasses}>
               <ListItemIcon className={classes.itemIcon + whiteFontClasses}>
-                {
-                  typeof prop.icon === "string" ? <Icon>{prop.icon}</Icon>:<prop.icon />
-                }
+                {typeof prop.icon === "string" ? (
+                  <Icon>{prop.icon}</Icon>
+                ) : (
+                  <prop.icon />
+                )}
               </ListItemIcon>
               <ListItemText
                 primary={prop.sidebarName}

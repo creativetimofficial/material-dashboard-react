@@ -4,7 +4,7 @@ import {
   dangerCardHeader,
   infoCardHeader,
   primaryCardHeader,
-  roseCardHeader,
+  roseCardHeader
 } from "assets/jss/material-dashboard-react.jsx";
 const cardHeaderStyle = {
   cardHeader: {
