@@ -4,6 +4,9 @@
 - Added issues template file
 - Github solved issues:
   - https://github.com/creativetimofficial/material-dashboard-react/issues/49 (dropped `react-popper` in favour of `@material-ui/core/Popper`)
+  -
+- Github enhancement issues:
+  - https://github.com/creativetimofficial/material-dashboard-react/issues/47 (read the [./README.md](./README.md) file)
   - 
 ### Major style changes
 - Added styles for `svg`'s, **font-awesome** classes and `.material-icons` class inside

@@ -1,0 +1,3 @@
+!.eslintrc.js
+documentation/
+build/
