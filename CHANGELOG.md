@@ -2,6 +2,9 @@
 ### Bug Fixing
 - Added resize event listener for window ([see this issue here](https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/40#issuecomment-406983150))
 - Added issues template file
+- Github solved issues:
+  - https://github.com/creativetimofficial/material-dashboard-react/issues/49 (dropped `react-popper` in favour of `@material-ui/core/Popper`)
+  - 
 ### Major style changes
 - Added styles for `svg`'s, **font-awesome** classes and `.material-icons` class inside
   - `src/assets/jss/material-dashboard-react/views/dashboardStyle.jsx`
@@ -12,6 +15,7 @@
   - `src/assets/jss/material-dashboard-react/components/customTabsStyle.jsx`
 - Others
   - `src/assets/jss/material-dashboard-react/tooltipStyle.jsx`
+  - `src/assets/jss/material-dashboard-react/dropdownStyle.jsx`
 ### Dropped components
 - Dropped popper usage in favour of `@material-ui/core/Popper` (Changes in `src/components/Header/HeaderLinks.jsx`)
 ### Added components
