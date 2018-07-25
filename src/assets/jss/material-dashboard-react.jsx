@@ -144,7 +144,6 @@ const title = {
   fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
   "& small": {
     color: "#777",
-    fontSize: "65%",
     fontWeight: "400",
     lineHeight: "1"
   }

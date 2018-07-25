@@ -54,7 +54,6 @@ const dashboardStyle = {
     textDecoration: "none",
     "& small": {
       color: "#777",
-      fontSize: "65%",
       fontWeight: "400",
       lineHeight: "1"
     }
@@ -69,7 +68,6 @@ const dashboardStyle = {
     textDecoration: "none",
     "& small": {
       color: "#777",
-      fontSize: "65%",
       fontWeight: "400",
       lineHeight: "1"
     }

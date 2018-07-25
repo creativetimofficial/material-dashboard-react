@@ -55,12 +55,22 @@ class Notifications extends React.Component {
       bc: false,
       br: false
     };
+    this.lertTimeout = null;
+  }
+  componentWillUnmount() {
+    this.clearAlertTimeout();
+  }
+  clearAlertTimeout() {
+    if (this.alertTimeout !== null) {
+      clearTimeout(this.alertTimeout);
+    }
   }
   showNotification(place) {
     var x = [];
     x[place] = true;
     this.setState(x);
-    setTimeout(
+    this.clearAlertTimeout();
+    this.alertTimeout = setTimeout(
       function() {
         x[place] = false;
         this.setState(x);
@@ -272,7 +282,7 @@ class Notifications extends React.Component {
                     place="br"
                     color="info"
                     icon={AddAlert}
-                    message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer.Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
+                    message="Welcome to MATERIAL DASHBOARD React - a beautiful freebie for every web developer."
                     open={this.state.br}
                     closeNotification={() => this.setState({ br: false })}
                     close

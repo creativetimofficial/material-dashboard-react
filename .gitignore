@@ -9,6 +9,9 @@
 # production
 /build
 
+# npmjs
+/dist
+
 # misc
 .DS_Store
 .env.local

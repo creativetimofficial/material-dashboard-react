@@ -70,6 +70,10 @@ blockquote footer:before, blockquote small:before {
     content: '\2014 \00A0';
 }
 
+small {
+  font-size: 80%;
+}
+
 h1 {
     font-size: 3em;
     line-height: 1.15em;
