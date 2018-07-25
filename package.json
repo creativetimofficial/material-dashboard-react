@@ -12,6 +12,7 @@
     "ajv": "6.5.2",
     "chartist": "0.10.1",
     "classnames": "2.2.6",
+    "gh-pages": "^1.2.0",
     "npm-run-all": "4.1.3",
     "perfect-scrollbar": "1.4.0",
     "react": "16.4.1",
@@ -20,15 +21,18 @@
     "react-google-maps": "9.4.5",
     "react-router-dom": "4.3.1",
     "react-scripts": "1.1.4",
-    "react-swipeable-views": "0.12.15"
+    "react-swipeable-views": "0.12.15",
+    "react-share": "^2.2.0",
+    "react-ga": "^2.5.3",
+    "react-github-button": "^0.1.11",
+    "react-syntax-highlighter": "^7.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint:check": "eslint . --ext=js,jsx;  exit 0",
-    "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0"
+    "deploy": "npm run build && gh-pages -d build"
   },
   "repository": {
     "type": "git",

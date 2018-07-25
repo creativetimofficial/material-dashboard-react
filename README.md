@@ -21,14 +21,14 @@ You can find the Github Repo here.
 ## Links:
 
 + [Live Preview](https://creativetimofficial.github.io/material-dashboard-react/)
-+ [Material Dashboard HTML](http://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
++ [Material Dashboard HTML](https://demos.creative-tim.com/material-dashboard/examples/dashboard.html)
 
 ## Quick start
 
 Quick start options:
 
 - [Download from Github](https://github.com/creativetimofficial/material-dashboard-react/archive/master.zip).
-- [Download from Creative Tim](http://www.creative-tim.com/product/material-dashboard-react).
+- [Download from Creative Tim](https://www.creative-tim.com/product/material-dashboard-react).
 - Clone the repo: `git clone https://github.com/creativetimofficial/material-dashboard-react.git`.
 
 ## Terminal Commands

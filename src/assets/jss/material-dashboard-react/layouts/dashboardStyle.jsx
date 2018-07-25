@@ -4,7 +4,7 @@ import {
   container
 } from "assets/jss/material-dashboard-react.jsx";
 
-const appStyle = theme => ({
+const dashboardStyle = theme => ({
   wrapper: {
     position: "relative",
     top: "0",
@@ -33,4 +33,4 @@ const appStyle = theme => ({
   }
 });
 
-export default appStyle;
+export default dashboardStyle;
