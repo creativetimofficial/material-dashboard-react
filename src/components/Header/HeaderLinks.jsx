@@ -65,7 +65,7 @@ class HeaderLinks extends React.Component {
           className={classes.buttonLink}
         >
           <Dashboard className={classes.icons} />
-          <Hidden mdUp>
+          <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
         </Button>
@@ -84,7 +84,7 @@ class HeaderLinks extends React.Component {
           >
             <Notifications className={classes.icons} />
             <span className={classes.notifications}>5</span>
-            <Hidden mdUp>
+            <Hidden mdUp implementation="css">
               <p onClick={this.handleClick} className={classes.linkText}>
                 Notification
               </p>
@@ -158,7 +158,7 @@ class HeaderLinks extends React.Component {
           className={classes.buttonLink}
         >
           <Person className={classes.icons} />
-          <Hidden mdUp>
+          <Hidden mdUp implementation="css">
             <p className={classes.linkText}>Profile</p>
           </Hidden>
         </Button>
