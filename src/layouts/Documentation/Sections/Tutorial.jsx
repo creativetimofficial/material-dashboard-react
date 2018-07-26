@@ -26,6 +26,7 @@ const files = `material-dashboard-react
     ├── assets
     │   ├── css
     │   │   └── material-dashboard-react.css
+    │   ├── github
     │   ├── img
     │   │   └── faces
     │   └── jss
