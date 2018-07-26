@@ -82,7 +82,7 @@ class Notifications extends React.Component {
     const { classes } = this.props;
     return (
       <Card>
-        <CardHeader color="primary">
+        <CardHeader color="info">
           <h4 className={classes.cardTitleWhite}>Notifications</h4>
           <p className={classes.cardCategoryWhite}>
             Handcrafted by our friends from{" "}
@@ -177,7 +177,7 @@ class Notifications extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
-                    color="primary"
+                    color="info"
                     onClick={() => this.showNotification("tl")}
                   >
                     Top Left
@@ -195,7 +195,7 @@ class Notifications extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
-                    color="primary"
+                    color="info"
                     onClick={() => this.showNotification("tc")}
                   >
                     Top Center
@@ -213,7 +213,7 @@ class Notifications extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
-                    color="primary"
+                    color="info"
                     onClick={() => this.showNotification("tr")}
                   >
                     Top Right
@@ -237,7 +237,7 @@ class Notifications extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
-                    color="primary"
+                    color="info"
                     onClick={() => this.showNotification("bl")}
                   >
                     Bottom Left
@@ -255,7 +255,7 @@ class Notifications extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
-                    color="primary"
+                    color="info"
                     onClick={() => this.showNotification("bc")}
                   >
                     Bottom Center
@@ -273,7 +273,7 @@ class Notifications extends React.Component {
                 <GridItem xs={12} sm={12} md={4}>
                   <Button
                     fullWidth
-                    color="primary"
+                    color="info"
                     onClick={() => this.showNotification("br")}
                   >
                     Bottom Right
