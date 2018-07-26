@@ -88,7 +88,7 @@ class DocHeader extends React.Component {
               Material Dashboard React
             </NavLink>
             <Hidden mdDown>
-              <Button color="transparent" className={classes.vButton}>v1.3.0</Button>
+              <Button color="transparent" className={classes.vButton}>v1.4.0</Button>
               <a
                 href="https://github.com/creativetimofficial/material-dashboard-react"
                 className={classes.iconLink}
