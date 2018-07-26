@@ -2,37 +2,37 @@ import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
 import classNames from "classnames";
-import { Manager, Target, Popper } from "react-popper";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import IconButton from "@material-ui/core/IconButton";
 import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Hidden from "@material-ui/core/Hidden";
+import Poppers from "@material-ui/core/Popper";
 // @material-ui/icons
 import Notifications from "@material-ui/icons/Notifications";
 //core components
+import Button from "components/CustomButtons/Button.jsx";
 
 import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
 
 const dropdown = `import React from "react";
 import classNames from "classnames";
-import { Manager, Target, Popper } from "react-popper";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-import IconButton from "@material-ui/core/IconButton";
 import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 import Hidden from "@material-ui/core/Hidden";
+import Poppers from "@material-ui/core/Popper";
 // @material-ui/icons
 import Notifications from "@material-ui/icons/Notifications";
 //core components
+import Button from "components/CustomButtons/Button.jsx";
 
 import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
 
@@ -40,52 +40,64 @@ class Dropdown extends React.Component {
   state = {
     open: false
   };
-  handleClick = () => {
-    this.setState({ open: !this.state.open });
+  handleToggle = () => {
+    this.setState(state => ({ open: !state.open }));
   };
 
-  handleClose = () => {
+  handleClose = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+
     this.setState({ open: false });
   };
   render() {
     const { classes } = this.props;
     const { open } = this.state;
     return (
-      <div>
-        <Manager style={{ display: "inline-block" }}>
-          <Target>
-            <IconButton
-              color="inherit"
-              aria-label="Notifications"
-              aria-owns={open ? "menu-list" : null}
-              aria-haspopup="true"
-              onClick={this.handleClick}
-              className={classes.buttonLink}
+      <div className={classes.manager}>
+        <Button
+          buttonRef={node => {
+            this.anchorEl = node;
+          }}
+          color={window.innerWidth > 959 ? "transparent" : "white"}
+          justIcon={window.innerWidth > 959}
+          simple={!(window.innerWidth > 959)}
+          aria-owns={open ? "menu-list-grow" : null}
+          aria-haspopup="true"
+          onClick={this.handleToggle}
+          className={classes.buttonLink}
+        >
+          <Notifications className={classes.icons} />
+          <span className={classes.notifications}>5</span>
+          <Hidden mdUp implementation="css">
+            <p onClick={this.handleClick} className={classes.linkText}>
+              Notification
+            </p>
+          </Hidden>
+        </Button>
+        <Poppers
+          open={open}
+          anchorEl={this.anchorEl}
+          transition
+          disablePortal
+          className={
+            classNames({ [classes.popperClose]: !open }) +
+            " " +
+            classes.pooperNav
+          }
+        >
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id="menu-list-grow"
+              style={{
+                transformOrigin:
+                  placement === "bottom" ? "center top" : "center bottom"
+              }}
             >
-              <Notifications className={classes.links} />
-              <Hidden mdUp>
-                <p onClick={this.handleClick} className={classes.linkText}>
-                  Notification
-                </p>
-              </Hidden>
-            </IconButton>
-          </Target>
-          <Popper
-            placement="bottom-start"
-            eventsEnabled={open}
-            className={
-              classNames({ [classes.popperClose]: !open }) +
-              " " +
-              classes.pooperResponsive
-            }
-          >
-            <ClickAwayListener onClickAway={this.handleClose}>
-              <Grow
-                in={open}
-                id="menu-list"
-                style={{ transformOrigin: "0 0 0" }}
-              >
-                <Paper className={classes.dropdown}>
+              <Paper>
+                <ClickAwayListener onClickAway={this.handleClose}>
                   <MenuList role="menu">
                     <MenuItem
                       onClick={this.handleClose}
@@ -118,11 +130,11 @@ class Dropdown extends React.Component {
                       Another One
                     </MenuItem>
                   </MenuList>
-                </Paper>
-              </Grow>
-            </ClickAwayListener>
-          </Popper>
-        </Manager>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Poppers>
       </div>
     );
   }
@@ -135,11 +147,15 @@ class Dropdown extends React.Component {
   state = {
     open: false
   };
-  handleClick = () => {
-    this.setState({ open: !this.state.open });
+  handleToggle = () => {
+    this.setState(state => ({ open: !state.open }));
   };
 
-  handleClose = () => {
+  handleClose = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+
     this.setState({ open: false });
   };
   render() {
@@ -149,77 +165,87 @@ class Dropdown extends React.Component {
       <div>
         <h1>Dropdown</h1>
         <p>As most of our components we've restyled the dropdowns as well.</p>
-        <Manager style={{ display: "inline-block" }}>
-          <Target>
-            <IconButton
-              color="inherit"
-              aria-label="Notifications"
-              aria-owns={open ? "menu-list" : null}
-              aria-haspopup="true"
-              onClick={this.handleClick}
-              className={classes.buttonLink}
-            >
-              <Notifications className={classes.links} />
-              <Hidden mdUp>
-                <p onClick={this.handleClick} className={classes.linkText}>
-                  Notification
-                </p>
-              </Hidden>
-            </IconButton>
-          </Target>
-          <Popper
-            placement="bottom-start"
-            eventsEnabled={open}
+        <div className={classes.manager}>
+          <Button
+            buttonRef={node => {
+              this.anchorEl = node;
+            }}
+            color={window.innerWidth > 959 ? "transparent" : "white"}
+            justIcon={window.innerWidth > 959}
+            simple={!(window.innerWidth > 959)}
+            aria-owns={open ? "menu-list-grow" : null}
+            aria-haspopup="true"
+            onClick={this.handleToggle}
+            className={classes.buttonLink}
+          >
+            <Notifications className={classes.icons} />
+            <span className={classes.notifications}>5</span>
+            <Hidden mdUp implementation="css">
+              <p onClick={this.handleClick} className={classes.linkText}>
+                Notification
+              </p>
+            </Hidden>
+          </Button>
+          <Poppers
+            open={open}
+            anchorEl={this.anchorEl}
+            transition
+            disablePortal
             className={
               classNames({ [classes.popperClose]: !open }) +
               " " +
-              classes.pooperResponsive
+              classes.pooperNav
             }
           >
-            <ClickAwayListener onClickAway={this.handleClose}>
+            {({ TransitionProps, placement }) => (
               <Grow
-                in={open}
-                id="menu-list"
-                style={{ transformOrigin: "0 0 0" }}
+                {...TransitionProps}
+                id="menu-list-grow"
+                style={{
+                  transformOrigin:
+                    placement === "bottom" ? "center top" : "center bottom"
+                }}
               >
-                <Paper className={classes.dropdown}>
-                  <MenuList role="menu">
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      Mike John responded to your email
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      You have 5 new tasks
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      You're now friend with Andrew
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      Another Notification
-                    </MenuItem>
-                    <MenuItem
-                      onClick={this.handleClose}
-                      className={classes.dropdownItem}
-                    >
-                      Another One
-                    </MenuItem>
-                  </MenuList>
+                <Paper>
+                  <ClickAwayListener onClickAway={this.handleClose}>
+                    <MenuList role="menu">
+                      <MenuItem
+                        onClick={this.handleClose}
+                        className={classes.dropdownItem}
+                      >
+                        Mike John responded to your email
+                      </MenuItem>
+                      <MenuItem
+                        onClick={this.handleClose}
+                        className={classes.dropdownItem}
+                      >
+                        You have 5 new tasks
+                      </MenuItem>
+                      <MenuItem
+                        onClick={this.handleClose}
+                        className={classes.dropdownItem}
+                      >
+                        You're now friend with Andrew
+                      </MenuItem>
+                      <MenuItem
+                        onClick={this.handleClose}
+                        className={classes.dropdownItem}
+                      >
+                        Another Notification
+                      </MenuItem>
+                      <MenuItem
+                        onClick={this.handleClose}
+                        className={classes.dropdownItem}
+                      >
+                        Another One
+                      </MenuItem>
+                    </MenuList>
+                  </ClickAwayListener>
                 </Paper>
               </Grow>
-            </ClickAwayListener>
-          </Popper>
-        </Manager>
+            )}
+          </Poppers>
+        </div>
         <SyntaxHighlighter language="jsx" style={prism}>
           {dropdown}
         </SyntaxHighlighter>
