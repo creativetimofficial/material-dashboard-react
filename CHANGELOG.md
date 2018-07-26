@@ -1,4 +1,4 @@
-## [1.3.0] 2018-07-27
+## [1.3.0] 2018-07-26
 ### Bug Fixing
 - Added resize event listener for window ([see this issue here](https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/40#issuecomment-406983150))
 - Added issues template file
