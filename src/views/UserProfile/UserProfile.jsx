@@ -41,7 +41,7 @@ function UserProfile(props) {
       <GridContainer>
         <GridItem xs={12} sm={12} md={8}>
           <Card>
-            <CardHeader color="info">
+            <CardHeader color="primary">
               <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
               <p className={classes.cardCategoryWhite}>Complete your profile</p>
             </CardHeader>
@@ -145,7 +145,7 @@ function UserProfile(props) {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="info">Update Profile</Button>
+              <Button color="primary">Update Profile</Button>
             </CardFooter>
           </Card>
         </GridItem>
@@ -164,7 +164,7 @@ function UserProfile(props) {
                 human foundation in truth And I love you like Kanye loves Kanye
                 I love Rick Owens’ bed design but the back is...
               </p>
-              <Button color="info" round>
+              <Button color="primary" round>
                 Follow
               </Button>
             </CardBody>
