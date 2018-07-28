@@ -8,7 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 // core components
-import tableStyle from "assets/jss/material-dashboard-react/components/tableStyle";
+import tableStyle from "assets/jss/material-dashboard-react/components/tableStyle.jsx";
 
 function CustomTable({ ...props }) {
   const { classes, tableHead, tableData, tableHeaderColor } = props;
@@ -35,10 +35,10 @@ function CustomTable({ ...props }) {
           {tableData.map((prop, key) => {
             return (
               <TableRow key={key}>
-                {prop.map((prop, key) => {
+                {prop.map((propItem, keyName) => {
                   return (
-                    <TableCell className={classes.tableCell} key={key}>
-                      {prop}
+                    <TableCell className={classes.tableCell} key={keyName}>
+                      {propItem}
                     </TableCell>
                   );
                 })}
