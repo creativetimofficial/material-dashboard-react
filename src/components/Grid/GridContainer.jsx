@@ -5,7 +5,8 @@ import Grid from "@material-ui/core/Grid";
 
 const style = {
   grid: {
-    margin: "0 -15px !important"
+    margin: "0 -15px !important",
+    width: "unset"
   }
 };
 

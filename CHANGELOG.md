@@ -2,6 +2,10 @@
 ### Bug Fixing
 - Github solved issues:
   - `https://github.com/creativetimofficial/material-dashboard-react/issues/58`
+- Changed the `GridContainer` component
+### Major style changes
+- `src/assets/jss/material-dashboard-react/components/footerStyle.jsx`
+- `src/assets/jss/material-dashboard-react/components/headerStyle.jsx`
 ### Added dependencies
 - `@babel/runtime v7.0.0-beta.55`
 ### Update dependencies
