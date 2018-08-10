@@ -44,7 +44,6 @@ function Header({ ...props }) {
         </Hidden>
         <Hidden mdUp implementation="css">
           <IconButton
-            className={classes.appResponsive}
             color="inherit"
             aria-label="open drawer"
             onClick={props.handleDrawerToggle}

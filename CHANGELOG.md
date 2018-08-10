@@ -1,3 +1,14 @@
+## [1.4.1] 2018-08-10
+### Bug Fixing
+- Github solved issues:
+  - `https://github.com/creativetimofficial/material-dashboard-react/issues/58`
+### Added dependencies
+- `@babel/runtime v7.0.0-beta.55`
+### Update dependencies
+- `@material-ui/core v1.4.1` to `@material-ui/core v1.4.3`
+- `@material-ui/icons v2.0.0` to `@material-ui/icons v2.0.1`
+
+
 ## [1.4.0] 2018-07-26
 ### Bug Fixing
 - Added resize event listener for window ([see this issue here](https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/40#issuecomment-406983150))
