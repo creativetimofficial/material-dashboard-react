@@ -1,12 +1,13 @@
 {
   "name": "material-dashboard-react",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Material Dashboard React. Coded by Creative Tim",
   "private": false,
   "main": "dist/index.js",
   "dependencies": {
-    "@material-ui/core": "1.4.1",
-    "@material-ui/icons": "2.0.0",
+    "@babel/runtime": "7.0.0-beta.55",
+    "@material-ui/core": "1.4.3",
+    "@material-ui/icons": "2.0.1",
     "@types/googlemaps": "3.30.11",
     "@types/markerclustererplus": "2.1.33",
     "ajv": "6.5.2",
