@@ -55,7 +55,7 @@ class Notifications extends React.Component {
       bc: false,
       br: false
     };
-    this.lertTimeout = null;
+    this.alertTimeout = null;
   }
   componentWillUnmount() {
     this.clearAlertTimeout();
