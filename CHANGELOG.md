@@ -1,4 +1,4 @@
-## [1.5.0] 2018-10-03
+## [1.5.0] 2018-09-21
 ### Nice stuff
 - Added `install:clean` command (deletes `node_modules` and `package-lock.json` and runs `npm install`)
 ### Major style changes
