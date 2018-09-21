@@ -163,7 +163,7 @@ class Tutorial extends React.Component {
         <h2>Getting started</h2>
         {
           // eslint-disable-next-line
-        }<p><b>Material Dashboard React</b> is built on top of{" "}<a href="https://material-ui-next.com/" target="_blank">Material UI</a>.</p>
+        }<p><b>Material Dashboard React</b> is built on top of{" "}<a href="https://material-ui-next.com/" target="_blank">Material UI</a> using <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener noreferrer">create-react-app</a>.</p>
         <ul>
           <li>
             Install NodeJs from{" "}
@@ -202,13 +202,16 @@ class Tutorial extends React.Component {
               language="jsx"
               style={prism}
             >{`Module not found`}</SyntaxHighlighter>
-            Try
+            You should check if in your root project folder you have a file named <code>.env</code>.
+            <br />
+            If you do not have it, then create it and add this line in it: <code>NODE_PATH=./src</code>
+            <br />
+            If that does not work, you need to do the following
             <SyntaxHighlighter
               language="jsx"
               style={prism}
             >{`npm install --g cross-env`}</SyntaxHighlighter>
-            and then try again starting the app.
-            If this doesn't do the trick, than also change the <code>start script</code> inside <code>package.json</code> from
+            then change the <code>script</code> inside <code>package.json</code> by adding <code>NODE_PATH=./src</code> inside it. For example, the start script would be changed from
             <SyntaxHighlighter
               language="jsx"
               style={prism}
@@ -274,6 +277,7 @@ class Tutorial extends React.Component {
             </a>
           </li>
         </ul>
+        <p>If you have a warning of <code>props.history</code> being <code>undefined</code>, please checkthis <a href="https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/70" target="_blank" rel="noopener noreferrer">link here</a> for a solution.</p>
         <h2>Google Maps API key</h2>
         <p>Follow these steps to get an API key:</p>
         <ul>

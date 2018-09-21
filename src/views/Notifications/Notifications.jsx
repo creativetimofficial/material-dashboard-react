@@ -55,21 +55,18 @@ class Notifications extends React.Component {
       bc: false,
       br: false
     };
-    this.lertTimeout = null;
   }
+  // to stop the warning of calling setState of unmounted component
   componentWillUnmount() {
-    this.clearAlertTimeout();
-  }
-  clearAlertTimeout() {
-    if (this.alertTimeout !== null) {
-      clearTimeout(this.alertTimeout);
+    var id = window.setTimeout(null, 0);
+    while (id--) {
+      window.clearTimeout(id);
     }
   }
   showNotification(place) {
     var x = [];
     x[place] = true;
     this.setState(x);
-    this.clearAlertTimeout();
     this.alertTimeout = setTimeout(
       function() {
         x[place] = false;

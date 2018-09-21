@@ -1,3 +1,27 @@
+## [1.5.0] 2018-10-03
+### Nice stuff
+- Added `install:clean` command (deletes `node_modules` and `package-lock.json` and runs `npm install`)
+### Major style changes
+- `src/assets/jss/material-dashboard-react/components/tasksStyle.jsx`
+- `src/assets/jss/material-dashboard-react/checkboxAdnRadioStyle.jsx`
+- `src/assets/jss/material-dashboard-react/components/customTabsStyle.jsx`
+- `src/assets/jss/material-dashboard-react/components/snackbarContentStyle.jsx`
+### Deleted dependencies
+- `@babel/runtime v7.0.0-beta.55`
+### Added dependencies
+### Updated dependencies
+- `@material-ui/core`          *1.4.3*   →     **3.1.0**
+- `@material-ui/icons`         *2.0.1*   →     **3.0.1**
+- `@types/googlemaps`        *3.30.11*   →   **3.30.13**
+- `ajv`                        *6.5.2*   →     **5.0.0** (to stop some warnings)
+- `react`                     *16.4.1*   →    **16.5.2**
+- `react-dom`                 *16.4.1*   →    **16.5.2**
+- `react-scripts`              *1.1.4*   →     **1.1.5**
+- `react-swipeable-views`    *0.12.15*   →   **0.12.17**
+- `eslint-config-prettier`    *^2.9.0*   →    **3.0.1**
+- `eslint-plugin-react`      *^7.10.0*   →   **7.11.1**
+- `prettier`                 *^1.13.7*   →   **1.14.3**
+
 ## [1.4.1] 2018-08-10
 ### Bug Fixing
 - Github solved issues:
