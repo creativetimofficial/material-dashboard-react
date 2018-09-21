@@ -30,8 +30,7 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
     "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
-    "build-package-css": "node-sass-chokidar src/assets/scss/material-kit-react.scss dist/material-kit-react.css",
-    "build-package": "npm run build-package-css && babel src --out-dir dist"
+    "build-package": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
