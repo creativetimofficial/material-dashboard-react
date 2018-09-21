@@ -157,6 +157,18 @@ class FixedPlugin extends Component {
               </div>
             </li>
             <li className="button-container">
+              <div className="button-container">
+                <Button
+                  color="warning"
+                  href="https://www.creative-tim.com/product/material-dashboard-pro-react"
+                  target="_blank"
+                  fullWidth
+                >
+                  Get PRO version
+                </Button>
+              </div>
+            </li>
+            <li className="button-container">
               <NavLink to={"/documentation"} activeClassName="active">
                 <Button color="info" fullWidth>
                   Documentation
