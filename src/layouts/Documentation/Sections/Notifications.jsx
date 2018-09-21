@@ -302,10 +302,7 @@ class Notifications extends React.Component {
           {state}
         </SyntaxHighlighter>
         <h2>Places</h2>
-        <Button
-          color="primary"
-          onClick={() => this.showNotification()}
-        >
+        <Button color="primary" onClick={() => this.showNotification()}>
           Show random generated position and color notification
         </Button>
         <Snackbar

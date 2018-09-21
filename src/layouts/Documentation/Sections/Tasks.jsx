@@ -6,7 +6,7 @@ import { prism } from "react-syntax-highlighter/styles/prism";
 // @material-ui/core components
 // @material-ui/icons
 //core components
-import TT from 'components/Tasks/Tasks.jsx';
+import TT from "components/Tasks/Tasks.jsx";
 import { bugs } from "variables/general";
 
 const tasksDep = `import Tasks from 'components/Tasks/Tasks.jsx';

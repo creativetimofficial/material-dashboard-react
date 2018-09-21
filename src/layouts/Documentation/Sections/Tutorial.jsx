@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/prism";
 import { prism } from "react-syntax-highlighter/styles/prism";
@@ -135,9 +136,12 @@ class Tutorial extends React.Component {
         <p>
           <b>MIT LICENSE</b>
         </p>
-        {
-          // eslint-disable-next-line
-        }<p>Copyright (c) 2017{" "}<a href="https://creative-tim.com/" target="_blank">Creative Tim</a>.</p>
+        <p>
+          Copyright (c) 2017{" "}
+          <a href="https://creative-tim.com/" target="_blank">
+            Creative Tim
+          </a>.
+        </p>
         <p>
           Permission is hereby granted, free of charge, to any person obtaining
           a copy of this software and associated documentation files (the
@@ -161,9 +165,20 @@ class Tutorial extends React.Component {
           SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         </p>
         <h2>Getting started</h2>
-        {
-          // eslint-disable-next-line
-        }<p><b>Material Dashboard React</b> is built on top of{" "}<a href="https://material-ui-next.com/" target="_blank">Material UI</a> using <a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener noreferrer">create-react-app</a>.</p>
+        <p>
+          <b>Material Dashboard React</b> is built on top of{" "}
+          <a href="https://material-ui-next.com/" target="_blank">
+            Material UI
+          </a>{" "}
+          using{" "}
+          <a
+            href="https://github.com/facebook/create-react-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            create-react-app
+          </a>.
+        </p>
         <ul>
           <li>
             Install NodeJs from{" "}
@@ -175,12 +190,24 @@ class Tutorial extends React.Component {
               NodeJs Official Page
             </a>
           </li>
-          {
-            // eslint-disable-next-line
-          }<li>Go to{" "}<a href="https://www.creative-tim.com/" target="_blank">creative tim website</a>{" "}and login into your account</li>
-          {
-            // eslint-disable-next-line
-          }<li>Go to{" "}<a href="https://www.creative-tim.com/product/material-dashboard-react" target="_blank">material dashboard react</a>{" "}and press the download button (this will download onto your computer a zip file)</li>
+          <li>
+            Go to{" "}
+            <a href="https://www.creative-tim.com/" target="_blank">
+              creative tim website
+            </a>{" "}
+            and login into your account
+          </li>
+          <li>
+            Go to{" "}
+            <a
+              href="https://www.creative-tim.com/product/material-dashboard-react"
+              target="_blank"
+            >
+              material dashboard react
+            </a>{" "}
+            and press the download button (this will download onto your computer
+            a zip file)
+          </li>
           <li>Unzip the downloaded file to a folder in your computer</li>
           <li>Open Terminal</li>
           <li>Go to your file project (where you've unzipped the product)</li>
@@ -202,16 +229,20 @@ class Tutorial extends React.Component {
               language="jsx"
               style={prism}
             >{`Module not found`}</SyntaxHighlighter>
-            You should check if in your root project folder you have a file named <code>.env</code>.
+            You should check if in your root project folder you have a file
+            named <code>.env</code>.
             <br />
-            If you do not have it, then create it and add this line in it: <code>NODE_PATH=./src</code>
+            If you do not have it, then create it and add this line in it:{" "}
+            <code>NODE_PATH=./src</code>
             <br />
             If that does not work, you need to do the following
             <SyntaxHighlighter
               language="jsx"
               style={prism}
             >{`npm install --g cross-env`}</SyntaxHighlighter>
-            then change the <code>script</code> inside <code>package.json</code> by adding <code>NODE_PATH=./src</code> inside it. For example, the start script would be changed from
+            then change the <code>script</code> inside <code>package.json</code>{" "}
+            by adding <code>NODE_PATH=./src</code> inside it. For example, the
+            start script would be changed from
             <SyntaxHighlighter
               language="jsx"
               style={prism}
@@ -263,8 +294,7 @@ class Tutorial extends React.Component {
             </ul>
           </li>
           <li>
-            Navigate to{" "}
-            <code>http://localhost:3000</code>
+            Navigate to <code>http://localhost:3000</code>
           </li>
           <li>
             More information →{" "}
@@ -277,7 +307,18 @@ class Tutorial extends React.Component {
             </a>
           </li>
         </ul>
-        <p>If you have a warning of <code>props.history</code> being <code>undefined</code>, please checkthis <a href="https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/70" target="_blank" rel="noopener noreferrer">link here</a> for a solution.</p>
+        <p>
+          If you have a warning of <code>props.history</code> being{" "}
+          <code>undefined</code>, please checkthis{" "}
+          <a
+            href="https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/70"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            link here
+          </a>{" "}
+          for a solution.
+        </p>
         <h2>Google Maps API key</h2>
         <p>Follow these steps to get an API key:</p>
         <ul>

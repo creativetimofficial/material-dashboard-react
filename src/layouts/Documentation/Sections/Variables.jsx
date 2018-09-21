@@ -23,9 +23,11 @@ class Variables extends React.Component {
           will discuss about these in the{" "}
           <Link to={"/documentation/styles"}>next section</Link> of the
           documentation) in{" "}
-          <code>scr/assets/jss/<b>*</b></code> and all the
-          rest variables (variables used for example in tasks page etc.) in{" "}
-          <code>src/variables/general.jsx</code>.
+          <code>
+            scr/assets/jss/<b>*</b>
+          </code>{" "}
+          and all the rest variables (variables used for example in tasks page
+          etc.) in <code>src/variables/general.jsx</code>.
         </p>
         <p>
           At the end of each of these three files you will find the exports with

@@ -17,10 +17,7 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 
-import {
-  emailsSubscriptionChart,
-  completedTasksChart
-} from "variables/charts";
+import { emailsSubscriptionChart, completedTasksChart } from "variables/charts";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
@@ -43,9 +40,7 @@ class CardChart extends React.Component {
             </CardHeader>
             <CardBody>
               <h4 className={classes.cardTitle}>Email Subscriptions</h4>
-              <p className={classes.cardCategory}>
-                Last Campaign Performance
-              </p>
+              <p className={classes.cardCategory}>Last Campaign Performance</p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>
@@ -67,9 +62,7 @@ class CardChart extends React.Component {
             </CardHeader>
             <CardBody>
               <h4 className={classes.cardTitle}>Completed Tasks</h4>
-              <p className={classes.cardCategory}>
-                Last Campaign Performance
-              </p>
+              <p className={classes.cardCategory}>Last Campaign Performance</p>
             </CardBody>
             <CardFooter chart>
               <div className={classes.stats}>

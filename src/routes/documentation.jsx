@@ -45,7 +45,11 @@ const docsRoutes = [
         component: Variables
       },
       { path: "/documentation/styles", name: "Styles", component: Styles },
-      { path: "/documentation/lint-commands", name: "Lint", component: LintCommands },
+      {
+        path: "/documentation/lint-commands",
+        name: "Lint",
+        component: LintCommands
+      }
     ]
   },
   {
@@ -59,7 +63,11 @@ const docsRoutes = [
         name: "CheckboxRadio",
         component: CheckboxRadio
       },
-      { path: "/documentation/dropdown", name: "Dropdown", component: Dropdown },
+      {
+        path: "/documentation/dropdown",
+        name: "Dropdown",
+        component: Dropdown
+      },
       { path: "/documentation/icons", name: "Icons", component: Icons },
       { path: "/documentation/inputs", name: "Inputs", component: Inputs },
       {
@@ -76,24 +84,27 @@ const docsRoutes = [
       { path: "/documentation/tables", name: "Tables", component: Tables },
       { path: "/documentation/tabs", name: "Tabs", component: Tabs },
       { path: "/documentation/tasks", name: "Tasks", component: Tasks },
-      { path: "/documentation/tooltips", name: "Tooltips", component: Tooltips },
+      {
+        path: "/documentation/tooltips",
+        name: "Tooltips",
+        component: Tooltips
+      },
       {
         path: "/documentation/typography",
         name: "Typography",
         component: Typography
-      },
+      }
     ]
   },
   {
     name: "Plugins",
     path: "/documentation/charts",
     routes: [
-
       {
         path: "/documentation/google-maps",
         name: "GoogleMaps",
         component: GoogleMaps
-      },
+      }
     ]
   },
   { redirect: true, path: "/documentation", pathTo: "/documentation/tutorial" }

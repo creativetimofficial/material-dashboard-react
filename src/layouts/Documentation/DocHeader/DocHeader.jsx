@@ -14,7 +14,7 @@ const style = theme => ({
   vButton: {
     padding: "12px",
     marginLeft: "4px",
-    marginRight: "4px",
+    marginRight: "4px"
   },
   title: {
     "&:hover,&:active": {
@@ -88,7 +88,9 @@ class DocHeader extends React.Component {
               Material Dashboard React
             </NavLink>
             <Hidden mdDown>
-              <Button color="transparent" className={classes.vButton}>v1.4.1</Button>
+              <Button color="transparent" className={classes.vButton}>
+                v1.4.1
+              </Button>
               <a
                 href="https://github.com/creativetimofficial/material-dashboard-react"
                 className={classes.iconLink}

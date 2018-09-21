@@ -12,7 +12,6 @@ import { prism } from "react-syntax-highlighter/styles/prism";
 // @material-ui/icons
 //core components
 
-
 const googlemapexample = `import React from 'react';
 import {
   withScriptjs,
