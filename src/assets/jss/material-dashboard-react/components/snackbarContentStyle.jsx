@@ -70,7 +70,8 @@ const snackbarContentStyle = {
   },
   iconButton: {
     width: "24px",
-    height: "24px"
+    height: "24px",
+    padding: "0px"
   },
   icon: {
     display: "block",

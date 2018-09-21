@@ -32,7 +32,8 @@ const tasksStyle = {
   },
   tableActionButton: {
     width: "27px",
-    height: "27px"
+    height: "27px",
+    padding: "0"
   },
   tableActionButtonIcon: {
     width: "17px",
