@@ -29,6 +29,7 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import Accordion from "components/Accordion/Accordion";
 
 import { bugs, website, server } from "variables/general.jsx";
 
@@ -274,6 +275,26 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
         </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={12}>
+            <Card>
+              <CardHeader color="info">
+                <h4 className={classes.cardTitleWhite}>Departments</h4>
+              </CardHeader>
+              <CardBody>
+                {
+                  ["Tech", "Sales", "Marketing"].map((d, i) => {
+                    return ( 
+                      <Accordion key={i} title={d} subtitle={`${d} subtitle`}>
+                        {`${d} discription`}
+                      </Accordion>
+                    )
+                  })
+                }
+              </CardBody>
+            </Card>
+          </GridItem>
+        </GridContainer>
       </div>
     );
   }
@@ -284,3 +305,4 @@ Dashboard.propTypes = {
 };
 
 export default withStyles(dashboardStyle)(Dashboard);
+
