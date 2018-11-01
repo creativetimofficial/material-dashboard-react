@@ -1,3 +1,6 @@
+!!! IF YOU DO NOT USE THIS ISSUES TEAMPLATE, YOUR ISSUE IS LIABLE TO BEING IGNORED BY US
+
+
 # Prerequisites
 
 Please answer the following questions for yourself before submitting an issue.
