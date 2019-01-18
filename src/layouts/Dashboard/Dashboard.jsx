@@ -13,7 +13,7 @@ import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
-import dashboardRoutes from "routes/dashboard.jsx";
+import routes from "routes.js";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
 
@@ -22,10 +22,8 @@ import logo from "assets/img/reactlogo.png";
 
 const switchRoutes = (
   <Switch>
-    {dashboardRoutes.map((prop, key) => {
-      if (prop.redirect)
-        return <Redirect from={prop.path} to={prop.to} key={key} />;
-      return <Route path={prop.path} component={prop.component} key={key} />;
+    {routes.map((prop, key) => {
+      return <Route path={prop.layout + prop.path} component={prop.component} key={key} />;
     })}
   </Switch>
 );
@@ -87,7 +85,7 @@ class App extends React.Component {
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          routes={dashboardRoutes}
+          routes={routes}
           logoText={"Creative Tim"}
           logo={logo}
           image={this.state.image}
@@ -98,7 +96,7 @@ class App extends React.Component {
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
-            routes={dashboardRoutes}
+            routes={routes}
             handleDrawerToggle={this.handleDrawerToggle}
             {...rest}
           />
