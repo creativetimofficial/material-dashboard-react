@@ -1,5 +1,15 @@
 ## [1.5.0] 2018-09-21
 ### Nice stuff
+### Bug Fixing
+- [Added new script for npm](https://github.com/creativetimofficial/material-dashboard-react/issues/69)
+### Major style changes
+### Deleted dependencies
+### Added dependencies
+### Updated dependencies
+
+
+## [1.5.0] 2018-09-21
+### Nice stuff
 - Added `install:clean` command (deletes `node_modules` and `package-lock.json` and runs `npm install`)
 ### Major style changes
 - `src/assets/jss/material-dashboard-react/components/tasksStyle.jsx`
