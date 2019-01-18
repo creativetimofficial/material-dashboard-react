@@ -23,18 +23,20 @@ import logo from "assets/img/reactlogo.png";
 const switchRoutes = (
   <Switch>
     {routes.map((prop, key) => {
-      return (
-        <Route
-          path={prop.layout + prop.path}
-          component={prop.component}
-          key={key}
-        />
-      );
+      if (prop.layout === "/rtl"){
+        return (
+          <Route
+            path={prop.layout + prop.path}
+            component={prop.component}
+            key={key}
+          />
+        );
+      }
     })}
   </Switch>
 );
 
-class App extends React.Component {
+class RTL extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -129,8 +131,8 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+RTL.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(App);
+export default withStyles(dashboardStyle)(RTL);

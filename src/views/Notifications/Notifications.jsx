@@ -166,6 +166,7 @@ class Notifications extends React.Component {
             <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
               <h5>
                 Notifications Places
+                <br />
                 <small>Click to view notifications</small>
               </h5>
             </GridItem>

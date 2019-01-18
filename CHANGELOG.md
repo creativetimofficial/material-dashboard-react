@@ -9,14 +9,18 @@
 ### Major components changes
 - Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
 - **src/components/Sidebar/Sidebar.jsx**
-- **src/layouts/Dashboard/Dashboard.jsx**
 - **src/index.js**
 - **src/components/Header/Header.jsx**
+- **src/views/Notifications/Notifications.jsx**
 ### New components
 - **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)
+- **src/layouts/RTL/RTL.jsx**
+- **src/views/RTLPage/RTLPage.jsx**
+- **src/layouts/Admin/Admin.jsx** (instead of Dashboard)
 ### Deleted components
 - **src/routes/dashboard.jsx**
 - **src/routes/index.jsx**
+- **src/layouts/Dashboard/Dashboard.jsx** (renamed to Admin)
 ### Deleted dependencies
 - `babel-plugin-module-resolver` (because of the upgrade of `react-scripts`)
 - `babel-eslint` (because of the upgrade of `react-scripts`)
