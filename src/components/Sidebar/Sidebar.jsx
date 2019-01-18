@@ -12,6 +12,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
 // core components
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
+import RTLHeaderLinks from "components/Header/RTLHeaderLinks.jsx";
 
 import sidebarStyle from "assets/jss/material-dashboard-react/components/sidebarStyle.jsx";
 
@@ -92,7 +93,9 @@ const Sidebar = ({ ...props }) => {
         >
           {brand}
           <div className={classes.sidebarWrapper}>
-            <HeaderLinks />
+            {
+              props.rtlActive ? (<RTLHeaderLinks />):(<HeaderLinks />)
+            }
             {links}
           </div>
           {image !== undefined ? (

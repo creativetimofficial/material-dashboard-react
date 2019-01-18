@@ -18,7 +18,7 @@ import Search from "@material-ui/icons/Search";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
-import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle.jsx";
+import rtlHeaderLinksStyle from "assets/jss/material-dashboard-react/components/rtlHeaderLinksStyle.jsx";
 
 class HeaderLinks extends React.Component {
   state = {
@@ -66,7 +66,7 @@ class HeaderLinks extends React.Component {
         >
           <Dashboard className={classes.icons} />
           <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Dashboard</p>
+            <p className={classes.linkText}>آمارها</p>
           </Hidden>
         </Button>
         <div className={classes.manager}>
@@ -83,10 +83,10 @@ class HeaderLinks extends React.Component {
             className={classes.buttonLink}
           >
             <Notifications className={classes.icons} />
-            <span className={classes.notifications}>5</span>
+            <span className={classes.notifications}>۵</span>
             <Hidden mdUp implementation="css">
               <p onClick={this.handleClick} className={classes.linkText}>
-                Notification
+                اعلان‌ها
               </p>
             </Hidden>
           </Button>
@@ -117,31 +117,31 @@ class HeaderLinks extends React.Component {
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        Mike John responded to your email
+                        محمدرضا به ایمیل شما پاسخ داد
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        You have 5 new tasks
+                        شما ۵ وظیفه جدید دارید
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        You're now friend with Andrew
+                        از حالا شما با علیرضا دوست هستید
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        Another Notification
+                        اعلان دیگر
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        Another One
+                        اعلان دیگر
                       </MenuItem>
                     </MenuList>
                   </ClickAwayListener>
@@ -159,7 +159,7 @@ class HeaderLinks extends React.Component {
         >
           <Person className={classes.icons} />
           <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Profile</p>
+            <p className={classes.linkText}>حساب کاربری</p>
           </Hidden>
         </Button>
       </div>
@@ -167,4 +167,4 @@ class HeaderLinks extends React.Component {
   }
 }
 
-export default withStyles(headerLinksStyle)(HeaderLinks);
+export default withStyles(rtlHeaderLinksStyle)(HeaderLinks);
