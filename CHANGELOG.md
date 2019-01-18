@@ -1,30 +1,31 @@
 ## [1.6.0] 2019-01-31
 ### Nice stuff
+- Added RTL support
 ### Bug Fixing
 - [Added new script for npm](https://github.com/creativetimofficial/material-dashboard-react/issues/69)
 - Changed our buggy routing system, now it should work flawlessly, for more info, please refer to our [live docs here](https://demos.creative-tim.com/material-dashboard-react/#/documentation/routing-system)
 ### Major style changes
 - **src/assets/css/material-dashboard-react.css**(added styles for the new component, FixedPlugin)
 - **src/assets/jss/material-dashboard-react/components/customInputStyle.jsx**
+- **src/assets/jss/material-dashboard-react/components/sidebarStyle.jsx**
 - **src/assets/jss/material-dashboard-react/layouts/rtlStyle.jsx**(new style file for the new layout)
 - **src/assets/jss/material-dashboard-react/views/rtlStyle.jsx**(new style file for the new page)
-- **src/assets/jss/material-dashboard-react/components/sidebarStyle.jsx**
 ### Major components changes
 - Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
-- **src/components/Sidebar/Sidebar.jsx**
 - **src/index.js**
 - **src/components/Header/Header.jsx**
+- **src/components/Sidebar/Sidebar.jsx**
 - **src/views/Notifications/Notifications.jsx**
 ### New components
 - **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)
+- **src/components/Header/RTLHeaderLinks.jsx**
+- **src/layouts/Admin.jsx** (instead of Dashboard)
 - **src/layouts/RTL.jsx**
 - **src/views/RTLPage/RTLPage.jsx**
-- **src/layouts/Admin.jsx** (instead of Dashboard)
-- **src/components/Header/RTLHeaderLinks.jsx**
 ### Deleted components
+- **src/layouts/Dashboard/Dashboard.jsx** (renamed to Admin)
 - **src/routes/dashboard.jsx**
 - **src/routes/index.jsx**
-- **src/layouts/Dashboard/Dashboard.jsx** (renamed to Admin)
 ### Deleted dependencies
 - `babel-plugin-module-resolver` (because of the upgrade of `react-scripts`)
 - `babel-eslint` (because of the upgrade of `react-scripts`)
