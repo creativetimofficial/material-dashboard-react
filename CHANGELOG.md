@@ -3,6 +3,8 @@
 ### Bug Fixing
 - [Added new script for npm](https://github.com/creativetimofficial/material-dashboard-react/issues/69)
 ### Major style changes
+### Major components changes
+- Changed the Sidebar component (deleted the `ListItemIcon` from the Links list, not the icon is rendered directly)
 ### Deleted dependencies
 - `babel-plugin-module-resolver` (because of the upgrade of `react-scripts`)
 - `babel-eslint` (because of the upgrade of `react-scripts`)
