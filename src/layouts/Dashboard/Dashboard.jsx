@@ -11,6 +11,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "components/Header/Header.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
+import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import dashboardRoutes from "routes/dashboard.jsx";
 
@@ -33,9 +34,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      image: image,
+      color: "blue",
+      hasImage: true,
+      fixedClasses: "dropdown show",
       mobileOpen: false
     };
-    this.resizeFunction = this.resizeFunction.bind(this);
+  }
+  handleImageClick = (image) => {
+    this.setState({ image: image });
+  }
+  handleColorClick = (color) => {
+    this.setState({ color: color });
+  }
+  handleFixedClick = () => {
+    if (this.state.fixedClasses === "dropdown") {
+      this.setState({ fixedClasses: "dropdown show" });
+    } else {
+      this.setState({ fixedClasses: "dropdown" });
+    }
   }
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
@@ -43,7 +60,7 @@ class App extends React.Component {
   getRoute() {
     return this.props.location.pathname !== "/maps";
   }
-  resizeFunction() {
+  resizeFunction = () => {
     if (window.innerWidth >= 960) {
       this.setState({ mobileOpen: false });
     }
@@ -73,10 +90,10 @@ class App extends React.Component {
           routes={dashboardRoutes}
           logoText={"Creative Tim"}
           logo={logo}
-          image={image}
+          image={this.state.image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
-          color="blue"
+          color={this.state.color}
           {...rest}
         />
         <div className={classes.mainPanel} ref="mainPanel">
@@ -94,6 +111,14 @@ class App extends React.Component {
             <div className={classes.map}>{switchRoutes}</div>
           )}
           {this.getRoute() ? <Footer /> : null}
+          <FixedPlugin
+            handleImageClick={this.handleImageClick}
+            handleColorClick={this.handleColorClick}
+            bgColor={this.state["color"]}
+            bgImage={this.state["image"]}
+            handleFixedClick={this.handleFixedClick}
+            fixedClasses={this.state.fixedClasses}
+          />
         </div>
       </div>
     );

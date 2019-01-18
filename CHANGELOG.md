@@ -3,8 +3,12 @@
 ### Bug Fixing
 - [Added new script for npm](https://github.com/creativetimofficial/material-dashboard-react/issues/69)
 ### Major style changes
+- **src/assets/css/material-dashboard-react.css**(added styles for the new component, FixedPlugin)
 ### Major components changes
 - Changed the Sidebar component (deleted the `ListItemIcon` from the Links list, not the icon is rendered directly)
+- Changed the Dashboard layout, now it renders the FixedPlugn component as well
+### New components
+- **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)
 ### Deleted dependencies
 - `babel-plugin-module-resolver` (because of the upgrade of `react-scripts`)
 - `babel-eslint` (because of the upgrade of `react-scripts`)
