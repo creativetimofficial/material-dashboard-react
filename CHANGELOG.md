@@ -10,6 +10,7 @@
 - **src/components/Sidebar/Sidebar.jsx**
 - **src/layouts/Dashboard/Dashboard.jsx**
 - **src/index.js**
+- **src/components/Header/Header.jsx**
 ### New components
 - **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)
 ### Deleted components

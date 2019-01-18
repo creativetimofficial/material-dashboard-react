@@ -62,7 +62,7 @@ class App extends React.Component {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   getRoute() {
-    return this.props.location.pathname !== "/maps";
+    return this.props.location.pathname !== "/admin/maps";
   }
   resizeFunction = () => {
     if (window.innerWidth >= 960) {
