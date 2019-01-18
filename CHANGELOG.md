@@ -5,6 +5,7 @@
 - Changed our buggy routing system, now it should work flawlessly, for more info, please refer to our [live docs here](https://demos.creative-tim.com/material-dashboard-react/#/documentation/routing-system)
 ### Major style changes
 - **src/assets/css/material-dashboard-react.css**(added styles for the new component, FixedPlugin)
+- **src/assets/jss/material-dashboard-react/components/customInputStyle.jsx**
 ### Major components changes
 - Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
 - **src/components/Sidebar/Sidebar.jsx**
