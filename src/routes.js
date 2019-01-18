@@ -22,57 +22,65 @@ const dashboardRoutes = [
     sidebarName: "Dashboard",
     navbarName: "Material Dashboard",
     icon: Dashboard,
-    component: DashboardPage
-  ,layout: "/admin"},
+    component: DashboardPage,
+    layout: "/admin"
+  },
   {
     path: "/user",
     sidebarName: "User Profile",
     navbarName: "Profile",
     icon: Person,
-    component: UserProfile
-  ,layout: "/admin"},
+    component: UserProfile,
+    layout: "/admin"
+  },
   {
     path: "/table",
     sidebarName: "Table List",
     navbarName: "Table List",
     icon: "content_paste",
-    component: TableList
-  ,layout: "/admin"},
+    component: TableList,
+    layout: "/admin"
+  },
   {
     path: "/typography",
     sidebarName: "Typography",
     navbarName: "Typography",
     icon: LibraryBooks,
-    component: Typography
-  ,layout: "/admin"},
+    component: Typography,
+    layout: "/admin"
+  },
   {
     path: "/icons",
     sidebarName: "Icons",
     navbarName: "Icons",
     icon: BubbleChart,
-    component: Icons
-  ,layout: "/admin"},
+    component: Icons,
+    layout: "/admin"
+  },
   {
     path: "/maps",
     sidebarName: "Maps",
     navbarName: "Map",
     icon: LocationOn,
-    component: Maps
-  ,layout: "/admin"},
+    component: Maps,
+    layout: "/admin"
+  },
   {
     path: "/notifications",
     sidebarName: "Notifications",
     navbarName: "Notifications",
     icon: Notifications,
-    component: NotificationsPage
-  ,layout: "/admin"},
+    component: NotificationsPage,
+    layout: "/admin"
+  },
   {
     path: "/upgrade-to-pro",
     sidebarName: "Upgrade To PRO",
     navbarName: "Upgrade To PRO",
     icon: Unarchive,
-    component: UpgradeToPro
-  ,layout: "/admin"},
+    component: UpgradeToPro,
+    layout: "/admin"
+  }
 ];
 
 export default dashboardRoutes;

@@ -23,7 +23,13 @@ import logo from "assets/img/reactlogo.png";
 const switchRoutes = (
   <Switch>
     {routes.map((prop, key) => {
-      return <Route path={prop.layout + prop.path} component={prop.component} key={key} />;
+      return (
+        <Route
+          path={prop.layout + prop.path}
+          component={prop.component}
+          key={key}
+        />
+      );
     })}
   </Switch>
 );
@@ -39,19 +45,19 @@ class App extends React.Component {
       mobileOpen: false
     };
   }
-  handleImageClick = (image) => {
+  handleImageClick = image => {
     this.setState({ image: image });
-  }
-  handleColorClick = (color) => {
+  };
+  handleColorClick = color => {
     this.setState({ color: color });
-  }
+  };
   handleFixedClick = () => {
     if (this.state.fixedClasses === "dropdown") {
       this.setState({ fixedClasses: "dropdown show" });
     } else {
       this.setState({ fixedClasses: "dropdown" });
     }
-  }
+  };
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
@@ -62,7 +68,7 @@ class App extends React.Component {
     if (window.innerWidth >= 960) {
       this.setState({ mobileOpen: false });
     }
-  }
+  };
   componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
       const ps = new PerfectScrollbar(this.refs.mainPanel);

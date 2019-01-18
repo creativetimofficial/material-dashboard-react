@@ -89,10 +89,12 @@ class Notifications extends React.Component {
             and styled by{" "}
             <a target="_blank" href="https://www.creative-tim.com/">
               Creative Tim
-            </a>. Please checkout the{" "}
+            </a>
+            . Please checkout the{" "}
             <a href="#pablo" target="_blank">
               full documentation
-            </a>.
+            </a>
+            .
           </p>
         </CardHeader>
         <CardBody>

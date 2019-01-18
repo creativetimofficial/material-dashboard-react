@@ -162,11 +162,16 @@ class FixedPlugin extends Component {
               </div>
             </li>
             <li className="button-container">
-              <Button color="info" fullWidth href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial" target="_blank">
+              <Button
+                color="info"
+                fullWidth
+                href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial"
+                target="_blank"
+              >
                 Documentation
               </Button>
             </li>
-            <li className="adjustments-line"></li>
+            <li className="adjustments-line" />
           </ul>
         </div>
       </div>

@@ -48,9 +48,11 @@ const Sidebar = ({ ...props }) => {
           >
             <ListItem button className={classes.itemLink + listItemClasses}>
               {typeof prop.icon === "string" ? (
-                <Icon className={classes.itemIcon + whiteFontClasses}>{prop.icon}</Icon>
+                <Icon className={classes.itemIcon + whiteFontClasses}>
+                  {prop.icon}
+                </Icon>
               ) : (
-                <prop.icon className={classes.itemIcon + whiteFontClasses}/>
+                <prop.icon className={classes.itemIcon + whiteFontClasses} />
               )}
               <ListItemText
                 primary={prop.sidebarName}
