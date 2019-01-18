@@ -46,6 +46,16 @@ const sidebarStyle = theme => ({
       ...transition
     }
   },
+  drawerPaperRTL: {
+    [theme.breakpoints.up("md")]: {
+      left: "auto !important",
+      right: "0 !important"
+    },
+    [theme.breakpoints.down("sm")]: {
+      left: "0  !important",
+      right: "auto !important"
+    }
+  },
   logo: {
     position: "relative",
     padding: "15px 15px",
@@ -75,6 +85,9 @@ const sidebarStyle = theme => ({
     "&,&:hover": {
       color: "#FFFFFF"
     }
+  },
+  logoLinkRTL: {
+    textAlign: "right"
   },
   logoImage: {
     width: "30px",
@@ -150,12 +163,20 @@ const sidebarStyle = theme => ({
     verticalAlign: "middle",
     color: "rgba(255, 255, 255, 0.8)"
   },
+  itemIconRTL: {
+    marginRight: "3px",
+    marginLeft: "15px",
+    float: "right"
+  },
   itemText: {
     ...defaultFont,
     margin: "0",
     lineHeight: "30px",
     fontSize: "14px",
     color: "#FFFFFF"
+  },
+  itemTextRTL: {
+    textAlign: "right"
   },
   whiteFont: {
     color: "#FFFFFF"

@@ -480,3 +480,12 @@ footer ul li a:hover {
     transform: translateY(-13%);
     transform-origin: 0 0;
 }
+.fixed-plugin.rtl-fixed-plugin{
+  right: auto;
+  left: 0px;
+  border-radius: 0 8px 8px 0;
+}
+.fixed-plugin.rtl-fixed-plugin .dropdown-menu{
+  right: auto;
+  left: 80px;
+}

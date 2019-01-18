@@ -23,6 +23,8 @@ const dashboardRoutes = [
   {
     path: "/dashboard",
     sidebarName: "Dashboard",
+    sidebarRTLName: "لوحة القيادة",
+    navbarRTLName: "لوحة معلومات المواد",
     navbarName: "Material Dashboard",
     icon: Dashboard,
     component: DashboardPage,
@@ -31,6 +33,8 @@ const dashboardRoutes = [
   {
     path: "/user",
     sidebarName: "User Profile",
+    sidebarRTLName: "ملف تعريفي للمستخدم",
+    navbarRTLName: "الملف الشخصي",
     navbarName: "Profile",
     icon: Person,
     component: UserProfile,
@@ -39,6 +43,8 @@ const dashboardRoutes = [
   {
     path: "/table",
     sidebarName: "Table List",
+    sidebarRTLName: "قائمة الجدول",
+    navbarRTLName: "قائمة الجدول",
     navbarName: "Table List",
     icon: "content_paste",
     component: TableList,
@@ -47,6 +53,8 @@ const dashboardRoutes = [
   {
     path: "/typography",
     sidebarName: "Typography",
+    sidebarRTLName: "طباعة",
+    navbarRTLName: "طباعة",
     navbarName: "Typography",
     icon: LibraryBooks,
     component: Typography,
@@ -55,6 +63,8 @@ const dashboardRoutes = [
   {
     path: "/icons",
     sidebarName: "Icons",
+    sidebarRTLName: "الرموز",
+    navbarRTLName: "الرموز",
     navbarName: "Icons",
     icon: BubbleChart,
     component: Icons,
@@ -63,6 +73,8 @@ const dashboardRoutes = [
   {
     path: "/maps",
     sidebarName: "Maps",
+    sidebarRTLName: "خرائط",
+    navbarRTLName: "خريطة",
     navbarName: "Map",
     icon: LocationOn,
     component: Maps,
@@ -71,6 +83,8 @@ const dashboardRoutes = [
   {
     path: "/notifications",
     sidebarName: "Notifications",
+    sidebarRTLName: "إخطارات",
+    navbarRTLName: "إخطارات",
     navbarName: "Notifications",
     icon: Notifications,
     component: NotificationsPage,
@@ -79,6 +93,8 @@ const dashboardRoutes = [
   {
     path: "/upgrade-to-pro",
     sidebarName: "Upgrade To PRO",
+    sidebarRTLName: "التطور للاحترافية",
+    navbarRTLName: "التطور للاحترافية",
     navbarName: "Upgrade To PRO",
     icon: Unarchive,
     component: UpgradeToPro,
@@ -87,6 +103,8 @@ const dashboardRoutes = [
   {
     path: "/rtl-page",
     sidebarName: "RTL Support",
+    sidebarRTLName: "پشتیبانی از راست به چپ",
+    navbarRTLName: "پشتیبانی از راست به چپ",
     navbarName: "RTL Support",
     icon: Language,
     component: RTLPage,

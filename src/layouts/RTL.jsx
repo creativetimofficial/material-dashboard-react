@@ -15,7 +15,7 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import routes from "routes.js";
 
-import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
+import rtlStyle from "assets/jss/material-dashboard-react/layouts/rtlStyle.jsx";
 
 import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
@@ -94,18 +94,20 @@ class RTL extends React.Component {
       <div className={classes.wrapper}>
         <Sidebar
           routes={routes}
-          logoText={"Creative Tim"}
+          logoText={"الإبداعية تيم"}
           logo={logo}
           image={this.state.image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
           color={this.state.color}
+          rtlActive
           {...rest}
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
             routes={routes}
             handleDrawerToggle={this.handleDrawerToggle}
+            rtlActive
             {...rest}
           />
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
@@ -124,6 +126,7 @@ class RTL extends React.Component {
             bgImage={this.state["image"]}
             handleFixedClick={this.handleFixedClick}
             fixedClasses={this.state.fixedClasses}
+            rtlActive
           />
         </div>
       </div>
@@ -135,4 +138,4 @@ RTL.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(RTL);
+export default withStyles(rtlStyle)(RTL);
