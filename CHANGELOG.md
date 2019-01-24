@@ -14,6 +14,7 @@
 - **src/index.js**
 - **src/components/Header/Header.jsx**
 - **src/components/Sidebar/Sidebar.jsx**
+- **src/components/Snackbar/Snackbar.jsx**
 - **src/components/Snackbar/SnackbarContent.jsx**
 - **src/views/Notifications/Notifications.jsx**
 ### New components
