@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -36,13 +37,16 @@ class Tasks extends React.Component {
     });
   };
   render() {
-    const { classes, tasksIndexes, tasks } = this.props;
+    const { classes, tasksIndexes, tasks, rtlActive } = this.props;
+    const tableCellClasses = classnames(classes.tableCell, {
+      [classes.tableCellRTL]: rtlActive
+    })
     return (
       <Table className={classes.table}>
         <TableBody>
           {tasksIndexes.map(value => (
             <TableRow key={value} className={classes.tableRow}>
-              <TableCell className={classes.tableCell}>
+              <TableCell className={tableCellClasses}>
                 <Checkbox
                   checked={this.state.checked.indexOf(value) !== -1}
                   tabIndex={-1}
@@ -55,7 +59,7 @@ class Tasks extends React.Component {
                   }}
                 />
               </TableCell>
-              <TableCell className={classes.tableCell}>
+              <TableCell className={tableCellClasses}>
                 {tasks[value]}
               </TableCell>
               <TableCell className={classes.tableActions}>
@@ -105,7 +109,8 @@ class Tasks extends React.Component {
 Tasks.propTypes = {
   classes: PropTypes.object.isRequired,
   tasksIndexes: PropTypes.arrayOf(PropTypes.number),
-  tasks: PropTypes.arrayOf(PropTypes.node)
+  tasks: PropTypes.arrayOf(PropTypes.node),
+  rtlActive: PropTypes.bool
 };
 
 export default withStyles(tasksStyle)(Tasks);

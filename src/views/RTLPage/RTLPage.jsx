@@ -33,8 +33,6 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
 
-import { bugs, website, server } from "variables/general.jsx";
-
 import {
   dailySalesChart,
   emailsSubscriptionChart,
@@ -44,6 +42,22 @@ import {
 import rtlStyle from "assets/jss/material-dashboard-react/views/rtlStyle.jsx";
 
 import avatar from "assets/img/faces/marc.jpg";
+
+let bugs = [
+  "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
+  "	نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟",
+  "همان حال کار آنها به نوعی وابسته به متن می‌باشد",
+  "	آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند"
+];
+let website = [
+  "بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته",
+  "اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید؟"
+];
+let server = [
+  "گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی؟",
+  "از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی ؟",
+  "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟"
+];
 
 class RTLPage extends React.Component {
   state = {
@@ -96,7 +110,7 @@ class RTLPage extends React.Component {
               <CardFooter stats>
                 <div className={classes.stats}>
                   <DateRange />
-                    ۲۴ ساعت اخیر
+                  ۲۴ ساعت اخیر
                 </div>
               </CardFooter>
             </Card>
@@ -113,7 +127,7 @@ class RTLPage extends React.Component {
               <CardFooter stats>
                 <div className={classes.stats}>
                   <LocalOffer />
-                    توسط گیت‌هاب
+                  توسط گیت‌هاب
                 </div>
               </CardFooter>
             </Card>
@@ -130,7 +144,7 @@ class RTLPage extends React.Component {
               <CardFooter stats>
                 <div className={classes.stats}>
                   <Update />
-                    هم‌اکنون
+                  هم‌اکنون
                 </div>
               </CardFooter>
             </Card>
@@ -178,9 +192,7 @@ class RTLPage extends React.Component {
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>دنبال کننده‌های ایمیلی</h4>
-                <p className={classes.cardCategory}>
-                  کارایی آخرین کمپین
-                </p>
+                <p className={classes.cardCategory}>کارایی آخرین کمپین</p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
@@ -202,9 +214,7 @@ class RTLPage extends React.Component {
               </CardHeader>
               <CardBody>
                 <h4 className={classes.cardTitle}>وظایف انجام شده</h4>
-                <p className={classes.cardCategory}>
-                  کارایی آخرین کمپین
-                </p>
+                <p className={classes.cardCategory}>کارایی آخرین کمپین</p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
@@ -229,6 +239,7 @@ class RTLPage extends React.Component {
                       checkedIndexes={[0, 3]}
                       tasksIndexes={[0, 1, 2, 3]}
                       tasks={bugs}
+                      rtlActive
                     />
                   )
                 },
@@ -240,6 +251,7 @@ class RTLPage extends React.Component {
                       checkedIndexes={[0]}
                       tasksIndexes={[0, 1]}
                       tasks={website}
+                      rtlActive
                     />
                   )
                 },
@@ -251,6 +263,7 @@ class RTLPage extends React.Component {
                       checkedIndexes={[1]}
                       tasksIndexes={[0, 1, 2]}
                       tasks={server}
+                      rtlActive
                     />
                   )
                 }
@@ -319,9 +332,7 @@ class RTLPage extends React.Component {
                   color="primary"
                 />
                 <SnackbarContent
-                  message={
-                    'این یک اعلان با دکمه بستن و آیکن است'
-                  }
+                  message={"این یک اعلان با دکمه بستن و آیکن است"}
                   close
                   rtlActive
                   color="info"
@@ -340,7 +351,11 @@ class RTLPage extends React.Component {
                 <h6 className={classes.cardCategory}>مدیرعامل / مدیرفنی</h6>
                 <h4 className={classes.cardTitle}>خداداد عزیزی</h4>
                 <p className={classes.description}>
-                  طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند ...
+                  طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر
+                  کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده
+                  استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه
+                  فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی،
+                  نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند ...
                 </p>
                 <Button color="primary" round>
                   دنبال‌کردن

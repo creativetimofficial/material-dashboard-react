@@ -12,10 +12,12 @@
 ### Major components changes
 - Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
 - **src/index.js**
+- **src/components/CustomTabs/CustomTabs.jsx**
 - **src/components/Header/Header.jsx**
 - **src/components/Sidebar/Sidebar.jsx**
 - **src/components/Snackbar/Snackbar.jsx**
 - **src/components/Snackbar/SnackbarContent.jsx**
+- **src/components/Tasks/Tasks.jsx**
 - **src/views/Notifications/Notifications.jsx**
 ### New components
 - **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)

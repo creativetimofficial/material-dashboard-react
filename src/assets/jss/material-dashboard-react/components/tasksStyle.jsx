@@ -31,6 +31,9 @@ const tasksStyle = {
     lineHeight: "1.42857143",
     fontSize: "14px"
   },
+  tableCellRTL: {
+    textAlign: "right"
+  },
   tableActionButton: {
     width: "27px",
     height: "27px",

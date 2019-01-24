@@ -39,7 +39,7 @@ function SnackbarContent({ ...props }) {
       classes={{
         root: classes.root + " " + classes[color],
         message: classes.message,
-        action: classNames({[classes.actionRTL]: rtlActive})
+        action: classNames({ [classes.actionRTL]: rtlActive })
       }}
       action={action}
     />
