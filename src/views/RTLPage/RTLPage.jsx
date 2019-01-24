@@ -18,6 +18,7 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
+import Button from "components/CustomButtons/Button.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import Table from "components/Table/Table.jsx";
@@ -26,9 +27,11 @@ import CustomTabs from "components/CustomTabs/CustomTabs.jsx";
 import Danger from "components/Typography/Danger.jsx";
 import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
+import CardAvatar from "components/Card/CardAvatar.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
 
 import { bugs, website, server } from "variables/general.jsx";
 
@@ -39,6 +42,8 @@ import {
 } from "variables/charts.jsx";
 
 import rtlStyle from "assets/jss/material-dashboard-react/views/rtlStyle.jsx";
+
+import avatar from "assets/img/faces/marc.jpg";
 
 class RTLPage extends React.Component {
   state = {
@@ -62,7 +67,7 @@ class RTLPage extends React.Component {
                 <CardIcon color="warning">
                   <Icon>content_copy</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
+                <p className={classes.cardCategory}>فضا مصرف شده</p>
                 <h3 className={classes.cardTitle}>
                   49/50 <small>GB</small>
                 </h3>
@@ -73,7 +78,7 @@ class RTLPage extends React.Component {
                     <Warning />
                   </Danger>
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
+                    فضای بیشتری داشته باشید...
                   </a>
                 </div>
               </CardFooter>
@@ -85,13 +90,13 @@ class RTLPage extends React.Component {
                 <CardIcon color="success">
                   <Store />
                 </CardIcon>
-                <p className={classes.cardCategory}>Revenue</p>
+                <p className={classes.cardCategory}>سود</p>
                 <h3 className={classes.cardTitle}>$34,245</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
                   <DateRange />
-                  Last 24 Hours
+                    ۲۴ ساعت اخیر
                 </div>
               </CardFooter>
             </Card>
@@ -102,13 +107,13 @@ class RTLPage extends React.Component {
                 <CardIcon color="danger">
                   <Icon>info_outline</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Fixed Issues</p>
+                <p className={classes.cardCategory}>مشکلات حل شده</p>
                 <h3 className={classes.cardTitle}>75</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
                   <LocalOffer />
-                  Tracked from Github
+                    توسط گیت‌هاب
                 </div>
               </CardFooter>
             </Card>
@@ -119,13 +124,13 @@ class RTLPage extends React.Component {
                 <CardIcon color="info">
                   <Accessibility />
                 </CardIcon>
-                <p className={classes.cardCategory}>Followers</p>
+                <p className={classes.cardCategory}>دنبال‌کننده</p>
                 <h3 className={classes.cardTitle}>+245</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
                   <Update />
-                  Just Updated
+                    هم‌اکنون
                 </div>
               </CardFooter>
             </Card>
@@ -144,17 +149,17 @@ class RTLPage extends React.Component {
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Daily Sales</h4>
+                <h4 className={classes.cardTitle}>فروش روزانه</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
                     <ArrowUpward className={classes.upArrowCardCategory} /> 55%
                   </span>{" "}
-                  increase in today sales.
+                  رشد در فروش امروز.
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> updated 4 minutes ago
+                  <AccessTime /> ۴ دقیقه پیش
                 </div>
               </CardFooter>
             </Card>
@@ -172,14 +177,14 @@ class RTLPage extends React.Component {
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Email Subscriptions</h4>
+                <h4 className={classes.cardTitle}>دنبال کننده‌های ایمیلی</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  کارایی آخرین کمپین
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                  <AccessTime /> کمپین دو روز پیش ارسال شد
                 </div>
               </CardFooter>
             </Card>
@@ -196,14 +201,14 @@ class RTLPage extends React.Component {
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
+                <h4 className={classes.cardTitle}>وظایف انجام شده</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  کارایی آخرین کمپین
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                  <AccessTime /> کمپین دو روز پیش ارسال شد
                 </div>
               </CardFooter>
             </Card>
@@ -212,11 +217,12 @@ class RTLPage extends React.Component {
         <GridContainer>
           <GridItem xs={12} sm={12} md={6}>
             <CustomTabs
-              title="Tasks:"
+              title="وظایف:"
               headerColor="primary"
+              rtlActive
               tabs={[
                 {
-                  tabName: "Bugs",
+                  tabName: "باگ‌ها",
                   tabIcon: BugReport,
                   tabContent: (
                     <Tasks
@@ -227,7 +233,7 @@ class RTLPage extends React.Component {
                   )
                 },
                 {
-                  tabName: "Website",
+                  tabName: "وبسایت",
                   tabIcon: Code,
                   tabContent: (
                     <Tasks
@@ -238,7 +244,7 @@ class RTLPage extends React.Component {
                   )
                 },
                 {
-                  tabName: "Server",
+                  tabName: "سرور",
                   tabIcon: Cloud,
                   tabContent: (
                     <Tasks
@@ -254,22 +260,91 @@ class RTLPage extends React.Component {
           <GridItem xs={12} sm={12} md={6}>
             <Card>
               <CardHeader color="warning">
-                <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
+                <h4 className={classes.cardTitleWhite}>آمار کارکنان</h4>
                 <p className={classes.cardCategoryWhite}>
-                  New employees on 15th September, 2016
+                  کارکنان جدید از ۱۵ آبان ۱۳۹۶
                 </p>
               </CardHeader>
               <CardBody>
                 <Table
                   tableHeaderColor="warning"
-                  tableHead={["ID", "Name", "Salary", "Country"]}
+                  tableHead={["کد", "نام", "حقوق", "استان"]}
                   tableData={[
-                    ["1", "Dakota Rice", "$36,738", "Niger"],
-                    ["2", "Minerva Hooper", "$23,789", "Curaçao"],
-                    ["3", "Sage Rodriguez", "$56,142", "Netherlands"],
-                    ["4", "Philip Chaney", "$38,735", "Korea, South"]
+                    ["1", "احمد حسینی	", "$36,738", "مازندران"],
+                    ["2", "مینا رضایی	", "$23,789", "گلستان"],
+                    ["3", "مبینا احمدپور	", "$56,142", "تهران"],
+                    ["4", "جلال آقایی	", "$38,735", "شهرکرد"]
                   ]}
                 />
+              </CardBody>
+            </Card>
+          </GridItem>
+        </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={12} md={6}>
+            <Card>
+              <CardHeader color="primary">
+                <h4 className={classes.cardTitleWhite}>اعلان ها</h4>
+                <p className={classes.cardCategoryWhite}>
+                  يدويا من قبل أصدقائنا من{" "}
+                  <a target="_blank" href="https://material-ui-next.com/">
+                    واجهة المستخدم المادية
+                  </a>{" "}
+                  ونصب من قبل{" "}
+                  <a target="_blank" href="https://www.creative-tim.com/">
+                    الإبداعية تيم
+                  </a>
+                  . يرجى التحقق من{" "}
+                  <a href="#pablo" target="_blank">
+                    وثائق كاملة
+                  </a>
+                  .
+                </p>
+              </CardHeader>
+              <CardBody>
+                <SnackbarContent
+                  message={
+                    'این یک اعلان است که با کلاس color="warning" ایجاد شده است.'
+                  }
+                  close
+                  rtlActive
+                  color="warning"
+                />
+                <SnackbarContent
+                  message={
+                    'این یک اعلان است که با کلاس color="primary" ایجاد شده است.'
+                  }
+                  close
+                  rtlActive
+                  color="primary"
+                />
+                <SnackbarContent
+                  message={
+                    'این یک اعلان با دکمه بستن و آیکن است'
+                  }
+                  close
+                  rtlActive
+                  color="info"
+                />
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={6}>
+            <Card profile>
+              <CardAvatar profile>
+                <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <img src={avatar} alt="..." />
+                </a>
+              </CardAvatar>
+              <CardBody profile>
+                <h6 className={classes.cardCategory}>مدیرعامل / مدیرفنی</h6>
+                <h4 className={classes.cardTitle}>خداداد عزیزی</h4>
+                <p className={classes.description}>
+                  طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند ...
+                </p>
+                <Button color="primary" round>
+                  دنبال‌کردن
+                </Button>
               </CardBody>
             </Card>
           </GridItem>

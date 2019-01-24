@@ -43,7 +43,7 @@ class RTL extends React.Component {
       image: image,
       color: "blue",
       hasImage: true,
-      fixedClasses: "dropdown show",
+      fixedClasses: "dropdown ",
       mobileOpen: false
     };
   }

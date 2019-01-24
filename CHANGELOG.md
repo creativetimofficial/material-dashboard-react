@@ -14,6 +14,7 @@
 - **src/index.js**
 - **src/components/Header/Header.jsx**
 - **src/components/Sidebar/Sidebar.jsx**
+- **src/components/Snackbar/SnackbarContent.jsx**
 - **src/views/Notifications/Notifications.jsx**
 ### New components
 - **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)

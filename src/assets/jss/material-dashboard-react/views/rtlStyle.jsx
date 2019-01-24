@@ -47,7 +47,10 @@ const rtlStyle = {
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
-    marginBottom: "0"
+    marginBottom: "0",
+    "& a": {
+      color: whiteColor
+    }
   },
   cardTitle: {
     color: grayColor[2],

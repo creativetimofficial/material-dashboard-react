@@ -51,7 +51,8 @@ function Snackbar({ ...props }) {
       ContentProps={{
         classes: {
           root: classes.root + " " + classes[color],
-          message: classes.message
+          message: classes.message,
+          action: classNames({[classes.actionRTL]: rtlActive})
         }
       }}
     />
@@ -65,7 +66,8 @@ Snackbar.propTypes = {
   close: PropTypes.bool,
   icon: PropTypes.func,
   place: PropTypes.oneOf(["tl", "tr", "tc", "br", "bl", "bc"]),
-  open: PropTypes.bool
+  open: PropTypes.bool,
+  rtlActive: PropTypes.bool
 };
 
 export default withStyles(snackbarContentStyle)(Snackbar);
