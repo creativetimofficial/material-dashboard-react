@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import { HashRouter, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 import ReactGA from "react-ga";
 
-import "assets/css/material-dashboard-react.css?v=1.5.0";
+// core components
+import Admin from "layouts/Admin.jsx";
+import RTL from "layouts/RTL.jsx";
+import Documentation from "layouts/Documentation/Documentation.jsx";
 
-import indexRoutes from "routes/index.jsx";
+import "assets/css/material-dashboard-react.css?v=1.5.0";
 
 const hist = createBrowserHistory();
 
@@ -21,9 +24,10 @@ hist.listen(location => {
 ReactDOM.render(
   <HashRouter>
     <Switch>
-      {indexRoutes.map((prop, key) => {
-        return <Route path={prop.path} component={prop.component} key={key} />;
-      })}
+      <Route path="/admin" component={Admin} />
+      <Route path="/documentation" component={Documentation} />
+      <Route path="/rtl" component={RTL} />
+      <Redirect from="/" to="/admin/dashboard" />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

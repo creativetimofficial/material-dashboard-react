@@ -11,6 +11,7 @@ import Hidden from "@material-ui/core/Hidden";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import HeaderLinks from "./HeaderLinks.jsx";
+import RTLHeaderLinks from "./RTLHeaderLinks.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 
 import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.jsx";
@@ -19,8 +20,8 @@ function Header({ ...props }) {
   function makeBrand() {
     var name;
     props.routes.map((prop, key) => {
-      if (prop.path === props.location.pathname) {
-        name = prop.navbarName;
+      if (prop.layout + prop.path === props.location.pathname) {
+        name = props.rtlActive ? prop.navbarRTLName : prop.navbarName;
       }
       return null;
     });
@@ -40,7 +41,7 @@ function Header({ ...props }) {
           </Button>
         </div>
         <Hidden smDown implementation="css">
-          <HeaderLinks />
+          {props.rtlActive ? <RTLHeaderLinks /> : <HeaderLinks />}
         </Hidden>
         <Hidden mdUp implementation="css">
           <IconButton

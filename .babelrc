@@ -5,8 +5,8 @@
     "transform-react-jsx",
     "transform-object-rest-spread",
     ["module-resolver", {
-      "root": ["./src"],
-    }],
-    ["import-rename", {"^(.*)\\.jsx$": "$1"}]
-  ]
-}
+      "root": ["./src"]
+      }],
+      ["import-rename", {"^(.*)\\.jsx$": "$1"}]
+    ]
+  }

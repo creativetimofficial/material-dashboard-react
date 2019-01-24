@@ -1,4 +1,9 @@
-import { boxShadow } from "assets/jss/material-dashboard-react.jsx";
+import {
+  boxShadow,
+  whiteColor,
+  grayColor,
+  hexToRgb
+} from "assets/jss/material-dashboard-react.jsx";
 
 const iconsStyle = {
   iframe: {
@@ -12,18 +17,18 @@ const iconsStyle = {
   },
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
-      color: "rgba(255,255,255,.62)",
+      color: "rgba(" + hexToRgb(whiteColor) + ",.62)",
       margin: "0",
       fontSize: "14px",
       marginTop: "0",
       marginBottom: "0"
     },
     "& a,& a:hover,& a:focus": {
-      color: "#FFFFFF"
+      color: whiteColor
     }
   },
   cardTitleWhite: {
-    color: "#FFFFFF",
+    color: whiteColor,
     marginTop: "0px",
     minHeight: "auto",
     fontWeight: "300",
@@ -31,7 +36,7 @@ const iconsStyle = {
     marginBottom: "3px",
     textDecoration: "none",
     "& small": {
-      color: "#777",
+      color: grayColor[1],
       fontWeight: "400",
       lineHeight: "1"
     }

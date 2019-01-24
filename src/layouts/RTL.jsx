@@ -13,63 +13,64 @@ import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
-import dashboardRoutes from "routes/dashboard.jsx";
+import routes from "routes.js";
 
-import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboardStyle.jsx";
+import rtlStyle from "assets/jss/material-dashboard-react/layouts/rtlStyle.jsx";
 
-import image from "assets/img/sidebar-4.jpg";
+import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
 const switchRoutes = (
   <Switch>
-    {dashboardRoutes.map((prop, key) => {
-      if (prop.redirect)
-        return <Redirect from={prop.path} to={prop.to} key={key} />;
-      return <Route path={prop.path} component={prop.component} key={key} />;
+    {routes.map((prop, key) => {
+      if (prop.layout === "/rtl") {
+        return (
+          <Route
+            path={prop.layout + prop.path}
+            component={prop.component}
+            key={key}
+          />
+        );
+      }
     })}
   </Switch>
 );
 
-class Dashboard extends React.Component {
+class RTL extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       image: image,
       color: "blue",
       hasImage: true,
-      fixedClasses: "dropdown show",
+      fixedClasses: "dropdown ",
       mobileOpen: false
     };
-
-    this.handleImageClick = this.handleImageClick.bind(this);
-    this.handleColorClick = this.handleColorClick.bind(this);
-    this.handleFixedClick = this.handleFixedClick.bind(this);
-    this.resizeFunction = this.resizeFunction.bind(this);
   }
-  handleImageClick(image) {
+  handleImageClick = image => {
     this.setState({ image: image });
-  }
-  handleColorClick(color) {
+  };
+  handleColorClick = color => {
     this.setState({ color: color });
-  }
-  handleFixedClick() {
+  };
+  handleFixedClick = () => {
     if (this.state.fixedClasses === "dropdown") {
       this.setState({ fixedClasses: "dropdown show" });
     } else {
       this.setState({ fixedClasses: "dropdown" });
     }
-  }
+  };
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   getRoute() {
-    return this.props.location.pathname !== "/maps";
+    return this.props.location.pathname !== "/admin/maps";
   }
-  resizeFunction() {
+  resizeFunction = () => {
     if (window.innerWidth >= 960) {
       this.setState({ mobileOpen: false });
     }
-  }
+  };
   componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
       const ps = new PerfectScrollbar(this.refs.mainPanel);
@@ -92,19 +93,21 @@ class Dashboard extends React.Component {
     return (
       <div className={classes.wrapper}>
         <Sidebar
-          routes={dashboardRoutes}
-          logoText={"Creative Tim"}
+          routes={routes}
+          logoText={"الإبداعية تيم"}
           logo={logo}
           image={this.state.image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
           color={this.state.color}
+          rtlActive
           {...rest}
         />
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
-            routes={dashboardRoutes}
+            routes={routes}
             handleDrawerToggle={this.handleDrawerToggle}
+            rtlActive
             {...rest}
           />
           {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
@@ -119,11 +122,11 @@ class Dashboard extends React.Component {
           <FixedPlugin
             handleImageClick={this.handleImageClick}
             handleColorClick={this.handleColorClick}
-            handleHasImage={this.handleHasImage}
             bgColor={this.state["color"]}
             bgImage={this.state["image"]}
             handleFixedClick={this.handleFixedClick}
             fixedClasses={this.state.fixedClasses}
+            rtlActive
           />
         </div>
       </div>
@@ -131,8 +134,8 @@ class Dashboard extends React.Component {
   }
 }
 
-Dashboard.propTypes = {
+RTL.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(dashboardStyle)(Dashboard);
+export default withStyles(rtlStyle)(RTL);
