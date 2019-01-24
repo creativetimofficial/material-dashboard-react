@@ -64,31 +64,34 @@ const container = {
   marginLeft: "auto"
 };
 
-const card = {
-  display: "inline-block",
-  position: "relative",
-  width: "100%",
-  margin: "25px 0",
-  boxShadow: "0 1px 4px 0 rgba(0, 0, 0, 0.14)",
-  borderRadius: "3px",
-  color: "rgba(0, 0, 0, 0.87)",
-  background: "#fff"
-};
-
 const defaultFont = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   fontWeight: "300",
   lineHeight: "1.5em"
 };
 
-const primaryColor = ["#9c27b0", "#ab47bc", "#8e24aa"];
-const warningColor = ["#ff9800", "#ffa726", "#fb8c00"];
-const dangerColor = ["#f44336", "#ef5350", "#e53935"];
-const successColor = ["#4caf50", "#66bb6a", "#43a047"];
-const infoColor = ["#00acc1", "#26c6da", "#00acc1"];
-const roseColor = ["#e91e63", "#ec407a", "#d81b60"];
-const grayColor = "#999999";
+const primaryColor = ["#9c27b0", "#ab47bc", "#8e24aa", "#af2cc5"];
+const warningColor = ["#ff9800", "#ffa726", "#fb8c00", "#ffa21a"];
+const dangerColor = ["#f44336", "#ef5350", "#e53935", "#f55a4e"];
+const successColor = ["#4caf50", "#66bb6a", "#43a047", "#5cb860"];
+const infoColor = ["#00acc1", "#26c6da", "#00acc1", "#00d3ee"];
+const roseColor = ["#e91e63", "#ec407a", "#d81b60", "#eb3573"];
+const grayColor = [
+  "#999",
+  "#777",
+  "#3C4858",
+  "#AAAAAA",
+  "#D2D2D2",
+  "#DDD",
+  "#b4b4b4",
+  "#555555",
+  "#333",
+  "#a9afbb",
+  "#eee",
+  "#e7e7e7"
+];
 const blackColor = "#000";
+const whiteColor = "#FFF";
 
 const boxShadow = {
   boxShadow:
@@ -184,7 +187,7 @@ const roseCardHeader = {
 const cardActions = {
   margin: "0 20px 10px",
   paddingTop: "10px",
-  borderTop: "1px solid #eeeeee",
+  borderTop: "1px solid " + grayColor[10],
   height: "auto",
   ...defaultFont
 };
@@ -195,17 +198,34 @@ const cardHeader = {
   padding: "15px"
 };
 
+const card = {
+  display: "inline-block",
+  position: "relative",
+  width: "100%",
+  margin: "25px 0",
+  boxShadow: "0 1px 4px 0 rgba(" + hexToRgb(blackColor) + ", 0.14)",
+  borderRadius: "3px",
+  color: "rgba(" + hexToRgb(blackColor) + ", 0.87)",
+  background: whiteColor
+};
+
 const defaultBoxShadow = {
   border: "0",
   borderRadius: "3px",
   boxShadow:
-    "0 10px 20px -12px rgba(0, 0, 0, 0.42), 0 3px 20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
+    "0 10px 20px -12px rgba(" +
+    hexToRgb(blackColor) +
+    ", 0.42), 0 3px 20px 0px rgba(" +
+    hexToRgb(blackColor) +
+    ", 0.12), 0 8px 10px -5px rgba(" +
+    hexToRgb(blackColor) +
+    ", 0.2)",
   padding: "10px 0",
   transition: "all 150ms ease 0s"
 };
 
 const title = {
-  color: "#3C4858",
+  color: grayColor[2],
   textDecoration: "none",
   fontWeight: "300",
   marginTop: "30px",
@@ -213,7 +233,7 @@ const title = {
   minHeight: "32px",
   fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
   "& small": {
-    color: "#777",
+    color: grayColor[1],
     fontWeight: "400",
     lineHeight: "1"
   }
@@ -259,6 +279,7 @@ export {
   roseColor,
   grayColor,
   blackColor,
+  whiteColor,
   primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,

@@ -4,7 +4,8 @@ import {
   infoColor,
   successColor,
   warningColor,
-  dangerColor
+  dangerColor,
+  grayColor
 } from "assets/jss/material-dashboard-react.jsx";
 
 const typographyStyle = {
@@ -20,7 +21,7 @@ const typographyStyle = {
     padding: "10px 20px",
     margin: "0 0 20px",
     fontSize: "17.5px",
-    borderLeft: "5px solid #eee"
+    borderLeft: "5px solid " + grayColor[10]
   },
   quoteText: {
     margin: "0 0 10px",
@@ -30,10 +31,10 @@ const typographyStyle = {
     display: "block",
     fontSize: "80%",
     lineHeight: "1.42857143",
-    color: "#777"
+    color: grayColor[1]
   },
   mutedText: {
-    color: "#777"
+    color: grayColor[1]
   },
   primaryText: {
     color: primaryColor[0]

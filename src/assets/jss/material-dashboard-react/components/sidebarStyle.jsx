@@ -8,7 +8,11 @@ import {
   infoColor,
   successColor,
   warningColor,
-  dangerColor
+  dangerColor,
+  whiteColor,
+  grayColor,
+  blackColor,
+  hexToRgb
 } from "assets/jss/material-dashboard-react.jsx";
 
 const sidebarStyle = theme => ({
@@ -68,7 +72,7 @@ const sidebarStyle = theme => ({
       height: "1px",
       right: "15px",
       width: "calc(100% - 30px)",
-      backgroundColor: "rgba(180, 180, 180, 0.3)"
+      backgroundColor: "rgba(" + hexToRgb(grayColor[6]) + ", 0.3)"
     }
   },
   logoLink: {
@@ -83,7 +87,7 @@ const sidebarStyle = theme => ({
     textDecoration: "none",
     backgroundColor: "transparent",
     "&,&:hover": {
-      color: "#FFFFFF"
+      color: whiteColor
     }
   },
   logoLinkRTL: {
@@ -120,7 +124,7 @@ const sidebarStyle = theme => ({
       height: "100%",
       content: '""',
       display: "block",
-      background: "#000",
+      background: blackColor,
       opacity: ".8"
     }
   },
@@ -138,7 +142,7 @@ const sidebarStyle = theme => ({
     display: "block",
     textDecoration: "none",
     "&:hover,&:focus,&:visited,&": {
-      color: "#FFFFFF"
+      color: whiteColor
     }
   },
   itemLink: {
@@ -161,7 +165,7 @@ const sidebarStyle = theme => ({
     marginRight: "15px",
     textAlign: "center",
     verticalAlign: "middle",
-    color: "rgba(255, 255, 255, 0.8)"
+    color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)"
   },
   itemIconRTL: {
     marginRight: "3px",
@@ -173,13 +177,13 @@ const sidebarStyle = theme => ({
     margin: "0",
     lineHeight: "30px",
     fontSize: "14px",
-    color: "#FFFFFF"
+    color: whiteColor
   },
   itemTextRTL: {
     textAlign: "right"
   },
   whiteFont: {
-    color: "#FFFFFF"
+    color: whiteColor
   },
   purple: {
     backgroundColor: primaryColor[0],
@@ -192,41 +196,89 @@ const sidebarStyle = theme => ({
   blue: {
     backgroundColor: infoColor[0],
     boxShadow:
-      "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)",
+      "0 12px 20px -10px rgba(" +
+      hexToRgb(infoColor[0]) +
+      ",.28), 0 4px 20px 0 rgba(" +
+      hexToRgb(blackColor) +
+      ",.12), 0 7px 8px -5px rgba(" +
+      hexToRgb(infoColor[0]) +
+      ",.2)",
     "&:hover": {
       backgroundColor: infoColor[0],
       boxShadow:
-        "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)"
+        "0 12px 20px -10px rgba(" +
+        hexToRgb(infoColor[0]) +
+        ",.28), 0 4px 20px 0 rgba(" +
+        hexToRgb(blackColor) +
+        ",.12), 0 7px 8px -5px rgba(" +
+        hexToRgb(infoColor[0]) +
+        ",.2)"
     }
   },
   green: {
     backgroundColor: successColor[0],
     boxShadow:
-      "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)",
+      "0 12px 20px -10px rgba(" +
+      hexToRgb(successColor[0]) +
+      ",.28), 0 4px 20px 0 rgba(" +
+      hexToRgb(blackColor) +
+      ",.12), 0 7px 8px -5px rgba(" +
+      hexToRgb(successColor[0]) +
+      ",.2)",
     "&:hover": {
       backgroundColor: successColor[0],
       boxShadow:
-        "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)"
+        "0 12px 20px -10px rgba(" +
+        hexToRgb(successColor[0]) +
+        ",.28), 0 4px 20px 0 rgba(" +
+        hexToRgb(blackColor) +
+        ",.12), 0 7px 8px -5px rgba(" +
+        hexToRgb(successColor[0]) +
+        ",.2)"
     }
   },
   orange: {
     backgroundColor: warningColor[0],
     boxShadow:
-      "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)",
+      "0 12px 20px -10px rgba(" +
+      hexToRgb(warningColor[0]) +
+      ",.28), 0 4px 20px 0 rgba(" +
+      hexToRgb(blackColor) +
+      ",.12), 0 7px 8px -5px rgba(" +
+      hexToRgb(warningColor[0]) +
+      ",.2)",
     "&:hover": {
       backgroundColor: warningColor[0],
       boxShadow:
-        "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)"
+        "0 12px 20px -10px rgba(" +
+        hexToRgb(warningColor[0]) +
+        ",.28), 0 4px 20px 0 rgba(" +
+        hexToRgb(blackColor) +
+        ",.12), 0 7px 8px -5px rgba(" +
+        hexToRgb(warningColor[0]) +
+        ",.2)"
     }
   },
   red: {
     backgroundColor: dangerColor[0],
     boxShadow:
-      "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)",
+      "0 12px 20px -10px rgba(" +
+      hexToRgb(dangerColor[0]) +
+      ",.28), 0 4px 20px 0 rgba(" +
+      hexToRgb(blackColor) +
+      ",.12), 0 7px 8px -5px rgba(" +
+      hexToRgb(dangerColor[0]) +
+      ",.2)",
     "&:hover": {
       backgroundColor: dangerColor[0],
       boxShadow:
-        "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)"
+        "0 12px 20px -10px rgba(" +
+        hexToRgb(dangerColor[0]) +
+        ",.28), 0 4px 20px 0 rgba(" +
+        hexToRgb(blackColor) +
+        ",.12), 0 7px 8px -5px rgba(" +
+        hexToRgb(dangerColor[0]) +
+        ",.2)"
     }
   },
   sidebarWrapper: {

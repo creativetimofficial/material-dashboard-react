@@ -1,6 +1,7 @@
 import {
   defaultFont,
-  dangerColor
+  dangerColor,
+  whiteColor
 } from "assets/jss/material-dashboard-react.jsx";
 
 import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
@@ -20,7 +21,7 @@ const headerLinksStyle = theme => ({
       width: "60%",
       marginTop: "40px",
       "& input": {
-        color: "#FFFFFF"
+        color: whiteColor
       }
     }
   },
@@ -75,11 +76,11 @@ const headerLinksStyle = theme => ({
     [theme.breakpoints.up("md")]: {
       position: "absolute",
       top: "2px",
-      border: "1px solid #FFF",
+      border: "1px solid " + whiteColor,
       right: "4px",
       fontSize: "9px",
       background: dangerColor[0],
-      color: "#FFFFFF",
+      color: whiteColor,
       minWidth: "16px",
       height: "16px",
       borderRadius: "10px",

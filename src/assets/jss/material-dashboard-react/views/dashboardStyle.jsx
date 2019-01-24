@@ -1,4 +1,9 @@
-import { successColor } from "assets/jss/material-dashboard-react.jsx";
+import {
+  successColor,
+  whiteColor,
+  grayColor,
+  hexToRgb
+} from "assets/jss/material-dashboard-react.jsx";
 
 const dashboardStyle = {
   successText: {
@@ -9,7 +14,7 @@ const dashboardStyle = {
     height: "16px"
   },
   stats: {
-    color: "#999999",
+    color: grayColor[0],
     display: "inline-flex",
     fontSize: "12px",
     lineHeight: "22px",
@@ -30,7 +35,7 @@ const dashboardStyle = {
     }
   },
   cardCategory: {
-    color: "#999999",
+    color: grayColor[0],
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
@@ -38,14 +43,14 @@ const dashboardStyle = {
     marginBottom: "0"
   },
   cardCategoryWhite: {
-    color: "rgba(255,255,255,.62)",
+    color: "rgba(" + hexToRgb(whiteColor) + ",.62)",
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
     marginBottom: "0"
   },
   cardTitle: {
-    color: "#3C4858",
+    color: grayColor[2],
     marginTop: "0px",
     minHeight: "auto",
     fontWeight: "300",
@@ -53,13 +58,13 @@ const dashboardStyle = {
     marginBottom: "3px",
     textDecoration: "none",
     "& small": {
-      color: "#777",
+      color: grayColor[1],
       fontWeight: "400",
       lineHeight: "1"
     }
   },
   cardTitleWhite: {
-    color: "#FFFFFF",
+    color: whiteColor,
     marginTop: "0px",
     minHeight: "auto",
     fontWeight: "300",
@@ -67,7 +72,7 @@ const dashboardStyle = {
     marginBottom: "3px",
     textDecoration: "none",
     "& small": {
-      color: "#777",
+      color: grayColor[1],
       fontWeight: "400",
       lineHeight: "1"
     }

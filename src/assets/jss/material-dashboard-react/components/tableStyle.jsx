@@ -29,7 +29,7 @@ const tableStyle = theme => ({
     color: roseColor[0]
   },
   grayTableHeader: {
-    color: grayColor
+    color: grayColor[0]
   },
   table: {
     marginBottom: "0",
