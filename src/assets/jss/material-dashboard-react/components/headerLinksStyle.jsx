@@ -78,7 +78,7 @@ const headerLinksStyle = theme => ({
       border: "1px solid #FFF",
       right: "4px",
       fontSize: "9px",
-      background: dangerColor,
+      background: dangerColor[0],
       color: "#FFFFFF",
       minWidth: "16px",
       height: "16px",

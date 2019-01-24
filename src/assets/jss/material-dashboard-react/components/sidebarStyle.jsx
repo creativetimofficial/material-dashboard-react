@@ -182,49 +182,49 @@ const sidebarStyle = theme => ({
     color: "#FFFFFF"
   },
   purple: {
-    backgroundColor: primaryColor,
+    backgroundColor: primaryColor[0],
     ...primaryBoxShadow,
     "&:hover": {
-      backgroundColor: primaryColor,
+      backgroundColor: primaryColor[0],
       ...primaryBoxShadow
     }
   },
   blue: {
-    backgroundColor: infoColor,
+    backgroundColor: infoColor[0],
     boxShadow:
       "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)",
     "&:hover": {
-      backgroundColor: infoColor,
+      backgroundColor: infoColor[0],
       boxShadow:
         "0 12px 20px -10px rgba(0,188,212,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(0,188,212,.2)"
     }
   },
   green: {
-    backgroundColor: successColor,
+    backgroundColor: successColor[0],
     boxShadow:
       "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)",
     "&:hover": {
-      backgroundColor: successColor,
+      backgroundColor: successColor[0],
       boxShadow:
         "0 12px 20px -10px rgba(76,175,80,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(76,175,80,.2)"
     }
   },
   orange: {
-    backgroundColor: warningColor,
+    backgroundColor: warningColor[0],
     boxShadow:
       "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)",
     "&:hover": {
-      backgroundColor: warningColor,
+      backgroundColor: warningColor[0],
       boxShadow:
         "0 12px 20px -10px rgba(255,152,0,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(255,152,0,.2)"
     }
   },
   red: {
-    backgroundColor: dangerColor,
+    backgroundColor: dangerColor[0],
     boxShadow:
       "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)",
     "&:hover": {
-      backgroundColor: dangerColor,
+      backgroundColor: dangerColor[0],
       boxShadow:
         "0 12px 20px -10px rgba(244,67,54,.28), 0 4px 20px 0 rgba(0,0,0,.12), 0 7px 8px -5px rgba(244,67,54,.2)"
     }

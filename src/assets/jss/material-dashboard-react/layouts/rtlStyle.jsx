@@ -9,7 +9,7 @@ const appStyle = theme => ({
     position: "relative",
     top: "0",
     height: "100vh",
-    direction: "rtl",
+    direction: "rtl"
   },
   mainPanel: {
     [theme.breakpoints.up("md")]: {

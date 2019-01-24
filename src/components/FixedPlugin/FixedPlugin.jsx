@@ -24,7 +24,11 @@ class FixedPlugin extends Component {
   }
   render() {
     return (
-      <div className={classnames("fixed-plugin",{"rtl-fixed-plugin": this.props.rtlActive})}>
+      <div
+        className={classnames("fixed-plugin", {
+          "rtl-fixed-plugin": this.props.rtlActive
+        })}
+      >
         <div id="fixedPluginClasses" className={this.props.fixedClasses}>
           <div onClick={this.handleClick}>
             <i className="fa fa-cog fa-2x" />

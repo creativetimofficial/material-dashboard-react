@@ -41,12 +41,12 @@ const tasksStyle = {
   },
   edit: {
     backgroundColor: "transparent",
-    color: primaryColor,
+    color: primaryColor[0],
     boxShadow: "none"
   },
   close: {
     backgroundColor: "transparent",
-    color: dangerColor,
+    color: dangerColor[0],
     boxShadow: "none"
   }
 };

@@ -23,7 +23,7 @@ import logo from "assets/img/reactlogo.png";
 const switchRoutes = (
   <Switch>
     {routes.map((prop, key) => {
-      if (prop.layout === "/rtl"){
+      if (prop.layout === "/rtl") {
         return (
           <Route
             path={prop.layout + prop.path}

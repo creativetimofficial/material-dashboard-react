@@ -1,15 +1,14 @@
 ## [1.6.0] 2019-01-31
 ### Nice stuff
-- Added RTL support
+- [Added RTL support](https://github.com/creativetimofficial/material-dashboard-react/issues/16)
 ### Bug Fixing
 - [Added new script for npm](https://github.com/creativetimofficial/material-dashboard-react/issues/69)
 - Changed our buggy routing system, now it should work flawlessly, for more info, please refer to our [live docs here](https://demos.creative-tim.com/material-dashboard-react/#/documentation/routing-system)
+- [https://github.com/creativetimofficial/material-dashboard-react/issues/67](https://github.com/creativetimofficial/material-dashboard-react/issues/67)
+- [https://github.com/creativetimofficial/material-dashboard-react/issues/68](https://github.com/creativetimofficial/material-dashboard-react/issues/68)
+- [https://github.com/creativetimofficial/material-dashboard-react/issues/66](https://github.com/creativetimofficial/material-dashboard-react/issues/66)
 ### Major style changes
-- **src/assets/css/material-dashboard-react.css**(added styles for the new component, FixedPlugin)
-- **src/assets/jss/material-dashboard-react/components/customInputStyle.jsx**
-- **src/assets/jss/material-dashboard-react/components/sidebarStyle.jsx**
-- **src/assets/jss/material-dashboard-react/layouts/rtlStyle.jsx**(new style file for the new layout)
-- **src/assets/jss/material-dashboard-react/views/rtlStyle.jsx**(new style file for the new page)
+- Almost all styles have been changed due to new components or solved issues
 ### Major components changes
 - Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
 - **src/index.js**

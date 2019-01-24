@@ -36,19 +36,19 @@ const typographyStyle = {
     color: "#777"
   },
   primaryText: {
-    color: primaryColor
+    color: primaryColor[0]
   },
   infoText: {
-    color: infoColor
+    color: infoColor[0]
   },
   successText: {
-    color: successColor
+    color: successColor[0]
   },
   warningText: {
-    color: warningColor
+    color: warningColor[0]
   },
   dangerText: {
-    color: dangerColor
+    color: dangerColor[0]
   }
 };
 

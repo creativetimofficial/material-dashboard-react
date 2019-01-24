@@ -1,8 +1,8 @@
 import { successColor } from "assets/jss/material-dashboard-react.jsx";
 
-const dashboardStyle = {
+const rtlStyle = {
   successText: {
-    color: successColor
+    color: successColor[0]
   },
   upArrowCardCategory: {
     width: "16px",
@@ -74,4 +74,4 @@ const dashboardStyle = {
   }
 };
 
-export default dashboardStyle;
+export default rtlStyle;

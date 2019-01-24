@@ -2,7 +2,7 @@ import { successColor } from "assets/jss/material-dashboard-react.jsx";
 
 const dashboardStyle = {
   successText: {
-    color: successColor
+    color: successColor[0]
   },
   upArrowCardCategory: {
     width: "16px",

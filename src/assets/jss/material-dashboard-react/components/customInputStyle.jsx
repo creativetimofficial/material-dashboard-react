@@ -17,17 +17,17 @@ const customInputStyle = {
       borderWidth: "1px !important"
     },
     "&:after": {
-      borderColor: primaryColor
+      borderColor: primaryColor[0]
     }
   },
   underlineError: {
     "&:after": {
-      borderColor: dangerColor
+      borderColor: dangerColor[0]
     }
   },
   underlineSuccess: {
     "&:after": {
-      borderColor: successColor
+      borderColor: successColor[0]
     }
   },
   labelRoot: {
@@ -38,10 +38,10 @@ const customInputStyle = {
     lineHeight: "1.42857"
   },
   labelRootError: {
-    color: dangerColor
+    color: dangerColor[0]
   },
   labelRootSuccess: {
-    color: successColor
+    color: successColor[0]
   },
   feedback: {
     position: "absolute",

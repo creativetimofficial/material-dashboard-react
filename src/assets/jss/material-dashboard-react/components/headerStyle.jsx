@@ -50,27 +50,27 @@ const headerStyle = theme => ({
     top: "8px"
   },
   primary: {
-    backgroundColor: primaryColor,
+    backgroundColor: primaryColor[0],
     color: "#FFFFFF",
     ...defaultBoxShadow
   },
   info: {
-    backgroundColor: infoColor,
+    backgroundColor: infoColor[0],
     color: "#FFFFFF",
     ...defaultBoxShadow
   },
   success: {
-    backgroundColor: successColor,
+    backgroundColor: successColor[0],
     color: "#FFFFFF",
     ...defaultBoxShadow
   },
   warning: {
-    backgroundColor: warningColor,
+    backgroundColor: warningColor[0],
     color: "#FFFFFF",
     ...defaultBoxShadow
   },
   danger: {
-    backgroundColor: dangerColor,
+    backgroundColor: dangerColor[0],
     color: "#FFFFFF",
     ...defaultBoxShadow
   }

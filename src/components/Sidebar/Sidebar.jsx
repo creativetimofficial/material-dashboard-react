@@ -49,15 +49,27 @@ const Sidebar = ({ ...props }) => {
           >
             <ListItem button className={classes.itemLink + listItemClasses}>
               {typeof prop.icon === "string" ? (
-                <Icon className={classNames(classes.itemIcon,whiteFontClasses,{[classes.itemIconRTL]: props.rtlActive})}>
+                <Icon
+                  className={classNames(classes.itemIcon, whiteFontClasses, {
+                    [classes.itemIconRTL]: props.rtlActive
+                  })}
+                >
                   {prop.icon}
                 </Icon>
               ) : (
-                <prop.icon className={classNames(classes.itemIcon,whiteFontClasses,{[classes.itemIconRTL]: props.rtlActive})} />
+                <prop.icon
+                  className={classNames(classes.itemIcon, whiteFontClasses, {
+                    [classes.itemIconRTL]: props.rtlActive
+                  })}
+                />
               )}
               <ListItemText
-                primary={props.rtlActive ? prop.sidebarRTLName:prop.sidebarName}
-                className={classNames(classes.itemText,whiteFontClasses,{[classes.itemTextRTL]: props.rtlActive})}
+                primary={
+                  props.rtlActive ? prop.sidebarRTLName : prop.sidebarName
+                }
+                className={classNames(classes.itemText, whiteFontClasses, {
+                  [classes.itemTextRTL]: props.rtlActive
+                })}
                 disableTypography={true}
               />
             </ListItem>
@@ -68,7 +80,12 @@ const Sidebar = ({ ...props }) => {
   );
   var brand = (
     <div className={classes.logo}>
-      <a href="https://www.creative-tim.com" className={classNames(classes.logoLink,{[classes.logoLinkRTL]: props.rtlActive})}>
+      <a
+        href="https://www.creative-tim.com"
+        className={classNames(classes.logoLink, {
+          [classes.logoLinkRTL]: props.rtlActive
+        })}
+      >
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
@@ -81,10 +98,12 @@ const Sidebar = ({ ...props }) => {
       <Hidden mdUp implementation="css">
         <Drawer
           variant="temporary"
-          anchor={props.rtlActive ? "left":"right"}
+          anchor={props.rtlActive ? "left" : "right"}
           open={props.open}
           classes={{
-            paper: classNames(classes.drawerPaper,{[classes.drawerPaperRTL]:props.rtlActive})
+            paper: classNames(classes.drawerPaper, {
+              [classes.drawerPaperRTL]: props.rtlActive
+            })
           }}
           onClose={props.handleDrawerToggle}
           ModalProps={{
@@ -93,9 +112,7 @@ const Sidebar = ({ ...props }) => {
         >
           {brand}
           <div className={classes.sidebarWrapper}>
-            {
-              props.rtlActive ? (<RTLHeaderLinks />):(<HeaderLinks />)
-            }
+            {props.rtlActive ? <RTLHeaderLinks /> : <HeaderLinks />}
             {links}
           </div>
           {image !== undefined ? (
@@ -108,11 +125,13 @@ const Sidebar = ({ ...props }) => {
       </Hidden>
       <Hidden smDown implementation="css">
         <Drawer
-          anchor={props.rtlActive ? "right":"left"}
+          anchor={props.rtlActive ? "right" : "left"}
           variant="permanent"
           open
           classes={{
-            paper: classNames(classes.drawerPaper,{[classes.drawerPaperRTL]:props.rtlActive})
+            paper: classNames(classes.drawerPaper, {
+              [classes.drawerPaperRTL]: props.rtlActive
+            })
           }}
         >
           {brand}
