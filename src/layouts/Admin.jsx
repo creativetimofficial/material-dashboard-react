@@ -46,21 +46,6 @@ class Dashboard extends React.Component {
       fixedClasses: "dropdown show",
       mobileOpen: false
     };
-<<<<<<< HEAD:src/layouts/Dashboard/Dashboard.jsx
-
-    this.handleImageClick = this.handleImageClick.bind(this);
-    this.handleColorClick = this.handleColorClick.bind(this);
-    this.handleFixedClick = this.handleFixedClick.bind(this);
-    this.resizeFunction = this.resizeFunction.bind(this);
-  }
-  handleImageClick(image) {
-    this.setState({ image: image });
-  }
-  handleColorClick(color) {
-    this.setState({ color: color });
-  }
-  handleFixedClick() {
-=======
   }
   handleImageClick = image => {
     this.setState({ image: image });
@@ -69,17 +54,12 @@ class Dashboard extends React.Component {
     this.setState({ color: color });
   };
   handleFixedClick = () => {
->>>>>>> v1.6.0:src/layouts/Admin.jsx
     if (this.state.fixedClasses === "dropdown") {
       this.setState({ fixedClasses: "dropdown show" });
     } else {
       this.setState({ fixedClasses: "dropdown" });
     }
-<<<<<<< HEAD:src/layouts/Dashboard/Dashboard.jsx
-  }
-=======
   };
->>>>>>> v1.6.0:src/layouts/Admin.jsx
   handleDrawerToggle = () => {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
@@ -140,10 +120,6 @@ class Dashboard extends React.Component {
           <FixedPlugin
             handleImageClick={this.handleImageClick}
             handleColorClick={this.handleColorClick}
-<<<<<<< HEAD:src/layouts/Dashboard/Dashboard.jsx
-            handleHasImage={this.handleHasImage}
-=======
->>>>>>> v1.6.0:src/layouts/Admin.jsx
             bgColor={this.state["color"]}
             bgImage={this.state["image"]}
             handleFixedClick={this.handleFixedClick}
