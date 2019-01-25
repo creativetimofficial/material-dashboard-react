@@ -193,7 +193,8 @@ class Inputs extends React.Component {
             rel="noopener noreferrer"
           >
             material-ui input documentation
-          </a>,{" "}
+          </a>
+          ,{" "}
           <a
             href="https://material-ui-next.com/api/input-label/"
             target="_blank"
@@ -208,7 +209,8 @@ class Inputs extends React.Component {
             rel="noopener noreferrer"
           >
             material-ui form controll documentation
-          </a>.
+          </a>
+          .
         </p>
       </div>
     );

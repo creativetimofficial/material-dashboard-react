@@ -140,7 +140,8 @@ class Tutorial extends React.Component {
           Copyright (c) 2017{" "}
           <a href="https://creative-tim.com/" target="_blank">
             Creative Tim
-          </a>.
+          </a>
+          .
         </p>
         <p>
           Permission is hereby granted, free of charge, to any person obtaining
@@ -177,7 +178,8 @@ class Tutorial extends React.Component {
             rel="noopener noreferrer"
           >
             create-react-app
-          </a>.
+          </a>
+          .
         </p>
         <ul>
           <li>
@@ -330,7 +332,8 @@ class Tutorial extends React.Component {
               rel="noopener noreferrer"
             >
               Google API Console
-            </a>.
+            </a>
+            .
           </li>
           <li>Create or select a project.</li>
           <li>Click Continue to enable the API and any related services.</li>
@@ -373,7 +376,8 @@ class Tutorial extends React.Component {
             rel="noopener noreferrer"
           >
             link
-          </a>.
+          </a>
+          .
         </p>
         <h2>Files and Folders structure</h2>
         <SyntaxHighlighter language="jsx" style={prism}>

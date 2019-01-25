@@ -38,16 +38,16 @@ class Sidebar extends React.Component {
           to it with one of the <code>purple</code>, <code>blue</code>,{" "}
           <code>green</code>, <code>orange</code>, <code>red</code>), option to
           set a background image (<code>image</code>), a option to set the brand
-          text (<code>logoText</code>), a option to set the logo image (<code>
-            logo
-          </code>) and a option to set the routes / links to be displayed in it
-          (<code>routes</code>).
+          text (<code>logoText</code>), a option to set the logo image (
+          <code>logo</code>) and a option to set the routes / links to be
+          displayed in it (<code>routes</code>).
         </p>
         <p>
           For more info about the links, please read the{" "}
           <Link to={"/documentation/routing-system"}>
             routing system section
-          </Link>.
+          </Link>
+          .
         </p>
         <h2>Example of code</h2>
         <p>
@@ -71,7 +71,8 @@ class Sidebar extends React.Component {
             rel="noopener noreferrer"
           >
             official material-ui documentation
-          </a>.
+          </a>
+          .
         </p>
       </div>
     );

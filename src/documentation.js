@@ -4,6 +4,7 @@ import RoutingSystem from "layouts/Documentation/Sections/RoutingSystem.jsx";
 import Variables from "layouts/Documentation/Sections/Variables.jsx";
 import Styles from "layouts/Documentation/Sections/Styles.jsx";
 import LintCommands from "layouts/Documentation/Sections/LintCommands.jsx";
+import BuildTools from "layouts/Documentation/Sections/BuildTools.jsx";
 
 // Components
 import Buttons from "layouts/Documentation/Sections/Buttons.jsx";
@@ -49,6 +50,11 @@ const docsRoutes = [
         path: "/documentation/lint-commands",
         name: "Lint",
         component: LintCommands
+      },
+      {
+        path: "/documentation/build-tools",
+        name: "Build Tools",
+        component: BuildTools
       }
     ]
   },

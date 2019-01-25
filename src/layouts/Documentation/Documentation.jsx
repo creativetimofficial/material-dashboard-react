@@ -5,7 +5,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import DocHeader from "./DocHeader/DocHeader";
 import DocSidebar from "./DocSidebar/DocSidebar";
 
-import docRoutes from "routes/documentation.jsx";
+import docRoutes from "documentation.js";
 
 class Documentation extends React.Component {
   componentDidUpdate(e) {

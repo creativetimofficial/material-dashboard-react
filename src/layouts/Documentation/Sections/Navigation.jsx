@@ -41,7 +41,8 @@ class Navigation extends React.Component {
             rel="noopener noreferrer"
           >
             official material-ui documentation
-          </a>.
+          </a>
+          .
         </p>
       </div>
     );

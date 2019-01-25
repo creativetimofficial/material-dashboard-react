@@ -140,7 +140,8 @@ class Buttons extends React.Component {
             rel="noopener noreferrer"
           >
             material-ui buttons section
-          </a>.
+          </a>
+          .
         </p>
       </div>
     );

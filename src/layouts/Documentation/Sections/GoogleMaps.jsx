@@ -139,7 +139,8 @@ class GoogleMaps extends React.Component {
             rel="noopener noreferrer"
           >
             react-google-maps
-          </a>. For props, please check the given link.
+          </a>
+          . For props, please check the given link.
         </p>
         <CustomSkinMap
           googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr-tgUtpm8cyjYVQDrjs8YpZH7zBNWPuY"

@@ -206,7 +206,8 @@ class CheckboxRadio extends React.Component {
           rel="noopener noreferrer"
         >
           material-ui radio documentation
-        </a>.
+        </a>
+        .
       </div>
     );
   }

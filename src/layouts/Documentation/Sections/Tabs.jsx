@@ -96,10 +96,12 @@ function DemoTasks({ ...props }) {
       <h1>CustomTabs</h1>
       <h2>Styles</h2>
       <p>
-        You will find the styles for this component in<br />{" "}
+        You will find the styles for this component in
+        <br />{" "}
         <code>
           src/assets/jss/material-dashboard-react/components/customTabsStyle.jsx
-        </code>.
+        </code>
+        .
       </p>
       <h2>Example</h2>
       <Tabs

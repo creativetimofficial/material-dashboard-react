@@ -99,7 +99,8 @@ class Tooltips extends React.Component {
             rel="noopener noreferrer"
           >
             official material-ui documentation
-          </a>.
+          </a>
+          .
         </p>
       </div>
     );

@@ -257,7 +257,8 @@ class Dropdown extends React.Component {
           rel="noopener noreferrer"
         >
           material-ui documentation
-        </a>.
+        </a>
+        .
       </div>
     );
   }

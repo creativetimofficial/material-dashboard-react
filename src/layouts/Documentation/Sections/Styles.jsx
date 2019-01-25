@@ -46,8 +46,8 @@ class Styles extends React.Component {
             rel="noopener noreferrer"
           >
             Material UI
-          </a>, we've used JSS syntax to style (restyle) the material ui
-          components.
+          </a>
+          , we've used JSS syntax to style (restyle) the material ui components.
         </p>
         <p>
           A useful link about JSS is{" "}
@@ -57,17 +57,20 @@ class Styles extends React.Component {
             rel="noopener noreferrer"
           >
             this one here
-          </a>.
+          </a>
+          .
         </p>
         <p>
           Material UI offers you 7 ways to override their styles, and as said
-          above, we've decided to go with the third option (<a
+          above, we've decided to go with the third option (
+          <a
             href="https://material-ui-next.com/guides/interoperability/#react-jss"
             target="_blank"
             rel="noopener noreferrer"
           >
             this one here
-          </a>).
+          </a>
+          ).
         </p>
         <p>
           All of the restyled components can be found in{" "}

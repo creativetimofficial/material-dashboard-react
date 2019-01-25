@@ -40,7 +40,7 @@ class Tasks extends React.Component {
     const { classes, tasksIndexes, tasks, rtlActive } = this.props;
     const tableCellClasses = classnames(classes.tableCell, {
       [classes.tableCellRTL]: rtlActive
-    })
+    });
     return (
       <Table className={classes.table}>
         <TableBody>
@@ -59,9 +59,7 @@ class Tasks extends React.Component {
                   }}
                 />
               </TableCell>
-              <TableCell className={tableCellClasses}>
-                {tasks[value]}
-              </TableCell>
+              <TableCell className={tableCellClasses}>{tasks[value]}</TableCell>
               <TableCell className={classes.tableActions}>
                 <Tooltip
                   id="tooltip-top"
