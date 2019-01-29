@@ -9,7 +9,7 @@ import Admin from "layouts/Admin.jsx";
 import RTL from "layouts/RTL.jsx";
 import Documentation from "layouts/Documentation/Documentation.jsx";
 
-import "assets/css/material-dashboard-react.css?v=1.5.0";
+import "assets/css/material-dashboard-react.css?v=1.6.0";
 
 const hist = createBrowserHistory();
 
