@@ -143,7 +143,7 @@ class BuildTools extends React.Component {
                 8,
                 <code className="highlighter-rouge">build-package-css</code>,
                 <code className="highlighter-rouge">
-                  npm run build-package-css
+                  npm run build-package
                 </code>,
                 "This will copy the css file from the assets folder in the dist folder in order for you to publish the dist folder to npm",
                 ""
