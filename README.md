@@ -79,8 +79,10 @@ Within the download you'll find the following directories and files:
 material-dashboard-react
 .
 ├── CHANGELOG.md
+├── ISSUE_TEMPLATE.md
 ├── LICENSE.md
 ├── README.md
+├── bower.json
 ├── documentation
 │   ├── assets
 │   │   ├── css
@@ -94,41 +96,19 @@ material-dashboard-react
 │   ├── index.html
 │   └── manifest.json
 └── src
+    ├── index.js
+    ├── logo.svg
+    ├── routes.js
     ├── assets
     │   ├── css
-    │   │   └── material-dashboard-react.css
     │   ├── github
     │   ├── img
     │   │   └── faces
     │   └── jss
     │       ├── material-dashboard-react
-    │       │   ├── cardImagesStyles.jsx
-    │       │   ├── checkboxAdnRadioStyle.jsx
     │       │   ├── components
-    │       │   │   ├── buttonStyle.jsx
-    │       │   │   ├── cardAvatarStyle.jsx
-    │       │   │   ├── cardBodyStyle.jsx
-    │       │   │   ├── cardFooterStyle.jsx
-    │       │   │   ├── cardHeaderStyle.jsx
-    │       │   │   ├── cardIconStyle.jsx
-    │       │   │   ├── cardStyle.jsx
-    │       │   │   ├── customInputStyle.jsx
-    │       │   │   ├── customTabsStyle.jsx
-    │       │   │   ├── footerStyle.jsx
-    │       │   │   ├── headerLinksStyle.jsx
-    │       │   │   ├── headerStyle.jsx
-    │       │   │   ├── sidebarStyle.jsx
-    │       │   │   ├── snackbarContentStyle.jsx
-    │       │   │   ├── tableStyle.jsx
-    │       │   │   ├── tasksStyle.jsx
-    │       │   │   └── typographyStyle.jsx
-    │       │   ├── dropdownStyle.jsx
     │       │   ├── layouts
-    │       │   │   └── dashboardStyle.jsx
-    │       │   ├── tooltipStyle.jsx
     │       │   └── views
-    │       │       ├── dashboardStyle.jsx
-    │       │       └── iconsStyle.jsx
     │       └── material-dashboard-react.jsx
     ├── components
     │   ├── Card
@@ -144,13 +124,17 @@ material-dashboard-react
     │   │   └── CustomInput.jsx
     │   ├── CustomTabs
     │   │   └── CustomTabs.jsx
+    │   ├── FixedPlugin
+    │   │   └── FixedPlugin.jsx
     │   ├── Footer
     │   │   └── Footer.jsx
     │   ├── Grid
+    │   │   ├── GridContainer.jsx
     │   │   └── GridItem.jsx
     │   ├── Header
     │   │   ├── Header.jsx
-    │   │   └── HeaderLinks.jsx
+    │   │   ├── HeaderLinks.jsx
+    │   │   └── RTLHeaderLinks.jsx
     │   ├── Sidebar
     │   │   └── Sidebar.jsx
     │   ├── Snackbar
@@ -168,14 +152,9 @@ material-dashboard-react
     │       ├── Quote.jsx
     │       ├── Success.jsx
     │       └── Warning.jsx
-    ├── index.js
     ├── layouts
-    │   └── Dashboard
-    │       └── Dashboard.jsx
-    ├── logo.svg
-    ├── routes
-    │   ├── dashboard.jsx
-    │   └── index.jsx
+    │   ├── Admin.jsx
+    │   └── RTL.jsx
     ├── variables
     │   ├── charts.jsx
     │   └── general.jsx
@@ -188,6 +167,8 @@ material-dashboard-react
         │   └── Maps.jsx
         ├── Notifications
         │   └── Notifications.jsx
+        ├── RTLPage
+        │   └── RTLPage.jsx
         ├── TableList
         │   └── TableList.jsx
         ├── Typography
