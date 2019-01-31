@@ -24,6 +24,7 @@
     "reg-keygen-git-hash-plugin": "^0.7.16",
     "reg-notify-github-plugin": "^0.7.19",
     "reg-publish-s3-plugin": "^0.7.18",
+    "reg-notify-slack-plugin": "^0.7.16",
     "reg-suit": "^0.7.17",
     "chai": "^4.0.2",
     "chai-webdriverio": "^0.4.1",
