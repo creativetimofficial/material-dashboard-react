@@ -43,9 +43,9 @@ describe("Map Page", function() {
     }
   });
   it("renders map", function() {
-    browser.checkElement("#map");
+    browser.checkElement("div.App-map-5");
 
-    expect(browser.$("#map").isExisting("div.gm-err-container")).to.equal(
+    expect(browser.$("div.App-map-5").isExisting("div.gm-err-container")).to.equal(
       false
     );
   });
