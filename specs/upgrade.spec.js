@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 describe("Upgrade Page", function() {
   beforeEach(function() {
-    browser.url("http://localhost:3000/upgrade.html");
+    browser.url("./upgrade");
   });
   it("check the page for broken links", async function() {
     const links = browser.$$("a");

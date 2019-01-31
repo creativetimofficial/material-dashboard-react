@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 describe("Icons Page", function() {
   beforeEach(function() {
-    browser.url("http://localhost:3000/icons.html");
+    browser.url("./icons");
   });
   it("check the page for broken links", async function() {
     const links = browser.$$("a");

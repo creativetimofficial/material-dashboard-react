@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 describe("Notifications Page", function() {
   beforeEach(function() {
-    browser.url("http://localhost:3000/notifications.html");
+    browser.url("./notifications");
   });
   it("renders Notifications page", function() {
     var results = browser.checkDocument();
