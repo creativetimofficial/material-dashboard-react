@@ -1,0 +1,25 @@
+{
+    "core": {
+      "workingDir": ".reg",
+      "actualDir": "screenshots/latest",
+      "threshold": 0,
+      "ximgdiff": {
+        "invocationType": "client"
+      },
+      "addIgnore": true,
+      "thresholdRate": 0
+    },
+    "plugins": {
+      "reg-keygen-git-hash-plugin": true,
+      "reg-notify-github-plugin": {
+        "clientId": "BcEBDoAgCADAFzmw1OZziNCxTDdivb+7uG/5SFgqnIP4Dpe82mfoMsXIl0FGrCkCm5DrJ67Pak1Zafw="
+      },
+      "reg-publish-s3-plugin": {
+        "bucketName": "creativetim-testing",
+        "pathPrefix": "react/material-dashboard-free"
+      },
+      "reg-notify-slack-plugin": {
+        "webhookUrl": "https://hooks.slack.com/services/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"
+      }
+    }
+  }
