@@ -13,14 +13,10 @@ const files = `material-dashboard-react
 ├── LICENSE.md
 ├── README.md
 ├── bower.json
+├── package.json
 ├── documentation
 │   ├── assets
-│   │   ├── css
-│   │   ├── img
-│   │   │   └── faces
-│   │   └── js
 │   └── tutorial-components.html
-├── package.json
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
@@ -61,10 +57,10 @@ const files = `material-dashboard-react
     │   ├── Grid
     │   │   ├── GridContainer.jsx
     │   │   └── GridItem.jsx
-    │   ├── Header
-    │   │   ├── Header.jsx
-    │   │   ├── HeaderLinks.jsx
-    │   │   └── RTLHeaderLinks.jsx
+    │   ├── Navbars
+    │   │   ├── AdminNavbarLinks.jsx
+    │   │   ├── Navbar.jsx
+    │   │   └── RTLNavbarLinks.jsx
     │   ├── Sidebar
     │   │   └── Sidebar.jsx
     │   ├── Snackbar
