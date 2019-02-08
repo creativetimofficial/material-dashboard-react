@@ -16,8 +16,8 @@ class RoutingSystem extends React.Component {
           in two places. On place would have been inside our{" "}
           <Link to="/documentation/sidebar">Sidebar</Link> and the onther one
           would be either the{" "}
-          <code className="highlighter-rouge">src/RTL/RTL.jsx</code> layout or
-          the <code className="highlighter-rouge">src/Admin/Admin.jsx</code>{" "}
+          <code className="highlighter-rouge">src/RTL.jsx</code> layout or
+          the <code className="highlighter-rouge">src/Admin.jsx</code>{" "}
           layout. You will find all our demo routes in{" "}
           <code className="highlighter-rouge">src/routes.js</code>
         </p>
@@ -78,18 +78,18 @@ class RoutingSystem extends React.Component {
                 <code className="highlighter-rouge">name</code> (name of your
                 route - this will appear in the{" "}
                 <code className="highlighter-rouge">Sidebar</code> and{" "}
-                <code className="highlighter-rouge">Header</code> components -
+                <code className="highlighter-rouge">Navbar</code> components -
                 example <code className="highlighter-rouge">Dashboard</code>)
               </li>
               <li>
                 <code className="highlighter-rouge">rtlName</code> (name of your
                 route - this will appear in the{" "}
                 <code className="highlighter-rouge">Sidebar</code> and{" "}
-                <code className="highlighter-rouge">Header</code> components -
+                <code className="highlighter-rouge">Navbar</code> components -
                 example <code className="highlighter-rouge">لوحة القيادة</code>{" "}
                 if <code className="highlighter-rouge">rtlActive</code> prop is
                 set on the <code className="highlighter-rouge">Sidebar</code>{" "}
-                and <code className="highlighter-rouge">Header</code>{" "}
+                and <code className="highlighter-rouge">Navbar</code>{" "}
                 components)
               </li>
               <li>

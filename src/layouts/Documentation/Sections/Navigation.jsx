@@ -18,9 +18,9 @@ class Navigation extends React.Component {
         <p>The classic Material UI Appbar was restyled.</p>
         <p>
           You will find this component in{" "}
-          <code>src/components/Header/Header.jsx</code>. In this component there
+          <code>src/components/Navbars/Navbar.jsx</code>. In this component there
           is just the structure of the navbar. The links can be found in{" "}
-          <code>src/components/Header/HeaderLinks.jsx</code>. We've done this
+          <code>src/components/Navbars/AdminNavbarLinks.jsx</code>. We've done this
           because on responsive we want both the links from <code>Navbar</code>{" "}
           and those from <code>Sidebar</code> components to be displayed.
         </p>
