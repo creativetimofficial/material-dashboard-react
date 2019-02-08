@@ -39,7 +39,7 @@
 - `history@4.7.2"`
 - `prop-types@15.6.2`
 ### Updated dependencies
-- `@material-ui/core`                *3.1.0*   →     **3.9.0**
+- `@material-ui/core`                *3.1.0*   →     **3.9.2**
 - `@material-ui/icons`               *3.0.1*   →     **3.0.2**
 - `@types/googlemaps`              *3.30.13*   →   **3.30.16**
 - `ajv`                             *^5.0.0*   →     **6.7.0**
