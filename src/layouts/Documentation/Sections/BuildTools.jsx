@@ -9,10 +9,6 @@ class BuildTools extends React.Component {
         <h1 className="bd-title" id="content">
           Build tools
         </h1>
-        <p className="bd-lead">
-          Learn how to use Black Dashboard Pro React to build your admin theme,
-          compile SCSS, change brand-colors and more.
-        </p>
         <h3 id="change-brand-colors">
           <div>Change brand colors</div>
         </h3>
@@ -20,7 +16,7 @@ class BuildTools extends React.Component {
           <li>
             You will find all the branding colors inside{" "}
             <code className="highlighter-rouge">
-              src/assets/scss/black-dashboard-pro-react/custom/_variables.scss
+              src/assets/jss/material-dashboard-react.jsx
             </code>
             .
           </li>
@@ -127,7 +123,7 @@ class BuildTools extends React.Component {
                 </a>
               ],
               [
-                7,
+                8,
                 <code className="highlighter-rouge">lint:fix</code>,
                 <code className="highlighter-rouge">npm run lint:fix</code>,
                 "Fixes linting errors (it may not solve all the linting errors)",
@@ -140,7 +136,7 @@ class BuildTools extends React.Component {
                 </a>
               ],
               [
-                8,
+                9,
                 <code className="highlighter-rouge">build-package-css</code>,
                 <code className="highlighter-rouge">
                   npm run build-package
@@ -149,7 +145,7 @@ class BuildTools extends React.Component {
                 ""
               ],
               [
-                8,
+                10,
                 <code className="highlighter-rouge">build-package-css</code>,
                 <code className="highlighter-rouge">
                   npm run build-package
