@@ -11,8 +11,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
 // core components
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import RTLHeaderLinks from "components/Header/RTLHeaderLinks.jsx";
+import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.jsx";
+import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.jsx";
 
 import sidebarStyle from "assets/jss/material-dashboard-react/components/sidebarStyle.jsx";
 
@@ -65,7 +65,7 @@ const Sidebar = ({ ...props }) => {
               )}
               <ListItemText
                 primary={
-                  props.rtlActive ? prop.sidebarRTLName : prop.sidebarName
+                  props.rtlActive ? prop.rtlName : prop.name
                 }
                 className={classNames(classes.itemText, whiteFontClasses, {
                   [classes.itemTextRTL]: props.rtlActive
@@ -112,7 +112,7 @@ const Sidebar = ({ ...props }) => {
         >
           {brand}
           <div className={classes.sidebarWrapper}>
-            {props.rtlActive ? <RTLHeaderLinks /> : <HeaderLinks />}
+            {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
             {links}
           </div>
           {image !== undefined ? (
