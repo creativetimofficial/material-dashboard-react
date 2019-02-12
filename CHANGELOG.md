@@ -46,7 +46,7 @@
 - `npm-run-all`                      *4.1.3*   →     **4.1.5**
 - `react`                           *16.5.2*   →    **16.7.0**
 - `react-dom`                       *16.5.2*   →    **16.7.0**
-- `react-scripts`                    *1.1.5*   →     **2.1.3**
+- `react-scripts`                    *1.1.5*   →     **2.1.4**
 - `react-swipeable-views`          *0.12.17*   →    **0.13.1**
 - `eslint-config-prettier`           *3.0.1*   →     **3.6.0**
 - `eslint-plugin-prettier`           *2.6.2*   →     **3.0.1**
