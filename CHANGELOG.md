@@ -35,6 +35,7 @@
 - `eslint` (because of the upgrade of `react-scripts`)
 - `eslint-plugin-react` (because of the upgrade of `react-scripts`)
 - `prettier` (because of the upgrade of `react-scripts`)
+- `npm-run-all`
 ### Added dependencies
 - `history@4.7.2"`
 - `prop-types@15.6.2`
@@ -42,13 +43,14 @@
 - `@material-ui/core`                *3.1.0*   →     **3.9.2**
 - `@material-ui/icons`               *3.0.1*   →     **3.0.2**
 - `@types/googlemaps`              *3.30.13*   →   **3.30.16**
-- `ajv`                             *^5.0.0*   →     **6.7.0**
-- `npm-run-all`                      *4.1.3*   →     **4.1.5**
-- `react`                           *16.5.2*   →    **16.7.0**
-- `react-dom`                       *16.5.2*   →    **16.7.0**
-- `react-scripts`                    *1.1.5*   →     **2.1.4**
+- `ajv`                             *^5.0.0*   →     **6.9.1**
+- `prop-types`                      *15.6.2*   →    **15.7.1**
+- `react`                           *16.5.2*   →    **16.8.1**
+- `react-chartist`                  *0.13.1*   →    **0.13.3**
+- `react-dom`                       *16.5.2*   →    **16.8.1**
+- `react-scripts`                    *1.1.5*   →     **2.1.5**
 - `react-swipeable-views`          *0.12.17*   →    **0.13.1**
-- `eslint-config-prettier`           *3.0.1*   →     **3.6.0**
+- `eslint-config-prettier`           *3.0.1*   →     **4.0.0**
 - `eslint-plugin-prettier`           *2.6.2*   →     **3.0.1**
 
 ## [1.5.0] 2018-09-21
