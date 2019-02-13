@@ -34,11 +34,11 @@
 - `babel-eslint` (because of the upgrade of `react-scripts`)
 - `eslint` (because of the upgrade of `react-scripts`)
 - `eslint-plugin-react` (because of the upgrade of `react-scripts`)
-- `prettier` (because of the upgrade of `react-scripts`)
 - `npm-run-all`
 ### Added dependencies
-- `history@4.7.2"`
+- `history4.7.2`
 - `prop-types@15.6.2`
+- `prettier@1.16.4`
 ### Updated dependencies
 - `@material-ui/core`                *3.1.0*   →     **3.9.2**
 - `@material-ui/icons`               *3.0.1*   →     **3.0.2**
