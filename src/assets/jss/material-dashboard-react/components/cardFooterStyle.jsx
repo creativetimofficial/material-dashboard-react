@@ -1,3 +1,5 @@
+import { grayColor } from "assets/jss/material-dashboard-react.jsx";
+
 const cardFooterStyle = {
   cardFooter: {
     padding: "0",
@@ -19,7 +21,7 @@ const cardFooterStyle = {
     backgroundColor: "transparent"
   },
   cardFooterStats: {
-    borderTop: "1px solid #eee",
+    borderTop: "1px solid " + grayColor[10],
     marginTop: "20px",
     "& svg": {
       position: "relative",
@@ -38,7 +40,7 @@ const cardFooterStyle = {
     }
   },
   cardFooterChart: {
-    borderTop: "1px solid #eee"
+    borderTop: "1px solid " + grayColor[10]
   }
 };
 

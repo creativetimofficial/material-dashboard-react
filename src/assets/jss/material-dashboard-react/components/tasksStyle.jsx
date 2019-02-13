@@ -1,7 +1,8 @@
 import {
   defaultFont,
   primaryColor,
-  dangerColor
+  dangerColor,
+  grayColor
 } from "assets/jss/material-dashboard-react.jsx";
 import tooltipStyle from "assets/jss/material-dashboard-react/tooltipStyle.jsx";
 import checkboxAdnRadioStyle from "assets/jss/material-dashboard-react/checkboxAdnRadioStyle.jsx";
@@ -14,7 +15,7 @@ const tasksStyle = {
   },
   tableRow: {
     position: "relative",
-    borderBottom: "1px solid #dddddd"
+    borderBottom: "1px solid " + grayColor[5]
   },
   tableActions: {
     display: "flex",
@@ -30,6 +31,9 @@ const tasksStyle = {
     lineHeight: "1.42857143",
     fontSize: "14px"
   },
+  tableCellRTL: {
+    textAlign: "right"
+  },
   tableActionButton: {
     width: "27px",
     height: "27px",
@@ -41,12 +45,12 @@ const tasksStyle = {
   },
   edit: {
     backgroundColor: "transparent",
-    color: primaryColor,
+    color: primaryColor[0],
     boxShadow: "none"
   },
   close: {
     backgroundColor: "transparent",
-    color: dangerColor,
+    color: dangerColor[0],
     boxShadow: "none"
   }
 };

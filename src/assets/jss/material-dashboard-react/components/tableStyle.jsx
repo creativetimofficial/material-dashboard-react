@@ -11,25 +11,25 @@ import {
 
 const tableStyle = theme => ({
   warningTableHeader: {
-    color: warningColor
+    color: warningColor[0]
   },
   primaryTableHeader: {
-    color: primaryColor
+    color: primaryColor[0]
   },
   dangerTableHeader: {
-    color: dangerColor
+    color: dangerColor[0]
   },
   successTableHeader: {
-    color: successColor
+    color: successColor[0]
   },
   infoTableHeader: {
-    color: infoColor
+    color: infoColor[0]
   },
   roseTableHeader: {
-    color: roseColor
+    color: roseColor[0]
   },
   grayTableHeader: {
-    color: grayColor
+    color: grayColor[0]
   },
   table: {
     marginBottom: "0",

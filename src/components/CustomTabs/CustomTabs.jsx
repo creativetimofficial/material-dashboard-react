@@ -19,11 +19,9 @@ class CustomTabs extends React.Component {
   state = {
     value: 0
   };
-
   handleChange = (event, value) => {
     this.setState({ value });
   };
-
   render() {
     const {
       classes,
@@ -51,7 +49,7 @@ class CustomTabs extends React.Component {
               indicator: classes.displayNone,
               scrollButtons: classes.displayNone
             }}
-            scrollable
+            variant="scrollable"
             scrollButtons="auto"
           >
             {tabs.map((prop, key) => {

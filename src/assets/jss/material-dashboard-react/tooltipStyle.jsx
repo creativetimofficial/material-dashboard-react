@@ -1,3 +1,5 @@
+import { blackColor, hexToRgb } from "assets/jss/material-dashboard-react.jsx";
+
 const tooltipStyle = {
   tooltip: {
     padding: "10px 15px",
@@ -6,7 +8,13 @@ const tooltipStyle = {
     border: "none",
     borderRadius: "3px",
     boxShadow:
-      "0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2)",
+      "0 8px 10px 1px rgba(" +
+      hexToRgb(blackColor) +
+      ", 0.14), 0 3px 14px 2px rgba(" +
+      hexToRgb(blackColor) +
+      ", 0.12), 0 5px 5px -3px rgba(" +
+      hexToRgb(blackColor) +
+      ", 0.2)",
     maxWidth: "200px",
     textAlign: "center",
     fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
