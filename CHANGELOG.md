@@ -1,4 +1,4 @@
-## [1.6.0] 2019-01-31
+## [1.6.0] 2019-02-13
 ### Nice stuff
 - [Added RTL support](https://github.com/creativetimofficial/material-dashboard-react/issues/16)
 ### Bug Fixing
