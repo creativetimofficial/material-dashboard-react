@@ -11,7 +11,7 @@
     "classnames": "2.2.6",
     "history": "4.7.2",
     "perfect-scrollbar": "1.4.0",
-    "prettier": "^1.16.4",
+    "prettier": "1.16.4",
     "prop-types": "15.7.1",
     "react": "16.8.1",
     "react-chartist": "0.13.3",
