@@ -6,8 +6,8 @@ node_js:
 notifications:
   slack:
     rooms:
-      - $GENERAL_ROOM
-      - $KIT_ROOM
+      - ${GENERAL_ROOM}
+      - ${KIT_ROOM}
 
 sudo: required
 
