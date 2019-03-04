@@ -1,43 +1,28 @@
 language: node_js
-
 node_js:
-  - "10.15.0"
-
-notifications:
-  slack:
-    rooms:
-      - ${GENERAL_ROOM}
-      - ${KIT_ROOM}
-
+- 10.15.0
 sudo: required
-
-addons:
-  artifacts: true
-
-cache:
-  directories:
-    - node_modules
-
 addons:
   apt:
     packages:
-      - google-chrome-stable
-
+    - google-chrome-stable
+cache:
+  directories:
+  - node_modules
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3
-
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
 before_script:
-  - "npm install"
-  - "npm install -g reg-suit"
-  - npm start &
-
-
+- npm install
+- npm install -g reg-suit
+- npm start &
 script:
-  - npm run e2e
-  - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" # This line is necessary to disable --single-branch option to fetch all remote branches on TravisCI.
-  - git fetch origin
-  - git checkout $TRAVIS_BRANCH || git checkout -b $TRAVIS_BRANCH
-  - reg-suit run --config ./regconfig.json
+- npm run e2e
+- git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+- git fetch origin
+- git checkout $TRAVIS_BRANCH || git checkout -b $TRAVIS_BRANCH
+- reg-suit run --config ./regconfig.json
+notifications:
+  slack:
+    secure: HE0gcjnuiUuEEXtVLywkjHqddc/IP7GUoQvYy8GQGqNhRX7pTevN6riAAyXDeROckni2pcc0PDYC5poq6ws+zrjyyks33mM6tnhakWMBpouOlp2eBEZATZ4Ub4Pz1W1goAuXtu2EET1BXGO5/DtaxB7SkF11T6h/fvvZnLq/UwjDqJC432YqtMkS0511RwGUVGAX6ZWpoW8CqhdxR11frNtRCj2IXt7Q3FCiPs3jYzMPCHahTY1z7nEPATfTFKjfaFT4HO4T/BqzbppT4q0dJdcVWPB3Tw/hQ/mh/3YDdx+yx5035zcrZjwYr71Rpa6hcMt7StttmwEEqDxEZT71jR0lzmHRaS9jSaC68d20/9hlSAJKgPA4iILlp1zypZIEhvfmtwurNUa0YaQzX0dpEFlYjYUbrWNInss9ERz8G4WFqFUcYcXtLDdf/IP/n5DtaUIDo2jgVK/Y75NV1A3PUHSHYI4SrfLzDqB2fn2ol3W2ffhAhc0jPiOhffTqCWbn9XrBulvPEiHn1jdf7Ad2w+RrKvBg58owRWosEX54VGvR2PbpdO78n7TeToFMDpxlLNis3Q4pRVA7R3inqJhyllEV2WifLzk3zCpxXa5avS9SV72dlG5jFLf8r9QA5J6A5WbvTcryGRnOd1JqVqO/ZgpH5fMGyrE6XN3wHj1g1kg=
