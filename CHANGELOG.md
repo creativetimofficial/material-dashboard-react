@@ -9,6 +9,7 @@
 ### Added components
 ### Deleted dependencies
 ### Added dependencies
++ typescript@3.5.1 (To stop console warnings on install)
 ### Updated dependencies
 ```
 @material-ui/core          3.9.2   →    4.1.0
