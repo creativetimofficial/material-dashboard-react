@@ -146,7 +146,8 @@ function TypographyPage(props) {
         <div className={classes.typo}>
           <div className={classes.note}>Small Tag</div>
           <h2>
-            Header with small subtitle<br />
+            Header with small subtitle
+            <br />
             <small>Use "Small" tag for the headers</small>
           </h2>
         </div>

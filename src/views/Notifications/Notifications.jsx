@@ -89,10 +89,12 @@ class Notifications extends React.Component {
             and styled by{" "}
             <a target="_blank" href="https://www.creative-tim.com/">
               Creative Tim
-            </a>. Please checkout the{" "}
+            </a>
+            . Please checkout the{" "}
             <a href="#pablo" target="_blank">
               full documentation
-            </a>.
+            </a>
+            .
           </p>
         </CardHeader>
         <CardBody>
@@ -164,6 +166,7 @@ class Notifications extends React.Component {
             <GridItem xs={12} sm={12} md={6} style={{ textAlign: "center" }}>
               <h5>
                 Notifications Places
+                <br />
                 <small>Click to view notifications</small>
               </h5>
             </GridItem>

@@ -2,7 +2,7 @@
 
 
 
-![version](https://img.shields.io/badge/version-1.5.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-dashboard-react.svg?maxAge=2592000)]() [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-dashboard-react.svg?maxAge=2592000)]() [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim/material-dashboard?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+![version](https://img.shields.io/badge/version-1.6.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-dashboard-react.svg?maxAge=2592000)]() [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-dashboard-react.svg?maxAge=2592000)]() [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim/material-dashboard?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
 ![Product Gif](src/assets/github/md-react.gif)
 
@@ -79,56 +79,32 @@ Within the download you'll find the following directories and files:
 material-dashboard-react
 .
 ├── CHANGELOG.md
+├── ISSUE_TEMPLATE.md
 ├── LICENSE.md
 ├── README.md
+├── bower.json
+├── package.json
 ├── documentation
 │   ├── assets
-│   │   ├── css
-│   │   ├── img
-│   │   │   └── faces
-│   │   └── js
 │   └── tutorial-components.html
-├── package.json
 ├── public
 │   ├── favicon.ico
 │   ├── index.html
 │   └── manifest.json
 └── src
+    ├── index.js
+    ├── logo.svg
+    ├── routes.js
     ├── assets
     │   ├── css
-    │   │   └── material-dashboard-react.css
     │   ├── github
     │   ├── img
     │   │   └── faces
     │   └── jss
     │       ├── material-dashboard-react
-    │       │   ├── cardImagesStyles.jsx
-    │       │   ├── checkboxAdnRadioStyle.jsx
     │       │   ├── components
-    │       │   │   ├── buttonStyle.jsx
-    │       │   │   ├── cardAvatarStyle.jsx
-    │       │   │   ├── cardBodyStyle.jsx
-    │       │   │   ├── cardFooterStyle.jsx
-    │       │   │   ├── cardHeaderStyle.jsx
-    │       │   │   ├── cardIconStyle.jsx
-    │       │   │   ├── cardStyle.jsx
-    │       │   │   ├── customInputStyle.jsx
-    │       │   │   ├── customTabsStyle.jsx
-    │       │   │   ├── footerStyle.jsx
-    │       │   │   ├── headerLinksStyle.jsx
-    │       │   │   ├── headerStyle.jsx
-    │       │   │   ├── sidebarStyle.jsx
-    │       │   │   ├── snackbarContentStyle.jsx
-    │       │   │   ├── tableStyle.jsx
-    │       │   │   ├── tasksStyle.jsx
-    │       │   │   └── typographyStyle.jsx
-    │       │   ├── dropdownStyle.jsx
     │       │   ├── layouts
-    │       │   │   └── dashboardStyle.jsx
-    │       │   ├── tooltipStyle.jsx
     │       │   └── views
-    │       │       ├── dashboardStyle.jsx
-    │       │       └── iconsStyle.jsx
     │       └── material-dashboard-react.jsx
     ├── components
     │   ├── Card
@@ -144,13 +120,17 @@ material-dashboard-react
     │   │   └── CustomInput.jsx
     │   ├── CustomTabs
     │   │   └── CustomTabs.jsx
+    │   ├── FixedPlugin
+    │   │   └── FixedPlugin.jsx
     │   ├── Footer
     │   │   └── Footer.jsx
     │   ├── Grid
+    │   │   ├── GridContainer.jsx
     │   │   └── GridItem.jsx
-    │   ├── Header
-    │   │   ├── Header.jsx
-    │   │   └── HeaderLinks.jsx
+    │   ├── Navbars
+    │   │   ├── AdminNavbarLinks.jsx
+    │   │   ├── Navbar.jsx
+    │   │   └── RTLNavbarLinks.jsx
     │   ├── Sidebar
     │   │   └── Sidebar.jsx
     │   ├── Snackbar
@@ -168,14 +148,9 @@ material-dashboard-react
     │       ├── Quote.jsx
     │       ├── Success.jsx
     │       └── Warning.jsx
-    ├── index.js
     ├── layouts
-    │   └── Dashboard
-    │       └── Dashboard.jsx
-    ├── logo.svg
-    ├── routes
-    │   ├── dashboard.jsx
-    │   └── index.jsx
+    │   ├── Admin.jsx
+    │   └── RTL.jsx
     ├── variables
     │   ├── charts.jsx
     │   └── general.jsx
@@ -188,6 +163,8 @@ material-dashboard-react
         │   └── Maps.jsx
         ├── Notifications
         │   └── Notifications.jsx
+        ├── RTLPage
+        │   └── RTLPage.jsx
         ├── TableList
         │   └── TableList.jsx
         ├── Typography

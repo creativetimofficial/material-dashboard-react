@@ -1,26 +1,24 @@
 {
   "name": "material-dashboard-react",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Material Dashboard React. Coded by Creative Tim",
   "private": false,
   "main": "dist/index.js",
   "dependencies": {
-    "@material-ui/core": "3.1.0",
-    "@material-ui/icons": "3.0.1",
-    "@types/googlemaps": "3.30.13",
-    "@types/markerclustererplus": "2.1.33",
-    "ajv": "^5.0.0",
+    "@material-ui/core": "4.1.0",
+    "@material-ui/icons": "4.1.0",
     "chartist": "0.10.1",
     "classnames": "2.2.6",
-    "npm-run-all": "4.1.3",
+    "history": "4.9.0",
     "perfect-scrollbar": "1.4.0",
-    "react": "16.5.2",
-    "react-chartist": "0.13.1",
-    "react-dom": "16.5.2",
+    "prop-types": "15.7.2",
+    "react": "16.8.6",
+    "react-chartist": "0.13.3",
+    "react-dom": "16.8.6",
     "react-google-maps": "9.4.5",
-    "react-router-dom": "4.3.1",
-    "react-scripts": "1.1.5",
-    "react-swipeable-views": "0.12.17",
+    "react-router-dom": "5.0.1",
+    "react-scripts": "3.0.1",
+    "react-swipeable-views": "0.13.3",
     "reg-keygen-git-hash-plugin": "^0.7.16",
     "reg-notify-github-plugin": "^0.7.19",
     "reg-publish-s3-plugin": "^0.7.18",
@@ -47,7 +45,8 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
     "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
-    "build-package": "babel src --out-dir dist",
+    "build-package-css": "cp src/assets/css/material-dashboard-react.css dist/material-dashboard-react.css",
+    "build-package": "npm run build-package-css && babel src --out-dir dist",
     "e2e": "npm test -- wdio.conf.dev.js "
   },
   "repository": {
@@ -62,19 +61,20 @@
   },
   "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
   "optionalDependencies": {
-    "babel-eslint": "7.2.3",
-    "eslint": "4.19.1",
-    "eslint-config-prettier": "3.0.1",
-    "eslint-plugin-prettier": "2.6.2",
-    "eslint-plugin-react": "7.11.1",
-    "prettier": "1.14.3"
+    "@types/googlemaps": "3.36.4",
+    "@types/markerclustererplus": "2.1.33",
+    "ajv": "6.10.0",
+    "typescript": "3.5.1"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-plugin-module-resolver": "3.1.1",
-    "babel-plugin-import-rename": "1.0.1",
-    "babel-plugin-transform-object-rest-spread": "6.26.0",
-    "babel-plugin-transform-react-jsx": "6.24.1",
-    "babel-preset-es2015": "6.24.1"
+    "eslint-config-prettier": "4.3.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "prettier": "1.18.2"
   }
 }

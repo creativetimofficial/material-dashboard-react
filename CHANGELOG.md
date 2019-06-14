@@ -1,3 +1,97 @@
+# Change Log
+
+## [1.7.0] 2019-06-xx
+### Warning
+**All React Material products have now the same version, i.e. 1.7.0.**
+- **All linting errors are solved now, but due to google analytics stuff, we've needed to add target="_blank" to our links, so this lint error still exists.**
+### Bug fixing
+- Bugs from updated dependencies
+- Removed `.env` file, and replaced it with the `jsconfig.json` file
+- Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
+- Changed all string refs to `React.createRef()`
+- Added types validation in each component
+- Solved linting issues
+- Solved https://github.com/creativetimofficial/material-dashboard-react/issues/83
+### Major style changes
+### Deleted components
+### Added components
+### Deleted dependencies
+### Added dependencies
+- typescript@3.5.1 (To stop console warnings on install)
+### Updated dependencies
+```
+@material-ui/core          3.9.2   →    4.1.0
+@material-ui/icons         3.0.2   →    4.1.0
+chartist                  0.10.1   →   0.11.2
+history                    4.7.2   →    4.9.0
+prettier                  1.16.4   →   1.18.2
+prop-types                15.7.1   →   15.7.2
+react                     16.8.1   →   16.8.6
+react-dom                 16.8.1   →   16.8.6
+react-router-dom           4.3.1   →    5.0.1
+react-scripts              2.1.5   →    3.0.1
+react-swipeable-views     0.13.1   →   0.13.3
+eslint-config-prettier     4.0.0   →    4.3.0
+eslint-plugin-prettier     3.0.1   →    3.1.0
+@types/googlemaps        3.30.16   →   3.36.4
+ajv                        6.9.1   →   6.10.0
+```
+
+## [1.6.0] 2019-02-13
+### Nice stuff
+- [Added RTL support](https://github.com/creativetimofficial/material-dashboard-react/issues/16)
+### Bug Fixing
+- [Added new script for npm](https://github.com/creativetimofficial/material-dashboard-react/issues/69)
+- Changed our buggy routing system, now it should work flawlessly, for more info, please refer to our [live docs here](https://demos.creative-tim.com/material-dashboard-react/#/documentation/routing-system)
+- [https://github.com/creativetimofficial/material-dashboard-react/issues/67](https://github.com/creativetimofficial/material-dashboard-react/issues/67)
+- [https://github.com/creativetimofficial/material-dashboard-react/issues/68](https://github.com/creativetimofficial/material-dashboard-react/issues/68)
+- [https://github.com/creativetimofficial/material-dashboard-react/issues/66](https://github.com/creativetimofficial/material-dashboard-react/issues/66)
+### Major style changes
+- Almost all styles have been changed due to new components, solved issues or [the prettier command](https://prettier.io/docs/en/install.html)
+### Major components changes
+- Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
+- **src/index.js**
+- **src/components/CustomTabs/CustomTabs.jsx**
+- **src/components/Header/Header.jsx**
+- **src/components/Sidebar/Sidebar.jsx**
+- **src/components/Snackbar/Snackbar.jsx**
+- **src/components/Snackbar/SnackbarContent.jsx**
+- **src/components/Tasks/Tasks.jsx**
+- **src/views/Notifications/Notifications.jsx**
+### New components
+- **src/components/FixedPlugin/FixedPlugin.jsx**(Left menu used by us for customization - due to this, we've had to add a link for the fonts awesome cdn)
+- **src/components/Header/RTLHeaderLinks.jsx**
+- **src/layouts/Admin.jsx** (instead of Dashboard)
+- **src/layouts/RTL.jsx**
+- **src/views/RTLPage/RTLPage.jsx**
+### Deleted components
+- **src/layouts/Dashboard/Dashboard.jsx** (renamed to Admin)
+- **src/routes/dashboard.jsx**
+- **src/routes/index.jsx**
+### Deleted dependencies
+- `babel-plugin-module-resolver` (because of the upgrade of `react-scripts`)
+- `babel-eslint` (because of the upgrade of `react-scripts`)
+- `eslint` (because of the upgrade of `react-scripts`)
+- `eslint-plugin-react` (because of the upgrade of `react-scripts`)
+- `npm-run-all`
+### Added dependencies
+- `history4.7.2`
+- `prop-types@15.6.2`
+- `prettier@1.16.4`
+### Updated dependencies
+- `@material-ui/core`                *3.1.0*   →     **3.9.2**
+- `@material-ui/icons`               *3.0.1*   →     **3.0.2**
+- `@types/googlemaps`              *3.30.13*   →   **3.30.16**
+- `ajv`                             *^5.0.0*   →     **6.9.1**
+- `prop-types`                      *15.6.2*   →    **15.7.1**
+- `react`                           *16.5.2*   →    **16.8.1**
+- `react-chartist`                  *0.13.1*   →    **0.13.3**
+- `react-dom`                       *16.5.2*   →    **16.8.1**
+- `react-scripts`                    *1.1.5*   →     **2.1.5**
+- `react-swipeable-views`          *0.12.17*   →    **0.13.1**
+- `eslint-config-prettier`           *3.0.1*   →     **4.0.0**
+- `eslint-plugin-prettier`           *2.6.2*   →     **3.0.1**
+
 ## [1.5.0] 2018-09-21
 ### Nice stuff
 - Added `install:clean` command (deletes `node_modules` and `package-lock.json` and runs `npm install`)

@@ -5,7 +5,7 @@ import {
   hexToRgb
 } from "assets/jss/material-dashboard-react.jsx";
 
-const dashboardStyle = {
+const rtlStyle = {
   successText: {
     color: successColor[0]
   },
@@ -47,7 +47,10 @@ const dashboardStyle = {
     margin: "0",
     fontSize: "14px",
     marginTop: "0",
-    marginBottom: "0"
+    marginBottom: "0",
+    "& a": {
+      color: whiteColor
+    }
   },
   cardTitle: {
     color: grayColor[2],
@@ -79,4 +82,4 @@ const dashboardStyle = {
   }
 };
 
-export default dashboardStyle;
+export default rtlStyle;

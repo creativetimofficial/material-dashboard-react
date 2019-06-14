@@ -1,7 +1,11 @@
 import {
   primaryColor,
+  whiteColor,
   primaryBoxShadow,
-  defaultFont
+  defaultFont,
+  blackColor,
+  grayColor,
+  hexToRgb
 } from "assets/jss/material-dashboard-react.jsx";
 
 const dropdownStyle = theme => ({
@@ -20,7 +24,7 @@ const dropdownStyle = theme => ({
       display: "block",
       width: "30px",
       height: "30px",
-      color: "#a9afbb",
+      color: grayColor[9],
       marginRight: "15px"
     }
   },
@@ -63,7 +67,7 @@ const dropdownStyle = theme => ({
         padding: "0px !important",
         backgroundColor: "transparent !important",
         "& ul li": {
-          color: "#FFF !important",
+          color: whiteColor + " !important",
           margin: "10px 15px 0!important",
           padding: "10px 15px !important",
           "&:hover": {
@@ -77,7 +81,7 @@ const dropdownStyle = theme => ({
   dropdown: {
     borderRadius: "3px",
     border: "0",
-    boxShadow: "0 2px 5px 0 rgba(0, 0, 0, 0.26)",
+    boxShadow: "0 2px 5px 0 rgba(" + hexToRgb(blackColor) + ", 0.26)",
     top: "100%",
     zIndex: "1000",
     minWidth: "160px",
@@ -86,7 +90,7 @@ const dropdownStyle = theme => ({
     fontSize: "14px",
     textAlign: "left",
     listStyle: "none",
-    backgroundColor: "#fff",
+    backgroundColor: whiteColor,
     WebkitBackgroundClip: "padding-box",
     backgroundClip: "padding-box"
   },
@@ -105,12 +109,12 @@ const dropdownStyle = theme => ({
     clear: "both",
     fontWeight: "400",
     lineHeight: "1.42857143",
-    color: "#333",
+    color: grayColor[8],
     whiteSpace: "nowrap",
     height: "unset",
     "&:hover": {
-      backgroundColor: primaryColor,
-      color: "#FFFFFF",
+      backgroundColor: primaryColor[0],
+      color: whiteColor,
       ...primaryBoxShadow
     }
   }

@@ -11,25 +11,25 @@ import {
 
 const tableStyle = theme => ({
   warningTableHeader: {
-    color: warningColor
+    color: warningColor[0]
   },
   primaryTableHeader: {
-    color: primaryColor
+    color: primaryColor[0]
   },
   dangerTableHeader: {
-    color: dangerColor
+    color: dangerColor[0]
   },
   successTableHeader: {
-    color: successColor
+    color: successColor[0]
   },
   infoTableHeader: {
-    color: infoColor
+    color: infoColor[0]
   },
   roseTableHeader: {
-    color: roseColor
+    color: roseColor[0]
   },
   grayTableHeader: {
-    color: grayColor
+    color: grayColor[0]
   },
   table: {
     marginBottom: "0",
@@ -42,18 +42,35 @@ const tableStyle = theme => ({
   tableHeadCell: {
     color: "inherit",
     ...defaultFont,
-    fontSize: "1em"
+    "&, &$tableCell": {
+      fontSize: "1em"
+    }
   },
   tableCell: {
     ...defaultFont,
     lineHeight: "1.42857143",
     padding: "12px 8px",
-    verticalAlign: "middle"
+    verticalAlign: "middle",
+    fontSize: "0.8125rem"
   },
   tableResponsive: {
     width: "100%",
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
     overflowX: "auto"
+  },
+  tableHeadRow: {
+    height: "56px",
+    color: "inherit",
+    display: "table-row",
+    outline: "none",
+    verticalAlign: "middle"
+  },
+  tableBodyRow: {
+    height: "48px",
+    color: "inherit",
+    display: "table-row",
+    outline: "none",
+    verticalAlign: "middle"
   }
 });
 
