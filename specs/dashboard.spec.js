@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 describe("Dashboard Page", function() {
   beforeEach(function() {
-    browser.url("./dashboard");
+    browser.url("./admin/dashboard");
   });
   it("renders dasboard page", function() {
     var results = browser.checkDocument();

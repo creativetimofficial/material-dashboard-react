@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 describe("Map Page", function() {
   beforeEach(function() {
-    browser.url("./maps");
+    browser.url("./admin/maps");
    // browser.$('#root').waitForExist();
   });
   // it("renders map page", function() {

@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 describe("Typography Page", function() {
   beforeEach(function() {
-    browser.url("./typography");
+    browser.url("./admin/typography");
   });
   it("renders Typography page", function() {
     var results = browser.checkDocument();

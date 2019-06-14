@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 describe("User Page", function() {
   beforeEach(function() {
-    browser.url("./user");
+    browser.url("./admin/user");
   });
   it("renders User page", function() {
     var results = browser.checkDocument();
