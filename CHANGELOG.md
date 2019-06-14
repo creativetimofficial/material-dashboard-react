@@ -3,13 +3,21 @@
 ## [1.7.0] 2019-06-xx
 ### Warning
 **All React Material products have now the same version, i.e. 1.7.0.**
+- **All linting errors are solved now, but due to google analytics stuff, we've needed to add target="_blank" to our links, so this lint error still exists.**
 ### Bug fixing
+- Bugs from updated dependencies
+- Removed `.env` file, and replaced it with the `jsconfig.json` file
+- Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
+- Changed all string refs to `React.createRef()`
+- Added types validation in each component
+- Solved linting issues
+- Solved https://github.com/creativetimofficial/material-dashboard-react/issues/83
 ### Major style changes
 ### Deleted components
 ### Added components
 ### Deleted dependencies
 ### Added dependencies
-+ typescript@3.5.1 (To stop console warnings on install)
+- typescript@3.5.1 (To stop console warnings on install)
 ### Updated dependencies
 ```
 @material-ui/core          3.9.2   →    4.1.0

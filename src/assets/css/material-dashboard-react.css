@@ -506,3 +506,6 @@ footer ul li a:hover {
   right: auto;
   left: 80px;
 }
+* {
+  letter-spacing: normal !important;
+}
