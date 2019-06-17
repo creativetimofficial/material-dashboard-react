@@ -29,25 +29,25 @@
     "wdio-chromedriver-service": "^0.1.3",
     "wdio-concise-reporter": "^0.1.2",
     "wdio-mocha-framework": "^0.5.10",
-    "wdio-sauce-service": "^0.4.0",
     "wdio-selenium-standalone-service": "0.0.11",
     "wdio-slack-reporter": "^1.0.0",
     "wdio-spec-reporter": "^0.1.5",
     "wdio-static-server-service": "^1.0.1",
     "wdio-visual-regression-service": "^0.8.0",
-    "webdriverio": "4.13.2"
+    "webdriverio": "^4.14.1"
+
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "wdio",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
     "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
     "build-package-css": "cp src/assets/css/material-dashboard-react.css dist/material-dashboard-react.css",
     "build-package": "npm run build-package-css && babel src --out-dir dist",
-    "e2e": "npm test -- wdio.conf.dev.js ",
+     "test":"wdio",
+    "e2e": "npm test -- wdio.conf.dev.js",
     "generateKitProDashboard": "reg-cli ./screenshots/latest/ ./screenshots/baseline/ ./screenshots/diff/ -R ./reportKitFree.html && open ./reportKitFree.html"
   },
   "repository": {

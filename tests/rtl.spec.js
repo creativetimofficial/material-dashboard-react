@@ -1,9 +1,9 @@
 const fetch = require("node-fetch");
-describe("Table Page", function() {
+describe("RTL Page", function() {
   beforeEach(function() {
-    browser.url("./admin/table");
+    browser.url("./rtl/rtl-page");
   });
-  it("renders Table page", function() {
+  it("renders RTL page", function() {
     var results = browser.checkDocument();
 
     results.forEach(function(result) {
@@ -31,7 +31,9 @@ describe("Table Page", function() {
 
     const statusCodes = responses.map(response => response.status);
     if (statusCodes.includes(404)) {
-      console.log("============== Table Page Broken links ===================");
+      console.log(
+        "============== Tables Page Broken links ==================="
+      );
       statusCodes.forEach((statusCode, i) => {
         if (statusCode == 404) {
           console.log("Invalid url " + validUrls[i]);

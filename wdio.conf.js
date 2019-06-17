@@ -3,7 +3,7 @@ var mochaTimeout = process.env.DEBUG ? 99999999 : 60000;
 exports.config = {
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", then the base url gets prepended.
-  baseUrl: "http://127.0.0.1:8887/",
+  baseUrl: "http://localhost:3000/",
 
   //
   // =================
@@ -13,7 +13,7 @@ exports.config = {
   // should work too though). These services define specific user and key (or access key)
   // values you need to put in here in order to connect to these services.
   //
-  user: "carmen.mitru",
+  user: "",
   key: "",
   sauceConnect: false,
 

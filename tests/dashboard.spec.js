@@ -1,8 +1,17 @@
 const fetch = require("node-fetch");
-
-describe("Upgrade Page", function() {
+describe("Dashboard Page", function() {
   beforeEach(function() {
-    browser.url("./admin/upgrade");
+    browser.url("./admin/dashboard");
+  });
+  it("renders dasboard page", function() {
+    var results = browser.checkDocument();
+
+    results.forEach(function(result) {
+      expect(result.isWithinMisMatchTolerance).to.equal(
+        true,
+        "screenshot failure"
+      );
+    });
   });
   it("check the page for broken links", async function() {
     const links = browser.$$("a");
@@ -23,25 +32,15 @@ describe("Upgrade Page", function() {
     const statusCodes = responses.map(response => response.status);
     if (statusCodes.includes(404)) {
       console.log(
-        "============== Upgrade Page Broken links ==================="
+        "============== Dashboard Page Broken links ==================="
       );
       statusCodes.forEach((statusCode, i) => {
-        if (statusCode == 404) {
+        if (statusCode == 404 && validUrls[i].indexOf("index.html") === -1) {
           console.log("Invalid url " + validUrls[i]);
         }
       });
       var statusCodeExpeced = new Array(statusCodes.length).fill(200);
       expect(statusCodes).to.deep.equal(statusCodeExpeced);
     }
-  });
-  it("renders Upgrade page", function() {
-    var results = browser.checkDocument();
-
-    results.forEach(function(result) {
-      expect(result.isWithinMisMatchTolerance).to.equal(
-        true,
-        "screenshot failure"
-      );
-    });
   });
 });

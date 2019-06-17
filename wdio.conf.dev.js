@@ -23,8 +23,8 @@ function getScreenshotName(folder, context) {
 let prodConfig = require("./wdio.conf.js").config;
 
 let localConfig = Object.assign(prodConfig, {
-  baseUrl: "http://localhost:3000/",
-  specs: ["./specs/*.spec.js"],
+  baseUrl: "http://localhost:3000",
+  specs: ["./tests/**/*.spec.js"],
   capabilities: [
     {
       browserName: "chrome",
@@ -46,28 +46,26 @@ let localConfig = Object.assign(prodConfig, {
     }),
     viewportChangePause: 300,
     viewports: [
-      // Iphone 6/7/8
-      { width: 375, height: 667 },
-      // Iphone 6/7/8 +
-      { width: 414, height: 736 },
+      { width: 375, height: 667 }, // Iphone 6/7/8
+      { width: 414, height: 736 }, // Iphone 6/7/8 +
       { width: 1280, height: 720 }
     ],
     orientations: ["landscape", "portrait"]
   },
 
- reporters: ["concise", "slack"],
+  reporters: ["concise", "slack"],
   seleniumInstallArgs: { version: "3.4.0" },
   seleniumArgs: { version: "3.4.0" },
-  reporterOptions: {
-    slack: {
-      notify: true,
-      webhook:
-        "https://hooks.slack.com/services/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",
-      notifyOnlyOnFailure: true,
-      username: "Running Tests Report",
-      message: "Material Dashboard React Dashboard"
-    }
-  },
+//   reporterOptions: {
+//     slack: {
+//       notify: true,
+//       webhook:
+//         "https://hooks.slack.com/services/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",
+//       notifyOnlyOnFailure: true,
+//       username: "Running Tests Report",
+//       message: "Material Dashboard React Dashboard"
+//     }
+//   },
   onPrepare: function(config, capabilities) {
     notifier.notify({
       title: "Material Dashboard React Dashboard FREE",

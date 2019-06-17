@@ -1,10 +1,9 @@
 const fetch = require("node-fetch");
-
-describe("Dashboard Page", function() {
+describe("Upgrade Page", function() {
   beforeEach(function() {
-    browser.url("./admin/dashboard");
+    browser.url("./admin/upgrade-to-pro");
   });
-  it("renders dasboard page", function() {
+  it("renders Upgrade page", function() {
     var results = browser.checkDocument();
 
     results.forEach(function(result) {
@@ -33,7 +32,7 @@ describe("Dashboard Page", function() {
     const statusCodes = responses.map(response => response.status);
     if (statusCodes.includes(404)) {
       console.log(
-        "============== Dashboard Page Broken links ==================="
+        "============== Tables Page Broken links ==================="
       );
       statusCodes.forEach((statusCode, i) => {
         if (statusCode == 404) {
