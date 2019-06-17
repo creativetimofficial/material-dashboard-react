@@ -1,4 +1,6 @@
 import React from "react";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
@@ -148,12 +150,18 @@ function TypographyPage(props) {
           <h2>
             Header with small subtitle
             <br />
-            <small>Use "Small" tag for the headers</small>
+            <small>
+              Use {'"'}Small{'"'} tag for the headers
+            </small>
           </h2>
         </div>
       </CardBody>
     </Card>
   );
 }
+
+TypographyPage.propTypes = {
+  classes: PropTypes.object
+};
 
 export default withStyles(style)(TypographyPage);

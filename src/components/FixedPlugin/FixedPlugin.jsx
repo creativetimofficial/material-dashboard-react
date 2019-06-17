@@ -1,5 +1,8 @@
 /*eslint-disable*/
 import React, { Component } from "react";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
+// nodejs library that concatenates classes
 import classnames from "classnames";
 
 import imagine1 from "assets/img/sidebar-1.jpg";
@@ -183,5 +186,15 @@ class FixedPlugin extends Component {
     );
   }
 }
+
+FixedPlugin.propTypes = {
+  bgImage: PropTypes.string,
+  handleFixedClick: PropTypes.func,
+  rtlActive: PropTypes.bool,
+  fixedClasses: PropTypes.string,
+  bgColor: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
+  handleColorClick: PropTypes.func,
+  handleImageClick: PropTypes.func
+};
 
 export default FixedPlugin;

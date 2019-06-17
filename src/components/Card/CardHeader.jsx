@@ -49,7 +49,8 @@ CardHeader.propTypes = {
   ]),
   plain: PropTypes.bool,
   stats: PropTypes.bool,
-  icon: PropTypes.bool
+  icon: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default withStyles(cardHeaderStyle)(CardHeader);

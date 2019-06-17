@@ -65,7 +65,8 @@ RegularButton.propTypes = {
   justIcon: PropTypes.bool,
   className: PropTypes.string,
   // use this to pass the classes props from Material-UI
-  muiClasses: PropTypes.object
+  muiClasses: PropTypes.object,
+  children: PropTypes.node
 };
 
 export default withStyles(buttonStyle)(RegularButton);
