@@ -85,11 +85,11 @@ class Notifications extends React.Component {
           <h4 className={classes.cardTitleWhite}>Notifications</h4>
           <p className={classes.cardCategoryWhite}>
             Handcrafted by our friends from{" "}
-            <a target="_blank" href="https://material-ui-next.com/">
+            <a target="_blank" href="https://material-ui-next.com/?ref=creativetime">
               Material UI
             </a>{" "}
             and styled by{" "}
-            <a target="_blank" href="https://www.creative-tim.com/">
+            <a target="_blank" href="https://www.creative-tim.com/?ref=mdr-notifications-page">
               Creative Tim
             </a>
             . Please checkout the{" "}

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
@@ -24,9 +25,8 @@ function Icons(props) {
             <p className={classes.cardCategoryWhite}>
               Handcrafted by our friends from{" "}
               <a
-                href="https://design.google.com/icons/"
+                href="https://design.google.com/icons/?ref=creativetime"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 Google
               </a>
@@ -49,9 +49,8 @@ function Icons(props) {
                   the iframe is not working on Mobile and Tablets please visit
                   the icons on their original page on Google. Check the
                   <a
-                    href="https://design.google.com/icons/"
+                    href="https://design.google.com/icons/?ref=creativetime"
                     target="_blank"
-                    rel="noopener noreferrer"
                   >
                     Material Icons
                   </a>

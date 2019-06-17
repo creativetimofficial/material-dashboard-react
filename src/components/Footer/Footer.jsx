@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
@@ -39,7 +40,7 @@ function Footer({ ...props }) {
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a href="https://www.creative-tim.com" className={classes.a}>
+            <a href="https://www.creative-tim.com?ref=mdr-footer" target="_blank" className={classes.a}>
               Creative Tim
             </a>
             , made with love for a better web

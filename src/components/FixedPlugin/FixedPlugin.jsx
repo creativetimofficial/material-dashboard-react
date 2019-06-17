@@ -149,7 +149,7 @@ class FixedPlugin extends Component {
               <div className="button-container">
                 <Button
                   color="success"
-                  href="https://www.creative-tim.com/product/material-dashboard-react"
+                  href="https://www.creative-tim.com/product/material-dashboard-react?ref=mdr-fixed-plugin"
                   target="_blank"
                   fullWidth
                 >
@@ -161,7 +161,7 @@ class FixedPlugin extends Component {
               <div className="button-container">
                 <Button
                   color="warning"
-                  href="https://www.creative-tim.com/product/material-dashboard-pro-react"
+                  href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mdr-fixed-plugin"
                   target="_blank"
                   fullWidth
                 >
@@ -173,7 +173,7 @@ class FixedPlugin extends Component {
               <Button
                 color="info"
                 fullWidth
-                href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial"
+                href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial?ref=mdr-fixed-plugin"
                 target="_blank"
               >
                 Documentation
@@ -192,7 +192,7 @@ FixedPlugin.propTypes = {
   handleFixedClick: PropTypes.func,
   rtlActive: PropTypes.bool,
   fixedClasses: PropTypes.string,
-  bgColor: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
+  bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   handleColorClick: PropTypes.func,
   handleImageClick: PropTypes.func
 };

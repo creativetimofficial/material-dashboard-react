@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
@@ -79,10 +80,11 @@ const Sidebar = ({ ...props }) => {
   var brand = (
     <div className={classes.logo}>
       <a
-        href="https://www.creative-tim.com"
+        href="https://www.creative-tim.com?ref=mdr-sidebar"
         className={classNames(classes.logoLink, {
           [classes.logoLinkRTL]: props.rtlActive
         })}
+        target="_blank"
       >
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
@@ -150,7 +152,7 @@ Sidebar.propTypes = {
   classes: PropTypes.object.isRequired,
   rtlActive: PropTypes.bool,
   handleDrawerToggle: PropTypes.func,
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
+  bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   logo: PropTypes.string,
   image: PropTypes.string,
   logoText: PropTypes.string,
