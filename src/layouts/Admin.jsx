@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
     this.setState({ mobileOpen: !this.state.mobileOpen });
   };
   getRoute() {
-    return this.props.location.pathname !== "/admin/maps";
+    return window.location.pathname !== "/admin/maps";
   }
   resizeFunction = () => {
     if (window.innerWidth >= 960) {
