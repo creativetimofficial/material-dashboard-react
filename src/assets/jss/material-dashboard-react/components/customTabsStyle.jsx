@@ -37,13 +37,6 @@ const customTabsStyle = {
       marginLeft: "0px"
     }
   },
-  tabLabelContainer: {
-    padding: "0px"
-  },
-  tabLabel: {
-    fontWeight: "500",
-    fontSize: "12px"
-  },
   tabSelected: {
     backgroundColor: "rgba(" + hexToRgb(whiteColor) + ", 0.2)",
     transition: "0.2s background-color 0.1s"
@@ -56,9 +49,12 @@ const customTabsStyle = {
     height: "unset !important",
     maxWidth: "unset !important",
     maxHeight: "unset !important",
+    fontWeight: "500",
+    fontSize: "12px",
+    marginTop: "1px",
     "& > svg,& > .material-icons": {
       verticalAlign: "middle",
-      margin: "-1px 5px 0 0"
+      margin: "-1px 5px 0 0 !important"
     }
   }
 };

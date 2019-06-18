@@ -1,4 +1,43 @@
-## [1.6.0] 2019-01-31
+# Change Log
+
+## [1.7.0] 2019-06-xx
+### Warning
+**All React Material products have now the same version, i.e. 1.7.0.**
+- **All linting errors are solved now, but due to google analytics stuff, we've needed to add target="_blank" to our links, so this lint error still exists.**
+### Bug fixing
+- Bugs from updated dependencies
+- Removed `.env` file, and replaced it with the `jsconfig.json` file
+- Changes caused by running [the prettier command](https://prettier.io/docs/en/install.html) for *.jsx*, *.js*, *.html* and *.css* files
+- Changed all string refs to `React.createRef()`
+- Added types validation in each component
+- Solved linting issues
+- Solved https://github.com/creativetimofficial/material-dashboard-react/issues/83
+### Major style changes
+### Deleted components
+### Added components
+### Deleted dependencies
+### Added dependencies
+- typescript@3.5.1 (To stop console warnings on install)
+### Updated dependencies
+```
+@material-ui/core          3.9.2   →    4.1.0
+@material-ui/icons         3.0.2   →    4.1.0
+chartist                  0.10.1   →   0.11.2
+history                    4.7.2   →    4.9.0
+prettier                  1.16.4   →   1.18.2
+prop-types                15.7.1   →   15.7.2
+react                     16.8.1   →   16.8.6
+react-dom                 16.8.1   →   16.8.6
+react-router-dom           4.3.1   →    5.0.1
+react-scripts              2.1.5   →    3.0.1
+react-swipeable-views     0.13.1   →   0.13.3
+eslint-config-prettier     4.0.0   →    4.3.0
+eslint-plugin-prettier     3.0.1   →    3.1.0
+@types/googlemaps        3.30.16   →   3.36.4
+ajv                        6.9.1   →   6.10.0
+```
+
+## [1.6.0] 2019-02-13
 ### Nice stuff
 - [Added RTL support](https://github.com/creativetimofficial/material-dashboard-react/issues/16)
 ### Bug Fixing

@@ -1,4 +1,6 @@
 import React from "react";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -20,7 +22,7 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import headerLinksStyle from "assets/jss/material-dashboard-react/components/headerLinksStyle.jsx";
 
-class HeaderLinks extends React.Component {
+class AdminNavbarLinks extends React.Component {
   state = {
     open: false
   };
@@ -129,7 +131,7 @@ class HeaderLinks extends React.Component {
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        You're now friend with Andrew
+                        You{"'"}re now friend with Andrew
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
@@ -167,4 +169,8 @@ class HeaderLinks extends React.Component {
   }
 }
 
-export default withStyles(headerLinksStyle)(HeaderLinks);
+AdminNavbarLinks.propTypes = {
+  classes: PropTypes.object
+};
+
+export default withStyles(headerLinksStyle)(AdminNavbarLinks);

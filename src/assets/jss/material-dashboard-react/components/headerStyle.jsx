@@ -11,7 +11,7 @@ import {
   grayColor
 } from "assets/jss/material-dashboard-react.jsx";
 
-const headerStyle = theme => ({
+const headerStyle = () => ({
   appBar: {
     backgroundColor: "transparent",
     boxShadow: "none",
@@ -38,6 +38,7 @@ const headerStyle = theme => ({
   },
   title: {
     ...defaultFont,
+    letterSpacing: "unset",
     lineHeight: "30px",
     fontSize: "18px",
     borderRadius: "3px",

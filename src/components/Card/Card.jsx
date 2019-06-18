@@ -39,7 +39,8 @@ Card.propTypes = {
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,
-  chart: PropTypes.bool
+  chart: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default withStyles(cardStyle)(Card);

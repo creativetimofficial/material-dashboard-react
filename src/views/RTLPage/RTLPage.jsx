@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from "react";
+// nodejs library to set properties for components
 import PropTypes from "prop-types";
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
@@ -301,11 +302,11 @@ class RTLPage extends React.Component {
                 <h4 className={classes.cardTitleWhite}>اعلان ها</h4>
                 <p className={classes.cardCategoryWhite}>
                   يدويا من قبل أصدقائنا من{" "}
-                  <a target="_blank" href="https://material-ui-next.com/">
+                  <a target="_blank" href="https://material-ui-next.com/?ref=creativetime">
                     واجهة المستخدم المادية
                   </a>{" "}
                   ونصب من قبل{" "}
-                  <a target="_blank" href="https://www.creative-tim.com/">
+                  <a target="_blank" href="https://www.creative-tim.com/?ref=mdr-rtl-page">
                     الإبداعية تيم
                   </a>
                   . يرجى التحقق من{" "}

@@ -1,4 +1,6 @@
 import React from "react";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
@@ -193,7 +195,7 @@ function UpgradeToPro(props) {
                       <Button
                         round
                         color="danger"
-                        href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=md-free-react-upgrade-live"
+                        href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mdr-upgrade-live"
                       >
                         Upgrade to Pro
                       </Button>
@@ -208,5 +210,9 @@ function UpgradeToPro(props) {
     </GridContainer>
   );
 }
+
+UpgradeToPro.propTypes = {
+  classes: PropTypes.object
+};
 
 export default withStyles(styles)(UpgradeToPro);

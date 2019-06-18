@@ -17,7 +17,7 @@ function CustomTable({ ...props }) {
       <Table className={classes.table}>
         {tableHead !== undefined ? (
           <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
-            <TableRow>
+            <TableRow className={classes.tableHeadRow}>
               {tableHead.map((prop, key) => {
                 return (
                   <TableCell
@@ -34,7 +34,7 @@ function CustomTable({ ...props }) {
         <TableBody>
           {tableData.map((prop, key) => {
             return (
-              <TableRow key={key}>
+              <TableRow key={key} className={classes.tableBodyRow}>
                 {prop.map((prop, key) => {
                   return (
                     <TableCell className={classes.tableCell} key={key}>

@@ -108,7 +108,8 @@ Tasks.propTypes = {
   classes: PropTypes.object.isRequired,
   tasksIndexes: PropTypes.arrayOf(PropTypes.number),
   tasks: PropTypes.arrayOf(PropTypes.node),
-  rtlActive: PropTypes.bool
+  rtlActive: PropTypes.bool,
+  checkedIndexes: PropTypes.array
 };
 
 export default withStyles(tasksStyle)(Tasks);

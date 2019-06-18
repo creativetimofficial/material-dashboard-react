@@ -36,7 +36,8 @@ const customInputStyle = {
     color: grayColor[3] + " !important",
     fontWeight: "400",
     fontSize: "14px",
-    lineHeight: "1.42857"
+    lineHeight: "1.42857",
+    letterSpacing: "unset"
   },
   labelRootError: {
     color: dangerColor[0]

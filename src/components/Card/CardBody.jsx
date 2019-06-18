@@ -29,7 +29,8 @@ CardBody.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   plain: PropTypes.bool,
-  profile: PropTypes.bool
+  profile: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default withStyles(cardBodyStyle)(CardBody);
