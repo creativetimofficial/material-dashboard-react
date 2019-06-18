@@ -145,14 +145,16 @@ class Tutorial extends React.Component {
         <h2>Getting started</h2>
         <p>
           <b>Material Dashboard React</b> is built on top of{" "}
-          <a href="https://material-ui-next.com/?ref=creativetim" target="_blank">
+          <a
+            href="https://material-ui-next.com/?ref=creativetim"
+            target="_blank"
+          >
             Material UI
           </a>{" "}
           using{" "}
           <a
             href="https://github.com/facebook/create-react-app?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             create-react-app
           </a>
@@ -161,17 +163,16 @@ class Tutorial extends React.Component {
         <ul>
           <li>
             Install NodeJs from{" "}
-            <a
-              href="https://nodejs.org/en/?ref=creativetim"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://nodejs.org/en/?ref=creativetim" target="_blank">
               NodeJs Official Page
             </a>
           </li>
           <li>
             Go to{" "}
-            <a href="https://www.creative-tim.com/?ref=mdr-tutorial-section-docs" target="_blank">
+            <a
+              href="https://www.creative-tim.com/?ref=mdr-tutorial-section-docs"
+              target="_blank"
+            >
               creative tim website
             </a>{" "}
             and login into your account
@@ -265,7 +266,6 @@ class Tutorial extends React.Component {
                 <a
                   href="https://github.com/facebookincubator/create-react-app?ref=creativetim"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   create-react-app
                 </a>
@@ -280,7 +280,6 @@ class Tutorial extends React.Component {
             <a
               href="https://reactjs.org/docs/installation.html?ref=creativetim"
               target="_blank"
-              rel="noopener noreferrer"
             >
               react
             </a>
@@ -292,7 +291,6 @@ class Tutorial extends React.Component {
           <a
             href="https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/70?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             link here
           </a>{" "}
@@ -306,7 +304,6 @@ class Tutorial extends React.Component {
             <a
               href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&pli=1&ref=creativetim"
               target="_blank"
-              rel="noopener noreferrer"
             >
               Google API Console
             </a>
@@ -332,7 +329,6 @@ class Tutorial extends React.Component {
             <a
               href="https://developers.google.com/maps/documentation/javascript/usage?ref=creativetim"
               target="_blank"
-              rel="noopener noreferrer"
             >
               Usage Limits
             </a>{" "}
@@ -350,7 +346,6 @@ class Tutorial extends React.Component {
           <a
             href="https://developers.google.com/maps/documentation/javascript/get-api-key?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             link
           </a>

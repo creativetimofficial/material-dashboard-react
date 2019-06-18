@@ -136,7 +136,6 @@ class GoogleMaps extends React.Component {
           <a
             href="https://tomchentw.github.io/react-google-maps/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             react-google-maps
           </a>

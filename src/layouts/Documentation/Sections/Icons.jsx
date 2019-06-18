@@ -16,18 +16,13 @@ class Icons extends React.Component {
           In order to use the font <code>Icon</code> component, or to use icon
           names (ligatures) directly in components that support them, you must
           first add the{" "}
-          <a
-            href="https://material.io/icons/?ref=creativetim"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://material.io/icons/?ref=creativetim" target="_blank">
             Material icons font
           </a>
           . Here are some{" "}
           <a
             href="https://google.github.io/material-design-icons/#icon-font-for-the-web?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             instructions
           </a>{" "}
@@ -54,7 +49,6 @@ class Icons extends React.Component {
           <a
             href="https://www.npmjs.com/package/@material-ui/icons?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             @material-ui/icons
           </a>{" "}

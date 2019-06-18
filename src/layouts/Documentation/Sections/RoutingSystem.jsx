@@ -28,7 +28,6 @@ class RoutingSystem extends React.Component {
           <a
             href="https://reacttraining.com/react-router/web/api/Route?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             Routes
           </a>{" "}
@@ -36,7 +35,6 @@ class RoutingSystem extends React.Component {
           <a
             href="https://reacttraining.com/react-router/web/api/Link?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             Links
           </a>{" "}
@@ -44,7 +42,6 @@ class RoutingSystem extends React.Component {
           <a
             href="https://reacttraining.com/react-router/web/api/NavLink?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             NavLinks
           </a>{" "}
@@ -52,7 +49,6 @@ class RoutingSystem extends React.Component {
           <a
             href="https://reacttraining.com/react-router/web/example/basic?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             react-router-dom
           </a>

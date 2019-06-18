@@ -195,7 +195,6 @@ class CheckboxRadio extends React.Component {
         <a
           href="https://material-ui-next.com/api/checkbox/?ref=creativetim"
           target="_blank"
-          rel="noopener noreferrer"
         >
           material-ui checkbox documentation
         </a>{" "}
@@ -203,7 +202,6 @@ class CheckboxRadio extends React.Component {
         <a
           href="https://material-ui-next.com/api/radio/?ref=creativetim"
           target="_blank"
-          rel="noopener noreferrer"
         >
           material-ui radio documentation
         </a>

@@ -37,7 +37,6 @@ class BuildTools extends React.Component {
                 <a
                   href="https://docs.npmjs.com/cli/install?ref=creativetim"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Read more
                 </a>
@@ -50,7 +49,6 @@ class BuildTools extends React.Component {
                 <a
                   href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-start?ref=creativetim"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Read more
                 </a>
@@ -63,7 +61,6 @@ class BuildTools extends React.Component {
                 <a
                   href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-build?ref=creativetim"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Read more
                 </a>
@@ -76,7 +73,6 @@ class BuildTools extends React.Component {
                 <a
                   href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-test?ref=creativetim"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Read more
                 </a>
@@ -89,7 +85,6 @@ class BuildTools extends React.Component {
                 <a
                   href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject?ref=creativetim"
                   target="_blank"
-                  rel="noopener noreferrer"
                 >
                   Read more
                 </a>
@@ -114,11 +109,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">lint:check</code>,
                 <code className="highlighter-rouge">npm run lint:check</code>,
                 "Checks for linting errors",
-                <a
-                  href="https://eslint.org/?ref=creativetim"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://eslint.org/?ref=creativetim" target="_blank">
                   Read more
                 </a>
               ],
@@ -127,11 +118,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">lint:fix</code>,
                 <code className="highlighter-rouge">npm run lint:fix</code>,
                 "Fixes linting errors (it may not solve all the linting errors)",
-                <a
-                  href="https://eslint.org/?ref=creativetim"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://eslint.org/?ref=creativetim" target="_blank">
                   Read more
                 </a>
               ],

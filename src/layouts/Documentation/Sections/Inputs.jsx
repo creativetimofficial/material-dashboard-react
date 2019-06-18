@@ -190,7 +190,6 @@ class Inputs extends React.Component {
           <a
             href="https://material-ui-next.com/api/input/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             material-ui input documentation
           </a>
@@ -198,7 +197,6 @@ class Inputs extends React.Component {
           <a
             href="https://material-ui-next.com/api/input-label/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             material-ui label documentation
           </a>{" "}
@@ -206,7 +204,6 @@ class Inputs extends React.Component {
           <a
             href="https://material-ui-next.com/api/form-control/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             material-ui form controll documentation
           </a>

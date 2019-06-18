@@ -68,7 +68,6 @@ class Sidebar extends React.Component {
           <a
             href="https://material-ui-next.com/demos/drawers/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             official material-ui documentation
           </a>

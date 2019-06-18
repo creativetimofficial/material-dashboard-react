@@ -43,7 +43,6 @@ class Styles extends React.Component {
           <a
             href="https://material-ui-next.com/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             Material UI
           </a>
@@ -54,7 +53,6 @@ class Styles extends React.Component {
           <a
             href="https://github.com/cssinjs/jss?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             this one here
           </a>
@@ -66,7 +64,6 @@ class Styles extends React.Component {
           <a
             href="https://material-ui-next.com/guides/interoperability/#react-jss?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             this one here
           </a>

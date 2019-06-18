@@ -254,7 +254,6 @@ class Dropdown extends React.Component {
         <a
           href="https://material-ui-next.com/demos/menus/#menulist-composition?ref=creativetim"
           target="_blank"
-          rel="noopener noreferrer"
         >
           material-ui documentation
         </a>

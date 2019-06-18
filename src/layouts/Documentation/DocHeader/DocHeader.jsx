@@ -95,7 +95,6 @@ class DocHeader extends React.Component {
                 href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
                 className={classes.iconLink}
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <i className="fa fa-github" />
               </a>
@@ -103,7 +102,6 @@ class DocHeader extends React.Component {
                 href="https://twitter.com/CreativeTim?ref=creativetim"
                 className={classes.iconLink}
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <i className="fa fa-twitter" />
               </a>
@@ -122,7 +120,6 @@ class DocHeader extends React.Component {
               href="https://github.com/creativetimofficial/material-dashboard-react/issues?ref=creativetim"
               className={classes.rightLinks}
               target="_blank"
-              rel="noopener noreferrer"
             >
               <BugReport />{" "}
               <span className={classes.rightLinksText}>Report a bug</span>
@@ -131,7 +128,6 @@ class DocHeader extends React.Component {
               href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
               className={classes.rightLinks}
               target="_blank"
-              rel="noopener noreferrer"
             >
               <Star />{" "}
               <span className={classes.rightLinksText}>Help with a start</span>
@@ -140,21 +136,18 @@ class DocHeader extends React.Component {
               href="#pablo"
               className={classes.rightLinks}
               target="_blank"
-              rel="noopener noreferrer"
               onClick={e => e.preventDefault()}
             />
             <a
               href="#pablo"
               className={classes.rightLinks}
               target="_blank"
-              rel="noopener noreferrer"
               onClick={e => e.preventDefault()}
             />
             <a
               href="#pablo"
               className={classes.rightLinks}
               target="_blank"
-              rel="noopener noreferrer"
               onClick={e => e.preventDefault()}
             />
             <a

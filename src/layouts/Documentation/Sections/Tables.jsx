@@ -62,7 +62,6 @@ class Tables extends React.Component {
           <a
             href="https://material-ui-next.com/demos/tables/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             official material-ui documentation
           </a>

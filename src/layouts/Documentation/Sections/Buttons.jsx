@@ -137,7 +137,6 @@ class Buttons extends React.Component {
           <a
             href="https://material-ui-next.com/demos/buttons/?ref=creativetim"
             target="_blank"
-            rel="noopener noreferrer"
           >
             material-ui buttons section
           </a>

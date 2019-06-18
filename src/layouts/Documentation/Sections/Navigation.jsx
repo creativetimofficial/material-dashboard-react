@@ -36,11 +36,7 @@ class Navigation extends React.Component {
         <h2>Props</h2>
         <p>
           Please check out the{" "}
-          <a
-            href="https://material-ui-next.com/demos/app-bar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://material-ui-next.com/demos/app-bar/" target="_blank">
             official material-ui documentation
           </a>
           .
