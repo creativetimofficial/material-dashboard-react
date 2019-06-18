@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SyntaxHighlighter from "react-syntax-highlighter/prism";
-import { prism } from "react-syntax-highlighter/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/styles/prism";
 
 // @material-ui/core components
 // @material-ui/icons

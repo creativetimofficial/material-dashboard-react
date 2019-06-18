@@ -1,6 +1,6 @@
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter/prism";
-import { prism } from "react-syntax-highlighter/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/styles/prism";
 
 // @material-ui/core components
 // @material-ui/icons
@@ -18,11 +18,12 @@ class Navigation extends React.Component {
         <p>The classic Material UI Appbar was restyled.</p>
         <p>
           You will find this component in{" "}
-          <code>src/components/Navbars/Navbar.jsx</code>. In this component there
-          is just the structure of the navbar. The links can be found in{" "}
-          <code>src/components/Navbars/AdminNavbarLinks.jsx</code>. We've done this
-          because on responsive we want both the links from <code>Navbar</code>{" "}
-          and those from <code>Sidebar</code> components to be displayed.
+          <code>src/components/Navbars/Navbar.jsx</code>. In this component
+          there is just the structure of the navbar. The links can be found in{" "}
+          <code>src/components/Navbars/AdminNavbarLinks.jsx</code>. We've done
+          this because on responsive we want both the links from{" "}
+          <code>Navbar</code> and those from <code>Sidebar</code> components to
+          be displayed.
         </p>
         <p>
           You can choose between 5 colors by using the <code>color</code>{" "}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SyntaxHighlighter from "react-syntax-highlighter/prism";
-import { prism } from "react-syntax-highlighter/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { prism } from "react-syntax-highlighter/dist/styles/prism";
 
 class RoutingSystem extends React.Component {
   render() {
@@ -16,9 +16,9 @@ class RoutingSystem extends React.Component {
           in two places. On place would have been inside our{" "}
           <Link to="/documentation/sidebar">Sidebar</Link> and the onther one
           would be either the{" "}
-          <code className="highlighter-rouge">src/RTL.jsx</code> layout or
-          the <code className="highlighter-rouge">src/Admin.jsx</code>{" "}
-          layout. You will find all our demo routes in{" "}
+          <code className="highlighter-rouge">src/RTL.jsx</code> layout or the{" "}
+          <code className="highlighter-rouge">src/Admin.jsx</code> layout. You
+          will find all our demo routes in{" "}
           <code className="highlighter-rouge">src/routes.js</code>
         </p>
         <code>
@@ -55,7 +55,8 @@ class RoutingSystem extends React.Component {
             rel="noopener noreferrer"
           >
             react-router-dom
-          </a>.
+          </a>
+          .
           <br />
           If you do not understand them, please take in consideration replacing
           them with normal routes and use the <b>src/routes.js</b> just for
