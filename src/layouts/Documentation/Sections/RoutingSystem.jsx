@@ -136,10 +136,10 @@ class RoutingSystem extends React.Component {
           sidebar add an if statement inside the{" "}
           <code className="highlighter-rouge">map</code> function of ours and do
           like this:
-          <SyntaxHighlighter language="jsx" style={prism}>
-            {`if(prop.invisible) return null;`}
-          </SyntaxHighlighter>
         </p>
+        <SyntaxHighlighter language="jsx" style={prism}>
+          {`if(prop.invisible) return null;`}
+        </SyntaxHighlighter>
       </div>
     );
   }

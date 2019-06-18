@@ -114,7 +114,7 @@ class Tutorial extends React.Component {
           <b>MIT LICENSE</b>
         </p>
         <p>
-          Copyright (c) 2019{" "}
+          Copyright (c) {new Date().getFullYear()}{" "}
           <a href="https://creative-tim.com/" target="_blank">
             Creative Tim
           </a>
