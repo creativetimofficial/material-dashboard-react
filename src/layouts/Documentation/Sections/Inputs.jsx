@@ -188,7 +188,7 @@ class Inputs extends React.Component {
           <code>labelProps</code>, <code>formControlProps</code> please check
           out the{" "}
           <a
-            href="https://material-ui-next.com/api/input/"
+            href="https://material-ui-next.com/api/input/?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -196,7 +196,7 @@ class Inputs extends React.Component {
           </a>
           ,{" "}
           <a
-            href="https://material-ui-next.com/api/input-label/"
+            href="https://material-ui-next.com/api/input-label/?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -204,7 +204,7 @@ class Inputs extends React.Component {
           </a>{" "}
           and{" "}
           <a
-            href="https://material-ui-next.com/api/form-control/"
+            href="https://material-ui-next.com/api/form-control/?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >

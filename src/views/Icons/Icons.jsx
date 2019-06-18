@@ -36,7 +36,7 @@ function Icons(props) {
             <Hidden only={["sm", "xs"]}>
               <iframe
                 className={classes.iframe}
-                src="https://material.io/icons/"
+                src="https://material.io/icons/?ref=creativetim"
                 title="Icons iframe"
               >
                 <p>Your browser does not support iframes.</p>

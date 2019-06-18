@@ -35,7 +35,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm install</code>,
                 "This command installs a package, and any packages that it depends on.",
                 <a
-                  href="https://docs.npmjs.com/cli/install"
+                  href="https://docs.npmjs.com/cli/install?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -48,7 +48,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm start</code>,
                 "This will determinate the start of your development server.",
                 <a
-                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-start"
+                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-start?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -61,7 +61,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm run build</code>,
                 "This will create a build directory with a production build of your app.",
                 <a
-                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-build"
+                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-build?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -74,7 +74,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm run test</code>,
                 "Runs the test watcher in an interactive mode. (Note that we have not implemented any tests - this command is by default from the create-react-app)",
                 <a
-                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-test"
+                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-test?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -87,7 +87,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm run eject</code>,
                 "This command will remove the single build dependency from your project. (We do not recommend using this command. Our product may not work after using this command.)",
                 <a
-                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject"
+                  href="https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -115,7 +115,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm run lint:check</code>,
                 "Checks for linting errors",
                 <a
-                  href="https://eslint.org/"
+                  href="https://eslint.org/?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -128,7 +128,7 @@ class BuildTools extends React.Component {
                 <code className="highlighter-rouge">npm run lint:fix</code>,
                 "Fixes linting errors (it may not solve all the linting errors)",
                 <a
-                  href="https://eslint.org/"
+                  href="https://eslint.org/?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

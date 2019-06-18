@@ -327,7 +327,7 @@ class Notifications extends React.Component {
         <p>
           Beside these props, you can check out the{" "}
           <a
-            href="https://material-ui-next.com/demos/snackbars/"
+            href="https://material-ui-next.com/demos/snackbars/?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >

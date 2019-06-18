@@ -115,7 +115,7 @@ class Tutorial extends React.Component {
         </p>
         <p>
           Copyright (c) {new Date().getFullYear()}{" "}
-          <a href="https://creative-tim.com/" target="_blank">
+          <a href="https://creative-tim.com/?ref=creativetim" target="_blank">
             Creative Tim
           </a>
           .
@@ -145,12 +145,12 @@ class Tutorial extends React.Component {
         <h2>Getting started</h2>
         <p>
           <b>Material Dashboard React</b> is built on top of{" "}
-          <a href="https://material-ui-next.com/" target="_blank">
+          <a href="https://material-ui-next.com/?ref=creativetim" target="_blank">
             Material UI
           </a>{" "}
           using{" "}
           <a
-            href="https://github.com/facebook/create-react-app"
+            href="https://github.com/facebook/create-react-app?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -162,7 +162,7 @@ class Tutorial extends React.Component {
           <li>
             Install NodeJs from{" "}
             <a
-              href="https://nodejs.org/en/"
+              href="https://nodejs.org/en/?ref=creativetim"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -171,7 +171,7 @@ class Tutorial extends React.Component {
           </li>
           <li>
             Go to{" "}
-            <a href="https://www.creative-tim.com/" target="_blank">
+            <a href="https://www.creative-tim.com/?ref=mdr-tutorial-section-docs" target="_blank">
               creative tim website
             </a>{" "}
             and login into your account
@@ -179,7 +179,7 @@ class Tutorial extends React.Component {
           <li>
             Go to{" "}
             <a
-              href="https://www.creative-tim.com/product/material-dashboard-react"
+              href="https://www.creative-tim.com/product/material-dashboard-react?ref=mdr-tutorial-section-docs"
               target="_blank"
             >
               material dashboard react
@@ -263,7 +263,7 @@ class Tutorial extends React.Component {
               <li>
                 More information →{" "}
                 <a
-                  href="https://github.com/facebookincubator/create-react-app"
+                  href="https://github.com/facebookincubator/create-react-app?ref=creativetim"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -278,7 +278,7 @@ class Tutorial extends React.Component {
           <li>
             More information →{" "}
             <a
-              href="https://reactjs.org/docs/installation.html"
+              href="https://reactjs.org/docs/installation.html?ref=creativetim"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -290,7 +290,7 @@ class Tutorial extends React.Component {
           If you have a warning of <code>props.history</code> being{" "}
           <code>undefined</code>, please checkthis{" "}
           <a
-            href="https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/70"
+            href="https://github.com/creativetimofficial/ct-material-dashboard-pro-react/issues/70?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -304,7 +304,7 @@ class Tutorial extends React.Component {
           <li>
             Go to the{" "}
             <a
-              href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&pli=1"
+              href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true&pli=1&ref=creativetim"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -330,7 +330,7 @@ class Tutorial extends React.Component {
           <li>
             (Optional) Enable billing. See{" "}
             <a
-              href="https://developers.google.com/maps/documentation/javascript/usage"
+              href="https://developers.google.com/maps/documentation/javascript/usage?ref=creativetim"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -348,7 +348,7 @@ class Tutorial extends React.Component {
         <p>
           For more information regarding google maps API KEY navigate to this{" "}
           <a
-            href="https://developers.google.com/maps/documentation/javascript/get-api-key"
+            href="https://developers.google.com/maps/documentation/javascript/get-api-key?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >

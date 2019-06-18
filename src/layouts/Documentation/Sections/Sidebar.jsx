@@ -66,7 +66,7 @@ class Sidebar extends React.Component {
         <p>
           Please check out the{" "}
           <a
-            href="https://material-ui-next.com/demos/drawers/"
+            href="https://material-ui-next.com/demos/drawers/?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -17,7 +17,7 @@ class Icons extends React.Component {
           names (ligatures) directly in components that support them, you must
           first add the{" "}
           <a
-            href="https://material.io/icons/"
+            href="https://material.io/icons/?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -25,7 +25,7 @@ class Icons extends React.Component {
           </a>
           . Here are some{" "}
           <a
-            href="https://google.github.io/material-design-icons/#icon-font-for-the-web"
+            href="https://google.github.io/material-design-icons/#icon-font-for-the-web?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -52,7 +52,7 @@ class Icons extends React.Component {
           In order to use prebuilt SVG Material icons, such as those found in
           the component demos you must first install the{" "}
           <a
-            href="https://www.npmjs.com/package/@material-ui/icons"
+            href="https://www.npmjs.com/package/@material-ui/icons?ref=creativetim"
             target="_blank"
             rel="noopener noreferrer"
           >

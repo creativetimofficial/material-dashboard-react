@@ -92,7 +92,7 @@ class DocHeader extends React.Component {
                 v1.7.0
               </Button>
               <a
-                href="https://github.com/creativetimofficial/material-dashboard-react"
+                href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
                 className={classes.iconLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,7 +100,7 @@ class DocHeader extends React.Component {
                 <i className="fa fa-github" />
               </a>
               <a
-                href="https://twitter.com/CreativeTim"
+                href="https://twitter.com/CreativeTim?ref=creativetim"
                 className={classes.iconLink}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -119,7 +119,7 @@ class DocHeader extends React.Component {
               <span className={classes.rightLinksText}>Back to dashboard</span>
             </NavLink>
             <a
-              href="https://github.com/creativetimofficial/material-dashboard-react/issues"
+              href="https://github.com/creativetimofficial/material-dashboard-react/issues?ref=creativetim"
               className={classes.rightLinks}
               target="_blank"
               rel="noopener noreferrer"
@@ -128,7 +128,7 @@ class DocHeader extends React.Component {
               <span className={classes.rightLinksText}>Report a bug</span>
             </a>
             <a
-              href="https://github.com/creativetimofficial/material-dashboard-react"
+              href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
               className={classes.rightLinks}
               target="_blank"
               rel="noopener noreferrer"
@@ -158,7 +158,7 @@ class DocHeader extends React.Component {
               onClick={e => e.preventDefault()}
             />
             <a
-              href="https://github.com/creativetimofficial/material-dashboard-react"
+              href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
               className="github-corner"
               aria-label="View source on Github"
             >
