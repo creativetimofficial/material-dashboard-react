@@ -50,13 +50,13 @@ const dropdownStyle = theme => ({
       color: "black"
     }
   },
-  pooperNav: {
+  popperNav: {
     [theme.breakpoints.down("sm")]: {
       position: "static !important",
       left: "unset !important",
       top: "unset !important",
       transform: "none !important",
-      willChange: "none !important",
+      willChange: "unset !important",
       "& > div": {
         boxShadow: "none !important",
         marginLeft: "0rem",

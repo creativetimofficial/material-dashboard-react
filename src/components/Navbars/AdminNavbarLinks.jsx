@@ -100,7 +100,7 @@ class AdminNavbarLinks extends React.Component {
             className={
               classNames({ [classes.popperClose]: !open }) +
               " " +
-              classes.pooperNav
+              classes.popperNav
             }
           >
             {({ TransitionProps, placement }) => (
