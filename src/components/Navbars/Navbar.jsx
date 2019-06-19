@@ -19,8 +19,8 @@ import headerStyle from "assets/jss/material-dashboard-react/components/headerSt
 function Header({ ...props }) {
   function makeBrand() {
     var name;
-    props.routes.map((prop, key) => {
-      if (prop.layout + prop.path === props.location.pathname) {
+    props.routes.map(prop => {
+      if (window.location.href.indexOf(prop.layout + prop.path) !== -1) {
         name = props.rtlActive ? prop.rtlName : prop.name;
       }
       return null;
@@ -59,7 +59,10 @@ function Header({ ...props }) {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"])
+  color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
+  rtlActive: PropTypes.bool,
+  handleDrawerToggle: PropTypes.func,
+  routes: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default withStyles(headerStyle)(Header);

@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
@@ -19,7 +20,7 @@ import sidebarStyle from "assets/jss/material-dashboard-react/components/sidebar
 const Sidebar = ({ ...props }) => {
   // verifies if routeName is the one active (in browser input)
   function activeRoute(routeName) {
-    return props.location.pathname.indexOf(routeName) > -1 ? true : false;
+    return window.location.href.indexOf(routeName) > -1 ? true : false;
   }
   const { classes, color, logo, image, logoText, routes } = props;
   var links = (
@@ -64,9 +65,7 @@ const Sidebar = ({ ...props }) => {
                 />
               )}
               <ListItemText
-                primary={
-                  props.rtlActive ? prop.rtlName : prop.name
-                }
+                primary={props.rtlActive ? prop.rtlName : prop.name}
                 className={classNames(classes.itemText, whiteFontClasses, {
                   [classes.itemTextRTL]: props.rtlActive
                 })}
@@ -81,10 +80,11 @@ const Sidebar = ({ ...props }) => {
   var brand = (
     <div className={classes.logo}>
       <a
-        href="https://www.creative-tim.com"
+        href="https://www.creative-tim.com?ref=mdr-sidebar"
         className={classNames(classes.logoLink, {
           [classes.logoLinkRTL]: props.rtlActive
         })}
+        target="_blank"
       >
         <div className={classes.logoImage}>
           <img src={logo} alt="logo" className={classes.img} />
@@ -149,7 +149,15 @@ const Sidebar = ({ ...props }) => {
 };
 
 Sidebar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  rtlActive: PropTypes.bool,
+  handleDrawerToggle: PropTypes.func,
+  bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
+  logo: PropTypes.string,
+  image: PropTypes.string,
+  logoText: PropTypes.string,
+  routes: PropTypes.arrayOf(PropTypes.object),
+  open: PropTypes.bool
 };
 
 export default withStyles(sidebarStyle)(Sidebar);

@@ -1,5 +1,8 @@
 /*eslint-disable*/
 import React, { Component } from "react";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
+// nodejs library that concatenates classes
 import classnames from "classnames";
 
 import imagine1 from "assets/img/sidebar-1.jpg";
@@ -146,7 +149,7 @@ class FixedPlugin extends Component {
               <div className="button-container">
                 <Button
                   color="success"
-                  href="https://www.creative-tim.com/product/material-dashboard-react"
+                  href="https://www.creative-tim.com/product/material-dashboard-react?ref=mdr-fixed-plugin"
                   target="_blank"
                   fullWidth
                 >
@@ -158,7 +161,7 @@ class FixedPlugin extends Component {
               <div className="button-container">
                 <Button
                   color="warning"
-                  href="https://www.creative-tim.com/product/material-dashboard-pro-react"
+                  href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mdr-fixed-plugin"
                   target="_blank"
                   fullWidth
                 >
@@ -170,7 +173,7 @@ class FixedPlugin extends Component {
               <Button
                 color="info"
                 fullWidth
-                href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial"
+                href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial?ref=mdr-fixed-plugin"
                 target="_blank"
               >
                 Documentation
@@ -183,5 +186,15 @@ class FixedPlugin extends Component {
     );
   }
 }
+
+FixedPlugin.propTypes = {
+  bgImage: PropTypes.string,
+  handleFixedClick: PropTypes.func,
+  rtlActive: PropTypes.bool,
+  fixedClasses: PropTypes.string,
+  bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
+  handleColorClick: PropTypes.func,
+  handleImageClick: PropTypes.func
+};
 
 export default FixedPlugin;

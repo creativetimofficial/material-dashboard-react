@@ -42,7 +42,8 @@ CardFooter.propTypes = {
   plain: PropTypes.bool,
   profile: PropTypes.bool,
   stats: PropTypes.bool,
-  chart: PropTypes.bool
+  chart: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default withStyles(cardFooterStyle)(CardFooter);

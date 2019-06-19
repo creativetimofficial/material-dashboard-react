@@ -1,4 +1,6 @@
 import React from "react";
+// nodejs library to set properties for components
+import PropTypes from "prop-types";
 import classNames from "classnames";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
@@ -20,7 +22,7 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import rtlHeaderLinksStyle from "assets/jss/material-dashboard-react/components/rtlHeaderLinksStyle.jsx";
 
-class HeaderLinks extends React.Component {
+class RTLNavbarLinks extends React.Component {
   state = {
     open: false
   };
@@ -98,7 +100,7 @@ class HeaderLinks extends React.Component {
             className={
               classNames({ [classes.popperClose]: !open }) +
               " " +
-              classes.pooperNav
+              classes.popperNav
             }
           >
             {({ TransitionProps, placement }) => (
@@ -167,4 +169,8 @@ class HeaderLinks extends React.Component {
   }
 }
 
-export default withStyles(rtlHeaderLinksStyle)(HeaderLinks);
+RTLNavbarLinks.propTypes = {
+  classes: PropTypes.object
+};
+
+export default withStyles(rtlHeaderLinksStyle)(RTLNavbarLinks);
