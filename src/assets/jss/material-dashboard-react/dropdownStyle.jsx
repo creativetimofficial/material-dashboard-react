@@ -50,13 +50,13 @@ const dropdownStyle = theme => ({
       color: "black"
     }
   },
-  pooperNav: {
+  popperNav: {
     [theme.breakpoints.down("sm")]: {
       position: "static !important",
       left: "unset !important",
       top: "unset !important",
       transform: "none !important",
-      willChange: "none !important",
+      willChange: "unset !important",
       "& > div": {
         boxShadow: "none !important",
         marginLeft: "0rem",
@@ -112,6 +112,7 @@ const dropdownStyle = theme => ({
     color: grayColor[8],
     whiteSpace: "nowrap",
     height: "unset",
+    minHeight: "unset",
     "&:hover": {
       backgroundColor: primaryColor[0],
       color: whiteColor,
