@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.7.0] 2019-06-xx
+## [1.7.0] 2019-06-19
 ### Warning
 **All React Material products have now the same version, i.e. 1.7.0.**
 - **All linting errors are solved now, but due to google analytics stuff, we've needed to add target="_blank" to our links, so this lint error still exists.**
