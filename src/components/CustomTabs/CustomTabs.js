@@ -5,7 +5,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 // material-ui components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 // core components
@@ -13,82 +13,71 @@ import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 
-import customTabsStyle from "assets/jss/material-dashboard-react/components/customTabsStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/customTabsStyle.js";
 
-class CustomTabs extends React.Component {
-  state = {
-    value: 0
+const useStyles = makeStyles(styles);
+
+export default function CustomTabs(props) {
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, value) => {
+    setValue(value);
   };
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
-  render() {
-    const {
-      classes,
-      headerColor,
-      plainTabs,
-      tabs,
-      title,
-      rtlActive
-    } = this.props;
-    const cardTitle = classNames({
-      [classes.cardTitle]: true,
-      [classes.cardTitleRTL]: rtlActive
-    });
-    return (
-      <Card plain={plainTabs}>
-        <CardHeader color={headerColor} plain={plainTabs}>
-          {title !== undefined ? (
-            <div className={cardTitle}>{title}</div>
-          ) : null}
-          <Tabs
-            value={this.state.value}
-            onChange={this.handleChange}
-            classes={{
-              root: classes.tabsRoot,
-              indicator: classes.displayNone,
-              scrollButtons: classes.displayNone
-            }}
-            variant="scrollable"
-            scrollButtons="auto"
-          >
-            {tabs.map((prop, key) => {
-              var icon = {};
-              if (prop.tabIcon) {
-                icon = {
-                  icon: <prop.tabIcon />
-                };
-              }
-              return (
-                <Tab
-                  classes={{
-                    root: classes.tabRootButton,
-                    selected: classes.tabSelected,
-                    wrapper: classes.tabWrapper
-                  }}
-                  key={key}
-                  label={prop.tabName}
-                  {...icon}
-                />
-              );
-            })}
-          </Tabs>
-        </CardHeader>
-        <CardBody>
+  const classes = useStyles();
+  const { headerColor, plainTabs, tabs, title, rtlActive } = props;
+  const cardTitle = classNames({
+    [classes.cardTitle]: true,
+    [classes.cardTitleRTL]: rtlActive
+  });
+  return (
+    <Card plain={plainTabs}>
+      <CardHeader color={headerColor} plain={plainTabs}>
+        {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          classes={{
+            root: classes.tabsRoot,
+            indicator: classes.displayNone,
+            scrollButtons: classes.displayNone
+          }}
+          variant="scrollable"
+          scrollButtons="auto"
+        >
           {tabs.map((prop, key) => {
-            if (key === this.state.value) {
-              return <div key={key}>{prop.tabContent}</div>;
+            var icon = {};
+            if (prop.tabIcon) {
+              icon = {
+                icon: <prop.tabIcon />
+              };
             }
-            return null;
+            return (
+              <Tab
+                classes={{
+                  root: classes.tabRootButton,
+                  selected: classes.tabSelected,
+                  wrapper: classes.tabWrapper
+                }}
+                key={key}
+                label={prop.tabName}
+                {...icon}
+              />
+            );
           })}
-        </CardBody>
-      </Card>
-    );
-  }
+        </Tabs>
+      </CardHeader>
+      <CardBody>
+        {tabs.map((prop, key) => {
+          if (key === value) {
+            return <div key={key}>{prop.tabContent}</div>;
+          }
+          return null;
+        })}
+      </CardBody>
+    </Card>
+  );
 }
 
 CustomTabs.propTypes = {
-  classes: PropTypes.object.isRequired,
   headerColor: PropTypes.oneOf([
     "warning",
     "success",
@@ -108,5 +97,3 @@ CustomTabs.propTypes = {
   rtlActive: PropTypes.bool,
   plainTabs: PropTypes.bool
 };
-
-export default withStyles(customTabsStyle)(CustomTabs);
