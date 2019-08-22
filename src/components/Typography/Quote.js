@@ -5,7 +5,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import typographyStyle from "assets/jss/material-dashboard-react/components/typographyStyle.js";
 
-function Quote({ ...props }) {
+function Quote(props) {
   const { classes, text, author } = props;
   return (
     <blockquote className={classes.defaultFontStyle + " " + classes.quote}>

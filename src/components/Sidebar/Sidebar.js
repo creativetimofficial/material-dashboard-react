@@ -17,7 +17,7 @@ import RTLNavbarLinks from "components/Navbars/RTLNavbarLinks.js";
 
 import sidebarStyle from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
-const Sidebar = ({ ...props }) => {
+const Sidebar = (props) => {
   // verifies if routeName is the one active (in browser input)
   function activeRoute(routeName) {
     return window.location.href.indexOf(routeName) > -1 ? true : false;

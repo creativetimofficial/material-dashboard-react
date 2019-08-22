@@ -10,7 +10,7 @@ import Close from "@material-ui/icons/Close";
 // core components
 import snackbarContentStyle from "assets/jss/material-dashboard-react/components/snackbarContentStyle.js";
 
-function SnackbarContent({ ...props }) {
+function SnackbarContent(props) {
   const { classes, message, color, close, icon, rtlActive } = props;
   var action = [];
   const messageClasses = classNames({

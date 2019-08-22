@@ -16,7 +16,7 @@ import Button from "components/CustomButtons/Button.js";
 
 import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.js";
 
-function Header({ ...props }) {
+function Header(props) {
   function makeBrand() {
     var name;
     props.routes.map(prop => {

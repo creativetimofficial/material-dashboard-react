@@ -11,7 +11,7 @@ const style = {
   }
 };
 
-function GridItem({ ...props }) {
+function GridItem(props) {
   const { classes, children, ...rest } = props;
   return (
     <Grid item {...rest} className={classes.grid}>
