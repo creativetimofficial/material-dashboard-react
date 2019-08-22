@@ -1,11 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -14,9 +13,9 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
-import rtlStyle from "assets/jss/material-dashboard-react/layouts/rtlStyle.js";
+import styles from "assets/jss/material-dashboard-react/layouts/rtlStyle.js";
 
-import image from "assets/img/sidebar-2.jpg";
+import bgImage from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
 let ps;
@@ -39,107 +38,99 @@ const switchRoutes = (
   </Switch>
 );
 
-class RTL extends React.Component {
-  state = {
-    image: image,
-    color: "blue",
-    hasImage: true,
-    fixedClasses: "dropdown ",
-    mobileOpen: false
+const useStyles = makeStyles(styles);
+
+export default function RTL({ ...rest }) {
+  // styles
+  const classes = useStyles();
+  // ref to help us initialize PerfectScrollbar on windows devices
+  const mainPanel = React.createRef();
+  // states and functions
+  const [image, setImage] = React.useState(bgImage);
+  const [color, setColor] = React.useState("blue");
+  const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const handleImageClick = image => {
+    setImage(image);
   };
-  mainPanel = React.createRef();
-  handleImageClick = image => {
-    this.setState({ image: image });
+  const handleColorClick = color => {
+    setColor(color);
   };
-  handleColorClick = color => {
-    this.setState({ color: color });
-  };
-  handleFixedClick = () => {
-    if (this.state.fixedClasses === "dropdown") {
-      this.setState({ fixedClasses: "dropdown show" });
+  const handleFixedClick = () => {
+    if (fixedClasses === "dropdown") {
+      setFixedClasses("dropdown show");
     } else {
-      this.setState({ fixedClasses: "dropdown" });
+      setFixedClasses("dropdown");
     }
   };
-  handleDrawerToggle = () => {
-    this.setState({ mobileOpen: !this.state.mobileOpen });
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
   };
-  getRoute() {
+  const getRoute = () => {
     return window.location.pathname !== "/admin/maps";
-  }
-  resizeFunction = () => {
+  };
+  const resizeFunction = () => {
     if (window.innerWidth >= 960) {
-      this.setState({ mobileOpen: false });
+      setMobileOpen(false);
     }
   };
-  componentDidMount() {
+  // initialize and destroy the PerfectScrollbar plugin
+  React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
-      ps = new PerfectScrollbar(this.mainPanel.current);
+      ps = new PerfectScrollbar(mainPanel.current, {
+        suppressScrollX: true,
+        suppressScrollY: false
+      });
+      document.body.style.overflow = "hidden";
     }
-    window.addEventListener("resize", this.resizeFunction);
-  }
-  componentDidUpdate(e) {
-    if (e.history.location.pathname !== e.location.pathname) {
-      this.mainPanel.current.mainPanel.scrollTop = 0;
-      if (this.state.mobileOpen) {
-        this.setState({ mobileOpen: false });
+    window.addEventListener("resize", resizeFunction);
+    // Specify how to clean up after this effect:
+    return function cleanup() {
+      if (navigator.platform.indexOf("Win") > -1) {
+        ps.destroy();
       }
-    }
-  }
-  componentWillUnmount() {
-    if (navigator.platform.indexOf("Win") > -1) {
-      ps.destroy();
-    }
-    window.removeEventListener("resize", this.resizeFunction);
-  }
-  render() {
-    const { classes, ...rest } = this.props;
-    return (
-      <div className={classes.wrapper}>
-        <Sidebar
+      window.removeEventListener("resize", resizeFunction);
+    };
+  }, [mainPanel]);
+  return (
+    <div className={classes.wrapper}>
+      <Sidebar
+        routes={routes}
+        logoText={"الإبداعية تيم"}
+        logo={logo}
+        image={image}
+        handleDrawerToggle={handleDrawerToggle}
+        open={mobileOpen}
+        color={color}
+        rtlActive
+        {...rest}
+      />
+      <div className={classes.mainPanel} ref={mainPanel}>
+        <Navbar
           routes={routes}
-          logoText={"الإبداعية تيم"}
-          logo={logo}
-          image={this.state.image}
-          handleDrawerToggle={this.handleDrawerToggle}
-          open={this.state.mobileOpen}
-          color={this.state.color}
+          handleDrawerToggle={handleDrawerToggle}
           rtlActive
           {...rest}
         />
-        <div className={classes.mainPanel} ref={this.mainPanel}>
-          <Navbar
-            routes={routes}
-            handleDrawerToggle={this.handleDrawerToggle}
-            rtlActive
-            {...rest}
-          />
-          {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
-          {this.getRoute() ? (
-            <div className={classes.content}>
-              <div className={classes.container}>{switchRoutes}</div>
-            </div>
-          ) : (
-            <div className={classes.map}>{switchRoutes}</div>
-          )}
-          {this.getRoute() ? <Footer /> : null}
-          <FixedPlugin
-            handleImageClick={this.handleImageClick}
-            handleColorClick={this.handleColorClick}
-            bgColor={this.state["color"]}
-            bgImage={this.state["image"]}
-            handleFixedClick={this.handleFixedClick}
-            fixedClasses={this.state.fixedClasses}
-            rtlActive
-          />
-        </div>
+        {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
+        {getRoute() ? (
+          <div className={classes.content}>
+            <div className={classes.container}>{switchRoutes}</div>
+          </div>
+        ) : (
+          <div className={classes.map}>{switchRoutes}</div>
+        )}
+        {getRoute() ? <Footer /> : null}
+        <FixedPlugin
+          handleImageClick={handleImageClick}
+          handleColorClick={handleColorClick}
+          bgColor={color}
+          bgImage={image}
+          handleFixedClick={handleFixedClick}
+          fixedClasses={fixedClasses}
+          rtlActive
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-RTL.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(rtlStyle)(RTL);
