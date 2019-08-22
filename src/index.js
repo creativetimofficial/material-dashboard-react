@@ -1,7 +1,7 @@
 /*!
 
 =========================================================
-* Material Dashboard React - v1.7.0
+* Material Dashboard React - v1.8.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -22,11 +22,11 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import ReactPixel from "react-facebook-pixel";
 
 // core components
-import Admin from "layouts/Admin.jsx";
-import RTL from "layouts/RTL.jsx";
+import Admin from "layouts/Admin.js";
+import RTL from "layouts/RTL.js";
 import Documentation from "layouts/Documentation/Documentation.jsx";
 
-import "assets/css/material-dashboard-react.css?v=1.7.0";
+import "assets/css/material-dashboard-react.css?v=1.8.0";
 
 const hist = createHashHistory();
 
