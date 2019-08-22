@@ -1,13 +1,15 @@
 # Change Log
 
 ## [1.8.0] date
+### Warning
+- Due to the fact that on the PRO version of this product the Sidebar component could not be changed to hooks, we've left the Sidebar component of this product unaltered as well (it makes use of classes and the withStyles function, instead of React Hooks and makeStyles function)
 ### Bug fixing
 - Rewrote the ISSUE_TEMPLATE
 - Deleted the copyright comments from all files, we only need to keep them inside our index.js and index.html
 - Added script that adds copyrights to the built app
 - Renamed all the files from `.jsx` to `.js`
 - Changed the `withStyles` function from Material-UI with the `makeStyles` function (integration with other frameworks should now be easy)
-- React Hooks is now supported
+- React Hooks is now supported (Please read the above warnings)
 ### Major style changes
 - Renamed `assets/jss/material-dashboard-react/layouts/dashboardStyle.js` to `assets/jss/material-dashboard-react/layouts/adminStyle.js`
 ### Deleted components
