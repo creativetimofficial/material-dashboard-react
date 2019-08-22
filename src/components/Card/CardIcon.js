@@ -4,14 +4,17 @@ import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import cardIconStyle from "assets/jss/material-dashboard-react/components/cardIconStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/cardIconStyle.js";
 
-function CardIcon({ ...props }) {
-  const { classes, className, children, color, ...rest } = props;
+const useStyles = makeStyles(styles);
+
+export default function CardIcon(props) {
+  const classes = useStyles();
+  const { className, children, color, ...rest } = props;
   const cardIconClasses = classNames({
     [classes.cardIcon]: true,
     [classes[color + "CardHeader"]]: color,
@@ -25,7 +28,6 @@ function CardIcon({ ...props }) {
 }
 
 CardIcon.propTypes = {
-  classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   color: PropTypes.oneOf([
     "warning",
@@ -37,5 +39,3 @@ CardIcon.propTypes = {
   ]),
   children: PropTypes.node
 };
-
-export default withStyles(cardIconStyle)(CardIcon);

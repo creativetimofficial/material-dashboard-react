@@ -4,23 +4,17 @@ import classNames from "classnames";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import cardFooterStyle from "assets/jss/material-dashboard-react/components/cardFooterStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/cardFooterStyle.js";
 
-function CardFooter({ ...props }) {
-  const {
-    classes,
-    className,
-    children,
-    plain,
-    profile,
-    stats,
-    chart,
-    ...rest
-  } = props;
+const useStyles = makeStyles(styles);
+
+export default function CardFooter(props) {
+  const classes = useStyles();
+  const { className, children, plain, profile, stats, chart, ...rest } = props;
   const cardFooterClasses = classNames({
     [classes.cardFooter]: true,
     [classes.cardFooterPlain]: plain,
@@ -37,7 +31,6 @@ function CardFooter({ ...props }) {
 }
 
 CardFooter.propTypes = {
-  classes: PropTypes.object.isRequired,
   className: PropTypes.string,
   plain: PropTypes.bool,
   profile: PropTypes.bool,
@@ -45,5 +38,3 @@ CardFooter.propTypes = {
   chart: PropTypes.bool,
   children: PropTypes.node
 };
-
-export default withStyles(cardFooterStyle)(CardFooter);
