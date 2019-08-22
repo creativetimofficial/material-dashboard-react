@@ -24,31 +24,31 @@ import { prism } from "react-syntax-highlighter/dist/styles/prism";
 
 const restyledComponents = `components
 ├── CustomButtons
-│   ├── Button.jsx
+│   ├── Button.js
 ├── CustomInput
-│   └── CustomInput.jsx
+│   └── CustomInput.js
 ├── Footer
-│   └── Footer.jsx
+│   └── Footer.js
 ├── Header
-│   ├── Header.jsx
-│   └── HeaderLinks.jsx
+│   ├── Header.js
+│   └── HeaderLinks.js
 ├── Sidebar
-│   └── Sidebar.jsx
+│   └── Sidebar.js
 ├── Snackbar
-│   ├── Snackbar.jsx
-│   └── SnackbarContent.jsx
+│   ├── Snackbar.js
+│   └── SnackbarContent.js
 ├── Table
-│   └── Table.jsx
+│   └── Table.js
 ├── Tasks
-│   └── Tasks.jsx
+│   └── Tasks.js
 └── Typography
-    ├── Danger.jsx
-    ├── Info.jsx
-    ├── Muted.jsx
-    ├── Primary.jsx
-    ├── Quote.jsx
-    ├── Success.jsx
-    └── Warning.jsx`;
+    ├── Danger.js
+    ├── Info.js
+    ├── Muted.js
+    ├── Primary.js
+    ├── Quote.js
+    ├── Success.js
+    └── Warning.js`;
 
 class Styles extends React.Component {
   render() {
@@ -122,7 +122,7 @@ class Styles extends React.Component {
           </li>
           <li>
             <code>
-              src/assets/jss/material-dashboard-react/checkboxAdnRadioStyle.jsx
+              src/assets/jss/material-dashboard-react/checkboxAdnRadioStyle.js
             </code>{" "}
             are styles used for <code>checkboxes</code> and <code>radios</code>,
             which are beeing used in more than one page (sometimes this styles
@@ -130,14 +130,14 @@ class Styles extends React.Component {
           </li>
           <li>
             <code>
-              src/assets/jss/material-dashboard-react/tooltipStyle.jsx
+              src/assets/jss/material-dashboard-react/tooltipStyle.js
             </code>{" "}
             are styles used for <code>tooltips</code>, which are beeing used in
             more than one page (sometimes this styles are beeing imported in the
             above styles)
           </li>
           <li>
-            <code>src/assets/jss/material-dashboard-react.jsx</code> are
+            <code>src/assets/jss/material-dashboard-react.js</code> are
             variables that are beeing used in any of the above styles
           </li>
         </ul>

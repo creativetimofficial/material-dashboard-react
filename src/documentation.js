@@ -16,31 +16,31 @@
 
 */
 // Getting started
-import Tutorial from "layouts/Documentation/Sections/Tutorial.jsx";
-import RoutingSystem from "layouts/Documentation/Sections/RoutingSystem.jsx";
-import Variables from "layouts/Documentation/Sections/Variables.jsx";
-import Styles from "layouts/Documentation/Sections/Styles.jsx";
-import LintCommands from "layouts/Documentation/Sections/LintCommands.jsx";
-import BuildTools from "layouts/Documentation/Sections/BuildTools.jsx";
+import Tutorial from "layouts/Documentation/Sections/Tutorial.js";
+import RoutingSystem from "layouts/Documentation/Sections/RoutingSystem.js";
+import Variables from "layouts/Documentation/Sections/Variables.js";
+import Styles from "layouts/Documentation/Sections/Styles.js";
+import LintCommands from "layouts/Documentation/Sections/LintCommands.js";
+import BuildTools from "layouts/Documentation/Sections/BuildTools.js";
 
 // Components
-import Buttons from "layouts/Documentation/Sections/Buttons.jsx";
-import Cards from "layouts/Documentation/Sections/Cards.jsx";
-import CheckboxRadio from "layouts/Documentation/Sections/CheckboxRadio.jsx";
-import Dropdown from "layouts/Documentation/Sections/Dropdown.jsx";
-import Icons from "layouts/Documentation/Sections/Icons.jsx";
-import Inputs from "layouts/Documentation/Sections/Inputs.jsx";
-import Navigation from "layouts/Documentation/Sections/Navigation.jsx";
-import Notifications from "layouts/Documentation/Sections/Notifications.jsx";
-import Sidebar from "layouts/Documentation/Sections/Sidebar.jsx";
-import Tables from "layouts/Documentation/Sections/Tables.jsx";
-import Tabs from "layouts/Documentation/Sections/Tabs.jsx";
-import Tasks from "layouts/Documentation/Sections/Tasks.jsx";
-import Typography from "layouts/Documentation/Sections/Typography.jsx";
-import Tooltips from "layouts/Documentation/Sections/Tooltips.jsx";
+import Buttons from "layouts/Documentation/Sections/Buttons.js";
+import Cards from "layouts/Documentation/Sections/Cards.js";
+import CheckboxRadio from "layouts/Documentation/Sections/CheckboxRadio.js";
+import Dropdown from "layouts/Documentation/Sections/Dropdown.js";
+import Icons from "layouts/Documentation/Sections/Icons.js";
+import Inputs from "layouts/Documentation/Sections/Inputs.js";
+import Navigation from "layouts/Documentation/Sections/Navigation.js";
+import Notifications from "layouts/Documentation/Sections/Notifications.js";
+import Sidebar from "layouts/Documentation/Sections/Sidebar.js";
+import Tables from "layouts/Documentation/Sections/Tables.js";
+import Tabs from "layouts/Documentation/Sections/Tabs.js";
+import Tasks from "layouts/Documentation/Sections/Tasks.js";
+import Typography from "layouts/Documentation/Sections/Typography.js";
+import Tooltips from "layouts/Documentation/Sections/Tooltips.js";
 
 // Plugins
-import GoogleMaps from "layouts/Documentation/Sections/GoogleMaps.jsx";
+import GoogleMaps from "layouts/Documentation/Sections/GoogleMaps.js";
 
 const docsRoutes = [
   {

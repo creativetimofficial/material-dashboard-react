@@ -27,16 +27,16 @@ import Grid from "@material-ui/core/Grid";
 import AccessTime from "@material-ui/icons/AccessTime";
 
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
+import GridItem from "components/Grid/GridItem.js";
 
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
 
 import { emailsSubscriptionChart, completedTasksChart } from "variables/charts";
 
-import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 class CardChart extends React.Component {
   render() {

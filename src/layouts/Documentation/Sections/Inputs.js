@@ -24,8 +24,8 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui/icons
 import People from "@material-ui/icons/People";
 //core components
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
+import CustomInput from "components/CustomInput/CustomInput.js";
+import GridItem from "components/Grid/GridItem.js";
 
 const inputsDep = `// @material-ui/core components
 import Grid from "@material-ui/core/Grid";
@@ -33,8 +33,8 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui/icons
 import People from "@material-ui/icons/People";
 //core components
-import CustomInput from "components/CustomInput/CustomInput.jsx";
-import GridItem from "components/Grid/GridItem.jsx";`;
+import CustomInput from "components/CustomInput/CustomInput.js";
+import GridItem from "components/Grid/GridItem.js";`;
 const inputs = `<Grid container>
   <GridItem xs={12} sm={12} md={4}>
     <CustomInput

@@ -31,9 +31,9 @@ import Poppers from "@material-ui/core/Popper";
 // @material-ui/icons
 import Notifications from "@material-ui/icons/Notifications";
 //core components
-import Button from "components/CustomButtons/Button.jsx";
+import Button from "components/CustomButtons/Button.js";
 
-import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
+import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.js";
 
 const dropdown = `import React from "react";
 import classNames from "classnames";
@@ -49,9 +49,9 @@ import Poppers from "@material-ui/core/Popper";
 // @material-ui/icons
 import Notifications from "@material-ui/icons/Notifications";
 //core components
-import Button from "components/CustomButtons/Button.jsx";
+import Button from "components/CustomButtons/Button.js";
 
-import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.jsx";
+import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.js";
 
 class Dropdown extends React.Component {
   state = {

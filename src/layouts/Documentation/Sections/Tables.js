@@ -22,9 +22,9 @@ import { prism } from "react-syntax-highlighter/dist/styles/prism";
 // @material-ui/core components
 // @material-ui/icons
 //core components
-import Table from "components/Table/Table.jsx";
+import Table from "components/Table/Table.js";
 
-const tableDep = `import Table from "components/Table/Table.jsx";`;
+const tableDep = `import Table from "components/Table/Table.js";`;
 const table = `<Table
     tableHeaderColor="primary"
     tableHead={['Name','Country','City','Salary']}

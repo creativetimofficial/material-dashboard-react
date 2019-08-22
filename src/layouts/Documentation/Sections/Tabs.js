@@ -23,10 +23,10 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
-import Tabs from "components/CustomTabs/CustomTabs.jsx";
-import Tasks from "components/Tasks/Tasks.jsx";
+import Tabs from "components/CustomTabs/CustomTabs.js";
+import Tasks from "components/Tasks/Tasks.js";
 
-import { bugs, website, server } from "variables/general.jsx";
+import { bugs, website, server } from "variables/general.js";
 
 const codeExample = `import React from "react";
 // @material-ui/icons
@@ -34,10 +34,10 @@ import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
 import Cloud from "@material-ui/icons/Cloud";
 // core components
-import Tabs from "components/CustomTabs/CustomTabs.jsx";
-import Tasks from "components/Tasks/Tasks.jsx";
+import Tabs from "components/CustomTabs/CustomTabs.js";
+import Tasks from "components/Tasks/Tasks.js";
 
-import { bugs, website, server } from "variables/general.jsx";
+import { bugs, website, server } from "variables/general.js";
 
 function DemoTabs({ ...props }) {
   return (
@@ -116,7 +116,7 @@ function DemoTasks({ ...props }) {
         You will find the styles for this component in
         <br />{" "}
         <code>
-          src/assets/jss/material-dashboard-react/components/customTabsStyle.jsx
+          src/assets/jss/material-dashboard-react/components/customTabsStyle.js
         </code>
         .
       </p>

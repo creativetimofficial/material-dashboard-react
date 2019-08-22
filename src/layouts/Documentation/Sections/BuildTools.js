@@ -17,7 +17,7 @@
 */
 import React from "react";
 
-import Table from "components/Table/Table.jsx";
+import Table from "components/Table/Table.js";
 
 class BuildTools extends React.Component {
   render() {
@@ -33,7 +33,7 @@ class BuildTools extends React.Component {
           <li>
             You will find all the branding colors inside{" "}
             <code className="highlighter-rouge">
-              src/assets/jss/material-dashboard-react.jsx
+              src/assets/jss/material-dashboard-react.js
             </code>
             .
           </li>

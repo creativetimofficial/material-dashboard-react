@@ -22,15 +22,15 @@ import { prism } from "react-syntax-highlighter/dist/styles/prism";
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
-import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
-import Snackbar from "components/Snackbar/Snackbar.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
+import Snackbar from "components/Snackbar/Snackbar.js";
+import Button from "components/CustomButtons/Button.js";
 
 const style = `import React from 'react';
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
-import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 
 class StyleExample extends React.Component{
     render(){
@@ -63,7 +63,7 @@ const state = `import React from 'react';
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
-import SnackbarContent from "components/Snackbar/SnackbarContent.jsx";
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 
 class StateExample extends React.Component{
     render(){
@@ -89,8 +89,8 @@ const place = `import React from 'react';
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
-import Snackbar from "components/Snackbar/Snackbar.jsx";
-import Button from "components/CustomButtons/Button.jsx";
+import Snackbar from "components/Snackbar/Snackbar.js";
+import Button from "components/CustomButtons/Button.js";
 
 class PlaceExample extends React.Component{
     state = {

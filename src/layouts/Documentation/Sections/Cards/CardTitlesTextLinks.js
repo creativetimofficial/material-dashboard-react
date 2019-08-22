@@ -4,15 +4,15 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import Muted from "components/Typography/Muted.jsx";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
+import Muted from "components/Typography/Muted.js";
 
 import {
   cardTitle,
   cardSubtitle,
   cardLink
-} from "assets/jss/material-dashboard-react.jsx";
+} from "assets/jss/material-dashboard-react.js";
 
 const styles = {
   cardTitle,

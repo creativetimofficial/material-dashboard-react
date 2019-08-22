@@ -28,7 +28,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Edit from "@material-ui/icons/Edit";
 import Close from "@material-ui/icons/Close";
 //core components
-import tasksStyle from "assets/jss/material-dashboard-react/components/tasksStyle.jsx";
+import tasksStyle from "assets/jss/material-dashboard-react/components/tasksStyle.js";
 
 const tooltip = `import React from 'react';
 import PropTypes from 'prop-types';
@@ -40,7 +40,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Edit from "@material-ui/icons/Edit";
 import Close from "@material-ui/icons/Close";
 //core components
-import tasksStyle from 'assets/jss/material-dashboard-react/components/tasksStyle.jsx';
+import tasksStyle from 'assets/jss/material-dashboard-react/components/tasksStyle.js';
 
 class Tooltips extends React.Component{
     render(){

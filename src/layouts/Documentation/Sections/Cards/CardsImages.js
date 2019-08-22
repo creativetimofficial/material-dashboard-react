@@ -21,11 +21,11 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import Button from "components/CustomButtons/Button.js";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
 
-import cardImagesStyles from "assets/jss/material-dashboard-react/cardImagesStyles.jsx";
+import cardImagesStyles from "assets/jss/material-dashboard-react/cardImagesStyles.js";
 
 const styles = {
   ...cardImagesStyles,

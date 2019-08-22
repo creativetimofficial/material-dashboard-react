@@ -36,7 +36,7 @@ class Variables extends React.Component {
         </p>
         <p>
           You will find all the variables regarding the charts in{" "}
-          <code>src/variables/charts.jsx</code>, all the styles variables (we
+          <code>src/variables/charts.js</code>, all the styles variables (we
           will discuss about these in the{" "}
           <Link to={"/documentation/styles"}>next section</Link> of the
           documentation) in{" "}
@@ -44,7 +44,7 @@ class Variables extends React.Component {
             scr/assets/jss/<b>*</b>
           </code>{" "}
           and all the rest variables (variables used for example in tasks page
-          etc.) in <code>src/variables/general.jsx</code>.
+          etc.) in <code>src/variables/general.js</code>.
         </p>
         <p>
           At the end of each of these three files you will find the exports with
@@ -54,12 +54,12 @@ class Variables extends React.Component {
         <SyntaxHighlighter
           language="jsx"
           style={prism}
-        >{`import { variableName } from 'variables/variableFile.jsx';`}</SyntaxHighlighter>
+        >{`import { variableName } from 'variables/variableFile.js';`}</SyntaxHighlighter>
         <p>
-          Where <code>variableFile.jsx</code> is one of <code>charts.jsx</code>,{" "}
-          <code>general.jsx</code> or <code>styles.jsx</code> and{" "}
+          Where <code>variableFile.js</code> is one of <code>charts.js</code>,{" "}
+          <code>general.js</code> or <code>styles.js</code> and{" "}
           <code>variableName</code> is a variable found at the end of the{" "}
-          <code>variableFile.jsx</code>.
+          <code>variableFile.js</code>.
         </p>
       </div>
     );

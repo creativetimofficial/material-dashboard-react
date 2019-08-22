@@ -17,8 +17,8 @@
 */
 import React from "react";
 // core components
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
 
 class CardBodyExample extends React.Component {
   render() {

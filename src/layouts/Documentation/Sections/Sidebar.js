@@ -23,8 +23,8 @@ import { prism } from "react-syntax-highlighter/dist/styles/prism";
 // @material-ui/icons
 //core components
 
-const sidebarDep = `import Sidebar from 'components/Sidebar/Sidebar.jsx';
-import appRoutes from 'routes/app.jsx';
+const sidebarDep = `import Sidebar from 'components/Sidebar/Sidebar.js';
+import appRoutes from 'routes/app.js';
 import image from 'assets/img/sidebar-1.jpg';
 import logo from 'assets/img/reactlogo.png';`;
 const sidebarCode = `this.state = {

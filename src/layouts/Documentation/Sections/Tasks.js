@@ -23,10 +23,10 @@ import { prism } from "react-syntax-highlighter/dist/styles/prism";
 // @material-ui/core components
 // @material-ui/icons
 //core components
-import TT from "components/Tasks/Tasks.jsx";
+import TT from "components/Tasks/Tasks.js";
 import { bugs } from "variables/general";
 
-const tasksDep = `import Tasks from 'components/Tasks/Tasks.jsx';
+const tasksDep = `import Tasks from 'components/Tasks/Tasks.js';
 import { bugs } from 'variables/general';`;
 const tasks = `<Tasks
     checkedIndexes={[0,3]}

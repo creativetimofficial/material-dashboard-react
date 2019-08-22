@@ -20,9 +20,9 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/styles/prism";
 import Favorite from "@material-ui/icons/Favorite";
 
-import Button from "components/CustomButtons/Button.jsx";
+import Button from "components/CustomButtons/Button.js";
 
-const importExamples = `import Button from "components/CustomButtons/Button.jsx";`;
+const importExamples = `import Button from "components/CustomButtons/Button.js";`;
 
 const examples = `<Button type="button" color="primary">Primary</Button>
 <Button type="button" color="info">Info</Button>
@@ -32,7 +32,7 @@ const examples = `<Button type="button" color="primary">Primary</Button>
 <Button type="button" color="rose">Rose</Button>`;
 
 const importStyle = `import Favorite from "@material-ui/icons/Favorite";
-import Button from "components/CustomButtons/Button.jsx";`;
+import Button from "components/CustomButtons/Button.js";`;
 
 const style = `<Button color="primary">Default</Button>
 <Button color="primary" round>Round</Button>

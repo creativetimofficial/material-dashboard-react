@@ -33,8 +33,8 @@ class RoutingSystem extends React.Component {
           in two places. On place would have been inside our{" "}
           <Link to="/documentation/sidebar">Sidebar</Link> and the onther one
           would be either the{" "}
-          <code className="highlighter-rouge">src/RTL.jsx</code> layout or the{" "}
-          <code className="highlighter-rouge">src/Admin.jsx</code> layout. You
+          <code className="highlighter-rouge">src/RTL.js</code> layout or the{" "}
+          <code className="highlighter-rouge">src/Admin.js</code> layout. You
           will find all our demo routes in{" "}
           <code className="highlighter-rouge">src/routes.js</code>
         </p>

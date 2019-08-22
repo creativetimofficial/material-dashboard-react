@@ -20,13 +20,13 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/styles/prism";
 // core components
 // section of this page
-import CardBasic from "./Cards/CardBasic.jsx";
-import CardBodyExample from "./Cards/CardBodyExample.jsx";
-import CardTitlesTextLinks from "./Cards/CardTitlesTextLinks.jsx";
-import CardsImages from "./Cards/CardsImages.jsx";
-import CardChart from "./Cards/CardChart.jsx";
-import CardHeaderTypes from "./Cards/CardHeaderTypes.jsx";
-import CardTextAlignment from "./Cards/CardTextAlignment.jsx";
+import CardBasic from "./Cards/CardBasic.js";
+import CardBodyExample from "./Cards/CardBodyExample.js";
+import CardTitlesTextLinks from "./Cards/CardTitlesTextLinks.js";
+import CardsImages from "./Cards/CardsImages.js";
+import CardChart from "./Cards/CardChart.js";
+import CardHeaderTypes from "./Cards/CardHeaderTypes.js";
+import CardTextAlignment from "./Cards/CardTextAlignment.js";
 
 // examples
 const codeCardBasic = `import React from "react";
@@ -34,11 +34,11 @@ const codeCardBasic = `import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import Button from "components/CustomButtons/Button.js";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
 
-import cardImagesStyles from "assets/jss/material-dashboard-react/cardImagesStyles.jsx";
+import cardImagesStyles from "assets/jss/material-dashboard-react/cardImagesStyles.js";
 
 class CardBasic extends React.Component {
   render() {
@@ -71,8 +71,8 @@ export default withStyles(cardImagesStyles)(CardBasic);
 
 const codeCardBodyExample = `import React from "react";
 // core components
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
 
 class CardBodyExample extends React.Component {
   render() {
@@ -93,15 +93,15 @@ const codeCardTitlesTextLinks = `import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import Muted from "components/Typography/Muted.jsx";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
+import Muted from "components/Typography/Muted.js";
 
 import {
   cardTitle,
   cardSubtitle,
   cardLink
-} from "assets/jss/material-dashboard-react.jsx";
+} from "assets/jss/material-dashboard-react.js";
 
 const styles = {
   cardTitle,
@@ -152,11 +152,11 @@ const codeCardsImages = `import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import Button from "components/CustomButtons/Button.js";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
 
-import cardImagesStyles from "assets/jss/material-dashboard-react/cardImagesStyles.jsx";
+import cardImagesStyles from "assets/jss/material-dashboard-react/cardImagesStyles.js";
 
 const styles = {
   ...cardImagesStyles,
@@ -241,12 +241,12 @@ import Grid from "@material-ui/core/Grid";
 // @material-ui/icons
 import Language from "@material-ui/icons/Language";
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardIcon from "components/Card/CardIcon.jsx";
-import CardText from "components/Card/CardText.jsx";
+import GridItem from "components/Grid/GridItem.js";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardIcon from "components/Card/CardIcon.js";
+import CardText from "components/Card/CardText.js";
 
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle";
 import loginPageStyle from "assets/jss/material-dashboard-react/views/loginPageStyle";
@@ -347,19 +347,19 @@ import Grid from "@material-ui/core/Grid";
 import AccessTime from "@material-ui/icons/AccessTime";
 
 // core components
-import GridItem from "components/Grid/GridItem.jsx";
+import GridItem from "components/Grid/GridItem.js";
 
-import Card from "components/Card/Card.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
 
 import {
   emailsSubscriptionChart,
   completedTasksChart
 } from "variables/charts";
 
-import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
+import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
 
 class CardChart extends React.Component {
   render() {
@@ -428,11 +428,11 @@ const codeCardTextAlignment = `import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
-import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
+import Button from "components/CustomButtons/Button.js";
+import Card from "components/Card/Card.js";
+import CardBody from "components/Card/CardBody.js";
 
-import { cardTitle } from "assets/jss/material-dashboard-react.jsx";
+import { cardTitle } from "assets/jss/material-dashboard-react.js";
 
 const styles = {
   cardTitle,
@@ -562,50 +562,50 @@ function Cards({ ...props }) {
       <br />
       <ul>
         <li>
-          src/assets/jss/material-dashboard-react/components/cardAvatarStyle.jsx
+          src/assets/jss/material-dashboard-react/components/cardAvatarStyle.js
           <ul>
             <li>
-              <code>src/components/Card/CardAvatar.jsx</code>
+              <code>src/components/Card/CardAvatar.js</code>
             </li>
           </ul>
         </li>
         <li>
-          src/assets/jss/material-dashboard-react/components/cardBodyStyle.jsx
+          src/assets/jss/material-dashboard-react/components/cardBodyStyle.js
           <ul>
             <li>
-              <code>src/components/Card/CardBody.jsx</code>
+              <code>src/components/Card/CardBody.js</code>
             </li>
           </ul>
         </li>
         <li>
-          src/assets/jss/material-dashboard-react/components/cardFooterStyle.jsx
+          src/assets/jss/material-dashboard-react/components/cardFooterStyle.js
           <ul>
             <li>
-              <code>src/components/Card/CardFooter.jsx</code>
+              <code>src/components/Card/CardFooter.js</code>
             </li>
           </ul>
         </li>
         <li>
-          src/assets/jss/material-dashboard-react/components/cardHeaderStyle.jsx
+          src/assets/jss/material-dashboard-react/components/cardHeaderStyle.js
           <ul>
             <li>
-              <code>src/components/Card/CardHeader.jsx</code>
+              <code>src/components/Card/CardHeader.js</code>
             </li>
           </ul>
         </li>
         <li>
-          src/assets/jss/material-dashboard-react/components/cardIconStyle.jsx
+          src/assets/jss/material-dashboard-react/components/cardIconStyle.js
           <ul>
             <li>
-              <code>src/components/Card/CardIcon.jsx</code>
+              <code>src/components/Card/CardIcon.js</code>
             </li>
           </ul>
         </li>
         <li>
-          src/assets/jss/material-dashboard-react/components/cardStyle.jsx
+          src/assets/jss/material-dashboard-react/components/cardStyle.js
           <ul>
             <li>
-              <code>src/components/Card/Card.jsx</code>
+              <code>src/components/Card/Card.js</code>
             </li>
           </ul>
         </li>
