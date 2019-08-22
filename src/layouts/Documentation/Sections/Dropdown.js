@@ -1,26 +1,9 @@
-/*!
-
-=========================================================
-* Material Dashboard React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { prism } from "react-syntax-highlighter/dist/styles/prism";
 import classNames from "classnames";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grow from "@material-ui/core/Grow";
@@ -33,12 +16,12 @@ import Notifications from "@material-ui/icons/Notifications";
 //core components
 import Button from "components/CustomButtons/Button.js";
 
-import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.js";
+import styles from "assets/jss/material-dashboard-react/dropdownStyle.js";
 
 const dropdown = `import React from "react";
 import classNames from "classnames";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import MenuList from "@material-ui/core/MenuList";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grow from "@material-ui/core/Grow";
@@ -51,51 +34,47 @@ import Notifications from "@material-ui/icons/Notifications";
 //core components
 import Button from "components/CustomButtons/Button.js";
 
-import dropdownStyle from "assets/jss/material-dashboard-react/dropdownStyle.js";
+import styles from "assets/jss/material-dashboard-react/dropdownStyle.js";
 
-class Dropdown extends React.Component {
-  state = {
-    open: false
-  };
-  handleToggle = () => {
-    this.setState(state => ({ open: !state.open }));
-  };
+const useStyles = makeStyles(styles);
 
-  handleClose = event => {
-    if (this.anchorEl.contains(event.target)) {
-      return;
+export default function Dropdown(props) {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(null);
+  const handleToggle = event => {
+    if (open && open.contains(event.target)) {
+      setOpen(null);
+    } else {
+      setOpen(event.currentTarget);
     }
-
-    this.setState({ open: false });
   };
-  render() {
-    const { classes } = this.props;
-    const { open } = this.state;
-    return (
+
+  const handleClose = () => {
+    setOpen(null);
+  };
+  return (
+    <div>
       <div className={classes.manager}>
         <Button
-          buttonRef={node => {
-            this.anchorEl = node;
-          }}
           color={window.innerWidth > 959 ? "transparent" : "white"}
           justIcon={window.innerWidth > 959}
           simple={!(window.innerWidth > 959)}
           aria-owns={open ? "menu-list-grow" : null}
           aria-haspopup="true"
-          onClick={this.handleToggle}
+          onClick={handleToggle}
           className={classes.buttonLink}
         >
           <Notifications className={classes.icons} />
           <span className={classes.notifications}>5</span>
           <Hidden mdUp implementation="css">
-            <p onClick={this.handleClick} className={classes.linkText}>
+            <p onClick={handleClose} className={classes.linkText}>
               Notification
             </p>
           </Hidden>
         </Button>
         <Poppers
-          open={open}
-          anchorEl={this.anchorEl}
+          open={Boolean(open)}
+          anchorEl={open}
           transition
           disablePortal
           className={
@@ -114,34 +93,34 @@ class Dropdown extends React.Component {
               }}
             >
               <Paper>
-                <ClickAwayListener onClickAway={this.handleClose}>
+                <ClickAwayListener onClickAway={handleClose}>
                   <MenuList role="menu">
                     <MenuItem
-                      onClick={this.handleClose}
+                      onClick={handleClose}
                       className={classes.dropdownItem}
                     >
                       Mike John responded to your email
                     </MenuItem>
                     <MenuItem
-                      onClick={this.handleClose}
+                      onClick={handleClose}
                       className={classes.dropdownItem}
                     >
                       You have 5 new tasks
                     </MenuItem>
                     <MenuItem
-                      onClick={this.handleClose}
+                      onClick={handleClose}
                       className={classes.dropdownItem}
                     >
                       You're now friend with Andrew
                     </MenuItem>
                     <MenuItem
-                      onClick={this.handleClose}
+                      onClick={handleClose}
                       className={classes.dropdownItem}
                     >
                       Another Notification
                     </MenuItem>
                     <MenuItem
-                      onClick={this.handleClose}
+                      onClick={handleClose}
                       className={classes.dropdownItem}
                     >
                       Another One
@@ -153,131 +132,120 @@ class Dropdown extends React.Component {
           )}
         </Poppers>
       </div>
-    );
-  }
-}
+    </div>
+  );
+}`;
 
-export default withStyles(dropdownStyle)(Dropdown);
-`;
+const useStyles = makeStyles(styles);
 
-class Dropdown extends React.Component {
-  state = {
-    open: false
-  };
-  handleToggle = () => {
-    this.setState(state => ({ open: !state.open }));
-  };
-
-  handleClose = event => {
-    if (this.anchorEl.contains(event.target)) {
-      return;
+export default function Dropdown(props) {
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(null);
+  const handleToggle = event => {
+    if (open && open.contains(event.target)) {
+      setOpen(null);
+    } else {
+      setOpen(event.currentTarget);
     }
-
-    this.setState({ open: false });
   };
-  render() {
-    const { classes } = this.props;
-    const { open } = this.state;
-    return (
-      <div>
-        <h1>Dropdown</h1>
-        <p>As most of our components we've restyled the dropdowns as well.</p>
-        <div className={classes.manager}>
-          <Button
-            buttonRef={node => {
-              this.anchorEl = node;
-            }}
-            color={window.innerWidth > 959 ? "transparent" : "white"}
-            justIcon={window.innerWidth > 959}
-            simple={!(window.innerWidth > 959)}
-            aria-owns={open ? "menu-list-grow" : null}
-            aria-haspopup="true"
-            onClick={this.handleToggle}
-            className={classes.buttonLink}
-          >
-            <Notifications className={classes.icons} />
-            <span className={classes.notifications}>5</span>
-            <Hidden mdUp implementation="css">
-              <p onClick={this.handleClick} className={classes.linkText}>
-                Notification
-              </p>
-            </Hidden>
-          </Button>
-          <Poppers
-            open={open}
-            anchorEl={this.anchorEl}
-            transition
-            disablePortal
-            className={
-              classNames({ [classes.popperClose]: !open }) +
-              " " +
-              classes.pooperNav
-            }
-          >
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                id="menu-list-grow"
-                style={{
-                  transformOrigin:
-                    placement === "bottom" ? "center top" : "center bottom"
-                }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={this.handleClose}>
-                    <MenuList role="menu">
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        Mike John responded to your email
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        You have 5 new tasks
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        You're now friend with Andrew
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        Another Notification
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        Another One
-                      </MenuItem>
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
-          </Poppers>
-        </div>
-        <SyntaxHighlighter language="jsx" style={prism}>
-          {dropdown}
-        </SyntaxHighlighter>
-        <h2>Properties</h2>
-        Please refer to{" "}
-        <a
-          href="https://material-ui-next.com/demos/menus/#menulist-composition?ref=creativetim"
-          target="_blank"
-        >
-          material-ui documentation
-        </a>
-        .
-      </div>
-    );
-  }
-}
 
-export default withStyles(dropdownStyle)(Dropdown);
+  const handleClose = () => {
+    setOpen(null);
+  };
+  return (
+    <div>
+      <h1>Dropdown</h1>
+      <p>As most of our components we've restyled the dropdowns as well.</p>
+      <div className={classes.manager}>
+        <Button
+          color={window.innerWidth > 959 ? "transparent" : "white"}
+          justIcon={window.innerWidth > 959}
+          simple={!(window.innerWidth > 959)}
+          aria-owns={open ? "menu-list-grow" : null}
+          aria-haspopup="true"
+          onClick={handleToggle}
+          className={classes.buttonLink}
+        >
+          <Notifications className={classes.icons} />
+          <span className={classes.notifications}>5</span>
+          <Hidden mdUp implementation="css">
+            <p onClick={handleClose} className={classes.linkText}>
+              Notification
+            </p>
+          </Hidden>
+        </Button>
+        <Poppers
+          open={Boolean(open)}
+          anchorEl={open}
+          transition
+          disablePortal
+          className={
+            classNames({ [classes.popperClose]: !open }) +
+            " " +
+            classes.pooperNav
+          }
+        >
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              id="menu-list-grow"
+              style={{
+                transformOrigin:
+                  placement === "bottom" ? "center top" : "center bottom"
+              }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList role="menu">
+                    <MenuItem
+                      onClick={handleClose}
+                      className={classes.dropdownItem}
+                    >
+                      Mike John responded to your email
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleClose}
+                      className={classes.dropdownItem}
+                    >
+                      You have 5 new tasks
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleClose}
+                      className={classes.dropdownItem}
+                    >
+                      You're now friend with Andrew
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleClose}
+                      className={classes.dropdownItem}
+                    >
+                      Another Notification
+                    </MenuItem>
+                    <MenuItem
+                      onClick={handleClose}
+                      className={classes.dropdownItem}
+                    >
+                      Another One
+                    </MenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Poppers>
+      </div>
+      <SyntaxHighlighter language="jsx" style={prism}>
+        {dropdown}
+      </SyntaxHighlighter>
+      <h2>Properties</h2>
+      Please refer to{" "}
+      <a
+        href="https://material-ui-next.com/demos/menus/#menulist-composition?ref=creativetim"
+        target="_blank"
+      >
+        material-ui documentation
+      </a>
+      .
+    </div>
+  );
+}
