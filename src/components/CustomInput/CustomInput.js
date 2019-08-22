@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
@@ -10,11 +10,13 @@ import Input from "@material-ui/core/Input";
 import Clear from "@material-ui/icons/Clear";
 import Check from "@material-ui/icons/Check";
 // core components
-import customInputStyle from "assets/jss/material-dashboard-react/components/customInputStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/customInputStyle.js";
 
-function CustomInput({ ...props }) {
+const useStyles = makeStyles(styles);
+
+export default function CustomInput(props) {
+  const classes = useStyles();
   const {
-    classes,
     formControlProps,
     labelText,
     id,
@@ -78,5 +80,3 @@ CustomInput.propTypes = {
   error: PropTypes.bool,
   success: PropTypes.bool
 };
-
-export default withStyles(customInputStyle)(CustomInput);
