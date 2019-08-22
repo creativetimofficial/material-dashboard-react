@@ -9,6 +9,7 @@
 - Changed the `withStyles` function from Material-UI with the `makeStyles` function (integration with other frameworks should now be easy)
 - React Hooks is now supported
 ### Major style changes
+- Renamed `assets/jss/material-dashboard-react/layouts/dashboardStyle.js` to `assets/jss/material-dashboard-react/layouts/adminStyle.js`
 ### Deleted components
 ### Added components
 ### Deleted dependencies
