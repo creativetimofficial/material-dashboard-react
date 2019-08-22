@@ -76,15 +76,16 @@ class Styles extends React.Component {
           .
         </p>
         <p>
-          Material UI offers you 7 ways to override their styles, and as said
-          above, we've decided to go with the third option (
+          We've decided to use the <code>makeStyles</code> function from
+          Material-UI to override some of thier styles. This is a React HOOK
+          functions, which means that it can only be called from another React
+          HOOK or a simple function. Read more about it{" "}
           <a
-            href="https://material-ui-next.com/guides/interoperability/#react-jss?ref=creativetim"
+            href="https://material-ui.com/styles/api/#makestyles-styles-options-hook"
             target="_blank"
           >
-            this one here
+            here
           </a>
-          ).
         </p>
         <p>
           All of the restyled components can be found in{" "}
@@ -95,12 +96,12 @@ class Styles extends React.Component {
         </SyntaxHighlighter>
         <p>
           If you go to any of our components you will see that somewhere at the
-          beginning of the file we import <code>withStyles</code> from{" "}
+          beginning of the file we import <code>makeStyles</code> from{" "}
           <code>material-ui</code>, then we import from{" "}
           <code>scr/assets/jss/*</code> the correspondig style for that
-          component and at the end of the file, we export that component's class
-          with the <code>withStyles</code> function so that the imported style
-          overrides the <code>material-ui</code> style.
+          component and after these imports, we use the <code>makeStyles</code>{" "}
+          function alongside our styles to compile them to jss from javascript
+          objects.
         </p>
         <p>
           For a better way of understanding this variables, please take a look
@@ -129,9 +130,7 @@ class Styles extends React.Component {
             are beeing imported in the above styles)
           </li>
           <li>
-            <code>
-              src/assets/jss/material-dashboard-react/tooltipStyle.js
-            </code>{" "}
+            <code>src/assets/jss/material-dashboard-react/tooltipStyle.js</code>{" "}
             are styles used for <code>tooltips</code>, which are beeing used in
             more than one page (sometimes this styles are beeing imported in the
             above styles)
