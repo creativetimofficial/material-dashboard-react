@@ -5,19 +5,19 @@
   "private": false,
   "main": "dist/index.js",
   "dependencies": {
-    "@material-ui/core": "4.1.0",
-    "@material-ui/icons": "4.1.0",
-    "chartist": "0.10.1",
+    "@material-ui/core": "4.3.2",
+    "@material-ui/icons": "4.2.1",
+    "chartist": "0.11.3",
     "classnames": "2.2.6",
     "history": "4.9.0",
     "perfect-scrollbar": "1.4.0",
     "prop-types": "15.7.2",
-    "react": "16.8.6",
+    "react": "16.9.0",
     "react-chartist": "0.13.3",
-    "react-dom": "16.8.6",
+    "react-dom": "16.9.0",
     "react-google-maps": "9.4.5",
     "react-router-dom": "5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "3.1.0",
     "react-swipeable-views": "0.13.3"
   },
   "scripts": {
@@ -43,14 +43,16 @@
   },
   "homepage": "https://creativetimofficial.github.io/material-dashboard-react/#/dashboard",
   "optionalDependencies": {
-    "@types/googlemaps": "3.36.4",
+    "@types/googlemaps": "3.37.3",
     "@types/markerclustererplus": "2.1.33",
-    "ajv": "6.10.0",
-    "typescript": "3.5.1"
+    "ajv": "6.10.2",
+    "typescript": "3.5.3"
   },
   "devDependencies": {
-    "eslint-config-prettier": "4.3.0",
+    "eslint-config-prettier": "6.0.0",
     "eslint-plugin-prettier": "3.1.0",
+    "gulp": "4.0.2",
+    "gulp-append-prepend": "1.0.8",
     "prettier": "1.18.2"
   },
   "browserslist": {

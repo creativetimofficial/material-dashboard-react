@@ -1,5 +1,34 @@
 # Change Log
 
+## [1.8.0] date
+### Bug fixing
+- Rewrote the ISSUE_TEMPLATE
+- Deleted the copyright comments from all files, we only need to keep them inside our index.js and index.html
+- Added script that adds copyrights to the built app
+- Renamed all the files from `.jsx` to `.js`
+- Changed the `withStyles` function from Material-UI with the `makeStyles` function (integration with other frameworks should now be easy)
+- React Hooks is now supported
+### Major style changes
+### Deleted components
+### Added components
+### Deleted dependencies
+### Added dependencies
++ gulp@4.0.2
++ gulp-append-prepend@1.0.8
+### Updated dependencies
+```
+@material-ui/core         4.1.0   →    4.3.2
+@material-ui/icons        4.1.0   →    4.2.1
+chartist                 0.10.1   →   0.11.3
+react                    16.8.6   →   16.9.0
+react-dom                16.8.6   →   16.9.0
+react-scripts             3.0.1   →    3.1.0
+eslint-config-prettier    4.3.0   →    6.0.0
+@types/googlemaps        3.36.4   →   3.37.3
+ajv                      6.10.0   →   6.10.2
+typescript                3.5.1   →    3.5.3
+```
+
 ## [1.7.0] 2019-06-19
 ### Warning
 **All React Material products have now the same version, i.e. 1.7.0.**
