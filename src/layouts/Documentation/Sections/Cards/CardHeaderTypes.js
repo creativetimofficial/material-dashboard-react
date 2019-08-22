@@ -1,23 +1,6 @@
-/*!
-
-=========================================================
-* Material Dashboard React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // material-ui
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import Language from "@material-ui/icons/Language";
 // core components
@@ -42,8 +25,10 @@ var styles = {
   }
 };
 
-function CardHeaderTypes({ ...props }) {
-  const { classes } = props;
+const useStyles = makeStyles(styles);
+
+export default function CardHeaderTypes() {
+  const classes = useStyles();
   return (
     <div>
       <Grid container>
@@ -94,5 +79,3 @@ function CardHeaderTypes({ ...props }) {
     </div>
   );
 }
-
-export default withStyles(styles)(CardHeaderTypes);
