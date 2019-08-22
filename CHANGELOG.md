@@ -20,7 +20,6 @@
 ```
 @material-ui/core         4.1.0   →    4.3.2
 @material-ui/icons        4.1.0   →    4.2.1
-chartist                 0.10.1   →   0.11.3
 react                    16.8.6   →   16.9.0
 react-dom                16.8.6   →   16.9.0
 react-scripts             3.0.1   →    3.1.0
