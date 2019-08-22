@@ -1,7 +1,7 @@
 /*!
 
 =========================================================
-* Material Dashboard React - v1.7.0
+* Material Dashboard React - v1.8.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -24,7 +24,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import Admin from "layouts/Admin.js";
 import RTL from "layouts/RTL.js";
 
-import "assets/css/material-dashboard-react.css?v=1.7.0";
+import "assets/css/material-dashboard-react.css?v=1.8.0";
 
 const hist = createBrowserHistory();
 
