@@ -1,9 +1,7 @@
 /*eslint-disable*/
 import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import Hidden from "@material-ui/core/Hidden";
 // core components
 import GridItem from "components/Grid/GridItem.js";
@@ -12,10 +10,12 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
-import iconsStyle from "assets/jss/material-dashboard-react/views/iconsStyle.js";
+import styles from "assets/jss/material-dashboard-react/views/iconsStyle.js";
 
-function Icons(props) {
-  const { classes } = props;
+const useStyles = makeStyles(styles);
+
+export default function Icons() {
+  const classes = useStyles();
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
@@ -63,9 +63,3 @@ function Icons(props) {
     </GridContainer>
   );
 }
-
-Icons.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(iconsStyle)(Icons);

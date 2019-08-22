@@ -1,8 +1,6 @@
 import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Quote from "components/Typography/Quote.js";
 import Muted from "components/Typography/Muted.js";
@@ -15,7 +13,7 @@ import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 
-const style = {
+const styles = {
   typo: {
     paddingLeft: "25%",
     marginBottom: "40px",
@@ -51,8 +49,11 @@ const style = {
     textDecoration: "none"
   }
 };
-function TypographyPage(props) {
-  const { classes } = props;
+
+const useStyles = makeStyles(styles);
+
+export default function TypographyPage() {
+  const classes = useStyles();
   return (
     <Card>
       <CardHeader color="primary">
@@ -159,9 +160,3 @@ function TypographyPage(props) {
     </Card>
   );
 }
-
-TypographyPage.propTypes = {
-  classes: PropTypes.object
-};
-
-export default withStyles(style)(TypographyPage);

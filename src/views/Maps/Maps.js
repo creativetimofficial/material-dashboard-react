@@ -81,7 +81,7 @@ const CustomSkinMap = withScriptjs(
   ))
 );
 
-function Maps() {
+export default function Maps() {
   return (
     <CustomSkinMap
       googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
@@ -91,5 +91,3 @@ function Maps() {
     />
   );
 }
-
-export default Maps;

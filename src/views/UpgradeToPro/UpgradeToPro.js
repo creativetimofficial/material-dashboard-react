@@ -1,8 +1,6 @@
 import React from "react";
-// nodejs library to set properties for components
-import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
 import Check from "@material-ui/icons/Check";
@@ -83,8 +81,10 @@ const styles = {
   }
 };
 
-function UpgradeToPro(props) {
-  const { classes } = props;
+const useStyles = makeStyles(styles);
+
+export default function UpgradeToPro() {
+  const classes = useStyles();
   return (
     <GridContainer justify="center">
       <GridItem xs={12} sm={12} md={8}>
@@ -210,9 +210,3 @@ function UpgradeToPro(props) {
     </GridContainer>
   );
 }
-
-UpgradeToPro.propTypes = {
-  classes: PropTypes.object
-};
-
-export default withStyles(styles)(UpgradeToPro);
