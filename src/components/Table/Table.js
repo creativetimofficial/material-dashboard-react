@@ -1,17 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 // core components
-import tableStyle from "assets/jss/material-dashboard-react/components/tableStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/tableStyle.js";
 
-function CustomTable(props) {
-  const { classes, tableHead, tableData, tableHeaderColor } = props;
+const useStyles = makeStyles(styles);
+
+export default function CustomTable(props) {
+  const classes = useStyles();
+  const { tableHead, tableData, tableHeaderColor } = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -56,7 +59,6 @@ CustomTable.defaultProps = {
 };
 
 CustomTable.propTypes = {
-  classes: PropTypes.object.isRequired,
   tableHeaderColor: PropTypes.oneOf([
     "warning",
     "primary",
@@ -69,5 +71,3 @@ CustomTable.propTypes = {
   tableHead: PropTypes.arrayOf(PropTypes.string),
   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
 };
-
-export default withStyles(tableStyle)(CustomTable);

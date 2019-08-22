@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -14,9 +14,12 @@ import AdminNavbarLinks from "./AdminNavbarLinks.js";
 import RTLNavbarLinks from "./RTLNavbarLinks.js";
 import Button from "components/CustomButtons/Button.js";
 
-import headerStyle from "assets/jss/material-dashboard-react/components/headerStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/headerStyle.js";
 
-function Header(props) {
+const useStyles = makeStyles(styles);
+
+export default function Header(props) {
+  const classes = useStyles();
   function makeBrand() {
     var name;
     props.routes.map(prop => {
@@ -27,7 +30,7 @@ function Header(props) {
     });
     return name;
   }
-  const { classes, color } = props;
+  const { color } = props;
   const appBarClasses = classNames({
     [" " + classes[color]]: color
   });
@@ -58,11 +61,8 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
   color: PropTypes.oneOf(["primary", "info", "success", "warning", "danger"]),
   rtlActive: PropTypes.bool,
   handleDrawerToggle: PropTypes.func,
   routes: PropTypes.arrayOf(PropTypes.object)
 };
-
-export default withStyles(headerStyle)(Header);

@@ -1,12 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 // core components
-import typographyStyle from "assets/jss/material-dashboard-react/components/typographyStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/typographyStyle.js";
 
-function Success(props) {
-  const { classes, children } = props;
+const useStyles = makeStyles(styles);
+
+export default function Success(props) {
+  const classes = useStyles();
+  const { children } = props;
   return (
     <div className={classes.defaultFontStyle + " " + classes.successText}>
       {children}
@@ -15,8 +18,5 @@ function Success(props) {
 }
 
 Success.propTypes = {
-  classes: PropTypes.object.isRequired,
   children: PropTypes.node
 };
-
-export default withStyles(typographyStyle)(Success);

@@ -2,14 +2,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 // core components
-import footerStyle from "assets/jss/material-dashboard-react/components/footerStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/footerStyle.js";
 
-function Footer(props) {
-  const { classes } = props;
+const useStyles = makeStyles(styles);
+
+export default function Footer(props) {
+  const classes = useStyles();
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
@@ -54,9 +56,3 @@ function Footer(props) {
     </footer>
   );
 }
-
-Footer.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(footerStyle)(Footer);

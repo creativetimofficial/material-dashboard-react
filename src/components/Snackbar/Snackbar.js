@@ -2,25 +2,19 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
+import { makeStyles } from "@material-ui/core/styles";
 import Snack from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
 // core components
-import snackbarContentStyle from "assets/jss/material-dashboard-react/components/snackbarContentStyle.js";
+import styles from "assets/jss/material-dashboard-react/components/snackbarContentStyle.js";
 
-function Snackbar(props) {
-  const {
-    classes,
-    message,
-    color,
-    close,
-    icon,
-    place,
-    open,
-    rtlActive
-  } = props;
+const useStyles = makeStyles(styles);
+
+export default function Snackbar(props) {
+  const classes = useStyles();
+  const { message, color, close, icon, place, open, rtlActive } = props;
   var action = [];
   const messageClasses = classNames({
     [classes.iconMessage]: icon !== undefined
@@ -69,7 +63,6 @@ function Snackbar(props) {
 }
 
 Snackbar.propTypes = {
-  classes: PropTypes.object.isRequired,
   message: PropTypes.node.isRequired,
   color: PropTypes.oneOf(["info", "success", "warning", "danger", "primary"]),
   close: PropTypes.bool,
@@ -79,5 +72,3 @@ Snackbar.propTypes = {
   rtlActive: PropTypes.bool,
   closeNotification: PropTypes.func
 };
-
-export default withStyles(snackbarContentStyle)(Snackbar);
