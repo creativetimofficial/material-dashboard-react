@@ -16,25 +16,24 @@
 
 */
 import React from "react";
-import ReactDOM from "react-dom";
-import { createBrowserHistory } from "history";
-import { Router, Route, Switch, Redirect } from "react-router-dom";
-
+import PropTypes from "prop-types";
+// @material-ui/core components
+import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import Admin from "layouts/Admin.js";
-import RTL from "layouts/RTL.js";
+import typographyStyle from "assets/jss/material-dashboard-react/components/typographyStyle.js";
 
-import "assets/css/material-dashboard-react.css?v=1.7.0";
+function Info({ ...props }) {
+  const { classes, children } = props;
+  return (
+    <div className={classes.defaultFontStyle + " " + classes.infoText}>
+      {children}
+    </div>
+  );
+}
 
-const hist = createBrowserHistory();
+Info.propTypes = {
+  classes: PropTypes.object.isRequired,
+  children: PropTypes.node
+};
 
-ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path="/admin" component={Admin} />
-      <Route path="/rtl" component={RTL} />
-      <Redirect from="/" to="/admin/dashboard" />
-    </Switch>
-  </Router>,
-  document.getElementById("root")
-);
+export default withStyles(typographyStyle)(Info);
