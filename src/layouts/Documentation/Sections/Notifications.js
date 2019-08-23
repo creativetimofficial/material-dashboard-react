@@ -9,7 +9,7 @@ import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 import Snackbar from "components/Snackbar/Snackbar.js";
 import Button from "components/CustomButtons/Button.js";
 
-const style = `import React from 'react';
+const styleCode = `import React from 'react';
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
@@ -40,7 +40,7 @@ export default function StyleExample(){
 }
 `;
 
-const state = `import React from 'react';
+const stateCode = `import React from 'react';
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
@@ -64,7 +64,7 @@ export default function StateExample(){
 }
 `;
 
-const place = `import React from 'react';
+const placeCode = `import React from 'react';
 // @material-ui/icons
 import AddAlert from "@material-ui/icons/AddAlert";
 //core components
@@ -253,7 +253,7 @@ export default function Notifications() {
       />
       <br />
       <SyntaxHighlighter language="jsx" style={prism}>
-        {style}
+        {styleCode}
       </SyntaxHighlighter>
       <h2>States</h2>
       <SnackbarContent
@@ -295,7 +295,7 @@ export default function Notifications() {
       />
       <br />
       <SyntaxHighlighter language="jsx" style={prism}>
-        {state}
+        {stateCode}
       </SyntaxHighlighter>
       <h2>Places</h2>
       <Button color="primary" onClick={() => showNotification()}>
@@ -311,7 +311,7 @@ export default function Notifications() {
         close
       />
       <SyntaxHighlighter language="jsx" style={prism}>
-        {place}
+        {placeCode}
       </SyntaxHighlighter>
       <h2>Props</h2>
       <SyntaxHighlighter language="jsx" style={prism}>
