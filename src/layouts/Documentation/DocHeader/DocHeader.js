@@ -1,7 +1,7 @@
 /*!
 
 =========================================================
-* Material Dashboard React - v1.7.0
+* Material Dashboard React - v1.8.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -106,7 +106,7 @@ class DocHeader extends React.Component {
             </NavLink>
             <Hidden mdDown>
               <Button color="transparent" className={classes.vButton}>
-                v1.7.0
+                v1.8.0
               </Button>
               <a
                 href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
