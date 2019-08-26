@@ -9,7 +9,7 @@ gulp.task("licenses", async function() {
       gap.prependText(`/*!
 
 =========================================================
-* Now UI Kit PRO React - v1.0.0
+* Material Dashboard React - v1.8.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
@@ -32,7 +32,7 @@ gulp.task("licenses", async function() {
       gap.prependText(`<!--
 
 =========================================================
-* Now UI Kit PRO React - v1.0.0
+* Material Dashboard React - v1.8.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
@@ -55,7 +55,7 @@ gulp.task("licenses", async function() {
       gap.prependText(`/*!
 
 =========================================================
-* Now UI Kit PRO React - v1.0.0
+* Material Dashboard React - v1.8.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
