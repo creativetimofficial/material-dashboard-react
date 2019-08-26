@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.8.0] date
+## [1.8.0] 2019-08-26
 ### Bug fixing
 - Rewrote the ISSUE_TEMPLATE
 - Deleted the copyright comments from all files, we only need to keep them inside our index.js and index.html
