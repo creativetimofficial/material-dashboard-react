@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f3cf1fc95cd567ef7285e9ffc931a7f8",
+    "revision": "e7a6c632de6ecbee673a63638373613f",
     "url": "/material-dashboard-react/index.html"
   },
   {
-    "revision": "c83afed34ff6918af5e1",
+    "revision": "4e7429001991251f5b7c",
     "url": "/material-dashboard-react/static/css/2.d0176e96.chunk.css"
   },
   {
-    "revision": "d1f7ce361fe517bb99bb",
-    "url": "/material-dashboard-react/static/css/main.48312ccb.chunk.css"
+    "revision": "c0aa635942888c40d61c",
+    "url": "/material-dashboard-react/static/css/main.748feb4d.chunk.css"
   },
   {
-    "revision": "c83afed34ff6918af5e1",
-    "url": "/material-dashboard-react/static/js/2.9908b52d.chunk.js"
+    "revision": "4e7429001991251f5b7c",
+    "url": "/material-dashboard-react/static/js/2.1f594f92.chunk.js"
   },
   {
-    "revision": "d1f7ce361fe517bb99bb",
-    "url": "/material-dashboard-react/static/js/main.5f6da955.chunk.js"
+    "revision": "c0aa635942888c40d61c",
+    "url": "/material-dashboard-react/static/js/main.15b4f765.chunk.js"
   },
   {
-    "revision": "b8556c08b70d6c956861",
-    "url": "/material-dashboard-react/static/js/runtime~main.8f94a1b0.js"
+    "revision": "05586609970f4dfb20a8",
+    "url": "/material-dashboard-react/static/js/runtime~main.48d3a10a.js"
   },
   {
     "revision": "8880a65c57d7f031579335be153f64a0",
