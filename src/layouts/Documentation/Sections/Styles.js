@@ -6,32 +6,47 @@ import { prism } from "react-syntax-highlighter/dist/styles/prism";
 //core components
 
 const restyledComponents = `components
-├── CustomButtons
-│   ├── Button.js
-├── CustomInput
-│   └── CustomInput.js
-├── Footer
-│   └── Footer.js
-├── Header
-│   ├── Header.js
-│   └── HeaderLinks.js
-├── Sidebar
-│   └── Sidebar.js
-├── Snackbar
-│   ├── Snackbar.js
-│   └── SnackbarContent.js
-├── Table
-│   └── Table.js
-├── Tasks
-│   └── Tasks.js
-└── Typography
-    ├── Danger.js
-    ├── Info.js
-    ├── Muted.js
-    ├── Primary.js
-    ├── Quote.js
-    ├── Success.js
-    └── Warning.js`;
+  ├── Card
+  │   ├── Card.js
+  │   ├── CardAvatar.js
+  │   ├── CardBody.js
+  │   ├── CardFooter.js
+  │   ├── CardHeader.js
+  │   └── CardIcon.js
+  ├── CustomButtons
+  │   └── Button.js
+  ├── CustomInput
+  │   └── CustomInput.js
+  ├── CustomTabs
+  │   └── CustomTabs.js
+  ├── FixedPlugin
+  │   └── FixedPlugin.js
+  ├── Footer
+  │   └── Footer.js
+  ├── Grid
+  │   ├── GridContainer.js
+  │   └── GridItem.js
+  ├── Navbars
+  │   ├── AdminNavbarLinks.js
+  │   ├── Navbar.js
+  │   └── RTLNavbarLinks.js
+  ├── Sidebar
+  │   └── Sidebar.js
+  ├── Snackbar
+  │   ├── Snackbar.js
+  │   └── SnackbarContent.js
+  ├── Table
+  │   └── Table.js
+  ├── Tasks
+  │   └── Tasks.js
+  └── Typography
+      ├── Danger.js
+      ├── Info.js
+      ├── Muted.js
+      ├── Primary.js
+      ├── Quote.js
+      ├── Success.js
+      └── Warning.js`;
 
 class Styles extends React.Component {
   render() {

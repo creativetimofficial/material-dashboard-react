@@ -13,9 +13,15 @@ const files = `material-dashboard-react
 ├── LICENSE.md
 ├── README.md
 ├── bower.json
+├── gulpfile.js
+├── jsconfig.json
 ├── package.json
 ├── documentation
 │   ├── assets
+│   │   ├── css
+│   │   ├── img
+│   │   │   └── faces
+│   │   └── js
 │   └── tutorial-components.html
 ├── public
 │   ├── favicon.ico
@@ -27,7 +33,10 @@ const files = `material-dashboard-react
     ├── routes.js
     ├── assets
     │   ├── css
+    │   │   └── material-dashboard-react.css
     │   ├── github
+    │   │   ├── md-react.gif
+    │   │   └── react.svg
     │   ├── img
     │   │   └── faces
     │   └── jss
