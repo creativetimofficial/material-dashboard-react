@@ -83,9 +83,15 @@ material-dashboard-react
 ├── LICENSE.md
 ├── README.md
 ├── bower.json
+├── gulpfile.js
+├── jsconfig.json
 ├── package.json
 ├── documentation
 │   ├── assets
+│   │   ├── css
+│   │   ├── img
+│   │   │   └── faces
+│   │   └── js
 │   └── tutorial-components.html
 ├── public
 │   ├── favicon.ico
@@ -97,7 +103,10 @@ material-dashboard-react
     ├── routes.js
     ├── assets
     │   ├── css
+    │   │   └── material-dashboard-react.css
     │   ├── github
+    │   │   ├── md-react.gif
+    │   │   └── react.svg
     │   ├── img
     │   │   └── faces
     │   └── jss
@@ -105,74 +114,74 @@ material-dashboard-react
     │       │   ├── components
     │       │   ├── layouts
     │       │   └── views
-    │       └── material-dashboard-react.jsx
+    │       └── material-dashboard-react.js
     ├── components
     │   ├── Card
-    │   │   ├── Card.jsx
-    │   │   ├── CardAvatar.jsx
-    │   │   ├── CardBody.jsx
-    │   │   ├── CardFooter.jsx
-    │   │   ├── CardHeader.jsx
-    │   │   └── CardIcon.jsx
+    │   │   ├── Card.js
+    │   │   ├── CardAvatar.js
+    │   │   ├── CardBody.js
+    │   │   ├── CardFooter.js
+    │   │   ├── CardHeader.js
+    │   │   └── CardIcon.js
     │   ├── CustomButtons
-    │   │   └── Button.jsx
+    │   │   └── Button.js
     │   ├── CustomInput
-    │   │   └── CustomInput.jsx
+    │   │   └── CustomInput.js
     │   ├── CustomTabs
-    │   │   └── CustomTabs.jsx
+    │   │   └── CustomTabs.js
     │   ├── FixedPlugin
-    │   │   └── FixedPlugin.jsx
+    │   │   └── FixedPlugin.js
     │   ├── Footer
-    │   │   └── Footer.jsx
+    │   │   └── Footer.js
     │   ├── Grid
-    │   │   ├── GridContainer.jsx
-    │   │   └── GridItem.jsx
+    │   │   ├── GridContainer.js
+    │   │   └── GridItem.js
     │   ├── Navbars
-    │   │   ├── AdminNavbarLinks.jsx
-    │   │   ├── Navbar.jsx
-    │   │   └── RTLNavbarLinks.jsx
+    │   │   ├── AdminNavbarLinks.js
+    │   │   ├── Navbar.js
+    │   │   └── RTLNavbarLinks.js
     │   ├── Sidebar
-    │   │   └── Sidebar.jsx
+    │   │   └── Sidebar.js
     │   ├── Snackbar
-    │   │   ├── Snackbar.jsx
-    │   │   └── SnackbarContent.jsx
+    │   │   ├── Snackbar.js
+    │   │   └── SnackbarContent.js
     │   ├── Table
-    │   │   └── Table.jsx
+    │   │   └── Table.js
     │   ├── Tasks
-    │   │   └── Tasks.jsx
+    │   │   └── Tasks.js
     │   └── Typography
-    │       ├── Danger.jsx
-    │       ├── Info.jsx
-    │       ├── Muted.jsx
-    │       ├── Primary.jsx
-    │       ├── Quote.jsx
-    │       ├── Success.jsx
-    │       └── Warning.jsx
+    │       ├── Danger.js
+    │       ├── Info.js
+    │       ├── Muted.js
+    │       ├── Primary.js
+    │       ├── Quote.js
+    │       ├── Success.js
+    │       └── Warning.js
     ├── layouts
-    │   ├── Admin.jsx
-    │   └── RTL.jsx
+    │   ├── Admin.js
+    │   └── RTL.js
     ├── variables
-    │   ├── charts.jsx
-    │   └── general.jsx
+    │   ├── charts.js
+    │   └── general.js
     └── views
         ├── Dashboard
-        │   └── Dashboard.jsx
+        │   └── Dashboard.js
         ├── Icons
-        │   └── Icons.jsx
+        │   └── Icons.js
         ├── Maps
-        │   └── Maps.jsx
+        │   └── Maps.js
         ├── Notifications
-        │   └── Notifications.jsx
+        │   └── Notifications.js
         ├── RTLPage
-        │   └── RTLPage.jsx
+        │   └── RTLPage.js
         ├── TableList
-        │   └── TableList.jsx
+        │   └── TableList.js
         ├── Typography
-        │   └── Typography.jsx
+        │   └── Typography.js
         ├── UpgradeToPro
-        │   └── UpgradeToPro.jsx
+        │   └── UpgradeToPro.js
         └── UserProfile
-            └── UserProfile.jsx
+            └── UserProfile.js
 ```
 
 ## Browser Support
