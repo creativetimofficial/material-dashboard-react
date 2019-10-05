@@ -18,7 +18,7 @@ import Search from "@material-ui/icons/Search";
 // core components
 import CustomInput from "components/CustomInput/CustomInput.js";
 import Button from "components/CustomButtons/Button.js";
-
+import { createBrowserHistory } from "history";
 import styles from "assets/jss/material-dashboard-react/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
@@ -47,6 +47,11 @@ export default function AdminNavbarLinks() {
   const handleCloseProfile = () => {
     setOpenProfile(null);
   };
+  const handleRouteChange = () => {
+    const history = createBrowserHistory();
+    history.push("/admin/dashboard");
+    window.location.reload();
+  };
   return (
     <div>
       <div className={classes.searchWrapper}>
@@ -71,6 +76,7 @@ export default function AdminNavbarLinks() {
         simple={!(window.innerWidth > 959)}
         aria-label="Dashboard"
         className={classes.buttonLink}
+        onClick={handleRouteChange}
       >
         <Dashboard className={classes.icons} />
         <Hidden mdUp implementation="css">
