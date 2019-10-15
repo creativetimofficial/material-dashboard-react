@@ -24,17 +24,21 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
+import Store from "@material-ui/icons/Store";
+import AddShoppingCart from "@material-ui/icons/AddShoppingCart";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
-import TableList from "views/TableList/TableList.js";
+import StaffList from "views/Staffs/StaffList.js";
 import Typography from "views/Typography/Typography.js";
 import Icons from "views/Icons/Icons.js";
 import Maps from "views/Maps/Maps.js";
 import NotificationsPage from "views/Notifications/Notifications.js";
+import StoreList from "views/Stores/StoreList.js";
+import SaleList from "views/Sale/SaleList.js";
 import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 // core components/views for RTL layout
-import RTLPage from "views/RTLPage/RTLPage.js";
+// import RTLPage from "views/RTLPage/RTLPage.js";
 
 const dashboardRoutes = [
   {
@@ -46,60 +50,66 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/user",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
+    path: "/staffs",
+    name: "Staff List",
+    rtlName: "قائمة الجدول",
     icon: Person,
+    component: StaffList,
+    layout: "/admin"
+  },
+  {
+    path: "/sale",
+    name: "Sale",
+    icon: AddShoppingCart,
+    component: SaleList,
+    layout: "/admin"
+  },
+  {
+    path: "/products",
+    name: "Product List",
+    rtlName: "ملف تعريفي للمستخدم",
+    icon: "content_paste",
     component: UserProfile,
     layout: "/admin"
   },
   {
-    path: "/table",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin"
-  },
-  {
-    path: "/typography",
-    name: "Typography",
+    path: "/branches",
+    name: "Branch List",
     rtlName: "طباعة",
-    icon: LibraryBooks,
+    icon: LocationOn,
     component: Typography,
     layout: "/admin"
   },
   {
-    path: "/icons",
-    name: "Icons",
+    path: "/statistics",
+    name: "Statistics",
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
     layout: "/admin"
   },
   {
-    path: "/maps",
-    name: "Maps",
+    path: "/users",
+    name: "User List",
     rtlName: "خرائط",
-    icon: LocationOn,
+    icon: LibraryBooks,
     component: Maps,
     layout: "/admin"
   },
   {
-    path: "/notifications",
-    name: "Notifications",
+    path: "/stores",
+    name: "Store List",
+    icon: Store,
+    component: StoreList,
+    layout: "/admin"
+  },
+  {
+    path: "/settings",
+    name: "Settings",
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin"
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl"
   },
   {
     path: "/upgrade-to-pro",
