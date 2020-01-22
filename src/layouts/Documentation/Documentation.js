@@ -25,6 +25,11 @@ import DocSidebar from "./DocSidebar/DocSidebar";
 import docRoutes from "documentation.js";
 
 class Documentation extends React.Component {
+  componentDidMount(){
+    if (navigator.platform.indexOf("Win") > -1) {
+      document.body.style.overflow = "auto";
+    }
+  }
   componentDidUpdate(e) {
     if (e.history.action === "PUSH") {
       document.documentElement.scrollTop = 0;
