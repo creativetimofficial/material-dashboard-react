@@ -17,7 +17,7 @@
 */
 import React from "react";
 import { withStyles, AppBar, Toolbar, Hidden } from "@material-ui/core";
-import { List, BugReport, Star } from "@material-ui/icons";
+import { List, BugReport, Star, CardMembership } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
 import Button from "components/CustomButtons/Button.js";
 
@@ -125,6 +125,14 @@ class DocHeader extends React.Component {
             </Hidden>
           </div>
           <div>
+            <a
+              href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mdr-docs-navbar-upgrade-pro"
+              className={classes.rightLinks}
+              target="_blank"
+            >
+              <CardMembership />{" "}
+              <span className={classes.rightLinksText}>Upgrade to PRO</span>
+            </a>
             <NavLink
               to="/"
               activeClassName="active"
