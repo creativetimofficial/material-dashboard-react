@@ -63,7 +63,7 @@ export default function Sidebar(props) {
   var links = (
     <List className={classes.list}>
       {routes.map((navItem, key) => (
-        <SidebarLink name={navItem.name} to={navItem.to} icon={navItem.icon} color={color} />
+        <SidebarLink key={key} name={navItem.name} to={navItem.to} icon={navItem.icon} color={color} />
       ))}
     </List>
   );
