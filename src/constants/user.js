@@ -1,0 +1,4 @@
+export const USER_TYPE = {
+  PREMIUM_USER: 'PREMIUM_USER',
+  REGULAR_USER: 'REGULARR_USER',
+};
