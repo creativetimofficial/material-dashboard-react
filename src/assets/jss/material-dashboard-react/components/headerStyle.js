@@ -8,75 +8,75 @@ import {
   warningColor,
   dangerColor,
   whiteColor,
-  grayColor
-} from "assets/jss/material-dashboard-react.js";
+  grayColor,
+} from 'assets/jss/material-dashboard-react';
 
 const headerStyle = () => ({
   appBar: {
-    backgroundColor: "transparent",
-    boxShadow: "none",
-    borderBottom: "0",
-    marginBottom: "0",
-    position: "absolute",
-    width: "100%",
-    paddingTop: "10px",
-    zIndex: "1029",
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    borderBottom: '0',
+    marginBottom: '0',
+    position: 'absolute',
+    width: '100%',
+    paddingTop: '10px',
+    zIndex: '1029',
     color: grayColor[7],
-    border: "0",
-    borderRadius: "3px",
-    padding: "10px 0",
-    transition: "all 150ms ease 0s",
-    minHeight: "50px",
-    display: "block"
+    border: '0',
+    borderRadius: '3px',
+    padding: '10px 0',
+    transition: 'all 150ms ease 0s',
+    minHeight: '50px',
+    display: 'block',
   },
   container: {
     ...container,
-    minHeight: "50px"
+    minHeight: '50px',
   },
   flex: {
-    flex: 1
+    flex: 1,
   },
   title: {
     ...defaultFont,
-    letterSpacing: "unset",
-    lineHeight: "30px",
-    fontSize: "18px",
-    borderRadius: "3px",
-    textTransform: "none",
-    color: "inherit",
-    margin: "0",
-    "&:hover,&:focus": {
-      background: "transparent"
-    }
+    letterSpacing: 'unset',
+    lineHeight: '30px',
+    fontSize: '18px',
+    borderRadius: '3px',
+    textTransform: 'none',
+    color: 'inherit',
+    margin: '0',
+    '&:hover,&:focus': {
+      background: 'transparent',
+    },
   },
   appResponsive: {
-    top: "8px"
+    top: '8px',
   },
   primary: {
     backgroundColor: primaryColor[0],
     color: whiteColor,
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   info: {
     backgroundColor: infoColor[0],
     color: whiteColor,
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   success: {
     backgroundColor: successColor[0],
     color: whiteColor,
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   warning: {
     backgroundColor: warningColor[0],
     color: whiteColor,
-    ...defaultBoxShadow
+    ...defaultBoxShadow,
   },
   danger: {
     backgroundColor: dangerColor[0],
     color: whiteColor,
-    ...defaultBoxShadow
-  }
+    ...defaultBoxShadow,
+  },
 });
 
 export default headerStyle;

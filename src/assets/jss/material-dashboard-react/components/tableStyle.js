@@ -6,72 +6,72 @@ import {
   infoColor,
   roseColor,
   grayColor,
-  defaultFont
-} from "assets/jss/material-dashboard-react.js";
+  defaultFont,
+} from 'assets/jss/material-dashboard-react';
 
-const tableStyle = theme => ({
+const tableStyle = (theme) => ({
   warningTableHeader: {
-    color: warningColor[0]
+    color: warningColor[0],
   },
   primaryTableHeader: {
-    color: primaryColor[0]
+    color: primaryColor[0],
   },
   dangerTableHeader: {
-    color: dangerColor[0]
+    color: dangerColor[0],
   },
   successTableHeader: {
-    color: successColor[0]
+    color: successColor[0],
   },
   infoTableHeader: {
-    color: infoColor[0]
+    color: infoColor[0],
   },
   roseTableHeader: {
-    color: roseColor[0]
+    color: roseColor[0],
   },
   grayTableHeader: {
-    color: grayColor[0]
+    color: grayColor[0],
   },
   table: {
-    marginBottom: "0",
-    width: "100%",
-    maxWidth: "100%",
-    backgroundColor: "transparent",
-    borderSpacing: "0",
-    borderCollapse: "collapse"
+    marginBottom: '0',
+    width: '100%',
+    maxWidth: '100%',
+    backgroundColor: 'transparent',
+    borderSpacing: '0',
+    borderCollapse: 'collapse',
   },
   tableHeadCell: {
-    color: "inherit",
+    color: 'inherit',
     ...defaultFont,
-    "&, &$tableCell": {
-      fontSize: "1em"
-    }
+    '&, &$tableCell': {
+      fontSize: '1em',
+    },
   },
   tableCell: {
     ...defaultFont,
-    lineHeight: "1.42857143",
-    padding: "12px 8px",
-    verticalAlign: "middle",
-    fontSize: "0.8125rem"
+    lineHeight: '1.42857143',
+    padding: '12px 8px',
+    verticalAlign: 'middle',
+    fontSize: '0.8125rem',
   },
   tableResponsive: {
-    width: "100%",
+    width: '100%',
     marginTop: theme.spacing(3),
-    overflowX: "auto"
+    overflowX: 'auto',
   },
   tableHeadRow: {
-    height: "56px",
-    color: "inherit",
-    display: "table-row",
-    outline: "none",
-    verticalAlign: "middle"
+    height: '56px',
+    color: 'inherit',
+    display: 'table-row',
+    outline: 'none',
+    verticalAlign: 'middle',
   },
   tableBodyRow: {
-    height: "48px",
-    color: "inherit",
-    display: "table-row",
-    outline: "none",
-    verticalAlign: "middle"
-  }
+    height: '48px',
+    color: 'inherit',
+    display: 'table-row',
+    outline: 'none',
+    verticalAlign: 'middle',
+  },
 });
 
 export default tableStyle;
