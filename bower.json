@@ -1,8 +1,9 @@
 {
-  "name": "material-dashboard-react",
-  "homepage": "https://github.com/creativetimofficial/material-dashboard-react",
+  "name": "material-frontend-starter",
+  "homepage": "https://github.com/shikdernyc/material-dashboard-starter",
   "authors": [
-    "creative-tim"
+    "creative-tim",
+    "shikdernyc"
   ],
   "description": "A Badass Material-UI Kit based on Material Design",
   "main": "public/index.html",
@@ -15,7 +16,6 @@
     "google",
     "twitter"
   ],
-  "license": "Creative TIM License",
   "ignore": [
     "**/.*",
     "node_modules",
