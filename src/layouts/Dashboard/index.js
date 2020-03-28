@@ -13,6 +13,7 @@ import bgImage from 'assets/img/sidebar-4.jpg';
 import logo from 'assets/img/reactlogo.png';
 import { APP_DISPLAY_NAME } from 'constants/app';
 import PropTypes from 'prop-types';
+import useActiveRouteName from 'hooks/useActiveRouteName';
 import sidebarRoutes from './sidebar_links';
 
 let ps;
@@ -24,6 +25,7 @@ export default function DashboardLayout({ children, ...rest }) {
   // ref to help us initialize PerfectScrollbar on windows devices
   const mainPanel = React.createRef();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const pageTitle = useActiveRouteName();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -67,7 +69,7 @@ export default function DashboardLayout({ children, ...rest }) {
       />
       <div className={classes.mainPanel} ref={mainPanel}>
         <Navbar
-          // routes={routes}
+          title={pageTitle}
           handleDrawerToggle={handleDrawerToggle}
           {...rest}
         />
