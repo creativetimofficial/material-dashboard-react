@@ -13,11 +13,11 @@ const styles = {
       margin: '0',
       fontSize: '14px',
       marginTop: '0',
-      marginBottom: '0',
+      marginBottom: '0'
     },
     '& a,& a:hover,& a:focus': {
-      color: '#FFFFFF',
-    },
+      color: '#FFFFFF'
+    }
   },
   cardTitleWhite: {
     color: '#FFFFFF',
@@ -31,9 +31,9 @@ const styles = {
       color: '#777',
       fontSize: '65%',
       fontWeight: '400',
-      lineHeight: '1',
-    },
-  },
+      lineHeight: '1'
+    }
+  }
 };
 
 const useStyles = makeStyles(styles);
@@ -44,23 +44,61 @@ export default function TableList() {
     <Grid container>
       <Grid item xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
+          <CardHeader color='primary'>
             <h4 className={classes.cardTitleWhite}>Simple Table</h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+            <p className={classes.cardCategoryWhite}>Here is a subtitle for this table</p>
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
-              tableHead={['Name', 'Country', 'City', 'Salary']}
-              tableData={[
-                ['Dakota Rice', 'Niger', 'Oud-Turnhout', '$36,738'],
-                ['Minerva Hooper', 'Curaçao', 'Sinaai-Waas', '$23,789'],
-                ['Sage Rodriguez', 'Netherlands', 'Baileux', '$56,142'],
-                ['Philip Chaney', 'Korea, South', 'Overland Park', '$38,735'],
-                ['Doris Greene', 'Malawi', 'Feldkirchen in Kärnten', '$63,542'],
-                ['Mason Porter', 'Chile', 'Gloucester', '$78,615'],
+              countRows
+              tableHeaderColor='primary'
+              options={{
+                search: false,
+                toolbar: false
+              }}
+              columns={[
+                { title: 'Name', field: 'name' },
+                { title: 'Country', field: 'country' },
+                { title: 'City', field: 'city' },
+                { title: 'Salary', field: 'salary' }
+              ]}
+              data={[
+                {
+                  name: 'Dakota Rice',
+                  country: 'Niger',
+                  city: 'Oud-Turnhout',
+                  salary: '$36,738'
+                },
+                {
+                  name: 'Minerva Hooper',
+                  country: 'Curaçao',
+                  city: 'Sinaai-Waas',
+                  salary: '$23,789'
+                },
+                {
+                  name: 'Sage Rodriguez',
+                  country: 'Netherlands',
+                  city: 'Baileux',
+                  salary: '$56,142'
+                },
+                {
+                  name: 'Philip Chaney',
+                  country: 'Korea, South',
+                  city: 'Overland Park',
+                  salary: '$38,735'
+                },
+                {
+                  name: 'Doris Greene',
+                  country: 'Malawi',
+                  city: 'Feldkirchen in Kärnten',
+                  salary: '$63,542'
+                },
+                {
+                  name: 'Mason Porter',
+                  country: 'Chile',
+                  city: 'Gloucester',
+                  salary: '$78,615'
+                }
               ]}
             />
           </CardBody>
@@ -68,37 +106,60 @@ export default function TableList() {
       </Grid>
       <Grid item xs={12} sm={12} md={12}>
         <Card plain>
-          <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
-            </h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
+          <CardHeader plain color='primary'>
+            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <p className={classes.cardCategoryWhite}>Here is a subtitle for this table</p>
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
-              tableHead={['ID', 'Name', 'Country', 'City', 'Salary']}
-              tableData={[
-                ['1', 'Dakota Rice', '$36,738', 'Niger', 'Oud-Turnhout'],
-                ['2', 'Minerva Hooper', '$23,789', 'Curaçao', 'Sinaai-Waas'],
-                ['3', 'Sage Rodriguez', '$56,142', 'Netherlands', 'Baileux'],
-                [
-                  '4',
-                  'Philip Chaney',
-                  '$38,735',
-                  'Korea, South',
-                  'Overland Park',
-                ],
-                [
-                  '5',
-                  'Doris Greene',
-                  '$63,542',
-                  'Malawi',
-                  'Feldkirchen in Kärnten',
-                ],
-                ['6', 'Mason Porter', '$78,615', 'Chile', 'Gloucester'],
+              tableHeaderColor='primary'
+              options={{
+                search: false,
+                toolbar: false
+              }}
+              columns={[
+                { title: 'Name', field: 'name' },
+                { title: 'Country', field: 'country' },
+                { title: 'City', field: 'city' },
+                { title: 'Salary', field: 'salary' }
+              ]}
+              data={[
+                {
+                  name: 'Dakota Rice',
+                  country: 'Niger',
+                  city: 'Oud-Turnhout',
+                  salary: '$36,738'
+                },
+                {
+                  name: 'Minerva Hooper',
+                  country: 'Curaçao',
+                  city: 'Sinaai-Waas',
+                  salary: '$23,789'
+                },
+                {
+                  name: 'Sage Rodriguez',
+                  country: 'Netherlands',
+                  city: 'Baileux',
+                  salary: '$56,142'
+                },
+                {
+                  name: 'Philip Chaney',
+                  country: 'Korea, South',
+                  city: 'Overland Park',
+                  salary: '$38,735'
+                },
+                {
+                  name: 'Doris Greene',
+                  country: 'Malawi',
+                  city: 'Feldkirchen in Kärnten',
+                  salary: '$63,542'
+                },
+                {
+                  name: 'Mason Porter',
+                  country: 'Chile',
+                  city: 'Gloucester',
+                  salary: '$78,615'
+                }
               ]}
             />
           </CardBody>
