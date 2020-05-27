@@ -1,11 +1,11 @@
 /*!
 
  =========================================================
- * Material Dashboard React - v1.8.0 based on Material Dashboard - v1.2.0
+ * Material Dashboard React - v1.9.0 based on Material Dashboard - v1.2.0
  =========================================================
 
  * Product Page: http://www.creative-tim.com/product/material-dashboard-react
- * Copyright 2019 Creative Tim (http://www.creative-tim.com)
+ * Copyright 2020 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
 
  =========================================================
@@ -34,7 +34,7 @@ const hexToRgb = input => {
     let last = input[2];
     input = first + first + second + second + last + last;
   }
-  input = input.toUpperCase(input);
+  input = input.toUpperCase();
   let first = input[0] + input[1];
   let second = input[2] + input[3];
   let last = input[4] + input[5];
