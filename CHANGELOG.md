@@ -7,15 +7,10 @@
 - https://github.com/creativetimofficial/material-dashboard-react/pull/99
 - https://github.com/creativetimofficial/material-dashboard-react/pull/65
 ### Major style changes
-
 ### Deleted components
-
 ### Added components
-
 ### Deleted dependencies
-
 ### Added dependencies
-
 ### Updated dependencies
 ```
 @material-ui/core         4.3.2   →    4.10.0
