@@ -34,7 +34,7 @@ const hexToRgb = input => {
     let last = input[2];
     input = first + first + second + second + last + last;
   }
-  input = input.toUpperCase(input);
+  input = input.toUpperCase();
   let first = input[0] + input[1];
   let second = input[2] + input[3];
   let last = input[4] + input[5];
