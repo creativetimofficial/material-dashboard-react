@@ -16,7 +16,22 @@
 
 ### Updated dependencies
 ```
-
+@material-ui/core         4.3.2   →    4.10.0
+@material-ui/icons        4.2.1   →     4.9.1
+history                   4.9.0   →    4.10.1
+perfect-scrollbar         1.4.0   →     1.5.0
+react                    16.9.0   →   16.13.1
+react-chartist           0.13.3   →    0.14.3
+react-dom                16.9.0   →   16.13.1
+react-router-dom          5.0.1   →     5.2.0
+react-scripts             3.1.0   →     3.4.1
+react-swipeable-views    0.13.3   →    0.13.9
+eslint-config-prettier    6.0.0   →    6.11.0
+eslint-plugin-prettier    3.1.0   →     3.1.3
+prettier                 1.18.2   →     2.0.5
+@types/googlemaps        3.37.3   →    3.39.6
+ajv                      6.10.2   →    6.12.2
+typescript                3.5.3   →     3.9.3
 ```
 ### Warning
 _If needed_
