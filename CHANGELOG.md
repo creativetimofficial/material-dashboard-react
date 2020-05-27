@@ -1,5 +1,39 @@
 # Change Log
 
+## [1.9.0] 2020-05-28
+### Bug fixing
+- https://github.com/creativetimofficial/material-dashboard-react/issues/121
+- https://github.com/creativetimofficial/material-dashboard-react/issues/98
+- https://github.com/creativetimofficial/material-dashboard-react/pull/99
+- https://github.com/creativetimofficial/material-dashboard-react/pull/65
+### Major style changes
+### Deleted components
+### Added components
+### Deleted dependencies
+### Added dependencies
+### Updated dependencies
+```
+@material-ui/core         4.3.2   →    4.10.0
+@material-ui/icons        4.2.1   →     4.9.1
+history                   4.9.0   →    4.10.1
+perfect-scrollbar         1.4.0   →     1.5.0
+react                    16.9.0   →   16.13.1
+react-chartist           0.13.3   →    0.14.3
+react-dom                16.9.0   →   16.13.1
+react-router-dom          5.0.1   →     5.2.0
+react-scripts             3.1.0   →     3.4.1
+react-swipeable-views    0.13.3   →    0.13.9
+eslint-config-prettier    6.0.0   →    6.11.0
+eslint-plugin-prettier    3.1.0   →     3.1.3
+prettier                 1.18.2   →     2.0.5
+@types/googlemaps        3.37.3   →    3.39.6
+ajv                      6.10.2   →    6.12.2
+typescript                3.5.3   →     3.9.3
+```
+### Warning
+_While in development some of the plugins that were used for this product will throw some warnings - note, this only happens in development, the UI or the functionality of the product is not affected, also, if the issues will persist in React 17, we'll drop usage of those plugins, and replace them with other ones._
+_Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the product, and they appear because of NodeJS and not from the product itself._
+
 ## [1.8.0] 2019-08-26
 ### Bug fixing
 - Rewrote the ISSUE_TEMPLATE

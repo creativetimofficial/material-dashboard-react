@@ -1,6 +1,6 @@
 import React from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { prism } from "react-syntax-highlighter/dist/styles/prism";
+import { prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 // @material-ui/icons
 import BugReport from "@material-ui/icons/BugReport";
 import Code from "@material-ui/icons/Code";
