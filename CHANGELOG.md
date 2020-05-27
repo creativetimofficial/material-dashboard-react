@@ -1,5 +1,26 @@
 # Change Log
 
+## [1.9.0] 2020-05-28
+### Bug fixing
+- https://github.com/creativetimofficial/material-dashboard-react/pull/99
+- https://github.com/creativetimofficial/material-dashboard-react/pull/65
+### Major style changes
+
+### Deleted components
+
+### Added components
+
+### Deleted dependencies
+
+### Added dependencies
+
+### Updated dependencies
+```
+
+```
+### Warning
+_If needed_
+
 ## [1.8.0] 2019-08-26
 ### Bug fixing
 - Rewrote the ISSUE_TEMPLATE
