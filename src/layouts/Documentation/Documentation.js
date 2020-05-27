@@ -25,7 +25,7 @@ import DocSidebar from "./DocSidebar/DocSidebar";
 import docRoutes from "documentation.js";
 
 class Documentation extends React.Component {
-  componentDidMount(){
+  componentDidMount() {
     if (navigator.platform.indexOf("Win") > -1) {
       document.body.style.overflow = "auto";
     }
