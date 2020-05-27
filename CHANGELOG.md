@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.9.0] 2020-05-28
+## [1.9.0] 2020-05-27
 ### Bug fixing
 - https://github.com/creativetimofficial/material-dashboard-react/issues/121
 - https://github.com/creativetimofficial/material-dashboard-react/issues/98
