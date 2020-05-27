@@ -2,6 +2,8 @@
 
 ## [1.9.0] 2020-05-28
 ### Bug fixing
+- https://github.com/creativetimofficial/material-dashboard-react/issues/121
+- https://github.com/creativetimofficial/material-dashboard-react/issues/98
 - https://github.com/creativetimofficial/material-dashboard-react/pull/99
 - https://github.com/creativetimofficial/material-dashboard-react/pull/65
 ### Major style changes
