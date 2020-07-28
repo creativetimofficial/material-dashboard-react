@@ -8,12 +8,20 @@
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
+import Home from "@material-ui/icons/Home";
 // core components/views for Admin layout
 import DashboardPage from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 
 const dashboardRoutes = [
+  {
+    path: "/home",
+    name : "Home",
+    icon: Home,
+    component:Home,
+    layout: "/admin"
+  },
   {
     path: "/dashboard",
     name: "Dashboard",
