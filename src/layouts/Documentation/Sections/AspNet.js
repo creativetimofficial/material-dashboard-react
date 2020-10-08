@@ -22,19 +22,19 @@ class Tutorial extends React.Component {
             Clone the repo:{" "}
             <code>
               git clone
-              https://github.com/creativetimofficial/material-dashboard-react.git
+              https://github.com/creativetimofficial/material-dashboard-react-aspnet.git
             </code>
             .
           </li>
           <li>
-            <a href="https://github.com/creativetimofficial/material-dashboard-react/archive/master.zip">
+            <a href="https://github.com/creativetimofficial/material-dashboard-react-aspnet/archive/master.zip">
               Download from Github
             </a>
             .
           </li>
           <li>
             <a
-              href="https://www.creative-tim.com/product/material-dashboard-react"
+              href="https://www.creative-tim.com/product/material-dashboard-react-aspnet"
               target="_blank"
             >
               Download from Creative Tim
