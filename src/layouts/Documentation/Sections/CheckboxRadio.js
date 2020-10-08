@@ -102,7 +102,7 @@ export default function CheckboxRadio() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([]);
   const [selectedValue, setSelectedValue] = React.useState(null);
-  const handleToggle = value => {
+  const handleToggle = (value) => {
     const currentIndex = checked.indexOf(value);
     const newChecked = [...checked];
 
@@ -127,7 +127,7 @@ export default function CheckboxRadio() {
         checkedIcon={<Check className={classes.checkedIcon} />}
         icon={<Check className={classes.uncheckedIcon} />}
         classes={{
-          checked: classes.checked
+          checked: classes.checked,
         }}
       />
       <SyntaxHighlighter language="jsx" style={prism}>
@@ -143,7 +143,7 @@ export default function CheckboxRadio() {
         icon={<FiberManualRecord className={classes.radioUnchecked} />}
         checkedIcon={<FiberManualRecord className={classes.radioChecked} />}
         classes={{
-          checked: classes.radio
+          checked: classes.radio,
         }}
       />
       <Radio
@@ -155,7 +155,7 @@ export default function CheckboxRadio() {
         icon={<FiberManualRecord className={classes.radioUnchecked} />}
         checkedIcon={<FiberManualRecord className={classes.radioChecked} />}
         classes={{
-          checked: classes.radio
+          checked: classes.radio,
         }}
       />
       <SyntaxHighlighter language="jsx" style={prism}>

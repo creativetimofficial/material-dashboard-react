@@ -101,7 +101,7 @@ class Tooltips extends React.Component {
   }
 }
 Tooltips.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(tasksStyle)(Tooltips);

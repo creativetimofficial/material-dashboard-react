@@ -11,13 +11,13 @@ import Muted from "components/Typography/Muted.js";
 import {
   cardTitle,
   cardSubtitle,
-  cardLink
+  cardLink,
 } from "assets/jss/material-dashboard-react.js";
 
 const styles = {
   cardTitle,
   cardSubtitle,
-  cardLink
+  cardLink,
 };
 
 const useStyles = makeStyles(styles);
@@ -38,14 +38,14 @@ export default function CardTitlesTextLinks() {
         <a
           href="#pablo"
           className={classes.cardLink}
-          onClick={e => e.preventDefault()}
+          onClick={(e) => e.preventDefault()}
         >
           Card link
         </a>
         <a
           href="#pablo"
           className={classes.cardLink}
-          onClick={e => e.preventDefault()}
+          onClick={(e) => e.preventDefault()}
         >
           Another link
         </a>

@@ -114,7 +114,7 @@ function DemoTasks({ ...props }) {
                 tasksIndexes={[0, 1, 2, 3]}
                 tasks={bugs}
               />
-            )
+            ),
           },
           {
             tabName: "Website",
@@ -125,7 +125,7 @@ function DemoTasks({ ...props }) {
                 tasksIndexes={[0, 1]}
                 tasks={website}
               />
-            )
+            ),
           },
           {
             tabName: "Server",
@@ -136,8 +136,8 @@ function DemoTasks({ ...props }) {
                 tasksIndexes={[0, 1, 2]}
                 tasks={server}
               />
-            )
-          }
+            ),
+          },
         ]}
       />
       <SyntaxHighlighter language="jsx" style={prism}>

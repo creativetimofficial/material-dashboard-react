@@ -26,7 +26,7 @@ import {
   FacebookShareButton,
   TwitterShareButton,
   FacebookIcon,
-  TwitterIcon
+  TwitterIcon,
 } from "react-share";
 import GitHubButton from "react-github-button";
 
@@ -43,7 +43,7 @@ class FixedPlugin extends Component {
     this.state = {
       classes: "dropdown show",
       bg_checked: true,
-      bgImage: this.props.bgImage
+      bgImage: this.props.bgImage,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -54,7 +54,7 @@ class FixedPlugin extends Component {
     return (
       <div
         className={classnames("fixed-plugin", {
-          "rtl-fixed-plugin": this.props.rtlActive
+          "rtl-fixed-plugin": this.props.rtlActive,
         })}
       >
         <div id="fixedPluginClasses" className={this.props.fixedClasses}>
@@ -245,7 +245,7 @@ FixedPlugin.propTypes = {
   fixedClasses: PropTypes.string,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   handleColorClick: PropTypes.func,
-  handleImageClick: PropTypes.func
+  handleImageClick: PropTypes.func,
 };
 
 export default FixedPlugin;

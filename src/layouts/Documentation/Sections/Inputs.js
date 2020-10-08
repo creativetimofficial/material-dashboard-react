@@ -109,10 +109,10 @@ class Inputs extends React.Component {
               labelText="Disabled"
               id="disabled"
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
               inputProps={{
-                disabled: true
+                disabled: true,
               }}
             />
           </GridItem>
@@ -120,10 +120,10 @@ class Inputs extends React.Component {
             <CustomInput
               id="regular"
               inputProps={{
-                placeholder: "Regular"
+                placeholder: "Regular",
               }}
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
             />
           </GridItem>
@@ -132,7 +132,7 @@ class Inputs extends React.Component {
               labelText="With floating label"
               id="float"
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
             />
           </GridItem>
@@ -142,7 +142,7 @@ class Inputs extends React.Component {
               id="success"
               success
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
             />
           </GridItem>
@@ -152,7 +152,7 @@ class Inputs extends React.Component {
               id="error"
               error
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
             />
           </GridItem>
@@ -161,14 +161,14 @@ class Inputs extends React.Component {
               labelText="With material Icons"
               id="material"
               formControlProps={{
-                fullWidth: true
+                fullWidth: true,
               }}
               inputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
                     <People />
                   </InputAdornment>
-                )
+                ),
               }}
             />
           </GridItem>

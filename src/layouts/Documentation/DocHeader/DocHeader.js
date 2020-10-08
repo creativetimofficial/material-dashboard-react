@@ -21,24 +21,24 @@ import { List, BugReport, Star, CardMembership } from "@material-ui/icons";
 import { NavLink } from "react-router-dom";
 import Button from "components/CustomButtons/Button.js";
 
-const style = theme => ({
+const style = (theme) => ({
   appBar: {
     color: "#fff",
     backgroundColor: "#00acc1 !important",
     boxShadow:
-      "0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)"
+      "0 12px 20px -10px rgba(0, 188, 212, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(0, 188, 212, 0.2)",
   },
   vButton: {
     padding: "12px",
     marginLeft: "4px",
-    marginRight: "4px"
+    marginRight: "4px",
   },
   title: {
     "&:hover,&:active": {
-      opacity: "0.8"
+      opacity: "0.8",
     },
     "&,&:hover,&:active": {
-      color: "inherit"
+      color: "inherit",
     },
     position: "relative",
     height: "50px",
@@ -48,27 +48,27 @@ const style = theme => ({
     display: "inline-block",
     fontFamily: "Roboto, Helvetica, Arial, sans-serif",
     fontWeight: "300",
-    textDecoration: "none"
+    textDecoration: "none",
   },
   iconLink: {
     "&:hover,&:active": {
-      opacity: "0.8"
+      opacity: "0.8",
     },
     "&,&:hover,&:active": {
-      color: "inherit"
+      color: "inherit",
     },
     fontSize: "18px",
     textDecoration: "none",
     lineHeight: "20px",
     marginTop: "-4px",
-    marginLeft: "12px"
+    marginLeft: "12px",
   },
   rightLinks: {
     "&:hover,&:active": {
-      opacity: "0.8"
+      opacity: "0.8",
     },
     "&,&:hover,&:active": {
-      color: "inherit"
+      color: "inherit",
     },
     fontFamily: "Roboto, Helvetica, Arial, sans-serif",
     fontWeight: "400",
@@ -76,22 +76,22 @@ const style = theme => ({
     marginLeft: "12px",
     textDecoration: "none",
     display: "inline-block",
-    position: "relative"
+    position: "relative",
   },
   rightLinksText: {
     position: "relative",
-    top: "-8px"
+    top: "-8px",
   },
   flex: {
     [theme.breakpoints.up("md")]: {
-      flex: "1"
-    }
+      flex: "1",
+    },
   },
   block: {
     [theme.breakpoints.down("md")]: {
-      display: "block"
-    }
-  }
+      display: "block",
+    },
+  },
 });
 
 class DocHeader extends React.Component {
@@ -161,19 +161,19 @@ class DocHeader extends React.Component {
               href="#pablo"
               className={classes.rightLinks}
               target="_blank"
-              onClick={e => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
             />
             <a
               href="#pablo"
               className={classes.rightLinks}
               target="_blank"
-              onClick={e => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
             />
             <a
               href="#pablo"
               className={classes.rightLinks}
               target="_blank"
-              onClick={e => e.preventDefault()}
+              onClick={(e) => e.preventDefault()}
             />
             <a
               href="https://github.com/creativetimofficial/material-dashboard-react?ref=creativetim"
@@ -190,7 +190,7 @@ class DocHeader extends React.Component {
                   position: "absolute",
                   top: "0",
                   border: "0",
-                  right: "0"
+                  right: "0",
                 }}
                 aria-hidden="true"
               >

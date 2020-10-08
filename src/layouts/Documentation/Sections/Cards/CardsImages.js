@@ -14,9 +14,9 @@ const styles = {
   ...cardImagesStyles,
   textWhite: {
     "&, & *": {
-      color: "#FFF"
-    }
-  }
+      color: "#FFF",
+    },
+  },
 };
 
 const useStyles = makeStyles(styles);

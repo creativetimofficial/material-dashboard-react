@@ -22,6 +22,7 @@ import Variables from "layouts/Documentation/Sections/Variables.js";
 import Styles from "layouts/Documentation/Sections/Styles.js";
 import LintCommands from "layouts/Documentation/Sections/LintCommands.js";
 import BuildTools from "layouts/Documentation/Sections/BuildTools.js";
+import AspNet from "layouts/Documentation/Sections/AspNet.js";
 
 // Components
 import Buttons from "layouts/Documentation/Sections/Buttons.js";
@@ -50,30 +51,35 @@ const docsRoutes = [
       {
         path: "/documentation/tutorial",
         name: "Tutorial",
-        component: Tutorial
+        component: Tutorial,
       },
       {
         path: "/documentation/routing-system",
         name: "RoutingSystem",
-        component: RoutingSystem
+        component: RoutingSystem,
       },
       {
         path: "/documentation/variables",
         name: "Variables",
-        component: Variables
+        component: Variables,
       },
       { path: "/documentation/styles", name: "Styles", component: Styles },
       {
         path: "/documentation/lint-commands",
         name: "Lint",
-        component: LintCommands
+        component: LintCommands,
       },
       {
         path: "/documentation/build-tools",
         name: "Build Tools",
-        component: BuildTools
-      }
-    ]
+        component: BuildTools,
+      },
+      {
+        path: "/documentation/asp-net",
+        name: "Asp.Net Tutorial",
+        component: AspNet,
+      },
+    ],
   },
   {
     name: "Components",
@@ -84,24 +90,24 @@ const docsRoutes = [
       {
         path: "/documentation/checkbox-radio",
         name: "CheckboxRadio",
-        component: CheckboxRadio
+        component: CheckboxRadio,
       },
       {
         path: "/documentation/dropdown",
         name: "Dropdown",
-        component: Dropdown
+        component: Dropdown,
       },
       { path: "/documentation/icons", name: "Icons", component: Icons },
       { path: "/documentation/inputs", name: "Inputs", component: Inputs },
       {
         path: "/documentation/navigation",
         name: "Navigation",
-        component: Navigation
+        component: Navigation,
       },
       {
         path: "/documentation/notifications",
         name: "Notifications",
-        component: Notifications
+        component: Notifications,
       },
       { path: "/documentation/sidebar", name: "Sidebar", component: Sidebar },
       { path: "/documentation/tables", name: "Tables", component: Tables },
@@ -110,14 +116,14 @@ const docsRoutes = [
       {
         path: "/documentation/tooltips",
         name: "Tooltips",
-        component: Tooltips
+        component: Tooltips,
       },
       {
         path: "/documentation/typography",
         name: "Typography",
-        component: Typography
-      }
-    ]
+        component: Typography,
+      },
+    ],
   },
   {
     name: "Plugins",
@@ -126,11 +132,11 @@ const docsRoutes = [
       {
         path: "/documentation/google-maps",
         name: "GoogleMaps",
-        component: GoogleMaps
-      }
-    ]
+        component: GoogleMaps,
+      },
+    ],
   },
-  { redirect: true, path: "/documentation", pathTo: "/documentation/tutorial" }
+  { redirect: true, path: "/documentation", pathTo: "/documentation/tutorial" },
 ];
 
 export default docsRoutes;

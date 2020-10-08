@@ -141,7 +141,7 @@ const useStyles = makeStyles(styles);
 export default function Dropdown(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(null);
-  const handleToggle = event => {
+  const handleToggle = (event) => {
     if (open && open.contains(event.target)) {
       setOpen(null);
     } else {
@@ -191,7 +191,7 @@ export default function Dropdown(props) {
               id="menu-list-grow"
               style={{
                 transformOrigin:
-                  placement === "bottom" ? "center top" : "center bottom"
+                  placement === "bottom" ? "center top" : "center bottom",
               }}
             >
               <Paper>

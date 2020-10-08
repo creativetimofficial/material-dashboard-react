@@ -39,7 +39,7 @@ class BuildTools extends React.Component {
                   target="_blank"
                 >
                   Read more
-                </a>
+                </a>,
               ],
               [
                 2,
@@ -51,7 +51,7 @@ class BuildTools extends React.Component {
                   target="_blank"
                 >
                   Read more
-                </a>
+                </a>,
               ],
               [
                 3,
@@ -63,7 +63,7 @@ class BuildTools extends React.Component {
                   target="_blank"
                 >
                   Read more
-                </a>
+                </a>,
               ],
               [
                 4,
@@ -75,7 +75,7 @@ class BuildTools extends React.Component {
                   target="_blank"
                 >
                   Read more
-                </a>
+                </a>,
               ],
               [
                 5,
@@ -87,7 +87,7 @@ class BuildTools extends React.Component {
                   target="_blank"
                 >
                   Read more
-                </a>
+                </a>,
               ],
               [
                 6,
@@ -102,7 +102,7 @@ class BuildTools extends React.Component {
                   <code className="highlighter-rouge">package_lock.json</code>{" "}
                   file, and will install a fresh copy of them.
                 </div>,
-                ""
+                "",
               ],
               [
                 7,
@@ -111,7 +111,7 @@ class BuildTools extends React.Component {
                 "Checks for linting errors",
                 <a href="https://eslint.org/?ref=creativetim" target="_blank">
                   Read more
-                </a>
+                </a>,
               ],
               [
                 8,
@@ -120,7 +120,7 @@ class BuildTools extends React.Component {
                 "Fixes linting errors (it may not solve all the linting errors)",
                 <a href="https://eslint.org/?ref=creativetim" target="_blank">
                   Read more
-                </a>
+                </a>,
               ],
               [
                 9,
@@ -129,7 +129,7 @@ class BuildTools extends React.Component {
                   npm run build-package
                 </code>,
                 "This will copy the css file from the assets folder in the dist folder in order for you to publish the dist folder to npm",
-                ""
+                "",
               ],
               [
                 10,
@@ -138,8 +138,8 @@ class BuildTools extends React.Component {
                   npm run build-package
                 </code>,
                 "This will prepare the product for npm distribution (Caution - the product was not thought as a npm distribution)",
-                ""
-              ]
+                "",
+              ],
             ]}
           />
         </div>

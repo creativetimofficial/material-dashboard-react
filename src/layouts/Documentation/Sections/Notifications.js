@@ -217,7 +217,7 @@ export default function Notifications() {
       setPlace(newPlace);
       setColor(newColor);
       setOpen(true);
-      setTimeout(function() {
+      setTimeout(function () {
         setOpen(false);
       }, 6000);
     }

@@ -44,7 +44,7 @@ class Tables extends React.Component {
             ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
             ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
             ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-            ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+            ["Mason Porter", "Chile", "Gloucester", "$78,615"],
           ]}
         />
         <SyntaxHighlighter language="jsx" style={prism}>

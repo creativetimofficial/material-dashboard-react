@@ -12,11 +12,11 @@ import { cardTitle } from "assets/jss/material-dashboard-react.js";
 const styles = {
   cardTitle,
   textCenter: {
-    textAlign: "center"
+    textAlign: "center",
   },
   textRight: {
-    textAlign: "right"
-  }
+    textAlign: "right",
+  },
 };
 
 const useStyles = makeStyles(styles);

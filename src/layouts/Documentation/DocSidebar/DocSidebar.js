@@ -19,7 +19,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { withStyles, List, ListItem, ListItemText } from "@material-ui/core";
 
-const style = theme => ({
+const style = (theme) => ({
   list: {
     overflowY: "auto",
     maxHeight: "calc(100vh - 4rem)",
@@ -30,44 +30,44 @@ const style = theme => ({
     borderRight: "1px solid rgba(0,0,0,.1)",
     [theme.breakpoints.up("md")]: {
       position: "fixed",
-      paddingTop: "15px"
-    }
+      paddingTop: "15px",
+    },
   },
   innerList: {
     display: "block",
     paddingLeft: "0px",
     flexWrap: "wrap",
     marginBottom: "18px",
-    listStyle: "none"
+    listStyle: "none",
   },
   listItemText: {
     display: "block",
     color: "rgba(0,0,0,.65)",
     fontFamily: "Roboto, Helvetica, Arial, sans-serif",
     fontWeight: "300",
-    lineHeight: "1.5em"
+    lineHeight: "1.5em",
   },
   listItemTextGroup: {
     fontWeight: "500",
     color: "rgba(0,0,0,.85)",
-    fontSize: "1rem"
+    fontSize: "1rem",
   },
   active: {
     fontWeight: "500",
     color: "rgba(0,0,0,.85)",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
   },
   navLink: {
-    textDecoration: "none"
+    textDecoration: "none",
   },
   listItem: {
     paddingTop: ".25rem",
-    paddingBottom: ".25rem"
+    paddingBottom: ".25rem",
   },
   innerListItem: {
     paddingTop: ".25rem",
-    paddingBottom: ".25rem"
-  }
+    paddingBottom: ".25rem",
+  },
 });
 
 class DocSidebar extends React.Component {
