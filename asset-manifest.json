@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/material-dashboard-react/static/css/main.b6fc18a3.chunk.css",
-    "main.js": "/material-dashboard-react/static/js/main.12d96777.chunk.js",
-    "main.js.map": "/material-dashboard-react/static/js/main.12d96777.chunk.js.map",
+    "main.js": "/material-dashboard-react/static/js/main.f4da9d86.chunk.js",
+    "main.js.map": "/material-dashboard-react/static/js/main.f4da9d86.chunk.js.map",
     "runtime-main.js": "/material-dashboard-react/static/js/runtime-main.d0bf2bb1.js",
     "runtime-main.js.map": "/material-dashboard-react/static/js/runtime-main.d0bf2bb1.js.map",
     "static/css/2.d0176e96.chunk.css": "/material-dashboard-react/static/css/2.d0176e96.chunk.css",
     "static/js/2.9a58c1c2.chunk.js": "/material-dashboard-react/static/js/2.9a58c1c2.chunk.js",
     "static/js/2.9a58c1c2.chunk.js.map": "/material-dashboard-react/static/js/2.9a58c1c2.chunk.js.map",
     "index.html": "/material-dashboard-react/index.html",
-    "precache-manifest.05358a08fd968496d5f3ecd505f26171.js": "/material-dashboard-react/precache-manifest.05358a08fd968496d5f3ecd505f26171.js",
+    "precache-manifest.ed43bd2decf9ce72b77d6186ae91ccf1.js": "/material-dashboard-react/precache-manifest.ed43bd2decf9ce72b77d6186ae91ccf1.js",
     "service-worker.js": "/material-dashboard-react/service-worker.js",
     "static/css/2.d0176e96.chunk.css.map": "/material-dashboard-react/static/css/2.d0176e96.chunk.css.map",
     "static/css/main.b6fc18a3.chunk.css.map": "/material-dashboard-react/static/css/main.b6fc18a3.chunk.css.map",
     "static/js/2.9a58c1c2.chunk.js.LICENSE.txt": "/material-dashboard-react/static/js/2.9a58c1c2.chunk.js.LICENSE.txt",
-    "static/js/main.12d96777.chunk.js.LICENSE.txt": "/material-dashboard-react/static/js/main.12d96777.chunk.js.LICENSE.txt",
+    "static/js/main.f4da9d86.chunk.js.LICENSE.txt": "/material-dashboard-react/static/js/main.f4da9d86.chunk.js.LICENSE.txt",
     "static/media/marc.jpg": "/material-dashboard-react/static/media/marc.8880a65c.jpg",
     "static/media/sidebar-1.jpg": "/material-dashboard-react/static/media/sidebar-1.8e9f0a3c.jpg",
     "static/media/sidebar-2.jpg": "/material-dashboard-react/static/media/sidebar-2.310509c9.jpg",
@@ -26,6 +26,6 @@
     "static/css/2.d0176e96.chunk.css",
     "static/js/2.9a58c1c2.chunk.js",
     "static/css/main.b6fc18a3.chunk.css",
-    "static/js/main.12d96777.chunk.js"
+    "static/js/main.f4da9d86.chunk.js"
   ]
 }
