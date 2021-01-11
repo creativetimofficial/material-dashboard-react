@@ -39,7 +39,7 @@ You can find the Github Repo here.
 ## Versions
 
 [<img src="src/assets/github/html.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard)
-[<img src="src/assets/github/react.svg" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react)
+[<img src="src/assets/github/react.svg" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-react) [![Meercode CI Score](https://meercode.io/badge/creativetimofficial/material-dashboard-react?type=ci-score&branch=master)](https://meercode.io/creativetimofficial/material-dashboard-react)
 [<img src="src/assets/github/vuejs.png" width="60" height="60" />](https://www.creative-tim.com/product/vue-material-dashboard)
 [<img src="src/assets/github/angular.png" width="60" height="60" />](https://www.creative-tim.com/product/material-dashboard-angular2)
 
