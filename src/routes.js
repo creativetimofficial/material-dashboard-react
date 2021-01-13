@@ -17,96 +17,54 @@
 */
 // @material-ui/icons
 import Dashboard from "@material-ui/icons/Dashboard";
-import Person from "@material-ui/icons/Person";
-import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Notifications from "@material-ui/icons/Notifications";
-import Unarchive from "@material-ui/icons/Unarchive";
-import Language from "@material-ui/icons/Language";
+
 // core components/views for Admin layout
-import DashboardPage from "views/Dashboard/Dashboard.js";
-import UserProfile from "views/UserProfile/UserProfile.js";
-import TableList from "views/TableList/TableList.js";
-import Typography from "views/Typography/Typography.js";
-import Icons from "views/Icons/Icons.js";
-import Maps from "views/Maps/Maps.js";
-import NotificationsPage from "views/Notifications/Notifications.js";
-import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
-// core components/views for RTL layout
-import RTLPage from "views/RTLPage/RTLPage.js";
+import MainPage from "views/Main/Main.js";
+import Sensor from "views/Sensor/Sensor.js";
+import SmartLamb from "views/SmartLamp/SmartLamb.js";
+import AirConditioner from "views/Air Conditioner/AirConditioner";
+import LogOut from "views/LogOut/LogOut.js"
+
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
+import SettingsRemoteIcon from '@material-ui/icons/SettingsRemote';
+import AcUnitIcon from '@material-ui/icons/AcUnit';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+//import LoginPage from 'views/LoginPage/LoginPage.js';
 
 const dashboardRoutes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
-    rtlName: "لوحة القيادة",
+    path: "/main",
+    name: "Main", 
     icon: Dashboard,
-    component: DashboardPage,
+    component: MainPage,
     layout: "/admin"
   },
   {
-    path: "/user",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
-    component: UserProfile,
+    path: "/lamp",
+    name: "Akıllı Lamba", 
+    icon: EmojiObjectsIcon,
+    component: SmartLamb,
     layout: "/admin"
   },
   {
-    path: "/table",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
+    path: "/sensor",
+    name: "Sensör", 
+    icon: SettingsRemoteIcon,
+    component: Sensor,
     layout: "/admin"
   },
   {
-    path: "/typography",
-    name: "Typography",
-    rtlName: "طباعة",
-    icon: LibraryBooks,
-    component: Typography,
+    path: "/airconditioner",
+    name: "Klima", 
+    icon: AcUnitIcon,
+    component: AirConditioner,
     layout: "/admin"
   },
   {
-    path: "/icons",
-    name: "Icons",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
-    layout: "/admin"
-  },
-  {
-    path: "/maps",
-    name: "Maps",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Notifications",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin"
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl"
-  },
-  {
-    path: "/upgrade-to-pro",
-    name: "Upgrade To PRO",
-    rtlName: "التطور للاحترافية",
-    icon: Unarchive,
-    component: UpgradeToPro,
+    path: "/logout",
+    name: "Çıkış", 
+    icon: ExitToAppIcon,
+    component: LogOut,
     layout: "/admin"
   }
 ];

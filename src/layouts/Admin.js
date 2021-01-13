@@ -9,14 +9,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
-import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
+import { HubConnectionBuilder } from "@microsoft/signalr";
 import routes from "routes.js";
 
 import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
-import bgImage from "assets/img/sidebar-2.jpg";
+import bgImage from "assets/img/sidebar-4.jpg";
 import logo from "assets/img/reactlogo.png";
+
+import UserService from "../APIs/UserService";
+import DeviceService from "../APIs/DeviceService";
 
 let ps;
 
@@ -40,6 +43,12 @@ const switchRoutes = (
 
 const useStyles = makeStyles(styles);
 
+export var User = {};
+export var SmartLamps = [];
+export var MotionSensors = [];
+export var AirConditioners = [];
+export var SignalRConnection;
+
 export default function Admin({ ...rest }) {
   // styles
   const classes = useStyles();
@@ -50,19 +59,47 @@ export default function Admin({ ...rest }) {
   const [color, setColor] = React.useState("blue");
   const [fixedClasses, setFixedClasses] = React.useState("dropdown show");
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const handleImageClick = image => {
-    setImage(image);
+  //
+  const [user, setUser] = React.useState([]);
+
+  React.useEffect(() => {
+    getUser();
+    getDevicesById();
+  }, []);
+  //
+  /*
+  SignalRConnection = new HubConnectionBuilder()
+    .withAutomaticReconnect()
+    .withUrl("https://localhost:5001/SmartLamp")
+    .build();
+  const Start = () => {
+    SignalRConnection.start().then(() => {
+      console.log(SignalRConnection);
+      //setStates("CONNECTED")
+    }).catch((err) => {
+      //setStates("DISCONNECTED")
+    });
   };
-  const handleColorClick = color => {
-    setColor(color);
+  Start();
+*/
+  const getUser = () => {
+    UserService.getUser(1)
+      .then((response) => {
+        User = response.data;
+        setUser(response.data);
+      })
+      .catch((error) => console.log(error));
   };
-  const handleFixedClick = () => {
-    if (fixedClasses === "dropdown") {
-      setFixedClasses("dropdown show");
-    } else {
-      setFixedClasses("dropdown");
-    }
-  };
+  const getDevicesById = () => {
+    DeviceService.getAllDevicesByUserId(1).then((response) => {
+      SmartLamps = response.data.smartLamps;
+      MotionSensors = response.data.motionSensors;
+      AirConditioners = response.data.airConditioners;
+    });
+  }
+
+
+
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -79,7 +116,7 @@ export default function Admin({ ...rest }) {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(mainPanel.current, {
         suppressScrollX: true,
-        suppressScrollY: false
+        suppressScrollY: false,
       });
       document.body.style.overflow = "hidden";
     }
@@ -96,7 +133,7 @@ export default function Admin({ ...rest }) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"Creative Tim"}
+        logoText={user.name + " " + user.surname}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}
@@ -116,17 +153,9 @@ export default function Admin({ ...rest }) {
             <div className={classes.container}>{switchRoutes}</div>
           </div>
         ) : (
-          <div className={classes.map}>{switchRoutes}</div>
-        )}
+            <div className={classes.map}>{switchRoutes}</div>
+          )}
         {getRoute() ? <Footer /> : null}
-        <FixedPlugin
-          handleImageClick={handleImageClick}
-          handleColorClick={handleColorClick}
-          bgColor={color}
-          bgImage={image}
-          handleFixedClick={handleFixedClick}
-          fixedClasses={fixedClasses}
-        />
       </div>
     </div>
   );

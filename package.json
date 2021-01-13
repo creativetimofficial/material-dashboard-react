@@ -7,17 +7,20 @@
   "dependencies": {
     "@material-ui/core": "4.10.0",
     "@material-ui/icons": "4.9.1",
+    "@microsoft/signalr": "^5.0.1",
+    "axios": "^0.21.0",
     "chartist": "0.10.1",
     "classnames": "2.2.6",
     "history": "4.10.1",
     "perfect-scrollbar": "1.5.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
+    "react-axios": "^2.0.3",
     "react-chartist": "0.14.3",
     "react-dom": "16.13.1",
     "react-google-maps": "9.4.5",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
     "react-swipeable-views": "0.13.9"
   },
   "scripts": {

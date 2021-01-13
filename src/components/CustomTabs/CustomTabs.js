@@ -42,6 +42,7 @@ export default function CustomTabs(props) {
           }}
           variant="scrollable"
           scrollButtons="auto"
+          
         >
           {tabs.map((prop, key) => {
             var icon = {};
@@ -52,6 +53,7 @@ export default function CustomTabs(props) {
             }
             return (
               <Tab
+                onClick= {prop.event}
                 classes={{
                   root: classes.tabRootButton,
                   selected: classes.tabSelected,
