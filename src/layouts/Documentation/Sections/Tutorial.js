@@ -243,45 +243,6 @@ class Tutorial extends React.Component {
             >{`"start": "NODE_PATH=./src react-scripts start",`}</SyntaxHighlighter>
           </li>
           <li>
-            (Optional) You can create a new react application like this
-            <ul>
-              <li>
-                Run in terminal{" "}
-                <SyntaxHighlighter
-                  language="jsx"
-                  style={prism}
-                >{`npm install -g create-react-app`}</SyntaxHighlighter>
-              </li>
-              <li>Go to the folder where you want to create your app</li>
-              <li>
-                Run in terminal{" "}
-                <SyntaxHighlighter
-                  language="jsx"
-                  style={prism}
-                >{`create-react-app your-app-name`}</SyntaxHighlighter>
-              </li>
-              <li>
-                Navigate to <code>your-app-name</code>
-              </li>
-              <li>
-                Run in terminal{" "}
-                <SyntaxHighlighter
-                  language="jsx"
-                  style={prism}
-                >{`npm start`}</SyntaxHighlighter>
-              </li>
-              <li>
-                More information →{" "}
-                <a
-                  href="https://github.com/facebookincubator/create-react-app?ref=creativetim"
-                  target="_blank"
-                >
-                  create-react-app
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
             Navigate to <code>http://localhost:3000</code>
           </li>
           <li>
@@ -291,6 +252,15 @@ class Tutorial extends React.Component {
               target="_blank"
             >
               react
+            </a>
+          </li>
+          <li>
+            More information →{" "}
+            <a
+              href="https://github.com/facebookincubator/create-react-app?ref=creativetim"
+              target="_blank"
+            >
+              create-react-app
             </a>
           </li>
         </ul>
