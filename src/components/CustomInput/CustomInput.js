@@ -24,11 +24,13 @@ export default function CustomInput(props) {
     inputProps,
     error,
     success,
+    rtlActive,
   } = props;
 
   const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
     [" " + classes.labelRootSuccess]: success && !error,
+    [" " + classes.labelRTL]: rtlActive,
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
@@ -38,6 +40,13 @@ export default function CustomInput(props) {
   const marginTop = classNames({
     [classes.marginTop]: labelText === undefined,
   });
+  let newInputProps = {
+    maxLength:
+      inputProps && inputProps.maxLength ? inputProps.maxLength : undefined,
+    minLength:
+      inputProps && inputProps.minLength ? inputProps.minLength : undefined,
+    step: inputProps && inputProps.step ? inputProps.step : undefined,
+  };
   return (
     <FormControl
       {...formControlProps}
@@ -60,6 +69,7 @@ export default function CustomInput(props) {
         }}
         id={id}
         {...inputProps}
+        inputProps={newInputProps}
       />
       {error ? (
         <Clear className={classes.feedback + " " + classes.labelRootError} />
@@ -78,4 +88,5 @@ CustomInput.propTypes = {
   formControlProps: PropTypes.object,
   error: PropTypes.bool,
   success: PropTypes.bool,
+  rtlActive: PropTypes.bool,
 };

@@ -9,11 +9,11 @@ gulp.task("licenses", async function () {
       gap.prependText(`/*!
 
 =========================================================
-* Material Dashboard React - v1.9.0
+* Material Dashboard React - v1.10.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
+* Copyright 2021 Creative Tim (http://www.creative-tim.com)
 
 * Coded by Creative Tim
 
@@ -32,11 +32,11 @@ gulp.task("licenses", async function () {
       gap.prependText(`<!--
 
 =========================================================
-* Material Dashboard React - v1.9.0
+* Material Dashboard React - v1.10.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
+* Copyright 2021 Creative Tim (http://www.creative-tim.com)
 
 * Coded by Creative Tim
 
@@ -55,11 +55,11 @@ gulp.task("licenses", async function () {
       gap.prependText(`/*!
 
 =========================================================
-* Material Dashboard React - v1.9.0
+* Material Dashboard React - v1.10.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2020 Creative Tim (http://www.creative-tim.com)
+* Copyright 2021 Creative Tim (http://www.creative-tim.com)
 
 * Coded by Creative Tim
 

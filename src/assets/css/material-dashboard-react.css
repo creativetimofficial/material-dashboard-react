@@ -1,10 +1,10 @@
 /*
  =========================================================
- * Material Dashboard React - v1.9.0 based on Material Dashboard - v1.2.0
+ * Material Dashboard React - v1.10.0 based on Material Dashboard - v1.2.0
  =========================================================
 
  * Product Page: http://www.creative-tim.com/product/material-dashboard-react
- * Copyright 2020 Creative Tim (http://www.creative-tim.com)
+ * Copyright 2021 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
 
  =========================================================
@@ -641,12 +641,11 @@ footer ul li a:hover {
   top: 180px;
   right: 0;
   width: 64px;
-  background: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1031;
   border-radius: 8px 0 0 8px;
   text-align: center;
   top: 120px;
-  .badge-primary-background-color: #9c27b0;
 }
 
 .fixed-plugin .SocialMediaShareButton,

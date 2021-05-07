@@ -65,6 +65,13 @@ const customInputStyle = {
     position: "relative",
     verticalAlign: "unset",
   },
+  labelRTL: {
+    right: 0,
+    transition: "all 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms",
+    "&.MuiInputLabel-shrink": {
+      transform: "translate(0, 1.5px)",
+    },
+  },
 };
 
 export default customInputStyle;
