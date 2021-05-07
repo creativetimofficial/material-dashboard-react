@@ -2,13 +2,15 @@
 
 ## [1.10.0] date
 ### Bug fixing
-
+- https://github.com/creativetimofficial/material-dashboard-react/issues/145 (this was solved since we've changed react-google-maps with simple Google Maps API)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/140 (this was solved since we've changed react-google-maps with simple Google Maps API)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/138 (can be closed since it was help wanted)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/137 (user did not respond)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/133 (fixed it by using `useLocation` from `react-router-dom`)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/16 (please check the following page: https://demos.creative-tim.com/material-dashboard-react/#/rtl/rtl-page)
 ### Major style changes
-
 ### Deleted components
-
 ### Added components
-
 ### Deleted dependencies
 - `react-google-maps` (we've replaced this with simple Google Maps API)
 - `@types/googlemaps` (we've replaced this with simple Google Maps API)
