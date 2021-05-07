@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.10.0] date
+## [1.10.0] 2020-05-07
 ### Bug fixing
 - https://github.com/creativetimofficial/material-dashboard-react/issues/145 (this was solved since we've changed react-google-maps with simple Google Maps API)
 - https://github.com/creativetimofficial/material-dashboard-react/issues/140 (this was solved since we've changed react-google-maps with simple Google Maps API)
