@@ -2,7 +2,6 @@ import React from "react";
 
 const Maps = () => {
   const mapRef = React.useRef(null);
-  const theme = useTheme();
   React.useEffect(() => {
     let google = window.google;
     let map = mapRef.current;
