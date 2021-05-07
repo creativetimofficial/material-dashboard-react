@@ -23,21 +23,30 @@ export default function CustomInput(props) {
     labelProps,
     inputProps,
     error,
-    success
+    success,
+    rtlActive,
   } = props;
 
   const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
-    [" " + classes.labelRootSuccess]: success && !error
+    [" " + classes.labelRootSuccess]: success && !error,
+    [" " + classes.labelRTL]: rtlActive,
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
     [classes.underlineSuccess]: success && !error,
-    [classes.underline]: true
+    [classes.underline]: true,
   });
   const marginTop = classNames({
-    [classes.marginTop]: labelText === undefined
+    [classes.marginTop]: labelText === undefined,
   });
+  let newInputProps = {
+    maxLength:
+      inputProps && inputProps.maxLength ? inputProps.maxLength : undefined,
+    minLength:
+      inputProps && inputProps.minLength ? inputProps.minLength : undefined,
+    step: inputProps && inputProps.step ? inputProps.step : undefined,
+  };
   return (
     <FormControl
       {...formControlProps}
@@ -56,10 +65,11 @@ export default function CustomInput(props) {
         classes={{
           root: marginTop,
           disabled: classes.disabled,
-          underline: underlineClasses
+          underline: underlineClasses,
         }}
         id={id}
         {...inputProps}
+        inputProps={newInputProps}
       />
       {error ? (
         <Clear className={classes.feedback + " " + classes.labelRootError} />
@@ -77,5 +87,6 @@ CustomInput.propTypes = {
   inputProps: PropTypes.object,
   formControlProps: PropTypes.object,
   error: PropTypes.bool,
-  success: PropTypes.bool
+  success: PropTypes.bool,
+  rtlActive: PropTypes.bool,
 };

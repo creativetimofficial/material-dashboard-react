@@ -1,5 +1,48 @@
 # Change Log
 
+## [1.10.0] 2020-05-07
+### Bug fixing
+- https://github.com/creativetimofficial/material-dashboard-react/issues/145 (this was solved since we've changed react-google-maps with simple Google Maps API)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/140 (this was solved since we've changed react-google-maps with simple Google Maps API)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/138 (can be closed since it was help wanted)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/137 (user did not respond)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/133 (fixed it by using `useLocation` from `react-router-dom`)
+- https://github.com/creativetimofficial/material-dashboard-react/issues/16 (please check the following page: https://demos.creative-tim.com/material-dashboard-react/#/rtl/rtl-page)
+### Major style changes
+### Deleted components
+### Added components
+### Deleted dependencies
+- `react-google-maps` (we've replaced this with simple Google Maps API)
+- `@types/googlemaps` (we've replaced this with simple Google Maps API)
+- `@types/markerclustererplus` (we've replaced this with simple Google Maps API)
+- `ajv` (this was only installed to stop some install warnings)
+- `history` (we'll use `BrowserRouter` from `react-router-dom` package instead)
+### Added dependencies
++ `@babel/core@7.14.0` (to stop install warnings)
+### Updated dependencies
+```
+@material-ui/core         4.10.0   →   4.11.4
+@material-ui/icons         4.9.1   →   4.11.2
+classnames                 2.2.6   →    2.3.1
+perfect-scrollbar          1.5.0   →    1.5.1
+react                    16.13.1   →   17.0.2
+react-chartist            0.14.3   →   0.14.4
+react-dom                16.13.1   →   17.0.2
+react-scripts              3.4.1   →    4.0.3
+eslint-config-prettier    6.11.0   →    8.3.0
+eslint-plugin-prettier     3.1.3   →    3.4.0
+gulp-append-prepend        1.0.8   →    1.0.9
+prettier                   2.0.5   →    2.2.1
+typescript                 3.9.3   →    4.2.4
+```
+### Warning
+_Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the product, and they appear because of NodeJS and not from the product itself._
+```
+npm WARN react-swipeable-views@0.13.9 requires a peer of react@^15.3.0 || ^16.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN react-event-listener@0.6.6 requires a peer of react@^16.3.0 but none is installed. You must install peer dependencies yourself.
+```
+_You will also have the following message: `found 88 vulnerabilities (1 low, 87 moderate) in 2207 scanned packages`. This comes from react-scripts, and will be fixed in the next version. NOTE: the product works as expected with these `vulnerabilities`._
+
 ## [1.9.0] 2020-05-27
 ### Bug fixing
 - https://github.com/creativetimofficial/material-dashboard-react/issues/121
