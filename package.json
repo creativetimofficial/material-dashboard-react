@@ -20,6 +20,7 @@
     "react-github-button": "0.1.11",
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
+    "react-share": "4.4.0",
     "react-swipeable-views": "0.13.9",
     "react-syntax-highlighter": "15.4.3"
   },
