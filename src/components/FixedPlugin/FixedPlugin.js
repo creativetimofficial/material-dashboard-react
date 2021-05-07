@@ -1,34 +1,9 @@
-/*!
-
-=========================================================
-* Material Dashboard React - v1.10.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/material-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 /*eslint-disable*/
 import React, { Component } from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // nodejs library that concatenates classes
 import classnames from "classnames";
-import { NavLink } from "react-router-dom";
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  FacebookIcon,
-  TwitterIcon,
-} from "react-share";
-import GitHubButton from "react-github-button";
 
 import imagine1 from "assets/img/sidebar-1.jpg";
 import imagine2 from "assets/img/sidebar-2.jpg";
@@ -47,7 +22,7 @@ export default function FixedPlugin(props) {
   return (
     <div
       className={classnames("fixed-plugin", {
-        "rtl-fixed-plugin": props.rtlActive,
+        "rtl-fixed-plugin": props.rtlActive
       })}
     >
       <div id="fixedPluginClasses" className={props.fixedClasses}>
@@ -115,49 +90,93 @@ export default function FixedPlugin(props) {
                   }}
                 />
               </div>
-            </li>
-            <li className="button-container">
-              <NavLink to={"/documentation"} activeClassName="active">
-                <Button color="info" fullWidth>
-                  Documentation
-                </Button>
-              </NavLink>
-            </li>
+            </a>
+          </li>
+          <li className="header-title">Images</li>
+          <li className={bgImage === imagine1 ? "active" : ""}>
+            <a
+              className="img-holder switch-trigger"
+              onClick={() => {
+                setBgImage(imagine1);
+                props.handleImageClick(imagine1);
+              }}
+            >
+              <img src={imagine1} alt="..." />
+            </a>
+          </li>
+          <li className={bgImage === imagine2 ? "active" : ""}>
+            <a
+              className="img-holder switch-trigger"
+              onClick={() => {
+                setBgImage(imagine2);
+                props.handleImageClick(imagine2);
+              }}
+            >
+              <img src={imagine2} alt="..." />
+            </a>
+          </li>
+          <li className={bgImage === imagine3 ? "active" : ""}>
+            <a
+              className="img-holder switch-trigger"
+              onClick={() => {
+                setBgImage(imagine3);
+                props.handleImageClick(imagine3);
+              }}
+            >
+              <img src={imagine3} alt="..." />
+            </a>
+          </li>
+          <li className={bgImage === imagine4 ? "active" : ""}>
+            <a
+              className="img-holder switch-trigger"
+              onClick={() => {
+                setBgImage(imagine4);
+                props.handleImageClick(imagine4);
+              }}
+            >
+              <img src={imagine4} alt="..." />
+            </a>
+          </li>
 
-            <li className="header-title" id="sharrreTitle">
-              Thank you for sharing!
-            </li>
-
-            <li className="button-container">
-              <FacebookShareButton url="https://creativetimofficial.github.io/material-dashboard-react">
-                <FacebookIcon size={32} round={true} />
-              </FacebookShareButton>
-              <TwitterShareButton
-                url="https://creativetimofficial.github.io/material-dashboard-react"
-                title="Material Dashboard React - Free Bootstrap Admin Template"
-                hashtags={["react", "material-ui"]}
-                via="creativetim"
+          <li className="button-container">
+            <div className="button-container">
+              <Button
+                color="success"
+                href="https://www.creative-tim.com/product/material-dashboard-react?ref=mdr-fixed-plugin"
+                target="_blank"
+                fullWidth
               >
-                <TwitterIcon size={32} round={true} />
-              </TwitterShareButton>
-            </li>
-            <li className="button-container">
-              <GitHubButton
-                type="stargazers"
-                namespace="creativetimofficial"
-                repo="material-dashboard-react"
-              />
-              <GitHubButton
-                type="forks"
-                namespace="creativetimofficial"
-                repo="material-dashboard-react"
-              />
-            </li>
-          </ul>
-        </div>
+                Download free!
+              </Button>
+            </div>
+          </li>
+          <li className="button-container">
+            <div className="button-container">
+              <Button
+                color="warning"
+                href="https://www.creative-tim.com/product/material-dashboard-pro-react?ref=mdr-fixed-plugin"
+                target="_blank"
+                fullWidth
+              >
+                Get PRO version
+              </Button>
+            </div>
+          </li>
+          <li className="button-container">
+            <Button
+              color="info"
+              fullWidth
+              href="https://demos.creative-tim.com/material-dashboard-react/#/documentation/tutorial?ref=mdr-fixed-plugin"
+              target="_blank"
+            >
+              Documentation
+            </Button>
+          </li>
+          <li className="adjustments-line" />
+        </ul>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 FixedPlugin.propTypes = {
@@ -167,7 +186,5 @@ FixedPlugin.propTypes = {
   fixedClasses: PropTypes.string,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   handleColorClick: PropTypes.func,
-  handleImageClick: PropTypes.func,
+  handleImageClick: PropTypes.func
 };
-
-export default FixedPlugin;
