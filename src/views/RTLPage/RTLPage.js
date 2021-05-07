@@ -36,7 +36,7 @@ import SnackbarContent from "components/Snackbar/SnackbarContent.js";
 import {
   dailySalesChart,
   emailsSubscriptionChart,
-  completedTasksChart
+  completedTasksChart,
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/rtlStyle.js";
@@ -47,16 +47,16 @@ let bugs = [
   "طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن؟",
   "	نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟",
   "همان حال کار آنها به نوعی وابسته به متن می‌باشد",
-  "	آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند"
+  "	آنها با استفاده از محتویات ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند",
 ];
 let website = [
   "بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و اندازه‌بندی‌ها چگونه در نظر گرفته",
-  "اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید؟"
+  "اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید؟",
 ];
 let server = [
   "گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی؟",
   "از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی، نخست از متن‌های آزمایشی ؟",
-  "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟"
+  "از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند؟",
 ];
 
 const useStyles = makeStyles(styles);
@@ -82,7 +82,7 @@ export default function RTLPage() {
                 <Danger>
                   <Warning />
                 </Danger>
-                <a href="#pablo" onClick={e => e.preventDefault()}>
+                <a href="#pablo" onClick={(e) => e.preventDefault()}>
                   فضای بیشتری داشته باشید...
                 </a>
               </div>
@@ -232,7 +232,7 @@ export default function RTLPage() {
                     tasks={bugs}
                     rtlActive
                   />
-                )
+                ),
               },
               {
                 tabName: "وبسایت",
@@ -244,7 +244,7 @@ export default function RTLPage() {
                     tasks={website}
                     rtlActive
                   />
-                )
+                ),
               },
               {
                 tabName: "سرور",
@@ -256,8 +256,8 @@ export default function RTLPage() {
                     tasks={server}
                     rtlActive
                   />
-                )
-              }
+                ),
+              },
             ]}
           />
         </GridItem>
@@ -277,7 +277,7 @@ export default function RTLPage() {
                   ["1", "احمد حسینی	", "$36,738", "مازندران"],
                   ["2", "مینا رضایی	", "$23,789", "گلستان"],
                   ["3", "مبینا احمدپور	", "$56,142", "تهران"],
-                  ["4", "جلال آقایی	", "$38,735", "شهرکرد"]
+                  ["4", "جلال آقایی	", "$38,735", "شهرکرد"],
                 ]}
               />
             </CardBody>
@@ -340,7 +340,7 @@ export default function RTLPage() {
         <GridItem xs={12} sm={12} md={6}>
           <Card profile>
             <CardAvatar profile>
-              <a href="#pablo" onClick={e => e.preventDefault()}>
+              <a href="#pablo" onClick={(e) => e.preventDefault()}>
                 <img src={avatar} alt="..." />
               </a>
             </CardAvatar>
