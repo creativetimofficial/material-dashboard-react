@@ -24,11 +24,13 @@ export default function CustomInput(props) {
     inputProps,
     error,
     success,
+    rtlActive,
   } = props;
 
   const labelClasses = classNames({
     [" " + classes.labelRootError]: error,
     [" " + classes.labelRootSuccess]: success && !error,
+    [" " + classes.labelRTL]: rtlActive,
   });
   const underlineClasses = classNames({
     [classes.underlineError]: error,
@@ -78,4 +80,5 @@ CustomInput.propTypes = {
   formControlProps: PropTypes.object,
   error: PropTypes.bool,
   success: PropTypes.bool,
+  rtlActive: PropTypes.bool,
 };
