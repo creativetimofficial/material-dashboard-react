@@ -1,5 +1,41 @@
 # Change Log
 
+## [1.10.0] date
+### Bug fixing
+
+### Major style changes
+
+### Deleted components
+
+### Added components
+
+### Deleted dependencies
+- `react-google-maps` (we've replaced this with simple Google Maps API)
+- `@types/googlemaps` (we've replaced this with simple Google Maps API)
+- `@types/markerclustererplus` (we've replaced this with simple Google Maps API)
+- `ajv` (this was only installed to stop some install warnings)
+### Added dependencies
++ `@babel/core@7.14.0` (to stop install warnings)
+### Updated dependencies
+```
+@material-ui/core         4.10.0   →   4.11.4
+@material-ui/icons         4.9.1   →   4.11.2
+classnames                 2.2.6   →    2.3.1
+history                   4.10.1   →    5.0.0
+perfect-scrollbar          1.5.0   →    1.5.1
+react                    16.13.1   →   17.0.2
+react-chartist            0.14.3   →   0.14.4
+react-dom                16.13.1   →   17.0.2
+react-scripts              3.4.1   →    4.0.3
+eslint-config-prettier    6.11.0   →    8.3.0
+eslint-plugin-prettier     3.1.3   →    3.4.0
+gulp-append-prepend        1.0.8   →    1.0.9
+prettier                   2.0.5   →    2.2.1
+typescript                 3.9.3   →    4.2.4
+```
+### Warning
+_Warnings might appear while doing an npm install - they do not affect the UI or the functionality of the product, and they appear because of NodeJS and not from the product itself._
+
 ## [1.9.0] 2020-05-27
 ### Bug fixing
 - https://github.com/creativetimofficial/material-dashboard-react/issues/121
