@@ -21,11 +21,11 @@ const styles = {
       margin: "0",
       fontSize: "14px",
       marginTop: "0",
-      marginBottom: "0"
+      marginBottom: "0",
     },
     "& a,& a:hover,& a:focus": {
-      color: "#FFFFFF"
-    }
+      color: "#FFFFFF",
+    },
   },
   cardTitleWhite: {
     color: "#FFFFFF",
@@ -39,15 +39,15 @@ const styles = {
       color: "#777",
       fontSize: "65%",
       fontWeight: "400",
-      lineHeight: "1"
-    }
+      lineHeight: "1",
+    },
   },
   tableUpgradeWrapper: {
     display: "block",
     width: "100%",
     overflowX: "auto",
     WebkitOverflowScrolling: "touch",
-    MsOverflowStyle: "-ms-autohiding-scrollbar"
+    MsOverflowStyle: "-ms-autohiding-scrollbar",
   },
   table: {
     width: "100%",
@@ -65,20 +65,20 @@ const styles = {
       fontWeight: "300",
       borderTopWidth: "0",
       borderBottom: "1px solid rgba(0, 0, 0, 0.06)",
-      textAlign: "inherit"
+      textAlign: "inherit",
     },
     "& tbody tr td": {
       padding: "12px 8px",
       verticalAlign: "middle",
-      borderTop: "1px solid rgba(0, 0, 0, 0.06)"
+      borderTop: "1px solid rgba(0, 0, 0, 0.06)",
     },
     "& td, & th": {
-      display: "table-cell"
-    }
+      display: "table-cell",
+    },
   },
   center: {
-    textAlign: "center"
-  }
+    textAlign: "center",
+  },
 };
 
 const useStyles = makeStyles(styles);
