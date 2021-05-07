@@ -9,7 +9,7 @@
     "@material-ui/icons": "4.11.2",
     "chartist": "0.10.1",
     "classnames": "2.3.1",
-    "gh-pages": "2.2.0",
+    "gh-pages": "3.1.0",
     "history": "5.0.0",
     "perfect-scrollbar": "1.5.1",
     "prop-types": "15.7.2",
@@ -19,7 +19,7 @@
     "react-router-dom": "5.2.0",
     "react-scripts": "4.0.3",
     "react-swipeable-views": "0.13.9",
-    "react-syntax-highlighter": "12.2.1"
+    "react-syntax-highlighter": "15.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
