@@ -171,10 +171,10 @@ class Tutorial extends React.Component {
         </p>
         <ul>
           <li>
-            Install NodeJs from{" "}
+            Install NodeJS LTS from{" "}
             <a href="https://nodejs.org/en/?ref=creativetim" target="_blank">
               NodeJs Official Page
-            </a>
+            </a> (NOTE: Product only works with LTS version)
           </li>
           <li>
             Go to{" "}
