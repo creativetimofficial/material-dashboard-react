@@ -34,7 +34,7 @@ ReactPixel.init("111649226022273");
 ReactPixel.pageView();
 ReactPixel.fbq("track", "PageView");
 
-hist.listen((location) => {
+hist.listen(() => {
   ReactPixel.pageView();
   ReactPixel.fbq("track", "PageView");
 });
