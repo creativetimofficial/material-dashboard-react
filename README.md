@@ -62,7 +62,7 @@ Let us know your thoughts below. And good luck with development!
 | React |
 | ----- |
 
-| [![Material Dashboard React](https://s3.amazonaws.com/creativetim_bucket/products/71/thumb/material-dashboard-react.jpg?1638950990)](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboard?ref=readme-mdr)
+| [![Material Dashboard React](https://s3.amazonaws.com/creativetim_bucket/products/71/thumb/material-dashboard-react.jpg?1638950990)](http://demos.creative-tim.com/material-dashboard-react/#/dashboard?ref=readme-mdr)
 
 ## Demo
 
