@@ -29,13 +29,13 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 PRO React helper functions
+// Material Dashboard 2 React helper functions
 import gradientChartLine from "assets/theme/functions/gradientChartLine";
 
 // GradientLineChart configurations
 import configs from "examples/Charts/LineCharts/GradientLineChart/configs";
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
 
 function GradientLineChart({ icon, title, description, height, chart }) {

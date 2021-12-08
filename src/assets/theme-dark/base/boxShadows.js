@@ -19,10 +19,10 @@ Coded by www.creative-tim.com
  * You can customized the box-shadow for the entire Soft UI Dashboard PRO Material using thie file.
  */
 
-// Material Dashboard 2 PRO React Base Styles
+// Material Dashboard 2 React Base Styles
 import colors from "assets/theme-dark/base/colors";
 
-// Material Dashboard 2 PRO React Helper Functions
+// Material Dashboard 2 React Helper Functions
 import boxShadow from "assets/theme-dark/functions/boxShadow";
 
 const { black, dark, tabs, coloredShadows } = colors;

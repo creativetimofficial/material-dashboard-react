@@ -15,7 +15,7 @@ Coded by www.creative-tim.com
 
 /* eslint-disable no-dupe-keys */
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
 
 const { gradients } = colors;

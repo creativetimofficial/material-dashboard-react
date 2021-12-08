@@ -39,7 +39,7 @@ import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
 
-// Material Dashboard 2 PRO React context
+// Material Dashboard 2 React context
 import {
   useMaterialUIController,
   setMiniSidenav,

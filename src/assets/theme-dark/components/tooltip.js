@@ -16,12 +16,12 @@ Coded by www.creative-tim.com
 // @mui material components
 import Fade from "@mui/material/Fade";
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import colors from "assets/theme-dark/base/colors";
 import typography from "assets/theme-dark/base/typography";
 import borders from "assets/theme-dark/base/borders";
 
-// Material Dashboard 2 PRO React helper functions
+// Material Dashboard 2 React helper functions
 import pxToRem from "assets/theme-dark/functions/pxToRem";
 
 const { black, white } = colors;

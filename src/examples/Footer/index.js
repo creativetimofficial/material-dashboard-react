@@ -24,7 +24,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import typography from "assets/theme/base/typography";
 
 function Footer({ company, links }) {

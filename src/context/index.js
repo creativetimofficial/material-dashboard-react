@@ -29,7 +29,7 @@ const MaterialUI = createContext();
 // Setting custom name for the context which is visible on react dev tools
 MaterialUI.displayName = "MaterialUIContext";
 
-// Material Dashboard 2 PRO React reducer
+// Material Dashboard 2 React reducer
 function reducer(state, action) {
   switch (action.type) {
     case "MINI_SIDENAV": {
@@ -68,7 +68,7 @@ function reducer(state, action) {
   }
 }
 
-// Material Dashboard 2 PRO React context provider
+// Material Dashboard 2 React context provider
 function MaterialUIControllerProvider({ children }) {
   const initialState = {
     miniSidenav: false,
@@ -88,7 +88,7 @@ function MaterialUIControllerProvider({ children }) {
   return <MaterialUI.Provider value={[controller, dispatch]}>{children}</MaterialUI.Provider>;
 }
 
-// Material Dashboard 2 PRO React custom hook for using context
+// Material Dashboard 2 React custom hook for using context
 function useMaterialUIController() {
   const context = useContext(MaterialUI);
 

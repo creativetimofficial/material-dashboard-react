@@ -5,6 +5,7 @@
   "author": "Creative Tim",
   "license": "See license in https://www.creative-tim.com/license",
   "description": "React version of Material Dashboard 2 by Creative Tim",
+  "homepage": "https://demos.creative-tim.com/material-dashboard-react/#/",
   "bugs": {
     "url": "https://github.com/creativetimofficial/material-dashboard-react/issues"
   },
@@ -28,6 +29,7 @@
     "@testing-library/user-event": "12.1.10",
     "chart.js": "3.4.1",
     "chroma-js": "2.1.2",
+    "gh-pages": "^3.2.3",
     "prop-types": "15.7.2",
     "react": "17.0.2",
     "react-chartjs-2": "3.0.4",
@@ -46,7 +48,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

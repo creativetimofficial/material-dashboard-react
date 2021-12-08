@@ -24,7 +24,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
-// Material Dashboard 2 PRO React context
+// Material Dashboard 2 React context
 import { useMaterialUIController } from "context";
 
 function Bill({ name, company, email, vat, noGutter }) {

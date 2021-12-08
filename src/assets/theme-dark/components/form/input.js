@@ -13,12 +13,12 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Material Dashboard 2 PRO React Base Styles
+// Material Dashboard 2 React Base Styles
 import colors from "assets/theme-dark/base/colors";
 import typography from "assets/theme-dark/base/typography";
 import borders from "assets/theme-dark/base/borders";
 
-// Material Dashboard 2 PRO React Helper Functions
+// Material Dashboard 2 React Helper Functions
 import rgba from "assets/theme-dark/functions/rgba";
 
 const { info, inputBorderColor, dark, grey, white } = colors;

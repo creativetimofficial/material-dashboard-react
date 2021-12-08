@@ -32,7 +32,7 @@ import MDTypography from "components/MDTypography";
 // DefaultLineChart configurations
 import configs from "examples/Charts/LineCharts/DefaultLineChart/configs";
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
 
 function DefaultLineChart({ icon, title, description, height, chart }) {

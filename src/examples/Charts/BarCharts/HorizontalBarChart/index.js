@@ -32,7 +32,7 @@ import MDTypography from "components/MDTypography";
 // HorizontalBarChart configurations
 import configs from "examples/Charts/BarCharts/HorizontalBarChart/configs";
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
 
 function HorizontalBarChart({ icon, title, description, height, chart }) {
