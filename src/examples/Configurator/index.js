@@ -288,7 +288,7 @@ function Configurator() {
         <MDBox mt={3} mb={2}>
           <MDButton
             component={Link}
-            href="https://www.creative-tim.com/learning-lab/react/quick-start/material-dashboard"
+            href="https://www.creative-tim.com/learning-lab/react/quick-start/material-dashboard/"
             target="_blank"
             rel="noreferrer"
             color={darkMode ? "light" : "dark"}
