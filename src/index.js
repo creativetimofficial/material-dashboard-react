@@ -21,6 +21,12 @@ import App from "App";
 // Soft UI Context Provider
 import { MaterialUIControllerProvider } from "context";
 
+// Amplify
+import Amplify from "aws-amplify";
+import config from "./aws-exports";
+
+Amplify.configure(config);
+
 ReactDOM.render(
   <BrowserRouter>
     <MaterialUIControllerProvider>

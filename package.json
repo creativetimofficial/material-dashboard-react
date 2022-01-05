@@ -17,6 +17,7 @@
     "npm": ">=6"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^1.2.5",
     "@emotion/cache": "11.4.0",
     "@emotion/react": "11.4.1",
     "@emotion/styled": "11.3.0",
@@ -26,6 +27,7 @@
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.1.0",
     "@testing-library/user-event": "12.1.10",
+    "aws-amplify": "^4.3.11",
     "chart.js": "3.4.1",
     "chroma-js": "2.1.2",
     "prop-types": "15.7.2",
