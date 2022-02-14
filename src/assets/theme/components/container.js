@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -13,10 +13,10 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Material Dashboard 2 PRO React base styles
+// Material Dashboard 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-// Material Dashboard 2 PRO React helper functions
+// Material Dashboard 2 React helper functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
 const {
@@ -38,7 +38,7 @@ const sharedClasses = {
   position: "relative",
 };
 
-export default {
+const container = {
   [SM]: {
     ".MuiContainer-root": {
       ...sharedClasses,
@@ -70,3 +70,5 @@ export default {
     },
   },
 };
+
+export default container;

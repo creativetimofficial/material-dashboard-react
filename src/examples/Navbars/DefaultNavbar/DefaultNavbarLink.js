@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -28,35 +28,33 @@ import MDTypography from "components/MDTypography";
 
 function DefaultNavbarLink({ icon, name, route, light }) {
   return (
-    <>
-      <MDBox
-        component={Link}
-        to={route}
-        mx={1}
-        p={1}
-        display="flex"
-        alignItems="center"
-        sx={{ cursor: "pointer", userSelect: "none" }}
+    <MDBox
+      component={Link}
+      to={route}
+      mx={1}
+      p={1}
+      display="flex"
+      alignItems="center"
+      sx={{ cursor: "pointer", userSelect: "none" }}
+    >
+      <Icon
+        sx={{
+          color: ({ palette: { white, secondary } }) => (light ? white.main : secondary.main),
+          verticalAlign: "middle",
+        }}
       >
-        <Icon
-          sx={{
-            color: ({ palette: { white, secondary } }) => (light ? white.main : secondary.main),
-            verticalAlign: "middle",
-          }}
-        >
-          {icon}
-        </Icon>
-        <MDTypography
-          variant="button"
-          fontWeight="regular"
-          color={light ? "white" : "dark"}
-          textTransform="capitalize"
-          sx={{ width: "100%", lineHeight: 0 }}
-        >
-          &nbsp;{name}
-        </MDTypography>
-      </MDBox>
-    </>
+        {icon}
+      </Icon>
+      <MDTypography
+        variant="button"
+        fontWeight="regular"
+        color={light ? "white" : "dark"}
+        textTransform="capitalize"
+        sx={{ width: "100%", lineHeight: 0 }}
+      >
+        &nbsp;{name}
+      </MDTypography>
+    </MDBox>
   );
 }
 

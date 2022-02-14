@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -14,20 +14,20 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base box-shadow styles for the Soft UI Dashboard PRO Material.
+ * The base box-shadow styles for the Material Dashboard 2 PRO React.
  * You can add new box-shadow using this file.
- * You can customized the box-shadow for the entire Soft UI Dashboard PRO Material using thie file.
+ * You can customized the box-shadow for the entire Material Dashboard 2 PRO React using thie file.
  */
 
-// Material Dashboard 2 PRO React Base Styles
+// Material Dashboard 2 React Base Styles
 import colors from "assets/theme-dark/base/colors";
 
-// Material Dashboard 2 PRO React Helper Functions
+// Material Dashboard 2 React Helper Functions
 import boxShadow from "assets/theme-dark/functions/boxShadow";
 
 const { black, dark, tabs, coloredShadows } = colors;
 
-export default {
+const boxShadows = {
   xs: boxShadow([0, 2], [9, -5], black.main, 0.15),
   sm: boxShadow([0, 5], [10, 0], black.main, 0.12),
   md: `${boxShadow([0, 2], [2, 0], black.main, 0.14)}, ${boxShadow(
@@ -114,3 +114,5 @@ export default {
     indicator: boxShadow([0, 1], [5, 1], tabs.indicator.boxShadow, 1),
   },
 };
+
+export default boxShadows;

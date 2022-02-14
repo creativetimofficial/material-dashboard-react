@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -14,12 +14,12 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base colors for the Soft UI Dashboard PRO Material.
+ * The base colors for the Material Dashboard 2 PRO React.
  * You can add new color using this file.
- * You can customized the colors for the entire Soft UI Dashboard PRO Material using thie file.
+ * You can customized the colors for the entire Material Dashboard 2 PRO React using thie file.
  */
 
-export default {
+const colors = {
   background: {
     default: "#f0f2f5",
   },
@@ -259,3 +259,5 @@ export default {
     indicator: { boxShadow: "#ddd" },
   },
 };
+
+export default colors;

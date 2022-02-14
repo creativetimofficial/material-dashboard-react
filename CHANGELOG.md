@@ -1,5 +1,47 @@
 # Change Log
 
+## [2.1.0] 2022-02-14
+
+### Bug fixing
+
+- Momoized the context provider values
+- Fix the conditionally used of useContext for MDPagination component
+- Fix the import/no-anonymouse-default-export
+
+### Major style changes
+
+### Deleted components
+
+### Added components
+
+### Deleted dependencies
+
+### Added dependencies
+
+### Updated dependencies
+
+```
+  "@emotion/cache"                             11.4.0          ->          11.7.1
+  "@emotion/react"                             11.4.1          ->          11.7.1
+  "@emotion/styled"                            11.3.0          ->          11.6.0
+  "@mui/icons-material"                        5.2.0           ->          5.4.1
+  "@mui/material"                              5.2.0           ->          5.4.1
+  "@mui/styled-engine"                         5.2.0           ->          5.4.1
+  "@testing-library/jest-dom"                  5.11.4          ->          5.16.2
+  "@testing-library/react"                     12.1.0          ->          12.1.2
+  "@testing-library/user-event"                12.1.10         ->          13.5.0
+  "chroma-js"                                  2.1.2           ->          2.4.2
+  "prop-types"                                 15.7.2          ->          15.8.1
+  "react-router-dom"                           6.0.2           ->          6.2.1
+  "react-scripts"                              4.0.3           ->          5.0.0
+  "stylis"                                     4.0.10          ->          4.0.13
+  "stylis-plugin-rtl"                          2.1.0           ->          2.1.1
+  "web-vitals"                                 1.0.1           ->          2.1.4
+  "yup"                                        0.32.9          ->          0.32.11
+```
+
+### Warning
+
 ## [2.0.0] 2021-12-08
 
 ### Bug fixing

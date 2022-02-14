@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -13,22 +13,22 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Material Dashboard 2 PRO React Base Styles
+// Material Dashboard 2 React Base Styles
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 
-// Material Dashboard 2 PRO React Helper Functions
+// Material Dashboard 2 React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
 const { white, text, info, secondary } = colors;
 const { size } = typography;
 
-export default {
+const contained = {
   base: {
     backgroundColor: white.main,
-    minHeight: pxToRem(37),
+    minHeight: pxToRem(40),
     color: text.main,
-    padding: `${pxToRem(9)} ${pxToRem(24)}`,
+    padding: `${pxToRem(10)} ${pxToRem(24)}`,
 
     "&:hover": {
       backgroundColor: white.main,
@@ -44,8 +44,8 @@ export default {
   },
 
   small: {
-    minHeight: pxToRem(29),
-    padding: `${pxToRem(6)} ${pxToRem(18)}`,
+    minHeight: pxToRem(32),
+    padding: `${pxToRem(6)} ${pxToRem(16)}`,
     fontSize: size.xs,
 
     "& .material-icon, .material-icons-round, svg": {
@@ -54,8 +54,8 @@ export default {
   },
 
   large: {
-    minHeight: pxToRem(44),
-    padding: `${pxToRem(12)} ${pxToRem(64)}`,
+    minHeight: pxToRem(47),
+    padding: `${pxToRem(12)} ${pxToRem(28)}`,
     fontSize: size.sm,
 
     "& .material-icon, .material-icons-round, svg": {
@@ -87,3 +87,5 @@ export default {
     },
   },
 };
+
+export default contained;

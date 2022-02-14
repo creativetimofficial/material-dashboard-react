@@ -1,6 +1,6 @@
 {
   "name": "material-dashboard-2-react",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "author": "Creative Tim",
   "license": "See license in https://www.creative-tim.com/license",
@@ -17,29 +17,29 @@
     "npm": ">=6"
   },
   "dependencies": {
-    "@emotion/cache": "11.4.0",
-    "@emotion/react": "11.4.1",
-    "@emotion/styled": "11.3.0",
-    "@mui/icons-material": "5.2.0",
-    "@mui/material": "5.2.0",
-    "@mui/styled-engine": "5.2.0",
-    "@testing-library/jest-dom": "5.11.4",
-    "@testing-library/react": "11.1.0",
-    "@testing-library/user-event": "12.1.10",
+    "@emotion/cache": "11.7.1",
+    "@emotion/react": "11.7.1",
+    "@emotion/styled": "11.6.0",
+    "@mui/icons-material": "5.4.1",
+    "@mui/material": "5.4.1",
+    "@mui/styled-engine": "5.4.1",
+    "@testing-library/jest-dom": "5.16.2",
+    "@testing-library/react": "12.1.2",
+    "@testing-library/user-event": "13.5.0",
     "chart.js": "3.4.1",
-    "chroma-js": "2.1.2",
-    "prop-types": "15.7.2",
+    "chroma-js": "2.4.2",
+    "prop-types": "15.8.1",
     "react": "17.0.2",
     "react-chartjs-2": "3.0.4",
     "react-dom": "17.0.2",
     "react-github-btn": "1.2.1",
-    "react-router-dom": "6.0.2",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "6.2.1",
+    "react-scripts": "5.0.0",
     "react-table": "7.7.0",
-    "stylis": "4.0.10",
-    "stylis-plugin-rtl": "2.1.0",
-    "web-vitals": "1.0.1",
-    "yup": "0.32.9"
+    "stylis": "4.0.13",
+    "stylis-plugin-rtl": "2.1.1",
+    "web-vitals": "2.1.4",
+    "yup": "0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -67,14 +67,14 @@
     ]
   },
   "devDependencies": {
-    "eslint": "7.30.0",
-    "eslint-config-airbnb": "18.2.1",
+    "eslint": "8.8.0",
+    "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-import": "2.23.4",
-    "eslint-plugin-jsx-a11y": "6.4.1",
-    "eslint-plugin-prettier": "3.4.0",
-    "eslint-plugin-react": "7.24.0",
-    "eslint-plugin-react-hooks": "4.2.0",
-    "prettier": "2.3.2"
+    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.28.0",
+    "eslint-plugin-react-hooks": "4.3.0",
+    "prettier": "2.5.1"
   }
 }

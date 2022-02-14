@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -33,7 +33,7 @@ import {
   collapseText,
 } from "examples/Sidenav/styles/sidenavCollapse";
 
-// Material Dashboard 2 PRO React context
+// Material Dashboard 2 React context
 import { useMaterialUIController } from "context";
 
 function SidenavCollapse({ icon, name, active, ...rest }) {
@@ -41,46 +41,44 @@ function SidenavCollapse({ icon, name, active, ...rest }) {
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
 
   return (
-    <>
-      <ListItem component="li">
-        <MDBox
-          {...rest}
+    <ListItem component="li">
+      <MDBox
+        {...rest}
+        sx={(theme) =>
+          collapseItem(theme, {
+            active,
+            transparentSidenav,
+            whiteSidenav,
+            darkMode,
+            sidenavColor,
+          })
+        }
+      >
+        <ListItemIcon
           sx={(theme) =>
-            collapseItem(theme, {
-              active,
-              transparentSidenav,
-              whiteSidenav,
-              darkMode,
-              sidenavColor,
-            })
+            collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode, active })
           }
         >
-          <ListItemIcon
-            sx={(theme) =>
-              collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode, active })
-            }
-          >
-            {typeof icon === "string" ? (
-              <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
-            ) : (
-              icon
-            )}
-          </ListItemIcon>
+          {typeof icon === "string" ? (
+            <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
+          ) : (
+            icon
+          )}
+        </ListItemIcon>
 
-          <ListItemText
-            primary={name}
-            sx={(theme) =>
-              collapseText(theme, {
-                miniSidenav,
-                transparentSidenav,
-                whiteSidenav,
-                active,
-              })
-            }
-          />
-        </MDBox>
-      </ListItem>
-    </>
+        <ListItemText
+          primary={name}
+          sx={(theme) =>
+            collapseText(theme, {
+              miniSidenav,
+              transparentSidenav,
+              whiteSidenav,
+              active,
+            })
+          }
+        />
+      </MDBox>
+    </ListItem>
   );
 }
 
