@@ -1,8 +1,5 @@
 /* eslint-disable react/prop-types */
-// @mui material components
-import Tooltip from "@mui/material/Tooltip";
-
-// /**
+/**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
 =========================================================
@@ -15,7 +12,12 @@ Coded by www.creative-tim.com
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/ Dashboard React components
+*/
+
+// @mui material components
+import Tooltip from "@mui/material/Tooltip";
+
+// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
@@ -78,7 +80,10 @@ export default function data() {
 
     rows: [
       {
-        المشروع: <Company image={logoXD} name="/**
+        المشروع: (
+          <Company
+            image={logoXD}
+            name="/**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
 =========================================================
@@ -91,7 +96,9 @@ Coded by www.creative-tim.com
  =========================================================
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/ الإصدار" />,
+*/ الإصدار"
+          />
+        ),
         أعضاء: (
           <MDBox display="flex" py={1}>
             {avatars([
