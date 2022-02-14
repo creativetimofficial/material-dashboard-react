@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { forwardRef, createContext, useContext } from "react";
+import { forwardRef, createContext, useContext, useMemo } from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -29,11 +29,13 @@ const Context = createContext();
 
 const MDPagination = forwardRef(
   ({ item, variant, color, size, active, children, ...rest }, ref) => {
-    const context = item ? useContext(Context) : null;
+    const context = useContext(Context);
     const paginationSize = context ? context.size : null;
 
+    const value = useMemo(() => ({ variant, color, size }), [variant, color, size]);
+
     return (
-      <Context.Provider value={{ variant, color, size }}>
+      <Context.Provider value={value}>
         {item ? (
           <MDPaginationItemRoot
             {...rest}

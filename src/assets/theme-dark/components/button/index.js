@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -13,13 +13,13 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-// Material Dashboard 2 PRO React Button Styles
+// Material Dashboard 2 React Button Styles
 import root from "assets/theme-dark/components/button/root";
 import contained from "assets/theme-dark/components/button/contained";
 import outlined from "assets/theme-dark/components/button/outlined";
-import text from "assets/theme-dark/components/button/text";
+import buttonText from "assets/theme-dark/components/button/text";
 
-export default {
+const button = {
   defaultProps: {
     disableRipple: false,
   },
@@ -35,10 +35,12 @@ export default {
     outlinedSizeLarge: { ...outlined.large },
     outlinedPrimary: { ...outlined.primary },
     outlinedSecondary: { ...outlined.secondary },
-    text: { ...text.base },
-    textSizeSmall: { ...text.small },
-    textSizeLarge: { ...text.large },
-    textPrimary: { ...text.primary },
-    textSecondary: { ...text.secondary },
+    text: { ...buttonText.base },
+    textSizeSmall: { ...buttonText.small },
+    textSizeLarge: { ...buttonText.large },
+    textPrimary: { ...buttonText.primary },
+    textSecondary: { ...buttonText.secondary },
   },
 };
+
+export default button;

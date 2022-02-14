@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.0.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -14,20 +14,20 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base border styles for the Soft UI Dashboard PRO Material.
+ * The base border styles for the Material Dashboard 2 PRO React.
  * You can add new border width, border color or border radius using this file.
- * You can customized the borders value for the entire Soft UI Dashboard PRO Material using thie file.
+ * You can customized the borders value for the entire Material Dashboard 2 PRO React using thie file.
  */
 
-// Material Dashboard 2 PRO React Base Styles
+// Material Dashboard 2 React Base Styles
 import colors from "assets/theme/base/colors";
 
-// Material Dashboard 2 PRO React Helper Functions
+// Material Dashboard 2 React Helper Functions
 import pxToRem from "assets/theme/functions/pxToRem";
 
 const { grey } = colors;
 
-export default {
+const borders = {
   borderColor: grey[300],
 
   borderWidth: {
@@ -49,3 +49,5 @@ export default {
     section: pxToRem(160),
   },
 };
+
+export default borders;
