@@ -41,46 +41,44 @@ function SidenavCollapse({ icon, name, active, ...rest }) {
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
 
   return (
-    <>
-      <ListItem component="li">
-        <MDBox
-          {...rest}
+    <ListItem component="li">
+      <MDBox
+        {...rest}
+        sx={(theme) =>
+          collapseItem(theme, {
+            active,
+            transparentSidenav,
+            whiteSidenav,
+            darkMode,
+            sidenavColor,
+          })
+        }
+      >
+        <ListItemIcon
           sx={(theme) =>
-            collapseItem(theme, {
-              active,
-              transparentSidenav,
-              whiteSidenav,
-              darkMode,
-              sidenavColor,
-            })
+            collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode, active })
           }
         >
-          <ListItemIcon
-            sx={(theme) =>
-              collapseIconBox(theme, { transparentSidenav, whiteSidenav, darkMode, active })
-            }
-          >
-            {typeof icon === "string" ? (
-              <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
-            ) : (
-              icon
-            )}
-          </ListItemIcon>
+          {typeof icon === "string" ? (
+            <Icon sx={(theme) => collapseIcon(theme, { active })}>{icon}</Icon>
+          ) : (
+            icon
+          )}
+        </ListItemIcon>
 
-          <ListItemText
-            primary={name}
-            sx={(theme) =>
-              collapseText(theme, {
-                miniSidenav,
-                transparentSidenav,
-                whiteSidenav,
-                active,
-              })
-            }
-          />
-        </MDBox>
-      </ListItem>
-    </>
+        <ListItemText
+          primary={name}
+          sx={(theme) =>
+            collapseText(theme, {
+              miniSidenav,
+              transparentSidenav,
+              whiteSidenav,
+              active,
+            })
+          }
+        />
+      </MDBox>
+    </ListItem>
   );
 }
 
