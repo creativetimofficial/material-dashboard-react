@@ -28,7 +28,7 @@ import MDTypography from "components/MDTypography";
 function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
   return (
     <Card>
-      <MDBox display="flex" justifyContent="space-between" pt={1} px={2}>
+      <MDBox display="flex" justifyContent="space-between" pt={2} px={2}>
         <MDBox
           variant="gradient"
           bgColor={color}
@@ -50,11 +50,11 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
           <MDTypography variant="button" fontWeight="light" color="text">
             {title}
           </MDTypography>
-          <MDTypography variant="h4">{count}</MDTypography>
+          {/* <MDTypography variant="h4">{count}</MDTypography> */}
         </MDBox>
       </MDBox>
       <Divider />
-      <MDBox pb={2} px={2}>
+      {/* <MDBox pb={2} px={2}>
         <MDTypography component="p" variant="button" color="text" display="flex">
           <MDTypography
             component="span"
@@ -66,7 +66,7 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
           </MDTypography>
           &nbsp;{percentage.label}
         </MDTypography>
-      </MDBox>
+      </MDBox> */}
     </Card>
   );
 }
