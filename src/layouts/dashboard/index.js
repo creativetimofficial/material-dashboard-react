@@ -62,16 +62,35 @@ function Dashboard() {
                   {imageSrc === "/static/media/fileUpload.82aece8c23679e8bda46.png" ? (
                     <p />
                   ) : (
-                    <MDBox mb="-100px" ml="600px" mt="50px">
-                      <span fontSize="14pt">Select Option</span>
-                      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                      <MDButton variant="gradient" color="info" size="large">
-                        <Icon>favorite</Icon>
-                      </MDButton>
+                    <MDBox
+                      mb="-100px"
+                      mt="50px"
+                      display="flex"
+                      justifyContent="center"
+                      alignItems="center"
+                      flexWrap="wrap"
+                      color="text"
+                      px={1.5}
+                    >
+                      <h1>
+                        Select Option&nbsp;&nbsp;&nbsp;&nbsp;
+                        <MDButton variant="gradient" color="info" size="large">
+                          <Icon>favorite</Icon>
+                        </MDButton>
+                      </h1>
                     </MDBox>
                   )}
                 </MDBox>
-                <MDBox className="container" ml="30%" mt="140px" mb="180px">
+                <MDBox
+                  mt="150px"
+                  mb="210px"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  flexWrap="wrap"
+                  color="text"
+                  px={1.5}
+                >
                   <label htmlFor="input-file">
                     {imageSrc && (
                       <img
