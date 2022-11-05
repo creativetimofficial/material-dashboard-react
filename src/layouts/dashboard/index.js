@@ -17,6 +17,8 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
+import MDButton from "components/MDButton";
+import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -44,6 +46,22 @@ function Dashboard() {
     <DashboardLayout>
       <DashboardNavbar />
       <MDBox ml={50} mt={20} mb={25}>
+        {/* 파일 업로드 확인 */}
+        {/* 업로드 한 파일명: imageSrc */}
+        <div>
+          {console.log(imageSrc)}
+          {console.log(imageSrc.toString)}
+          {imageSrc === "/static/media/fileUpload.82aece8c23679e8bda46.png" ? (
+            <p />
+          ) : (
+            <div>
+              <MDButton variant="gradient" color="info">
+                Select Option&nbsp;
+                <Icon>favorite</Icon>
+              </MDButton>
+            </div>
+          )}
+        </div>
         <main className="container">
           <label htmlFor="input-file">
             {imageSrc && (
@@ -60,19 +78,6 @@ function Dashboard() {
             style={{ display: "none" }}
           />
         </main>
-        {/* 파일 업로드 확인 */}
-        {/* 업로드 한 파일명: imageSrc */}
-        {/*
-        <div>
-          {console.log(imageSrc)}
-          {console.log(imageSrc.toString)}
-          {imageSrc === "/static/media/fileUpload.dafcf9e63b13efdf2190.png" ? (
-            <h1>파일 업로드 전</h1>
-          ) : (
-            <h1>파일 업로드 후</h1>
-          )}
-        </div>
-        */}
       </MDBox>
       <Footer />
     </DashboardLayout>
