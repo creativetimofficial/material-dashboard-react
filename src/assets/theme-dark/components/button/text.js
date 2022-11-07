@@ -26,7 +26,7 @@ const { size } = typography;
 const buttonText = {
   base: {
     backgroundColor: transparent.main,
-    minHeight: pxToRem(37),
+    minHeight: pxToRem(40),
     color: text.main,
     boxShadow: "none",
     padding: `${pxToRem(9)} ${pxToRem(24)}`,
