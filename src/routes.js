@@ -44,7 +44,10 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
-
+// import UserTables from "layouts/apitable/data";
+// import AvenoTable from "layouts/Aveno";
+// import QVBabyTable from "layouts/QVBaby";
+import ProductTable from "layouts/SelectBrand";
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -75,12 +78,44 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "Brand",
+    key: "brand",
+    icon: <Icon fontSize="small">receipt_long</Icon>,
+    route: "/brand",
+    component: <ProductTable />,
+  },
+  {
+    type: "collapse",
     name: "RTL",
     key: "rtl",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
     route: "/rtl",
     component: <RTL />,
   },
+  // {
+  //   type: "collapse",
+  //   name: "Cetaphil Products",
+  //   key: "tables",
+  //   icon: <Icon fontSize="small">table_view</Icon>,
+  //   route: "/cetaphil",
+  //   component: <UserTables />,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "Aveno Products",
+  //   key: "tables",
+  //   icon: <Icon fontSize="small">table_view</Icon>,
+  //   route: "/aveno",
+  //   component: <AvenoTable />,
+  // },
+  // {
+  //   type: "collapse",
+  //   name: "QV Baby Products",
+  //   key: "tables",
+  //   icon: <Icon fontSize="small">table_view</Icon>,
+  //   route: "/qvbaby",
+  //   component: <QVBabyTable />,
+  // },
   {
     type: "collapse",
     name: "Notifications",
