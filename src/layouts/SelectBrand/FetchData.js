@@ -86,7 +86,7 @@ export default function FetchProductData() {
     </MDBox>
   );
 
-  const Tags = ({producttags}) => (
+  const Tags = ({ producttags }) => (
     <MDBox lineHeight={1} textAlign="left">
       <MDTypography variant="caption">{producttags}</MDTypography>
     </MDBox>
