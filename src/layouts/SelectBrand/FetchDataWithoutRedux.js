@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable  */
 /* eslint-disable react/function-component-definition */
 /**
 =========================================================
@@ -16,31 +16,52 @@ Coded by www.creative-tim.com
 */
 
 // Material Dashboard 2 React components
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import axios from "axios";
+import { result, sortBy } from "lodash";
+
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
-import Icon from "@mui/material/Icon";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
+import button from "assets/theme/components/button";
+import MDButton from "components/MDButton";
 // import team3 from "assets/images/team-3.jpg";
 // import team4 from "assets/images/team-4.jpg";
 
-export default function Fetchapidata() {
+export default function FetchProductData() {
   const [data, setData] = useState([]);
-  const [, setDataLoading] = useState(false);
-  useEffect(() => {
-    setDataLoading(true);
-    fetch(
-      "https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/cetaphil?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw=="
-    )
-      .then((response) => response.json())
-      .then((res) => setData(res.data));
-    setDataLoading(false);
-  }, []);
+  const [query, setQuery] = useState("aveeno");
+  const [isLoading, setDataLoading] = useState(false);
 
+  const getData = useCallback(() => {
+    setDataLoading(true);
+    const brandData = async () => {
+      const result = await axios.get(
+        `https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/${query}?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw==`
+      );
+      console.log("dataafter fetch");
+      setData(result.data.data);
+      setDataLoading(false);
+    };
+
+    brandData();
+  }, [query]);
+
+  useEffect(() => {
+    getData();
+  }, [query]);
+
+  //delete items
+  const deleteProduct = async (id) => {
+    const result = await axios.delete(
+      `https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/${id}?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw==`
+    );
+    getData();
+  };
   // const Author = ({
   //   image = "/static/media/team-2.13ae2ce3e12f4cfed420.jpg",
   //   name,
@@ -72,18 +93,23 @@ export default function Fetchapidata() {
     </MDBox>
   );
 
-  const Tags = ({ producttags }) => (
+  const Brand = ({ productbrand }) => (
     <MDBox lineHeight={1} textAlign="left">
-      <MDTypography variant="caption">{producttags}</MDTypography>
+      <MDTypography variant="caption">{productbrand}</MDTypography>
     </MDBox>
   );
 
-  // const TagHeadings = () => {
-  //   const headings = Tags.map((tag, index) => {tag});
-  //   <MDBox lineHeight={1} textAlign="left">
-  //     <MDTypography variant="caption">{headings}</MDTypography>
-  //   </MDBox>;
-  // };
+  const Tags = ({ producttags }) => (
+    <MDBox lineHeight={1} textAlign="left">
+      {producttags.map((eachelement) => {
+        return (
+          <MDBox>
+            <MDTypography variant="caption">{eachelement}</MDTypography>
+          </MDBox>
+        );
+      })}
+    </MDBox>
+  );
 
   const Productname = ({ image = "/static/media/team-2.13ae2ce3e12f4cfed420.jpg", name }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
@@ -112,19 +138,39 @@ export default function Fetchapidata() {
     </MDBox>
   );
 
-  const Action = ({ image = "/static/media/team-2.13ae2ce3e12f4cfed420.jpg" }) => (
-    <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-      <Icon>{image}</Icon>
-    </MDTypography>
+  const SKU = ({ value }) => (
+    <MDBox lineHeight={1} textAlign="left">
+      <MDTypography display="block" variant="caption" color="text" fontWeight="medium">
+        {value}
+      </MDTypography>
+    </MDBox>
   );
 
-  const userData = data.map((eachelement) => ({
+  const Price = ({ value }) => (
+    <MDBox lineHeight={1} textAlign="left">
+      <MDTypography display="block" variant="caption" color="text" fontWeight="medium">
+        {value}
+      </MDTypography>
+    </MDBox>
+  );
+
+  // const DeleteAction = () => (
+  //   <MDBox mt={4} mb={1}>
+  //     <button variant="gradient" color="info" fullWidth>
+  //       Delete
+  //     </button>
+  //   </MDBox>
+  // );
+
+  const ProductData = _.sortBy(data, ["name"]).map((eachelement) => ({
     name: <Productname image={team2} name={eachelement.name} email={eachelement.email} />,
     id: <Id value={eachelement.id} />,
     description: <Description description={eachelement.description} />,
     quantity: <Quantity value={eachelement.quantity} />,
     tags: <Tags producttags={eachelement.tags} />,
-    action: <Action producttags={eachelement.tags} />,
+    price: <Price value={eachelement.price} />,
+    brand: <Brand productbrand={eachelement.brand} />,
+    sku: <SKU value={eachelement.sku} />,
 
     status: (
       <MDBox ml={-1}>
@@ -136,12 +182,22 @@ export default function Fetchapidata() {
         23/04/18
       </MDTypography>
     ),
-    // action: (
-    //   <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-    //     <Icon>more_vert</Icon>
-    //   </MDTypography>
-    // ),
+    action: (
+      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        <MDButton
+          onClick={() => deleteProduct(eachelement.id)}
+          Variant="gradient"
+          color="info"
+          fullWidth
+        >
+          Delete
+        </MDButton>
+      </MDTypography>
+    ),
   }));
+
+  console.log("product data");
+
   return {
     columns: [
       { Header: "name", accessor: "name", align: "left" },
@@ -149,8 +205,14 @@ export default function Fetchapidata() {
       { Header: "description", accessor: "description", align: "center" },
       { Header: "quantity", accessor: "quantity", align: "center" },
       { Header: "tags", accessor: "tags", align: "center" },
+      { Header: "price", accessor: "price", align: "center" },
+      { Header: "brand", accessor: "brand", align: "center" },
+      { Header: "sku", accessor: "sku", align: "center" },
       { Header: "action", accessor: "action", align: "center" },
     ],
-    rows: userData,
+    rows: ProductData,
+    isLoading,
+    setQuery,
+    query,
   };
 }

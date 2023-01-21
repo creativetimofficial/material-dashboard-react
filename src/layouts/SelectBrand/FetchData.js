@@ -16,10 +16,12 @@ Coded by www.creative-tim.com
 */
 
 // Material Dashboard 2 React components
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { sortBy } from "lodash";
-
+import { result, sortBy } from "lodash";
+import { showProducts } from "Redux/Actions/productActions";
+import { useSelector, useDispatch } from "react-redux";
+import AddProduct from "./AddProduct";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
@@ -27,27 +29,45 @@ import MDBadge from "components/MDBadge";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
+import button from "assets/theme/components/button";
+import MDButton from "components/MDButton";
+import { useParams } from "react-router-dom";
 // import team3 from "assets/images/team-3.jpg";
 // import team4 from "assets/images/team-4.jpg";
 
 export default function FetchProductData() {
-  const [data, setData] = useState([]);
+  const products = useSelector((state) => state.allProducts.products);
+  const dispatch = useDispatch();
   const [query, setQuery] = useState("aveeno");
   const [isLoading, setDataLoading] = useState(false);
 
-  useEffect(() => {
+  const getData = useCallback(() => {
     setDataLoading(true);
     const brandData = async () => {
       const result = await axios.get(
         `https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/${query}?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw==`
       );
       console.log("dataafter fetch");
-      setData(result.data.data);
+      // getData(result.data.data);
+      dispatch(showProducts(result.data.data));
       setDataLoading(false);
     };
 
     brandData();
   }, [query]);
+
+  useEffect(() => {
+    getData();
+  }, [query]);
+
+  //delete items
+  const deleteProduct = async (id) => {
+    const result = await axios.delete(
+      `https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/${id}?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw==`
+    );
+
+    getData();
+  };
 
   // const Author = ({
   //   image = "/static/media/team-2.13ae2ce3e12f4cfed420.jpg",
@@ -88,7 +108,15 @@ export default function FetchProductData() {
 
   const Tags = ({ producttags }) => (
     <MDBox lineHeight={1} textAlign="left">
-      <MDTypography variant="caption">{producttags}</MDTypography>
+      {producttags &&
+        Array.isArray(producttags) &&
+        producttags.map((eachelement) => {
+          return (
+            <MDBox>
+              <MDTypography variant="caption">{eachelement}</MDTypography>
+            </MDBox>
+          );
+        })}
     </MDBox>
   );
 
@@ -135,15 +163,15 @@ export default function FetchProductData() {
     </MDBox>
   );
 
-  const Action = () => (
-    <MDBox lineHeight={1} textAlign="left">
-      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-        <Icon>delete</Icon>
-      </MDTypography>
-    </MDBox>
-  );
+  // const DeleteAction = () => (
+  //   <MDBox mt={4} mb={1}>
+  //     <button variant="gradient" color="info" fullWidth>
+  //       Delete
+  //     </button>
+  //   </MDBox>
+  // );
 
-  const ProductData = _.sortBy(data, ["name"]).map((eachelement) => ({
+  const ProductData = _.sortBy(products, ["name"]).map((eachelement) => ({
     name: <Productname image={team2} name={eachelement.name} email={eachelement.email} />,
     id: <Id value={eachelement.id} />,
     description: <Description description={eachelement.description} />,
@@ -163,14 +191,24 @@ export default function FetchProductData() {
         23/04/18
       </MDTypography>
     ),
+    edit: (
+      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        <MDButton onClick={<AddProduct />} Variant="gradient" color="info" fullWidth>
+          Edit
+        </MDButton>
+      </MDTypography>
+    ),
     action: (
-      <MDTypography
-        component="a"
-        href="#"
-        variant="caption"
-        color="text"
-        fontWeight="medium"
-      ></MDTypography>
+      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        <MDButton
+          onClick={() => deleteProduct(eachelement.id)}
+          Variant="gradient"
+          color="info"
+          fullWidth
+        >
+          Delete
+        </MDButton>
+      </MDTypography>
     ),
   }));
 
@@ -186,10 +224,12 @@ export default function FetchProductData() {
       { Header: "price", accessor: "price", align: "center" },
       { Header: "brand", accessor: "brand", align: "center" },
       { Header: "sku", accessor: "sku", align: "center" },
+      { Header: "action", accessor: "action", align: "center" },
+      { Header: "edit", accessor: "edit", align: "center" },
     ],
     rows: ProductData,
     isLoading,
-    setQuery,
     query,
+    setQuery,
   };
 }

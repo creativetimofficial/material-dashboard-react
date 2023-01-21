@@ -16,16 +16,20 @@ Coded by www.creative-tim.com
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { MaterialUIControllerProvider } from "context";
 import App from "App";
+import store from "./Redux/store";
 
 // Material Dashboard 2 React Context Provider
-import { MaterialUIControllerProvider } from "context";
-
 ReactDOM.render(
-  <BrowserRouter>
-    <MaterialUIControllerProvider>
-      <App />
-    </MaterialUIControllerProvider>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <MaterialUIControllerProvider>
+        <App />
+      </MaterialUIControllerProvider>
+    </BrowserRouter>
+    ,
+  </Provider>,
   document.getElementById("root")
 );
