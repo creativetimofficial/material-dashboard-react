@@ -17,6 +17,7 @@
     "npm": ">=6"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.0.0",
     "@emotion/cache": "11.7.1",
     "@emotion/react": "11.7.1",
     "@emotion/styled": "11.6.0",
@@ -32,11 +33,12 @@
     "chart.js": "3.4.1",
     "chroma-js": "2.4.2",
     "lodash": "^4.17.21",
-    "prop-types": "15.8.1",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-chartjs-2": "3.0.4",
-    "react-dom": "17.0.2",
+    "react-dom": "^17.0.2",
     "react-github-btn": "1.2.1",
+    "react-json-pretty": "^2.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "6.2.1",
     "react-scripts": "5.0.0",

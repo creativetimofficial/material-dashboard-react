@@ -20,8 +20,20 @@ import { Provider } from "react-redux";
 import { MaterialUIControllerProvider } from "context";
 import App from "App";
 import store from "./Redux/store";
+// import AuthProviderPriceMatch from "./authProvider";
 
-// Material Dashboard 2 React Context Provider
+// const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+// const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+// console.log("auth0 details", domain, clientId);
+
+// // Material Dashboard 2 React Context Provider
+// {/* <AuthProviderPriceMatch
+// domain={process.env.REACT_APP_AUTH0_DOMAIN}
+// clientId={process.env.REACT_APP_CLIENT_ID}
+// redirectUri={window.location.origin}
+// >
+//   </AuthProviderPriceMatch>> */}
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
@@ -29,7 +41,8 @@ ReactDOM.render(
         <App />
       </MaterialUIControllerProvider>
     </BrowserRouter>
-    ,
   </Provider>,
   document.getElementById("root")
 );
+
+//

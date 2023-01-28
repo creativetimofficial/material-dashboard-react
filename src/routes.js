@@ -44,7 +44,9 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+import EditProduct from "layouts/SelectBrand/EditProduct";
 import AddProduct from "layouts/SelectBrand/AddProduct";
+
 // import UserTables from "layouts/apitable/data";
 // import AvenoTable from "layouts/Aveno";
 // import QVBabyTable from "layouts/QVBaby";
@@ -92,6 +94,14 @@ const routes = [
     icon: <Icon fontSize="small">receipt_long</Icon>,
     route: "/addproduct",
     component: <AddProduct />,
+  },
+  {
+    type: "collapse",
+    name: "Edit Product",
+    key: "editproduct",
+    icon: <Icon fontSize="small">receipt_long</Icon>,
+    route: "/editproduct",
+    component: <EditProduct />,
   },
   {
     type: "collapse",

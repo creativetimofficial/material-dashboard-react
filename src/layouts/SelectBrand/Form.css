@@ -1,0 +1,31 @@
+.Form {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+  input {
+    display: block;
+    width: 20rem;
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  button {
+    border: none;
+    padding: 1rem;
+    width: 21.2rem;
+    font-size: 1.2em;
+    border-radius: 0.2rem;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #c5c5c5;
+  }
+  .message {
+    font-size: 1.2em;
+    text-align: center;
+    color: #36a936;
+  }
+  

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import "./Form.css";
 
 export default function AddProduct() {
   const [name, setName] = useState("");
@@ -54,47 +55,56 @@ export default function AddProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addProduct(name, id, description, quantity, tags, price, brand, sku);
+    setMessage("");
+    if (
+      name !== "" &&
+      id !== "" &&
+      description !== "" &&
+      quantity !== "" &&
+      tags !== "" &&
+      price !== "" &&
+      brand !== "" &&
+      sku !== ""
+    ) {
+      addProduct(name, id, description, quantity, tags, price, brand, sku);
+    } else {
+      setMessage("Cannot Be Empty");
+    }
   };
 
   return (
-    <div className="app">
-      <div className="add-post-container">
+    <div className="Form">
+      <div className="Form">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            className="form-control"
-            placeholder="entername"
+            placeholder="Enter Product Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <input
             type="text"
-            className="form-control"
-            placeholder="enterid"
+            placeholder="Enter Product ID"
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
           <textarea
             name=""
-            className="form-control"
             cols="10"
             rows="8"
-            placeholder="enter description"
+            placeholder="Enter Product Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
             type="text"
-            className="form-control"
-            placeholder="enter qty"
+            placeholder="Enter Product Quantity"
             value={quantity}
             onChange={(e) => setQuantity(e.target.value)}
           />
           <textarea
             name=""
-            className="form-control"
-            placeholder="enter tags"
+            placeholder="Enter Product Tags"
             id=""
             cols="10"
             rows="8"
@@ -103,22 +113,19 @@ export default function AddProduct() {
           />
           <input
             type="text"
-            className="form-control"
-            placeholder="enterprice"
+            placeholder="Enter Product Price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
           <input
             type="text"
-            className="form-control"
-            placeholder="enter brand"
+            placeholder="Enter Product Brand"
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
           />
           <input
             type="text"
-            className="form-control"
-            placeholder="entersku"
+            placeholder="Enter Product SKU"
             value={sku}
             onChange={(e) => setSku(e.target.value)}
           />

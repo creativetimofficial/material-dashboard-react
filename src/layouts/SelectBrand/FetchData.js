@@ -21,11 +21,12 @@ import axios from "axios";
 import { result, sortBy } from "lodash";
 import { showProducts } from "Redux/Actions/productActions";
 import { useSelector, useDispatch } from "react-redux";
-import AddProduct from "./AddProduct";
+import EditProduct from "./EditProduct";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
+import { useNavigate } from "react-router-dom";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
@@ -40,6 +41,7 @@ export default function FetchProductData() {
   const dispatch = useDispatch();
   const [query, setQuery] = useState("aveeno");
   const [isLoading, setDataLoading] = useState(false);
+  const navigate = useNavigate();
 
   const getData = useCallback(() => {
     setDataLoading(true);
@@ -193,7 +195,12 @@ export default function FetchProductData() {
     ),
     edit: (
       <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-        <MDButton onClick={<AddProduct />} Variant="gradient" color="info" fullWidth>
+        <MDButton
+          onClick={() => navigate("/editproduct", { state: { data: eachelement } })}
+          Variant="gradient"
+          color="info"
+          fullWidth
+        >
           Edit
         </MDButton>
       </MDTypography>

@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
 =========================================================
 * Material Dashboard 2 React - v2.1.0
@@ -17,7 +16,6 @@ Coded by www.creative-tim.com
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation, Outlet } from "react-router-dom";
 
 // @mui material components
 import { ThemeProvider } from "@mui/material/styles";
@@ -43,11 +41,6 @@ import themeDarkRTL from "assets/theme-dark/theme-rtl";
 import rtlPlugin from "stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import Dashboard from "layouts/dashboard";
-import SignIn from "layouts/authentication/sign-in";
-import HomePageLayout from "layouts/authentication/components/Pages/Home";
-
-// import NavigationBar from "components/NavBar/Navbar";
 
 // Material Dashboard 2 React routes
 import routes from "routes";
@@ -74,32 +67,6 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
-  const [user, SetUser] = useState("");
-  const handleLogin = () => SetUser({ id: "1", name: "robin" });
-  const handleLogout = () => SetUser(null);
-
-  // const Landing = () => {
-  //   if (user) {
-  //     return <Navigate to="/dashboard" replace />;
-  //   }
-
-  //   return (
-  //     <button type="button" onClick={() => handleLogin()}>
-  //       Log In
-  //     </button>
-  //   );
-  // };
-  // const Home = () => {
-  //   return <h2>Home (Protected: authenticated user required)</h2>;
-  // };
-
-  const Dashboard = () => {
-    return (
-      <button type="button" onClick={() => handleLogout()}>
-        Log Out{" "}
-      </button>
-    );
-  };
 
   // Cache for the rtl
   useMemo(() => {
@@ -140,16 +107,6 @@ export default function App() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
-
-  const ProtectedLayout = ({ user, redirectPath = "/ ", children }) => {
-    console.log("user status protected layout");
-
-    if (!user) {
-      return <Navigate to={redirectPath} replace />;
-    }
-
-    return children ? children : <Outlet />;
-  };
 
   const getRoutes = (allRoutes) =>
     allRoutes.map((route) => {
@@ -194,36 +151,23 @@ export default function App() {
         <CssBaseline />
         {layout === "dashboard" && (
           <>
-            {/* <Sidenav
+            <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
               brandName="Material Dashboard 2"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
-            /> */}
+            />
             <Configurator />
             {configsButton}
           </>
         )}
         {layout === "vr" && <Configurator />}
-        {/* <Routes>
-          <Route index element={<Landing />} />
-          <Route path="landing" element={<Landing />} />
-          <Route
-            index
-            element={
-              <ProtectedLayout user={user}>
-                {getRoutes(routes)}
-                <Route path="*" element={<Navigate to="/dashboard" />} />
-              </ProtectedLayout>
-            }
-          />
-        </Routes> */}
-        {/* <Routes>
+        <Routes>
           {getRoutes(routes)}
           <Route path="*" element={<Navigate to="/dashboard" />} />
-        </Routes> */}
+        </Routes>
       </ThemeProvider>
     </CacheProvider>
   ) : (
@@ -231,30 +175,22 @@ export default function App() {
       <CssBaseline />
       {layout === "dashboard" && (
         <>
-          {/* <Sidenav
+          <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
             brandName="Material Dashboard 2"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
-          /> */}
+          />
           <Configurator />
           {configsButton}
         </>
       )}
       {layout === "vr" && <Configurator />}
       <Routes>
-        <Route index element={<HomePageLayout />} />
-        <Route path="/" element={<HomePageLayout />} />
-        <Route element={<ProtectedLayout user={user} />}>
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
-
-        <>
-          {/* {getRoutes(routes)}
-                <Route path="*" element={<Navigate to="/dashboard" />} /> */}
-        </>
+        {getRoutes(routes)}
+        <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </ThemeProvider>
   );
