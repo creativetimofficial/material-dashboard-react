@@ -231,14 +231,14 @@ export default function App() {
       <CssBaseline />
       {layout === "dashboard" && (
         <>
-          {/* <Sidenav
+          <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
             brandName="Material Dashboard 2"
             routes={routes}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
-          /> */}
+          />
           <Configurator />
           {configsButton}
         </>
@@ -248,12 +248,14 @@ export default function App() {
         <Route index element={<HomePageLayout />} />
         <Route path="/" element={<HomePageLayout />} />
         <Route element={<ProtectedLayout user={user} />}>
-          <Route path="dashboard" element={<Dashboard />} />
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
         </Route>
 
         <>
-          {/* {getRoutes(routes)}
-                <Route path="*" element={<Navigate to="/dashboard" />} /> */}
+          {/* routes defined in routes */}
+
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/dashboard" />} />
         </>
       </Routes>
     </ThemeProvider>

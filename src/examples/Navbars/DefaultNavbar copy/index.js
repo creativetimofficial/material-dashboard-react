@@ -40,9 +40,6 @@ import breakpoints from "assets/theme/base/breakpoints";
 // Material Dashboard 2 React context
 import { useMaterialUIController } from "context";
 
-import Basic from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
-
 function DefaultNavbar({ transparent, light, action }) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
@@ -113,7 +110,7 @@ function DefaultNavbar({ transparent, light, action }) {
           pl={{ xs: 0, lg: 1 }}
         >
           <MDTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-            Price Match
+            Material Dashboard 2
           </MDTypography>
         </MDBox>
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
@@ -124,14 +121,12 @@ function DefaultNavbar({ transparent, light, action }) {
             name="sign up"
             route="/authentication/sign-up"
             light={light}
-            component={<SignUp />}
           />
           <DefaultNavbarLink
             icon="key"
             name="sign in"
             route="/authentication/sign-in"
             light={light}
-            component={<Basic />}
           />
         </MDBox>
         {action &&
