@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useEffect } from "react";
 
 // react-router-dom components
-import { useLocation, NavLink } from "react-router-dom";
+import { useLocation, NavLink, useNavigate } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -47,11 +47,42 @@ import {
   setWhiteSidenav,
 } from "context";
 
+// import { signOut } from "firebase/auth";
+// import { auth } from "../../firebase";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
   const location = useLocation();
   const collapseName = location.pathname.replace("/", "");
+  // const navigate = useNavigate();
+  // const auth = getAuth();
+
+  // const handleLogout = () => {
+  //   signOut(auth)
+  //     .then(() => {
+  //       // Sign-out successful.
+  //       navigate("/sign-in");
+  //       console.log("Signed out successfully");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   const authToken = sessionStorage.getItem("Auth Token");
+  //   console.log(authToken);
+  //   if (authToken) {
+  //     navigate("/dashboard");
+  //   }
+
+  //   if (!authToken) {
+  //     navigate("/sign-up");
+  //   }
+  // }, []);
 
   let textColor = "white";
 
@@ -139,6 +170,27 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
     return returnValue;
   });
+  // const navigate = useNavigate();
+  // const handleLogout = () => {
+  //   signOut(auth)
+  //     .then(() => {
+  //       // Sign-out successful.
+  //       navigate("/sign-in");
+  //       console.log("Signed out successfully");
+  //     })
+  //     .catch((error) => {
+  //       // An error happened.
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       console.log(errorCode, errorMessage);
+  //       alert("invalid");
+  //     });
+  // };
+  const navigate = useNavigate();
+  const logout = () => {
+    signOut(auth);
+    navigate("/sign-in");
+  };
 
   return (
     <SidenavRoot
@@ -182,14 +234,15 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       <MDBox p={2} mt="auto">
         <MDButton
           component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
-          target="_blank"
+          // href="sign-in"
+          target="SIGN-IN"
           rel="noreferrer"
           variant="gradient"
           color={sidenavColor}
+          onClick={logout}
           fullWidth
         >
-          upgrade to pro
+          Sign Out
         </MDButton>
       </MDBox>
     </SidenavRoot>

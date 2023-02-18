@@ -53,6 +53,7 @@ import AddProduct from "layouts/SelectBrand/AddProduct";
 import ProductTable from "layouts/SelectBrand";
 // @mui icons
 import Icon from "@mui/material/Icon";
+import AboutUs from "layouts/authentication/components/Pages/About Us";
 
 const routes = [
   {
@@ -166,6 +167,13 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
+  },
+  {
+    name: "About Us",
+    key: "about-us",
+    icon: <Icon fontSize="small">assignment</Icon>,
+    route: "/about-us",
+    component: <AboutUs />,
   },
 ];
 

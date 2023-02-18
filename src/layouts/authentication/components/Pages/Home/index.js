@@ -31,23 +31,24 @@ import Footer from "layouts/authentication/components/Footer";
 import PriceMatchBackground from "./PriceMatchBackground.jpg";
 
 function HomePageLayout({ image, children }) {
+  console.log(image);
   return (
     <PageLayout>
       <DefaultNavbar
         action={{
           type: "external",
           route: "https://creative-tim.com/product/material-dashboard-react",
-          label: "free download",
-          color: "dark",
+          label: "Show Your Products",
+          color: "",
         }}
       />
       <MDBox
         position="absolute"
+        id="box id"
         width="100%"
         minHeight="100vh"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-            image &&
             `${linearGradient(
               rgba(gradients.dark.main, 0.6),
               rgba(gradients.dark.state, 0.6)

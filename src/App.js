@@ -59,6 +59,9 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
 
+// eslint-disable-next-line
+import firebaseConfig from "./firebase";
+
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -244,20 +247,20 @@ export default function App() {
         </>
       )}
       {layout === "vr" && <Configurator />}
-      <Routes>
-        <Route index element={<HomePageLayout />} />
-        <Route path="/" element={<HomePageLayout />} />
-        <Route element={<ProtectedLayout user={user} />}>
-          {/* <Route path="dashboard" element={<Dashboard />} /> */}
-        </Route>
+        <Routes>
+          <Route index element={<HomePageLayout />} />
+          <Route path="/" element={<HomePageLayout />} />
+          <Route element={<ProtectedLayout user={user} />}>
+            {/* <Route path="dashboard" element={<Dashboard />} /> */}
+          </Route>
 
-        <>
-          {/* routes defined in routes */}
+          <>
+            {/* routes defined in routes */}
 
-          {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
-        </>
-      </Routes>
+            {getRoutes(routes)}
+            <Route path="*" element={<Navigate to="/dashboard" />} />
+          </>
+        </Routes>
     </ThemeProvider>
   );
 }
