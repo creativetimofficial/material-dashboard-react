@@ -48,9 +48,9 @@ import {
 } from "context";
 
 // import { signOut } from "firebase/auth";
-// import { auth } from "../../firebase";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
+// import {  } from "../../firebase";
+// import { signOut } from "firebase/auth";
+import { logout } from "../../firebase";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
@@ -187,10 +187,24 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   //     });
   // };
   const navigate = useNavigate();
-  const logout = () => {
-    signOut(auth);
-    navigate("/sign-in");
+
+  const handleLogout = async () => {
+    sessionStorage.removeItem("Auth Token");
+    await logout();
+    navigate("/authentication/sign-in");
   };
+
+  useEffect(() => {
+    const authToken = sessionStorage.getItem("Auth Token");
+    console.log(authToken);
+    if (authToken) {
+      navigate("/dashboard");
+    }
+
+    if (!authToken) {
+      navigate("/authentication/sign-up");
+    }
+  }, []);
 
   return (
     <SidenavRoot
@@ -235,11 +249,11 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         <MDButton
           component="a"
           // href="sign-in"
-          target="SIGN-IN"
+          // target="SIGN-IN"
           rel="noreferrer"
           variant="gradient"
           color={sidenavColor}
-          onClick={logout}
+          onClick={handleLogout}
           fullWidth
         >
           Sign Out

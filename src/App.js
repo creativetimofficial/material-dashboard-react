@@ -45,6 +45,8 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import Dashboard from "layouts/dashboard";
 import SignIn from "layouts/authentication/sign-in";
+import SignUp from "layouts/authentication/sign-up";
+
 import HomePageLayout from "layouts/authentication/components/Pages/Home";
 
 // import NavigationBar from "components/NavBar/Navbar";
@@ -96,13 +98,13 @@ export default function App() {
   //   return <h2>Home (Protected: authenticated user required)</h2>;
   // };
 
-  const Dashboard = () => {
-    return (
-      <button type="button" onClick={() => handleLogout()}>
-        Log Out{" "}
-      </button>
-    );
-  };
+  // const Dashboard = () => {
+  //   return (
+  //     <button type="button" onClick={() => handleLogout()}>
+  //       Log Out{" "}
+  //     </button>
+  //   );
+  // };
 
   // Cache for the rtl
   useMemo(() => {
@@ -148,7 +150,8 @@ export default function App() {
     console.log("user status protected layout");
 
     if (!user) {
-      return <Navigate to={redirectPath} replace />;
+      // return <Navigate to={redirectPath} replace />;
+      return <Navigate to="/sign-in" />;
     }
 
     return children ? children : <Outlet />;
@@ -247,20 +250,20 @@ export default function App() {
         </>
       )}
       {layout === "vr" && <Configurator />}
-        <Routes>
-          <Route index element={<HomePageLayout />} />
-          <Route path="/" element={<HomePageLayout />} />
-          <Route element={<ProtectedLayout user={user} />}>
-            {/* <Route path="dashboard" element={<Dashboard />} /> */}
-          </Route>
+      <Routes>
+        <Route index element={<HomePageLayout />} />
+        <Route path="/" element={<HomePageLayout />} />
+        <Route element={<ProtectedLayout user={user} />}>
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
+        </Route>
 
-          <>
-            {/* routes defined in routes */}
+        <>
+          {/* routes defined in routes */}
 
-            {getRoutes(routes)}
-            <Route path="*" element={<Navigate to="/dashboard" />} />
-          </>
-        </Routes>
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/dashboard" />} />
+        </>
+      </Routes>
     </ThemeProvider>
   );
 }

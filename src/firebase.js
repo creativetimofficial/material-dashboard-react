@@ -79,7 +79,13 @@ const sendPasswordReset = async (email) => {
 };
 
 const logout = () => {
-  signOut(auth);
+  signOut(auth)
+    .then(() => {
+      console.log("user signout successful");
+    })
+    .catch((error) => {
+      console.log("error", error);
+    });
 };
 
 export {
@@ -90,4 +96,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordReset,
   logout,
+  app,
 };
