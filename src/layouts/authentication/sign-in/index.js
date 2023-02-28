@@ -54,11 +54,15 @@ function Basic() {
   const handleLogin = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+      .then((response) => {
+        console.log("this is the response", response);
+
+        // eslint-disable-next-line
+        sessionStorage.setItem("Auth Token", response._tokenResponse.refreshToken);
         // Signed in
-        const { user } = userCredential;
+        const { user } = response;
         navigate("/dashboard");
-        console.log(user);
+        console.log("this is the user", user);
       })
       .catch((error) => {
         const errorCode = error.code;
