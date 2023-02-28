@@ -91,7 +91,7 @@ The documentation for the Material Dashboard is hosted at our [website](https://
 
 ### What's included
 
-Within the download you'll find the following directories and files:
+Within the download you'll find the following directories and files::
 
 ```
 material-dashboard-react
