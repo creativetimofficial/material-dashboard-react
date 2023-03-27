@@ -25,7 +25,10 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
-import { Select } from "@material-ui/core";
+// import { Select } from "@material-ui/core";
+import NativeSelect from "@mui/material/NativeSelect";
+import FormControl from "@mui/material/FormControl";
+import MDTypography from "components/MDTypography";
 
 // Data
 import FetchProductData from "./FetchData";
@@ -54,23 +57,41 @@ function ProductTable() {
                 borderRadius="lg"
                 coloredShadow="info"
               >
-                <Select value={query} onChange={selectionChangeHandler}>
-                  <option value="selectProductData">Select your product brand</option>
+                {/* <Select value={query} onChange={selectionChangeHandler}>
+                  <option value="selectProductData">Select</option>
                   <option value="cetaphil">Cetaphil</option>
                   <option value="aveeno">Aveeno</option>
                   <option value="qv baby">QvBaby</option>
-                </Select>
-              </MDBox>
-              <MDBox pt={3}>
-                <DataTable
-                  table={{ columns, rows }}
-                  isSorted={false}
-                  entriesPerPage={false}
-                  showTotalEntries={false}
-                  noEndBorder
-                />
+                </Select> */}
+                <FormControl fullWidth>
+                  <MDTypography variant="" color="white">
+                    Brand
+                  </MDTypography>
+                  <NativeSelect
+                    defaultValue="aveeno"
+                    inputProps={{
+                      name: "Brand",
+                      id: "uncontrolled-native",
+                    }}
+                    value={query}
+                    onChange={selectionChangeHandler}
+                  >
+                    <option value="aveeno">Aveeno</option>
+                    <option value="cetaphil">Cetaphil</option>
+                    <option value="qv baby">QvBaby</option>
+                  </NativeSelect>
+                </FormControl>
               </MDBox>
             </Card>
+            <MDBox pt={3}>
+              <DataTable
+                table={{ columns, rows }}
+                isSorted={false}
+                entriesPerPage={false}
+                showTotalEntries={false}
+                noEndBorder
+              />
+            </MDBox>
           </Grid>
         </Grid>
       </MDBox>

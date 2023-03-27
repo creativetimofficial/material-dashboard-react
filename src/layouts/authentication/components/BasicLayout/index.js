@@ -34,9 +34,9 @@ function BasicLayout({ image, children }) {
     <PageLayout>
       <DefaultNavbar
         action={{
-          type: "external",
-          route: "https://creative-tim.com/product/material-dashboard-react",
-          label: "free download",
+          type: "internal",
+          route: "http://localhost:3000/",
+          label: "Contact Us",
           color: "dark",
         }}
       />

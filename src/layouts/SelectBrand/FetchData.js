@@ -96,11 +96,11 @@ export default function FetchProductData() {
   //   </MDBox>
   // );
 
-  const Description = ({ description }) => (
-    <MDBox lineHeight={1} textAlign="left">
-      <MDTypography variant="caption">{description}</MDTypography>
-    </MDBox>
-  );
+  // const Description = ({ description }) => (
+  //   <MDBox lineHeight={1} textAlign="left">
+  //     <MDTypography variant="caption">{description}</MDTypography>
+  //   </MDBox>
+  // );
 
   const Brand = ({ productbrand }) => (
     <MDBox lineHeight={1} textAlign="left">
@@ -133,13 +133,13 @@ export default function FetchProductData() {
     </MDBox>
   );
 
-  const Id = ({ value }) => (
-    <MDBox lineHeight={1} textAlign="left">
-      <MDTypography display="block" variant="caption" color="text" fontWeight="medium">
-        {value}
-      </MDTypography>
-    </MDBox>
-  );
+  // const Id = ({ value }) => (
+  //   <MDBox lineHeight={1} textAlign="left">
+  //     <MDTypography display="block" variant="caption" color="text" fontWeight="medium">
+  //       {value}
+  //     </MDTypography>
+  //   </MDBox>
+  // );
 
   const Quantity = ({ value }) => (
     <MDBox lineHeight={1} textAlign="left">
@@ -175,8 +175,8 @@ export default function FetchProductData() {
 
   const ProductData = _.sortBy(products, ["name"]).map((eachelement) => ({
     name: <Productname image={team2} name={eachelement.name} email={eachelement.email} />,
-    id: <Id value={eachelement.id} />,
-    description: <Description description={eachelement.description} />,
+    // id: <Id value={eachelement.id} />,
+    // description: <Description description={eachelement.description} />,
     quantity: <Quantity value={eachelement.quantity} />,
     tags: <Tags producttags={eachelement.tags} />,
     price: <Price value={eachelement.price} />,
@@ -224,8 +224,8 @@ export default function FetchProductData() {
   return {
     columns: [
       { Header: "name", accessor: "name", align: "left" },
-      { Header: "id", accessor: "id", width: "45%", align: "left" },
-      { Header: "description", accessor: "description", align: "center" },
+      // { Header: "id", accessor: "id", width: "45%", align: "left" },
+      // { Header: "description", accessor: "description", align: "center" },
       { Header: "quantity", accessor: "quantity", align: "center" },
       { Header: "tags", accessor: "tags", align: "center" },
       { Header: "price", accessor: "price", align: "center" },
