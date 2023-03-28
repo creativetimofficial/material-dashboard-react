@@ -34,7 +34,7 @@ export default function Fetchapidata() {
   useEffect(() => {
     setDataLoading(true);
     fetch(
-      "https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/cetaphil?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw=="
+      "https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/item/Aveeno?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw=="
     )
       .then((response) => response.json())
       .then((res) => setData(res.data));

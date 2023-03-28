@@ -47,7 +47,7 @@ export default function FetchProductData() {
     setDataLoading(true);
     const brandData = async () => {
       const result = await axios.get(
-        `https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/${query}?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw==`
+        `https://sls-ausse-dev-igloo-ipricematchdevapi.azurewebsites.net/api/pricematch/products/item/${query}?code=QTahLrKfjuROx68MKJlQ3CrtvAf9x4oQq62iSEzAfO54AzFuXOaEGw==`
       );
       console.log("dataafter fetch");
       // getData(result.data.data);
