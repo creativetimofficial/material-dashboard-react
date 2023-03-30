@@ -12,6 +12,8 @@ Material Dashboard 2 React is built with over 70 frontend individual elements, l
 This free MUI & React Dashboard is coming with prebuilt design blocks, so the development process is seamless,
 switching from our pages to the real website is very easy to be done.
 
+[Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with [PRODUCT NAME]. You can use it to gain insights into your sources of traffic.
+
 View [all components here](https://www.creative-tim.com/learning-lab/react/alerts/material-dashboard/).
 
 **Documentation built by Developers**
@@ -176,6 +178,7 @@ At present, we officially aim to support the last two versions of the following 
 - [License Agreement](https://www.creative-tim.com/license?ref=readme-mdr)
 - [Support](https://www.creative-tim.com/contact-us?ref=readme-mdr)
 - Issues: [Github Issues Page](https://github.com/creativetimofficial/material-dashboard-react/issues)
+- [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
 
 ## Reporting Issues
 
