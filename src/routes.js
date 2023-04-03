@@ -37,13 +37,16 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
+import TrabajosPendientes from "layouts/trabajos_pendientes";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
+import Cliente from "layouts/detalles_cliente";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -56,6 +59,14 @@ const routes = [
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
     component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "Trabajos Pendientes",
+    key: "trabajos_pendientes",
+    icon: <AccessTimeIcon fontSize="small" />,
+    route: "/trabajos_pendientes",
+    component: <TrabajosPendientes />,
   },
   {
     type: "collapse",
@@ -88,6 +99,14 @@ const routes = [
     icon: <Icon fontSize="small">notifications</Icon>,
     route: "/notifications",
     component: <Notifications />,
+  },
+  {
+    type: "collapse",
+    name: "Cliente",
+    key: "cliente",
+    icon: <Icon fontSize="small">person</Icon>,
+    route: "/cliente",
+    component: <Cliente />,
   },
   {
     type: "collapse",
