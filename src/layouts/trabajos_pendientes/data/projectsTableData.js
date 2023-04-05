@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
-import Icon from "@mui/material/Icon";
+import InfoIcon from "@mui/icons-material/Info";
 import DownloadIcon from "@mui/icons-material/Download";
 
 // Material Dashboard 2 React components
@@ -54,7 +54,7 @@ export default function data() {
       { Header: "avance", accessor: "avance", align: "center" },
       { Header: "total", accessor: "total", align: "left" },
       { Header: "archivos", accessor: "archivos", align: "center" },
-      { Header: "accion", accessor: "accion", align: "center" },
+      { Header: "info", accessor: "info", align: "center" },
     ],
 
     rows: [
@@ -76,9 +76,9 @@ export default function data() {
           </MDTypography>
         ),
         avance: <Progress color="info" value={60} />,
-        accion: (
+        info: (
           <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            <InfoIcon>more_vert</InfoIcon>
           </MDTypography>
         ),
         archivos: (
@@ -105,9 +105,9 @@ export default function data() {
           </MDTypography>
         ),
         avance: <Progress color="success" value={100} />,
-        accion: (
+        info: (
           <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            <InfoIcon>more_vert</InfoIcon>
           </MDTypography>
         ),
         archivos: (
@@ -134,9 +134,9 @@ export default function data() {
           </MDTypography>
         ),
         avance: <Progress color="error" value={30} />,
-        accion: (
+        info: (
           <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            <InfoIcon>more_vert</InfoIcon>
           </MDTypography>
         ),
         archivos: (
@@ -163,9 +163,9 @@ export default function data() {
           </MDTypography>
         ),
         avance: <Progress color="info" value={80} />,
-        accion: (
+        info: (
           <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            <InfoIcon>more_vert</InfoIcon>
           </MDTypography>
         ),
         archivos: (
@@ -192,9 +192,9 @@ export default function data() {
           </MDTypography>
         ),
         avance: <Progress color="error" value={0} />,
-        accion: (
+        info: (
           <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            <InfoIcon>more_vert</InfoIcon>
           </MDTypography>
         ),
         archivos: (
@@ -221,9 +221,9 @@ export default function data() {
           </MDTypography>
         ),
         avance: <Progress color="success" value={100} />,
-        accion: (
+        info: (
           <MDTypography component="a" href="#" color="text">
-            <Icon>more_vert</Icon>
+            <InfoIcon>more_vert</InfoIcon>
           </MDTypography>
         ),
         archivos: (
