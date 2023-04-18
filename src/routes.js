@@ -39,6 +39,7 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import TrabajosPendientes from "layouts/trabajos_pendientes";
 import Tables from "layouts/tables";
+import Precios from "layouts/precios";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
@@ -67,6 +68,22 @@ const routes = [
     icon: <AccessTimeIcon fontSize="small" />,
     route: "/trabajos_pendientes",
     component: <TrabajosPendientes />,
+  },
+  {
+    type: "collapse",
+    name: "Cliente",
+    key: "cliente",
+    icon: <Icon fontSize="small">person</Icon>,
+    route: "/cliente",
+    component: <Cliente />,
+  },
+  {
+    type: "collapse",
+    name: "Precios",
+    key: "precios",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/precios",
+    component: <Precios />,
   },
   {
     type: "collapse",
@@ -99,14 +116,6 @@ const routes = [
     icon: <Icon fontSize="small">notifications</Icon>,
     route: "/notifications",
     component: <Notifications />,
-  },
-  {
-    type: "collapse",
-    name: "Cliente",
-    key: "cliente",
-    icon: <Icon fontSize="small">person</Icon>,
-    route: "/cliente",
-    component: <Cliente />,
   },
   {
     type: "collapse",

@@ -24,12 +24,17 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
+import MDBox from "components/MDBox";
 
 // Overview page components
+import DataTable from "examples/Tables/DataTable";
+import projectsTableData from "layouts/trabajos_pendientes/data/clientJobsData";
 
 // Data
 
 function Overview() {
+  const { columns: pColumns, rows: pRows } = projectsTableData();
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -48,6 +53,15 @@ function Overview() {
         action={{ route: "", tooltip: "Edit Profile" }}
         shadow={false}
       />
+      <MDBox pt={3}>
+        <DataTable
+          table={{ columns: pColumns, rows: pRows }}
+          isSorted={false}
+          entriesPerPage={false}
+          showTotalEntries={false}
+          noEndBorder
+        />
+      </MDBox>
       <Footer />
     </DashboardLayout>
   );
