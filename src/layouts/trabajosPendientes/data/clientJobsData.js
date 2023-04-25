@@ -48,32 +48,7 @@ export default function data() {
 
     rows: [
       {
-        total: (
-          <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $2,500
-          </MDTypography>
-        ),
-        fecha: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            22/2/2023
-          </MDTypography>
-        ),
-        estado: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            working
-          </MDTypography>
-        ),
-        avance: <Progress color="info" value={60} />,
-        info: (
-          <MDTypography component="a" href="#" color="text">
-            <InfoIcon>more_vert</InfoIcon>
-          </MDTypography>
-        ),
-        archivos: (
-          <MDTypography component="a" href="#" color="text">
-            <DownloadIcon />
-          </MDTypography>
-        ),
+
       },
       {
         total: (
