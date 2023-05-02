@@ -28,14 +28,13 @@ import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
 
 // Dashboard components
-import projectsTableData from "layouts/trabajos_pendientes/data/projectsTableData";
+import projectsTableData from "layouts/trabajosPendientes/data/projectsTableData";
 
 function Dashboard() {
   const { columns: pColumns, rows: pRows } = projectsTableData();
 
   return (
     <DashboardLayout>
-      <DashboardNavbar />
       <MDBox py={3}>
         <MDBox mt={4.5}>
           <Grid item xs={12}>

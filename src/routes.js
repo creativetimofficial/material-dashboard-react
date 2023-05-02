@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-/** 
+/**
   All of the routes for the Material Dashboard 2 React are added here,
   You can add a new route, customize the routes and delete the routes here.
 
@@ -22,7 +22,7 @@ Coded by www.creative-tim.com
 
   For adding a new route you can follow the existing routes in the routes array.
   1. The `type` key with the `collapse` value is used for a route.
-  2. The `type` key with the `title` value is used for a title inside the Sidenav. 
+  2. The `type` key with the `title` value is used for a title inside the Sidenav.
   3. The `type` key with the `divider` value is used for a divider between Sidenav items.
   4. The `name` key is used for the name of the route on the Sidenav.
   5. The `key` key is used for the key of the route (It will help you with the key prop inside a loop).
@@ -37,20 +37,20 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
-import TrabajosPendientes from "layouts/trabajos_pendientes";
+import TrabajosPendientes from "layouts/trabajosPendientes";
 import Tables from "layouts/tables";
 import Precios from "layouts/precios";
 import Billing from "layouts/billing";
-import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import Cliente from "layouts/detalles_cliente";
+import Cliente from "layouts/detallesCliente";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import Clientes from "./layouts/clientes";
 
 const routes = [
   {
@@ -64,18 +64,35 @@ const routes = [
   {
     type: "collapse",
     name: "Trabajos Pendientes",
-    key: "trabajos_pendientes",
+    key: "trabajos Pendientes",
     icon: <AccessTimeIcon fontSize="small" />,
     route: "/trabajos_pendientes",
     component: <TrabajosPendientes />,
   },
+  // {
+  //   type: "collapse",
+  //   name: "Cliente",
+  //   key: "cliente",
+  //   icon: <Icon fontSize="small">person</Icon>,
+  //   route: "/cliente",
+  //   component: <Cliente />,
+  // },
   {
     type: "collapse",
     name: "Cliente",
     key: "cliente",
     icon: <Icon fontSize="small">person</Icon>,
-    route: "/cliente",
+    route: "/cliente/:id",
     component: <Cliente />,
+  },
+  {
+    type: "collapse",
+    name: "Clientes",
+    key: "clientes",
+    icon: <Icon fontSize="small">person</Icon>,
+    route: "/clientes",
+    // show: false,
+    component: <Clientes />,
   },
   {
     type: "collapse",
@@ -100,14 +117,6 @@ const routes = [
     icon: <Icon fontSize="small">receipt_long</Icon>,
     route: "/billing",
     component: <Billing />,
-  },
-  {
-    type: "collapse",
-    name: "RTL",
-    key: "rtl",
-    icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
-    route: "/rtl",
-    component: <RTL />,
   },
   {
     type: "collapse",
