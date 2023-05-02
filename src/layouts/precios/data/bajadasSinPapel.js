@@ -21,40 +21,49 @@ Coded by www.creative-tim.com
 
 import EditableTableCell from "components/EditableTableCell";
 
-export default function data() {
+function getTablesAPI() {
   return {
-    columns: [
-      { Header: "copias", accessor: "copias", width: "30%", align: "left" },
-      { Header: "A3+", accessor: "A3+", align: "center" },
-      { Header: "banner", accessor: "banner", align: "center" },
-      { Header: "diseños", accessor: "diseños", align: "center" },
-    ],
-
-    rows: [
-      {
-        copias: <EditableTableCell value="$2,500" />,
-        "A3+": <EditableTableCell value="$2,500" />,
-        banner: <EditableTableCell value="$2,500" />,
-        diseños: <EditableTableCell value="$2,500" />,
-      },
-      {
-        copias: <EditableTableCell value="$2,500" />,
-        "A3+": <EditableTableCell value="$2,500" />,
-        banner: <EditableTableCell value="$2,500" />,
-        diseños: <EditableTableCell value="$2,500" />,
-      },
-      {
-        copias: <EditableTableCell value="$2,500" />,
-        "A3+": <EditableTableCell value="$2,500" />,
-        banner: <EditableTableCell value="$2,500" />,
-        diseños: <EditableTableCell value="$2,500" />,
-      },
-      {
-        copias: <EditableTableCell value="$2,500" />,
-        "A3+": <EditableTableCell value="$2,500" />,
-        banner: <EditableTableCell value="$2,500" />,
-        diseños: <EditableTableCell value="$2,500" />,
-      },
-    ],
+    title: "Bajadas sin Papel",
+    table: {
+      copias: ["valor1", "valor2", "valor3", "valor4"],
+      "A3+": ["valor1", "valor2", "valor3", "valor4"],
+      banner: ["valor1", "valor2", "valor3", "valor4"],
+      diseños: ["valor1", "valor2", "valor3", "valor4"],
+    },
   };
+}
+
+export default function data() {
+  // TODO: Invoke API and fill collumns
+  const response = getTablesAPI();
+  const title = <EditableTableCell value={response.title} color="white" />;
+  const headers = Object.keys(response.table);
+  const columns = [];
+  headers.forEach((header) => {
+    columns.push({
+      Header: <EditableTableCell value={header} />,
+      accessor: header,
+      width: "auto",
+      align: "left",
+    });
+  });
+  const numRows = response.table[headers[0]].length; // assumes all arrays have the same length
+  const rows = [];
+
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < numRows; i++) {
+    const row = {};
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of headers) {
+      row[key] = <EditableTableCell value={response.table[key][i]} />;
+    }
+    rows.push(row);
+  }
+
+  const table = {
+    title,
+    columns,
+    rows,
+  };
+  return table;
 }

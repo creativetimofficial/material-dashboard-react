@@ -6,7 +6,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import PropTypes from "prop-types";
 import MDTypography from "components/MDTypography";
 
-function EditableTableCell({ value, onSave }) {
+function EditableTableCell({ value, color, onSave }) {
   const [isEditing, setIsEditing] = useState(false);
   const [tempValue, setTempValue] = useState(value);
 
@@ -49,7 +49,7 @@ function EditableTableCell({ value, onSave }) {
         </>
       ) : (
         <>
-          <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
+          <MDTypography component="a" href="#" variant="button" color={color} fontWeight="medium">
             {tempValue}
           </MDTypography>
           <IconButton size="small" onClick={handleEditClick}>
@@ -63,12 +63,15 @@ function EditableTableCell({ value, onSave }) {
 
 EditableTableCell.defaultProps = {
   value: "",
-  onSave: () => {},
+  // eslint-disable-next-line prettier/prettier
+  onSave: () => { },
+  color: "text",
 };
 
 EditableTableCell.propTypes = {
   value: PropTypes.string,
   onSave: PropTypes.func,
+  color: PropTypes.string,
 };
 
 export default EditableTableCell;

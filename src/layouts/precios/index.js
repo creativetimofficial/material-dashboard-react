@@ -31,7 +31,7 @@ import PriceTable from "examples/Tables/PriceTable";
 import bajadasSinPapel from "layouts/precios/data/bajadasSinPapel";
 
 function Precios() {
-  const { columns: pColumns, rows: pRows } = bajadasSinPapel();
+  const { title: pTitle, columns: pColumns, rows: pRows } = bajadasSinPapel();
 
   return (
     <DashboardLayout>
@@ -51,7 +51,7 @@ function Precios() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Bajadas sin Papel
+                  {pTitle}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
