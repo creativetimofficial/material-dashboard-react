@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2  React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -19,6 +19,7 @@ import { useMemo } from "react";
 import PropTypes from "prop-types";
 
 // react-chartjs-2 components
+import { Chart as ChartJS, RadialLinearScale, ArcElement, Tooltip, Legend } from "chart.js";
 import { PolarArea } from "react-chartjs-2";
 
 // @mui material components
@@ -32,7 +33,9 @@ import MDTypography from "components/MDTypography";
 // PolarChart configurations
 import configs from "examples/Charts/PolarChart/configs";
 
-function PolarChart({ icon, title, description, chart }) {
+ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
+
+function PolarChart({ icon, title, description, chart, height }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
 
   const renderChart = (
@@ -43,9 +46,9 @@ function PolarChart({ icon, title, description, chart }) {
             <MDBox
               width="4rem"
               height="4rem"
-              bgColor={icon.color || "info"}
+              bgColor={icon.color || "dark"}
               variant="gradient"
-              coloredShadow={icon.color || "info"}
+              coloredShadow={icon.color || "dark"}
               borderRadius="xl"
               display="flex"
               justifyContent="center"
@@ -69,8 +72,8 @@ function PolarChart({ icon, title, description, chart }) {
       ) : null}
       {useMemo(
         () => (
-          <MDBox p={4}>
-            <PolarArea data={data} options={options} />
+          <MDBox p={4} height={height}>
+            <PolarArea data={data} options={options} redraw />
           </MDBox>
         ),
         [chart]
@@ -105,6 +108,7 @@ PolarChart.propTypes = {
   }),
   title: PropTypes.string,
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   chart: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.array, PropTypes.object])).isRequired,
 };
 

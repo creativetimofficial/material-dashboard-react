@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2  React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -20,6 +20,15 @@ import PropTypes from "prop-types";
 
 // react-chartjs-2 components
 import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -32,6 +41,8 @@ import MDTypography from "components/MDTypography";
 
 // ReportsBarChart configurations
 import configs from "examples/Charts/BarCharts/ReportsBarChart/configs";
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function ReportsBarChart({ color, title, description, date, chart }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
@@ -51,10 +62,10 @@ function ReportsBarChart({ color, title, description, date, chart }) {
               mt={-5}
               height="12.5rem"
             >
-              <Bar data={data} options={options} />
+              <Bar data={data} options={options} redraw />
             </MDBox>
           ),
-          [chart, color]
+          [color, chart]
         )}
         <MDBox pt={3} pb={1} px={1}>
           <MDTypography variant="h6" textTransform="capitalize">
@@ -80,7 +91,7 @@ function ReportsBarChart({ color, title, description, date, chart }) {
 
 // Setting default values for the props of ReportsBarChart
 ReportsBarChart.defaultProps = {
-  color: "dark",
+  color: "info",
   description: "",
 };
 

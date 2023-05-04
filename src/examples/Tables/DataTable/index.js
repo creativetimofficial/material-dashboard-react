@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2 React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -185,10 +185,11 @@ function DataTable({
       ) : null}
       <Table {...getTableProps()}>
         <MDBox component="thead">
-          {headerGroups.map((headerGroup) => (
-            <TableRow {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
+          {headerGroups.map((headerGroup, key) => (
+            <TableRow key={key} {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, idx) => (
                 <DataTableHeadCell
+                  key={idx}
                   {...column.getHeaderProps(isSorted && column.getSortByToggleProps())}
                   width={column.width ? column.width : "auto"}
                   align={column.align ? column.align : "left"}
@@ -204,9 +205,10 @@ function DataTable({
           {page.map((row, key) => {
             prepareRow(row);
             return (
-              <TableRow {...row.getRowProps()}>
-                {row.cells.map((cell) => (
+              <TableRow key={key} {...row.getRowProps()}>
+                {row.cells.map((cell, idx) => (
                   <DataTableBodyCell
+                    key={idx}
                     noBorder={noEndBorder && rows.length - 1 === key}
                     align={cell.column.align ? cell.column.align : "left"}
                     {...cell.getCellProps()}

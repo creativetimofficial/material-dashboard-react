@@ -1,5 +1,14 @@
 # Change Log
 
+## [2.2.0] 2023-00-05
+
+- Fix issues
+- Update dependencies
+- Migrate to React 18
+- Fix vulnerabilities issues
+- Fix installation issues
+
+
 ## [2.1.0] 2022-02-14
 
 ### Bug fixing

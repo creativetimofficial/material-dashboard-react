@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": ["plugin:react/recommended", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -19,6 +19,7 @@
         "endOfLine": "auto"
       }
     ],
+    "react/display-name": "off",
     "default-param-last": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

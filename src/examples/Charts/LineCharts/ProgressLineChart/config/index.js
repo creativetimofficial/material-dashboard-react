@@ -3,8 +3,8 @@
 * Material Dashboard 2 React - v2.1.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Product Page: https://www.creative-tim.com/product/nextjs-material-dashboard-pro
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -17,6 +17,7 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
+import typography from "assets/theme/base/typography";
 
 const { gradients } = colors;
 
@@ -29,8 +30,8 @@ function configs(color, labels, label, data) {
           label,
           tension: 0,
           pointRadius: 3,
-          pointBackgroundColor: gradients[color] ? gradients[color].main : gradients.info.main,
-          borderColor: gradients[color] ? gradients[color].main : gradients.info.main,
+          pointBackgroundColor: gradients[color] ? gradients[color].main : gradients.dark.main,
+          borderColor: gradients[color] ? gradients[color].main : gradients.dark.main,
           borderWidth: 4,
           backgroundColor: "transparent",
           maxBarThickness: 6,
@@ -63,11 +64,10 @@ function configs(color, labels, label, data) {
           ticks: {
             display: true,
             padding: 10,
-            color: "#9ca2b7",
+            color: "#b2b9bf",
             font: {
-              size: 14,
-              weight: 300,
-              family: "Roboto",
+              size: 11,
+              family: typography.fontFamily,
               style: "normal",
               lineHeight: 2,
             },
@@ -84,12 +84,11 @@ function configs(color, labels, label, data) {
           },
           ticks: {
             display: true,
-            padding: 10,
-            color: "#9ca2b7",
+            color: "#b2b9bf",
+            padding: 20,
             font: {
-              size: 14,
-              weight: 300,
-              family: "Roboto",
+              size: 11,
+              family: typography.fontFamily,
               style: "normal",
               lineHeight: 2,
             },
