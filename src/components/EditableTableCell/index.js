@@ -63,7 +63,6 @@ function EditableTableCell({ value, color, onSave }) {
 
 EditableTableCell.defaultProps = {
   value: "",
-  // eslint-disable-next-line prettier/prettier
   onSave: () => { },
   color: "text",
 };

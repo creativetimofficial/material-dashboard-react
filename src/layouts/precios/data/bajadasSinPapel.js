@@ -20,28 +20,71 @@ Coded by www.creative-tim.com
 // Material Dashboard 2 React components
 
 import EditableTableCell from "components/EditableTableCell";
+import MDTypography from "components/MDTypography";
+import { TableCell } from "@mui/material";
 
-function getTablesAPI() {
-  return {
-    title: "Bajadas sin Papel",
-    table: {
-      copias: ["valor1", "valor2", "valor3", "valor4"],
-      "A3+": ["valor1", "valor2", "valor3", "valor4"],
-      banner: ["valor1", "valor2", "valor3", "valor4"],
-      diseños: ["valor1", "valor2", "valor3", "valor4"],
-    },
-  };
+
+function getTablesAPI(table) {
+  switch (table) {
+    case "bajadasSinPapel":
+      return {
+        title: "Bajadas sin Papel",
+        table: {
+          copias: ["valor1", "valor2", "valor3", "valor4"],
+          "A3+": ["valor1", "valor2", "valor3", "valor4"],
+          banner: ["valor1", "valor2", "valor3", "valor4"],
+          diseños: ["valor1", "valor2", "valor3", "valor4"],
+        },
+      };
+    case "bajadasAlGremio":
+      return {
+        title: "Bajadas al gremio",
+        table: {
+          "COPIAS": ["PAPEL", "1", "2 a 25", "26-50"],
+          "350 grs MATE/BRILLANTE": ["4/0 | 4/4", "280 | 340", "230 | 280", "220 | 265"],
+          "300 grs MATE/BRILLANTE": ["4/0 | 4/4", "260 | 320", "195 | 245", "190 | 240"],
+          "200 grs ILUSTRA/OPALINA": ["4/0 | 4/4", "250 | 310", "182 | 232", "177 | 227"],
+          "150 grs BRILLANTE": ["4/0 | 4/4", "190 | 250", "132 | 182", "128 | 178"],
+          "115 grs BRILLANTE": ["4/0 | 4/4", "185 | 225", "127 | 177", "123 | 173"],
+          "OBRA 90 grs": ["4/0 | 4/4", "140 | 200", "105 | 155", "100 | 150"],
+          "Autoad Con/Sin split": ["4/0", "200", "150", "140"],
+          "OPP Blanco/Transp": ["4/0", "350", "285", "280"],
+        },
+      };
+    case "bajadasAlGremioA3":
+      return {
+        title: "Bajadas al gremio A3+",
+        table: {
+          copias: ["valor1", "valor2", "valor3", "valor4"],
+          "A3+": ["valor1", "valor2", "valor3", "valor4"],
+          banner: ["valor1", "valor2", "valor3", "valor4"],
+          diseños: ["valor1", "valor2", "valor3", "valor4"],
+        },
+      };
+    case "troquelado":
+      return {
+        title: "Troquelados",
+        table: {
+          copias: ["valor1", "valor2", "valor3", "valor4"],
+          "A3+": ["valor1", "valor2", "valor3", "valor4"],
+          banner: ["valor1", "valor2", "valor3", "valor4"],
+          diseños: ["valor1", "valor2", "valor3", "valor4"],
+        },
+      };
+    default:
+      return {};
+  }
 }
 
-export default function data() {
+export default function data(editable = false, tableName = "bajadasSinPapel") {
   // TODO: Invoke API and fill collumns
-  const response = getTablesAPI();
-  const title = <EditableTableCell value={response.title} color="white" />;
+  const response = getTablesAPI(tableName);
+  const title = (editable) ? <EditableTableCell value={response.title} color="white" /> : <MDTypography variant="h6" color="white">{response.title}</MDTypography>;
   const headers = Object.keys(response.table);
   const columns = [];
   headers.forEach((header) => {
     columns.push({
-      Header: <EditableTableCell value={header} />,
+      Header: (editable) ? <EditableTableCell value={header} /> : <TableCell>{header}</TableCell>,
       accessor: header,
       width: "auto",
       align: "left",
@@ -55,7 +98,7 @@ export default function data() {
     const row = {};
     // eslint-disable-next-line no-restricted-syntax
     for (const key of headers) {
-      row[key] = <EditableTableCell value={response.table[key][i]} />;
+      row[key] = (editable) ? <EditableTableCell value={response.table[key][i]} /> : <TableCell>{response.table[key][i]}</TableCell>;
     }
     rows.push(row);
   }

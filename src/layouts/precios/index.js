@@ -31,7 +31,10 @@ import PriceTable from "examples/Tables/PriceTable";
 import bajadasSinPapel from "layouts/precios/data/bajadasSinPapel";
 
 function Precios() {
-  const { title: pTitle, columns: pColumns, rows: pRows } = bajadasSinPapel();
+  const { title: titleA, columns: columnsA, rows: rowsA } = bajadasSinPapel(true, "bajadasSinPapel");
+  const { title: titleB, columns: columnsB, rows: rowsB } = bajadasSinPapel(false, "bajadasAlGremio");
+  const { title: titleC, columns: columnsC, rows: rowsC } = bajadasSinPapel(false, "bajadasAlGremioA3");
+  const { title: titleD, columns: columnsD, rows: rowsD } = bajadasSinPapel(false, "troquelado");
 
   return (
     <DashboardLayout>
@@ -51,12 +54,12 @@ function Precios() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  {pTitle}
+                  {titleA}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <PriceTable
-                  table={{ columns: pColumns, rows: pRows }}
+                  table={{ columns: columnsA, rows: rowsA }}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
@@ -82,12 +85,12 @@ function Precios() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Bajadas A3+ AL GREMIO
+                  {titleB}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <PriceTable
-                  table={{ columns: pColumns, rows: pRows }}
+                  table={{ columns: columnsB, rows: rowsB }}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
@@ -113,12 +116,12 @@ function Precios() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Bajadas al gremio
+                  {titleC}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <PriceTable
-                  table={{ columns: pColumns, rows: pRows }}
+                  table={{ columns: columnsC, rows: rowsC }}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
@@ -144,12 +147,12 @@ function Precios() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Troquelados
+                  {titleD}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <PriceTable
-                  table={{ columns: pColumns, rows: pRows }}
+                  table={{ columns: columnsD, rows: rowsD }}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
