@@ -6,23 +6,19 @@ import {useEffect, useState} from "react";
 import MDTypography from "../../components/MDTypography";
 import MDButton from "../../components/MDButton";
 import {Link} from "react-router-dom";
+import DataService from "../../services/DataService";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import Wrapper from "../Wrapper";
+
 
 const TableColumns = [
-  { Header: "Nombre", accessor: "first_name", align: "center" },
-  { Header: "Apellido", accessor: "last_name", align: "center" },
+  { Header: "Nombre y Apellido", accessor: "name", align: "center" },
   { Header: "Email", accessor: "email", align: "center" },
   { Header: "Teléfono", accessor: "phone", align: "center" },
   { Header: "CUIT", accessor: "cuit", align: "center" },
-  { Header: "Nombre Fantasia", accessor: "fantasy_name", align: "center" },
+  { Header: "Nombre Fantasia", accessor: "fantasy_name", align: "left" },
   { Header: "", accessor: "view", align: "right" },
-]
-
-
-const RowInfo = [
-  { cuit: 'lalalal', email: 'lalalal', fantasy_name: 'lalalal', first_name: 'lalalal', last_name: 'lalalal', phone: 'lalalal' },
-  { cuit: 'lalalal', email: 'dsa', fantasy_name: 'lalalal', first_name: 'lalalal', last_name: 'lalalal', phone: 'lalalal' },
-  { cuit: 'lalalal', email: 'lalalal', fantasy_name: 'lalalal', first_name: 'lalalal', last_name: 'lalalal', phone: 'lalalal' },
-  { cuit: 'lalalal', email: 'lalalal', fantasy_name: 'lalalal', first_name: 'lalalal', last_name: 'lalalal', phone: 'lalalal' }
 ]
 
 const RowFormatter = (row) => (
@@ -30,10 +26,10 @@ const RowFormatter = (row) => (
       cuit: (<MDTypography  variant="button" color="text">{row.cuit}</MDTypography>),
       email: (<MDTypography  variant="caption" color="text" fontWeight="medium">{row.email}</MDTypography>),
       fantasy_name: (<MDTypography  variant="button" color="text" fontWeight="medium">{row.fantasy_name}</MDTypography>),
-      first_name: (<MDTypography  variant="button" color="text" fontWeight="medium">{row.first_name}</MDTypography>),
-      last_name: (<MDTypography  variant="button" color="text" fontWeight="medium">{row.last_name}</MDTypography>),
+      name: (<MDTypography  variant="button" color="text" fontWeight="medium">{row.first_name} {row.last_name}</MDTypography>),
       phone: (<MDTypography variant="button" color="text" fontWeight="medium">{row.phone}</MDTypography>),
-      view: (<Link to={'/cliente/123123'}><MDButton color={"dark"}>Ver</MDButton></Link>)
+      view: (<Link to={'/cliente/123123'}><MDButton color={"dark"}>Ver</MDButton>
+      </Link>)
     }
   )
 
@@ -41,23 +37,25 @@ const Clientes = () => {
   const [rows, setRows] = useState([])
 
   useEffect(() => {
-    const formattedRows = RowInfo.map(r => RowFormatter(r))
-    setRows(formattedRows)
+    const getInfo = async () => {
+      const formattedRows = await DataService.fetchUsers()
+      setRows(formattedRows.map(r => RowFormatter(r)))
+    };
+
+    getInfo()
   }, [])
 
   return (
-    <DashboardLayout>
-      <MDBox pt={3}>
-        <DataTable
-          table={{ columns: TableColumns, rows: rows }}
-          isSorted={false}
-          entriesPerPage={false}
-          showTotalEntries={false}
-          canSearch={true}
-          noEndBorder
-        />
-      </MDBox>
-    </DashboardLayout>
+    <Wrapper title={"Clientes"}>
+      <DataTable
+        table={{ columns: TableColumns, rows: rows }}
+        isSorted={false}
+        entriesPerPage={false}
+        showTotalEntries={false}
+        canSearch={true}
+        noEndBorder
+      />
+    </Wrapper>
   )
 }
 

@@ -55,35 +55,11 @@ import Clientes from "./layouts/clientes";
 const routes = [
   {
     type: "collapse",
-    name: "Dashboard",
-    key: "dashboard",
-    icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/dashboard",
-    component: <Dashboard />,
-  },
-  {
-    type: "collapse",
     name: "Trabajos Pendientes",
     key: "trabajos Pendientes",
     icon: <AccessTimeIcon fontSize="small" />,
-    route: "/trabajos_pendientes",
+    route: "/",
     component: <TrabajosPendientes />,
-  },
-  // {
-  //   type: "collapse",
-  //   name: "Cliente",
-  //   key: "cliente",
-  //   icon: <Icon fontSize="small">person</Icon>,
-  //   route: "/cliente",
-  //   component: <Cliente />,
-  // },
-  {
-    type: "collapse",
-    name: "Cliente",
-    key: "cliente",
-    icon: <Icon fontSize="small">person</Icon>,
-    route: "/cliente/:id",
-    component: <Cliente />,
   },
   {
     type: "collapse",
@@ -91,7 +67,6 @@ const routes = [
     key: "clientes",
     icon: <Icon fontSize="small">person</Icon>,
     route: "/clientes",
-    // show: false,
     component: <Clientes />,
   },
   {
@@ -101,6 +76,18 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/precios",
     component: <Precios />,
+  },
+  {
+    type: "divider",
+  },
+  {
+    type: "collapse",
+    name: "Cliente",
+    key: "cliente",
+    icon: <Icon fontSize="small">person</Icon>,
+    route: "/cliente/:id",
+    // show: false,
+    component: <Cliente />,
   },
   {
     type: "collapse",
