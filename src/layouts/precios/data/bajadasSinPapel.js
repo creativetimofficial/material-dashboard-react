@@ -39,6 +39,7 @@ function getTablesAPI(table) {
     case "bajadasAlGremio":
       return {
         title: "Bajadas al gremio",
+        paperType: "A4",
         table: {
           "COPIAS": ["PAPEL", "1", "2 a 25", "26-50"],
           "350 grs MATE/BRILLANTE": ["4/0 | 4/4", "280 | 340", "230 | 280", "220 | 265"],
@@ -72,7 +73,74 @@ function getTablesAPI(table) {
         },
       };
     default:
-      return {};
+      return [
+        {
+          paperSize: "A4",
+          quantity: [
+            {
+              min: 1,
+              max: 1,
+              gramajes: [
+                { gramaje: "150", fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+                { gramaje: "200", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "250", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "300", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "350", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+              ]
+            },
+            {
+              min: 2, max: 25, gramajes: [
+                { gramaje: "150", fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+                { gramaje: "200", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "250", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "300", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "350", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+              ]
+            },
+            {
+              min: 26, max: 50, gramajes: [
+                { gramaje: "150", fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+                { gramaje: "200", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "250", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "300", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "350", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+              ]
+            }
+          ]
+        },
+        {
+          paperSize: "A3",
+          quantity: [
+            {
+              min: 1, max: 1, gramajes: [
+                { gramaje: "150", fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+                { gramaje: "200", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "250", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "300", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "350", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+              ]
+            },
+            {
+              min: 2, max: 25, gramajes: [
+                { gramaje: "150", fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+                { gramaje: "200", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "250", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "300", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "350", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+              ]
+            },
+            {
+              min: 26, max: 50, gramajes: [
+                { gramaje: "150", fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+                { gramaje: "200", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "250", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "300", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+                { gramaje: "350", fazes: [{ doble: true, price: 30 }, { doble: false, price: 45 }] },
+              ]
+            }
+          ]
+        },
+      ];
   }
 }
 

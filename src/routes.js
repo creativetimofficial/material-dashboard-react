@@ -44,6 +44,7 @@ import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import Cliente from "layouts/detallesCliente";
+import NuevoTrabajo from "layouts/nuevoTrabajo";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -60,6 +61,14 @@ const routes = [
     icon: <AccessTimeIcon fontSize="small" />,
     route: "/",
     component: <TrabajosPendientes />,
+  },
+  {
+    type: "collapse",
+    name: "Nuevo Trabajo",
+    key: "nuevoTrabajo",
+    icon: <Icon fontSize="small">receipt_long</Icon>,
+    route: "/nuevoTrabajo",
+    component: <NuevoTrabajo />,
   },
   {
     type: "collapse",
