@@ -131,26 +131,43 @@ export default function App() {
     </MDBox>
   );
 
-  return direction === "rtl" ? (
-    null
-  ) : (
+  // return (
+  //   <ThemeProvider theme={darkMode ? themeDark : theme}>
+  //     <CssBaseline />
+  //     {layout === "dashboard" && (
+  //       <>
+  //         <Sidenav
+  //           color={sidenavColor}
+  //           brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+  //           brandName="Material Dashboard 2"
+  //           routes={routes}
+  //           onMouseEnter={handleOnMouseEnter}
+  //           onMouseLeave={handleOnMouseLeave}
+  //         />
+  //         <Configurator />
+  //         {configsButton}
+  //       </>
+  //     )}
+  //     {layout === "vr" && <Configurator />}
+  //
+  //     <Routes>
+  //       {getRoutes(routes)}
+  //       <Route path="*" element={<Navigate to="/dashboard" />} />
+  //     </Routes>
+  //   </ThemeProvider>
+  // );
+
+  return (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
-      {layout === "dashboard" && (
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Material Dashboard 2"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          <Configurator />
-          {configsButton}
-        </>
-      )}
-      {layout === "vr" && <Configurator />}
+      <Sidenav
+        color={sidenavColor}
+        brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+        brandName="Grafica Publicar"
+        routes={routes}
+        onMouseEnter={handleOnMouseEnter}
+        onMouseLeave={handleOnMouseLeave}
+      />
       <Routes>
         {getRoutes(routes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />
