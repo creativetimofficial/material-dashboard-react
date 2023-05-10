@@ -40,32 +40,40 @@ function Precios() {
   };
   var lista = [];
   categorias.forEach(categoria => {
-    const title = <MDTypography>{categoria.paperSize}</MDTypography>;
-    var gramajes = [];
-    categoria.gramajes.forEach(elemento => {
+    const title = <MDTypography>{categoria.printSize}</MDTypography>;
+    var papel = [];
+    categoria.papel.forEach(elemento => {
       var rows = [];
       const columns = [
-        { Header: "Cantidad", accessor: "cantidad", align: "center" },
-        { Header: "4/0", accessor: "simpleFaz", align: "center" },
-        { Header: "4/4", accessor: "dobleFaz", align: "center" }
+
       ];
       elemento.quantities.forEach(quantity => {
-        rows.push(
-          {
-            "cantidad": <MDTypography variant="button" color="text" fontWeight="regular">{quantity.min}-{quantity.max}</MDTypography>,
-            "simpleFaz": <MDTypography variant="button" color="text" fontWeight="bold">${quantity.fazes[0].price}</MDTypography>,
-            "dobleFaz": <MDTypography variant="button" color="text" fontWeight="bold">${quantity.fazes[1].price}</MDTypography>
-          });
+        var row = {};
+        row["cantidad"] = (<MDTypography variant="button" color="text" fontWeight="regular">{quantity.min}-{quantity.max}</MDTypography>);
+        quantity.options.forEach(option => {
+          row[option.description] = (<MDTypography variant="button" color="text" fontWeight="bold">{option.value}</MDTypography>);
+        });
+
+        rows.push(row)
       });
-      gramajes.push(<Accordion expanded={expanded === elemento.gramaje + categoria.paperSize} onChange={handleChange(elemento.gramaje + categoria.paperSize)}>
+      Object.keys(rows[0]).forEach(key => {
+        columns.push({ Header: key, accessor: key, align: "center" });
+      })
+
+      papel.push(<Accordion expanded={expanded === elemento.gramaje + categoria.printSize} onChange={handleChange(elemento.gramaje + categoria.printSize)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '33%', flexShrink: 0 }}>
-            {elemento.gramaje} grs.
-          </Typography>
+          <MDTypography sx={{ width: '33%', flexShrink: 0 }}>
+            {elemento.gramaje === null ? "sin papel" : (elemento.gramaje + "grs.")}
+          </MDTypography>
+          <MDTypography sx={{ width: '20%', flexShrink: 0 }} fontWeight={"light"} color={"secondary"}>
+            {
+              elemento.caracteristicas.map((caracteristica) => "[" + caracteristica + "] ")
+            }
+          </MDTypography>
         </AccordionSummary>
         <AccordionDetails>
           <PriceTable
@@ -89,7 +97,7 @@ function Precios() {
             {title}
           </MDTypography>
           {
-            gramajes.map((gramaje) => { return gramaje }
+            papel.map((gramaje) => { return gramaje }
             )
           }
         </MDBox>

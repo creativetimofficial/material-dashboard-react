@@ -26,104 +26,110 @@ function getTablesAPI() {
 
   return [
     {
-      paperSize: "Sin Papel",
-      gramajes: [
+      printSize: "A4",
+      papel: [
         {
-          gramaje: "A3",
+          gramaje: "150",
+          caracteristicas: ["mate", "brillante"],
           quantities: [
-            { min: 101, max: 250, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 251, max: 500, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 501, max: 1000, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+          ]
+        },
+        {
+          gramaje: "200",
+          caracteristicas: ["mate", "brillante"],
+          quantities: [
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+          ]
+        },
+        {
+          gramaje: "250",
+          caracteristicas: ["mate", "brillante"],
+          quantities: [
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+          ]
+        },
+        {
+          gramaje: "300",
+          caracteristicas: ["mate", "brillante"],
+          quantities: [
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+          ]
+        },
+        {
+          gramaje: "350",
+          caracteristicas: ["mate", "brillante"],
+          quantities: [
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
           ]
         },
       ],
     },
     {
-      paperSize: "A4",
-      gramajes: [
+      printSize: "A3",
+      papel: [
         {
           gramaje: "150",
+          caracteristicas: ["mate", "brillante"],
           quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
           ]
         },
         {
           gramaje: "200",
+          caracteristicas: ["mate", "brillante"],
           quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
           ]
         },
         {
           gramaje: "250",
+          caracteristicas: ["mate", "brillante"],
           quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
           ]
         },
         {
           gramaje: "300",
+          caracteristicas: ["mate", "brillante"],
           quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
           ]
         },
         {
           gramaje: "350",
+          caracteristicas: ["mate", "brillante"],
           quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-          ]
-        },
-      ],
-    },
-    {
-      paperSize: "A3",
-      gramajes: [
-        {
-          gramaje: "150",
-          quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 2, max: 25, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
+            { min: 25, max: 50, options: [{ description: "4/4", value: "$20" }, { description: "4/0", value: "$15" }] },
           ]
         },
         {
-          gramaje: "200",
+          gramaje: null,
+          caracteristicas: [],
           quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-          ]
-        },
-        {
-          gramaje: "250",
-          quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-          ]
-        },
-        {
-          gramaje: "300",
-          quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-          ]
-        },
-        {
-          gramaje: "350",
-          quantities: [
-            { min: 1, max: 1, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 2, max: 25, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
-            { min: 25, max: 50, fazes: [{ doble: true, price: 20 }, { doble: false, price: 15 }] },
+            { min: 1, max: 1, options: [{ description: "valor", value: "$15" }, { description: "diseños", value: "2" }] },
+            { min: 2, max: 25, options: [{ description: "valor", value: "$15" }, { description: "diseños", value: "5" }] },
+            { min: 25, max: 50, options: [{ description: "valor", value: "$15" }, { description: "diseños", value: "10" }] },
           ]
         },
       ],
