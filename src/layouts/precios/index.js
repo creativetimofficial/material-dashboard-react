@@ -67,9 +67,9 @@ function Precios() {
           id="panel1bh-header"
         >
           <MDTypography sx={{ width: '33%', flexShrink: 0 }}>
-            {elemento.gramaje === null ? "sin papel" : (elemento.gramaje + "grs.")}
+            {elemento.gramaje === null ? "sin papel" : (elemento.gramaje)}
           </MDTypography>
-          <MDTypography sx={{ width: '20%', flexShrink: 0 }} fontWeight={"light"} color={"secondary"}>
+          <MDTypography sx={{ width: '33%', flexShrink: 0 }} fontWeight={"light"} color={"secondary"}>
             {
               elemento.caracteristicas.map((caracteristica) => "[" + caracteristica + "] ")
             }
