@@ -1,23 +1,8 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { useState } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
-
+import { Link,useNavigate} from "react-router-dom";
 // @mui material components
 import Card from "@mui/material/Card";
 import Switch from "@mui/material/Switch";
@@ -43,9 +28,12 @@ import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
-
+  const history = useNavigate();
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
-
+  const Login=()=>{
+      console.log('asdcasd');
+      history('/dashboard');
+  }
   return (
     <BasicLayout image={bgImage}>
       <Card>
@@ -101,7 +89,7 @@ function Basic() {
                 &nbsp;&nbsp;Remember me
               </MDTypography>
             </MDBox>
-            <MDBox mt={4} mb={1}>
+            <MDBox mt={4} mb={1} onClick={()=>Login()}>
               <MDButton variant="gradient" color="info" fullWidth>
                 sign in
               </MDButton>
