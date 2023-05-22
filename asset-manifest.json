@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/material-dashboard-react/static/js/main.be8d6196.js",
+    "main.js": "/material-dashboard-react/static/js/main.7a3f729f.js",
     "static/media/pattern-tree.svg": "/material-dashboard-react/static/media/pattern-tree.156bb943ac7fd244f10c115d085e085e.svg",
     "static/media/home-decor-3.jpg": "/material-dashboard-react/static/media/home-decor-3.74d13fcbd3c631fc7908.jpg",
     "static/media/home-decor-2.jpg": "/material-dashboard-react/static/media/home-decor-2.b4e5397c9846645ba275.jpg",
@@ -27,10 +27,9 @@
     "static/media/logo-spotify.svg": "/material-dashboard-react/static/media/logo-spotify.e83cf56c9d99a1fdf59e8deb58bbe470.svg",
     "static/media/logo-jira.svg": "/material-dashboard-react/static/media/logo-jira.c19fd4e416babfbd0fdb0a794188c601.svg",
     "static/media/logo-atlassian.svg": "/material-dashboard-react/static/media/logo-atlassian.f2b0e8570a4b4ce768854ff3dad1a6e1.svg",
-    "static/media/logo-asana.svg": "/material-dashboard-react/static/media/logo-asana.d758f410d82760a61d1eabcb03409de6.svg",
-    "main.be8d6196.js.map": "/material-dashboard-react/static/js/main.be8d6196.js.map"
+    "static/media/logo-asana.svg": "/material-dashboard-react/static/media/logo-asana.d758f410d82760a61d1eabcb03409de6.svg"
   },
   "entrypoints": [
-    "static/js/main.be8d6196.js"
+    "static/js/main.7a3f729f.js"
   ]
 }

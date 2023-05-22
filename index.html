@@ -1,10 +1,10 @@
 <!--
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2 React - v2.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -13,144 +13,8 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
 Software.
 -->
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <style>
-      .async-hide {
-        opacity: 0 !important;
-      }
-    </style>
-    <script>
-      !(function (e, n, t, a, c, s, d, i, m) {
-        (n.className += " " + t),
-          (s.start = 1 * new Date()),
-          (s.end = d =
-            function () {
-              n.className = n.className.replace(RegExp(" ?" + t), "");
-            }),
-          ((e[a] = e[a] || []).hide = s),
-          setTimeout(function () {
-            d(), (s.end = null);
-          }, 4e3),
-          (s.timeout = 4e3);
-      })(window, document.documentElement, "async-hide", "dataLayer", 0, { "GTM-K9BGS8K": !0 });
-    </script>
-    <script>
-      !(function (e, a, t, n, g, o, c) {
-        (e.GoogleAnalyticsObject = g),
-          (e.ga =
-            e.ga ||
-            function () {
-              (e.ga.q = e.ga.q || []).push(arguments);
-            }),
-          (e.ga.l = 1 * new Date()),
-          (o = a.createElement(t)),
-          (c = a.getElementsByTagName(t)[0]),
-          (o.async = 1),
-          (o.src = "https://www.google-analytics.com/analytics.js"),
-          c.parentNode.insertBefore(o, c);
-      })(window, document, "script", 0, "ga"),
-        ga("create", "UA-46172202-22", "auto", { allowLinker: !0 }),
-        ga("set", "anonymizeIp", !0),
-        ga("require", "GTM-K9BGS8K"),
-        ga("require", "displayfeatures"),
-        ga("require", "linker"),
-        ga("linker:autoLink", ["2checkout.com", "avangate.com"]);
-    </script>
-    <script>
-      !(function (e, t, a, n, g) {
-        (e[n] = e[n] || []), e[n].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var m = t.getElementsByTagName(a)[0],
-          r = t.createElement(a);
-        (r.async = !0),
-          (r.src = "https://www.googletagmanager.com/gtm.js?id=GTM-NKDMSK6"),
-          m.parentNode.insertBefore(r, m);
-      })(window, document, "script", "dataLayer");
-    </script>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="/material-dashboard-react/favicon.png" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#1A73E8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-react/apple-icon.png" />
-    <link rel="manifest" href="/material-dashboard-react/manifest.json" />
-    <title>Material Dashboard 2 React</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-      rel="stylesheet"
-    />
-    <link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard-react" />
-    <meta
-      name="keywords"
-      content="react, material ui, material, react template, material ui template, material template, react theme, material ui theme, material theme, react dashboard , material ui dashboard , material dashboard, react admin, material ui admin, material admin, react free, material template, material theme, material admin, material dashboard, admin, free dashboard, free admin template, free dashboard template, new, new template"
-    />
-    <meta
-      name="description"
-      content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
-"
-    />
-    <meta itemprop="name" content="Material Dashboard 2 React by Creative Tim" />
-    <meta
-      itemprop="description"
-      content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
-"
-    />
-    <meta
-      itemprop="image"
-      content="https://s3.amazonaws.com/creativetim_bucket/products/80/original/material-dashboard-pro-react.jpg"
-    />
-    <meta name="twitter:card" content="product" />
-    <meta name="twitter:site" content="@creativetim" />
-    <meta name="twitter:title" content="Material Dashboard 2 React by Creative Tim" />
-    <meta
-      name="twitter:description"
-      content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
-"
-    />
-    <meta name="twitter:creator" content="@creativetim" />
-    <meta
-      name="twitter:image"
-      content="https://s3.amazonaws.com/creativetim_bucket/products/80/original/material-dashboard-pro-react.jpg"
-    />
-    <meta property="fb:app_id" content="655968634437471" />
-    <meta property="og:title" content="Material Dashboard 2 React by Creative Tim" />
-    <meta property="og:type" content="article" />
-    <meta
-      property="og:url"
-      content="http://demos.creative-tim.com/now-ui-dashboard-pro/examples/dashboard.html"
-    />
-    <meta
-      property="og:image"
-      content="https://s3.amazonaws.com/creativetim_bucket/products/80/original/material-dashboard-pro-react.jpg"
-    />
-    <meta
-      property="og:description"
-      content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
-"
-    />
-    <meta property="og:site_name" content="Creative Tim" />
-    <script defer="defer" src="/material-dashboard-react/static/js/main.be8d6196.js"></script>
-    <script defer data-site="demos.creative-tim.com" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-  </head>
-  <body>
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe></noscript
-    ><noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><style>.async-hide{opacity:0!important}</style><script>!function(e,n,t,a,c,s,d,i,m){n.className+=" "+t,s.start=1*new Date,s.end=d=function(){n.className=n.className.replace(RegExp(" ?"+t),"")},(e[a]=e[a]||[]).hide=s,setTimeout((function(){d(),s.end=null}),4e3),s.timeout=4e3}(window,document.documentElement,"async-hide","dataLayer",0,{"GTM-K9BGS8K":!0})</script><script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-46172202-22","auto",{allowLinker:!0}),ga("set","anonymizeIp",!0),ga("require","GTM-K9BGS8K"),ga("require","displayfeatures"),ga("require","linker"),ga("linker:autoLink",["2checkout.com","avangate.com"])</script><script>!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-NKDMSK6",m.parentNode.insertBefore(r,m)}(window,document,"script","dataLayer")</script><meta charset="utf-8"/><link rel="shortcut icon" href="/material-dashboard-react/favicon.png"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#1A73E8"/><link rel="apple-touch-icon" sizes="76x76" href="/material-dashboard-react/apple-icon.png"/><link rel="manifest" href="/material-dashboard-react/manifest.json"/><title>Material Dashboard 2 React</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/><link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/><link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet"/><link rel="canonical" href="https://www.creative-tim.com/product/material-dashboard-react"/><meta name="keywords" content="react, material ui, material, react template, material ui template, material template, react theme, material ui theme, material theme, react dashboard , material ui dashboard , material dashboard, react admin, material ui admin, material admin, react free, material template, material theme, material admin, material dashboard, admin, free dashboard, free admin template, free dashboard template, new, new template"/><meta name="description" content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+"/><meta itemprop="name" content="Material Dashboard 2 React by Creative Tim"/><meta itemprop="description" content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+"/><meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/80/original/material-dashboard-pro-react.jpg"/><meta name="twitter:card" content="product"/><meta name="twitter:site" content="@creativetim"/><meta name="twitter:title" content="Material Dashboard 2 React by Creative Tim"/><meta name="twitter:description" content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+"/><meta name="twitter:creator" content="@creativetim"/><meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/80/original/material-dashboard-pro-react.jpg"/><meta property="fb:app_id" content="655968634437471"/><meta property="og:title" content="Material Dashboard 2 React by Creative Tim"/><meta property="og:type" content="article"/><meta property="og:url" content="http://demos.creative-tim.com/now-ui-dashboard-pro/examples/dashboard.html"/><meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/80/original/material-dashboard-pro-react.jpg"/><meta property="og:description" content="Material Dashboard 2 React is our newest free MUI Admin Template based on React. If you’re a developer looking to create an admin dashboard that is developer-friendly, rich with features, and highly customisable, here is your match. Our innovative MUI & React dashboard comes with a beautiful design inspired by Google's Material Design and it will help you create stunning websites & web apps to delight your clients.
+"/><meta property="og:site_name" content="Creative Tim"/><script defer="defer" data-site="demos.creative-tim.com" src="https://api.nepcha.com/js/nepcha-analytics.js"></script><script defer="defer" src="/material-dashboard-react/static/js/main.7a3f729f.js"></script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><noscript>You need to enable JavaScript to run this app.</noscript><div id="app"></div></body></html>
