@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2  React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -20,6 +20,15 @@ import PropTypes from "prop-types";
 
 // react-chartjs-2 components
 import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -34,6 +43,8 @@ import configs from "examples/Charts/BarCharts/HorizontalBarChart/configs";
 
 // Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function HorizontalBarChart({ icon, title, description, height, chart }) {
   const chartDatasets = chart.datasets
@@ -60,9 +71,9 @@ function HorizontalBarChart({ icon, title, description, height, chart }) {
             <MDBox
               width="4rem"
               height="4rem"
-              bgColor={icon.color || "info"}
+              bgColor={icon.color || "dark"}
               variant="gradient"
-              coloredShadow={icon.color || "info"}
+              coloredShadow={icon.color || "dark"}
               borderRadius="xl"
               display="flex"
               justifyContent="center"
@@ -87,7 +98,7 @@ function HorizontalBarChart({ icon, title, description, height, chart }) {
       {useMemo(
         () => (
           <MDBox height={height}>
-            <Bar data={data} options={options} />
+            <Bar data={data} options={options} redraw />
           </MDBox>
         ),
         [chart, height]

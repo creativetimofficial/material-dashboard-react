@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2  React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -20,6 +20,17 @@ import PropTypes from "prop-types";
 
 // react-chartjs-2 components
 import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -32,6 +43,17 @@ import MDProgress from "components/MDProgress";
 
 // ProgressLineChart configurations
 import configs from "examples/Charts/LineCharts/ProgressLineChart/config";
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 function ProgressLineChart({ color, icon, title, count, progress, height, chart }) {
   const { data, options } = configs(color, chart.labels || [], title, chart.data || []);
@@ -80,10 +102,10 @@ function ProgressLineChart({ color, icon, title, count, progress, height, chart 
       {useMemo(
         () => (
           <MDBox mt={2}>
-            <Line data={data} options={options} style={{ height }} />
+            <Line data={data} options={options} style={{ height }} redraw />
           </MDBox>
         ),
-        [chart, height]
+        [chart, height, color]
       )}
     </Card>
   );

@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.1.0
+* Material Dashboard 2  React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -20,6 +20,17 @@ import PropTypes from "prop-types";
 
 // react-chartjs-2 components
 import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -38,12 +49,26 @@ import configs from "examples/Charts/LineCharts/GradientLineChart/configs";
 // Material Dashboard 2 React base styles
 import colors from "assets/theme/base/colors";
 
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
+
 function GradientLineChart({ icon, title, description, height, chart }) {
   const chartRef = useRef(null);
   const [chartData, setChartData] = useState({});
-  const { data, options } = chartData;
 
   useEffect(() => {
+    const chartElement = chartRef.current;
+
+    if (!chartElement) return;
+
     const chartDatasets = chart.datasets
       ? chart.datasets.map((dataset) => ({
           ...dataset,
@@ -56,7 +81,7 @@ function GradientLineChart({ icon, title, description, height, chart }) {
           fill: true,
           maxBarThickness: 6,
           backgroundColor: gradientChartLine(
-            chartRef.current.children[0],
+            chartElement.ctx,
             colors[dataset.color] ? colors[dataset.color || "dark"].main : colors.dark.main
           ),
         }))
@@ -64,6 +89,8 @@ function GradientLineChart({ icon, title, description, height, chart }) {
 
     setChartData(configs(chart.labels || [], chartDatasets));
   }, [chart]);
+
+  const { data, options } = useMemo(() => chartData, [chartData]);
 
   const renderChart = (
     <MDBox py={2} pr={2} pl={icon.component ? 1 : 2}>
@@ -73,9 +100,9 @@ function GradientLineChart({ icon, title, description, height, chart }) {
             <MDBox
               width="4rem"
               height="4rem"
-              bgColor={icon.color || "info"}
+              bgColor={icon.color || "dark"}
               variant="gradient"
-              coloredShadow={icon.color || "info"}
+              coloredShadow={icon.color || "dark"}
               borderRadius="xl"
               display="flex"
               justifyContent="center"
@@ -97,14 +124,17 @@ function GradientLineChart({ icon, title, description, height, chart }) {
           </MDBox>
         </MDBox>
       ) : null}
-      {useMemo(
-        () => (
-          <MDBox ref={chartRef} sx={{ height }}>
-            <Line data={data} options={options} />
-          </MDBox>
-        ),
-        [chartData, height]
-      )}
+      <MDBox height={height}>
+        <Line
+          ref={chartRef}
+          data={{
+            labels: data?.labels || [],
+            datasets: data?.datasets || [],
+          }}
+          options={options}
+          redraw
+        />
+      </MDBox>
     </MDBox>
   );
 
