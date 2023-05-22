@@ -1,39 +1,59 @@
-
-import { useState } from "react";
+import { useState } from "react"
 
 // react-router-dom components
-import { Link,useNavigate} from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom"
 // @mui material components
-import Card from "@mui/material/Card";
-import Switch from "@mui/material/Switch";
-import Grid from "@mui/material/Grid";
-import MuiLink from "@mui/material/Link";
+import Card from "@mui/material/Card"
+import Switch from "@mui/material/Switch"
+import Grid from "@mui/material/Grid"
+import MuiLink from "@mui/material/Link"
 
 // @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import GoogleIcon from "@mui/icons-material/Google";
+import FacebookIcon from "@mui/icons-material/Facebook"
+import GitHubIcon from "@mui/icons-material/GitHub"
+import GoogleIcon from "@mui/icons-material/Google"
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDInput from "components/MDInput";
-import MDButton from "components/MDButton";
+import MDBox from "components/MDBox"
+import MDTypography from "components/MDTypography"
+import MDInput from "components/MDInput"
+import MDButton from "components/MDButton"
 
 // Authentication layout components
-import BasicLayout from "layouts/authentication/components/BasicLayout";
+import BasicLayout from "layouts/authentication/components/BasicLayout"
 
 // Images
-import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+import bgImage from "assets/images/bg-sign-in-basic.jpeg"
 
 function Basic() {
-  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false)
+  const [passwordN, setPasswordN] = useState("")
+  const [phoneNum, setPhoneNum] = useState("")
   const history = useNavigate();
-  const handleSetRememberMe = () => setRememberMe(!rememberMe);
-  const Login=()=>{
-      console.log('asdcasd');
-      history('/dashboard');
+  const handleSetRememberMe = () => setRememberMe(!rememberMe)
+  const Login = () => {
+    console.log("passwordN", passwordN)
+    console.log("phoneNum", phoneNum)
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        password: passwordN,
+        phoneNumber: phoneNum,
+      }),
+    }
+    fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data?.objectKoinot?.accessToken?.length > 0 &&data.success===200) {
+          history("/dashboard")
+          localStorage.setItem("Token", data.objectKoinot.accessToken);
+        }
+      })
+
+   
   }
+
   return (
     <BasicLayout image={bgImage}>
       <Card>
@@ -72,10 +92,20 @@ function Basic() {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
-              <MDInput type="email" label="Email" fullWidth />
+              <MDInput
+                type="email"
+                label="Email"
+                fullWidth
+                onChange={(e) => setPhoneNum(e.target.value)}
+              />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="Password" fullWidth />
+              <MDInput
+                type="password"
+                label="Password"
+                fullWidth
+                onChange={(e) => setPasswordN(e.target.value)}
+              />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -89,7 +119,7 @@ function Basic() {
                 &nbsp;&nbsp;Remember me
               </MDTypography>
             </MDBox>
-            <MDBox mt={4} mb={1} onClick={()=>Login()}>
+            <MDBox mt={4} mb={1} onClick={() => Login()}>
               <MDButton variant="gradient" color="info" fullWidth>
                 sign in
               </MDButton>
@@ -113,7 +143,7 @@ function Basic() {
         </MDBox>
       </Card>
     </BasicLayout>
-  );
+  )
 }
 
-export default Basic;
+export default Basic
