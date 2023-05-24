@@ -23,6 +23,7 @@
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
+import Dashboard2 from "layouts/dashboard copy";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 // import RTL from "layouts/RTL";
@@ -36,6 +37,14 @@ import Icon from "@mui/material/Icon";
 import React from "react";
 
 const routes = [
+  {
+    type: "collapse",
+    name: "Categoreis",
+    key: "categories",
+    icon: <Icon fontSize="small">Categoreis</Icon>,
+    route: "/categories",
+    component: <Dashboard2 />,
+  },
   {
     type: "collapse",
     name: "Dashboard",
