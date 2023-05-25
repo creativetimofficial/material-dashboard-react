@@ -127,6 +127,7 @@ function DefaultNavbar({ transparent, light, action }) {
             name="sign in"
             route="/authentication/sign-in"
             light={light}
+            Dashboard="sign-in"
           />
         </MDBox>
         {action &&

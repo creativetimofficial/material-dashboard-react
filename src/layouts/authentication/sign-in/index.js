@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // react-router-dom components
-import { Link ,useNavigate} from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
 // @mui material components
 import Card from "@mui/material/Card"
 import Switch from "@mui/material/Switch"
@@ -25,34 +25,72 @@ import BasicLayout from "layouts/authentication/components/BasicLayout"
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg"
 
+
+
+
+
+
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)
+  
+  const history = useNavigate();
+
   const [passwordN, setPasswordN] = useState("")
   const [phoneNum, setPhoneNum] = useState("")
-  const history = useNavigate();
+
   const handleSetRememberMe = () => setRememberMe(!rememberMe)
-  const Login = () => {
-    console.log("passwordN", passwordN)
-    console.log("phoneNum", phoneNum)
+  const Login = () =>{
+    console.log(passwordN)
+    console.log(phoneNum)
+    
     const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
-        password: passwordN,
-        phoneNumber: phoneNum,
+        password : passwordN,
+        phoneNumber : phoneNum,
+       
       }),
-    }
-    fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
+      };
+      
+      fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        if (data?.objectKoinot?.accessToken?.length > 0 &&data.success===200) {
+        if(data?.objectKoinot?.accessToken?.length > 0 &&data.success === 200){
           history("/dashboard")
-          localStorage.setItem("Token", data.objectKoinot.accessToken);
+          localStorage.setItem("Token", data.objectKoinot.accessToken)
         }
-      })
+      });  
+  };
 
-   
+  const OnSignup = () => {
+    console.log('on change sign-up')
   }
+      
+      
+  
+  // const Login = () => {
+  //   console.log("passwordN", passwordN)
+  //   console.log("phoneNum", phoneNum)
+  //   const requestOptions = {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       password: passwordN,
+  //       phoneNumber: phoneNum,
+  //     }),
+  //   }
+  //   fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data?.objectKoinot?.accessToken?.length > 0 &&data.success===200) {
+  //         history("/dashboard")
+  //         localStorage.setItem("Token", data.objectKoinot.accessToken);
+  //       }
+  //     })
+  // }
 
   return (
     <BasicLayout image={bgImage}>
@@ -93,9 +131,10 @@ function Basic() {
           <MDBox component="form" role="form">
             <MDBox mb={2}>
               <MDInput
-                type="email"
-                label="Email"
+                type="phoneNumber"
+                label="PhoneNumber"
                 fullWidth
+                // onChange={(e) => setPhoneNum(e.target.value)}
                 onChange={(e) => setPhoneNum(e.target.value)}
               />
             </MDBox>
@@ -104,7 +143,9 @@ function Basic() {
                 type="password"
                 label="Password"
                 fullWidth
+                // onChange={(e) => setPasswordN(e.target.value)}
                 onChange={(e) => setPasswordN(e.target.value)}
+                
               />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
@@ -119,13 +160,14 @@ function Basic() {
                 &nbsp;&nbsp;Remember me
               </MDTypography>
             </MDBox>
+            
             <MDBox mt={4} mb={1} onClick={() => Login()}>
               <MDButton variant="gradient" color="info" fullWidth>
                 sign in
               </MDButton>
             </MDBox>
-            <MDBox mt={3} mb={1} textAlign="center">
-              <MDTypography variant="button" color="text">
+            <MDBox mt={3} mb={1} textAlign="center" >
+              <MDTypography variant="button" color="text" onClick={() => OnSignup()}>
                 Don&apos;t have an account?{" "}
                 <MDTypography
                   component={Link}
