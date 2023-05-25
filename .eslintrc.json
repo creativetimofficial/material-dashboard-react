@@ -15,6 +15,7 @@
   "rules": {
     "prettier/prettier": 0,
     "default-param-last": "off",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-props-no-spreading": [
