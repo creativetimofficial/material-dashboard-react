@@ -30,6 +30,7 @@ import visaLogo from "assets/images/logos/visa.png";
 
 // Material Dashboard 2 React context
 import { useMaterialUIController } from "context";
+import React from "react";
 
 function PaymentMethod() {
   const [controller] = useMaterialUIController();

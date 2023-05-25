@@ -131,8 +131,8 @@ function Basic() {
           <MDBox component="form" role="form">
             <MDBox mb={2}>
               <MDInput
-                type="password"
-                label="Password"
+                type="phoneNumber"
+                label="PhoneNumber"
                 fullWidth
                 // onChange={(e) => setPhoneNum(e.target.value)}
                 onChange={(e) => setPhoneNum(e.target.value)}
@@ -140,8 +140,8 @@ function Basic() {
             </MDBox>
             <MDBox mb={2}>
               <MDInput
-                type="phoneNumber"
-                label="PhoneNumber"
+                type="password"
+                label="Password"
                 fullWidth
                 // onChange={(e) => setPasswordN(e.target.value)}
                 onChange={(e) => setPasswordN(e.target.value)}

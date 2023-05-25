@@ -22,6 +22,7 @@
 */
 
 // Material Dashboard 2 React layouts
+
 import Dashboard from "layouts/dashboard";
 import Dashboard2 from "layouts/dashboard copy";
 import Tables from "layouts/tables";
