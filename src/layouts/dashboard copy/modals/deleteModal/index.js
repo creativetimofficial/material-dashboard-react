@@ -30,15 +30,26 @@ export default function DeleteModal({props}) {
   const [deleteBtn, setDeleteBtn] = useState(props)
 
 
-  const handleDelete = () => {
-    setDeleteBtn(true)
+  const handleDelete = (id) => {
+    const myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjU1NDk0OTAxLCJleHAiOjE2NTcyMjI5MDF9.o0UhjU8WqT9OARMFzSP7TLiSv07RvOZaMH6J3kbh4gH2mCxjAdsp6NMzMsSHimHe48tRYhNlmFimF2axIvTXFw");
+
+const raw = "";
+
+const requestOptions = {
+  method: 'DELETE',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
+  .then(response => response.text())
+  .then(result => setDeleteBtn(result))
+  .catch(error => console.log('error', error));
   }
 
   console.log(deleteBtn)
-  
- 
-  
-
 
   return (
     <div>
