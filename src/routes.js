@@ -1,4 +1,3 @@
-
 /** 
   All of the routes for the Material Dashboard 2 React are added here,
   You can add a new route, customize the routes and delete the routes here.
@@ -23,29 +22,21 @@
 
 // Material Dashboard 2 React layouts
 
-import Dashboard from "layouts/dashboard";
-import Dashboard2 from "layouts/dashboard copy";
-import Tables from "layouts/tables";
-import Billing from "layouts/billing";
+import Dashboard from "layouts/dashboard"
+import Dashboard2 from "layouts/dashboard copy"
+import Tables from "layouts/tables"
+import Billing from "layouts/billing"
 // import RTL from "layouts/RTL";
-import Notifications from "layouts/notifications";
-import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+import Notifications from "layouts/notifications"
+import Profile from "layouts/profile"
+import SignIn from "layouts/authentication/sign-in"
+import SignUp from "layouts/authentication/sign-up"
 
 // @mui icons
-import Icon from "@mui/material/Icon";
-import React from "react";
+import Icon from "@mui/material/Icon"
+import React from "react"
 
 const routes = [
-  {
-    type: "collapse",
-    name: "Categoreis",
-    key: "categories",
-    icon: <Icon fontSize="small">Categoreis</Icon>,
-    route: "/categories",
-    component: <Dashboard2 />,
-  },
   {
     type: "collapse",
     name: "Dashboard",
@@ -53,6 +44,14 @@ const routes = [
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
     component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "Categoreis",
+    key: "categories",
+    icon: <Icon fontSize="small">Categoreis</Icon>,
+    route: "/categories",
+    component: <Dashboard2 />,
   },
   {
     type: "collapse",
@@ -110,6 +109,6 @@ const routes = [
     route: "/authentication/sign-up",
     component: <SignUp />,
   },
-];
+]
 
-export default routes;
+export default routes
