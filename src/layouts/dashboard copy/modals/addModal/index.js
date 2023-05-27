@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal"
 import Icon from "@mui/material/Icon"
 import MDInput from "components/MDInput"
 
-export default function AddModal() {
+export default function AddModal({ saveBtn }) {
   const style = {
     position: "absolute",
     top: "50%",
@@ -24,12 +24,31 @@ export default function AddModal() {
   }
 
   const [open, setOpen] = React.useState(false)
+  const [textUzb, setTextUzb] = React.useState('')
+  const [textUzbK, setTextUzbK] = React.useState('')
+  const [textRus, setTextRus] = React.useState('')
+  const [textEng, setTextEng] = React.useState('')
   const handleOpen = () => setOpen(true)
   const handleClose = () => {
-    
     setOpen(false)
+    setTextUzb('')
+    setTextUzbK('')
+    setTextRus('')
+    setTextEng('')
   }
-
+  const handleAdd = () => {
+    saveBtn({
+      addUzb: textUzb,
+      addUzbK: textUzbK,
+      addRus: textRus,
+      addEng: textEng
+    })
+    setOpen(false)
+    setTextUzb('')
+    setTextUzbK('')
+    setTextRus('')
+    setTextEng('')
+  }
   return (
     <div>
       <MDButton onClick={handleOpen} variant="gradient" color="dark">
@@ -45,11 +64,11 @@ export default function AddModal() {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Kategorya qushish
           </Typography>
-          <MDInput label="Uzbek" />
-          <MDInput label="Kiril" />
-          <MDInput label="English" />
-          <MDInput label="Russio" />
-          <MDButton onClick={handleClose} variant="gradient" color="dark">
+          <MDInput label="Uzbek" value={textUzb} onChange={(e) => setTextUzb(e.target.value)} />
+          <MDInput label="Kiril" value={textUzbK} onChange={(e) => setTextUzbK(e.target.value)} />
+          <MDInput label="English" value={textEng} onChange={(e) => setTextEng(e.target.value)} />
+          <MDInput label="Russio" value={textRus} onChange={(e) => setTextRus(e.target.value)} />
+          <MDButton onClick={handleAdd} variant="gradient" color="dark">
             Save
           </MDButton>
           <MDButton onClick={handleClose} variant="gradient" color="dark">
