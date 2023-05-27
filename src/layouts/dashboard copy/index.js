@@ -20,6 +20,7 @@ import DeleteModal from "./modals/deleteModal"
 import EditModal from "./modals/editModal"
 
 function Dashboard() {
+
   const [categories, setCategories] = useState([])
   useEffect(() => {
     const requestOptions = {
@@ -64,21 +65,46 @@ function Dashboard() {
     edit: (
       <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
         <MDButton variant="text" color="dark">
-          <Tooltip title="Edit Categories" placement="top">
-            <EditModal props={item} />
-          </Tooltip>
+          <EditModal props={item} />
         </MDButton>
       </MDTypography>
     ),
     delete: (
       <MDTypography component="a" href="#" variant="caption" color="error" fontWeight="medium">
         <Tooltip title="Delete" color="error">
-          <DeleteModal />
+          <DeleteModal props={item}/>
         </Tooltip>
       </MDTypography>
     ),
   }))
+  const addCategory = (add) => {
+    console.log(add)
+    const Token = localStorage.getItem("Token")
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${Token}`);
 
+    const raw = JSON.stringify({
+      "id": 1,
+      "parentCategory": 1,
+      "textEn": add.addEng,
+      "textRu": add.addRus,
+      "textUz": add.addUzb,
+      "textUzK": add.addUzbK
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
   return (
     <DashboardLayout>
       <h1>Category</h1>
@@ -103,7 +129,7 @@ function Dashboard() {
                 <MDTypography variant="h4" color="white">
                   Category Table
                 </MDTypography>
-                <AddModal />
+                <AddModal saveBtn={(e) => addCategory(e)} />
               </MDBox>
               <MDBox pt={3}>
                 <DataTable

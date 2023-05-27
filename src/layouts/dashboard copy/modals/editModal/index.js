@@ -4,6 +4,7 @@ import Modal from "@mui/material/Modal"
 import Typography from "@mui/material/Typography"
 import MDButton from "components/MDButton"
 import MDInput from "components/MDInput"
+import Tooltip from "@mui/material/Tooltip"
 import * as React from "react"
 
 export default function EditModal({ props }) {
@@ -22,6 +23,7 @@ export default function EditModal({ props }) {
     height: "390px",
     justifyContent: "space-between",
   }
+  
   const [open, setOpen] = React.useState(false)
   const [textUzb, setTextUzb] = React.useState(props.textUz)
   const [textUzbK, setTextUzbK] = React.useState(props.textUzK)
@@ -29,13 +31,16 @@ export default function EditModal({ props }) {
   const [textEng, setTextEng] = React.useState(props.textEn)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+  
 
   return (
     <div>
       <MDButton onClick={handleOpen}>
-        <Icon sx={{ cursor: "pointer" }} fontSize="small">
-          edit:
-        </Icon>
+        <Tooltip title="Edit Categories" placement="top">
+          <Icon sx={{ cursor: "pointer" }} fontSize="small">
+            edit:
+          </Icon>
+        </Tooltip>
       </MDButton>
       <Modal
         open={open}
@@ -67,7 +72,7 @@ export default function EditModal({ props }) {
             value={textRus}
             onChange={(e) => setTextRus(e.target.value)}
           />
-          <MDButton onClick={handleClose} variant="gradient" color="dark">
+          <MDButton onClick={()=> handleClose(props.item)} variant="gradient" color="dark">
             Save
           </MDButton>
           <MDButton onClick={handleClose} variant="gradient" color="dark">
