@@ -8,7 +8,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout"
 import MDBox from "components/MDBox"
 import MDButton from "components/MDButton"
 import MDTypography from "components/MDTypography"
-
+import MDSnackbar from "components/MDSnackbar"
 // Material Dashboard 2 React example components
 import Tooltip from "@mui/material/Tooltip"
 import DashboardNavbar from "examples/Navbars/DashboardNavbar"
@@ -20,8 +20,16 @@ import DeleteModal from "./modals/deleteModal"
 import EditModal from "./modals/editModal"
 
 function Dashboard() {
-
   const [categories, setCategories] = useState([])
+  // Succes Notification
+  const [successSB, setSuccessSB] = useState({ open: false, message: "" })
+  const openSuccessSB = (mes) => setSuccessSB({ open: true, message: mes })
+  const closeSuccessSB = () => setSuccessSB({ open: false })
+  // Error Notification
+  const [errorSB, setErrorSB] = useState({ open: false, message: "" })
+  const openErrorSB = (errorMes) => setErrorSB({ open: true, message: errorMes })
+  const closeErrorSB = () => setErrorSB({ open: false })
+
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -40,6 +48,33 @@ function Dashboard() {
     { Header: "Edit", accessor: "edit", width: "20%", align: "right" },
     { Header: "Delete", accessor: "delete", width: "20%", align: "right" },
   ]
+
+  // Delete Category
+  const deleteCategory = (id) => {
+    const Token = localStorage.getItem("Token")
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${Token}`)
+    const requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      redirect: "follow",
+    }
+    console.log(id, "id delete")
+    fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const res = JSON.parse(result)
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category deleted successfully")
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not deleted ${error}`)
+      })
+  }
 
   const rows = categories.map((item) => ({
     uzbek: (
@@ -72,39 +107,76 @@ function Dashboard() {
     delete: (
       <MDTypography component="a" href="#" variant="caption" color="error" fontWeight="medium">
         <Tooltip title="Delete" color="error">
-          <DeleteModal props={item}/>
+          <DeleteModal itemData={item} deleteBtn={(e) => deleteCategory(e)} />
         </Tooltip>
       </MDTypography>
     ),
   }))
+
+  // Notifications
+  const renderSuccessSB = (
+    <MDSnackbar
+      color="success"
+      icon="check"
+      title="Material Dashboard"
+      content={successSB.message}
+      open={successSB.open}
+      onClose={closeSuccessSB}
+      close={closeSuccessSB}
+      bgWhite
+    />
+  )
+  const renderErrorSB = (
+    <MDSnackbar
+      color="error"
+      icon="warning"
+      title="Material Dashboard"
+      content={errorSB.message}
+      open={errorSB.open}
+      onClose={closeErrorSB}
+      close={closeErrorSB}
+      bgWhite
+    />
+  )
+  // Add Category
   const addCategory = (add) => {
     console.log(add)
     const Token = localStorage.getItem("Token")
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Bearer ${Token}`);
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${Token}`)
 
     const raw = JSON.stringify({
-      "id": 1,
-      "parentCategory": 1,
-      "textEn": add.addEng,
-      "textRu": add.addRus,
-      "textUz": add.addUzb,
-      "textUzK": add.addUzbK
-    });
+      id: 1,
+      parentCategory: 1,
+      textEn: add.addEng,
+      textRu: add.addRus,
+      textUz: add.addUzb,
+      // textUzK: add.addUzbK,
+    })
 
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: myHeaders,
       body: raw,
-      redirect: 'follow'
-    };
+      redirect: "follow",
+    }
 
     fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+      .then((response) => response.text())
+      .then((result) => {
+        const res = JSON.parse(result)
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category added successfully")
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not added ${error}`)
+      })
   }
+
   return (
     <DashboardLayout>
       <h1>Category</h1>
@@ -144,6 +216,8 @@ function Dashboard() {
           </Grid>
         </Grid>
       </MDBox>
+      {renderSuccessSB}
+      {renderErrorSB}
     </DashboardLayout>
   )
 }

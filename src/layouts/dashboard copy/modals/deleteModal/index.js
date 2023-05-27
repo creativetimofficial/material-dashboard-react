@@ -6,8 +6,7 @@ import Typography from "@mui/material/Typography"
 import MDButton from "components/MDButton"
 import { useState } from "react"
 
-
-export default function DeleteModal({props}) {
+export default function DeleteModal({ deleteBtn, itemData }) {
   const style = {
     position: "absolute",
     top: "50%",
@@ -27,30 +26,10 @@ export default function DeleteModal({props}) {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  const [deleteBtn, setDeleteBtn] = useState(props)
-
-
-  const handleDelete = (id) => {
-    const myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyIiwiaWF0IjoxNjU1NDk0OTAxLCJleHAiOjE2NTcyMjI5MDF9.o0UhjU8WqT9OARMFzSP7TLiSv07RvOZaMH6J3kbh4gH2mCxjAdsp6NMzMsSHimHe48tRYhNlmFimF2axIvTXFw");
-
-const raw = "";
-
-const requestOptions = {
-  method: 'DELETE',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
-
-fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
-  .then(response => response.text())
-  .then(result => setDeleteBtn(result))
-  .catch(error => console.log('error', error));
+  const handleDelete = (value) => {
+    deleteBtn(value)
+    setOpen(false)
   }
-
-  console.log(deleteBtn)
-
   return (
     <div>
       <MDButton onClick={handleOpen}>
@@ -67,8 +46,9 @@ fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Kategorya ochirmoqchimisiz?
+            {itemData.textUzb}
           </Typography>
-          <MDButton onClick={(e) => handleDelete(e.target.value)} variant="gradient" color="dark">
+          <MDButton onClick={() => handleDelete(itemData.id)} variant="gradient" color="dark">
             Xa
           </MDButton>
           <MDButton onClick={handleClose} variant="gradient" color="dark">
