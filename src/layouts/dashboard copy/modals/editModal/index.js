@@ -7,7 +7,7 @@ import MDInput from "components/MDInput"
 import Tooltip from "@mui/material/Tooltip"
 import * as React from "react"
 
-export default function EditModal({ props }) {
+export default function EditModal({ nameUzb, nameUzbK, nameRus, nameEng, saveAllName }) {
   const style = {
     position: "absolute",
     top: "50%",
@@ -23,15 +23,17 @@ export default function EditModal({ props }) {
     height: "390px",
     justifyContent: "space-between",
   }
-  
   const [open, setOpen] = React.useState(false)
-  const [textUzb, setTextUzb] = React.useState(props.textUz)
-  const [textUzbK, setTextUzbK] = React.useState(props.textUzK)
-  const [textRus, setTextRus] = React.useState(props.textRu)
-  const [textEng, setTextEng] = React.useState(props.textEn)
+  const [textUz, setTextUzb] = React.useState(nameUzb)
+  const [textUzK, setTextUzbK] = React.useState(nameUzbK)
+  const [textRu, setTextRus] = React.useState(nameRus)
+  const [textEn, setTextEng] = React.useState(nameEng)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  
+  const handleSave = () => {
+    saveAllName({ textUz, textUzK, textRu, textEn })
+    setOpen(false)
+  }
 
   return (
     <div>
@@ -54,25 +56,25 @@ export default function EditModal({ props }) {
           </Typography>
           <MDInput
             plesholder="Uzbek"
-            value={textUzb}
+            value={textUz}
             onChange={(e) => setTextUzb(e.target.value)}
           />
           <MDInput
             plesholder="Kiril"
-            value={textUzbK}
+            value={textUzK}
             onChange={(e) => setTextUzbK(e.target.value)}
           />
           <MDInput
             plesholder="English"
-            value={textEng}
+            value={textEn}
             onChange={(e) => setTextEng(e.target.value)}
           />
           <MDInput
             plesholder="Russia"
-            value={textRus}
+            value={textRu}
             onChange={(e) => setTextRus(e.target.value)}
           />
-          <MDButton onClick={()=> handleClose(props.item)} variant="gradient" color="dark">
+          <MDButton onClick={() => handleSave()} variant="gradient" color="dark">
             Save
           </MDButton>
           <MDButton onClick={handleClose} variant="gradient" color="dark">
