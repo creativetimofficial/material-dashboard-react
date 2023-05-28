@@ -21,6 +21,7 @@ import EditModal from "./modals/editModal"
 
 function Dashboard() {
   const [categories, setCategories] = useState([])
+  const [categoriesRef, setCategoriesRef] = useState(false)
   // Succes Notification
   const [successSB, setSuccessSB] = useState({ open: false, message: "" })
   const openSuccessSB = (mes) => setSuccessSB({ open: true, message: mes })
@@ -38,7 +39,7 @@ function Dashboard() {
     fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
       .then((response) => response.json())
       .then((data) => setCategories(data.objectKoinot))
-  }, [])
+  }, [categoriesRef])
 
   const columns = [
     { Header: "Uzb", accessor: "uzbek", width: "20%", align: "left" },
@@ -60,7 +61,7 @@ function Dashboard() {
       headers: myHeaders,
       redirect: "follow",
     }
-    console.log(id, "id delete")
+
     fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
       .then((response) => response.text())
       .then((result) => {
@@ -68,11 +69,48 @@ function Dashboard() {
         console.log(typeof res.message, res.success)
         if (res.success === 200) {
           openSuccessSB("Category deleted successfully")
+          setCategoriesRef(!categoriesRef)
         }
       })
       .catch((error) => {
         console.log(error)
         openErrorSB(`Category not deleted ${error}`)
+      })
+  }
+  // Edit Category
+  const editCategory = (edit) => {
+    console.log(edit)
+    const Token = localStorage.getItem("Token")
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${Token}`)
+
+    const raw = JSON.stringify({
+      id: 1,
+      parentCategory: 1,
+      edit,
+    })
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    }
+
+    fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const res = JSON.parse(result)
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category edit successfully")
+          setCategoriesRef(!categoriesRef)
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not Edit ${error}`)
       })
   }
 
@@ -100,7 +138,13 @@ function Dashboard() {
     edit: (
       <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
         <MDButton variant="text" color="dark">
-          <EditModal props={item} />
+          <EditModal
+            nameUzb={item.textUz}
+            nameUzbK={item.textUzK}
+            nameRus={item.textRu}
+            nameEng={item.textEn}
+            saveAllName={(e) => editCategory(e)}
+          />
         </MDButton>
       </MDTypography>
     ),
@@ -169,6 +213,7 @@ function Dashboard() {
         console.log(typeof res.message, res.success)
         if (res.success === 200) {
           openSuccessSB("Category added successfully")
+          setCategoriesRef(!categoriesRef)
         }
       })
       .catch((error) => {
