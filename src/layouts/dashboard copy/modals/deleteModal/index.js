@@ -30,6 +30,7 @@ export default function DeleteModal({ deleteBtn, itemData }) {
     deleteBtn(value)
     setOpen(false)
   }
+
   return (
     <div>
       <MDButton onClick={handleOpen}>

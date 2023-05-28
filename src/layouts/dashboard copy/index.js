@@ -29,7 +29,8 @@ function Dashboard() {
   const [errorSB, setErrorSB] = useState({ open: false, message: "" })
   const openErrorSB = (errorMes) => setErrorSB({ open: true, message: errorMes })
   const closeErrorSB = () => setErrorSB({ open: false })
-
+  
+  //  Categories information api
   useEffect(() => {
     const requestOptions = {
       method: "GET",
@@ -40,105 +41,7 @@ function Dashboard() {
       .then((data) => setCategories(data.objectKoinot))
   }, [])
 
-  const columns = [
-    { Header: "Uzb", accessor: "uzbek", width: "20%", align: "left" },
-    { Header: "UzK", accessor: "kiril", width: "20%", align: "left" },
-    { Header: "Rus", accessor: "ruscha", width: "20%", align: "left" },
-    { Header: "Eng", accessor: "english", width: "20%", align: "left" },
-    { Header: "Edit", accessor: "edit", width: "20%", align: "right" },
-    { Header: "Delete", accessor: "delete", width: "20%", align: "right" },
-  ]
-
-  // Delete Category
-  const deleteCategory = (id) => {
-    const Token = localStorage.getItem("Token")
-    const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/json")
-    myHeaders.append("Authorization", `Bearer ${Token}`)
-    const requestOptions = {
-      method: "DELETE",
-      headers: myHeaders,
-      redirect: "follow",
-    }
-    console.log(id, "id delete")
-    fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        const res = JSON.parse(result)
-        console.log(typeof res.message, res.success)
-        if (res.success === 200) {
-          openSuccessSB("Category deleted successfully")
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        openErrorSB(`Category not deleted ${error}`)
-      })
-  }
-
-  const rows = categories.map((item) => ({
-    uzbek: (
-      <MDTypography component="a" color="dark" href="#" variant="caption" fontWeight="medium">
-        {item.textUz}
-      </MDTypography>
-    ),
-    kiril: (
-      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        {item.textUzK}
-      </MDTypography>
-    ),
-    ruscha: (
-      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        {item.textRu}
-      </MDTypography>
-    ),
-    english: (
-      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        {item.textEn}
-      </MDTypography>
-    ),
-    edit: (
-      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        <MDButton variant="text" color="dark">
-          <EditModal props={item} />
-        </MDButton>
-      </MDTypography>
-    ),
-    delete: (
-      <MDTypography component="a" href="#" variant="caption" color="error" fontWeight="medium">
-        <Tooltip title="Delete" color="error">
-          <DeleteModal itemData={item} deleteBtn={(e) => deleteCategory(e)} />
-        </Tooltip>
-      </MDTypography>
-    ),
-  }))
-
-  // Notifications
-  const renderSuccessSB = (
-    <MDSnackbar
-      color="success"
-      icon="check"
-      title="Material Dashboard"
-      content={successSB.message}
-      open={successSB.open}
-      onClose={closeSuccessSB}
-      close={closeSuccessSB}
-      bgWhite
-    />
-  )
-  const renderErrorSB = (
-    <MDSnackbar
-      color="error"
-      icon="warning"
-      title="Material Dashboard"
-      content={errorSB.message}
-      open={errorSB.open}
-      onClose={closeErrorSB}
-      close={closeErrorSB}
-      bgWhite
-    />
-  )
-  // Add Category
+  // Add Category api
   const addCategory = (add) => {
     console.log(add)
     const Token = localStorage.getItem("Token")
@@ -176,6 +79,107 @@ function Dashboard() {
         openErrorSB(`Category not added ${error}`)
       })
   }
+
+  // Delete Category api
+  const deleteCategory = (id) => {
+    const Token = localStorage.getItem("Token")
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${Token}`)
+    const requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      redirect: "follow",
+    }
+    console.log(id, "id delete")
+    fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const res = JSON.parse(result)
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category deleted successfully")
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not deleted ${error}`)
+      })
+  }
+
+  // Notifications
+  const renderSuccessSB = (
+    <MDSnackbar
+      color="success"
+      icon="check"
+      title="Material Dashboard"
+      content={successSB.message}
+      open={successSB.open}
+      onClose={closeSuccessSB}
+      close={closeSuccessSB}
+      bgWhite
+    />
+  )
+  const renderErrorSB = (
+    <MDSnackbar
+      color="error"
+      icon="warning"
+      title="Material Dashboard"
+      content={errorSB.message}
+      open={errorSB.open}
+      onClose={closeErrorSB}
+      close={closeErrorSB}
+      bgWhite
+    />
+  )
+
+  //  Columns port
+  const columns = [
+    { Header: "Uzb", accessor: "uzbek", width: "20%", align: "left" },
+    { Header: "UzK", accessor: "kiril", width: "20%", align: "left" },
+    { Header: "Rus", accessor: "ruscha", width: "20%", align: "left" },
+    { Header: "Eng", accessor: "english", width: "20%", align: "left" },
+    { Header: "Edit", accessor: "edit", width: "20%", align: "right" },
+    { Header: "Delete", accessor: "delete", width: "20%", align: "right" },
+  ]
+
+  //  Rows categories
+  const rows = categories.map((item) => ({
+    uzbek: (
+      <MDTypography component="a" color="dark" href="#" variant="caption" fontWeight="medium">
+        {item.textUz}
+      </MDTypography>
+    ),
+    kiril: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {item.textUzK}
+      </MDTypography>
+    ),
+    ruscha: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {item.textRu}
+      </MDTypography>
+    ),
+    english: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {item.textEn}
+      </MDTypography>
+    ),
+    edit: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        <MDButton variant="text" color="dark">
+          <EditModal props={item} />
+        </MDButton>
+      </MDTypography>
+    ),
+    delete: (
+      <MDTypography component="a" href="#" variant="caption" color="error" fontWeight="medium">
+        <Tooltip title="Delete" color="error">
+          <DeleteModal itemData={item} deleteBtn={(e) => deleteCategory(e)} />
+        </Tooltip>
+      </MDTypography>
+    ),
+  }))
 
   return (
     <DashboardLayout>
