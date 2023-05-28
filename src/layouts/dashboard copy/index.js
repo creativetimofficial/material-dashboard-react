@@ -21,6 +21,7 @@ import EditModal from "./modals/editModal"
 
 function Dashboard() {
   const [categories, setCategories] = useState([])
+  const [categoriesRef, setCategoriesRef] = useState(false)
   // Succes Notification
   const [successSB, setSuccessSB] = useState({ open: false, message: "" })
   const openSuccessSB = (mes) => setSuccessSB({ open: true, message: mes })
@@ -39,9 +40,152 @@ function Dashboard() {
     fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
       .then((response) => response.json())
       .then((data) => setCategories(data.objectKoinot))
-  }, [])
+  }, [categoriesRef])
 
   // Add Category api
+  const columns = [
+    { Header: "Uzb", accessor: "uzbek", width: "20%", align: "left" },
+    { Header: "UzK", accessor: "kiril", width: "20%", align: "left" },
+    { Header: "Rus", accessor: "ruscha", width: "20%", align: "left" },
+    { Header: "Eng", accessor: "english", width: "20%", align: "left" },
+    { Header: "Edit", accessor: "edit", width: "20%", align: "right" },
+    { Header: "Delete", accessor: "delete", width: "20%", align: "right" },
+  ]
+
+  // Delete Category
+  const deleteCategory = (id) => {
+    const Token = localStorage.getItem("Token")
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${Token}`)
+    const requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      redirect: "follow",
+    }
+
+    fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const res = JSON.parse(result)
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category deleted successfully")
+          setCategoriesRef(!categoriesRef)
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not deleted ${error}`)
+      })
+  }
+  // Edit Category
+  const editCategory = (edit) => {
+    console.log(edit)
+    const Token = localStorage.getItem("Token")
+    const myHeaders = new Headers()
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${Token}`)
+
+    const raw = JSON.stringify({
+      id: 1,
+      parentCategory: 1,
+      edit,
+    })
+
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    }
+
+    fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        const res = JSON.parse(result)
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category edit successfully")
+          setCategoriesRef(!categoriesRef)
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not Edit ${error}`)
+      })
+  }
+
+  const rows = categories.map((item) => ({
+    uzbek: (
+      <MDTypography component="a" color="dark" href="#" variant="caption" fontWeight="medium">
+        {item.textUz}
+      </MDTypography>
+    ),
+    kiril: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {item.textUzK}
+      </MDTypography>
+    ),
+    ruscha: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {item.textRu}
+      </MDTypography>
+    ),
+    english: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {item.textEn}
+      </MDTypography>
+    ),
+    edit: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        <MDButton variant="text" color="dark">
+          <EditModal
+            nameUzb={item.textUz}
+            nameUzbK={item.textUzK}
+            nameRus={item.textRu}
+            nameEng={item.textEn}
+            saveAllName={(e) => editCategory(e)}
+          />
+        </MDButton>
+      </MDTypography>
+    ),
+    delete: (
+      <MDTypography component="a" href="#" variant="caption" color="error" fontWeight="medium">
+        <Tooltip title="Delete" color="error">
+          <DeleteModal itemData={item} deleteBtn={(e) => deleteCategory(e)} />
+        </Tooltip>
+      </MDTypography>
+    ),
+  }))
+
+  // Notifications
+  const renderSuccessSB = (
+    <MDSnackbar
+      color="success"
+      icon="check"
+      title="Material Dashboard"
+      content={successSB.message}
+      open={successSB.open}
+      onClose={closeSuccessSB}
+      close={closeSuccessSB}
+      bgWhite
+    />
+  )
+  const renderErrorSB = (
+    <MDSnackbar
+      color="error"
+      icon="warning"
+      title="Material Dashboard"
+      content={errorSB.message}
+      open={errorSB.open}
+      onClose={closeErrorSB}
+      close={closeErrorSB}
+      bgWhite
+    />
+  )
+  // Add Category
+
   const addCategory = (add) => {
     console.log(add)
     const Token = localStorage.getItem("Token")
@@ -72,6 +216,7 @@ function Dashboard() {
         console.log(typeof res.message, res.success)
         if (res.success === 200) {
           openSuccessSB("Category added successfully")
+          setCategoriesRef(!categoriesRef)
         }
       })
       .catch((error) => {
