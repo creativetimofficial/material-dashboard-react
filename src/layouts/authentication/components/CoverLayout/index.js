@@ -43,13 +43,13 @@ function CoverLayout({ coverHeight, image, children }) {
         light
       />
       <MDBox
-        width="calc(100% - 2rem)"
+        width="calc(100% - 4rem)"
         minHeight={coverHeight}
         borderRadius="xl"
-        mx={2}
-        my={2}
-        pt={6}
-        pb={28}
+        mx={3}
+        my={1}
+        pt={1}
+        pb={2}
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             image &&
@@ -62,7 +62,7 @@ function CoverLayout({ coverHeight, image, children }) {
           backgroundRepeat: "no-repeat",
         }}
       />
-      <MDBox mt={{ xs: -20, lg: -18 }} px={1} width="calc(100% - 2rem)" mx="auto">
+      <MDBox mt={{ xs: -20, lg: -18 }} px={1} width="calc(100% - 1rem)" mx="auto">
         <Grid container spacing={1} justifyContent="center">
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
             {children}

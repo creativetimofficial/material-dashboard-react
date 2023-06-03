@@ -56,7 +56,7 @@ function Basic() {
       },
       body: JSON.stringify({
         password: passwordN,
-        phoneNumber: phoneNum,
+        phoneNumber:phoneNum
       }),
     }
 

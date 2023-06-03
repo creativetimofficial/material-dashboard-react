@@ -66,8 +66,8 @@ export default function AddModal({ saveBtn }) {
           </Typography>
           <MDInput label="Uzbek" value={textUzb} onChange={(e) => setTextUzb(e.target.value)} />
           <MDInput label="Kiril" value={textUzbK} onChange={(e) => setTextUzbK(e.target.value)} />
-          <MDInput label="English" value={textEng} onChange={(e) => setTextEng(e.target.value)} />
           <MDInput label="Russio" value={textRus} onChange={(e) => setTextRus(e.target.value)} />
+          <MDInput label="English" value={textEng} onChange={(e) => setTextEng(e.target.value)} />
           <MDButton onClick={handleAdd} variant="gradient" color="dark">
             Save
           </MDButton>

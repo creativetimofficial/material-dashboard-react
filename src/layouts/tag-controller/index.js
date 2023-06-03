@@ -1,25 +1,24 @@
-import Card from "@mui/material/Card"
-import Grid from "@mui/material/Grid"
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout"
-
 // @mui material components
+import Grid from "@mui/material/Grid"
+import Card from "@mui/material/Card"
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox"
 import MDTypography from "components/MDTypography"
-import MDSnackbar from "components/MDSnackbar"
+
 // Material Dashboard 2 React example components
-import Tooltip from "@mui/material/Tooltip"
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout"
 import DashboardNavbar from "examples/Navbars/DashboardNavbar"
 import DataTable from "examples/Tables/DataTable"
+
 import { useEffect, useState } from "react"
+import AddModal from "layouts/dashboard copy/modals/addModal"
+import DeleteModal from "layouts/dashboard copy/modals/deleteModal"
+import EditModal from "layouts/dashboard copy/modals/editModal"
+import MDSnackbar from "components/MDSnackbar"
 
-import AddModal from "./modals/addModal"
-import DeleteModal from "./modals/deleteModal"
-import EditModal from "./modals/editModal"
-
-function Categoreis() {
-  const [categories, setCategories] = useState([])
+function TagController() {
+  const [tagcontrol, setTagControl] = useState([])
   const [categoriesRef, setCategoriesRef] = useState(false)
   // Succes Notification
   const [successSB, setSuccessSB] = useState({ open: false, message: "" })
@@ -30,56 +29,31 @@ function Categoreis() {
   const openErrorSB = (errorMes) => setErrorSB({ open: true, message: errorMes })
   const closeErrorSB = () => setErrorSB({ open: false })
 
-  //  Categories information api
   useEffect(() => {
     const requestOptions = {
       method: "GET",
-      headers: { "Content-Type": "application/json" },
     }
-    fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
+
+    fetch("http://165.232.85.45:1988/koinot/tag", requestOptions)
       .then((response) => response.json())
-      .then((data) => setCategories(data.objectKoinot))
+      .then((data) => {
+        setTagControl(data.objectKoinot)
+      })
   }, [categoriesRef])
 
-  // Delete Category
-  const deleteCategory = (id) => {
-    const Token = localStorage.getItem("Token")
+  //  If the add new tag
+  const tagcontrolAdd = (tag) => {
+    console.log(tag)
     const myHeaders = new Headers()
+    const token = localStorage.getItem('Token')
     myHeaders.append("Content-Type", "application/json")
-    myHeaders.append("Authorization", `Bearer ${Token}`)
-    const requestOptions = {
-      method: "DELETE",
-      headers: myHeaders,
-      redirect: "follow",
-    }
-
-    fetch(`http://165.232.85.45:1988/koinot/category/${id}`, requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        const res = JSON.parse(result)
-        console.log(typeof res.message, res.success)
-        if (res.success === 200) {
-          openSuccessSB("Category deleted successfully")
-          setCategoriesRef(!categoriesRef)
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        openErrorSB(`Category not deleted ${error}`)
-      })
-  }
-  // Edit Category
-  const editCategory = (edit) => {
-    console.log(edit)
-    const myHeaders = new Headers()
-    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${token}`)
 
     const raw = JSON.stringify({
-      id: edit.id,
-      textEn: edit.textEn,
-      textRu: edit.textRu,
-      textUz: edit.textUz,
-      textUzK: edit.textUzK,
+      textEn: tag.addEng,
+      textRu: tag.addRus,
+      textUz: tag.addUzb,
+      textUzK: tag.addUzbK,
     })
 
     const requestOptions = {
@@ -89,56 +63,87 @@ function Categoreis() {
       redirect: "follow",
     }
 
-    fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
+    fetch("http://165.232.85.45:1988/koinot/tag", requestOptions)
       .then((response) => response.json())
       .then((res) => {
         console.log(typeof res.message, res.success)
         if (res.success === 200) {
-          openSuccessSB("Category edit successfully")
+          openSuccessSB("TagController addtag successfully")
           setCategoriesRef(!categoriesRef)
         }
       })
       .catch((error) => {
         console.log(error)
-        openErrorSB(`Category not Edit ${error}`)
+        openErrorSB(`TagController not Addtag ${error}`)
       })
   }
 
-  // Add Category
-  const addCategory = (add) => {
-    console.log(add)
+  //  If the request is successful edit the tag and return
+  const updateTagControl = (item) => {
+    console.log("item", item)
     const myHeaders = new Headers()
     const token = localStorage.getItem("Token")
     myHeaders.append("Content-Type", "application/json")
-    myHeaders.append("Authorization", `Bearer access_${token}`)
+    myHeaders.append("Authorization", `Bearer ${token}`)
 
     const raw = JSON.stringify({
-      textEn: add.addEng,
-      textRu: add.addRus,
-      textUz: add.addUzb,
-      textUzK: add.addUzbK,
+      textEn: item.textUz,
+      textRu: item.textRu,
+      textUz: item.textUz,
+      textUzK: item.textUzK,
     })
 
     const requestOptions = {
-      method: "POST",
+      method: "PUT",
       headers: myHeaders,
       body: raw,
       redirect: "follow",
     }
 
-    fetch("http://165.232.85.45:1988/koinot/category", requestOptions)
-      .then((response) => response.text())
-      .then((result) => {
-        const res = JSON.parse(result)
+    fetch(`http://165.232.85.45:1988/koinot/tag/${item.id}`, requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
         console.log(typeof res.message, res.success)
         if (res.success === 200) {
-          openSuccessSB("Category added successfully")
+          openSuccessSB("TagController edit successfully")
           setCategoriesRef(!categoriesRef)
         }
       })
       .catch((error) => {
         console.log(error)
-        openErrorSB(`Category not added ${error}`)
+        openErrorSB(`TagController not Edit ${error}`)
+      })
+  }
+
+  // If it is already delete, then remove it from the list
+  const tagDelete = (id) => {
+    console.log(id)
+    const myHeaders = new Headers()
+    const token = localStorage.getItem("Token")
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Authorization", `Bearer ${token}`)
+
+    const raw = ""
+
+    const requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    }
+
+    fetch(`http://165.232.85.45:1988/koinot/tag/${id}`, requestOptions)
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(typeof res.message, res.success)
+        if (res.success === 200) {
+          openSuccessSB("Category delete successfully")
+          setCategoriesRef(!categoriesRef)
+        }
+      })
+      .catch((error) => {
+        console.log(error)
+        openErrorSB(`Category not Delete ${error}`)
       })
   }
 
@@ -174,56 +179,58 @@ function Categoreis() {
     { Header: "UzK", accessor: "kiril", width: "20%", align: "left" },
     { Header: "Rus", accessor: "ruscha", width: "20%", align: "left" },
     { Header: "Eng", accessor: "english", width: "20%", align: "left" },
+    { Header: "Data", accessor: "data", width: "20%", align: "left" },
     { Header: "Edit", accessor: "edit", width: "20%", align: "right" },
     { Header: "Delete", accessor: "delete", width: "20%", align: "right" },
   ]
 
-  //  Rows categories
-  const rows = categories.map((item) => ({
+  const rows = tagcontrol.map((tag) => ({
     uzbek: (
-      <MDTypography component="a" color="dark" href="#" variant="caption" fontWeight="medium">
-        {item.textUz}
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {tag.textUz}
       </MDTypography>
     ),
     kiril: (
       <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        {item.textUzK}
+        {tag.textUzK}
       </MDTypography>
     ),
     ruscha: (
       <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        {item.textRu}
+        {tag.textRu}
       </MDTypography>
     ),
     english: (
       <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
-        {item.textEn}
+        {tag.textEn}
+      </MDTypography>
+    ),
+    data: (
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        {tag.updatedAt}
       </MDTypography>
     ),
     edit: (
       <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
         <EditModal
-          id={item.id}
-          nameUzb={item.textUz}
-          nameUzbK={item.textUzK}
-          nameRus={item.textRu}
-          nameEng={item.textEn}
-          saveAllName={(e) => editCategory(e)}
+          id={tag.id}
+          nameEng={tag.textEn}
+          nameRus={tag.textRu}
+          nameUzb={tag.textUz}
+          nameUzbK={tag.textUzK}
+          saveAllName={(e) => updateTagControl(e)}
         />
       </MDTypography>
     ),
     delete: (
-      <MDTypography component="a" href="#" variant="caption" fontWeight="medium" color="aqua">
-        <Tooltip title="Delete">
-          <DeleteModal itemData={item} deleteBtn={(e) => deleteCategory(e)} />
-        </Tooltip>
+      <MDTypography component="a" href="#" variant="caption" color="dark" fontWeight="medium">
+        <DeleteModal itemData={tag} deleteBtn={(e) => tagDelete(e)} />
       </MDTypography>
     ),
   }))
 
   return (
     <DashboardLayout>
-      <h1>Category</h1>
       <DashboardNavbar />
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
@@ -242,10 +249,10 @@ function Categoreis() {
                 justifyContent="space-between"
                 alignItems="center"
               >
-                <MDTypography variant="h4" color="white">
-                  Category Table
+                <MDTypography variant="h6" color="white">
+                  TagController Table
                 </MDTypography>
-                <AddModal saveBtn={(e) => addCategory(e)} />
+                <AddModal saveBtn={(e) => tagcontrolAdd(e)} />
               </MDBox>
               <MDBox pt={3}>
                 <DataTable
@@ -266,4 +273,4 @@ function Categoreis() {
   )
 }
 
-export default Categoreis
+export default TagController

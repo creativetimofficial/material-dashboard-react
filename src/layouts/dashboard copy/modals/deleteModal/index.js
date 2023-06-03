@@ -33,9 +33,9 @@ export default function DeleteModal({ deleteBtn, itemData }) {
 
   return (
     <div>
-      <MDButton onClick={handleOpen}>
+      <MDButton onClick={handleOpen} hover="error" >
         <Tooltip title="Delete" placement="top">
-          <DeleteIcon color="error" />
+          <DeleteIcon color="error"  />
         </Tooltip>
       </MDButton>
       <Modal
@@ -47,7 +47,6 @@ export default function DeleteModal({ deleteBtn, itemData }) {
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Kategorya ochirmoqchimisiz?
-            {itemData.textUzb}
           </Typography>
           <MDButton onClick={() => handleDelete(itemData.id)} variant="gradient" color="dark">
             Xa
