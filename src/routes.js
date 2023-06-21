@@ -23,7 +23,7 @@
 // Material Dashboard 2 React layouts
 
 import Dashboard from "layouts/dashboard"
-import Dashboard2 from "layouts/dashboard copy"
+import Categoreis from "layouts/dashboard copy"
 import Tables from "layouts/tables"
 import Billing from "layouts/billing"
 // import RTL from "layouts/RTL";
@@ -35,6 +35,11 @@ import SignUp from "layouts/authentication/sign-up"
 // @mui icons
 import Icon from "@mui/material/Icon"
 import React from "react"
+import TagConTroller from "layouts/tag-controller"
+import NewChaildController from "layouts/new-chaild-controller"
+import Countress from "layouts/contreller"
+import FeedbackController from "layouts/feedback controller"
+
 
 const routes = [
   {
@@ -51,7 +56,39 @@ const routes = [
     key: "categories",
     icon: <Icon fontSize="small">Categoreis</Icon>,
     route: "/categories",
-    component: <Dashboard2 />,
+    component: <Categoreis />,
+  },
+  {
+    type: "collapse",
+    name: "TagConTroller",
+    key: "tagcontroller",
+    icon: <Icon fontSize="small">TagConTroller</Icon>,
+    route: "/tag-controller",
+    component: <TagConTroller />,
+  },
+  {
+    type: "collapse",
+    name: "Feedback Controller",
+    key: "feedbackcontroller",
+    icon: <Icon fontSize="small">Feedback Controller</Icon>,
+    route: "/feedback-controller",
+    component: <FeedbackController />,
+  },
+  {
+    type: "collapse",
+    name: "NewChaldController",
+    key: "newchaildcontroller",
+    icon: <Icon fontSize="small">NewChaildController</Icon>,
+    route: "/new-chald-tag-controller",
+    component: <NewChaildController />,
+  },
+  {
+    type: "collapse",
+    name: "Countress",
+    key: "countress",
+    icon: <Icon fontSize="small">Countress</Icon>,
+    route: "/countryeis",
+    component: <Countress/>,
   },
   {
     type: "collapse",

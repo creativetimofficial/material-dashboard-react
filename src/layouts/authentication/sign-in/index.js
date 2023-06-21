@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // react-router-dom components
-import { Link,useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 // @mui material components
 import Card from "@mui/material/Card"
 import Switch from "@mui/material/Switch"
@@ -24,73 +24,55 @@ import BasicLayout from "layouts/authentication/components/BasicLayout"
 
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg"
-
-
-
-
-
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from "@mui/material"
+import { Visibility, VisibilityOff } from "@mui/icons-material"
 
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false)
-  
-  const history = useNavigate();
+
+  //  Password onchange button
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show)
+
+  const handleMouseDownPassword = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+  }
+
+  const history = useNavigate()
 
   const [passwordN, setPasswordN] = useState("")
   const [phoneNum, setPhoneNum] = useState("")
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe)
-  const Login = () =>{
+  const Login = () => {
     console.log(passwordN)
     console.log(phoneNum)
-    
+
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: {
-      'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        password : passwordN,
-        phoneNumber : phoneNum,
-       
+        password: passwordN,
+        phoneNumber:phoneNum
       }),
-      };
-      
-      fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
+    }
+
+    fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        if(data?.objectKoinot?.accessToken?.length > 0 &&data.success === 200){
+        if (data?.objectKoinot?.accessToken?.length > 0 && data.success === 200) {
           history("/dashboard")
           localStorage.setItem("Token", data.objectKoinot.accessToken)
         }
-      });  
-  };
+      })
+  }
 
   const OnSignup = () => {
-    console.log('on change sign-up')
+    console.log("on change sign-up")
   }
-      
-      
-  
-  // const Login = () => {
-  //   console.log("passwordN", passwordN)
-  //   console.log("phoneNum", phoneNum)
-  //   const requestOptions = {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //       password: passwordN,
-  //       phoneNumber: phoneNum,
-  //     }),
-  //   }
-  //   fetch("http://165.232.85.45:1988/koinot/auth/login", requestOptions)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data?.objectKoinot?.accessToken?.length > 0 &&data.success===200) {
-  //         history("/dashboard")
-  //         localStorage.setItem("Token", data.objectKoinot.accessToken);
-  //       }
-  //     })
-  // }
 
   return (
     <BasicLayout image={bgImage}>
@@ -134,19 +116,31 @@ function Basic() {
                 type="phoneNumber"
                 label="PhoneNumber"
                 fullWidth
-                // onChange={(e) => setPhoneNum(e.target.value)}
                 onChange={(e) => setPhoneNum(e.target.value)}
               />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput
-                type="password"
-                label="Password"
-                fullWidth
-                // onChange={(e) => setPasswordN(e.target.value)}
-                onChange={(e) => setPasswordN(e.target.value)}
-                
-              />
+              <FormControl sx={{  width: '100%' }} component="form" role="form" variant="outlined">
+                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-password"
+                  type={showPassword ? "text" : "password"}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Password"
+                  onChange={(e) => setPasswordN(e.target.value)}
+                />
+              </FormControl>
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -160,13 +154,13 @@ function Basic() {
                 &nbsp;&nbsp;Remember me
               </MDTypography>
             </MDBox>
-            
+
             <MDBox mt={4} mb={1} onClick={() => Login()}>
               <MDButton variant="gradient" color="info" fullWidth>
                 sign in
               </MDButton>
             </MDBox>
-            <MDBox mt={3} mb={1} textAlign="center" >
+            <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text" onClick={() => OnSignup()}>
                 Don&apos;t have an account?{" "}
                 <MDTypography

@@ -1,13 +1,13 @@
 import Box from "@mui/material/Box"
-import Icon from "@mui/material/Icon"
 import Modal from "@mui/material/Modal"
 import Typography from "@mui/material/Typography"
 import MDButton from "components/MDButton"
 import MDInput from "components/MDInput"
 import Tooltip from "@mui/material/Tooltip"
 import * as React from "react"
+import { EditRounded } from "@mui/icons-material"
 
-export default function EditModal({ nameUzb, nameUzbK, nameRus, nameEng, saveAllName }) {
+export default function EditModal({id, nameUzb, nameUzbK, nameRus, nameEng, saveAllName }) {
   const style = {
     position: "absolute",
     top: "50%",
@@ -31,17 +31,17 @@ export default function EditModal({ nameUzb, nameUzbK, nameRus, nameEng, saveAll
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const handleSave = () => {
-    saveAllName({ textUz, textUzK, textRu, textEn })
+    saveAllName({id, textUz, textUzK, textRu, textEn })
     setOpen(false)
   }
 
   return (
     <div>
-      <MDButton onClick={handleOpen}>
+      <MDButton onClick={handleOpen} >
         <Tooltip title="Edit Categories" placement="top">
-          <Icon sx={{ cursor: "pointer" }} fontSize="small">
-            edit:
-          </Icon>
+          <Box color='darkblue'>
+            <EditRounded />
+          </Box>
         </Tooltip>
       </MDButton>
       <Modal
