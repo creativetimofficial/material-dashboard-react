@@ -39,6 +39,7 @@ import TagConTroller from "layouts/tag-controller"
 import NewChaildController from "layouts/new-chaild-controller"
 import Countress from "layouts/contreller"
 import FeedbackController from "layouts/feedback controller"
+import Analysis24 from "layouts/analysis24"
 
 
 const routes = [
@@ -74,6 +75,15 @@ const routes = [
     route: "/feedback-controller",
     component: <FeedbackController />,
   },
+  {
+    type: "collapse",
+    name: "Analysis24",
+    key: "analysis24",
+    icon: <Icon fontSize="small">Analysis24</Icon>,
+    route: "/analysis-24",
+    component: <Analysis24 />,
+  },
+
   {
     type: "collapse",
     name: "NewChaldController",

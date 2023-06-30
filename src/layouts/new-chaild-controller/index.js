@@ -18,7 +18,6 @@ import authorsTableData from "layouts/tables/data/authorsTableData"
 
 function NewChaildController() {
   const { columns, rows } = authorsTableData()
-
  
 
 

@@ -45,7 +45,7 @@ function TagController() {
   const tagcontrolAdd = (tag) => {
     console.log(tag)
     const myHeaders = new Headers()
-    const token = localStorage.getItem('Token')
+    const token = localStorage.getItem("Token")
     myHeaders.append("Content-Type", "application/json")
     myHeaders.append("Authorization", `Bearer ${token}`)
 
