@@ -6,7 +6,7 @@ import Modal from "@mui/material/Modal"
 import Icon from "@mui/material/Icon"
 import MDInput from "components/MDInput"
 
-export default function AddModal({ saveBtn }) {
+export default function AddModal({ saveBtn, title, tagtitle }) {
   const style = {
     position: "absolute",
     top: "50%",
@@ -24,35 +24,37 @@ export default function AddModal({ saveBtn }) {
   }
 
   const [open, setOpen] = React.useState(false)
-  const [textUzb, setTextUzb] = React.useState('')
-  const [textUzbK, setTextUzbK] = React.useState('')
-  const [textRus, setTextRus] = React.useState('')
-  const [textEng, setTextEng] = React.useState('')
+  const [textUzb, setTextUzb] = React.useState("")
+  const [textUzbK, setTextUzbK] = React.useState("")
+  const [textRus, setTextRus] = React.useState("")
+  const [textEng, setTextEng] = React.useState("")
   const handleOpen = () => setOpen(true)
   const handleClose = () => {
     setOpen(false)
-    setTextUzb('')
-    setTextUzbK('')
-    setTextRus('')
-    setTextEng('')
+    setTextUzb("")
+    setTextUzbK("")
+    setTextRus("")
+    setTextEng("")
   }
   const handleAdd = () => {
     saveBtn({
       addUzb: textUzb,
       addUzbK: textUzbK,
       addRus: textRus,
-      addEng: textEng
+      addEng: textEng,
     })
     setOpen(false)
-    setTextUzb('')
-    setTextUzbK('')
-    setTextRus('')
-    setTextEng('')
+    setTextUzb("")
+    setTextUzbK("")
+    setTextRus("")
+    setTextEng("")
   }
   return (
     <div>
       <MDButton onClick={handleOpen} variant="gradient" color="dark">
         <Icon sx={{ fontWeight: "bold" }}>add</Icon>
+        {title}
+        {tagtitle}
       </MDButton>
       <Modal
         open={open}
