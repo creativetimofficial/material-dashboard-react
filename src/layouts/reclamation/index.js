@@ -28,7 +28,7 @@ import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import authorsTableData from "./data/authorsTableData";
+import authorsTableData from "./data/reclamationTableData";
 
 function Reclamation() {
   const { columns, rows } = authorsTableData();
