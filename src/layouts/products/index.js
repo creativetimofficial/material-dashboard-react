@@ -10,17 +10,33 @@ import { useEffect, useState } from "react";
 import productsTableData from "./data/productsTableData";
 import productsTableDataRelations from "./data/productsTableDataRelations";
 import { getProducts, getTypeProducts, getCategoryProducts, getProductsRelations } from "../../services/productService";
-import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
+import { Select, MenuItem, FormControl, InputLabel, TextField } from "@mui/material";
 function Products() {
   const [tableData, setTableData] = useState({ columns: [], rows: [] });
   const [tableDataRelations, setTableDataRelations] = useState({ columns: [], rows: [] });
   const [productType, setProductType] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
+
+  async function fetchDataCategory(value) {
+    try {
+
+      const categoryProducts = await getCategoryProducts(value);
+      setTableData(productsTableData(categoryProducts));
+    } catch (error) {
+      console.error("Error fetching products data:", error);
+    }
+  }
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+    fetchDataCategory(event.target.value)
+  };
+
 
   async function fetchDataTypes(value) {
     try {
       setProductType(value);
       const TypeProducts = await getTypeProducts(value);
-      console.log(TypeProducts);
       setTableData(productsTableData(TypeProducts));
     } catch (error) {
       console.error("Error fetching products data:", error);
@@ -29,7 +45,7 @@ function Products() {
 
   const handleProductTypeChange = (event) => {
     setProductType(event.target.value);
-    const Products = fetchDataTypes(event.target.value);
+    fetchDataTypes(event.target.value);
   };
   useEffect(() => {
     async function fetchData() {
@@ -59,20 +75,30 @@ function Products() {
                   <MDTypography variant="h6" color="white">
                     Products Table
                   </MDTypography>
-                  <FormControl variant="outlined" sx={{ minWidth: 60, backgroundColor: 'white', borderRadius: 1 }}>
-                    <InputLabel id="product-type-label" style={{ color: 'white', marginTop: -10 }}>Type</InputLabel>
-                    <Select
-                      labelId="product-type-label"
-                      id="product-type-select"
-                      value={productType}
-                      onChange={handleProductTypeChange}
-                      label="Type"
+                  <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                    <TextField
+                      id="search-field"
+                      label="Search"
 
-                    >
-                      <MenuItem value="Electronics">Electronics</MenuItem>
-                      <MenuItem value="Non_Electronics">Non Electronics</MenuItem>
-                    </Select>
-                  </FormControl>
+                      variant="outlined"
+                      value={searchQuery}
+                      onChange={handleSearchChange}
+                      sx={{ width: 130, backgroundColor: 'white', borderRadius: 1 }}
+                    />
+                    <FormControl variant="outlined" sx={{ minWidth: 60, backgroundColor: 'white', borderRadius: 1, marginRight: 3 }}>
+                      <InputLabel id="product-type-label" style={{ color: 'white', marginTop: -10 }}>Type</InputLabel>
+                      <Select
+                        labelId="product-type-label"
+                        id="product-type-select"
+                        value={productType}
+                        onChange={handleProductTypeChange}
+                        label="Type"
+
+                      >
+                        <MenuItem value="Electronics">Electronics</MenuItem>
+                        <MenuItem value="Non_Electronics">Non Electronics</MenuItem>
+                      </Select>
+                    </FormControl></div>
                 </MDBox>
               </MDBox>
               <MDBox pt={3}>
