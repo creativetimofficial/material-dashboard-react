@@ -55,7 +55,7 @@ import Products from "layouts/products";
 import Reviews from "layouts/reviews";
 import Forums from "layouts/Forums";
 import Messages from "layouts/Messages";
-
+import Request from "layouts/request";
 const routes = [
   {
     type: "collapse",
@@ -67,15 +67,22 @@ const routes = [
   },
   {
     type: "collapse",
-
     name: "User",
     key: "user",
     icon: <Icon fontSize="small">User</Icon>,
     route: "/user",
-    component: < User/>,
+    component: <User />,
   },
   {
-
+    type: "collapse",
+    name: "Request",
+    key: "request",
+    icon: <Icon fontSize="small">Request</Icon>,
+    route: "/request",
+    component: <Request />,
+  },
+  {
+    type: "collapse",
     name: "Products",
     key: "dashboard1",
     icon: <Icon fontSize="small">Products</Icon>,
