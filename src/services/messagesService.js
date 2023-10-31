@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8006/api/message";
+const BASE_URL = "http://localhost:8005/api/message";
 
 const cleanseData = (rawData, fields) => {
   return rawData.map((item) => {
