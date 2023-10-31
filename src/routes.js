@@ -56,6 +56,7 @@ import Reviews from "layouts/reviews";
 import Forums from "layouts/Forums";
 import Messages from "layouts/Messages";
 import Request from "layouts/request";
+import Payment from "layouts/payment";
 const routes = [
   {
     type: "collapse",
@@ -64,6 +65,14 @@ const routes = [
     icon: <Icon fontSize="small">Reclamation</Icon>,
     route: "/reclamation",
     component: <Reclamation />,
+  },
+  {
+    type: "collapse",
+    name: "Payment",
+    key: "payment",
+    icon: <Icon fontSize="small">Reclamation</Icon>,
+    route: "/payment",
+    component: <Payment />,
   },
   {
     type: "collapse",
