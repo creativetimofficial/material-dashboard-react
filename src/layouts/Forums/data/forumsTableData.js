@@ -48,7 +48,6 @@ export default function forumsTableData(forums) {
     columns: [
       { Header: "forum", accessor: "forumInfo", width: "45%", align: "left" },
       { Header: "questions", accessor: "questions", width: "20%", align: "left" },
-      { Header: "action", accessor: "action", align: "center" },
     ],
     rows: formatRows,
   };

@@ -45,7 +45,6 @@ export default function forumsTableDataRelations(forums) {
     columns: [
       { Header: "Forum", accessor: "forumInfo", width: "30%", align: "left" },
       { Header: "Owner", accessor: "owner", width: "30%", align: "left" },
-      { Header: "Action", accessor: "action", align: "center" },
     ],
     rows: formatRows,
   };
