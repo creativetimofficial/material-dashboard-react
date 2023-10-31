@@ -48,6 +48,7 @@ import SignUp from "layouts/authentication/sign-up";
 // @mui icons
 import Icon from "@mui/material/Icon";
 import Reclamation from "layouts/reclamation";
+import User from "layouts/user";
 
 const routes = [
   {
@@ -58,6 +59,15 @@ const routes = [
     route: "/reclamation",
     component: <Reclamation />,
   },
+  {
+    type: "collapse",
+    name: "User",
+    key: "user",
+    icon: <Icon fontSize="small">User</Icon>,
+    route: "/user",
+    component: < User/>,
+  },
+  
 ];
 
 export default routes;
