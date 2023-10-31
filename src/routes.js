@@ -48,15 +48,33 @@ import SignUp from "layouts/authentication/sign-up";
 // @mui icons
 import Icon from "@mui/material/Icon";
 import Reclamation from "layouts/reclamation";
+import Products from "layouts/products";
+import Reviews from "layouts/reviews";
 
 const routes = [
   {
     type: "collapse",
     name: "Reclamation",
     key: "dashboard",
-    icon: <Icon fontSize="small">reclamation</Icon>,
+    icon: <Icon fontSize="small">Reclamation</Icon>,
     route: "/reclamation",
     component: <Reclamation />,
+  },
+  {
+    type: "collapse",
+    name: "Products",
+    key: "dashboard1",
+    icon: <Icon fontSize="small">Products</Icon>,
+    route: "/products",
+    component: <Products />,
+  },
+  {
+    type: "collapse",
+    name: "Reviews",
+    key: "Reviews",
+    icon: <Icon fontSize="small">Reviews</Icon>,
+    route: "/reviews",
+    component: <Reviews />,
   },
 ];
 
