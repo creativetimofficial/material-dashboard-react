@@ -63,13 +63,14 @@ function Footer({ company, links }) {
         &copy; {new Date().getFullYear()}, made with
         <MDBox fontSize={size.md} color="text" mb={-0.5} mx={0.25}>
           <Icon color="inherit" fontSize="inherit">
-            favorite
+            Co-lance
           </Icon>
         </MDBox>
         by
         <Link href={href} target="_blank">
           <MDTypography variant="button" fontWeight="medium">
-            &nbsp;{name}&nbsp;
+            {" "}
+            4Twin 2 Co-lance Team{" "}
           </MDTypography>
         </Link>
         for a better web.
@@ -90,9 +91,7 @@ function Footer({ company, links }) {
             mt: 0,
           },
         })}
-      >
-        {renderLinks()}
-      </MDBox>
+      ></MDBox>
     </MDBox>
   );
 }
