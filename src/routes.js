@@ -49,6 +49,7 @@ import SignUp from "layouts/authentication/sign-up";
 import Icon from "@mui/material/Icon";
 import Reclamation from "layouts/reclamation";
 import Products from "layouts/products";
+import Reviews from "layouts/reviews";
 
 const routes = [
   {
@@ -66,6 +67,14 @@ const routes = [
     icon: <Icon fontSize="small">Products</Icon>,
     route: "/products",
     component: <Products />,
+  },
+  {
+    type: "collapse",
+    name: "Reviews",
+    key: "Reviews",
+    icon: <Icon fontSize="small">Reviews</Icon>,
+    route: "/reviews",
+    component: <Reviews />,
   },
 ];
 
