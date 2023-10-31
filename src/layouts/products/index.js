@@ -8,28 +8,37 @@ import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
 import { useEffect, useState } from "react";
 import productsTableData from "./data/productsTableData";
-import { getProducts } from "../../services/productService";
-
+import productsTableDataRelations from "./data/productsTableDataRelations";
+import { getProducts, getTypeProducts, getCategoryProducts, getProductsRelations } from "../../services/productService";
+import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 function Products() {
   const [tableData, setTableData] = useState({ columns: [], rows: [] });
-  function cleanProductData(rawData) {
-    return rawData.map(product => {
-      return {
-        category: product.category.value,
-        description: product.description.value,
-        name: product.name.value,
-        productID: product.productID.value,
-        user: product.user.value.split('#')[1] // This assumes that the user URI is always in the format http://www.example.org/ontology#UserX
-      };
-    });
+  const [tableDataRelations, setTableDataRelations] = useState({ columns: [], rows: [] });
+  const [productType, setProductType] = useState("");
+
+  async function fetchDataTypes(value) {
+    try {
+      setProductType(value);
+      const TypeProducts = await getTypeProducts(value);
+      console.log(TypeProducts);
+      setTableData(productsTableData(TypeProducts));
+    } catch (error) {
+      console.error("Error fetching products data:", error);
+    }
   }
+
+  const handleProductTypeChange = (event) => {
+    setProductType(event.target.value);
+    const Products = fetchDataTypes(event.target.value);
+  };
   useEffect(() => {
     async function fetchData() {
       try {
-        const rawProducts = await getProducts();
-        const cleanedProducts = cleanProductData(rawProducts);
-        console.log("Products data:", cleanedProducts);
-        setTableData(productsTableData(cleanedProducts));
+        const Products = await getProducts();
+        const ProductsRelations = await getProductsRelations();
+        console.log(ProductsRelations);
+        setTableData(productsTableData(Products));
+        setTableDataRelations(productsTableDataRelations(ProductsRelations));
       } catch (error) {
         console.error("Error fetching products data:", error);
       }
@@ -45,6 +54,38 @@ function Products() {
         <Grid container spacing={6}>
           <Grid item xs={12}>
             <Card>
+              <MDBox mx={2} mt={-3} py={3} px={2} variant="gradient" bgColor="info" borderRadius="lg" coloredShadow="info">
+                <MDBox display="flex" justifyContent="space-between" alignItems="center">
+                  <MDTypography variant="h6" color="white">
+                    Products Table
+                  </MDTypography>
+                  <FormControl variant="outlined" sx={{ minWidth: 60, backgroundColor: 'white', borderRadius: 1 }}>
+                    <InputLabel id="product-type-label" style={{ color: 'white', marginTop: -10 }}>Type</InputLabel>
+                    <Select
+                      labelId="product-type-label"
+                      id="product-type-select"
+                      value={productType}
+                      onChange={handleProductTypeChange}
+                      label="Type"
+
+                    >
+                      <MenuItem value="Electronics">Electronics</MenuItem>
+                      <MenuItem value="Non_Electronics">Non Electronics</MenuItem>
+                    </Select>
+                  </FormControl>
+                </MDBox>
+              </MDBox>
+              <MDBox pt={3}>
+                <DataTable
+                  table={tableData}
+                  isSorted={false}
+                  entriesPerPage={false}
+                  showTotalEntries={false}
+                  noEndBorder
+                />
+              </MDBox>
+            </Card>
+            <Card style={{ marginTop: "5% " }}>
               <MDBox
                 mx={2}
                 mt={-3}
@@ -56,12 +97,12 @@ function Products() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Products Table
+                  Products Relation Table
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <DataTable
-                  table={tableData}
+                  table={tableDataRelations}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
