@@ -1,7 +1,7 @@
 // services/productService.js
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/products";
+const BASE_URL = "http://localhost:8005/api/products";
 
 const getProducts = async () => {
     try {

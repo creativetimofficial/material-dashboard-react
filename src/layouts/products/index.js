@@ -1,37 +1,42 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-
-// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
-
-// Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import DataTable from "examples/Tables/DataTable";
-
-// Data
-import authorsTableData from "./data/productsTableData";
+import { useEffect, useState } from "react";
+import productsTableData from "./data/productsTableData";
+import { getProducts } from "../../services/productService";
 
 function Products() {
-  const { columns, rows } = authorsTableData();
+  const [tableData, setTableData] = useState({ columns: [], rows: [] });
+  function cleanProductData(rawData) {
+    return rawData.map(product => {
+      return {
+        category: product.category.value,
+        description: product.description.value,
+        name: product.name.value,
+        productID: product.productID.value,
+        user: product.user.value.split('#')[1] // This assumes that the user URI is always in the format http://www.example.org/ontology#UserX
+      };
+    });
+  }
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const rawProducts = await getProducts();
+        const cleanedProducts = cleanProductData(rawProducts);
+        console.log("Products data:", cleanedProducts);
+        setTableData(productsTableData(cleanedProducts));
+      } catch (error) {
+        console.error("Error fetching products data:", error);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <DashboardLayout>
@@ -56,7 +61,7 @@ function Products() {
               </MDBox>
               <MDBox pt={3}>
                 <DataTable
-                  table={{ columns, rows }}
+                  table={tableData}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
