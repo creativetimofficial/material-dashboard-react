@@ -50,6 +50,8 @@ import Icon from "@mui/material/Icon";
 import Reclamation from "layouts/reclamation";
 import Products from "layouts/products";
 import Reviews from "layouts/reviews";
+import Forums from "layouts/Forums";
+import Messages from "layouts/Messages";
 
 const routes = [
   {
@@ -75,6 +77,22 @@ const routes = [
     icon: <Icon fontSize="small">Reviews</Icon>,
     route: "/reviews",
     component: <Reviews />,
+  },
+  {
+    type: "collapse",
+    name: "Forums",
+    key: "Forums",
+    icon: <Icon fontSize="small">Forums</Icon>,
+    route: "/forums",
+    component: <Forums />,
+  },
+  {
+    type: "collapse",
+    name: "Messages",
+    key: "Messages",
+    icon: <Icon fontSize="small">Messages</Icon>,
+    route: "/messages",
+    component: <Messages />,
   },
 ];
 
