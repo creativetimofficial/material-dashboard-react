@@ -20,16 +20,33 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 // Images
-import team2 from "assets/images/team-2.jpg";
+import dd from "assets/images/dd.png";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
+import Reclamation from "..";
 
 export default function data() {
-  const Author = ({ image, name, email }) => (
+  const [reclamations, setReclamations] = useState([]);
+
+  useEffect(() => {
+    // Utilisez useEffect pour effectuer la requête lorsque le composant est monté
+    axios
+      .get("http://localhost:8005/api/reclamation/all")
+      .then((response) => {
+        // Mettez à jour l'état avec les données de la réponse de l'API
+        setReclamations(response.data);
+      })
+      .catch((error) => {
+        // Gérez les erreurs ici, par exemple, en les affichant à l'utilisateur
+        console.error("Erreur lors de la récupération des données de l'API", error);
+      });
+  }, []);
+  const ReclamationContent = ({ image, name, email }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
-      <MDAvatar src={image} name={name} size="sm" />
+      <MDAvatar image={dd} name={name} size="sm" />
       <MDBox ml={2} lineHeight={1}>
         <MDTypography display="block" variant="button" fontWeight="medium">
           {name}
@@ -38,45 +55,46 @@ export default function data() {
       </MDBox>
     </MDBox>
   );
-
-  const Job = ({ title, description }) => (
-    <MDBox lineHeight={1} textAlign="left">
-      <MDTypography display="block" variant="caption" color="text" fontWeight="medium">
-        {title}
+  const formatRows = reclamations.map((reclamation) => ({
+    reclamationInfo: (
+      <ReclamationContent
+        image={dd}
+        name={reclamation.userName.value}
+        email={reclamation.userEmail.value}
+      />
+    ),
+    description: (
+      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        {reclamation.description.value}
       </MDTypography>
-      <MDTypography variant="caption">{description}</MDTypography>
-    </MDBox>
-  );
+    ),
+    status:
+      reclamation.type.value === "URGENT" ? (
+        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          done
+        </MDTypography>
+      ) : (
+        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+          not urgent
+        </MDTypography>
+      ),
+    action: (
+      <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
+        Edit
+      </MDTypography>
+    ),
+  }));
+
+  console.log(reclamations);
 
   return {
     columns: [
-      { Header: "author", accessor: "author", width: "45%", align: "left" },
-      { Header: "function", accessor: "function", align: "left" },
+      { Header: "reclamationInfo", accessor: "reclamationInfo", width: "45%", align: "left" },
+      { Header: "Description", accessor: "description", align: "left" },
       { Header: "status", accessor: "status", align: "center" },
-      { Header: "employed", accessor: "employed", align: "center" },
       { Header: "action", accessor: "action", align: "center" },
     ],
 
-    rows: [
-      {
-        author: <Author image={team2} name="John Michael" email="john@creative-tim.com" />,
-        function: <Job title="Manager" description="Organization" />,
-        status: (
-          <MDBox ml={-1}>
-            <MDBadge badgeContent="online" color="success" variant="gradient" size="sm" />
-          </MDBox>
-        ),
-        employed: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            23/04/18
-          </MDTypography>
-        ),
-        action: (
-          <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-            Edit
-          </MDTypography>
-        ),
-      },
-    ],
+    rows: formatRows,
   };
 }
