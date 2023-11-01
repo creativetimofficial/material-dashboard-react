@@ -47,17 +47,105 @@ import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import Reclamation from "layouts/reclamation";
+
+import User from "layouts/user";
+
+import Products from "layouts/products";
+import Reviews from "layouts/reviews";
+import Forums from "layouts/Forums";
+import Messages from "layouts/Messages";
+import Request from "layouts/request";
+import Payment from "layouts/payment";import Contract from "layouts/contract";
+import Inventory from "layouts/Inventory";
+
+import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
 
 const routes = [
   {
     type: "collapse",
-    name: "Dashboard",
+    name: "Reclamation",
     key: "dashboard",
-    icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/dashboard",
-    component: <Dashboard />,
+    icon: <Icon fontSize="small">Reclamation</Icon>,
+    route: "/reclamation",
+    component: <Reclamation />,
   },
   {
+    type: "collapse",
+    name: "Payment",
+    key: "payment",
+    icon: <Icon fontSize="small">Reclamation</Icon>,
+    route: "/payment",
+    component: <Payment />,
+  },
+  {
+    type: "collapse",
+    name: "User",
+    key: "user",
+    icon: <Icon fontSize="small">User</Icon>,
+    route: "/user",
+    component: <User />,
+  },
+  {
+    type: "collapse",
+    name: "Request",
+    key: "request",
+    icon: <Icon fontSize="small">Request</Icon>,
+    route: "/request",
+    component: <Request />,
+  },
+  {
+    type: "collapse",
+    name: "Products",
+    key: "dashboard1",
+    icon: <Icon fontSize="small">Products</Icon>,
+    route: "/products",
+    component: <Products />,
+  },
+  {
+    type: "collapse",
+    name: "Reviews",
+    key: "Reviews",
+    icon: <Icon fontSize="small">Reviews</Icon>,
+    route: "/reviews",
+    component: <Reviews />,
+  },
+  {
+    type: "collapse",
+    name: "Forums",
+    key: "Forums",
+    icon: <Icon fontSize="small">Forums</Icon>,
+    route: "/forums",
+    component: <Forums />,
+  },
+  {
+    type: "collapse",
+    name: "Messages",
+    key: "Messages",
+    icon: <Icon fontSize="small">Messages</Icon>,
+    route: "/messages",
+    component: <Messages />,
+  },
+  {
+    type: "collapse",
+    name: "contracts",
+    key: "dashboard2",
+    icon: <Icon fontSize="small">Contracts</Icon>,
+    route: "/contracts",
+    component: <Contract />,
+  },
+  {
+    type: "collapse",
+    name: "inventories",
+    key: "dashboard3",
+    icon: <Icon fontSize="small">Inventory</Icon>,
+    route: "/inventories",
+    component: <Inventory />,
+  },
+];
+
+export default routes;
+/**{
     type: "collapse",
     name: "Tables",
     key: "tables",
@@ -112,7 +200,4 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
-  },
-];
-
-export default routes;
+  }, */
