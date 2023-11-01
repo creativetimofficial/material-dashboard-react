@@ -48,8 +48,15 @@ import SignUp from "layouts/authentication/sign-up";
 // @mui icons
 import Icon from "@mui/material/Icon";
 import Reclamation from "layouts/reclamation";
+
+import User from "layouts/user";
+
 import Products from "layouts/products";
-import Contract from "layouts/contract";
+import Reviews from "layouts/reviews";
+import Forums from "layouts/Forums";
+import Messages from "layouts/Messages";
+import Request from "layouts/request";
+import Payment from "layouts/payment";import Contract from "layouts/contract";
 import Inventory from "layouts/Inventory";
 
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
@@ -65,11 +72,59 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "Payment",
+    key: "payment",
+    icon: <Icon fontSize="small">Reclamation</Icon>,
+    route: "/payment",
+    component: <Payment />,
+  },
+  {
+    type: "collapse",
+    name: "User",
+    key: "user",
+    icon: <Icon fontSize="small">User</Icon>,
+    route: "/user",
+    component: <User />,
+  },
+  {
+    type: "collapse",
+    name: "Request",
+    key: "request",
+    icon: <Icon fontSize="small">Request</Icon>,
+    route: "/request",
+    component: <Request />,
+  },
+  {
+    type: "collapse",
     name: "Products",
     key: "dashboard1",
     icon: <Icon fontSize="small">Products</Icon>,
     route: "/products",
     component: <Products />,
+  },
+  {
+    type: "collapse",
+    name: "Reviews",
+    key: "Reviews",
+    icon: <Icon fontSize="small">Reviews</Icon>,
+    route: "/reviews",
+    component: <Reviews />,
+  },
+  {
+    type: "collapse",
+    name: "Forums",
+    key: "Forums",
+    icon: <Icon fontSize="small">Forums</Icon>,
+    route: "/forums",
+    component: <Forums />,
+  },
+  {
+    type: "collapse",
+    name: "Messages",
+    key: "Messages",
+    icon: <Icon fontSize="small">Messages</Icon>,
+    route: "/messages",
+    component: <Messages />,
   },
   {
     type: "collapse",

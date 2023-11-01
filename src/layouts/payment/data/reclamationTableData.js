@@ -34,7 +34,7 @@ export default function data() {
   useEffect(() => {
     // Utilisez useEffect pour effectuer la requête lorsque le composant est monté
     axios
-      .get("http://localhost:8005/api/reclamation/all")
+      .get("http://localhost:8005/api/payment/getall")
       .then((response) => {
         // Mettez à jour l'état avec les données de la réponse de l'API
         setReclamations(response.data);
@@ -44,6 +44,7 @@ export default function data() {
         console.error("Erreur lors de la récupération des données de l'API", error);
       });
   }, []);
+  console.log(reclamations);
   const ReclamationContent = ({ image, name, email }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>
       <MDAvatar image={dd} name={name} size="sm" />
@@ -65,19 +66,10 @@ export default function data() {
     ),
     description: (
       <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-        {reclamation.description.value}
+        {reclamation.Price.value}
       </MDTypography>
     ),
-    status:
-      reclamation.type.value === "URGENT" ? (
-        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          done
-        </MDTypography>
-      ) : (
-        <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          not urgent
-        </MDTypography>
-      ),
+
     action: (
       <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
         Edit
@@ -90,8 +82,7 @@ export default function data() {
   return {
     columns: [
       { Header: "reclamationInfo", accessor: "reclamationInfo", width: "45%", align: "left" },
-      { Header: "Description", accessor: "description", align: "left" },
-      { Header: "status", accessor: "status", align: "center" },
+      { Header: "Price", accessor: "description", align: "left" },
       { Header: "action", accessor: "action", align: "center" },
     ],
 
