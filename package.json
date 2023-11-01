@@ -34,6 +34,7 @@
     "stylis-plugin-rtl": "2.1.1",
     "yup": "1.1.1"
   },
+
   "scripts": {
     "start": "cross-env GENERATE_SOURCEMAP=false react-scripts start",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",

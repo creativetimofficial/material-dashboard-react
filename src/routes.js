@@ -49,6 +49,10 @@ import SignUp from "layouts/authentication/sign-up";
 import Icon from "@mui/material/Icon";
 import Reclamation from "layouts/reclamation";
 import Products from "layouts/products";
+import Contract from "layouts/contract";
+import Inventory from "layouts/Inventory";
+
+import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
 
 const routes = [
   {
@@ -66,6 +70,22 @@ const routes = [
     icon: <Icon fontSize="small">Products</Icon>,
     route: "/products",
     component: <Products />,
+  },
+  {
+    type: "collapse",
+    name: "contracts",
+    key: "dashboard2",
+    icon: <Icon fontSize="small">Contracts</Icon>,
+    route: "/contracts",
+    component: <Contract />,
+  },
+  {
+    type: "collapse",
+    name: "inventories",
+    key: "dashboard3",
+    icon: <Icon fontSize="small">Inventory</Icon>,
+    route: "/inventories",
+    component: <Inventory />,
   },
 ];
 
