@@ -22,14 +22,14 @@ export default function messagesTableData(messages) {
     sentBy: PropTypes.string.isRequired,
   };
 
-  const SentByInfo = ({ sentBy }) => (
+  const ContentInfo = ({ content }) => (
     <MDBox lineHeight={1} textAlign="left">
-      <MDTypography variant="caption">Sent By: {sentBy}</MDTypography>
+      <MDTypography variant="caption"> {content}</MDTypography>
     </MDBox>
   );
 
-  SentByInfo.propTypes = {
-    sentBy: PropTypes.string.isRequired,
+  ContentInfo.propTypes = {
+    content: PropTypes.string.isRequired,
   };
 
   const formatRows = messages.map((message) => ({
@@ -41,7 +41,7 @@ export default function messagesTableData(messages) {
         sentBy={message.sentBy}
       />
     ),
-    sentBy: <SentByInfo sentBy={message.sentBy} />,
+    content: <ContentInfo content={message.content} />,
     action: (
       <MDTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
         Edit
@@ -52,8 +52,7 @@ export default function messagesTableData(messages) {
   return {
     columns: [
       { Header: "Message", accessor: "messageInfo", width: "45%", align: "left" },
-      { Header: "Content", accessor: "sentBy", width: "20%", align: "left" },
-      { Header: "Action", accessor: "action", align: "center" },
+      { Header: "Content", accessor: "content", width: "20%", align: "left" },
     ],
     rows: formatRows,
   };

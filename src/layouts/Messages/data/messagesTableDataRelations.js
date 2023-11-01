@@ -53,7 +53,6 @@ export default function messagesTableDataRelations(messages) {
     columns: [
       { Header: "Message", accessor: "messageInfo", width: "30%", align: "left" },
       { Header: "Owner", accessor: "owner", width: "30%", align: "left" },
-      { Header: "Action", accessor: "action", align: "center" },
     ],
     rows: messageRows,
   };
