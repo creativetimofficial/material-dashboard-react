@@ -45,8 +45,12 @@ import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 
+import Hive from "layouts/hive";
+import Hive1 from "layouts/BeeHive1";
+
 // @mui icons
 import Icon from "@mui/material/Icon";
+import { layouts } from "chart.js";
 
 const routes = [
   {
@@ -99,6 +103,14 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "Hive",
+    key: "hive",
+    icon: <Icon fontSize="small">person</Icon>,
+    route: "/hive",
+    component: <Hive />,
+  },
+  {
+    type: "collapse",
     name: "Sign In",
     key: "sign-in",
     icon: <Icon fontSize="small">login</Icon>,
@@ -112,6 +124,13 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
+  },
+  {
+    name: "Hive1",
+    key: "Hive1",
+    icon: <Icon fontSize="small">assignment</Icon>,
+    route: "/BeeHive1",
+    component: <Hive1 />,
   },
 ];
 
