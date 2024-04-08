@@ -26,18 +26,17 @@
     "react-dom": "18.2.0",
     "react-github-btn": "1.4.0",
     "react-router-dom": "6.11.0",
-    "react-scripts": "5.0.1",
     "react-table": "7.8.0",
+    "regenerator-runtime": "^0.14.1",
     "stylis": "4.1.4",
     "stylis-plugin-rtl": "2.1.1",
+    "vite-jsconfig-paths": "^2.0.1",
     "yup": "1.1.1"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
@@ -58,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "8.39.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-import": "2.27.5",
@@ -65,7 +65,8 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
-    "prettier": "2.8.8"
+    "prettier": "2.8.8",
+    "vite": "^5.2.8"
   },
   "overrides": {
     "svgo": "3.0.2"
