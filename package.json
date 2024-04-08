@@ -27,8 +27,10 @@
     "react-github-btn": "1.4.0",
     "react-router-dom": "6.11.0",
     "react-table": "7.8.0",
+    "regenerator-runtime": "^0.14.1",
     "stylis": "4.1.4",
     "stylis-plugin-rtl": "2.1.1",
+    "vite-jsconfig-paths": "^2.0.1",
     "yup": "1.1.1"
   },
   "scripts": {
