@@ -24,9 +24,10 @@ import MDTypography from "components/MDTypography";
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import DataTable from "examples/Tables/DataTable";
 
 // Data
-import coursesTableData from "layouts/tables/data/CoursesTableData";
+import coursesTableData from "layouts/tables/data/authorsTableData2";
 
 function Tables() {
   const { columns, rows } = coursesTableData();
@@ -51,6 +52,15 @@ function Tables() {
                 <MDTypography variant="h6" color="white">
                   Courses
                 </MDTypography>
+              </MDBox>
+              <MDBox pt={3}>
+                <DataTable
+                  table={{ columns, rows }}
+                  isSorted={false}
+                  entriesPerPage={false}
+                  showTotalEntries={false}
+                  noEndBorder
+                />
               </MDBox>
             </Card>
           </Grid>

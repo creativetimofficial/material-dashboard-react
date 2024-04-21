@@ -35,7 +35,6 @@ export default async function data() {
     method: "GET",
   });
   let res2 = await res.json();
-  console.log(res2);
 
   return {
     columns: [
@@ -62,4 +61,11 @@ export default async function data() {
       },
     ],
   };
+
+  // return {
+  //   columns: [{ Header: "course", accessor: "course", width: "45%", align: "left" }],
+  //   rows: res2.subjects.map((subject) => ({
+  //     course: <Course code={subject.course} term={subject.term} />,
+  //   })),
+  // };
 }
