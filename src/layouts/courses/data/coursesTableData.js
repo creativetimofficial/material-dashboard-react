@@ -60,7 +60,7 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Course", accessor: "course", width: "45%", align: "left" },
+      { Header: "Course Code", accessor: "course", width: "45%", align: "left" },
       { Header: "Term", accessor: "term", align: "left" },
     ],
     rows: subjects,

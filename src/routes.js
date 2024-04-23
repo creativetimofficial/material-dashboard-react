@@ -37,7 +37,8 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
+import Courses from "layouts/courses";
+import Students from "layouts/students";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
@@ -48,21 +49,37 @@ import SignUp from "layouts/authentication/sign-up";
 import Icon from "@mui/material/Icon";
 
 const routes = [
-  {
-    type: "collapse",
-    name: "Dashboard",
-    key: "dashboard",
-    icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/dashboard",
-    component: <Dashboard />,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Dashboard",
+  //   key: "dashboard",
+  //   icon: <Icon fontSize="small">dashboard</Icon>,
+  //   route: "/dashboard",
+  //   component: <Dashboard />,
+  // },
   {
     type: "collapse",
     name: "Courses",
-    key: "tables",
-    icon: <Icon fontSize="small">table_view</Icon>,
-    route: "/tables",
-    component: <Tables />,
+    key: "Courses",
+    icon: <Icon fontSize="small">auto_stories</Icon>,
+    route: "/courses",
+    component: <Courses />,
+  },
+  {
+    type: "collapse",
+    name: "Students",
+    key: "Students",
+    icon: <Icon fontSize="small">perm_contact_calendar</Icon>,
+    route: "/students",
+    component: <Students />,
+  },
+  {
+    type: "collapse",
+    name: "Course",
+    key: "Course",
+    icon: <Icon fontSize="small">book</Icon>,
+    route: "/course",
+    component: <Students />,
   },
   // {
   //   type: "collapse",
