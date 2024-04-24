@@ -36,7 +36,7 @@ function Courses() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Courses
+                  Adding Course
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
