@@ -16,7 +16,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import assessmentTableData from "layouts/assessments/data/assessmentTableData";
+import assessmentTableData from "layouts/assessments/data/majorAssessmentTableData";
 
 function Assessments() {
   const { course, term, student } = useParams();

@@ -76,10 +76,10 @@ export default function data(props) {
 
   return {
     columns: [
-      { Header: "Assessment", accessor: "assessment", align: "left" },
-      { Header: "Mark", accessor: "mark", width: "45%", align: "left" },
-      { Header: "Grade", accessor: "grade", width: "45%", align: "left" },
-      { Header: "Notes", accessor: "notes", width: "45%", align: "left" },
+      { Header: "Assessment", accessor: "assessment", width: "45%", align: "left" },
+      { Header: "Mark", accessor: "mark", align: "left" },
+      { Header: "Grade", accessor: "grade", align: "left" },
+      { Header: "Notes", accessor: "notes", align: "left" },
     ],
     rows: students,
   };

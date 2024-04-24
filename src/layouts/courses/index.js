@@ -1,3 +1,7 @@
+// react
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -17,6 +21,11 @@ import MDButton from "components/MDButton";
 
 function Courses() {
   const { columns, rows } = coursesTableData();
+
+  let navigate = useNavigate();
+  function openAddCourse() {
+    navigate("/add-course");
+  }
 
   return (
     <DashboardLayout>
@@ -49,7 +58,7 @@ function Courses() {
                 />
               </MDBox>
               <MDBox mt={-3} py={5} px={4}>
-                <MDButton color="info" variant="gradient">
+                <MDButton color="info" variant="gradient" onClick={openAddCourse}>
                   Add Courses
                 </MDButton>
               </MDBox>

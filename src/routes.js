@@ -40,6 +40,7 @@ import Dashboard from "layouts/dashboard";
 import Courses from "layouts/courses";
 import Students from "layouts/students";
 import Course from "layouts/course";
+import AddCourse from "layouts/courses/add";
 import Assessment from "layouts/assessments";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
@@ -90,6 +91,14 @@ const routes = [
     icon: <Icon fontSize="small">book</Icon>,
     route: "/assessment/:course/:term/:student",
     component: <Assessment />,
+  },
+  {
+    type: "title",
+    name: "Assessment",
+    key: "AddCourse",
+    icon: <Icon fontSize="small">add</Icon>,
+    route: "/add-course",
+    component: <AddCourse />,
   },
   // {
   //   type: "collapse",
