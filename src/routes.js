@@ -39,6 +39,8 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import Courses from "layouts/courses";
 import Students from "layouts/students";
+import Course from "layouts/course";
+import Assessment from "layouts/assessments";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
@@ -74,12 +76,20 @@ const routes = [
     component: <Students />,
   },
   {
-    type: "collapse",
+    type: "title",
     name: "Course",
     key: "Course",
     icon: <Icon fontSize="small">book</Icon>,
-    route: "/course",
-    component: <Students />,
+    route: "/course/:course/:term",
+    component: <Course />,
+  },
+  {
+    type: "title",
+    name: "Assessment",
+    key: "Assessment",
+    icon: <Icon fontSize="small">book</Icon>,
+    route: "/assessment/:course/:term/:student",
+    component: <Assessment />,
   },
   // {
   //   type: "collapse",
