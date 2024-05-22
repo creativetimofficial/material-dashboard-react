@@ -13,7 +13,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import authorsTableData from "layouts/tables/data/authorsTableData";
+import authorsTableData from "layouts/clerk/data/authorsTableData";
 
 function Tables() {
   const { columns, rows } = authorsTableData();
