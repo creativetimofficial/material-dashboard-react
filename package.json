@@ -16,6 +16,7 @@
     "@emotion/cache": "11.10.8",
     "@emotion/react": "11.10.8",
     "@emotion/styled": "11.10.8",
+    "@monaco-editor/react": "^4.6.0",
     "@mui/icons-material": "5.11.16",
     "@mui/material": "5.12.3",
     "chart.js": "4.3.0",

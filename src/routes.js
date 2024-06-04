@@ -77,6 +77,14 @@ const routes = [
     component: <Students />,
   },
   {
+    type: "collapse",
+    name: "Editor",
+    key: "Editor",
+    icon: <Icon fontSize="small">perm_contact_calendar</Icon>,
+    route: "/editor",
+    component: <Editor />,
+  },
+  {
     type: "title",
     name: "Course",
     key: "Course",

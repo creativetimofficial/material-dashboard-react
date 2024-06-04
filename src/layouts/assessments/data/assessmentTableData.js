@@ -47,7 +47,7 @@ const Notes = ({ notes }) => (
 
 export default function data(props) {
   console.log(props);
-  const [students, setStudents] = React.useState([]);
+  const [assessments, setAssessments] = React.useState([]);
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
@@ -68,7 +68,7 @@ export default function data(props) {
           notes: <Notes notes={x.notes} />,
         });
       });
-      setStudents(results);
+      setAssessments(results);
     };
 
     fetchResults();

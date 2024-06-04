@@ -27,7 +27,6 @@ const Zid = ({ id }) => (
 );
 
 export default function data(props) {
-  console.log(props);
   const [students, setStudents] = React.useState([]);
   React.useEffect(() => {
     let results = [];
@@ -40,7 +39,6 @@ export default function data(props) {
         body: JSON.stringify({ term: props.term, course: props.course }),
       });
       const resBody = await res.json();
-      console.log(resBody);
       resBody.students.forEach((x) => {
         results.push({
           name: (

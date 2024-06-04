@@ -17,14 +17,14 @@ import DataTable from "examples/Tables/DataTable";
 
 // Data
 import studentsTableData from "layouts/course/data/courseTableData";
-import assessmentsTableData from "layouts/course/data/assessmentTableData";
+import assessmentTableData from "layouts/course/data/assessmentTableData";
 
 function Students() {
   const { course, term } = useParams();
-  const { studentColumns, studentRows } = studentsTableData({ course, term });
-  const { assessmentColumns, assessmentRows } = assessmentsTableData({ course, term });
+  const { columns2, rows2 } = assessmentTableData({ course, term });
+  const { columns, rows } = studentsTableData({ course, term });
 
-  console.log(studentColumns);
+  console.log(`column2 is ${columns2}`);
 
   return (
     <DashboardLayout>
@@ -44,12 +44,12 @@ function Students() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  {Students}
+                  {course + " - " + term}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <DataTable
-                  table={{ studentColumns, studentRows }}
+                  table={{ columns, rows }}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
@@ -57,7 +57,9 @@ function Students() {
                 />
               </MDBox>
             </Card>
-            {/* <Card>
+          </Grid>
+          {/* <Grid item xs={12}>
+            <Card>
               <MDBox
                 mx={2}
                 mt={-3}
@@ -69,20 +71,20 @@ function Students() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Assessments
+                  {"Assessments"}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
                 <DataTable
-                  table={{ assessmentColumns, assessmentRows }}
+                  table={{ columns2, rows2 }}
                   isSorted={false}
                   entriesPerPage={false}
                   showTotalEntries={false}
                   noEndBorder
                 />
               </MDBox>
-            </Card> */}
-          </Grid>
+            </Card>
+          </Grid> */}
         </Grid>
       </MDBox>
     </DashboardLayout>
