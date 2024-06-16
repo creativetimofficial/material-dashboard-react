@@ -18,6 +18,7 @@ import Grid from "@mui/material/Grid";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
+import ClipLoader from "react-spinners/ClipLoader";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
@@ -43,42 +44,50 @@ const Dashboard = () => {
   const { sales, tasks } = reportsLineChartData;
   const [apiData, setApiData] = useState([]);
   const [refresh, setRefresh] = useState([]);
-  console.log(apiData, "api data console");
-  const name = "Uhadevi";
-  const age = "23";
-  const newJoin = "Yes";
+  const finalData = apiData && apiData.filter((ff) => ff.Sno != "");
+  const Serial = 3;
+  // const age = "23";
+  // const newJoin = "Yes";
 
-  const onSubmit = () => {
-    axios
-      .post(`https://sheet.best/api/sheets/c0c6e87c-3582-41cc-8bfd-2ac272cb5483`, {
-        name,
-        age,
-        newJoin,
-      })
-      .then((data) => {
-        setRefresh(data);
-      });
-  };
+  const groupedData = apiData.reduce((acc, student) => {
+    const studentClass = student.Class;
+    if (!acc[studentClass]) {
+      acc[studentClass] = [];
+    }
+    acc[studentClass].push(student);
+    return acc;
+  }, {});
+
+  // Convert the grouped data to an array format if needed
+  const classWiseData = Object.keys(groupedData).map((className) => ({
+    className: className,
+    students: groupedData[className],
+    count: groupedData[className].length,
+  }));
+
+  console.log(classWiseData, "class wise data");
+
+  // const onSubmit = () => {
+  //   axios
+  //     .post(`https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3`)
+  //     .then((data) => {
+  //       setRefresh(data);
+  //     });
+  // };
 
   useEffect(() => {
     axios
-      .get(`https://sheet.best/api/sheets/c0c6e87c-3582-41cc-8bfd-2ac272cb5483`)
+      .get(`https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3`)
       .then((response) => {
         setApiData(response.data);
       });
   }, [refresh]);
 
-  const handleOpenModal = (item) => {
-    console.log(item, "item");
-  };
   return (
     <Fragment>
       <DashboardLayout>
         <DashboardNavbar />
         <MDBox py={3}>
-          {/* <div onClick={onSubmit} className="primary">New Button</div> <br />
-        <br />
-        <br /> */}
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={3}>
               <MDBox mb={1.5}>
@@ -86,13 +95,13 @@ const Dashboard = () => {
                   color="dark"
                   icon="groups"
                   title="Students Count"
-                  count={2500}
+                  count={finalData.length > 0 ? finalData.length : <ClipLoader color="#36d7b7" />}
                   percentage={{
                     color: "success",
                     amount: "+55%",
                     label: "than last year",
                   }}
-                  onClick={() => handleOpenModal("clicked")}
+                  // onClick={() => handleOpenModal("clicked")}
                 />
               </MDBox>
             </Grid>
@@ -115,8 +124,8 @@ const Dashboard = () => {
                 <ComplexStatisticsCard
                   color="success"
                   icon="store"
-                  title="Revenue"
-                  count="34k"
+                  title="Students Attendance"
+                  count="2300"
                   percentage={{
                     color: "success",
                     amount: "+1%",
@@ -130,12 +139,12 @@ const Dashboard = () => {
                 <ComplexStatisticsCard
                   color="primary"
                   icon="person_add"
-                  title="Followers"
-                  count="+91"
+                  title="Staff Attendance"
+                  count="180"
                   percentage={{
                     color: "success",
-                    amount: "",
-                    label: "Just updated",
+                    amount: "+2%",
+                    label: "than yesterday",
                   }}
                 />
               </MDBox>
@@ -143,17 +152,6 @@ const Dashboard = () => {
           </Grid>
           <MDBox mt={4.5}>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsBarChart
-                    color="info"
-                    title="website views"
-                    description="Last Campaign Performance"
-                    date="campaign sent 2 days ago"
-                    chart={reportsBarChartData}
-                  />
-                </MDBox>
-              </Grid>
               <Grid item xs={12} md={6} lg={4}>
                 <MDBox mb={3}>
                   <ReportsLineChart
@@ -177,6 +175,17 @@ const Dashboard = () => {
                     description="Last Campaign Performance"
                     date="just updated"
                     chart={tasks}
+                  />
+                </MDBox>
+              </Grid>
+              <Grid item xs={12} md={6} lg={4}>
+                <MDBox mb={3}>
+                  <ReportsBarChart
+                    color="info"
+                    title="website views"
+                    description="Last Campaign Performance"
+                    date="campaign sent 2 days ago"
+                    chart={reportsBarChartData}
                   />
                 </MDBox>
               </Grid>

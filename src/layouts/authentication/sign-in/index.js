@@ -44,6 +44,7 @@ import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
   const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
@@ -93,7 +94,12 @@ function Basic() {
               />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="Password" fullWidth />
+              <MDInput
+                type="password"
+                label="Password"
+                fullWidth
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
