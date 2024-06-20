@@ -25,13 +25,10 @@ import MenuItem from "@mui/material/MenuItem";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 React examples
-import DataTable from "examples/Tables/DataTable";
-
 // Data
-import data from "layouts/dashboard/components/Projects/data";
+import data from "layouts/dashboard/components/Toppers/data";
 
-function Projects() {
+function Toppers() {
   const { columns, rows } = data();
   const [menu, setMenu] = useState(null);
 
@@ -64,7 +61,7 @@ function Projects() {
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
           <MDTypography variant="h6" gutterBottom>
-            Projects
+            Top-5 Students
           </MDTypography>
           <MDBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
@@ -88,17 +85,8 @@ function Projects() {
         </MDBox>
         {renderMenu}
       </MDBox>
-      <MDBox>
-        <DataTable
-          table={{ columns, rows }}
-          showTotalEntries={false}
-          isSorted={false}
-          noEndBorder
-          entriesPerPage={false}
-        />
-      </MDBox>
     </Card>
   );
 }
 
-export default Projects;
+export default Toppers;
