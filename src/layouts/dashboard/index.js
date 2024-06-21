@@ -41,19 +41,35 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Table } from "reactstrap";
+import { Col, Input, Row, Table } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Edit2 } from "react-feather";
 
 const modalStyle = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 1200,
+  width: "90%",
+  maxHeight: "90%",
   bgcolor: "background.paper",
   border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  boxShadow: 20,
+  p: 2,
+  overflowY: "auto", // Enable vertical scrolling
+};
+
+const tableContainerStyle = {
+  maxHeight: "400px",
+  overflowY: "auto",
+  marginTop: "20px",
+};
+
+const tableHeaderStyle = {
+  position: "sticky",
+  top: 0,
+  backgroundColor: "#fff",
+  zIndex: 1,
 };
 
 const Dashboard = () => {
@@ -62,6 +78,15 @@ const Dashboard = () => {
   //Set Variables
   const [isHovered, setIsHovered] = useState(false);
   const [openStuModal, setOpenStuModal] = useState(false);
+  const [openDetailModal, setOpenDetailModal] = useState(false);
+  const [detailData, setDetailData] = useState([]);
+  console.log(detailData, "details Data");
+  const [selectedTitle, setSelectedTitle] = useState("");
+  const [openEditModal, setOpenEditModal] = useState(false);
+  const [editId, setEditId] = useState();
+  const [editStudent, setEditStudent] = useState(null);
+  const [editedFields, setEditedFields] = useState({});
+  // console.log(editedFields, "edited fields");
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -76,9 +101,9 @@ const Dashboard = () => {
   };
   const [apiData, setApiData] = useState([]);
   const [refresh, setRefresh] = useState([]);
-  const finalData = apiData && apiData.filter((ff) => ff.Sno != "");
+  const finalData = apiData && apiData.filter((ff) => ff.Sno != "" && ff.Status === "Active");
 
-  const groupedData = apiData.reduce((acc, student) => {
+  const groupedData = finalData.reduce((acc, student) => {
     const studentClass = student.Class;
     if (!acc[studentClass]) {
       acc[studentClass] = [];
@@ -104,7 +129,7 @@ const Dashboard = () => {
     };
   });
 
-  console.log(classWiseData, "class wise data");
+  // console.log(classWiseData, "class wise data");
 
   useEffect(() => {
     axios
@@ -116,6 +141,64 @@ const Dashboard = () => {
 
   const handleOpen = () => setOpenStuModal(true);
   const handleClose = () => setOpenStuModal(false);
+
+  const handleOpenDetail = (students, title) => {
+    setDetailData(students);
+    setSelectedTitle(title);
+    setOpenDetailModal(true);
+  };
+
+  const handleCloseDetail = () => setOpenDetailModal(false);
+  const handleCloseEditDtl = () => setOpenEditModal(false);
+
+  const handleStuEdit = (index, student) => {
+    setEditId(index);
+    setEditStudent(student);
+    setOpenEditModal(true);
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditedFields({ ...editedFields, [name]: value });
+  };
+
+  const handleSave = () => {
+    const updatedStudent = { ...editStudent, ...editedFields };
+
+    const config = {
+      headers: {
+        "X-Api-Key": "ikqV$ghERVVKS1@RrCYhPlF%0DctqDzxpCLf2riW#BtICDov2gCPCKFAsqk_qr2_",
+        "Content-Type": "application/json",
+      },
+    };
+
+    axios
+      .patch(
+        `https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3/${editId - 1}`,
+        updatedStudent,
+        config
+      )
+      .then((response) => {
+        const indexToUpdate = detailData.findIndex(
+          (student) => student.RollNo === editStudent.RollNo // Adjust this condition based on your unique identifier
+        );
+
+        if (indexToUpdate !== -1) {
+          // If found, update detailData with the response data
+          const updatedDetailData = [...detailData]; // Create a copy of detailData array
+          updatedDetailData[indexToUpdate] = response.data[0]; // Replace the updated student data
+
+          // Update the state with the updated detailData
+          setDetailData(updatedDetailData);
+        }
+        handleCloseEditDtl();
+        setEditedFields({});
+      })
+      .catch((error) => {
+        console.error("Error updating student:", error);
+        // Handle error scenarios
+      });
+  };
 
   return (
     <Fragment>
@@ -320,11 +403,11 @@ const Dashboard = () => {
         aria-describedby="custom-modal-description"
       >
         <Box sx={modalStyle}>
-          <Typography id="custom-modal-title" className="text-center" variant="h4" component="h2">
+          <div id="custom-modal-title" className="text-center h5">
             Student Strength Details (2024-25)
-          </Typography>
-          <Typography id="custom-modal-description" sx={{ mt: 0 }}>
-            <div className="text-center">
+          </div>
+          <div id="custom-modal-description">
+            <div className="text-center h6">
               <Table bordered responsive hover striped>
                 <thead>
                   <tr>
@@ -341,9 +424,39 @@ const Dashboard = () => {
                     <tr key={item.id}>
                       <th scope="row">{index + 1}</th>
                       <td>{item.className}</td>
-                      <td>{item.boysCampus}</td>
-                      <td>{item.girlsCampus}</td>
-                      <td>{item.dayCampus}</td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            item.students.filter((s) => s.Campus === "Boys Campus"),
+                            `${item.className} - Boys Campus`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.boysCampus}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            item.students.filter((s) => s.Campus === "Girls Campus"),
+                            `${item.className} - Girls Campus`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.girlsCampus}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            item.students.filter((s) => s.Campus === "Day Campus"),
+                            `${item.className} - Day Campus`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.dayCampus}
+                      </td>
                       <td>
                         <b>{item.totalCount}</b>
                       </td>
@@ -352,9 +465,179 @@ const Dashboard = () => {
                 </tbody>
               </Table>
             </div>
-          </Typography>
+          </div>
         </Box>
       </Modal>
+
+      <Modal
+        open={openDetailModal}
+        onClose={handleCloseDetail}
+        aria-labelledby="detail-modal-title"
+        aria-describedby="detail-modal-description"
+      >
+        <Box sx={modalStyle}>
+          <div id="detail-modal-title" className="text-center">
+            {selectedTitle} Student Details
+          </div>
+          <div id="detail-modal-description">
+            <div className="text-center align-items-center h6" style={tableContainerStyle}>
+              <Table bordered responsive hover striped className="align-items-center">
+                <thead style={tableHeaderStyle}>
+                  <tr>
+                    <th>S.No</th>
+                    <th style={{ width: "250px" }}>Student Name</th>
+                    <th>Roll No</th>
+                    <th>Stream</th>
+                    <th>Class</th>
+                    <th>Section</th>
+                    <th>Group</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {detailData.map((student, index) => (
+                    <tr key={index}>
+                      <th scope="row">{index + 1}</th>
+                      <td>{student.StudentName}</td>
+                      <td>{student.RollNo}</td>
+                      <td>{student.Stream}</td>
+                      <td>{student.Class}</td>
+                      <td>{student.Section}</td>
+                      <td>{student.Group}</td>
+                      <td onClick={() => handleStuEdit(index + 1, student)}>
+                        <Edit2 size={16} />{" "}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
+          </div>
+        </Box>
+      </Modal>
+      {editId && (
+        <Modal
+          open={openEditModal}
+          onClose={handleCloseEditDtl}
+          aria-labelledby="detail-modal-title"
+          aria-describedby="detail-modal-description"
+        >
+          <Box sx={modalStyle}>
+            <div className="modal-header">
+              <h5 className="modal-title">Edit Student Details</h5>
+              <button
+                type="button"
+                className="btn-close"
+                onClick={() => setOpenEditModal(false)}
+              ></button>
+            </div>
+            <div className="modal-body">
+              <form>
+                <Row>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="studentName" className="form-label">
+                        Student Name
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="studentName"
+                        name="StudentName"
+                        value={editedFields.StudentName || editStudent.StudentName || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="rollNo" className="form-label">
+                        Roll No
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="rollNo"
+                        name="RollNo"
+                        value={editedFields.RollNo || editStudent.RollNo || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="stream" className="form-label">
+                        Stream
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="stream"
+                        name="Stream"
+                        value={editedFields.Stream || editStudent.Stream || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="class" className="form-label">
+                        Class
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="class"
+                        name="Class"
+                        value={editedFields.Class || editStudent.Class || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="section" className="form-label">
+                        Section
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="section"
+                        name="Section"
+                        value={editedFields.Section || editStudent.Section || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="group" className="form-label">
+                        Group
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="group"
+                        name="Group"
+                        value={editedFields.Group || editStudent.Group || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                </Row>
+              </form>
+            </div>
+            <div className="modal-footer">
+              <Button color="secondary" onClick={handleCloseEditDtl}>
+                Cancel
+              </Button>
+              <Button color="primary" onClick={handleSave}>
+                Save Changes
+              </Button>
+            </div>
+          </Box>
+        </Modal>
+      )}
     </Fragment>
   );
 };

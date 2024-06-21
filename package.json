@@ -28,6 +28,7 @@
     "react": "18.2.0",
     "react-chartjs-2": "5.2.0",
     "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
     "react-github-btn": "1.4.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "6.11.0",
