@@ -5,7 +5,7 @@ import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 import PropTypes from "prop-types";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import { Badge, Button } from "reactstrap";
+import { Badge, Button, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { Eye } from "react-feather";
 
 const XIIITSuper60 = ({ stuData }) => {
@@ -18,6 +18,7 @@ const XIIITSuper60 = ({ stuData }) => {
   const [finalData, setFinalData] = useState([]);
   const [selectedOption, setSelectedOption] = useState(1);
   const [selFilData, setSelFilData] = useState();
+  const [resultOpenModal, setResultOpenModal] = useState(false);
   console.log(selFilData, "selected Filtered Data");
 
   const selOptions = [
@@ -150,6 +151,10 @@ const XIIITSuper60 = ({ stuData }) => {
     saveAs(new Blob([wbout], { type: "application/octet-stream" }), `FilteredData.xlsx`);
   };
 
+  const handleResultView = () => {
+    setResultOpenModal(!resultOpenModal);
+  };
+
   return (
     <Fragment>
       <ReportsLineChart
@@ -174,7 +179,7 @@ const XIIITSuper60 = ({ stuData }) => {
               </select>
             </div>
             <div>
-              <Button size="sm rounded" color="danger">
+              <Button size="sm rounded" color="danger" onClick={() => handleResultView()}>
                 <Eye size={15} /> View Result
               </Button>
             </div>
@@ -182,6 +187,16 @@ const XIIITSuper60 = ({ stuData }) => {
         }
         chart={weekendxi}
       />
+      <>
+        <Modal
+          isOpen={resultOpenModal}
+          className="modal-dialog modal-dialog-centered modal-xl"
+          toggle={() => setResultOpenModal(false)}
+        >
+          <ModalHeader toggle={() => setResultOpenModal(false)}>Result View</ModalHeader>
+          <ModalBody className="text-center h6">Work in Progress...</ModalBody>
+        </Modal>
+      </>
     </Fragment>
   );
 };

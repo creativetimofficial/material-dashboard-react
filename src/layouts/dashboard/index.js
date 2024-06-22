@@ -414,63 +414,6 @@ const Dashboard = () => {
               </Grid>
             </Grid>
           </MDBox>
-          <MDBox mt={4.5}>
-            <Grid container spacing={3}>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsLineChart
-                    color="success"
-                    title="XII - IIT Super60 (2024-25)"
-                    description={
-                      <>
-                        (<strong>+15%</strong>) increase than last month.
-                      </>
-                    }
-                    // date="updated 4 min ago"
-                    chart={weekendxi}
-                    options={{
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          suggestedMax: 720, // Set the maximum value for y-axis
-                        },
-                      },
-                    }}
-                  />
-                </MDBox>
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsLineChart
-                    color="success"
-                    title="XI - IIT Weekend (2024-25)"
-                    description={
-                      <>
-                        (<strong>+10%</strong>) increase than last month.
-                      </>
-                    }
-                    // date="just updated"
-                    chart={tasks}
-                  />
-                </MDBox>
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <MDBox mb={3}>
-                  <ReportsLineChart
-                    color="dark"
-                    title="LT-IIT Weekend (2024-25)"
-                    description={
-                      <>
-                        (<strong>+3%</strong>) increase than last month.
-                      </>
-                    }
-                    // date="campaign sent 2 days ago"
-                    chart={reportsBarChartData}
-                  />
-                </MDBox>
-              </Grid>
-            </Grid>
-          </MDBox>
           <MDBox>
             <Grid item xs={12} md={12} lg={12}>
               <Toppers />
