@@ -24,6 +24,7 @@
     "bootstrap": "^5.3.3",
     "chart.js": "4.3.0",
     "chroma-js": "2.4.2",
+    "file-saver": "^2.0.5",
     "prop-types": "15.8.1",
     "react": "18.2.0",
     "react-chartjs-2": "5.2.0",
@@ -38,6 +39,7 @@
     "reactstrap": "^9.2.2",
     "stylis": "4.1.4",
     "stylis-plugin-rtl": "2.1.1",
+    "xlsx": "^0.18.5",
     "yup": "1.1.1"
   },
   "scripts": {

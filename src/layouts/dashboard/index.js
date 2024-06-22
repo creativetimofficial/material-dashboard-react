@@ -43,7 +43,11 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Col, Input, Row, Table } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Edit2 } from "react-feather";
+import { Edit, Edit2 } from "react-feather";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
+import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
+import XIIITSuper60 from "./xiIITSuper60";
 
 const modalStyle = {
   position: "absolute",
@@ -80,13 +84,13 @@ const Dashboard = () => {
   const [openStuModal, setOpenStuModal] = useState(false);
   const [openDetailModal, setOpenDetailModal] = useState(false);
   const [detailData, setDetailData] = useState([]);
-  console.log(detailData, "details Data");
   const [selectedTitle, setSelectedTitle] = useState("");
   const [openEditModal, setOpenEditModal] = useState(false);
   const [editId, setEditId] = useState();
+  const [editedIndex, setEditedIndex] = useState();
   const [editStudent, setEditStudent] = useState(null);
   const [editedFields, setEditedFields] = useState({});
-  // console.log(editedFields, "edited fields");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -95,10 +99,11 @@ const Dashboard = () => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-  const weekendxi = {
-    labels: ["W-1", "W-2", "W-3", "W-4", "W-5", "W-6", "W-7", "W-8", "W-9", "W-10"],
-    datasets: { label: "NEET", data: [690, 685, 670, 720, 680, 660, 685, 640, 621, 688] },
-  };
+  const [weekendxi, setWeekendxi] = useState({
+    labels: [],
+    datasets: { label: "MAINS", data: [] },
+  });
+
   const [apiData, setApiData] = useState([]);
   const [refresh, setRefresh] = useState([]);
   const finalData = apiData && apiData.filter((ff) => ff.Sno != "" && ff.Status === "Active");
@@ -113,23 +118,85 @@ const Dashboard = () => {
   }, {});
 
   // Convert the grouped data to an array format if needed
+  // const classWiseData = Object.keys(groupedData).map((className) => {
+  //   const students = groupedData[className];
+  //   const boysCampus = students.filter((student) => student.Campus === "Boys Campus").length;
+  //   const girlsCampus = students.filter((student) => student.Campus === "Girls Campus").length;
+  //   const dayCampus = students.filter((student) => student.Campus === "Day Campus").length;
+
+  //   return {
+  //     className,
+  //     students,
+  //     totalCount: students.length,
+  //     boysCampus,
+  //     girlsCampus,
+  //     dayCampus,
+  //   };
+  // });
   const classWiseData = Object.keys(groupedData).map((className) => {
     const students = groupedData[className];
-    const boysCampus = students.filter((student) => student.Campus === "Boys Campus").length;
-    const girlsCampus = students.filter((student) => student.Campus === "Girls Campus").length;
-    const dayCampus = students.filter((student) => student.Campus === "Day Campus").length;
+
+    // Initialize counts for each campus and stream
+    let boysCampus = {
+      IIT: students.filter(
+        (student) => student.Campus === "Boys Campus" && student.Stream === "IIT"
+      ).length,
+      NEET: students.filter(
+        (student) => student.Campus === "Boys Campus" && student.Stream === "NEET"
+      ).length,
+      COMM: students.filter(
+        (student) => student.Campus === "Boys Campus" && student.Stream === "COMMERCE"
+      ).length,
+      CBSE: students.filter(
+        (student) => student.Campus === "Boys Campus" && student.Stream === "CBSE"
+      ).length,
+    };
+
+    let girlsCampus = {
+      IIT: students.filter(
+        (student) => student.Campus === "Girls Campus" && student.Stream === "IIT"
+      ).length,
+      NEET: students.filter(
+        (student) => student.Campus === "Girls Campus" && student.Stream === "NEET"
+      ).length,
+      COMM: students.filter(
+        (student) => student.Campus === "Girls Campus" && student.Stream === "COMMERCE"
+      ).length,
+      CBSE: students.filter(
+        (student) => student.Campus === "Girls Campus" && student.Stream === "CBSE"
+      ).length,
+    };
+
+    let dayCampus = {
+      IIT: students.filter((student) => student.Campus === "Day Campus" && student.Stream === "IIT")
+        .length,
+      NEET: students.filter(
+        (student) => student.Campus === "Day Campus" && student.Stream === "NEET"
+      ).length,
+      COMM: students.filter(
+        (student) => student.Campus === "Day Campus" && student.Stream === "COMMERCE"
+      ).length,
+      CBSE: students.filter(
+        (student) => student.Campus === "Day Campus" && student.Stream === "CBSE"
+      ).length,
+    };
+
+    // Calculate total counts for each campus
+    const boysCampusTotal = Object.values(boysCampus).reduce((total, count) => total + count, 0);
+    const girlsCampusTotal = Object.values(girlsCampus).reduce((total, count) => total + count, 0);
+    const dayCampusTotal = Object.values(dayCampus).reduce((total, count) => total + count, 0);
+
+    // Calculate total counts across all campuses
+    const totalCount = boysCampusTotal + girlsCampusTotal + dayCampusTotal;
 
     return {
       className,
-      students,
-      totalCount: students.length,
       boysCampus,
       girlsCampus,
       dayCampus,
+      totalCount,
     };
   });
-
-  // console.log(classWiseData, "class wise data");
 
   useEffect(() => {
     axios
@@ -151,8 +218,10 @@ const Dashboard = () => {
   const handleCloseDetail = () => setOpenDetailModal(false);
   const handleCloseEditDtl = () => setOpenEditModal(false);
 
-  const handleStuEdit = (index, student) => {
+  const handleStuEdit = (index, student, serial) => {
+    const studentIndex = apiData.findIndex((ff) => ff.Sno === serial);
     setEditId(index);
+    setEditedIndex(studentIndex);
     setEditStudent(student);
     setOpenEditModal(true);
   };
@@ -174,13 +243,13 @@ const Dashboard = () => {
 
     axios
       .patch(
-        `https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3/${editId - 1}`,
+        `https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3/${editedIndex}`,
         updatedStudent,
         config
       )
       .then((response) => {
         const indexToUpdate = detailData.findIndex(
-          (student) => student.RollNo === editStudent.RollNo // Adjust this condition based on your unique identifier
+          (student) => student.Sno === editStudent.Sno // Adjust this condition based on your unique identifier
         );
 
         if (indexToUpdate !== -1) {
@@ -200,10 +269,33 @@ const Dashboard = () => {
       });
   };
 
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Filter detailData based on the search query
+  const filteredData = detailData.filter(
+    (student) =>
+      student.StudentName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.RollNo.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.Stream.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.Class.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.Section.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.Group.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const exportToExcel = () => {
+    const ws = XLSX.utils.json_to_sheet(filteredData);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "FilteredData");
+    const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+    saveAs(new Blob([wbout], { type: "application/octet-stream" }), `${selectedTitle}.xlsx`);
+  };
+
   return (
     <Fragment>
       <DashboardLayout>
-        <DashboardNavbar />
+        {/* <DashboardNavbar /> */}
         <MDBox py={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={3}>
@@ -285,30 +377,12 @@ const Dashboard = () => {
           </Grid>
           <MDBox mt={4.5}>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={6} lg={4}>
+              <Grid item xs={12} md={12} lg={12}>
                 <MDBox mb={3}>
-                  <ReportsLineChart
-                    color="error"
-                    title="XII - NEET Weekend (2024-25)"
-                    description={
-                      <>
-                        (<strong>+15%</strong>) increase than last month.
-                      </>
-                    }
-                    // date="updated 4 min ago"
-                    chart={weekendxi}
-                    options={{
-                      scales: {
-                        y: {
-                          beginAtZero: true,
-                          suggestedMax: 720, // Set the maximum value for y-axis
-                        },
-                      },
-                    }}
-                  />
+                  <XIIITSuper60 stuData={finalData} />
                 </MDBox>
               </Grid>
-              <Grid item xs={12} md={6} lg={4}>
+              <Grid item xs={12} md={6} lg={6}>
                 <MDBox mb={3}>
                   <ReportsLineChart
                     color="dark"
@@ -345,15 +419,23 @@ const Dashboard = () => {
               <Grid item xs={12} md={6} lg={4}>
                 <MDBox mb={3}>
                   <ReportsLineChart
-                    color="info"
-                    title="XII - IIT Weekend (2024-25)"
+                    color="success"
+                    title="XII - IIT Super60 (2024-25)"
                     description={
                       <>
-                        (<strong>+10%</strong>) increase than last month.
+                        (<strong>+15%</strong>) increase than last month.
                       </>
                     }
                     // date="updated 4 min ago"
-                    chart={sales}
+                    chart={weekendxi}
+                    options={{
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          suggestedMax: 720, // Set the maximum value for y-axis
+                        },
+                      },
+                    }}
                   />
                 </MDBox>
               </Grid>
@@ -413,14 +495,31 @@ const Dashboard = () => {
                   <tr>
                     <th>S.No</th>
                     <th>Class</th>
-                    <th>Boys Campus</th>
-                    <th>Girls Campus</th>
-                    <th>Day Campus</th>
+                    <th colSpan={4}>Boys Campus</th>
+                    <th colSpan={4}>Girls Campus</th>
+                    <th colSpan={4}>Day Campus</th>
                     <th>Total</th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th>IIT</th>
+                    <th>NEET</th>
+                    <th>COMM</th>
+                    <th>CBSE</th>
+                    <th>IIT</th>
+                    <th>NEET</th>
+                    <th>COMM</th>
+                    <th>CBSE</th>
+                    <th>IIT</th>
+                    <th>NEET</th>
+                    <th>COMM</th>
+                    <th>CBSE</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  {classWiseData.map((item, index) => (
+                  {/* {classWiseData.map((item, index) => (
                     <tr key={item.id}>
                       <th scope="row">{index + 1}</th>
                       <td>{item.className}</td>
@@ -461,6 +560,219 @@ const Dashboard = () => {
                         <b>{item.totalCount}</b>
                       </td>
                     </tr>
+                  ))} */}
+                  {classWiseData.map((item, index) => (
+                    <tr key={index}>
+                      <th scope="row">{index + 1}</th>
+                      <td>{item.className}</td>
+                      {/* Boys Campus */}
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Boys Campus" &&
+                                s.Stream === "IIT" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Boys Campus (IIT)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.boysCampus["IIT"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Boys Campus" &&
+                                s.Stream === "NEET" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Boys Campus (NEET)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.boysCampus["NEET"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Boys Campus" &&
+                                s.Stream === "COMMERCE" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Boys Campus (COMM)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.boysCampus["COMM"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Boys Campus" &&
+                                s.Stream === "CBSE" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Boys Campus (CBSE)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.boysCampus["CBSE"]}
+                      </td>
+                      {/* Girls Campus */}
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Girls Campus" &&
+                                s.Stream === "IIT" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Girls Campus (IIT)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.girlsCampus["IIT"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Girls Campus" &&
+                                s.Stream === "NEET" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Girls Campus (NEET)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.girlsCampus["NEET"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Girls Campus" &&
+                                s.Stream === "COMMERCE" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Girls Campus (COMM)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.girlsCampus["COMM"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Girls Campus" &&
+                                s.Stream === "CBSE" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Girls Campus (CBSE)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.girlsCampus["CBSE"]}
+                      </td>
+                      {/* Day Campus */}
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Day Campus" &&
+                                s.Stream === "IIT" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Day Campus (IIT)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.dayCampus["IIT"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Day Campus" &&
+                                s.Stream === "NEET" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Day Campus (NEET)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.dayCampus["NEET"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Day Campus" &&
+                                s.Stream === "COMMERCE" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Day Campus (COMM)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.dayCampus["COMM"]}
+                      </td>
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter(
+                              (s) =>
+                                s.Campus === "Day Campus" &&
+                                s.Stream === "CBSE" &&
+                                s.Class === item.className
+                            ),
+                            `${item.className} - Day Campus (CBSE)`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        {item.dayCampus["CBSE"]}
+                      </td>
+                      {/* Total */}
+                      <td
+                        onClick={() =>
+                          handleOpenDetail(
+                            finalData.filter((s) => s.Class === item.className),
+                            `${item.className} - Total List`
+                          )
+                        }
+                        style={{ cursor: "pointer", color: "blue" }}
+                      >
+                        <b>{item.totalCount}</b>
+                      </td>
+                    </tr>
                   ))}
                 </tbody>
               </Table>
@@ -476,10 +788,26 @@ const Dashboard = () => {
         aria-describedby="detail-modal-description"
       >
         <Box sx={modalStyle}>
-          <div id="detail-modal-title" className="text-center">
-            {selectedTitle} Student Details
+          <div id="detail-modal-title" className="text-center h4">
+            <b style={{ color: "green" }}> {selectedTitle} Student Details </b>
           </div>
           <div id="detail-modal-description">
+            <div className="d-flex justify-content-between mb-2">
+              <Button variant="contained" color="primary" onClick={exportToExcel}>
+                <span className="text-white">Export to Excel</span>
+              </Button>
+              <input
+                type="text"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                style={{
+                  marginBottom: "5px",
+                  padding: "2px",
+                  width: "30%",
+                }}
+              />
+            </div>
             <div className="text-center align-items-center h6" style={tableContainerStyle}>
               <Table bordered responsive hover striped className="align-items-center">
                 <thead style={tableHeaderStyle}>
@@ -491,11 +819,13 @@ const Dashboard = () => {
                     <th>Class</th>
                     <th>Section</th>
                     <th>Group</th>
+                    {/* <th>Mobile No</th>
+                    <th>Email ID</th> */}
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {detailData.map((student, index) => (
+                  {filteredData.map((student, index) => (
                     <tr key={index}>
                       <th scope="row">{index + 1}</th>
                       <td>{student.StudentName}</td>
@@ -504,8 +834,21 @@ const Dashboard = () => {
                       <td>{student.Class}</td>
                       <td>{student.Section}</td>
                       <td>{student.Group}</td>
-                      <td onClick={() => handleStuEdit(index + 1, student)}>
-                        <Edit2 size={16} />{" "}
+                      {/* <td>
+                        {student.Mobile1} <br /> {student.Mobile2}
+                      </td>
+                      <td style={{}}>
+                        {student.Email_ID1} <br /> {student.Email_ID2}
+                      </td> */}
+                      <td>{student.Group}</td>
+                      <td
+                        onClick={() => handleStuEdit(index + 1, student, student.Sno)}
+                        style={{
+                          textDecoration: isHovered ? "underline" : "none",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Edit size={16} />{" "}
                       </td>
                     </tr>
                   ))}
@@ -525,12 +868,8 @@ const Dashboard = () => {
           <Box sx={modalStyle}>
             <div className="modal-header">
               <h5 className="modal-title">Edit Student Details</h5>
-              <button
-                type="button"
-                className="btn-close"
-                onClick={() => setOpenEditModal(false)}
-              ></button>
             </div>
+            <hr />
             <div className="modal-body">
               <form>
                 <Row>
@@ -624,16 +963,91 @@ const Dashboard = () => {
                       />
                     </div>
                   </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="status" className="form-label">
+                        Status
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="status"
+                        name="Status"
+                        value={editedFields.Status || editStudent.Status || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="mobile1" className="form-label">
+                        Mobile-1
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="mobile1"
+                        name="Mobile1"
+                        value={editedFields.Mobile1 || editStudent.Mobile1 || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="mobile2" className="form-label">
+                        Mobile-2
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="mobile2"
+                        name="Mobile2"
+                        value={editedFields.Mobile2 || editStudent.Mobile2 || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="email_ID1" className="form-label">
+                        Email ID-1
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="email_ID1"
+                        name="Email_ID1"
+                        value={editedFields.Email_ID1 || editStudent.Email_ID1 || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
+                  <Col md={3}>
+                    <div className="mb-3">
+                      <label htmlFor="email_ID2" className="form-label">
+                        Email ID-2
+                      </label>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        id="email_ID2"
+                        name="Email_ID2"
+                        value={editedFields.Email_ID2 || editStudent.Email_ID2 || ""}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                  </Col>
                 </Row>
               </form>
             </div>
             <div className="modal-footer">
-              <Button color="secondary" onClick={handleCloseEditDtl}>
+              <button className="btn btn-danger mr-0" onClick={handleCloseEditDtl}>
                 Cancel
-              </Button>
-              <Button color="primary" onClick={handleSave}>
+              </button>
+              <button className="btn btn-success" onClick={handleSave}>
                 Save Changes
-              </Button>
+              </button>
             </div>
           </Box>
         </Modal>
