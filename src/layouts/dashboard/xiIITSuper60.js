@@ -7,8 +7,11 @@ import PropTypes from "prop-types";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import { Badge, Button, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { Eye } from "react-feather";
+import ResultsTable from "examples/Tables/DataTable";
+import { useNavigate } from "react-router-dom";
 
 const XIIITSuper60 = ({ stuData }) => {
+  const history = useNavigate();
   const [weekendxi, setWeekendxi] = useState({
     labels: [],
     datasets: { label: "MAINS", data: [] },
@@ -19,14 +22,21 @@ const XIIITSuper60 = ({ stuData }) => {
   const [selectedOption, setSelectedOption] = useState(1);
   const [selFilData, setSelFilData] = useState();
   const [resultOpenModal, setResultOpenModal] = useState(false);
-  console.log(selFilData, "selected Filtered Data");
+  console.log(finalData, selFilData, "selected Filtered Data");
 
   const selOptions = [
     { value: 1, label: "Overall" },
     { value: 2, label: "Latest 2 Weeks" },
     { value: 3, label: "Latest 3 Weeks" },
+    { value: 4, label: "Latest 4 Weeks" },
     { value: 5, label: "Latest 5 Weeks" },
+    { value: 6, label: "Latest 6 Weeks" },
+    { value: 7, label: "Latest 7 Weeks" },
+    { value: 8, label: "Latest 8 Weeks" },
+    { value: 9, label: "Latest 9 Weeks" },
     { value: 10, label: "Latest 10 Weeks" },
+    { value: 15, label: "Latest 15 Weeks" },
+    { value: 20, label: "Latest 20 Weeks" },
   ];
 
   useEffect(() => {
@@ -153,6 +163,7 @@ const XIIITSuper60 = ({ stuData }) => {
 
   const handleResultView = () => {
     setResultOpenModal(!resultOpenModal);
+    // history("/tables");
   };
 
   return (
@@ -193,8 +204,12 @@ const XIIITSuper60 = ({ stuData }) => {
           className="modal-dialog modal-dialog-centered modal-xl"
           toggle={() => setResultOpenModal(false)}
         >
-          <ModalHeader toggle={() => setResultOpenModal(false)}>Result View</ModalHeader>
-          <ModalBody className="text-center h6">Work in Progress...</ModalBody>
+          <ModalHeader toggle={() => setResultOpenModal(false)}>
+            <Badge color="success"> XII - Super 60 (IIT) JEE-MAINS Model Results </Badge>
+          </ModalHeader>
+          <ModalBody className="text-center h6">
+            <ResultsTable marksData={selectedOption != 1 ? selFilData : finalData} />
+          </ModalBody>
         </Modal>
       </>
     </Fragment>

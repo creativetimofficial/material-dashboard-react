@@ -1,311 +1,334 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-import { useMemo, useEffect, useState } from "react";
-
-// prop-types is a library for typechecking of props
+import { useState, useEffect, Fragment } from "react";
+import {
+  Card,
+  CardBody,
+  Table,
+  Pagination,
+  PaginationItem,
+  PaginationLink,
+  Input,
+  Row,
+  Col,
+  Button,
+} from "reactstrap";
 import PropTypes from "prop-types";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
 
-// react-table components
-import { useTable, usePagination, useGlobalFilter, useAsyncDebounce, useSortBy } from "react-table";
+const ResultsTable = ({ marksData }) => {
+  // Collect all unique dates to use as headers
+  const allDates = [
+    ...new Set(marksData.flatMap((item) => item.WeekendMarks.map((mark) => mark.Date))),
+  ];
 
-// @mui material components
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableContainer from "@mui/material/TableContainer";
-import TableRow from "@mui/material/TableRow";
-import Icon from "@mui/material/Icon";
-import Autocomplete from "@mui/material/Autocomplete";
+  // State for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage, setRecordsPerPage] = useState(10);
+  const [paginatedData, setPaginatedData] = useState([]);
+  const [viewMode, setViewMode] = useState("all"); // all, totals, averages
 
-// Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDInput from "components/MDInput";
-import MDPagination from "components/MDPagination";
+  // Compute averages and sort data
+  const sortedMarksData = marksData
+    .map((item) => ({
+      ...item,
+      averages: calculateAverages(item.WeekendMarks),
+    }))
+    .sort((a, b) => b.averages.Tot - a.averages.Tot);
 
-// Material Dashboard 2 React example components
-import DataTableHeadCell from "examples/Tables/DataTable/DataTableHeadCell";
-import DataTableBodyCell from "examples/Tables/DataTable/DataTableBodyCell";
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(sortedMarksData.length / recordsPerPage);
 
-function DataTable({
-  entriesPerPage,
-  canSearch,
-  showTotalEntries,
-  table,
-  pagination,
-  isSorted,
-  noEndBorder,
-}) {
-  const defaultValue = entriesPerPage.defaultValue ? entriesPerPage.defaultValue : 10;
-  const entries = entriesPerPage.entries
-    ? entriesPerPage.entries.map((el) => el.toString())
-    : ["5", "10", "15", "20", "25"];
-  const columns = useMemo(() => table.columns, [table]);
-  const data = useMemo(() => table.rows, [table]);
+  // Function to calculate averages
+  function calculateAverages(marks) {
+    const totals = { Mat: 0, Phy: 0, Che: 0, Tot: 0, count: 0 };
 
-  const tableInstance = useTable(
-    { columns, data, initialState: { pageIndex: 0 } },
-    useGlobalFilter,
-    useSortBy,
-    usePagination
-  );
+    marks.forEach((mark) => {
+      totals.Mat += parseInt(mark.Mat, 10) || 0;
+      totals.Phy += parseInt(mark.Phy, 10) || 0;
+      totals.Che += parseInt(mark.Che, 10) || 0;
+      totals.Tot += parseInt(mark.Tot, 10) || 0;
+      totals.count += 1;
+    });
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    prepareRow,
-    rows,
-    page,
-    pageOptions,
-    canPreviousPage,
-    canNextPage,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    setGlobalFilter,
-    state: { pageIndex, pageSize, globalFilter },
-  } = tableInstance;
-
-  // Set the default value for the entries per page when component mounts
-  useEffect(() => setPageSize(defaultValue || 10), [defaultValue]);
-
-  // Set the entries per page value based on the select value
-  const setEntriesPerPage = (value) => setPageSize(value);
-
-  // Render the paginations
-  const renderPagination = pageOptions.map((option) => (
-    <MDPagination
-      item
-      key={option}
-      onClick={() => gotoPage(Number(option))}
-      active={pageIndex === option}
-    >
-      {option + 1}
-    </MDPagination>
-  ));
-
-  // Handler for the input to set the pagination index
-  const handleInputPagination = ({ target: { value } }) =>
-    value > pageOptions.length || value < 0 ? gotoPage(0) : gotoPage(Number(value));
-
-  // Customized page options starting from 1
-  const customizedPageOptions = pageOptions.map((option) => option + 1);
-
-  // Setting value for the pagination input
-  const handleInputPaginationValue = ({ target: value }) => gotoPage(Number(value.value - 1));
-
-  // Search input value state
-  const [search, setSearch] = useState(globalFilter);
-
-  // Search input state handle
-  const onSearchChange = useAsyncDebounce((value) => {
-    setGlobalFilter(value || undefined);
-  }, 100);
-
-  // A function that sets the sorted value for the table
-  const setSortedValue = (column) => {
-    let sortedValue;
-
-    if (isSorted && column.isSorted) {
-      sortedValue = column.isSortedDesc ? "desc" : "asce";
-    } else if (isSorted) {
-      sortedValue = "none";
-    } else {
-      sortedValue = false;
-    }
-
-    return sortedValue;
-  };
-
-  // Setting the entries starting point
-  const entriesStart = pageIndex === 0 ? pageIndex + 1 : pageIndex * pageSize + 1;
-
-  // Setting the entries ending point
-  let entriesEnd;
-
-  if (pageIndex === 0) {
-    entriesEnd = pageSize;
-  } else if (pageIndex === pageOptions.length - 1) {
-    entriesEnd = rows.length;
-  } else {
-    entriesEnd = pageSize * (pageIndex + 1);
+    return {
+      Mat: (totals.Mat / totals.count).toFixed(2),
+      Phy: (totals.Phy / totals.count).toFixed(2),
+      Che: (totals.Che / totals.count).toFixed(2),
+      Tot: (totals.Tot / totals.count).toFixed(2),
+    };
   }
 
+  // Update paginated data when currentPage or recordsPerPage changes
+  useEffect(() => {
+    const start = (currentPage - 1) * recordsPerPage;
+    const end = start + recordsPerPage;
+    setPaginatedData(sortedMarksData.slice(start, end));
+  }, [currentPage, recordsPerPage, sortedMarksData]);
+
+  // Handle page change
+  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+
+  // Handle records per page change
+  const handleRecordsPerPageChange = (e) => {
+    setRecordsPerPage(parseInt(e.target.value, 10));
+    setCurrentPage(1); // Reset to first page
+  };
+
+  // Handle view mode change
+  const handleViewModeChange = (mode) => setViewMode(mode);
+
+  const exportToExcel = () => {
+    const wb = XLSX.utils.book_new();
+    const wsData = [];
+
+    // Headers row
+    const headersRow = [
+      "S.No",
+      "Name of the Student",
+      "RollNo",
+      "Caste",
+      ...allDates.flatMap((date) => {
+        if (viewMode === "all") {
+          return ["Mat", "Phy", "Che", "Tot"].map((subject) => `${date} - ${subject}`);
+        } else if (viewMode === "totals") {
+          return [`${date.slice(0, 5)} - Tot`];
+        }
+        return [];
+      }),
+      "Averages Mat",
+      "Averages Phy",
+      "Averages Che",
+      "Averages Tot",
+    ];
+    wsData.push(headersRow);
+
+    // Data rows
+    paginatedData.forEach((item, index) => {
+      const rowData = [
+        index + 1 + (currentPage - 1) * recordsPerPage,
+        item.StudentName,
+        item.RollNo,
+        item.Caste,
+        ...allDates.flatMap((date) => {
+          const marks = item.WeekendMarks.find((mark) => mark.Date === date) || {};
+          if (viewMode === "all") {
+            return [marks.Mat || "-", marks.Phy || "-", marks.Che || "-", marks.Tot || "-"];
+          } else if (viewMode === "totals") {
+            return [marks.Tot || "-"];
+          }
+          return [];
+        }),
+        item.averages.Mat,
+        item.averages.Phy,
+        item.averages.Che,
+        item.averages.Tot,
+      ];
+      wsData.push(rowData);
+    });
+
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+    XLSX.utils.book_append_sheet(wb, ws, "SortedData");
+    const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+    saveAs(
+      new Blob([wbout], { type: "application/octet-stream" }),
+      `XII_IIT_Super-60_Averages.xlsx`
+    );
+  };
+
   return (
-    <TableContainer sx={{ boxShadow: "none" }}>
-      {entriesPerPage || canSearch ? (
-        <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-          {entriesPerPage && (
-            <MDBox display="flex" alignItems="center">
-              <Autocomplete
-                disableClearable
-                value={pageSize.toString()}
-                options={entries}
-                onChange={(event, newValue) => {
-                  setEntriesPerPage(parseInt(newValue, 10));
-                }}
-                size="small"
-                sx={{ width: "5rem" }}
-                renderInput={(params) => <MDInput {...params} />}
-              />
-              <MDTypography variant="caption" color="secondary">
-                &nbsp;&nbsp;entries per page
-              </MDTypography>
-            </MDBox>
-          )}
-          {canSearch && (
-            <MDBox width="12rem" ml="auto">
-              <MDInput
-                placeholder="Search..."
-                value={search}
-                size="small"
-                fullWidth
-                onChange={({ currentTarget }) => {
-                  setSearch(search);
-                  onSearchChange(currentTarget.value);
-                }}
-              />
-            </MDBox>
-          )}
-        </MDBox>
-      ) : null}
-      <Table {...getTableProps()}>
-        <MDBox component="thead">
-          {headerGroups.map((headerGroup, key) => (
-            <TableRow key={key} {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column, idx) => (
-                <DataTableHeadCell
-                  key={idx}
-                  {...column.getHeaderProps(isSorted && column.getSortByToggleProps())}
-                  width={column.width ? column.width : "auto"}
-                  align={column.align ? column.align : "left"}
-                  sorted={setSortedValue(column)}
-                >
-                  {column.render("Header")}
-                </DataTableHeadCell>
-              ))}
-            </TableRow>
-          ))}
-        </MDBox>
-        <TableBody {...getTableBodyProps()}>
-          {page.map((row, key) => {
-            prepareRow(row);
-            return (
-              <TableRow key={key} {...row.getRowProps()}>
-                {row.cells.map((cell, idx) => (
-                  <DataTableBodyCell
-                    key={idx}
-                    noBorder={noEndBorder && rows.length - 1 === key}
-                    align={cell.column.align ? cell.column.align : "left"}
-                    {...cell.getCellProps()}
-                  >
-                    {cell.render("Cell")}
-                  </DataTableBodyCell>
-                ))}
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
-
-      <MDBox
-        display="flex"
-        flexDirection={{ xs: "column", sm: "row" }}
-        justifyContent="space-between"
-        alignItems={{ xs: "flex-start", sm: "center" }}
-        p={!showTotalEntries && pageOptions.length === 1 ? 0 : 3}
-      >
-        {showTotalEntries && (
-          <MDBox mb={{ xs: 3, sm: 0 }}>
-            <MDTypography variant="button" color="secondary" fontWeight="regular">
-              Showing {entriesStart} to {entriesEnd} of {rows.length} entries
-            </MDTypography>
-          </MDBox>
-        )}
-        {pageOptions.length > 1 && (
-          <MDPagination
-            variant={pagination.variant ? pagination.variant : "gradient"}
-            color={pagination.color ? pagination.color : "info"}
+    <Fragment>
+      <div className="d-flex justify-content-between">
+        <div>
+          <Button
+            color="primary"
+            size="sm"
+            style={{ marginRight: "25px", borderRadius: "5px" }}
+            onClick={exportToExcel}
           >
-            {canPreviousPage && (
-              <MDPagination item onClick={() => previousPage()}>
-                <Icon sx={{ fontWeight: "bold" }}>chevron_left</Icon>
-              </MDPagination>
-            )}
-            {renderPagination.length > 6 ? (
-              <MDBox width="5rem" mx={1}>
-                <MDInput
-                  inputProps={{ type: "number", min: 1, max: customizedPageOptions.length }}
-                  value={customizedPageOptions[pageIndex]}
-                  onChange={(handleInputPagination, handleInputPaginationValue)}
-                />
-              </MDBox>
-            ) : (
-              renderPagination
-            )}
-            {canNextPage && (
-              <MDPagination item onClick={() => nextPage()}>
-                <Icon sx={{ fontWeight: "bold" }}>chevron_right</Icon>
-              </MDPagination>
-            )}
-          </MDPagination>
-        )}
-      </MDBox>
-    </TableContainer>
+            <span className="text-white">Export to Excel</span>
+          </Button>
+        </div>
+        <div className="mb-1 justify-content-right">
+          <Row>
+            <Col>
+              <Button
+                color="info"
+                outline
+                onClick={() => handleViewModeChange("all")}
+                style={{ marginRight: "5px", borderRadius: "20px" }}
+                size="sm"
+              >
+                All Subjects
+              </Button>
+              <Button
+                color="warning"
+                outline
+                onClick={() => handleViewModeChange("totals")}
+                style={{ marginRight: "5px", borderRadius: "20px" }}
+                size="sm"
+              >
+                Only Totals
+              </Button>
+              <Button
+                color="success"
+                outline
+                onClick={() => handleViewModeChange("averages")}
+                style={{ borderRadius: "20px" }}
+                size="sm"
+              >
+                Only Averages
+              </Button>
+            </Col>
+          </Row>
+        </div>
+      </div>
+      <Card>
+        <CardBody className="small">
+          <Table responsive striped bordered hover>
+            <thead>
+              <tr>
+                <th rowSpan={2}>S.No</th>
+                <th rowSpan={2}>Name of the Student</th>
+                <th rowSpan={2}>Roll No</th>
+                <th rowSpan={2}>Caste</th>
+                {viewMode === "all" &&
+                  allDates.map((date, index) => (
+                    <th key={index} colSpan={4} className="text-danger">
+                      {date}
+                    </th>
+                  ))}
+                {viewMode === "totals" &&
+                  allDates.map((date, index) => <th key={index}>{date.slice(0, 5)}</th>)}
+                <th colSpan={4}>Averages</th>
+              </tr>
+              <tr>
+                {viewMode === "all" &&
+                  allDates.map((date, index) => (
+                    <Fragment key={index}>
+                      <th>Mat</th>
+                      <th>Phy</th>
+                      <th>Che</th>
+                      <th>Tot</th>
+                    </Fragment>
+                  ))}
+                {viewMode === "totals" && allDates.map((date, index) => <th key={index}>Tot</th>)}
+                {(viewMode === "all" || viewMode === "totals" || viewMode === "averages") && (
+                  <Fragment>
+                    <th>Mat</th>
+                    <th>Phy</th>
+                    <th>Che</th>
+                    <th>Tot</th>
+                  </Fragment>
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedData.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1 + (currentPage - 1) * recordsPerPage}</td>
+                  <td>{item.StudentName}</td>
+                  <td>{item.RollNo}</td>
+                  <td>{item.Caste}</td>
+                  {viewMode === "all" &&
+                    allDates.map((date, dateIndex) => {
+                      const marks = item.WeekendMarks.find((mark) => mark.Date === date) || {};
+                      return (
+                        <Fragment key={dateIndex}>
+                          <td style={{ borderLeft: "2px solid black" }}>{marks.Mat || "-"}</td>
+                          <td>{marks.Phy || "-"}</td>
+                          <td>{marks.Che || "-"}</td>
+                          <td style={{ borderRight: "2px solid black" }}>{marks.Tot || "-"}</td>
+                        </Fragment>
+                      );
+                    })}
+                  {viewMode === "totals" &&
+                    allDates.map((date, dateIndex) => {
+                      const marks = item.WeekendMarks.find((mark) => mark.Date === date) || {};
+                      return <td key={dateIndex}>{marks.Tot || "-"}</td>;
+                    })}
+                  <td className="text-primary">
+                    <b>{item.averages.Mat}</b>
+                  </td>
+                  <td className="text-primary">
+                    <b>{item.averages.Phy}</b>
+                  </td>
+                  <td className="text-primary">
+                    <b>{item.averages.Che}</b>
+                  </td>
+                  <td className="text-danger" >
+                    <b>{item.averages.Tot}</b>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </CardBody>
+      </Card>
+      <Row className="mt-1 align-items-center">
+        <Col className="align-left">
+          <p>{`Showing ${paginatedData.length ? (currentPage - 1) * recordsPerPage + 1 : 0} to ${
+            currentPage * recordsPerPage < sortedMarksData.length
+              ? currentPage * recordsPerPage
+              : sortedMarksData.length
+          } of ${sortedMarksData.length} records`}</p>
+        </Col>
+        <Col className="text-right">
+          <Input
+            type="select"
+            value={recordsPerPage}
+            onChange={handleRecordsPerPageChange}
+            style={{ display: "inline", width: "auto" }}
+          >
+            {[10, 25, 50, 100, 200, 500, 1000, 5000].map((value) => (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            ))}
+          </Input>
+          <Pagination aria-label="Page navigation example" className="d-inline-block ml-3">
+            <PaginationItem disabled={currentPage === 1}>
+              <PaginationLink first onClick={() => handlePageChange(1)} />
+            </PaginationItem>
+            <PaginationItem disabled={currentPage === 1}>
+              <PaginationLink previous onClick={() => handlePageChange(currentPage - 1)} />
+            </PaginationItem>
+            {[...Array(totalPages)].map((_, i) => (
+              <PaginationItem active={i + 1 === currentPage} key={i}>
+                <PaginationLink onClick={() => handlePageChange(i + 1)}>{i + 1}</PaginationLink>
+              </PaginationItem>
+            ))}
+            <PaginationItem disabled={currentPage === totalPages}>
+              <PaginationLink next onClick={() => handlePageChange(currentPage + 1)} />
+            </PaginationItem>
+            <PaginationItem disabled={currentPage === totalPages}>
+              <PaginationLink last onClick={() => handlePageChange(totalPages)} />
+            </PaginationItem>
+          </Pagination>
+        </Col>
+      </Row>
+    </Fragment>
   );
-}
-
-// Setting default values for the props of DataTable
-DataTable.defaultProps = {
-  entriesPerPage: { defaultValue: 10, entries: [5, 10, 15, 20, 25] },
-  canSearch: false,
-  showTotalEntries: true,
-  pagination: { variant: "gradient", color: "info" },
-  isSorted: true,
-  noEndBorder: false,
 };
 
-// Typechecking props for the DataTable
-DataTable.propTypes = {
-  entriesPerPage: PropTypes.oneOfType([
+ResultsTable.propTypes = {
+  marksData: PropTypes.arrayOf(
     PropTypes.shape({
-      defaultValue: PropTypes.number,
-      entries: PropTypes.arrayOf(PropTypes.number),
-    }),
-    PropTypes.bool,
-  ]),
-  canSearch: PropTypes.bool,
-  showTotalEntries: PropTypes.bool,
-  table: PropTypes.objectOf(PropTypes.array).isRequired,
-  pagination: PropTypes.shape({
-    variant: PropTypes.oneOf(["contained", "gradient"]),
-    color: PropTypes.oneOf([
-      "primary",
-      "secondary",
-      "info",
-      "success",
-      "warning",
-      "error",
-      "dark",
-      "light",
-    ]),
-  }),
-  isSorted: PropTypes.bool,
-  noEndBorder: PropTypes.bool,
+      StudentName: PropTypes.string.isRequired,
+      RollNo: PropTypes.string.isRequired,
+      Caste: PropTypes.string.isRequired,
+      Gender: PropTypes.string.isRequired,
+      Section: PropTypes.string.isRequired,
+      WeekendMarks: PropTypes.arrayOf(
+        PropTypes.shape({
+          Date: PropTypes.string.isRequired,
+          Mat: PropTypes.string,
+          Phy: PropTypes.string,
+          Che: PropTypes.string,
+          Tot: PropTypes.string,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
 };
 
-export default DataTable;
+export default ResultsTable;
