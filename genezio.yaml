@@ -16,4 +16,3 @@ frontend:
     build: npm run build
     # List of scripts to run before deploying the frontend.
     deploy: npm install
-  subdomain: coral-curly-mockingbird
