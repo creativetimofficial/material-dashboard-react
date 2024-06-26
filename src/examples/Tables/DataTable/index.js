@@ -25,7 +25,7 @@ const ResultsTable = ({ marksData }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(10);
   const [paginatedData, setPaginatedData] = useState([]);
-  const [viewMode, setViewMode] = useState("all"); // all, totals, averages
+  const [viewMode, setViewMode] = useState("totals"); // all, totals, averages
 
   // Compute averages and sort data
   const sortedMarksData = marksData
@@ -152,15 +152,6 @@ const ResultsTable = ({ marksData }) => {
           <Row>
             <Col>
               <Button
-                color="info"
-                outline
-                onClick={() => handleViewModeChange("all")}
-                style={{ marginRight: "5px", borderRadius: "20px" }}
-                size="sm"
-              >
-                All Subjects
-              </Button>
-              <Button
                 color="warning"
                 outline
                 onClick={() => handleViewModeChange("totals")}
@@ -168,6 +159,15 @@ const ResultsTable = ({ marksData }) => {
                 size="sm"
               >
                 Only Totals
+              </Button>
+              <Button
+                color="info"
+                outline
+                onClick={() => handleViewModeChange("all")}
+                style={{ marginRight: "5px", borderRadius: "20px" }}
+                size="sm"
+              >
+                All Subjects
               </Button>
               <Button
                 color="success"
@@ -255,7 +255,7 @@ const ResultsTable = ({ marksData }) => {
                   <td className="text-primary">
                     <b>{item.averages.Che}</b>
                   </td>
-                  <td className="text-danger" >
+                  <td className="text-danger">
                     <b>{item.averages.Tot}</b>
                   </td>
                 </tr>
