@@ -13,6 +13,7 @@ This free MUI & React Dashboard is coming with prebuilt design blocks, so the de
 switching from our pages to the real website is very easy to be done.
 
 Special thanks go to:
+
 - [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with Material Dashboard React. You can use it to gain insights into your sources of traffic.
 
 **Documentation built by Developers**
@@ -47,6 +48,7 @@ Let us know your thoughts below. And good luck with development!
 - [Versions](#versions)
 - [Demo](#demo)
 - [Quick Start](#quick-start)
+- [Deploy](#deploy)
 - [Documentation](#documentation)
 - [File Structure](#file-structure)
 - [Browser Support](#browser-support)
@@ -85,6 +87,12 @@ Quick start options:
 
 1. Download and Install NodeJs LTS version from [NodeJs Official Page](https://nodejs.org/en/download/).
 2. Navigate to the root ./ directory of the product and run `yarn install` or `npm install` to install our local dependencies.
+
+## Deploy
+
+:rocket: You can deploy your own version of the template to Genezio with one click:
+
+[![Deploy to Genezio](https://raw.githubusercontent.com/Genez-io/graphics/main/svg/deploy-button.svg)](https://app.genez.io/start/deploy?repository=https://github.com/creativetimofficial/material-dashboard-react&utm_source=github&utm_medium=referral&utm_campaign=github-creativetim&utm_term=deploy-project&utm_content=button-head)
 
 ## Documentation
 
