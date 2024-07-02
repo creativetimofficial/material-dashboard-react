@@ -22,7 +22,6 @@ const XIIITSuper60 = ({ stuData }) => {
   const [selectedOption, setSelectedOption] = useState(1);
   const [selFilData, setSelFilData] = useState();
   const [resultOpenModal, setResultOpenModal] = useState(false);
-  console.log(finalData, selFilData, "selected Filtered Data");
 
   const selOptions = [
     { value: 1, label: "Overall" },
@@ -43,11 +42,11 @@ const XIIITSuper60 = ({ stuData }) => {
     axios
       .get(`https://sheet.best/api/sheets/2330bbb1-4ed6-4303-811c-6240e278ce2c`)
       .then((response) => {
-        organizeMarksData(response.data);
+        super60OrganizeData(response.data);
       });
   }, []);
 
-  const organizeMarksData = (data) => {
+  const super60OrganizeData = (data) => {
     const result = data.map((student) => {
       const weekendMarks = [];
 
@@ -67,6 +66,8 @@ const XIIITSuper60 = ({ stuData }) => {
         Caste: student.Caste,
         Gender: student.Gender,
         Section: student.Section,
+        Campus: student.Campus,
+        Mentor: student.Mentor,
         WeekendMarks: weekendMarks,
       };
     });
@@ -129,7 +130,7 @@ const XIIITSuper60 = ({ stuData }) => {
 
     setWeekendxi({
       labels,
-      datasets: { label: "JEE-MAINS", data: datasetsData },
+      datasets: { label: "TOP MARK", data: datasetsData },
     });
   };
 
@@ -153,17 +154,8 @@ const XIIITSuper60 = ({ stuData }) => {
     }
   }, [selectedOption]);
 
-  const exportToExcel = () => {
-    const ws = XLSX.utils.json_to_sheet(finalData); // Using finalData for export
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "FilteredData");
-    const wbout = XLSX.write(wb, { bookType: "xlsx", type: "array" });
-    saveAs(new Blob([wbout], { type: "application/octet-stream" }), `FilteredData.xlsx`);
-  };
-
   const handleResultView = () => {
     setResultOpenModal(!resultOpenModal);
-    // history("/tables");
   };
 
   return (
@@ -208,7 +200,10 @@ const XIIITSuper60 = ({ stuData }) => {
             <Badge color="success"> XII - Super 60 (IIT) JEE-MAINS Model Results </Badge>
           </ModalHeader>
           <ModalBody className="text-center h6">
-            <ResultsTable marksData={selectedOption != 1 ? selFilData : finalData} />
+            <ResultsTable
+              marksData={selectedOption != 1 ? selFilData : finalData}
+              stuData={stuData}
+            />
           </ModalBody>
         </Modal>
       </>

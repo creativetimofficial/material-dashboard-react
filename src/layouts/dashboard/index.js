@@ -392,7 +392,6 @@ const Dashboard = () => {
                         (<strong>+10%</strong>) increase than last month.
                       </>
                     }
-                    // date="just updated"
                     chart={tasks}
                   />
                 </MDBox>
@@ -462,53 +461,10 @@ const Dashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {classWiseData.map((item, index) => (
-                    <tr key={item.id}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{item.className}</td>
-                      <td
-                        onClick={() =>
-                          handleOpenDetail(
-                            item.students.filter((s) => s.Campus === "Boys Campus"),
-                            `${item.className} - Boys Campus`
-                          )
-                        }
-                        style={{ cursor: "pointer", color: "blue" }}
-                      >
-                        {item.boysCampus}
-                      </td>
-                      <td
-                        onClick={() =>
-                          handleOpenDetail(
-                            item.students.filter((s) => s.Campus === "Girls Campus"),
-                            `${item.className} - Girls Campus`
-                          )
-                        }
-                        style={{ cursor: "pointer", color: "blue" }}
-                      >
-                        {item.girlsCampus}
-                      </td>
-                      <td
-                        onClick={() =>
-                          handleOpenDetail(
-                            item.students.filter((s) => s.Campus === "Day Campus"),
-                            `${item.className} - Day Campus`
-                          )
-                        }
-                        style={{ cursor: "pointer", color: "blue" }}
-                      >
-                        {item.dayCampus}
-                      </td>
-                      <td>
-                        <b>{item.totalCount}</b>
-                      </td>
-                    </tr>
-                  ))} */}
                   {classWiseData.map((item, index) => (
                     <tr key={index}>
                       <th scope="row">{index + 1}</th>
                       <td>{item.className}</td>
-                      {/* Boys Campus */}
                       <td
                         onClick={() =>
                           handleOpenDetail(
