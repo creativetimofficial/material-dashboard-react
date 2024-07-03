@@ -42,6 +42,7 @@ import Students from "layouts/students";
 import Course from "layouts/course";
 import AddCourse from "layouts/courses/add";
 import Assessment from "layouts/assessments";
+import Editor from "layouts/editor";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
