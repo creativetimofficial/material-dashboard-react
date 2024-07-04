@@ -9,6 +9,7 @@ import { Badge, Button, Modal, ModalBody, ModalHeader } from "reactstrap";
 import { Eye } from "react-feather";
 import ResultsTable from "examples/Tables/DataTable";
 import { useNavigate } from "react-router-dom";
+import "styles.css";
 
 const XIIITSuper60 = ({ stuData }) => {
   const history = useNavigate();
@@ -40,7 +41,7 @@ const XIIITSuper60 = ({ stuData }) => {
 
   useEffect(() => {
     axios
-      .get(`https://sheet.best/api/sheets/2330bbb1-4ed6-4303-811c-6240e278ce2c`)
+      .get(`https://sheet.best/api/sheets/b4b3c7f1-d1b4-45ae-a7fc-7d060451fb9f`)
       .then((response) => {
         super60OrganizeData(response.data);
       });
@@ -92,17 +93,22 @@ const XIIITSuper60 = ({ stuData }) => {
 
   const generateChartData = (data) => {
     let labels = [];
-    let datasetsData = [];
+    let datasetsData = {};
 
     if (selectedOption === 1) {
       // Overall means no need to filter
       data.forEach((student) => {
         student.WeekendMarks.forEach((weekendMark) => {
           const date = weekendMark.Date;
-          const tot = parseInt(weekendMark.Tot);
-          if (!labels.includes(date)) {
-            labels.push(date);
-            datasetsData.push(tot);
+          const tot = weekendMark.Tot;
+          if (tot !== "A") {
+            const totValue = parseInt(tot);
+            if (!labels.includes(date)) {
+              labels.push(date);
+              datasetsData[date] = totValue;
+            } else {
+              datasetsData[date] = Math.max(datasetsData[date], totValue);
+            }
           }
         });
       });
@@ -113,10 +119,15 @@ const XIIITSuper60 = ({ stuData }) => {
         const weekendMarks = student.WeekendMarks.slice(-numberOfWeeks);
         weekendMarks.forEach((weekendMark) => {
           const date = weekendMark.Date;
-          const tot = parseInt(weekendMark.Tot);
-          if (!labels.includes(date)) {
-            labels.push(date);
-            datasetsData.push(tot);
+          const tot = weekendMark.Tot;
+          if (tot !== "A") {
+            const totValue = parseInt(tot);
+            if (!labels.includes(date)) {
+              labels.push(date);
+              datasetsData[date] = totValue;
+            } else {
+              datasetsData[date] = Math.max(datasetsData[date], totValue);
+            }
           }
         });
       });
@@ -128,9 +139,12 @@ const XIIITSuper60 = ({ stuData }) => {
         new Date(a.split(".").reverse().join("-")) - new Date(b.split(".").reverse().join("-"))
     );
 
+    // Prepare the dataset array in the correct order
+    let sortedDatasetData = labels.map((date) => datasetsData[date]);
+
     setWeekendxi({
       labels,
-      datasets: { label: "TOP MARK", data: datasetsData },
+      datasets: { label: "TOP MARK", data: sortedDatasetData },
     });
   };
 
@@ -193,7 +207,7 @@ const XIIITSuper60 = ({ stuData }) => {
       <>
         <Modal
           isOpen={resultOpenModal}
-          className="modal-dialog modal-dialog-centered modal-xl"
+          className="modal-dialog modal-dialog-centered modal-xxl"
           toggle={() => setResultOpenModal(false)}
         >
           <ModalHeader toggle={() => setResultOpenModal(false)}>

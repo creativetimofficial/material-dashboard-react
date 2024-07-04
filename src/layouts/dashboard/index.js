@@ -200,7 +200,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     axios
-      .get(`https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3`)
+      .get(`https://sheet.best/api/sheets/c1c3f9ec-bcf4-4f9e-bc53-22554e4adb66`)
       .then((response) => {
         setApiData(response.data);
       });
@@ -236,14 +236,14 @@ const Dashboard = () => {
 
     const config = {
       headers: {
-        "X-Api-Key": "ikqV$ghERVVKS1@RrCYhPlF%0DctqDzxpCLf2riW#BtICDov2gCPCKFAsqk_qr2_",
+        "X-Api-Key": "1feE$vlFh9ZGlpNNg$Yd-1#nJ87OFTZo1IYQ0T8ldGQimrg8#kjs2GMIwJA#0vAF",
         "Content-Type": "application/json",
       },
     };
 
     axios
       .patch(
-        `https://sheet.best/api/sheets/f5398757-66b8-4939-a219-30de21809ef3/${editedIndex}`,
+        `https://sheet.best/api/sheets/c1c3f9ec-bcf4-4f9e-bc53-22554e4adb66/${editedIndex}`,
         updatedStudent,
         config
       )
