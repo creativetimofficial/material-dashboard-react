@@ -31,6 +31,8 @@ const ResultsTable = ({ marksData, stuData }) => {
   const [selectedCampus, setSelectedCampus] = useState("All_Campuses");
   const [selectedMentor, setSelectedMentor] = useState("All_Mentors");
   const campuses = ["All_Campuses", ...new Set(marksData.map((item) => item.Campus))];
+  const [selectedSubject, setSelectedSubject] = useState("All_Subjects");
+  const subjects = ["All_Subjects", "Mat", "Phy", "Che"];
 
   const handleCampusChange = (e) => {
     setSelectedCampus(e.target.value);
@@ -225,6 +227,18 @@ const ResultsTable = ({ marksData, stuData }) => {
               </Input>
               <Input
                 type="select"
+                value={selectedSubject}
+                onChange={(e) => setSelectedSubject(e.target.value)}
+                style={{ display: "inline", width: "auto", marginRight: "20px", fontSize: "15px" }}
+              >
+                {subjects.map((subject, index) => (
+                  <option key={index} value={subject}>
+                    {subject}
+                  </option>
+                ))}
+              </Input>
+              <Input
+                type="select"
                 value={selectedMentor}
                 onChange={handleMentorChange}
                 style={{ display: "inline", width: "auto", marginRight: "20px", fontSize: "15px" }}
@@ -270,7 +284,7 @@ const ResultsTable = ({ marksData, stuData }) => {
         <CardBody className="small mb-0">
           <div ref={printableTableRef}>
             <Table responsive striped bordered hover>
-              <thead>
+              {/* <thead>
                 <tr>
                   <th rowSpan={2}>S.No</th>
                   <th rowSpan={2}>Name of the Student</th>
@@ -308,8 +322,8 @@ const ResultsTable = ({ marksData, stuData }) => {
                     </Fragment>
                   )}
                 </tr>
-              </thead>
-              <tbody>
+              </thead> */}
+              {/* <tbody>
                 {paginatedData.map((item, index) => (
                   <tr key={index}>
                     <td>{index + 1 + (currentPage - 1) * recordsPerPage}</td>
@@ -329,6 +343,105 @@ const ResultsTable = ({ marksData, stuData }) => {
                             <td style={{ borderRight: "2px solid black" }}>{marks.Tot || "-"}</td>
                           </Fragment>
                         );
+                      })}
+                    {viewMode === "totals" &&
+                      allDates.map((date, dateIndex) => {
+                        const marks = item.WeekendMarks.find((mark) => mark.Date === date) || {};
+                        return <td key={dateIndex}>{marks.Tot || "-"}</td>;
+                      })}
+                    <td className="text-primary">
+                      <b>{item.averages.Mat}</b>
+                    </td>
+                    <td className="text-primary">
+                      <b>{item.averages.Phy}</b>
+                    </td>
+                    <td className="text-primary">
+                      <b>{item.averages.Che}</b>
+                    </td>
+                    <td className="text-danger">
+                      <b>{item.averages.Tot}</b>
+                    </td>
+                  </tr>
+                ))}
+              </tbody> */}
+              <thead>
+                <tr>
+                  <th rowSpan={2}>S.No</th>
+                  <th rowSpan={2}>Name of the Student</th>
+                  <th rowSpan={2}>Roll No</th>
+                  <th rowSpan={2}>Caste</th>
+                  <th rowSpan={2}>Campus</th>
+                  <th rowSpan={2}>Mentor</th>
+                  {viewMode === "all" &&
+                    selectedSubject === "All_Subjects" &&
+                    allDates.map((date, index) => (
+                      <th key={index} colSpan={4} className="text-danger">
+                        {date}
+                      </th>
+                    ))}
+                  {viewMode === "all" &&
+                    selectedSubject !== "All_Subjects" &&
+                    allDates.map((date, index) => (
+                      <th key={index} className="text-danger">
+                        {date}
+                      </th>
+                    ))}
+                  {viewMode === "totals" &&
+                    allDates.map((date, index) => <th key={index}>{date.slice(0, 5)}</th>)}
+                  <th colSpan={4}>Averages</th>
+                </tr>
+                <tr>
+                  {viewMode === "all" &&
+                    selectedSubject === "All_Subjects" &&
+                    allDates.map((date, index) => (
+                      <Fragment key={index}>
+                        <th>Mat</th>
+                        <th>Phy</th>
+                        <th>Che</th>
+                        <th>Tot</th>
+                      </Fragment>
+                    ))}
+                  {viewMode === "all" &&
+                    selectedSubject !== "All_Subjects" &&
+                    allDates.map((date, index) => <th key={index}>{selectedSubject}</th>)}
+                  {viewMode === "totals" && allDates.map((date, index) => <th key={index}>Tot</th>)}
+                  {(viewMode === "all" || viewMode === "totals" || viewMode === "averages") && (
+                    <Fragment>
+                      <th>Mat</th>
+                      <th>Phy</th>
+                      <th>Che</th>
+                      <th>Tot</th>
+                    </Fragment>
+                  )}
+                </tr>
+              </thead>
+              <tbody>
+                {paginatedData.map((item, index) => (
+                  <tr key={index}>
+                    <td>{index + 1 + (currentPage - 1) * recordsPerPage}</td>
+                    <td className="justify-content-left">{item.StudentName}</td>
+                    <td>{item.RollNo}</td>
+                    <td>{item.Caste}</td>
+                    <td>{item.Campus}</td>
+                    <td>{item.Mentor}</td>
+                    {viewMode === "all" &&
+                      selectedSubject === "All_Subjects" &&
+                      allDates.map((date, dateIndex) => {
+                        const marks = item.WeekendMarks.find((mark) => mark.Date === date) || {};
+                        return (
+                          <Fragment key={dateIndex}>
+                            <td style={{ borderLeft: "2px solid black" }}>{marks.Mat || "-"}</td>
+                            <td>{marks.Phy || "-"}</td>
+                            <td>{marks.Che || "-"}</td>
+                            <td style={{ borderRight: "2px solid black" }}>{marks.Tot || "-"}</td>
+                          </Fragment>
+                        );
+                      })}
+                    {viewMode === "all" &&
+                      selectedSubject !== "All_Subjects" &&
+                      allDates.map((date, dateIndex) => {
+                        const marks = item.WeekendMarks.find((mark) => mark.Date === date) || {};
+                        return <td key={dateIndex}>{marks[selectedSubject] || "-"}</td>;
                       })}
                     {viewMode === "totals" &&
                       allDates.map((date, dateIndex) => {

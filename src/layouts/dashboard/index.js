@@ -99,10 +99,6 @@ const Dashboard = () => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-  const [weekendxi, setWeekendxi] = useState({
-    labels: [],
-    datasets: { label: "MAINS", data: [] },
-  });
 
   const [apiData, setApiData] = useState([]);
   const [refresh, setRefresh] = useState([]);

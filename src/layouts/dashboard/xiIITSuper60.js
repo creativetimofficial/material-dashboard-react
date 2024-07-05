@@ -1,8 +1,6 @@
 import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import * as XLSX from "xlsx";
-import { saveAs } from "file-saver";
 import PropTypes from "prop-types";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import { Badge, Button, Modal, ModalBody, ModalHeader } from "reactstrap";
@@ -81,7 +79,7 @@ const XIIITSuper60 = ({ stuData }) => {
       const filteredData = organizedData.filter((student) =>
         stuData.some((stu) => stu.RollNo === student.RollNo)
       );
-      setFinalData(filteredData);
+      setFinalData(organizedData);
     }
   }, [stuData, organizedData]);
 
@@ -211,7 +209,14 @@ const XIIITSuper60 = ({ stuData }) => {
           toggle={() => setResultOpenModal(false)}
         >
           <ModalHeader toggle={() => setResultOpenModal(false)}>
-            <Badge color="success"> XII - Super 60 (IIT) JEE-MAINS Model Results </Badge>
+            XII - Super 60 (IIT) JEE-MAINS Model -{" "}
+            <Badge color="danger">
+              {" "}
+              {selOptions.find((ff) => ff.value === selectedOption)
+                ? selOptions.find((ff) => ff.value === selectedOption).label
+                : ""}{" "}
+              - Results
+            </Badge>
           </ModalHeader>
           <ModalBody className="text-center h6">
             <ResultsTable
