@@ -10,12 +10,18 @@ import {
   Row,
   Col,
   Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  CloseButton,
 } from "reactstrap";
 import PropTypes from "prop-types";
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
 import { Print } from "@mui/icons-material";
 import { useReactToPrint } from "react-to-print";
+import { Printer, X } from "react-feather";
 
 const ResultsTable = ({ marksData, stuData }) => {
   // Collect all unique dates to use as headers
@@ -186,6 +192,36 @@ const ResultsTable = ({ marksData, stuData }) => {
   const handlePrint = useReactToPrint({
     content: () => printableTableRef.current,
   });
+
+  const [modal, setModal] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+  const [studentAverages, setStudentAverages] = useState({ Mat: 0, Phy: 0, Che: 0, Tot: 0 });
+  // Handle modal toggle
+  const toggleModal = () => setModal(!modal);
+
+  // Handle student name click
+  const handleStudentDetails = (student) => {
+    setSelectedStudent(student);
+
+    const totals = { Mat: 0, Phy: 0, Che: 0, Tot: 0 };
+    student.WeekendMarks.forEach((mark) => {
+      totals.Mat += parseInt(mark.Mat, 10) || 0;
+      totals.Phy += parseInt(mark.Phy, 10) || 0;
+      totals.Che += parseInt(mark.Che, 10) || 0;
+      totals.Tot += parseInt(mark.Tot, 10) || 0;
+    });
+
+    const count = student.WeekendMarks.length;
+
+    setStudentAverages({
+      Mat: (totals.Mat / count).toFixed(2),
+      Phy: (totals.Phy / count).toFixed(2),
+      Che: (totals.Che / count).toFixed(2),
+      Tot: (totals.Tot / count).toFixed(2),
+    });
+
+    toggleModal();
+  };
 
   return (
     <Fragment>
@@ -419,7 +455,13 @@ const ResultsTable = ({ marksData, stuData }) => {
                 {paginatedData.map((item, index) => (
                   <tr key={index}>
                     <td>{index + 1 + (currentPage - 1) * recordsPerPage}</td>
-                    <td className="justify-content-left">{item.StudentName}</td>
+                    <td
+                      className="text-primary"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => handleStudentDetails(item)}
+                    >
+                      {item.StudentName}
+                    </td>
                     <td>{item.RollNo}</td>
                     <td>{item.Caste}</td>
                     <td>{item.Campus}</td>
@@ -509,6 +551,142 @@ const ResultsTable = ({ marksData, stuData }) => {
           </Pagination>
         </div>
       </div>
+      {selectedStudent && (
+        <Modal
+          isOpen={modal}
+          toggle={toggleModal}
+          className="modal-dialog modal-dialog-centered modal-lg"
+        >
+          <ModalHeader toggle={toggleModal}>Marks Details</ModalHeader>
+          <ModalBody className="text-center h6">
+            <div className="d-flex justify-content-between">
+              <div>
+                <strong>Name:</strong> {selectedStudent.StudentName}
+              </div>
+              <div>
+                <strong>Roll No:</strong> {selectedStudent.RollNo}
+              </div>
+            </div>
+            <div className="d-flex justify-content-between disable-print">
+              <div>
+                <strong>Caste:</strong> {selectedStudent.Caste}
+              </div>
+              <div>
+                <strong>Campus:</strong> {selectedStudent.Campus}
+              </div>
+            </div>
+            <Table bordered striped responsive className="mt-2">
+              <thead className="table-primary font-small">
+                <tr>
+                  <th>Date</th>
+                  <th>Mat</th>
+                  <th>Phy</th>
+                  <th>Che</th>
+                  <th>Tot</th>
+                </tr>
+              </thead>
+              <tbody>
+                {selectedStudent.WeekendMarks.map((mark, index) => {
+                  let matStatus = "";
+                  let phyStatus = "";
+                  let cheStatus = "";
+                  let totStatus = "";
+
+                  if (index > 0) {
+                    const prevMat =
+                      selectedStudent.WeekendMarks[index - 1].Mat !== "A"
+                        ? selectedStudent.WeekendMarks[index - 1].Mat
+                        : 0;
+                    const prevPhy =
+                      selectedStudent.WeekendMarks[index - 1].Phy !== "A"
+                        ? selectedStudent.WeekendMarks[index - 1].Phy
+                        : 0;
+                    const prevChe =
+                      selectedStudent.WeekendMarks[index - 1].Che !== "A"
+                        ? selectedStudent.WeekendMarks[index - 1].Che
+                        : 0;
+                    const prevTot =
+                      selectedStudent.WeekendMarks[index - 1].Tot !== "A"
+                        ? selectedStudent.WeekendMarks[index - 1].Tot
+                        : 0;
+
+                    if (mark.Mat > prevMat) {
+                      matStatus = <span className="text-success">▲</span>;
+                    } else if (mark.Mat < prevMat) {
+                      matStatus = <span className="text-danger">▼</span>;
+                    }
+
+                    if (mark.Phy > prevPhy) {
+                      phyStatus = <span className="text-success">▲</span>;
+                    } else if (mark.Phy < prevPhy) {
+                      phyStatus = <span className="text-danger">▼</span>;
+                    }
+
+                    if (mark.Che > prevChe) {
+                      cheStatus = <span className="text-success">▲</span>;
+                    } else if (mark.Che < prevChe) {
+                      cheStatus = <span className="text-danger">▼</span>;
+                    }
+
+                    if (mark.Tot > prevTot) {
+                      totStatus = <span className="text-success">▲</span>;
+                    } else if (mark.Tot < prevTot) {
+                      totStatus = <span className="text-danger">▼</span>;
+                    }
+                  }
+
+                  return (
+                    <tr key={index}>
+                      <td>{mark.Date}</td>
+                      <td style={{ position: "relative" }}>
+                        {mark.Mat}{" "}
+                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                          {matStatus}
+                        </span>
+                      </td>
+                      <td style={{ position: "relative" }}>
+                        {mark.Phy}{" "}
+                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                          {phyStatus}
+                        </span>
+                      </td>
+                      <td style={{ position: "relative" }}>
+                        {mark.Che}{" "}
+                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                          {cheStatus}
+                        </span>
+                      </td>
+                      <td style={{ position: "relative" }}>
+                        {mark.Tot}{" "}
+                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                          {totStatus}
+                        </span>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+              <tfoot>
+                <tr className="table-warning">
+                  <th className="text-danger">Average</th>
+                  <th>{studentAverages.Mat}</th>
+                  <th>{studentAverages.Phy}</th>
+                  <th>{studentAverages.Che}</th>
+                  <th>{studentAverages.Tot}</th>
+                </tr>
+              </tfoot>
+            </Table>
+          </ModalBody>
+          {/* <ModalFooter>
+            <Button color="success" size="sm">
+              <Printer size={15} /> Print
+            </Button>
+            <Button color="danger" size="sm" onClick={toggleModal}>
+              X Close
+            </Button>
+          </ModalFooter> */}
+        </Modal>
+      )}
     </Fragment>
   );
 };
