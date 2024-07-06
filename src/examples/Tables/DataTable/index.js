@@ -587,80 +587,80 @@ const ResultsTable = ({ marksData, stuData }) => {
               </thead>
               <tbody>
                 {selectedStudent.WeekendMarks.map((mark, index) => {
-                  let matStatus = "";
-                  let phyStatus = "";
-                  let cheStatus = "";
-                  let totStatus = "";
+                  // let matStatus = "";
+                  // let phyStatus = "";
+                  // let cheStatus = "";
+                  // let totStatus = "";
 
-                  if (index > 0) {
-                    const prevMat =
-                      selectedStudent.WeekendMarks[index - 1].Mat !== "A"
-                        ? selectedStudent.WeekendMarks[index - 1].Mat
-                        : 0;
-                    const prevPhy =
-                      selectedStudent.WeekendMarks[index - 1].Phy !== "A"
-                        ? selectedStudent.WeekendMarks[index - 1].Phy
-                        : 0;
-                    const prevChe =
-                      selectedStudent.WeekendMarks[index - 1].Che !== "A"
-                        ? selectedStudent.WeekendMarks[index - 1].Che
-                        : 0;
-                    const prevTot =
-                      selectedStudent.WeekendMarks[index - 1].Tot !== "A"
-                        ? selectedStudent.WeekendMarks[index - 1].Tot
-                        : 0;
+                  // if (index > 0) {
+                  //   const prevMat =
+                  //     selectedStudent.WeekendMarks[index - 1].Mat !== "A"
+                  //       ? selectedStudent.WeekendMarks[index - 1].Mat
+                  //       : 0;
+                  //   const prevPhy =
+                  //     selectedStudent.WeekendMarks[index - 1].Phy !== "A"
+                  //       ? selectedStudent.WeekendMarks[index - 1].Phy
+                  //       : 0;
+                  //   const prevChe =
+                  //     selectedStudent.WeekendMarks[index - 1].Che !== "A"
+                  //       ? selectedStudent.WeekendMarks[index - 1].Che
+                  //       : 0;
+                  //   const prevTot =
+                  //     selectedStudent.WeekendMarks[index - 1].Tot !== "A"
+                  //       ? selectedStudent.WeekendMarks[index - 1].Tot
+                  //       : 0;
 
-                    if (mark.Mat > prevMat) {
-                      matStatus = <span className="text-success">▲</span>;
-                    } else if (mark.Mat < prevMat) {
-                      matStatus = <span className="text-danger">▼</span>;
-                    }
+                  //   if (mark.Mat > prevMat) {
+                  //     matStatus = <span className="text-success">▲</span>;
+                  //   } else if (mark.Mat < prevMat) {
+                  //     matStatus = <span className="text-danger">▼</span>;
+                  //   }
 
-                    if (mark.Phy > prevPhy) {
-                      phyStatus = <span className="text-success">▲</span>;
-                    } else if (mark.Phy < prevPhy) {
-                      phyStatus = <span className="text-danger">▼</span>;
-                    }
+                  //   if (mark.Phy > prevPhy) {
+                  //     phyStatus = <span className="text-success">▲</span>;
+                  //   } else if (mark.Phy < prevPhy) {
+                  //     phyStatus = <span className="text-danger">▼</span>;
+                  //   }
 
-                    if (mark.Che > prevChe) {
-                      cheStatus = <span className="text-success">▲</span>;
-                    } else if (mark.Che < prevChe) {
-                      cheStatus = <span className="text-danger">▼</span>;
-                    }
+                  //   if (mark.Che > prevChe) {
+                  //     cheStatus = <span className="text-success">▲</span>;
+                  //   } else if (mark.Che < prevChe) {
+                  //     cheStatus = <span className="text-danger">▼</span>;
+                  //   }
 
-                    if (mark.Tot > prevTot) {
-                      totStatus = <span className="text-success">▲</span>;
-                    } else if (mark.Tot < prevTot) {
-                      totStatus = <span className="text-danger">▼</span>;
-                    }
-                  }
+                  //   if (mark.Tot > prevTot) {
+                  //     totStatus = <span className="text-success">▲</span>;
+                  //   } else if (mark.Tot < prevTot) {
+                  //     totStatus = <span className="text-danger">▼</span>;
+                  //   }
+                  // }
 
                   return (
                     <tr key={index}>
                       <td>{mark.Date}</td>
                       <td style={{ position: "relative" }}>
                         {mark.Mat}{" "}
-                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                        {/* <span style={{ position: "absolute", bottom: "0", right: "0" }}>
                           {matStatus}
-                        </span>
+                        </span> */}
                       </td>
                       <td style={{ position: "relative" }}>
                         {mark.Phy}{" "}
-                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                        {/* <span style={{ position: "absolute", bottom: "0", right: "0" }}>
                           {phyStatus}
-                        </span>
+                        </span> */}
                       </td>
                       <td style={{ position: "relative" }}>
                         {mark.Che}{" "}
-                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                        {/* <span style={{ position: "absolute", bottom: "0", right: "0" }}>
                           {cheStatus}
-                        </span>
+                        </span> */}
                       </td>
                       <td style={{ position: "relative" }}>
                         {mark.Tot}{" "}
-                        <span style={{ position: "absolute", bottom: "0", right: "0" }}>
+                        {/* <span style={{ position: "absolute", bottom: "0", right: "0" }}>
                           {totStatus}
-                        </span>
+                        </span> */}
                       </td>
                     </tr>
                   );
