@@ -6,7 +6,8 @@ import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
-import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
+import { Select, MenuItem, FormControl, FormControlLabel, InputLabel, Switch } from "@mui/material";
+import { Editor } from "@monaco-editor/react";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -17,6 +18,119 @@ import MDButton from "components/MDButton";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
+// eslint-disable-next-line react/prop-types
+const AssessmentCard = ({
+  // eslint-disable-next-line react/prop-types
+  assessment_name,
+  // eslint-disable-next-line react/prop-types
+  shortname,
+  // eslint-disable-next-line react/prop-types
+  deadline,
+  // eslint-disable-next-line react/prop-types
+  cutoff,
+  // eslint-disable-next-line react/prop-types
+  astraName,
+  // eslint-disable-next-line react/prop-types
+  onInputChange,
+  // eslint-disable-next-line react/prop-types
+  assessment_names,
+}) => {
+  const [isFormulaEditorOpen, setIsFormulaEditorOpen] = useState(false);
+  const [formula, setFormula] = useState("");
+
+  const handleFormulaChange = (newValue) => {
+    setFormula(newValue);
+    onInputChange("formula", newValue);
+  };
+
+  const handleOpenFormulaEditor = () => {
+    setIsFormulaEditorOpen(!isFormulaEditorOpen);
+    if (!isFormulaEditorOpen) {
+      setFormula("");
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    onInputChange(name, value);
+  };
+
+  return (
+    <div className="assessment-card">
+      <TextField
+        label="Assessment Name"
+        name="assessment_name"
+        value={assessment_name}
+        fullWidth
+        margin="normal"
+        onChange={handleInputChange}
+      />
+      <TextField
+        label="Short Name"
+        name="shortname"
+        value={shortname}
+        fullWidth
+        margin="normal"
+        onChange={handleInputChange}
+      />
+      <TextField
+        label="Astra Name"
+        name="astraName"
+        value={astraName}
+        fullWidth
+        margin="normal"
+        onChange={handleInputChange}
+      />
+      <TextField
+        label="Deadline (YYYY-MM-DD)"
+        name="deadline"
+        value={deadline}
+        fullWidth
+        margin="normal"
+        type="date"
+        InputLabelProps={{ shrink: true }} // Required for date input
+        onChange={handleInputChange}
+      />
+      <TextField
+        label="Cutoff (Date)"
+        name="cutoff"
+        value={cutoff}
+        fullWidth
+        margin="normal"
+        type="date"
+        InputLabelProps={{ shrink: true }} // Required for date input
+        onChange={handleInputChange}
+      />
+      {/* <FormControlLabel
+        control={
+          <Checkbox
+            checked={isFormulaMark}
+            onChange={(event) => onInputChange("isFormulaMark", event.target.checked)}
+            name="isFormulaMark"
+          />
+        }
+        label="Formula Mark"
+      /> */}
+      <FormControlLabel
+        control={<Switch checked={isFormulaEditorOpen} onChange={handleOpenFormulaEditor} />}
+      />
+      {isFormulaEditorOpen && ( // Conditionally render formula editor
+        <div className="formula-editor-subcard">
+          <Editor
+            height="40vh"
+            width="100%"
+            defaultLanguage="python"
+            theme="vs-dark"
+            defaultValue={`def formulaMark(${assessment_names}):\n\treturn (ass1/40) * 100\n`}
+            value={formula}
+            onChange={handleFormulaChange}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
 function AddCourseOffering() {
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState("");
@@ -24,9 +138,8 @@ function AddCourseOffering() {
   const [terms, setTerms] = useState([]);
   const [selectedTerm, setSelectedTerm] = useState("");
 
-  const [courseName, setCourseName] = useState("");
-  const [courseTerm, setCourseTerm] = useState("");
   const [assessments, setAssessments] = useState([]);
+  const [assessmentNames, setAssessmentNames] = useState("");
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -90,16 +203,20 @@ function AddCourseOffering() {
   };
 
   const handleAssessmentChange = (index, field, value) => {
-    const updatedAssessments = [...assessments];
-    updatedAssessments[index][field] = value;
-    setAssessments(updatedAssessments);
+    console.log("Input changed:", index, field, value);
+    setAssessments((prevAssessments) => {
+      const updatedAssessments = [...prevAssessments];
+      updatedAssessments[index] = {
+        ...updatedAssessments[index],
+        [field]: value,
+      };
+      return updatedAssessments;
+    });
+    setAssessmentNames(assessments.map((ass) => ass.shortName).join(", "));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you can handle the form submission, for now, I'm just logging the data
-    console.log("Course Name:", courseName);
-    console.log("Course Term:", courseTerm);
 
     fetch("http://localhost:3000/term", {
       method: "PUT",
@@ -202,39 +319,59 @@ function AddCourseOffering() {
                         </Select>
                       </FormControl>
                     </Grid>
-                    {assessments.map((assessment, index) => (
-                      <Grid container spacing={2} key={index}>
-                        <Grid item xs={12}>
-                          <TextField
-                            fullWidth
-                            label={`Assessment ${index + 1} Name`}
-                            variant="outlined"
-                            value={assessment.name}
-                            onChange={(e) => handleAssessmentChange(index, "name", e.target.value)}
-                          />
-                        </Grid>
-                        {/* Add more fields for other assessment properties */}
-                      </Grid>
-                    ))}
-                    <Grid item xs={12}>
-                      <MDButton
-                        type="button"
-                        color="info"
-                        variant="gradient"
-                        fullWidth
-                        onClick={handleAddAssessment}
-                      >
-                        Add Assessment
-                      </MDButton>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <MDButton type="submit" color="info" variant="gradient" fullWidth>
-                        Add Course
-                      </MDButton>
-                    </Grid>
                   </Grid>
                 </form>
               </MDBox>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card>
+              <MDBox py={3} px={4}>
+                {assessments.length > 0 && (
+                  <div className="assessment-grid">
+                    <h2>Assessments</h2>
+                    {assessments.map((assessment, index) => (
+                      <AssessmentCard
+                        key={assessment.id || index} // Use ID if available, otherwise use index
+                        {...assessment}
+                        onInputChange={(field, value) =>
+                          handleAssessmentChange(index, field, value)
+                        }
+                        assessment_names={assessmentNames}
+                      />
+                    ))}
+                  </div>
+                )}
+                {/* {assessments.map((assessment, index) => (
+                  <Grid container spacing={6} key={index}>
+                    <Grid item xs={12}>
+                      <TextField
+                        fullWidth
+                        label={`Assessment ${index + 1} Name`}
+                        variant="outlined"
+                        value={assessment.name}
+                        onChange={(e) => handleAssessmentChange(index, "name", e.target.value)}
+                      />
+                    </Grid>
+                  </Grid>
+                ))} */}
+                <Grid item xs={12}>
+                  <MDButton
+                    type="button"
+                    color="info"
+                    variant="gradient"
+                    fullWidth
+                    onClick={handleAddAssessment}
+                  >
+                    Add Assessment
+                  </MDButton>
+                </Grid>
+              </MDBox>
+              <Grid item xs={12}>
+                <MDButton type="submit" color="info" variant="gradient" fullWidth>
+                  Add Course
+                </MDButton>
+              </Grid>
             </Card>
           </Grid>
         </Grid>
