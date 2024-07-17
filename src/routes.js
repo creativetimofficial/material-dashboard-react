@@ -40,7 +40,7 @@ import Dashboard from "layouts/dashboard";
 import Courses from "layouts/courses";
 import Students from "layouts/students";
 import Course from "layouts/course";
-import AddCourse from "layouts/courses/add";
+import AddCourse from "layouts/courses/addCourse";
 import Assessment from "layouts/assessments";
 import Editor from "layouts/editor";
 import Billing from "layouts/billing";

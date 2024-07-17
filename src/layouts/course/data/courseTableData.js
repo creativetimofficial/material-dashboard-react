@@ -31,12 +31,14 @@ export default function data(props) {
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const res = await fetch("http://localhost:3000/get_students_of_course", {
-        method: "POST",
+      var queryString = new URLSearchParams({ term: props.term, course: props.course });
+      var url = `http://localhost:3000/term/course/students?${queryString.toString()}`;
+
+      const res = await fetch(url, {
+        method: "GET",
         headers: {
           "content-Type": "application/json",
         },
-        body: JSON.stringify({ term: props.term, course: props.course }),
       });
       const resBody = await res.json();
       resBody.students.forEach((x) => {
