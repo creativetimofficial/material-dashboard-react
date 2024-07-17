@@ -46,20 +46,24 @@ const Notes = ({ notes }) => (
 );
 
 export default function data(props) {
-  console.log(props);
   const [assessments, setAssessments] = React.useState([]);
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const res = await fetch("http://localhost:3000/get_student_marks_of_course", {
-        method: "POST",
+      var queryString = new URLSearchParams({
+        term: props.term,
+        course: props.course,
+        student: props.student,
+      });
+      const url = `http://localhost:3000/term/course/students?${queryString.toString()}`;
+
+      const res = await fetch("http://localhost:3000/term/course/student/marks", {
+        method: "GET",
         headers: {
           "content-Type": "application/json",
         },
-        body: JSON.stringify({ student: props.student, term: props.term, course: props.course }),
       });
       const resBody = await res.json();
-      console.log(resBody);
       resBody.marks.forEach((x) => {
         results.push({
           assessment: <Assessment name={x.assessment} />,
@@ -68,6 +72,7 @@ export default function data(props) {
           notes: <Notes notes={x.notes} />,
         });
       });
+      console.log(results);
       setAssessments(results);
     };
 
@@ -81,6 +86,6 @@ export default function data(props) {
       { Header: "Grade", accessor: "grade", align: "left" },
       { Header: "Notes", accessor: "notes", align: "left" },
     ],
-    rows: students,
+    rows: assessments,
   };
 }

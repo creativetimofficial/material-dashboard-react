@@ -31,8 +31,8 @@ export default function data(props) {
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      var queryString = new URLSearchParams({ term: props.term, course: props.course });
-      var url = `http://localhost:3000/term/course/students?${queryString.toString()}`;
+      const queryString = new URLSearchParams({ term: props.term, course: props.course });
+      const url = `http://localhost:3000/term/course/students?${queryString.toString()}`;
 
       const res = await fetch(url, {
         method: "GET",
