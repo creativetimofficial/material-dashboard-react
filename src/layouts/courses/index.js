@@ -24,7 +24,7 @@ function Courses() {
 
   let navigate = useNavigate();
   function openAddCourse() {
-    navigate("/add-course");
+    navigate("/add-course-offering");
   }
 
   return (
