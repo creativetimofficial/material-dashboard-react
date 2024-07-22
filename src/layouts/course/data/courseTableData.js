@@ -31,8 +31,7 @@ export default function data(props) {
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const queryString = new URLSearchParams({ term: props.term, course: props.course });
-      const url = `http://localhost:3000/term/course/students?${queryString.toString()}`;
+      const url = `http://localhost:3000/${props.course}/${props.term}/students?`;
 
       const res = await fetch(url, {
         method: "GET",
@@ -44,12 +43,12 @@ export default function data(props) {
       resBody.students.forEach((x) => {
         results.push({
           name: (
-            <Link to={`/assessment/${props.course}/${props.term}/${x.id}`}>
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
               <Name givenName={x.given_name} familyName={x.family_name} />
             </Link>
           ),
           id: (
-            <Link to={`/assessment/${props.course}/${props.term}/${x.id}`}>
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
               <Zid id={x.id} />
             </Link>
           ),

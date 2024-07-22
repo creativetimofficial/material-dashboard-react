@@ -55,15 +55,15 @@ export default function data(props) {
         course: props.course,
         student: props.student,
       });
-      const url = `http://localhost:3000/term/course/students?${queryString.toString()}`;
-
-      const res = await fetch("http://localhost:3000/term/course/student/marks", {
+      const url = `http://localhost:3000/${props.course}/${props.term}/z${props.student}/marks`;
+      const res = await fetch(url, {
         method: "GET",
         headers: {
           "content-Type": "application/json",
         },
       });
       const resBody = await res.json();
+      console.log(resBody);
       resBody.marks.forEach((x) => {
         results.push({
           assessment: <Assessment name={x.assessment} />,
