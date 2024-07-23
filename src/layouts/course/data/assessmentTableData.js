@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -46,28 +47,43 @@ const Formula = ({ formula }) => (
 );
 
 export default function data(props) {
-  const [students, setStudents] = React.useState([]);
+  const [assessments, setAssessments] = React.useState([]);
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const res = await fetch("http://localhost:3000/get_assessments_of_course", {
-        method: "POST",
+      const url = `http://localhost:3000/${props.course}/${props.term}/assessments`;
+      const res = await fetch(url, {
+        method: "GET",
         headers: {
           "content-Type": "application/json",
         },
-        body: JSON.stringify({ term: props.term, course: props.course }),
       });
       const resBody = await res.json();
-      console.log(resBody);
       resBody.assessments.forEach((x) => {
         results.push({
-          assessment: <Assessment name={x.name} shortName={x.short_name} />,
-          deadline: <Deadline deadline={x.deadline} />,
-          weight: <Weight weight={x.weigh} />,
-          formula: <Formula formula={x.formula_mark} />,
+          assessment: (
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
+              <Assessment name={x.name} shortName={x.short_name} />
+            </Link>
+          ),
+          deadline: (
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
+              <Deadline deadline={x.deadline} />
+            </Link>
+          ),
+          weight: (
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
+              <Weight weight={x.weigh} />
+            </Link>
+          ),
+          formula: (
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
+              <Formula formula={x.formula_mark} />
+            </Link>
+          ),
         });
       });
-      setStudents(results);
+      setAssessments(results);
     };
 
     fetchResults();
@@ -78,9 +94,71 @@ export default function data(props) {
     columns: [
       { Header: "Assessments", accessor: "assessment", align: "left" },
       { Header: "Deadline", accessor: "deadline", align: "left" },
-      { Header: "Weight", accessor: "weigth", align: "left" },
-      { Header: "Formula", accessor: "deadline", align: "left" },
+      { Header: "Weight", accessor: "weight", align: "left" },
+      { Header: "Formula", accessor: "formula", align: "left" },
     ],
-    rows: students,
+    rows: assessments,
+    columns2: [
+      { Header: "zid", accessor: "id", align: "left" },
+      { Header: "Student Name", accessor: "name", width: "45%", align: "left" },
+    ],
+    rows2: students,
   };
 }
+
+// const Name = ({ givenName, familyName }) => (
+//   <MDBox display="flex" alignItems="center" lineHeight={2}>
+//     <MDBox ml={2} lineHeight={1}>
+//       <MDTypography display="block" variant="button" fontWeight="medium">
+//         {givenName + " " + familyName}
+//       </MDTypography>
+//     </MDBox>
+//   </MDBox>
+// );
+
+// const Zid = ({ id }) => (
+//   <MDBox display="flex" alignItems="center" lineHeight={2}>
+//     <MDBox ml={2} lineHeight={1}>
+//       <MDTypography display="block" variant="button" fontWeight="medium">
+//         {id}
+//       </MDTypography>
+//     </MDBox>
+//   </MDBox>
+// );
+
+// export default function data(props) {
+//   const [students, setStudents] = React.useState([]);
+//   React.useEffect(() => {
+//     let results = [];
+//     const fetchResults = async () => {
+//       const url = `http://localhost:3000/${props.course}/${props.term}/students`;
+
+//       const res = await fetch(url, {
+//         method: "GET",
+//         headers: {
+//           "content-Type": "application/json",
+//         },
+//       });
+//       const resBody = await res.json();
+//       console.log("printing in coursetableData");
+//       console.log(resBody);
+//       resBody.students.forEach((x) => {
+//         results.push({
+//           name: <Name givenName={x.given_name} familyName={x.family_name} />,
+//           id: <Zid id={x.id} />,
+//         });
+//       });
+//       setStudents(results);
+//     };
+
+//     fetchResults();
+//   }, []);
+
+//   return {
+//     columns: [
+//       { Header: "zid", accessor: "id", align: "left" },
+//       { Header: "Student Name", accessor: "name", width: "45%", align: "left" },
+//     ],
+//     rows: students,
+//   };
+// }

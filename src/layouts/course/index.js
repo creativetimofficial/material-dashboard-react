@@ -17,14 +17,20 @@ import DataTable from "examples/Tables/DataTable";
 
 // Data
 import studentsTableData from "layouts/course/data/courseTableData";
-import assessmentTableData from "layouts/course/data/assessmentTableData";
+import assessmentsTableData from "layouts/course/data/assessmentTableData";
 
 function Students() {
   const { course, term } = useParams();
-  const { columns2, rows2 } = assessmentTableData({ course, term });
-  const { columns, rows } = studentsTableData({ course, term });
 
-  console.log(`column2 is ${columns2}`);
+  // can only handle one of these call for some reason
+  const { columns, rows } = studentsTableData({ course, term });
+  // const { c2, r2 } = assessmentsTableData({ course, term });
+
+  console.log("Print students data");
+  console.log({ columns, rows });
+
+  // console.log("Print assessments data");
+  // console.log({ columns2, rows2 });
 
   return (
     <DashboardLayout>
@@ -58,33 +64,6 @@ function Students() {
               </MDBox>
             </Card>
           </Grid>
-          {/* <Grid item xs={12}>
-            <Card>
-              <MDBox
-                mx={2}
-                mt={-3}
-                py={3}
-                px={2}
-                variant="gradient"
-                bgColor="info"
-                borderRadius="lg"
-                coloredShadow="info"
-              >
-                <MDTypography variant="h6" color="white">
-                  {"Assessments"}
-                </MDTypography>
-              </MDBox>
-              <MDBox pt={3}>
-                <DataTable
-                  table={{ columns2, rows2 }}
-                  isSorted={false}
-                  entriesPerPage={false}
-                  showTotalEntries={false}
-                  noEndBorder
-                />
-              </MDBox>
-            </Card>
-          </Grid> */}
         </Grid>
       </MDBox>
     </DashboardLayout>

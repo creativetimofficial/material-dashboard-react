@@ -31,7 +31,7 @@ export default function data(props) {
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const url = `http://localhost:3000/${props.course}/${props.term}/students?`;
+      const url = `http://localhost:3000/${props.course}/${props.term}/students`;
 
       const res = await fetch(url, {
         method: "GET",
@@ -40,6 +40,8 @@ export default function data(props) {
         },
       });
       const resBody = await res.json();
+      console.log("printing in coursetableData");
+      console.log(resBody);
       resBody.students.forEach((x) => {
         results.push({
           name: (
