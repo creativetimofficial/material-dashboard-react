@@ -70,42 +70,62 @@ function AssessmentDetails() {
                   {course + " " + term + " - " + assessment}
                 </MDTypography>
               </MDBox>
-              <MDBox pt={3}>
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="h6">Astra Name:</MDTypography>
-                    <MDTypography variant="body2">{details.astra_name}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Name:</MDTypography>
-                    <MDTypography variant="body2">{details.name}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Cutoff:</MDTypography>
-                    <MDTypography variant="body2">{details.cutoff}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Deadline:</MDTypography>
-                    <MDTypography variant="body2">{details.deadline}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Max Mark:</MDTypography>
-                    <MDTypography variant="body2">{details.max_mark}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Min Mark:</MDTypography>
-                    <MDTypography variant="body2">{details.min_mark}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Weight:</MDTypography>
-                    <MDTypography variant="body2">{details.weigh}</MDTypography>
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <MDTypography variant="body1">Late Penalty:</MDTypography>
-                    <MDTypography variant="body2">{details.late_penalty}</MDTypography>
-                  </Grid>
-                  {/* Add more fields as needed */}
-                </Grid>
+              <MDBox py={3} pl={4} display="flex" flexDirection="column">
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Astra Name:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.astra_name}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Name:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.name}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Cutoff:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.cutoff}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Deadline:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.deadline}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Max Mark:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.max_mark}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Min Mark:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.min_mark}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Weight:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.weigh}
+                  </MDTypography>
+                </MDBox>
+
+                <MDBox display="flex">
+                  <MDTypography variant="h6">Late Penalty:</MDTypography>
+                  <MDTypography variant="body2" marginLeft={2}>
+                    {details.late_penalty}
+                  </MDTypography>
+                </MDBox>
               </MDBox>
             </Card>
           </Grid>
