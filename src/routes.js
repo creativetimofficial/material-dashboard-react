@@ -42,6 +42,7 @@ import Students from "layouts/students";
 import Course from "layouts/course";
 import AddCourseOffering from "layouts/courses/addCourseOffering";
 import Assessment from "layouts/assessments";
+import AssessmentDetails from "layouts/assessments/details";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
@@ -91,6 +92,14 @@ const routes = [
     icon: <Icon fontSize="small">book</Icon>,
     route: "/:course/:term/:student/marks",
     component: <Assessment />,
+  },
+  {
+    type: "title",
+    name: "Assessment Details",
+    key: "Assessment Details",
+    icon: <Icon fontSize="small">book</Icon>,
+    route: "/:course/:term/:assessment/details",
+    component: <AssessmentDetails />,
   },
   {
     type: "title",

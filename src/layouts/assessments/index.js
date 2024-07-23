@@ -40,7 +40,7 @@ function Assessments() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  {term + " - " + student}
+                  {course + " " + term + " - z" + student}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>
