@@ -42,7 +42,7 @@ import Students from "layouts/students";
 import Course from "layouts/course";
 import AddCourseOffering from "layouts/courses/addCourseOffering";
 import Assessment from "layouts/assessments";
-import AssessmentDetails from "layouts/assessments/details";
+import AssessmentDetails from "layouts/assessments/detailsPage";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
