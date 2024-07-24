@@ -1,11 +1,16 @@
 //react
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import TextField from "@mui/material/TextField";
+import dayjs from "dayjs";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
 import { Select, MenuItem, FormControl, FormControlLabel, InputLabel, Switch } from "@mui/material";
 import { Editor } from "@monaco-editor/react";
 
@@ -21,7 +26,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 // eslint-disable-next-line react/prop-types
 const AssessmentCard = ({
   // eslint-disable-next-line react/prop-types
-  assessment_name,
+  assessmentName,
   // eslint-disable-next-line react/prop-types
   shortname,
   // eslint-disable-next-line react/prop-types
@@ -33,7 +38,9 @@ const AssessmentCard = ({
   // eslint-disable-next-line react/prop-types
   onInputChange,
   // eslint-disable-next-line react/prop-types
-  assessment_names,
+  assessmentNames,
+  // eslint-disable-next-line react/prop-types
+  latePenalty,
 }) => {
   const [isFormulaEditorOpen, setIsFormulaEditorOpen] = useState(false);
   const [formula, setFormula] = useState("");
@@ -51,6 +58,7 @@ const AssessmentCard = ({
   };
 
   const handleInputChange = (event) => {
+    console.log(event);
     const { name, value } = event.target;
     onInputChange(name, value);
   };
@@ -59,8 +67,8 @@ const AssessmentCard = ({
     <div className="assessment-card">
       <TextField
         label="Assessment Name"
-        name="assessment_name"
-        value={assessment_name}
+        name="assessmentName"
+        value={assessmentName}
         fullWidth
         margin="normal"
         onChange={handleInputChange}
@@ -81,6 +89,26 @@ const AssessmentCard = ({
         margin="normal"
         onChange={handleInputChange}
       />
+      {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DateTimePicker
+          label="Deadline (YYYY-MM-DD)"
+          name="deadline"
+          value={deadline}
+          onChange={handleInputChange}
+          renderInput={(params) => (
+            <TextField {...params} name="deadline" fullWidth margin="normal" />
+          )}
+        />
+      </LocalizationProvider>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DateTimePicker
+          label="Cutoff"
+          name="cutoff"
+          value={cutoff}
+          onChange={handleInputChange}
+          renderInput={(params) => <TextField {...params} fullWidth margin="normal" />}
+        />
+      </LocalizationProvider> */}
       <TextField
         label="Deadline (YYYY-MM-DD)"
         name="deadline"
@@ -98,6 +126,15 @@ const AssessmentCard = ({
         fullWidth
         margin="normal"
         type="date"
+        InputLabelProps={{ shrink: true }} // Required for date input
+        onChange={handleInputChange}
+      />
+      <TextField
+        label="Late Penalty"
+        name="latePenalty"
+        value={latePenalty}
+        fullWidth
+        margin="normal"
         InputLabelProps={{ shrink: true }} // Required for date input
         onChange={handleInputChange}
       />
@@ -121,7 +158,7 @@ const AssessmentCard = ({
             width="100%"
             defaultLanguage="python"
             theme="vs-dark"
-            defaultValue={`def formulaMark(${assessment_names}):\n\treturn (ass1/40) * 100\n`}
+            defaultValue={`def formulaMark(${assessmentNames}):\n\treturn (ass1/40) * 100\n`}
             value={formula}
             onChange={handleFormulaChange}
           />
@@ -139,7 +176,13 @@ function AddCourseOffering() {
   const [selectedTerm, setSelectedTerm] = useState("");
 
   const [assessments, setAssessments] = useState([]);
-  const [assessmentNames, setAssessmentNames] = useState("");
+  const [assessmentNames, setAssessmentNames] = useState("ass1");
+
+  const convertDate = (date) => {
+    // Convert to dd/mm/yyyy format
+    const dateParts = date.split("-");
+    return `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+  };
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -192,7 +235,7 @@ function AddCourseOffering() {
         shortName: "",
         weigh: 0,
         deadline: "",
-        late: 0,
+        latePenalty: 0,
         cutoff: "",
         astraName: "",
         minMark: 0,
@@ -210,37 +253,67 @@ function AddCourseOffering() {
         ...updatedAssessments[index],
         [field]: value,
       };
+      console.log(updatedAssessments);
       return updatedAssessments;
     });
-    setAssessmentNames(assessments.map((ass) => ass.shortName).join(", "));
+    setAssessmentNames(assessments.map((ass) => ass.shortname).join(", "));
   };
 
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:3000/term", {
-      method: "PUT",
+    fetch("http://localhost:3000/course-offering", {
+      method: "POST",
       headers: {
         "content-Type": "application/json",
       },
       body: JSON.stringify({
-        year: "20" + courseTerm[0] + courseTerm[1],
-        session: str(courseTerm[2] + courseTerm[3]),
+        term: selectedTerm,
+        course: selectedCourse,
       }),
     }).then((res) =>
-      fetch("http://localhost:3000/course", {
-        method: "PUT",
-        headers: {
-          "content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          year: "20" + courseTerm[0] + courseTerm[1],
-          session: String(courseTerm[2] + courseTerm[3]),
-        }),
-      })
+      assessments
+        .forEach((a) => {
+          fetch(`http://localhost:3000/${selectedCourse}/${selectedTerm}/assessment`, {
+            method: "POST",
+            headers: {
+              "content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              term: selectedTerm,
+              course: selectedCourse,
+              name: a.name,
+              short_name: a.shortname,
+              deadline: convertDate(a.deadline),
+              weigh: a.weigh,
+              late: a.latePenalty,
+              cutoff: convertDate(a.cutoff),
+              astra_name: a.astrName,
+              min_mark: a.minMark,
+              max_mark: a.maxMark,
+              formula_mark: a.formulaMark,
+            }),
+          });
+        })
+        .then((res) => navigate("/courses"))
     );
-    // Redirect to a different page
-    history.push("/otherpage");
+    // app.post("/course-offering"
+    // app.post('/:course/:term/assessment'
+    // {
+    //   "term": "24T1",
+    //   "course": "COMP1511",
+    //   "name": "Assignments",
+    //   "short_name": "asss",
+    //   "deadline": "",
+    //   "weigh": 0.4,
+    //   "late": 0.05,
+    //   "cutoff": "",
+    //   "astra_name": "",
+    //   "min_mark": 0,
+    //   "max_mark": 100,
+    //   "formula_mark": "{ass1}+{ass2}"
+    // }
   };
 
   return (
@@ -265,7 +338,7 @@ function AddCourseOffering() {
                 </MDTypography>
               </MDBox>
               <MDBox py={3} px={4}>
-                <form onSubmit={handleSubmit}>
+                <form>
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
                       {/* <TextField
@@ -337,7 +410,7 @@ function AddCourseOffering() {
                         onInputChange={(field, value) =>
                           handleAssessmentChange(index, field, value)
                         }
-                        assessment_names={assessmentNames}
+                        assessmentNames={assessmentNames}
                       />
                     ))}
                   </div>
@@ -368,7 +441,13 @@ function AddCourseOffering() {
                 </Grid>
               </MDBox>
               <Grid item xs={12}>
-                <MDButton type="submit" color="info" variant="gradient" fullWidth>
+                <MDButton
+                  type="submit"
+                  color="info"
+                  variant="gradient"
+                  onClick={handleSubmit}
+                  fullWidth
+                >
                   Add Course
                 </MDButton>
               </Grid>
