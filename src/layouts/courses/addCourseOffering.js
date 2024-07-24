@@ -272,9 +272,9 @@ function AddCourseOffering() {
         term: selectedTerm,
         course: selectedCourse,
       }),
-    }).then((res) =>
-      assessments
-        .forEach((a) => {
+    })
+      .then((res) =>
+        assessments.forEach((a) => {
           fetch(`http://localhost:3000/${selectedCourse}/${selectedTerm}/assessment`, {
             method: "POST",
             headers: {
@@ -296,8 +296,8 @@ function AddCourseOffering() {
             }),
           });
         })
-        .then((res) => navigate("/courses"))
-    );
+      )
+      .then((res) => navigate("/courses"));
     // app.post("/course-offering"
     // app.post('/:course/:term/assessment'
     // {
