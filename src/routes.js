@@ -40,9 +40,9 @@ import Dashboard from "layouts/dashboard";
 import Courses from "layouts/courses";
 import Students from "layouts/students";
 import Course from "layouts/course";
-import AddCourse from "layouts/courses/add";
+import AddCourseOffering from "layouts/courses/addCourseOffering";
 import Assessment from "layouts/assessments";
-import Editor from "layouts/editor";
+import AssessmentDetails from "layouts/assessments/detailsPage";
 import Billing from "layouts/billing";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
@@ -78,14 +78,6 @@ const routes = [
     component: <Students />,
   },
   {
-    type: "collapse",
-    name: "Editor",
-    key: "Editor",
-    icon: <Icon fontSize="small">perm_contact_calendar</Icon>,
-    route: "/editor",
-    component: <Editor />,
-  },
-  {
     type: "title",
     name: "Course",
     key: "Course",
@@ -95,19 +87,27 @@ const routes = [
   },
   {
     type: "title",
-    name: "Assessment",
-    key: "Assessment",
+    name: "Student Marks",
+    key: "Student Marks",
     icon: <Icon fontSize="small">book</Icon>,
-    route: "/assessment/:course/:term/:student",
+    route: "/:course/:term/:student/marks",
     component: <Assessment />,
   },
   {
     type: "title",
-    name: "Assessment",
-    key: "AddCourse",
+    name: "Assessment Details",
+    key: "Assessment Details",
+    icon: <Icon fontSize="small">book</Icon>,
+    route: "/:course/:term/:assessment/details",
+    component: <AssessmentDetails />,
+  },
+  {
+    type: "title",
+    name: "AddCourseOffering",
+    key: "AddCourseOffering",
     icon: <Icon fontSize="small">add</Icon>,
-    route: "/add-course",
-    component: <AddCourse />,
+    route: "/add-course-offering",
+    component: <AddCourseOffering />,
   },
   // {
   //   type: "collapse",

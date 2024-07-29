@@ -16,7 +16,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import DataTable from "examples/Tables/DataTable";
 
 // Data
-import assessmentTableData from "layouts/assessments/data/majorAssessmentTableData";
+import assessmentTableData from "layouts/assessments/data/assessmentTableData";
 
 function Assessments() {
   const { course, term, student } = useParams();
@@ -40,7 +40,7 @@ function Assessments() {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  {term + " - " + student}
+                  {course + " " + term + " - z" + student}
                 </MDTypography>
               </MDBox>
               <MDBox pt={3}>

@@ -50,6 +50,28 @@ function Courses() {
     // Here you can handle the form submission, for now, I'm just logging the data
     console.log("Course Name:", courseName);
     console.log("Course Term:", courseTerm);
+
+    fetch("http://localhost:3000/term", {
+      method: "PUT",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        year: "20" + courseTerm[0] + courseTerm[1],
+        session: str(courseTerm[2] + courseTerm[3]),
+      }),
+    }).then((res) =>
+      fetch("http://localhost:3000/course", {
+        method: "PUT",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          year: "20" + courseTerm[0] + courseTerm[1],
+          session: String(courseTerm[2] + courseTerm[3]),
+        }),
+      })
+    );
     // Redirect to a different page
     history.push("/otherpage");
   };

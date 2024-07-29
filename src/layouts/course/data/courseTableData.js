@@ -31,23 +31,26 @@ export default function data(props) {
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const res = await fetch("http://localhost:3000/get_students_of_course", {
-        method: "POST",
+      const url = `http://localhost:3000/${props.course}/${props.term}/students`;
+
+      const res = await fetch(url, {
+        method: "GET",
         headers: {
           "content-Type": "application/json",
         },
-        body: JSON.stringify({ term: props.term, course: props.course }),
       });
       const resBody = await res.json();
+      console.log("printing in coursetableData");
+      console.log(resBody);
       resBody.students.forEach((x) => {
         results.push({
           name: (
-            <Link to={`/assessment/${props.course}/${props.term}/${x.id}`}>
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
               <Name givenName={x.given_name} familyName={x.family_name} />
             </Link>
           ),
           id: (
-            <Link to={`/assessment/${props.course}/${props.term}/${x.id}`}>
+            <Link to={`/${props.course}/${props.term}/${x.id}/marks`}>
               <Zid id={x.id} />
             </Link>
           ),

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -46,41 +47,65 @@ const Formula = ({ formula }) => (
 );
 
 export default function data(props) {
-  const [students, setStudents] = React.useState([]);
+  const [assessments, setAssessments] = React.useState([]);
+
   React.useEffect(() => {
     let results = [];
     const fetchResults = async () => {
-      const res = await fetch("http://localhost:3000/get_assessments_of_course", {
-        method: "POST",
+      const url = `http://localhost:3000/${props.course}/${props.term}/assessments`;
+      const res = await fetch(url, {
+        method: "GET",
         headers: {
           "content-Type": "application/json",
         },
-        body: JSON.stringify({ term: props.term, course: props.course }),
       });
       const resBody = await res.json();
-      console.log(resBody);
       resBody.assessments.forEach((x) => {
         results.push({
-          assessment: <Assessment name={x.name} shortName={x.short_name} />,
-          deadline: <Deadline deadline={x.deadline} />,
-          weight: <Weight weight={x.weigh} />,
-          formula: <Formula formula={x.formula_mark} />,
+          assessment: (
+            <Link to={`/${props.course}/${props.term}/${x.short_name}/details`}>
+              <Assessment
+                name={x.name}
+                shortName={x.short_name}
+                onClick={() => setSelectedAssessment(x)}
+              />
+            </Link>
+          ),
+          deadline: (
+            <Link to={`/${props.course}/${props.term}/${x.short_name}/details`}>
+              <Deadline deadline={x.deadline} />
+            </Link>
+          ),
+          weight: (
+            <Link to={`/${props.course}/${props.term}/${x.short_name}/details`}>
+              <Weight weight={x.weigh} />
+            </Link>
+          ),
+          formula: (
+            <Link to={`/${props.course}/${props.term}/${x.short_name}/details`}>
+              <Formula formula={x.formula_mark} />
+            </Link>
+          ),
         });
       });
-      setStudents(results);
+      setAssessments(results);
     };
 
     fetchResults();
   }, []);
 
+  const AssessmentModal = () => {
+    // ... Modal content and logic using selectedAssessment data
+  };
+
   return {
     // weight forumla mark, deadline , names
     columns: [
-      { Header: "Assessments", accessor: "assessment", align: "left" },
+      { Header: "Assessment", accessor: "assessment", align: "left" },
       { Header: "Deadline", accessor: "deadline", align: "left" },
-      { Header: "Weight", accessor: "weigth", align: "left" },
-      { Header: "Formula", accessor: "deadline", align: "left" },
+      { Header: "Weight", accessor: "weight", align: "left" },
+      { Header: "Formula", accessor: "formula", align: "left" },
     ],
-    rows: students,
+    rows: assessments,
   };
 }

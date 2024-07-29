@@ -1,94 +1,69 @@
 // react
-import React from "react";
+import React, { useRef } from "react";
 import { useParams } from "react-router-dom";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
-import Card from "@mui/material/Card";
+import { ToggleButton, ToggleButtonGroup, Button } from "@mui/material";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDButton from "components/MDButton";
 
 // Material Dashboard 2 React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import DataTable from "examples/Tables/DataTable";
 
 // Data
-import studentsTableData from "layouts/course/data/courseTableData";
-import assessmentTableData from "layouts/course/data/assessmentTableData";
+import StudentsTable from "./students";
+import AssessmentsTable from "./assessments";
 
-function Students() {
+function Course() {
   const { course, term } = useParams();
-  const { columns2, rows2 } = assessmentTableData({ course, term });
-  const { columns, rows } = studentsTableData({ course, term });
 
-  console.log(`column2 is ${columns2}`);
+  const [selectedTable, setSelectedTable] = React.useState("students");
+  const handleTableChange = (event) => {
+    setSelectedTable(event.target.value);
+  };
+
+  const handleAstra = async () => {
+    const res = await fetch(`http://localhost:3000/${course}/${term}/astra`, {
+      method: "GET",
+      headers: {
+        "content-Type": "application/json",
+      },
+    });
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", `${course}-${term}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    link.parentNode.removeChild(link);
+  };
 
   return (
     <DashboardLayout>
       <DashboardNavbar />
+      <MDBox pt={2}>
+        <ToggleButtonGroup value={selectedTable} onChange={handleTableChange} exclusive>
+          <ToggleButton value="students">Students</ToggleButton>
+          <ToggleButton value="assessments">Assessments</ToggleButton>
+        </ToggleButtonGroup>
+      </MDBox>
+      <MDBox pt={2}>
+        <MDButton variant="contained" onClick={handleAstra}>
+          Export astra csv
+        </MDButton>
+      </MDBox>
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
-          <Grid item xs={12}>
-            <Card>
-              <MDBox
-                mx={2}
-                mt={-3}
-                py={3}
-                px={2}
-                variant="gradient"
-                bgColor="info"
-                borderRadius="lg"
-                coloredShadow="info"
-              >
-                <MDTypography variant="h6" color="white">
-                  {course + " - " + term}
-                </MDTypography>
-              </MDBox>
-              <MDBox pt={3}>
-                <DataTable
-                  table={{ columns, rows }}
-                  isSorted={false}
-                  entriesPerPage={false}
-                  showTotalEntries={false}
-                  noEndBorder
-                />
-              </MDBox>
-            </Card>
-          </Grid>
-          {/* <Grid item xs={12}>
-            <Card>
-              <MDBox
-                mx={2}
-                mt={-3}
-                py={3}
-                px={2}
-                variant="gradient"
-                bgColor="info"
-                borderRadius="lg"
-                coloredShadow="info"
-              >
-                <MDTypography variant="h6" color="white">
-                  {"Assessments"}
-                </MDTypography>
-              </MDBox>
-              <MDBox pt={3}>
-                <DataTable
-                  table={{ columns2, rows2 }}
-                  isSorted={false}
-                  entriesPerPage={false}
-                  showTotalEntries={false}
-                  noEndBorder
-                />
-              </MDBox>
-            </Card>
-          </Grid> */}
+          {selectedTable === "students" ? <StudentsTable /> : <AssessmentsTable />}
         </Grid>
       </MDBox>
     </DashboardLayout>
   );
 }
 
-export default Students;
+export default Course;
