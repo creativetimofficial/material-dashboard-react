@@ -17,6 +17,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 // Data
 import StudentsTable from "./students";
 import AssessmentsTable from "./assessments";
+import ClassesTable from "./classes";
 
 function Course() {
   const { course, term } = useParams();
@@ -43,6 +44,16 @@ function Course() {
     link.parentNode.removeChild(link);
   };
 
+  const returnData = () => {
+    if (selectedTable === "students") {
+      return <StudentsTable />;
+    } else if (selectedTable === "assessments") {
+      return <AssessmentsTable />;
+    } else {
+      return <ClassesTable />;
+    }
+  };
+
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -50,6 +61,7 @@ function Course() {
         <ToggleButtonGroup value={selectedTable} onChange={handleTableChange} exclusive>
           <ToggleButton value="students">Students</ToggleButton>
           <ToggleButton value="assessments">Assessments</ToggleButton>
+          <ToggleButton value="classes">Classes</ToggleButton>
         </ToggleButtonGroup>
       </MDBox>
       <MDBox pt={2}>
@@ -59,7 +71,7 @@ function Course() {
       </MDBox>
       <MDBox pt={6} pb={3}>
         <Grid container spacing={6}>
-          {selectedTable === "students" ? <StudentsTable /> : <AssessmentsTable />}
+          {returnData()}
         </Grid>
       </MDBox>
     </DashboardLayout>
