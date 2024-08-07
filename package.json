@@ -37,7 +37,9 @@
   },
   "scripts": {
     "start": "GENERATE_SOURCEMAP=false PORT=3005 react-scripts start",
+    "winStart": "set \"GENERATE_SOURCEMAP=false\" && set \"PORT=3005\" && react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "winBuild": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
