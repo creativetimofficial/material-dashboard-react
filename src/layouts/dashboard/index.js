@@ -1,39 +1,91 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
+import React from "react";
 import Grid from "@mui/material/Grid";
-
-// Material Dashboard 2 React components
+import Card from "@mui/material/Card";
+import { styled } from "@mui/system";
 import MDBox from "components/MDBox";
-
-// Material Dashboard 2 React example components
+import MDTypography from "components/MDTypography";
+import CalendarHeatmap from "react-calendar-heatmap";
+import "react-calendar-heatmap/dist/styles.css";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
+import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
-
-// Data
+import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
-// Dashboard components
-import Projects from "layouts/dashboard/components/Projects";
-import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
+const StyledHeatmap = styled("div")(({ theme }) => ({
+  ".react-calendar-heatmap": {
+    fontSize: "12px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+  },
+  ".react-calendar-heatmap text": {
+    fill: "#6c757d", // Light gray for labels
+  },
+  ".color-github-0": {
+    fill: "#ebedf0",
+  },
+  ".color-github-1": {
+    fill: "#c6e48b",
+  },
+  ".color-github-2": {
+    fill: "#7bc96f",
+  },
+  ".color-github-3": {
+    fill: "#239a3b",
+  },
+  ".color-github-4": {
+    fill: "#196127",
+  },
+  ".day": {
+    stroke: "#fff",
+    strokeWidth: "1px",
+  },
+}));
+
+function ContributionHeatmap() {
+  const today = new Date();
+  const startDate = new Date(today.getFullYear(), today.getMonth() - 6, 1); // Last 6 months
+  const sampleData = [
+    { date: "2023-05-01", count: 8 },
+    { date: "2023-06-15", count: 4 },
+    { date: "2023-07-20", count: 3 },
+    { date: "2023-08-30", count: 1 },
+    { date: "2023-09-10", count: 0 }, // No contribution
+    { date: "2023-10-01", count: 5 },
+  ];
+
+  return (
+    <Card sx={{ height: "100%" }}>
+      <MDBox padding="1rem">
+        <MDTypography variant="h6" fontWeight="medium" gutterBottom>
+          Contribution Heatmap
+        </MDTypography>
+        <StyledHeatmap>
+          <CalendarHeatmap
+            startDate={startDate}
+            endDate={today}
+            values={sampleData}
+            classForValue={(value) => {
+              if (!value || value.count === 0) return "color-github-0";
+              return `color-github-${Math.min(value.count, 4)}`;
+            }}
+            tooltipDataAttrs={(value) => ({
+              "data-tip": value.date
+                ? `${value.date}: ${value.count} contributions`
+                : "No contributions",
+            })}
+            showWeekdayLabels
+          />
+        </StyledHeatmap>
+      </MDBox>
+    </Card>
+  );
+}
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
@@ -53,7 +105,7 @@ function Dashboard() {
                 percentage={{
                   color: "success",
                   amount: "+55%",
-                  label: "than lask week",
+                  label: "than last week",
                 }}
               />
             </MDBox>
@@ -147,7 +199,7 @@ function Dashboard() {
         <MDBox>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={8}>
-              <Projects />
+              <ContributionHeatmap />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <OrdersOverview />
