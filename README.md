@@ -12,10 +12,6 @@ Material Dashboard 2 React is built with over 70 frontend individual elements, l
 This free MUI & React Dashboard is coming with prebuilt design blocks, so the development process is seamless,
 switching from our pages to the real website is very easy to be done.
 
-Special thanks go to:
-
-- [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with Material Dashboard React. You can use it to gain insights into your sources of traffic.
-
 **Documentation built by Developers**
 
 Each element is well presented in very complex documentation.
