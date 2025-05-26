@@ -38,16 +38,17 @@ Coded by www.creative-tim.com
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
-import Billing from "layouts/billing";
+import Sales from "layouts/sales";
+/* import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
-import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+import SignUp from "layouts/authentication/sign-up"; */
 
 // @mui icons
 import Icon from "@mui/material/Icon";
 
+//! CHECK THIS OUT
 const routes = [
   {
     type: "collapse",
@@ -65,7 +66,7 @@ const routes = [
     route: "/tables",
     component: <Tables />,
   },
-  {
+  /* {
     type: "collapse",
     name: "Billing",
     key: "billing",
@@ -88,16 +89,16 @@ const routes = [
     icon: <Icon fontSize="small">notifications</Icon>,
     route: "/notifications",
     component: <Notifications />,
-  },
+  }, */
   {
     type: "collapse",
-    name: "Profile",
-    key: "profile",
-    icon: <Icon fontSize="small">person</Icon>,
-    route: "/profile",
-    component: <Profile />,
+    name: "Sales",
+    key: "sales",
+    icon: <Icon fontSize="small">store</Icon>,
+    route: "/sales",
+    component: <Sales />,
   },
-  {
+  /* {
     type: "collapse",
     name: "Sign In",
     key: "sign-in",
@@ -112,7 +113,7 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
-  },
+  }, */
 ];
 
 export default routes;

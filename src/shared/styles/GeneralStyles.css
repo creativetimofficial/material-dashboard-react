@@ -1,0 +1,36 @@
+.mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.mr-10 {
+  margin-right: 10px !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.btn-primary {
+  background: #6495ed;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #f5a207;
+  color: #fff;
+}
+
+.btn-accent {
+  background: #20b00d;
+  color: #fff;
+}
+
+.btn-danger {
+  background: #c40a0a;
+  color: #fff;
+}
+
+.btn-basic-danger {
+  background: #fff;
+  color: #c40a0a;
+}
