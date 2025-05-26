@@ -1,0 +1,13 @@
+.btn {
+  border: none;
+  padding: 10px;
+  padding-inline: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: #6495ed;
+  color: #fff;
+}
