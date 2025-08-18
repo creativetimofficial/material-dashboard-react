@@ -1,35 +1,15 @@
-/**
-=========================================================
-* Material Dashboard 2 React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-/**
-  This file is used for controlling the global states of the components,
-  you can customize the states for the different components here.
-*/
-
 import { createContext, useContext, useReducer, useMemo } from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// Material Dashboard 2 React main context
-const MaterialUI = createContext();
+// USmart main context
+const USmartUI = createContext();
 
 // Setting custom name for the context which is visible on react dev tools
-MaterialUI.displayName = "MaterialUIContext";
+USmartUI.displayName = "USmartUIContext";
 
-// Material Dashboard 2 React reducer
+// USmart React reducer
 function reducer(state, action) {
   switch (action.type) {
     case "MINI_SIDENAV": {
@@ -68,8 +48,8 @@ function reducer(state, action) {
   }
 }
 
-// Material Dashboard 2 React context provider
-function MaterialUIControllerProvider({ children }) {
+// USmart context provider
+function USmartUIControllerProvider({ children }) {
   const initialState = {
     miniSidenav: false,
     transparentSidenav: false,
@@ -87,24 +67,24 @@ function MaterialUIControllerProvider({ children }) {
 
   const value = useMemo(() => [controller, dispatch], [controller, dispatch]);
 
-  return <MaterialUI.Provider value={value}>{children}</MaterialUI.Provider>;
+  return <USmartUI.Provider value={value}>{children}</USmartUI.Provider>;
 }
 
-// Material Dashboard 2 React custom hook for using context
-function useMaterialUIController() {
-  const context = useContext(MaterialUI);
+// USmart custom hook for using context
+function useUSmartUIController() {
+  const context = useContext(USmartUI);
 
   if (!context) {
     throw new Error(
-      "useMaterialUIController should be used inside the MaterialUIControllerProvider."
+      "useUSmartUIController should be used inside the USmartUIControllerProvider."
     );
   }
 
   return context;
 }
 
-// Typechecking props for the MaterialUIControllerProvider
-MaterialUIControllerProvider.propTypes = {
+// Typechecking props for the USmartUIControllerProvider
+USmartUIControllerProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
@@ -121,8 +101,8 @@ const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 const setDarkMode = (dispatch, value) => dispatch({ type: "DARKMODE", value });
 
 export {
-  MaterialUIControllerProvider,
-  useMaterialUIController,
+  USmartUIControllerProvider,
+  useUSmartUIController,
   setMiniSidenav,
   setTransparentSidenav,
   setWhiteSidenav,
