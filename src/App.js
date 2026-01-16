@@ -67,6 +67,7 @@ export default function App() {
   } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
+  const [unusedState, setUnusedState] = useState(null);
   const { pathname } = useLocation();
 
   // Cache for the rtl
